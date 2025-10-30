@@ -1,0 +1,347 @@
+{
+  "generation_timestamp": "2025-10-30",
+  "emails_created": 20,
+  "emails": [
+    {
+      "contact": "Emil Michael - Department of Defense",
+      "filename": "michael_emil_dod.txt",
+      "subject_line": "Orchestrating Your Quantum-AI North Stars Across DoD's 14 CTAs",
+      "word_count": 187,
+      "personalization_elements": [
+        "North Star CTAs",
+        "DIU transition",
+        "DoD tech flattening"
+      ],
+      "outreach_phase": "Phase 1 - Week 1",
+      "send_priority": "immediate",
+      "eml_filename": "michael_emil_dod.eml",
+      "email_address": "emil.michael@diu.mil",
+      "email_verified": false,
+      "gmail_import_ready": true
+    },
+    {
+      "contact": "Amin Vahdat - Google Cloud",
+      "filename": "vahdat_amin_googlecloud.txt",
+      "subject_line": "Solving Your Networking Bottleneck for the Year of Inference",
+      "word_count": 182,
+      "personalization_elements": [
+        "Networking bottleneck thesis",
+        "Ironwood 42.5 exaflops",
+        "Year of Inference"
+      ],
+      "outreach_phase": "Phase 1 - Week 1",
+      "send_priority": "immediate",
+      "eml_filename": "vahdat_amin_googlecloud.eml",
+      "email_address": "amin.vahdat@cloud.google.com",
+      "email_verified": false,
+      "gmail_import_ready": true
+    },
+    {
+      "contact": "Jeremy O'Brien - PsiQuantum",
+      "filename": "obrien_jeremy_psiquantum.txt",
+      "subject_line": "Orchestrating Your Million-Qubit Photonic Architecture Across Brisbane and Chicago",
+      "word_count": 178,
+      "personalization_elements": [
+        "Omega chipset",
+        "Brisbane/Chicago facilities",
+        "Silicon photonics"
+      ],
+      "outreach_phase": "Phase 1 - Week 1",
+      "send_priority": "immediate",
+      "eml_filename": "obrien_jeremy_psiquantum.eml",
+      "email_address": "jeremy.o'brien@psiquantum.com",
+      "email_verified": false,
+      "gmail_import_ready": true
+    },
+    {
+      "contact": "Mark Papermaster - AMD",
+      "filename": "papermaster_mark_amd.txt",
+      "subject_line": "Extending Your OCP Rack-Scale Vision to Quantum-Classical Hybrid Systems",
+      "word_count": 175,
+      "personalization_elements": [
+        "OCP rack-scale",
+        "MI355X GPUs",
+        "38X energy efficiency"
+      ],
+      "outreach_phase": "Phase 1 - Week 1",
+      "send_priority": "immediate",
+      "eml_filename": "papermaster_mark_amd.eml",
+      "email_address": "mark.papermaster@amd.com",
+      "email_verified": true,
+      "gmail_import_ready": true
+    },
+    {
+      "contact": "Swami Sivasubramanian - AWS",
+      "filename": "sivasubramanian_swami_aws.txt",
+      "subject_line": "Orchestrating Your Multi-Agent Collaboration with Quantum-Secure Coordination",
+      "word_count": 180,
+      "personalization_elements": [
+        "AgentCore 1M+ downloads",
+        "40% better completion",
+        "Multi-agent collaboration"
+      ],
+      "outreach_phase": "Phase 1 - Week 1",
+      "send_priority": "immediate",
+      "eml_filename": "sivasubramanian_swami_aws.eml",
+      "email_address": "swami.sivasubramanian@aws.amazon.com",
+      "email_verified": false,
+      "gmail_import_ready": true
+    },
+    {
+      "contact": "Michael Kagan - NVIDIA",
+      "filename": "kagan_michael_nvidia.txt",
+      "subject_line": "Building AI Factories That Scale Beyond Classical Networking Limits",
+      "word_count": 172,
+      "personalization_elements": [
+        "Million-GPU data centers",
+        "Sequoia Europe100",
+        "AI factories"
+      ],
+      "outreach_phase": "Phase 1 - Week 1",
+      "send_priority": "immediate",
+      "eml_filename": "kagan_michael_nvidia.eml",
+      "email_address": "michael.kagan@nvidia.com",
+      "email_verified": false,
+      "gmail_import_ready": true
+    },
+    {
+      "contact": "Mustafa Suleyman - Microsoft",
+      "filename": "suleyman_mustafa_microsoft.txt",
+      "subject_line": "Differentiating Copilot Through Quantum-Enhanced Reasoning",
+      "word_count": 174,
+      "personalization_elements": [
+        "24+ DeepMind researchers",
+        "Copilot personalization",
+        "Azure Quantum"
+      ],
+      "outreach_phase": "Phase 1 - Week 1",
+      "send_priority": "immediate",
+      "eml_filename": "suleyman_mustafa_microsoft.eml",
+      "email_address": "mustafa.suleyman@microsoft.com",
+      "email_verified": false,
+      "gmail_import_ready": true
+    },
+    {
+      "contact": "Doreen Bogdan-Martin - ITU",
+      "filename": "bogdanmartin_doreen_itu.txt",
+      "subject_line": "Coordinating ITU's AI and Quantum Standards Across 193 Nations",
+      "word_count": 179,
+      "personalization_elements": [
+        "193 member nations",
+        "International Year of Quantum",
+        "AI for Good Summit"
+      ],
+      "outreach_phase": "Phase 1 - Week 1",
+      "send_priority": "high",
+      "eml_filename": "bogdanmartin_doreen_itu.eml",
+      "email_address": "doreen.bogdan-martin@itu.int",
+      "email_verified": false,
+      "gmail_import_ready": true
+    },
+    {
+      "contact": "Mark Russinovich - Microsoft Azure",
+      "filename": "russinovich_mark_azure.txt",
+      "subject_line": "Unifying Azure's Classical AI and Quantum Services in Enterprise Control Plane",
+      "word_count": 177,
+      "personalization_elements": [
+        "Confidential computing",
+        "Azure Quantum services",
+        "Enterprise control plane"
+      ],
+      "outreach_phase": "Phase 1 - Week 1",
+      "send_priority": "immediate",
+      "eml_filename": "russinovich_mark_azure.eml",
+      "email_address": "mark.russinovich@azure.microsoft.com",
+      "email_verified": false,
+      "gmail_import_ready": true
+    },
+    {
+      "contact": "Manuela Veloso - JPMorgan Chase",
+      "filename": "veloso_manuela_jpmorgan.txt",
+      "subject_line": "Coordinating JPMorgan's 2000+ AI Experts with Quantum-Enhanced Financial Modeling",
+      "word_count": 183,
+      "personalization_elements": [
+        "2000+ AI/ML experts",
+        "JPMC-MIT CSAIL",
+        "R&D100 MAQ"
+      ],
+      "outreach_phase": "Phase 1 - Week 1",
+      "send_priority": "immediate",
+      "eml_filename": "veloso_manuela_jpmorgan.eml",
+      "email_address": "manuela.veloso@jpmorgan.com",
+      "email_verified": false,
+      "gmail_import_ready": true
+    },
+    {
+      "contact": "Shaun Maguire - Sequoia Capital",
+      "filename": "maguire_shaun_sequoia.txt",
+      "subject_line": "Coordinating Your IonQ and xAI Investments Through Hybrid Quantum-AI Orchestration",
+      "word_count": 173,
+      "personalization_elements": [
+        "Quantum physics PhD Caltech",
+        "IonQ Series A",
+        "xAI investment"
+      ],
+      "outreach_phase": "Phase 1 - Week 1",
+      "send_priority": "high",
+      "eml_filename": "maguire_shaun_sequoia.eml",
+      "email_address": "shaun.maguire@sequoiacap.com",
+      "email_verified": false,
+      "gmail_import_ready": true
+    },
+    {
+      "contact": "Jonathan Ross - Groq",
+      "filename": "ross_jonathan_groq.txt",
+      "subject_line": "Eliminating LPU Latency Bottlenecks Through Quantum Coordination Channels",
+      "word_count": 180,
+      "personalization_elements": [
+        "1.7M LPUs",
+        "50% global inference target",
+        "$1.5B Saudi agreement"
+      ],
+      "outreach_phase": "Phase 1 - Week 1",
+      "send_priority": "immediate",
+      "eml_filename": "ross_jonathan_groq.eml",
+      "email_address": "jonathan.ross@groq.com",
+      "email_verified": false,
+      "gmail_import_ready": true
+    },
+    {
+      "contact": "Travis Humble - Oak Ridge National Laboratory",
+      "filename": "humble_travis_ornl.txt",
+      "subject_line": "Extending Oak Ridge's Quantum-HPC Integration to Native Accelerator Orchestration",
+      "word_count": 182,
+      "personalization_elements": [
+        "IQM Radiance integration",
+        "Frontier exascale",
+        "R&D100 MAQ"
+      ],
+      "outreach_phase": "Phase 1 - Week 1",
+      "send_priority": "immediate",
+      "eml_filename": "humble_travis_ornl.eml",
+      "email_address": "travis.humble@quantum.ornl.gov",
+      "email_verified": false,
+      "gmail_import_ready": true
+    },
+    {
+      "contact": "Sachin Katti - Intel",
+      "filename": "katti_sachin_intel.txt",
+      "subject_line": "Differentiating Intel AI Through Quantum-Classical Hybrid Systems Leveraging Your Photonics Strengths",
+      "word_count": 177,
+      "personalization_elements": [
+        "Gaudi struggles",
+        "Photonics IP",
+        "CEO Lip-Bu Tan mandate"
+      ],
+      "outreach_phase": "Phase 1 - Week 1",
+      "send_priority": "immediate",
+      "eml_filename": "katti_sachin_intel.eml",
+      "email_address": "sachin.katti@intel.com",
+      "email_verified": false,
+      "gmail_import_ready": true
+    },
+    {
+      "contact": "Gil Herrera - NSA",
+      "filename": "herrera_gil_nsa.txt",
+      "subject_line": "Proactive Architecture Against Your Black Swan Quantum Breakthrough Scenario",
+      "word_count": 176,
+      "personalization_elements": [
+        "Black swan breakthrough warning",
+        "Wreck world economy",
+        "Defense R&D Summit"
+      ],
+      "outreach_phase": "Phase 1 - Week 1",
+      "send_priority": "high",
+      "eml_filename": "herrera_gil_nsa.eml",
+      "email_address": "gil.herrera@nsa.gov",
+      "email_verified": false,
+      "gmail_import_ready": true
+    },
+    {
+      "contact": "Daniel Marcu - Goldman Sachs",
+      "filename": "marcu_daniel_goldmansachs.txt",
+      "subject_line": "Your 2025 AI Mandate Needs Quantum Edge for Trading Algorithms",
+      "word_count": 174,
+      "personalization_elements": [
+        "2025 appointment",
+        "Global Head AI Engineering",
+        "Algorithmic trading"
+      ],
+      "outreach_phase": "Phase 1 - Week 1",
+      "send_priority": "immediate",
+      "eml_filename": "marcu_daniel_goldmansachs.eml",
+      "email_address": "daniel.marcu@goldmansachs.com",
+      "email_verified": false,
+      "gmail_import_ready": true
+    },
+    {
+      "contact": "Matt Ocko - DCVC",
+      "filename": "ocko_matt_dcvc.txt",
+      "subject_line": "Coordinating Your Quantum and AI Portfolio for National Resilience",
+      "word_count": 170,
+      "personalization_elements": [
+        "Quantum sensing investments",
+        "National resilience focus",
+        "Deep tech portfolio"
+      ],
+      "outreach_phase": "Phase 1 - Week 1",
+      "send_priority": "high",
+      "eml_filename": "ocko_matt_dcvc.eml",
+      "email_address": "matt.ocko@dcvc.com",
+      "email_verified": false,
+      "gmail_import_ready": true
+    },
+    {
+      "contact": "Bill Dally - NVIDIA",
+      "filename": "dally_bill_nvidia.txt",
+      "subject_line": "Bridging Your Optical Interconnect Research to Quantum Communication Channels",
+      "word_count": 173,
+      "personalization_elements": [
+        "100 TOPS/watt",
+        "Optical interconnects",
+        "Hot Chips 2024"
+      ],
+      "outreach_phase": "Phase 1 - Week 1",
+      "send_priority": "immediate",
+      "eml_filename": "dally_bill_nvidia.eml",
+      "email_address": "bill.dally@nvidia.com",
+      "email_verified": false,
+      "gmail_import_ready": true
+    },
+    {
+      "contact": "Niccolo de Masi - IonQ",
+      "filename": "demasi_niccolo_ionq.txt",
+      "subject_line": "Orchestrating Your Quantum Portfolio\u2014Computing, Networking, Sensing, and Space QKD",
+      "word_count": 189,
+      "personalization_elements": [
+        "Six acquisitions",
+        "Qubitekk/IDQ/Capella",
+        "Oxford Ionics proposal"
+      ],
+      "outreach_phase": "Phase 1 - Week 1",
+      "send_priority": "immediate",
+      "eml_filename": "demasi_niccolo_ionq.eml",
+      "email_address": "niccolo.de masi@ionq.com",
+      "email_verified": false,
+      "gmail_import_ready": true
+    },
+    {
+      "contact": "Lan Guan - Accenture",
+      "filename": "guan_lan_accenture.txt",
+      "subject_line": "Quantum-Ready Architecture for Your 9,000-Client AI Deployment Scale",
+      "word_count": 178,
+      "personalization_elements": [
+        "$3B AI initiative",
+        "9000+ clients",
+        "800K employees"
+      ],
+      "outreach_phase": "Phase 1 - Week 1",
+      "send_priority": "immediate",
+      "eml_filename": "guan_lan_accenture.eml",
+      "email_address": "lan.guan@accenture.com",
+      "email_verified": false,
+      "gmail_import_ready": true
+    }
+  ],
+  "eml_generation_timestamp": "2025-10-30 23:02:04"
+}
