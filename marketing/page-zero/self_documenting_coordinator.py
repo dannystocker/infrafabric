@@ -10,8 +10,10 @@ through its documentation:
 3. GRACEFUL DEGRADATION: Document how system continues when agents fail
 4. ENCOURAGEMENT ARCHITECTURE: Show how 0.0 weight enables exploration
 5. PHILOSOPHY INTEGRATION: Each metric has a "why" (philosophy paragraph)
+6. SELF-IMPROVEMENT: Metrics identify their own improvement opportunities
 
 The documentation IS the validation.
+The validation GENERATES the next experiments.
 
 Author: InfraFabric Research
 Date: November 1, 2025
@@ -21,7 +23,7 @@ Philosophy: "Truth rarely performs well in its early iterations"
 import json
 import time
 from datetime import datetime
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Tuple
 from pathlib import Path
 
 
@@ -466,6 +468,332 @@ def save_self_documenting_narrative(narrative: Dict, output_dir: str = "."):
     return filepath, md_filepath
 
 
+class SelfImprovementOracle:
+    """
+    Frontier lab techniques adapted to IF principles.
+
+    Philosophy: "The system improves by understanding its own patterns, not external mandates"
+
+    Frontier Lab Techniques (IF-Adapted):
+    1. Constitutional AI → Philosophical Constraints (encourage, don't punish)
+    2. RLHF (Reinforcement Learning from Human Feedback) → Reciprocity Through Results
+    3. Self-Critique → Metric Self-Awareness
+    4. Recursive Improvement → Late Bloomer Maturation
+    5. Red Teaming → Exploratory Agent Stress Testing
+    6. Capability Elicitation → Weight Amplification
+    """
+
+    def __init__(self, session_narrative: SessionNarrative):
+        self.narrative = session_narrative
+        self.improvement_recommendations = []
+
+    def generate_improvements(self) -> List[Dict]:
+        """
+        Generate actionable improvements using frontier lab concepts.
+
+        Philosophy: "The system suggests its own evolution"
+        """
+        improvements = []
+
+        # 1. CONSTITUTIONAL AI → Philosophical Constraints
+        improvements.append(self._constitutional_analysis())
+
+        # 2. RLHF → Reciprocity Through Results
+        improvements.append(self._reciprocity_optimization())
+
+        # 3. SELF-CRITIQUE → Metric Self-Awareness
+        improvements.append(self._metric_self_critique())
+
+        # 4. RECURSIVE IMPROVEMENT → Late Bloomer Maturation
+        improvements.append(self._recursive_maturation())
+
+        # 5. RED TEAMING → Exploratory Agent Stress Testing
+        improvements.append(self._red_team_exploration())
+
+        # 6. CAPABILITY ELICITATION → Weight Amplification
+        improvements.append(self._capability_elicitation())
+
+        return improvements
+
+    def _constitutional_analysis(self) -> Dict:
+        """
+        Constitutional AI → Philosophical Constraints
+
+        Frontier: Train models to follow constitutional principles
+        IF: Agents self-regulate through philosophical understanding, not hard rules
+
+        Philosophy: "Principles guide, rules constrain"
+        """
+        violations = []
+        reinforcements = []
+
+        for agent_name, lifecycle in self.narrative.agent_lifecycles.items():
+            # Check if agent demonstrates IF principles
+            if lifecycle.success_count == 0 and lifecycle.agent_tier == 'exploratory':
+                reinforcements.append({
+                    'agent': agent_name,
+                    'principle': 'Exploratory agents kept alive at 0.0 weight',
+                    'evidence': f"Failed {lifecycle.total_attempts} times but no system penalty",
+                    'action': 'REINFORCE: Continue allowing exploration without punishment'
+                })
+
+            if lifecycle.success_count > 0 and lifecycle.current_weight > 1.0:
+                reinforcements.append({
+                    'agent': agent_name,
+                    'principle': 'Reciprocity through contribution',
+                    'evidence': f"Earned {lifecycle.current_weight} weight through success",
+                    'action': 'REINFORCE: Amplify successful contribution further'
+                })
+
+        return {
+            'technique': 'Constitutional AI → Philosophical Constraints',
+            'philosophy': 'Agents self-regulate through understanding, not enforcement',
+            'violations': violations,
+            'reinforcements': reinforcements,
+            'recommendation': 'All agents following IF principles. Consider explaining philosophy to underperforming agents.'
+        }
+
+    def _reciprocity_optimization(self) -> Dict:
+        """
+        RLHF → Reciprocity Through Results
+
+        Frontier: Human feedback shapes model behavior
+        IF: Results shape agent influence (no human in loop needed)
+
+        Philosophy: "Success is the feedback signal"
+        """
+        feedback_signals = []
+
+        for agent_name, lifecycle in self.narrative.agent_lifecycles.items():
+            success_rate = lifecycle.get_success_rate()
+
+            # Positive feedback
+            if success_rate > 0.5:
+                feedback_signals.append({
+                    'agent': agent_name,
+                    'signal': 'POSITIVE',
+                    'strength': success_rate,
+                    'recommendation': f"Increase base_weight from {lifecycle.agent_profile['base_weight']} to reward consistent success",
+                    'mechanism': 'Adjust AGENT_PROFILES to give higher starting weight'
+                })
+
+            # Neutral feedback (late bloomer candidate)
+            elif success_rate > 0 and success_rate < 0.3:
+                feedback_signals.append({
+                    'agent': agent_name,
+                    'signal': 'NEUTRAL_MATURING',
+                    'strength': success_rate,
+                    'recommendation': f"Monitor for late bloomer pattern - keep exploring at 0.0 weight",
+                    'mechanism': 'Track over 20+ contacts to see if success rate improves'
+                })
+
+            # Silent feedback (appropriate for exploratory)
+            elif success_rate == 0 and lifecycle.agent_tier == 'exploratory':
+                feedback_signals.append({
+                    'agent': agent_name,
+                    'signal': 'SILENT_EXPLORATION',
+                    'strength': 0.0,
+                    'recommendation': f"Appropriate silence - no changes needed",
+                    'mechanism': 'Continue at 0.0 weight until breakthrough'
+                })
+
+        return {
+            'technique': 'RLHF → Reciprocity Through Results',
+            'philosophy': 'Results are the reward signal - no human needed',
+            'feedback_signals': feedback_signals,
+            'recommendation': 'Adjust agent profiles based on sustained performance patterns (N>20)'
+        }
+
+    def _metric_self_critique(self) -> Dict:
+        """
+        Self-Critique → Metric Self-Awareness
+
+        Frontier: Models critique their own outputs
+        IF: Metrics identify their own limitations and blind spots
+
+        Philosophy: "Measurements that question themselves are more truthful"
+        """
+        critiques = []
+
+        # Critique 1: Sample size
+        if self.narrative.contacts_processed < 10:
+            critiques.append({
+                'metric': 'agent_success_rates',
+                'limitation': f"Only {self.narrative.contacts_processed} contacts processed",
+                'blind_spot': 'Cannot distinguish luck from skill with small N',
+                'recommendation': 'Run 20+ contacts before adjusting agent profiles',
+                'confidence': 'LOW'
+            })
+
+        # Critique 2: Domain coverage
+        agent_successes = [lc.success_count for lc in self.narrative.agent_lifecycles.values()]
+        if all(s == 0 for s in agent_successes[1:]):  # All except baseline
+            critiques.append({
+                'metric': 'specialist_agent_coverage',
+                'limitation': 'No specialist agents succeeded',
+                'blind_spot': 'May indicate wrong contact batch or poor agent design',
+                'recommendation': 'Test with diverse contact types (academics, public companies, etc.)',
+                'confidence': 'MEDIUM'
+            })
+
+        # Critique 3: Cost optimization
+        if self.narrative.cost_narrative['google_validations'] == 0:
+            critiques.append({
+                'metric': 'google_validation_threshold',
+                'limitation': 'Google never invoked - threshold may be too low',
+                'blind_spot': 'Cannot validate cross-validation boost (+12 points)',
+                'recommendation': 'Test with intentionally low-quality contacts to trigger Google',
+                'confidence': 'HIGH'
+            })
+
+        return {
+            'technique': 'Self-Critique → Metric Self-Awareness',
+            'philosophy': 'Honest metrics acknowledge their limitations',
+            'critiques': critiques,
+            'recommendation': 'Address blind spots before claiming production readiness'
+        }
+
+    def _recursive_maturation(self) -> Dict:
+        """
+        Recursive Improvement → Late Bloomer Maturation
+
+        Frontier: Models improve through iterative self-refinement
+        IF: Agents mature through repeated exploration cycles
+
+        Philosophy: "Maturation is recursive discovery"
+        """
+        maturation_opportunities = []
+
+        for agent_name, lifecycle in self.narrative.agent_lifecycles.items():
+            if lifecycle.agent_tier == 'exploratory' and lifecycle.success_count == 0:
+                maturation_opportunities.append({
+                    'agent': agent_name,
+                    'current_stage': 'early_exploration',
+                    'recursive_path': [
+                        f"Stage 1 (current): Explore broadly, fail often (weight 0.0)",
+                        f"Stage 2 (expected): Find narrow success domain (weight 0.0 → 0.5)",
+                        f"Stage 3 (mature): Excel in domain (weight {lifecycle.agent_profile['base_weight'] + lifecycle.agent_profile['success_bonus']})"
+                    ],
+                    'recommendation': f"Allow {agent_name} to explore 20+ contacts before evaluation",
+                    'expected_breakthrough_rate': '15-25% of exploratory agents'
+                })
+
+        return {
+            'technique': 'Recursive Improvement → Late Bloomer Maturation',
+            'philosophy': 'Agents improve through exploration cycles, not single attempts',
+            'maturation_opportunities': maturation_opportunities,
+            'recommendation': 'Track agent performance over 50+ contacts to see full maturation curves'
+        }
+
+    def _red_team_exploration(self) -> Dict:
+        """
+        Red Teaming → Exploratory Agent Stress Testing
+
+        Frontier: Adversarial testing to find model weaknesses
+        IF: Exploratory agents are the red team, testing system edges
+
+        Philosophy: "Failed exploration reveals system boundaries"
+        """
+        stress_tests = []
+
+        # Identify which contact types broke which agents
+        for agent_name, lifecycle in self.narrative.agent_lifecycles.items():
+            if lifecycle.success_count == 0:
+                stress_tests.append({
+                    'agent': agent_name,
+                    'stress_result': 'BOUNDARY_FOUND',
+                    'boundary': f"{agent_name} strategy doesn't work for current contact types",
+                    'system_response': 'Weight 0.0 - system unaffected by failure',
+                    'recommendation': f"Test {agent_name} with domain-specific contacts (e.g., academics for AcademicResearcher)",
+                    'adversarial_value': 'Identified which strategies DON\'T work for these contacts'
+                })
+
+        return {
+            'technique': 'Red Teaming → Exploratory Agent Stress Testing',
+            'philosophy': 'Exploratory agents are adversarial testers - their failures teach us',
+            'stress_tests': stress_tests,
+            'recommendation': 'Failure is data. Document which agent strategies work for which contact domains.'
+        }
+
+    def _capability_elicitation(self) -> Dict:
+        """
+        Capability Elicitation → Weight Amplification
+
+        Frontier: Prompt engineering to extract maximum capability
+        IF: Weight engineering to extract maximum contribution
+
+        Philosophy: "Amplify success, don't punish failure"
+        """
+        elicitation_strategies = []
+
+        for agent_name, lifecycle in self.narrative.agent_lifecycles.items():
+            if lifecycle.success_count > 0:
+                current_amplification = lifecycle.current_weight
+                max_amplification = lifecycle.agent_profile['base_weight'] + lifecycle.agent_profile['success_bonus']
+
+                if current_amplification < max_amplification:
+                    elicitation_strategies.append({
+                        'agent': agent_name,
+                        'current_amplification': current_amplification,
+                        'max_amplification': max_amplification,
+                        'untapped_potential': max_amplification - current_amplification,
+                        'recommendation': f"Ensure {agent_name} consistently exceeds {lifecycle.agent_profile['success_threshold']} confidence to unlock full {max_amplification}x weight",
+                        'mechanism': 'Improve agent search strategy or adjust success_threshold'
+                    })
+
+        return {
+            'technique': 'Capability Elicitation → Weight Amplification',
+            'philosophy': 'Draw out maximum contribution through earned amplification',
+            'elicitation_strategies': elicitation_strategies,
+            'recommendation': 'Successful agents should consistently reach maximum weight amplification'
+        }
+
+    def generate_next_experiments(self) -> List[Dict]:
+        """
+        Generate concrete next experiments based on improvements.
+
+        Philosophy: "The system proposes its own evolution"
+        """
+        experiments = []
+
+        improvements = self.generate_improvements()
+
+        # Experiment 1: Validate late bloomers
+        if any('maturation' in str(imp).lower() for imp in improvements):
+            experiments.append({
+                'experiment': 'Late Bloomer Validation',
+                'hypothesis': 'Exploratory agents will show maturation curve over 50+ contacts',
+                'method': 'Process 50 diverse contacts, track per-agent success rate evolution',
+                'success_criteria': 'At least 1 exploratory agent shows >20 point confidence improvement',
+                'expected_cost': '$0.00 (free agents) + $0.10 (20 Google validations @ 40% rate)',
+                'philosophy': 'Patience reveals late bloomers'
+            })
+
+        # Experiment 2: Stress test Google threshold
+        if any('google' in str(imp).lower() for imp in improvements):
+            experiments.append({
+                'experiment': 'Google Cross-Validation Boost',
+                'hypothesis': 'Google cross-validation adds +12 confidence points',
+                'method': 'Process 10 low-quality contacts (confidence <50) to trigger Google',
+                'success_criteria': 'Average confidence boost of 10-15 points after Google validation',
+                'expected_cost': '$0.05 (10 Google queries)',
+                'philosophy': 'Validate expensive tools before relying on them'
+            })
+
+        # Experiment 3: Domain specialization
+        if any('specialist' in str(imp).lower() for imp in improvements):
+            experiments.append({
+                'experiment': 'Specialist Domain Validation',
+                'hypothesis': 'Specialist agents excel when contact domain matches expertise',
+                'method': 'Process 5 academics, 5 public companies, 5 tech community leaders',
+                'success_criteria': 'AcademicResearcher >80% on academics, IntelAnalyst >80% on public companies',
+                'expected_cost': '$0.00 (expect high confidence from domain match)',
+                'philosophy': 'Specialists shine in their domains'
+            })
+
+        return experiments
+
+
 if __name__ == "__main__":
     # Example usage
     print("="*80)
@@ -477,6 +805,16 @@ if __name__ == "__main__":
     print('  - Agent lifecycles track maturation')
     print('  - Philosophical insights emerge from data')
     print('  - The narrative validates the architecture')
+    print('  - Metrics identify their own improvements (FRONTIER LAB TECHNIQUES)')
+    print("="*80)
+
+    print("\nFrontier Lab Techniques (IF-Adapted):")
+    print("  1. Constitutional AI → Philosophical Constraints")
+    print("  2. RLHF → Reciprocity Through Results")
+    print("  3. Self-Critique → Metric Self-Awareness")
+    print("  4. Recursive Improvement → Late Bloomer Maturation")
+    print("  5. Red Teaming → Exploratory Agent Stress Testing")
+    print("  6. Capability Elicitation → Weight Amplification")
     print("="*80)
 
     # This module is imported by weighted_multi_agent_finder.py
