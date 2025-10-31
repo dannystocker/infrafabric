@@ -1,0 +1,2702 @@
+[
+  {
+    "contact": {
+      "first_name": "Emil",
+      "last_name": "Michael",
+      "organization": "Department of Defense",
+      "role_title": "Undersecretary of Defense for R&E / CTO / Acting Director DIU",
+      "sector": "Defense Innovation",
+      "persona_type": "Defense/National Security",
+      "linkedin_url": "",
+      "company_website": "https://www.diu.mil",
+      "email_if_public": "",
+      "why_relevant": "Pentagon's chief technology strategist overseeing Defense Innovation Unit and coordinating quantum-AI integration across defense technology development.",
+      "recent_activity": "Confirmed as Pentagon CTO May 2025; became acting DIU director Aug 2025; identified AI and Quantum as \"North Stars\" among 14 Critical Technology Areas; flattening DoD tech org structure",
+      "strategic_problem": "Synchronizing quantum and AI as enterprise-wide \"North Star\" technology priorities across 14 CTAs while accelerating commercial tech transition through DIU",
+      "persona_bridge": "Multi-stakeholder quantum-AI governance framework",
+      "problem_frame": "Orchestrate DoD's quantum-AI North Stars with unified coordination framework that accelerates commercial tech transition while meeting national security requirements",
+      "ice_breaker": "Your North Star strategy aligns quantum+AI across DoD\u2014InfraFabric provides the unified orchestration framework that accelerates both while meeting your security requirements",
+      "priority_tier": "A",
+      "priority_score": "97",
+      "updated_score": "100",
+      "recent_signals_2025": "Acting DIU Director Aug 2025 | Trimming 14 CTAs announced Oct-Nov 2025 | 120-day Advana/Maven deadline | DIU independence maintained",
+      "context_bridge": "I noticed your North Star designation of quantum and AI as two of DoD's 14 Critical Technology Areas following your May 2025 appointment as Pentagon CTO. As you synchronize these technologies enterprise-wide while accelerating commercial tech transition through DIU, a multi-stakeholder coordination framework becomes essential.",
+      "email_drafted": "yes",
+      "last_updated": "2025-10-30",
+      "confidence_level": "high",
+      "recommended_send_date": "2025-11-01 to 2025-11-15"
+    },
+    "agent_results": [
+      {
+        "agent": "GoogleSearch",
+        "contact_methods": [
+          {
+            "type": "contact_page",
+            "value": "https://www.diu.mil/team/emil-michael",
+            "source_url": "https://www.diu.mil/team/emil-michael",
+            "source_type": "company_page",
+            "snippet": "Contact \u00b7 1 Open Pathways. HON Emil Michael. Acting Director. Washington, D.C.. Mr. Emil Michael serves as the Under Secretary of Defense for\u00a0...",
+            "score": 65,
+            "query_num": 1,
+            "agent": "GoogleSearch"
+          },
+          {
+            "type": "contact_page",
+            "value": "https://www.diu.mil/team/emil-michael",
+            "source_url": "https://www.diu.mil/team/emil-michael",
+            "source_type": "company_page",
+            "snippet": "Contact \u00b7 1 Open Pathways. HON Emil Michael. Acting Director. Washington, D.C.. Mr. Emil Michael serves as the Under Secretary of Defense for\u00a0...",
+            "score": 65,
+            "query_num": 2,
+            "agent": "GoogleSearch"
+          },
+          {
+            "type": "linkedin",
+            "value": "https://www.linkedin.com/in/emilmichael",
+            "source_url": "https://www.linkedin.com/in/emilmichael",
+            "source_type": "linkedin_profile",
+            "snippet": "Experience: Uber \u00b7 Education: Harvard University \u00b7 Location: McLean \u00b7 500+ connections on LinkedIn. View Emil Michael's profile on LinkedIn, a professional\u00a0...",
+            "score": 85,
+            "query_num": 3,
+            "agent": "GoogleSearch"
+          }
+        ],
+        "queries_used": 3,
+        "best_score": 85,
+        "stopped_early": true,
+        "stop_reason": "Found good result confirmed by 2+ sources (score: 85)"
+      },
+      {
+        "agent": "WebFetch",
+        "contact_methods": [
+          {
+            "type": "email",
+            "value": "SCT@diu.mil",
+            "source_url": "https://www.diu.mil/contact",
+            "source_type": "scraped_page",
+            "all_emails_found": [
+              "SCT@diu.mil"
+            ],
+            "score": 60,
+            "agent": "WebFetch"
+          },
+          {
+            "type": "email",
+            "value": "info@diu.mil",
+            "source_url": "https://www.diu.mil/about",
+            "source_type": "scraped_page",
+            "all_emails_found": [
+              "info@diu.mil"
+            ],
+            "score": 60,
+            "agent": "WebFetch"
+          }
+        ],
+        "queries_used": 0,
+        "best_score": 60
+      },
+      {
+        "agent": "PatternGen",
+        "contact_methods": [
+          {
+            "type": "email_pattern",
+            "value": "emil.michael@www.diu.mil",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "emilmichael@www.diu.mil",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "emichael@www.diu.mil",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "emil.m@www.diu.mil",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "michael.emil@www.diu.mil",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "emil@www.diu.mil",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          }
+        ],
+        "queries_used": 0,
+        "best_score": 45
+      },
+      {
+        "agent": "SimulatedUser",
+        "contact_methods": [
+          {
+            "type": "contact_page_user",
+            "value": "https://www.diu.mil/about",
+            "source_type": "user_navigation",
+            "link_text": "Who We Are",
+            "score": 75,
+            "agent": "SimulatedUser"
+          },
+          {
+            "type": "linkedin_search",
+            "value": "https://www.linkedin.com/search/results/people/?keywords=Emil%20Michael",
+            "source_type": "user_action",
+            "score": 70,
+            "agent": "SimulatedUser"
+          }
+        ],
+        "queries_used": 0,
+        "best_score": 75,
+        "user_path": [
+          "Step 1: Google 'Emil Michael Department of Defense contact'",
+          "Step 2: Visit https://www.diu.mil",
+          "Step 3: Search LinkedIn for Emil Michael"
+        ]
+      }
+    ],
+    "validated": {
+      "final_recommendation": {
+        "type": "contact_page",
+        "value": "https://www.diu.mil/team/emil-michael",
+        "source_url": "https://www.diu.mil/team/emil-michael",
+        "source_type": "company_page",
+        "snippet": "Contact \u00b7 1 Open Pathways. HON Emil Michael. Acting Director. Washington, D.C.. Mr. Emil Michael serves as the Under Secretary of Defense for\u00a0...",
+        "score": 65,
+        "query_num": 1,
+        "agent": "GoogleSearch"
+      },
+      "precision": 88,
+      "validation": "2_agents_agree",
+      "agreement_count": 2,
+      "all_options": [
+        {
+          "type": "linkedin",
+          "value": "https://www.linkedin.com/in/emilmichael",
+          "source_url": "https://www.linkedin.com/in/emilmichael",
+          "source_type": "linkedin_profile",
+          "snippet": "Experience: Uber \u00b7 Education: Harvard University \u00b7 Location: McLean \u00b7 500+ connections on LinkedIn. View Emil Michael's profile on LinkedIn, a professional\u00a0...",
+          "score": 85,
+          "query_num": 3,
+          "agent": "GoogleSearch"
+        },
+        {
+          "type": "contact_page_user",
+          "value": "https://www.diu.mil/about",
+          "source_type": "user_navigation",
+          "link_text": "Who We Are",
+          "score": 75,
+          "agent": "SimulatedUser"
+        },
+        {
+          "type": "linkedin_search",
+          "value": "https://www.linkedin.com/search/results/people/?keywords=Emil%20Michael",
+          "source_type": "user_action",
+          "score": 70,
+          "agent": "SimulatedUser"
+        },
+        {
+          "type": "contact_page",
+          "value": "https://www.diu.mil/team/emil-michael",
+          "source_url": "https://www.diu.mil/team/emil-michael",
+          "source_type": "company_page",
+          "snippet": "Contact \u00b7 1 Open Pathways. HON Emil Michael. Acting Director. Washington, D.C.. Mr. Emil Michael serves as the Under Secretary of Defense for\u00a0...",
+          "score": 65,
+          "query_num": 1,
+          "agent": "GoogleSearch"
+        },
+        {
+          "type": "contact_page",
+          "value": "https://www.diu.mil/team/emil-michael",
+          "source_url": "https://www.diu.mil/team/emil-michael",
+          "source_type": "company_page",
+          "snippet": "Contact \u00b7 1 Open Pathways. HON Emil Michael. Acting Director. Washington, D.C.. Mr. Emil Michael serves as the Under Secretary of Defense for\u00a0...",
+          "score": 65,
+          "query_num": 2,
+          "agent": "GoogleSearch"
+        },
+        {
+          "type": "email",
+          "value": "SCT@diu.mil",
+          "source_url": "https://www.diu.mil/contact",
+          "source_type": "scraped_page",
+          "all_emails_found": [
+            "SCT@diu.mil"
+          ],
+          "score": 60,
+          "agent": "WebFetch"
+        },
+        {
+          "type": "email",
+          "value": "info@diu.mil",
+          "source_url": "https://www.diu.mil/about",
+          "source_type": "scraped_page",
+          "all_emails_found": [
+            "info@diu.mil"
+          ],
+          "score": 60,
+          "agent": "WebFetch"
+        },
+        {
+          "type": "email_pattern",
+          "value": "emil.michael@www.diu.mil",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "emilmichael@www.diu.mil",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "emichael@www.diu.mil",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "emil.m@www.diu.mil",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "michael.emil@www.diu.mil",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "emil@www.diu.mil",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        }
+      ],
+      "quality_check": {
+        "status": "different_from_user",
+        "match": false,
+        "note": "Automated found something user might not easily find (could be better or worse)"
+      },
+      "total_queries_used": 3
+    }
+  },
+  {
+    "contact": {
+      "first_name": "Amin",
+      "last_name": "Vahdat",
+      "organization": "Google Cloud",
+      "role_title": "VP & GM ML Systems and Cloud AI",
+      "sector": "AI Infrastructure",
+      "persona_type": "AI Infrastructure Company",
+      "linkedin_url": "https://linkedin.com/in/vahdat",
+      "company_website": "https://cloud.google.com",
+      "email_if_public": "",
+      "why_relevant": "Leads Google Cloud's AI infrastructure including TPUs and AI Hypercomputer systems critical for quantum-AI convergence workloads.",
+      "recent_activity": "Launched Ironwood TPU (7th gen) April 2025: 42.5 exaflops at 9,216 chips\u201424x faster than El Capitan; emphasized networking as #1 bottleneck at Optica March 2025; predicted 2025 as \"Year of Inference\"",
+      "strategic_problem": "Networking bottleneck constraining AI scaling: demand growing 10x/year but interconnects lag behind, limiting inference workload distribution at hyperscale",
+      "persona_bridge": "Quantum-safe AI infrastructure orchestration",
+      "problem_frame": "Solve the networking bottleneck for agentic AI inference workloads by orchestrating quantum-enhanced communication channels within classical TPU fabrics",
+      "ice_breaker": "Your networking bottleneck thesis is quantum's opening\u2014InfraFabric coordinates distributed inference across quantum-enhanced channels that scale with your 10x demand",
+      "priority_tier": "A",
+      "priority_score": "96",
+      "updated_score": "100",
+      "recent_signals_2025": "Ironwood TPU April 2025: 42.5 exaflops 9216 chips | Agentic AI ecosystem 50+ partners | Agent2Agent protocols | 30x power efficiency vs 2018",
+      "context_bridge": "I noticed your April 2025 launch of Ironwood TPU achieving 42.5 exaflops and your March 2025 emphasis on networking as the #1 bottleneck with demand growing 10x annually. As you tackle this networking constraint limiting distributed inference workloads at hyperscale, quantum-enhanced communication channels could transform your architecture.",
+      "email_drafted": "yes",
+      "last_updated": "2025-10-30",
+      "confidence_level": "high",
+      "recommended_send_date": "2025-11-01 to 2025-11-15"
+    },
+    "agent_results": [
+      {
+        "agent": "GoogleSearch",
+        "contact_methods": [
+          {
+            "type": "linkedin",
+            "value": "https://www.linkedin.com/in/vahdat",
+            "source_url": "https://www.linkedin.com/in/vahdat",
+            "source_type": "linkedin_profile",
+            "snippet": "Amin Vahdat. Google University of California, Berkeley. Mountain View, California, United States. 20K followers 500+ connections. See your mutual\u00a0...",
+            "score": 75,
+            "query_num": 3,
+            "agent": "GoogleSearch"
+          },
+          {
+            "type": "linkedin",
+            "value": "https://www.linkedin.com/in/vahdat",
+            "source_url": "https://www.linkedin.com/in/vahdat",
+            "source_type": "linkedin_profile",
+            "snippet": "... Amin Vahdat's profile on LinkedIn, a professional community of 1 billion members ... Welcome back. Email or phone. Password. Show. Forgot password? Sign in. or.",
+            "score": 75,
+            "query_num": 5,
+            "agent": "GoogleSearch"
+          }
+        ],
+        "queries_used": 5,
+        "best_score": 75,
+        "stopped_early": false
+      },
+      {
+        "agent": "WebFetch",
+        "contact_methods": [
+          {
+            "type": "contact_form",
+            "value": "https://cloud.google.com/contact",
+            "source_url": "https://cloud.google.com/contact",
+            "source_type": "contact_form",
+            "score": 70,
+            "agent": "WebFetch"
+          },
+          {
+            "type": "contact_form",
+            "value": "https://cloud.google.com/about",
+            "source_url": "https://cloud.google.com/about",
+            "source_type": "contact_form",
+            "score": 70,
+            "agent": "WebFetch"
+          }
+        ],
+        "queries_used": 0,
+        "best_score": 70
+      },
+      {
+        "agent": "PatternGen",
+        "contact_methods": [
+          {
+            "type": "email_pattern",
+            "value": "amin.vahdat@cloud.google.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "aminvahdat@cloud.google.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "avahdat@cloud.google.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "amin.v@cloud.google.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "vahdat.amin@cloud.google.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "amin@cloud.google.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          }
+        ],
+        "queries_used": 0,
+        "best_score": 45
+      },
+      {
+        "agent": "SimulatedUser",
+        "contact_methods": [
+          {
+            "type": "contact_page_user",
+            "value": "https://cloud.google.com/contact",
+            "source_type": "user_navigation",
+            "link_text": "",
+            "score": 75,
+            "agent": "SimulatedUser"
+          },
+          {
+            "type": "linkedin_search",
+            "value": "https://www.linkedin.com/search/results/people/?keywords=Amin%20Vahdat",
+            "source_type": "user_action",
+            "score": 70,
+            "agent": "SimulatedUser"
+          }
+        ],
+        "queries_used": 0,
+        "best_score": 75,
+        "user_path": [
+          "Step 1: Google 'Amin Vahdat Google Cloud contact'",
+          "Step 2: Visit https://cloud.google.com",
+          "Step 3: Search LinkedIn for Amin Vahdat"
+        ]
+      }
+    ],
+    "validated": {
+      "final_recommendation": {
+        "type": "linkedin",
+        "value": "https://www.linkedin.com/in/vahdat",
+        "source_url": "https://www.linkedin.com/in/vahdat",
+        "source_type": "linkedin_profile",
+        "snippet": "Amin Vahdat. Google University of California, Berkeley. Mountain View, California, United States. 20K followers 500+ connections. See your mutual\u00a0...",
+        "score": 75,
+        "query_num": 3,
+        "agent": "GoogleSearch"
+      },
+      "precision": 88,
+      "validation": "2_agents_agree",
+      "agreement_count": 2,
+      "all_options": [
+        {
+          "type": "linkedin",
+          "value": "https://www.linkedin.com/in/vahdat",
+          "source_url": "https://www.linkedin.com/in/vahdat",
+          "source_type": "linkedin_profile",
+          "snippet": "Amin Vahdat. Google University of California, Berkeley. Mountain View, California, United States. 20K followers 500+ connections. See your mutual\u00a0...",
+          "score": 75,
+          "query_num": 3,
+          "agent": "GoogleSearch"
+        },
+        {
+          "type": "linkedin",
+          "value": "https://www.linkedin.com/in/vahdat",
+          "source_url": "https://www.linkedin.com/in/vahdat",
+          "source_type": "linkedin_profile",
+          "snippet": "... Amin Vahdat's profile on LinkedIn, a professional community of 1 billion members ... Welcome back. Email or phone. Password. Show. Forgot password? Sign in. or.",
+          "score": 75,
+          "query_num": 5,
+          "agent": "GoogleSearch"
+        },
+        {
+          "type": "contact_page_user",
+          "value": "https://cloud.google.com/contact",
+          "source_type": "user_navigation",
+          "link_text": "",
+          "score": 75,
+          "agent": "SimulatedUser"
+        },
+        {
+          "type": "contact_form",
+          "value": "https://cloud.google.com/contact",
+          "source_url": "https://cloud.google.com/contact",
+          "source_type": "contact_form",
+          "score": 70,
+          "agent": "WebFetch"
+        },
+        {
+          "type": "contact_form",
+          "value": "https://cloud.google.com/about",
+          "source_url": "https://cloud.google.com/about",
+          "source_type": "contact_form",
+          "score": 70,
+          "agent": "WebFetch"
+        },
+        {
+          "type": "linkedin_search",
+          "value": "https://www.linkedin.com/search/results/people/?keywords=Amin%20Vahdat",
+          "source_type": "user_action",
+          "score": 70,
+          "agent": "SimulatedUser"
+        },
+        {
+          "type": "email_pattern",
+          "value": "amin.vahdat@cloud.google.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "aminvahdat@cloud.google.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "avahdat@cloud.google.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "amin.v@cloud.google.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "vahdat.amin@cloud.google.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "amin@cloud.google.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        }
+      ],
+      "quality_check": {
+        "status": "different_from_user",
+        "match": false,
+        "note": "Automated found something user might not easily find (could be better or worse)"
+      },
+      "total_queries_used": 5
+    }
+  },
+  {
+    "contact": {
+      "first_name": "Jeremy",
+      "last_name": "O'Brien",
+      "organization": "PsiQuantum",
+      "role_title": "CEO & Co-founder",
+      "sector": "Quantum Computing",
+      "persona_type": "Quantum Networking/Cryptography Vendor",
+      "linkedin_url": "https://www.linkedin.com/in/jeremy-o-brien-39482631/",
+      "company_website": "https://www.psiquantum.com",
+      "email_if_public": "",
+      "why_relevant": "Leading photonic quantum computing with distributed architecture requiring coordination infrastructure for quantum networking and AI integration.",
+      "recent_activity": "Announced Omega photonic chipset Feb 2025 (Nature paper, all components for million-qubit systems); breaking ground Brisbane and Chicago quantum compute centers 2025; Australian and Illinois government partnerships",
+      "strategic_problem": "Building first utility-scale million-qubit photonic quantum computers in manufacturing-ready silicon photonics while coordinating distributed architecture at unprecedented scale",
+      "persona_bridge": "Distributed quantum network management",
+      "problem_frame": "Coordinate PsiQuantum's distributed photonic architecture across million-qubit systems using quantum networking that leverages your silicon photonics infrastructure",
+      "ice_breaker": "Your photonic architecture is inherently networked\u2014InfraFabric orchestrates your million-qubit systems with quantum networking native to your silicon photonics platform",
+      "priority_tier": "A",
+      "priority_score": "95",
+      "updated_score": "100",
+      "recent_signals_2025": "$1B Series E Sept 2025 (BlackRock led) | NVIDIA partnership (NVentures investor) | Chicago facility groundbreaking Oct 2025 | BTO integration at GlobalFoundries | GPU-QPU collaboration",
+      "context_bridge": "I noticed your February 2025 Nature paper announcing the Omega photonic chipset with all components for million-qubit systems and your simultaneous groundbreaking of Brisbane and Chicago quantum compute centers. As you coordinate distributed photonic architecture at million-qubit scale using manufacturing-ready silicon photonics, network orchestration becomes critical.",
+      "email_drafted": "yes",
+      "last_updated": "2025-10-30",
+      "confidence_level": "high",
+      "recommended_send_date": "2025-11-01 to 2025-11-15"
+    },
+    "agent_results": [
+      {
+        "agent": "GoogleSearch",
+        "contact_methods": [
+          {
+            "type": "contact_page",
+            "value": "https://www.psiquantum.com/about",
+            "source_url": "https://www.psiquantum.com/about",
+            "source_type": "company_page",
+            "snippet": "Prof. Jeremy O'Brien \u00b7 Prof. Terry Rudolph \u00b7 Dr. Pete Shadbolt \u00b7 Prof. Mark Thompson \u00b7 Fariba Danesh \u00b7 Susan Kim \u00b7 Alexander Kolks.",
+            "score": 65,
+            "query_num": 1,
+            "agent": "GoogleSearch"
+          },
+          {
+            "type": "contact_page",
+            "value": "https://www.psiquantum.com/about",
+            "source_url": "https://www.psiquantum.com/about",
+            "source_type": "company_page",
+            "snippet": "Prof. Jeremy O'Brien \u00b7 Prof. Terry Rudolph \u00b7 Dr. Pete Shadbolt \u00b7 Prof. Mark Thompson \u00b7 Fariba Danesh \u00b7 Susan Kim \u00b7 Alexander Kolks.",
+            "score": 65,
+            "query_num": 2,
+            "agent": "GoogleSearch"
+          },
+          {
+            "type": "linkedin",
+            "value": "https://www.linkedin.com/in/jeremy-o-brien-39482631",
+            "source_url": "https://www.linkedin.com/in/jeremy-o-brien-39482631",
+            "source_type": "linkedin_profile",
+            "snippet": "Prof. Jeremy O'Brien is co-founder and CEO of PsiQuantum, a quantum computing company\u2026 \u00b7 Experience: PsiQuantum \u00b7 Education: UNSW Australia \u00b7 Location: Palo\u00a0...",
+            "score": 75,
+            "query_num": 3,
+            "agent": "GoogleSearch"
+          },
+          {
+            "type": "contact_page",
+            "value": "https://www.psiquantum.com/about",
+            "source_url": "https://www.psiquantum.com/about",
+            "source_type": "company_page",
+            "snippet": "Learn about PsiQuantum's journey to build the world's first useful quantum computer, leveraging existing technology and partnerships.",
+            "score": 65,
+            "query_num": 4,
+            "agent": "GoogleSearch"
+          },
+          {
+            "type": "linkedin",
+            "value": "https://www.linkedin.com/in/jeremy-o-brien-39482631",
+            "source_url": "https://www.linkedin.com/in/jeremy-o-brien-39482631",
+            "source_type": "linkedin_profile",
+            "snippet": "Prof. Jeremy O'Brien is co-founder and CEO of PsiQuantum, a quantum computing company\u2026 \u00b7 Experience: PsiQuantum \u00b7 Education: UNSW Australia \u00b7 Location: Palo\u00a0...",
+            "score": 75,
+            "query_num": 5,
+            "agent": "GoogleSearch"
+          }
+        ],
+        "queries_used": 5,
+        "best_score": 75,
+        "stopped_early": false
+      },
+      {
+        "agent": "WebFetch",
+        "contact_methods": [
+          {
+            "type": "email",
+            "value": "media@psiquantum.comFor",
+            "source_url": "https://www.psiquantum.com/contact",
+            "source_type": "scraped_page",
+            "all_emails_found": [
+              "media@psiquantum.comFor",
+              "info@psiquantum.comFor",
+              "construct@psiquantum.com"
+            ],
+            "score": 60,
+            "agent": "WebFetch"
+          }
+        ],
+        "queries_used": 0,
+        "best_score": 60
+      },
+      {
+        "agent": "PatternGen",
+        "contact_methods": [
+          {
+            "type": "email_pattern",
+            "value": "jeremy.o'brien@www.psiquantum.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "jeremyo'brien@www.psiquantum.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "jo'brien@www.psiquantum.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "jeremy.o@www.psiquantum.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "o'brien.jeremy@www.psiquantum.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "jeremy@www.psiquantum.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          }
+        ],
+        "queries_used": 0,
+        "best_score": 45
+      },
+      {
+        "agent": "SimulatedUser",
+        "contact_methods": [
+          {
+            "type": "contact_page_user",
+            "value": "https://www.psiquantum.com/about",
+            "source_type": "user_navigation",
+            "link_text": "\n        About\n      ",
+            "score": 75,
+            "agent": "SimulatedUser"
+          },
+          {
+            "type": "linkedin_search",
+            "value": "https://www.linkedin.com/search/results/people/?keywords=Jeremy%20O'Brien",
+            "source_type": "user_action",
+            "score": 70,
+            "agent": "SimulatedUser"
+          }
+        ],
+        "queries_used": 0,
+        "best_score": 75,
+        "user_path": [
+          "Step 1: Google 'Jeremy O'Brien PsiQuantum contact'",
+          "Step 2: Visit https://www.psiquantum.com",
+          "Step 3: Search LinkedIn for Jeremy O'Brien"
+        ]
+      }
+    ],
+    "validated": {
+      "final_recommendation": {
+        "type": "contact_page_user",
+        "value": "https://www.psiquantum.com/about",
+        "source_type": "user_navigation",
+        "link_text": "\n        About\n      ",
+        "score": 75,
+        "agent": "SimulatedUser"
+      },
+      "precision": 95,
+      "validation": "3+_agents_agree",
+      "agreement_count": 4,
+      "all_options": [
+        {
+          "type": "linkedin",
+          "value": "https://www.linkedin.com/in/jeremy-o-brien-39482631",
+          "source_url": "https://www.linkedin.com/in/jeremy-o-brien-39482631",
+          "source_type": "linkedin_profile",
+          "snippet": "Prof. Jeremy O'Brien is co-founder and CEO of PsiQuantum, a quantum computing company\u2026 \u00b7 Experience: PsiQuantum \u00b7 Education: UNSW Australia \u00b7 Location: Palo\u00a0...",
+          "score": 75,
+          "query_num": 3,
+          "agent": "GoogleSearch"
+        },
+        {
+          "type": "linkedin",
+          "value": "https://www.linkedin.com/in/jeremy-o-brien-39482631",
+          "source_url": "https://www.linkedin.com/in/jeremy-o-brien-39482631",
+          "source_type": "linkedin_profile",
+          "snippet": "Prof. Jeremy O'Brien is co-founder and CEO of PsiQuantum, a quantum computing company\u2026 \u00b7 Experience: PsiQuantum \u00b7 Education: UNSW Australia \u00b7 Location: Palo\u00a0...",
+          "score": 75,
+          "query_num": 5,
+          "agent": "GoogleSearch"
+        },
+        {
+          "type": "contact_page_user",
+          "value": "https://www.psiquantum.com/about",
+          "source_type": "user_navigation",
+          "link_text": "\n        About\n      ",
+          "score": 75,
+          "agent": "SimulatedUser"
+        },
+        {
+          "type": "linkedin_search",
+          "value": "https://www.linkedin.com/search/results/people/?keywords=Jeremy%20O'Brien",
+          "source_type": "user_action",
+          "score": 70,
+          "agent": "SimulatedUser"
+        },
+        {
+          "type": "contact_page",
+          "value": "https://www.psiquantum.com/about",
+          "source_url": "https://www.psiquantum.com/about",
+          "source_type": "company_page",
+          "snippet": "Prof. Jeremy O'Brien \u00b7 Prof. Terry Rudolph \u00b7 Dr. Pete Shadbolt \u00b7 Prof. Mark Thompson \u00b7 Fariba Danesh \u00b7 Susan Kim \u00b7 Alexander Kolks.",
+          "score": 65,
+          "query_num": 1,
+          "agent": "GoogleSearch"
+        },
+        {
+          "type": "contact_page",
+          "value": "https://www.psiquantum.com/about",
+          "source_url": "https://www.psiquantum.com/about",
+          "source_type": "company_page",
+          "snippet": "Prof. Jeremy O'Brien \u00b7 Prof. Terry Rudolph \u00b7 Dr. Pete Shadbolt \u00b7 Prof. Mark Thompson \u00b7 Fariba Danesh \u00b7 Susan Kim \u00b7 Alexander Kolks.",
+          "score": 65,
+          "query_num": 2,
+          "agent": "GoogleSearch"
+        },
+        {
+          "type": "contact_page",
+          "value": "https://www.psiquantum.com/about",
+          "source_url": "https://www.psiquantum.com/about",
+          "source_type": "company_page",
+          "snippet": "Learn about PsiQuantum's journey to build the world's first useful quantum computer, leveraging existing technology and partnerships.",
+          "score": 65,
+          "query_num": 4,
+          "agent": "GoogleSearch"
+        },
+        {
+          "type": "email",
+          "value": "media@psiquantum.comFor",
+          "source_url": "https://www.psiquantum.com/contact",
+          "source_type": "scraped_page",
+          "all_emails_found": [
+            "media@psiquantum.comFor",
+            "info@psiquantum.comFor",
+            "construct@psiquantum.com"
+          ],
+          "score": 60,
+          "agent": "WebFetch"
+        },
+        {
+          "type": "email_pattern",
+          "value": "jeremy.o'brien@www.psiquantum.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "jeremyo'brien@www.psiquantum.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "jo'brien@www.psiquantum.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "jeremy.o@www.psiquantum.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "o'brien.jeremy@www.psiquantum.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "jeremy@www.psiquantum.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        }
+      ],
+      "quality_check": {
+        "status": "matches_user_behavior",
+        "match": true,
+        "confidence": "high"
+      },
+      "total_queries_used": 5
+    }
+  },
+  {
+    "contact": {
+      "first_name": "Mark",
+      "last_name": "Papermaster",
+      "organization": "AMD",
+      "role_title": "EVP & Chief Technology Officer",
+      "sector": "AI Infrastructure",
+      "persona_type": "AI Infrastructure Company",
+      "linkedin_url": "https://linkedin.com/in/mark-papermaster-66914925",
+      "company_website": "https://www.amd.com",
+      "email_if_public": "mark.papermaster@amd.com",
+      "why_relevant": "Drives AMD's AI strategy across hardware and software portfolio with focus on open rack-scale AI infrastructure for quantum-ready systems.",
+      "recent_activity": "Keynoting ISC 2025 on HPC-AI convergence; launched OCP 2025 open rack-scale AI platform with MI355X GPUs; achieved 38X energy efficiency (exceeded 30X goal); taped out 2nm Venice chips",
+      "strategic_problem": "Open rack-scale standards for AI infrastructure that enable hyperscaler adoption while competing with NVIDIA's closed ecosystem at massive scale",
+      "persona_bridge": "Hybrid quantum-classical coordination layer",
+      "problem_frame": "Build open AI infrastructure today that gracefully incorporates quantum accelerators tomorrow through standards-based rack-scale orchestration",
+      "ice_breaker": "Your OCP rack-scale vision needs quantum extensibility\u2014InfraFabric brings the same open standards philosophy to quantum-classical hybrid coordination",
+      "priority_tier": "A",
+      "priority_score": "94",
+      "updated_score": "100",
+      "recent_signals_2025": "OpenAI partnership Oct 2025: 6GW deployment 10% stake potential | MI400 Helios rack-scale system | 2nm Venice taped out TSMC | ISC 2025 keynote June sustainability",
+      "context_bridge": "I noticed your ISC 2025 keynote on HPC-AI convergence and your OCP 2025 launch of open rack-scale AI platforms with MI355X GPUs achieving 38X energy efficiency. As you advance open rack-scale standards to enable hyperscaler adoption while competing with NVIDIA's closed ecosystem, quantum extensibility becomes strategically important.",
+      "email_drafted": "yes",
+      "last_updated": "2025-10-30",
+      "confidence_level": "high",
+      "recommended_send_date": "2025-11-01 to 2025-11-15"
+    },
+    "agent_results": [
+      {
+        "agent": "GoogleSearch",
+        "contact_methods": [
+          {
+            "type": "contact_page",
+            "value": "https://www.amd.com/en/corporate/leadership/mark-papermaster.html",
+            "source_url": "https://www.amd.com/en/corporate/leadership/mark-papermaster.html",
+            "source_type": "company_page",
+            "snippet": "Mark Papermaster is Chief Technology Officer and Executive Vice President, responsible for driving the company's end-to-end technology vision, strategy, and\u00a0...",
+            "score": 65,
+            "query_num": 1,
+            "agent": "GoogleSearch"
+          },
+          {
+            "type": "contact_page",
+            "value": "https://www.amd.com/en/corporate/leadership/mark-papermaster.html",
+            "source_url": "https://www.amd.com/en/corporate/leadership/mark-papermaster.html",
+            "source_type": "company_page",
+            "snippet": "Mark Papermaster is executive vice president and chief technology officer of ... Contact our media team to get more information for your next story.",
+            "score": 65,
+            "query_num": 2,
+            "agent": "GoogleSearch"
+          },
+          {
+            "type": "linkedin",
+            "value": "https://www.linkedin.com/in/mark-papermaster-66914925",
+            "source_url": "https://www.linkedin.com/in/mark-papermaster-66914925",
+            "source_type": "linkedin_profile",
+            "snippet": "Mark Papermaster is an experienced Chief Technology Officer overseeing corporate\u2026 \u00b7 Experience: AMD \u00b7 Education: The University of Texas at Austin\u00a0...",
+            "score": 75,
+            "query_num": 3,
+            "agent": "GoogleSearch"
+          },
+          {
+            "type": "linkedin",
+            "value": "https://www.linkedin.com/in/mark-papermaster-66914925",
+            "source_url": "https://www.linkedin.com/in/mark-papermaster-66914925",
+            "source_type": "linkedin_profile",
+            "snippet": "Mark Papermaster is an experienced Chief Technology Officer overseeing corporate\u2026 \u00b7 Experience: AMD \u00b7 Education: The University of Texas at Austin\u00a0...",
+            "score": 75,
+            "query_num": 5,
+            "agent": "GoogleSearch"
+          }
+        ],
+        "queries_used": 5,
+        "best_score": 75,
+        "stopped_early": false
+      },
+      {
+        "agent": "WebFetch",
+        "contact_methods": [],
+        "queries_used": 0,
+        "best_score": 0
+      },
+      {
+        "agent": "PatternGen",
+        "contact_methods": [
+          {
+            "type": "email_pattern",
+            "value": "mark.papermaster@www.amd.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "markpapermaster@www.amd.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "mpapermaster@www.amd.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "mark.p@www.amd.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "papermaster.mark@www.amd.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "mark@www.amd.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          }
+        ],
+        "queries_used": 0,
+        "best_score": 45
+      },
+      {
+        "agent": "SimulatedUser",
+        "contact_methods": [
+          {
+            "type": "contact_page_user",
+            "value": "https://www.amd.com/en/site-notifications/community-updates.html",
+            "source_type": "user_navigation",
+            "link_text": "Communaut\u00c3\u00a9 Red Team",
+            "score": 75,
+            "agent": "SimulatedUser"
+          },
+          {
+            "type": "linkedin_search",
+            "value": "https://www.linkedin.com/search/results/people/?keywords=Mark%20Papermaster",
+            "source_type": "user_action",
+            "score": 70,
+            "agent": "SimulatedUser"
+          }
+        ],
+        "queries_used": 0,
+        "best_score": 75,
+        "user_path": [
+          "Step 1: Google 'Mark Papermaster AMD contact'",
+          "Step 2: Visit https://www.amd.com",
+          "Step 3: Search LinkedIn for Mark Papermaster"
+        ]
+      }
+    ],
+    "validated": {
+      "final_recommendation": {
+        "type": "contact_page",
+        "value": "https://www.amd.com/en/corporate/leadership/mark-papermaster.html",
+        "source_url": "https://www.amd.com/en/corporate/leadership/mark-papermaster.html",
+        "source_type": "company_page",
+        "snippet": "Mark Papermaster is Chief Technology Officer and Executive Vice President, responsible for driving the company's end-to-end technology vision, strategy, and\u00a0...",
+        "score": 65,
+        "query_num": 1,
+        "agent": "GoogleSearch"
+      },
+      "precision": 88,
+      "validation": "2_agents_agree",
+      "agreement_count": 2,
+      "all_options": [
+        {
+          "type": "linkedin",
+          "value": "https://www.linkedin.com/in/mark-papermaster-66914925",
+          "source_url": "https://www.linkedin.com/in/mark-papermaster-66914925",
+          "source_type": "linkedin_profile",
+          "snippet": "Mark Papermaster is an experienced Chief Technology Officer overseeing corporate\u2026 \u00b7 Experience: AMD \u00b7 Education: The University of Texas at Austin\u00a0...",
+          "score": 75,
+          "query_num": 3,
+          "agent": "GoogleSearch"
+        },
+        {
+          "type": "linkedin",
+          "value": "https://www.linkedin.com/in/mark-papermaster-66914925",
+          "source_url": "https://www.linkedin.com/in/mark-papermaster-66914925",
+          "source_type": "linkedin_profile",
+          "snippet": "Mark Papermaster is an experienced Chief Technology Officer overseeing corporate\u2026 \u00b7 Experience: AMD \u00b7 Education: The University of Texas at Austin\u00a0...",
+          "score": 75,
+          "query_num": 5,
+          "agent": "GoogleSearch"
+        },
+        {
+          "type": "contact_page_user",
+          "value": "https://www.amd.com/en/site-notifications/community-updates.html",
+          "source_type": "user_navigation",
+          "link_text": "Communaut\u00c3\u00a9 Red Team",
+          "score": 75,
+          "agent": "SimulatedUser"
+        },
+        {
+          "type": "linkedin_search",
+          "value": "https://www.linkedin.com/search/results/people/?keywords=Mark%20Papermaster",
+          "source_type": "user_action",
+          "score": 70,
+          "agent": "SimulatedUser"
+        },
+        {
+          "type": "contact_page",
+          "value": "https://www.amd.com/en/corporate/leadership/mark-papermaster.html",
+          "source_url": "https://www.amd.com/en/corporate/leadership/mark-papermaster.html",
+          "source_type": "company_page",
+          "snippet": "Mark Papermaster is Chief Technology Officer and Executive Vice President, responsible for driving the company's end-to-end technology vision, strategy, and\u00a0...",
+          "score": 65,
+          "query_num": 1,
+          "agent": "GoogleSearch"
+        },
+        {
+          "type": "contact_page",
+          "value": "https://www.amd.com/en/corporate/leadership/mark-papermaster.html",
+          "source_url": "https://www.amd.com/en/corporate/leadership/mark-papermaster.html",
+          "source_type": "company_page",
+          "snippet": "Mark Papermaster is executive vice president and chief technology officer of ... Contact our media team to get more information for your next story.",
+          "score": 65,
+          "query_num": 2,
+          "agent": "GoogleSearch"
+        },
+        {
+          "type": "email_pattern",
+          "value": "mark.papermaster@www.amd.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "markpapermaster@www.amd.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "mpapermaster@www.amd.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "mark.p@www.amd.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "papermaster.mark@www.amd.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "mark@www.amd.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        }
+      ],
+      "quality_check": {
+        "status": "different_from_user",
+        "match": false,
+        "note": "Automated found something user might not easily find (could be better or worse)"
+      },
+      "total_queries_used": 5
+    }
+  },
+  {
+    "contact": {
+      "first_name": "Swami",
+      "last_name": "Sivasubramanian",
+      "organization": "AWS",
+      "role_title": "VP of Agentic AI",
+      "sector": "AI Infrastructure",
+      "persona_type": "AI Infrastructure Company",
+      "linkedin_url": "https://linkedin.com/in/swaminathansivasubramanian",
+      "company_website": "https://aws.amazon.com",
+      "email_if_public": "",
+      "why_relevant": "Manages AWS's AI and data services including infrastructure for foundation models that require quantum-enhanced coordination systems.",
+      "recent_activity": "Appointed VP of Agentic AI March 2025; AWS Summit NYC keynote on AgentCore (1M+ SDK downloads); re:Invent 2024 launched multi-agent collaboration (40% better completion); saved 4,500 developer-years with Amazon Q",
+      "strategic_problem": "Scaling production-ready agentic AI systems that reliably orchestrate multi-agent collaboration across distributed enterprise infrastructure at AWS global scale",
+      "persona_bridge": "Multi-stakeholder quantum-AI governance framework",
+      "problem_frame": "Orchestrate multi-agent AI systems with quantum-secured communication channels and hybrid quantum-classical task routing for enterprise-grade reliability",
+      "ice_breaker": "Your agentic AI architecture needs quantum coordination\u2014InfraFabric orchestrates multi-agent collaboration with quantum-secure channels and hybrid task routing at AWS scale",
+      "priority_tier": "A",
+      "priority_score": "93",
+      "updated_score": "100",
+      "recent_signals_2025": "VP Agentic AI March 2025 new role | AgentCore 1M+ SDK downloads | AWS Marketplace AI Agents July 2025 | Amazon Quick Suite Oct 2025 internal deployment | $100M Gen AI Innovation Center",
+      "context_bridge": "I noticed your March 2025 appointment as VP of Agentic AI and your re:Invent 2024 launch of multi-agent collaboration achieving 40% better completion while saving 4,500 developer-years with Amazon Q. As you scale production-ready agentic AI systems that reliably orchestrate multi-agent collaboration across AWS global infrastructure, quantum-secured coordination becomes essential.",
+      "email_drafted": "yes",
+      "last_updated": "2025-10-30",
+      "confidence_level": "high",
+      "recommended_send_date": "2025-11-01 to 2025-11-15"
+    },
+    "agent_results": [
+      {
+        "agent": "GoogleSearch",
+        "contact_methods": [
+          {
+            "type": "linkedin",
+            "value": "https://www.linkedin.com/in/swaminathansivasubramanian",
+            "source_url": "https://www.linkedin.com/in/swaminathansivasubramanian",
+            "source_type": "linkedin_profile",
+            "snippet": "Swami Sivasubramanian is an influencer. VP, AWS Agentic AI. Amazon Web Services (AWS) Vrije Universiteit Amsterdam (VU Amsterdam)\u00a0...",
+            "score": 75,
+            "query_num": 3,
+            "agent": "GoogleSearch"
+          },
+          {
+            "type": "linkedin",
+            "value": "https://www.linkedin.com/in/swaminathansivasubramanian",
+            "source_url": "https://www.linkedin.com/in/swaminathansivasubramanian",
+            "source_type": "linkedin_profile",
+            "snippet": "... Swami Sivasubramanian's profile on LinkedIn, a professional community of 1 billion members ... Welcome back. Email or phone. Password. Show. Forgot password\u00a0...",
+            "score": 75,
+            "query_num": 5,
+            "agent": "GoogleSearch"
+          }
+        ],
+        "queries_used": 5,
+        "best_score": 75,
+        "stopped_early": false
+      },
+      {
+        "agent": "WebFetch",
+        "contact_methods": [
+          {
+            "type": "contact_form",
+            "value": "https://aws.amazon.com/contact",
+            "source_url": "https://aws.amazon.com/contact",
+            "source_type": "contact_form",
+            "score": 70,
+            "agent": "WebFetch"
+          }
+        ],
+        "queries_used": 0,
+        "best_score": 70
+      },
+      {
+        "agent": "PatternGen",
+        "contact_methods": [
+          {
+            "type": "email_pattern",
+            "value": "swami.sivasubramanian@aws.amazon.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "swamisivasubramanian@aws.amazon.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "ssivasubramanian@aws.amazon.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "swami.s@aws.amazon.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "sivasubramanian.swami@aws.amazon.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "swami@aws.amazon.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          }
+        ],
+        "queries_used": 0,
+        "best_score": 45
+      },
+      {
+        "agent": "SimulatedUser",
+        "contact_methods": [
+          {
+            "type": "contact_page_user",
+            "value": "https://aws.amazon.com/contact-us/?nc2=h_ut_cu",
+            "source_type": "user_navigation",
+            "link_text": "Contact us",
+            "score": 75,
+            "agent": "SimulatedUser"
+          },
+          {
+            "type": "linkedin_search",
+            "value": "https://www.linkedin.com/search/results/people/?keywords=Swami%20Sivasubramanian",
+            "source_type": "user_action",
+            "score": 70,
+            "agent": "SimulatedUser"
+          }
+        ],
+        "queries_used": 0,
+        "best_score": 75,
+        "user_path": [
+          "Step 1: Google 'Swami Sivasubramanian AWS contact'",
+          "Step 2: Visit https://aws.amazon.com",
+          "Step 3: Search LinkedIn for Swami Sivasubramanian"
+        ]
+      }
+    ],
+    "validated": {
+      "final_recommendation": {
+        "type": "linkedin",
+        "value": "https://www.linkedin.com/in/swaminathansivasubramanian",
+        "source_url": "https://www.linkedin.com/in/swaminathansivasubramanian",
+        "source_type": "linkedin_profile",
+        "snippet": "Swami Sivasubramanian is an influencer. VP, AWS Agentic AI. Amazon Web Services (AWS) Vrije Universiteit Amsterdam (VU Amsterdam)\u00a0...",
+        "score": 75,
+        "query_num": 3,
+        "agent": "GoogleSearch"
+      },
+      "precision": 88,
+      "validation": "2_agents_agree",
+      "agreement_count": 2,
+      "all_options": [
+        {
+          "type": "linkedin",
+          "value": "https://www.linkedin.com/in/swaminathansivasubramanian",
+          "source_url": "https://www.linkedin.com/in/swaminathansivasubramanian",
+          "source_type": "linkedin_profile",
+          "snippet": "Swami Sivasubramanian is an influencer. VP, AWS Agentic AI. Amazon Web Services (AWS) Vrije Universiteit Amsterdam (VU Amsterdam)\u00a0...",
+          "score": 75,
+          "query_num": 3,
+          "agent": "GoogleSearch"
+        },
+        {
+          "type": "linkedin",
+          "value": "https://www.linkedin.com/in/swaminathansivasubramanian",
+          "source_url": "https://www.linkedin.com/in/swaminathansivasubramanian",
+          "source_type": "linkedin_profile",
+          "snippet": "... Swami Sivasubramanian's profile on LinkedIn, a professional community of 1 billion members ... Welcome back. Email or phone. Password. Show. Forgot password\u00a0...",
+          "score": 75,
+          "query_num": 5,
+          "agent": "GoogleSearch"
+        },
+        {
+          "type": "contact_page_user",
+          "value": "https://aws.amazon.com/contact-us/?nc2=h_ut_cu",
+          "source_type": "user_navigation",
+          "link_text": "Contact us",
+          "score": 75,
+          "agent": "SimulatedUser"
+        },
+        {
+          "type": "contact_form",
+          "value": "https://aws.amazon.com/contact",
+          "source_url": "https://aws.amazon.com/contact",
+          "source_type": "contact_form",
+          "score": 70,
+          "agent": "WebFetch"
+        },
+        {
+          "type": "linkedin_search",
+          "value": "https://www.linkedin.com/search/results/people/?keywords=Swami%20Sivasubramanian",
+          "source_type": "user_action",
+          "score": 70,
+          "agent": "SimulatedUser"
+        },
+        {
+          "type": "email_pattern",
+          "value": "swami.sivasubramanian@aws.amazon.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "swamisivasubramanian@aws.amazon.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "ssivasubramanian@aws.amazon.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "swami.s@aws.amazon.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "sivasubramanian.swami@aws.amazon.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "swami@aws.amazon.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        }
+      ],
+      "quality_check": {
+        "status": "different_from_user",
+        "match": false,
+        "note": "Automated found something user might not easily find (could be better or worse)"
+      },
+      "total_queries_used": 5
+    }
+  },
+  {
+    "contact": {
+      "first_name": "Michael",
+      "last_name": "Kagan",
+      "organization": "NVIDIA",
+      "role_title": "Chief Technology Officer",
+      "sector": "AI Infrastructure",
+      "persona_type": "AI Infrastructure Company",
+      "linkedin_url": "https://linkedin.com/in/mikagan",
+      "company_website": "https://www.nvidia.com",
+      "email_if_public": "",
+      "why_relevant": "Oversees NVIDIA's technology strategy for AI systems and networking infrastructure that powers large-scale AI clusters requiring quantum-AI coordination.",
+      "recent_activity": "Keynoted Sequoia's 2025 Europe100 on scaling to million-GPU data centers; spoke at G-Research symposium on future of chips July 2025; discussed AI's \"iPhone moment\" and building AI factories",
+      "strategic_problem": "Scaling network architecture beyond Moore's Law to support million-GPU clusters while managing inference-to-training workload shifts and data center efficiency",
+      "persona_bridge": "Quantum-safe AI infrastructure orchestration",
+      "problem_frame": "How to architect petascale AI clusters that anticipate quantum networking fabric without rearchitecting everything twice",
+      "ice_breaker": "Your million-GPU vision needs quantum-ready networking fabric\u2014InfraFabric ensures you build AI factories that scale beyond classical limits today",
+      "priority_tier": "A",
+      "priority_score": "92",
+      "updated_score": "95",
+      "recent_signals_2025": "Sequoia Europe100 Oct 2025 (2 days before research) | G-Research Symposium July 2025 | Network performance > compute power emphasis | AI iPhone moment discussion | Mellanox interconnect strategy",
+      "context_bridge": "I noticed your Sequoia Europe100 keynote on scaling to million-GPU data centers and your G-Research symposium discussion of AI's 'iPhone moment' while building AI factories. As you architect network infrastructure beyond Moore's Law to support million-GPU clusters while managing inference-to-training workload shifts, quantum-ready networking becomes strategic.",
+      "email_drafted": "yes",
+      "last_updated": "2025-10-30",
+      "confidence_level": "high",
+      "recommended_send_date": "2025-11-01 to 2025-11-15"
+    },
+    "agent_results": [
+      {
+        "agent": "GoogleSearch",
+        "contact_methods": [
+          {
+            "type": "email",
+            "value": "DOCAHackathon@nvidia.com",
+            "source_url": "https://www.nvidia.com/en-us/events/doca-hackathon/",
+            "source_type": "company_website",
+            "snippet": "Michael Kagan. NVIDIA Chief Technology Officer. Amit Krig. SVP of ... For further inquiries you can send an email to DOCAHackathon@nvidia.com.",
+            "score": 55,
+            "query_num": 1,
+            "agent": "GoogleSearch"
+          },
+          {
+            "type": "linkedin",
+            "value": "https://il.linkedin.com/in/mikagan",
+            "source_url": "https://il.linkedin.com/in/mikagan",
+            "source_type": "linkedin_profile",
+            "snippet": "\u05de\u05d9\u05e7\u05d5\u05dd: \u200fTel Aviv-Yafo\u200f \u00b7 500+ \u05d7\u05d9\u05d1\u05d5\u05e8\u05d9\u05dd \u05e2\u05dc LinkedIn. \u05d4\u05e6\u05d2 \u200fMichael Kagan\u200f \u200f\u200f \u05e4\u05e8\u05d5\u05e4\u05d9\u05dc \u05d1-LinkedIn, \u05e7\u05d4\u05d9\u05dc\u05d4 \u05de\u05e7\u05e6\u05d5\u05e2\u05d9\u05ea \u05e9\u05dc \u05de\u05d9\u05dc\u05d9\u05d0\u05e8\u05d3 \u05d7\u05d1\u05e8\u05d9\u05dd.",
+            "score": 75,
+            "query_num": 3,
+            "agent": "GoogleSearch"
+          },
+          {
+            "type": "contact_page",
+            "value": "https://www.nvidia.com/en-us/about-nvidia/careers/",
+            "source_url": "https://www.nvidia.com/en-us/about-nvidia/careers/",
+            "source_type": "company_page",
+            "snippet": "You'll solve some of the world's hardest problems and discover never-before-seen ways to improve the quality of life for people everywhere.",
+            "score": 65,
+            "query_num": 4,
+            "agent": "GoogleSearch"
+          },
+          {
+            "type": "linkedin",
+            "value": "https://il.linkedin.com/in/mikagan",
+            "source_url": "https://il.linkedin.com/in/mikagan",
+            "source_type": "linkedin_profile",
+            "snippet": "\u05de\u05d9\u05e7\u05d5\u05dd: \u200fTel Aviv-Yafo\u200f \u00b7 500+ \u05d7\u05d9\u05d1\u05d5\u05e8\u05d9\u05dd \u05e2\u05dc LinkedIn. \u05d4\u05e6\u05d2 \u200fMichael Kagan\u200f \u200f\u200f \u05e4\u05e8\u05d5\u05e4\u05d9\u05dc \u05d1-LinkedIn, \u05e7\u05d4\u05d9\u05dc\u05d4 \u05de\u05e7\u05e6\u05d5\u05e2\u05d9\u05ea \u05e9\u05dc \u05de\u05d9\u05dc\u05d9\u05d0\u05e8\u05d3 \u05d7\u05d1\u05e8\u05d9\u05dd.",
+            "score": 75,
+            "query_num": 5,
+            "agent": "GoogleSearch"
+          }
+        ],
+        "queries_used": 5,
+        "best_score": 75,
+        "stopped_early": false
+      },
+      {
+        "agent": "WebFetch",
+        "contact_methods": [
+          {
+            "type": "email",
+            "value": "info@nvidia.com",
+            "source_url": "https://www.nvidia.com/contact",
+            "source_type": "scraped_page",
+            "all_emails_found": [
+              "info@nvidia.com"
+            ],
+            "score": 60,
+            "agent": "WebFetch"
+          }
+        ],
+        "queries_used": 0,
+        "best_score": 60
+      },
+      {
+        "agent": "PatternGen",
+        "contact_methods": [
+          {
+            "type": "email_pattern",
+            "value": "michael.kagan@www.nvidia.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "michaelkagan@www.nvidia.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "mkagan@www.nvidia.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "michael.k@www.nvidia.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "kagan.michael@www.nvidia.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "michael@www.nvidia.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          }
+        ],
+        "queries_used": 0,
+        "best_score": 45
+      },
+      {
+        "agent": "SimulatedUser",
+        "contact_methods": [
+          {
+            "type": "contact_page_user",
+            "value": "https://blogs.nvidia.com/blog/nemo-enterprises-ai-teammates-employee-productivity/",
+            "source_type": "user_navigation",
+            "link_text": "\n\n\n\n",
+            "score": 75,
+            "agent": "SimulatedUser"
+          },
+          {
+            "type": "linkedin_search",
+            "value": "https://www.linkedin.com/search/results/people/?keywords=Michael%20Kagan",
+            "source_type": "user_action",
+            "score": 70,
+            "agent": "SimulatedUser"
+          }
+        ],
+        "queries_used": 0,
+        "best_score": 75,
+        "user_path": [
+          "Step 1: Google 'Michael Kagan NVIDIA contact'",
+          "Step 2: Visit https://www.nvidia.com",
+          "Step 3: Search LinkedIn for Michael Kagan"
+        ]
+      }
+    ],
+    "validated": {
+      "final_recommendation": {
+        "type": "linkedin",
+        "value": "https://il.linkedin.com/in/mikagan",
+        "source_url": "https://il.linkedin.com/in/mikagan",
+        "source_type": "linkedin_profile",
+        "snippet": "\u05de\u05d9\u05e7\u05d5\u05dd: \u200fTel Aviv-Yafo\u200f \u00b7 500+ \u05d7\u05d9\u05d1\u05d5\u05e8\u05d9\u05dd \u05e2\u05dc LinkedIn. \u05d4\u05e6\u05d2 \u200fMichael Kagan\u200f \u200f\u200f \u05e4\u05e8\u05d5\u05e4\u05d9\u05dc \u05d1-LinkedIn, \u05e7\u05d4\u05d9\u05dc\u05d4 \u05de\u05e7\u05e6\u05d5\u05e2\u05d9\u05ea \u05e9\u05dc \u05de\u05d9\u05dc\u05d9\u05d0\u05e8\u05d3 \u05d7\u05d1\u05e8\u05d9\u05dd.",
+        "score": 75,
+        "query_num": 3,
+        "agent": "GoogleSearch"
+      },
+      "precision": 88,
+      "validation": "2_agents_agree",
+      "agreement_count": 2,
+      "all_options": [
+        {
+          "type": "linkedin",
+          "value": "https://il.linkedin.com/in/mikagan",
+          "source_url": "https://il.linkedin.com/in/mikagan",
+          "source_type": "linkedin_profile",
+          "snippet": "\u05de\u05d9\u05e7\u05d5\u05dd: \u200fTel Aviv-Yafo\u200f \u00b7 500+ \u05d7\u05d9\u05d1\u05d5\u05e8\u05d9\u05dd \u05e2\u05dc LinkedIn. \u05d4\u05e6\u05d2 \u200fMichael Kagan\u200f \u200f\u200f \u05e4\u05e8\u05d5\u05e4\u05d9\u05dc \u05d1-LinkedIn, \u05e7\u05d4\u05d9\u05dc\u05d4 \u05de\u05e7\u05e6\u05d5\u05e2\u05d9\u05ea \u05e9\u05dc \u05de\u05d9\u05dc\u05d9\u05d0\u05e8\u05d3 \u05d7\u05d1\u05e8\u05d9\u05dd.",
+          "score": 75,
+          "query_num": 3,
+          "agent": "GoogleSearch"
+        },
+        {
+          "type": "linkedin",
+          "value": "https://il.linkedin.com/in/mikagan",
+          "source_url": "https://il.linkedin.com/in/mikagan",
+          "source_type": "linkedin_profile",
+          "snippet": "\u05de\u05d9\u05e7\u05d5\u05dd: \u200fTel Aviv-Yafo\u200f \u00b7 500+ \u05d7\u05d9\u05d1\u05d5\u05e8\u05d9\u05dd \u05e2\u05dc LinkedIn. \u05d4\u05e6\u05d2 \u200fMichael Kagan\u200f \u200f\u200f \u05e4\u05e8\u05d5\u05e4\u05d9\u05dc \u05d1-LinkedIn, \u05e7\u05d4\u05d9\u05dc\u05d4 \u05de\u05e7\u05e6\u05d5\u05e2\u05d9\u05ea \u05e9\u05dc \u05de\u05d9\u05dc\u05d9\u05d0\u05e8\u05d3 \u05d7\u05d1\u05e8\u05d9\u05dd.",
+          "score": 75,
+          "query_num": 5,
+          "agent": "GoogleSearch"
+        },
+        {
+          "type": "contact_page_user",
+          "value": "https://blogs.nvidia.com/blog/nemo-enterprises-ai-teammates-employee-productivity/",
+          "source_type": "user_navigation",
+          "link_text": "\n\n\n\n",
+          "score": 75,
+          "agent": "SimulatedUser"
+        },
+        {
+          "type": "linkedin_search",
+          "value": "https://www.linkedin.com/search/results/people/?keywords=Michael%20Kagan",
+          "source_type": "user_action",
+          "score": 70,
+          "agent": "SimulatedUser"
+        },
+        {
+          "type": "contact_page",
+          "value": "https://www.nvidia.com/en-us/about-nvidia/careers/",
+          "source_url": "https://www.nvidia.com/en-us/about-nvidia/careers/",
+          "source_type": "company_page",
+          "snippet": "You'll solve some of the world's hardest problems and discover never-before-seen ways to improve the quality of life for people everywhere.",
+          "score": 65,
+          "query_num": 4,
+          "agent": "GoogleSearch"
+        },
+        {
+          "type": "email",
+          "value": "info@nvidia.com",
+          "source_url": "https://www.nvidia.com/contact",
+          "source_type": "scraped_page",
+          "all_emails_found": [
+            "info@nvidia.com"
+          ],
+          "score": 60,
+          "agent": "WebFetch"
+        },
+        {
+          "type": "email",
+          "value": "DOCAHackathon@nvidia.com",
+          "source_url": "https://www.nvidia.com/en-us/events/doca-hackathon/",
+          "source_type": "company_website",
+          "snippet": "Michael Kagan. NVIDIA Chief Technology Officer. Amit Krig. SVP of ... For further inquiries you can send an email to DOCAHackathon@nvidia.com.",
+          "score": 55,
+          "query_num": 1,
+          "agent": "GoogleSearch"
+        },
+        {
+          "type": "email_pattern",
+          "value": "michael.kagan@www.nvidia.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "michaelkagan@www.nvidia.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "mkagan@www.nvidia.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "michael.k@www.nvidia.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "kagan.michael@www.nvidia.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "michael@www.nvidia.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        }
+      ],
+      "quality_check": {
+        "status": "different_from_user",
+        "match": false,
+        "note": "Automated found something user might not easily find (could be better or worse)"
+      },
+      "total_queries_used": 5
+    }
+  },
+  {
+    "contact": {
+      "first_name": "Mustafa",
+      "last_name": "Suleyman",
+      "organization": "Microsoft",
+      "role_title": "EVP & CEO of Microsoft AI",
+      "sector": "Enterprise AI Platform",
+      "persona_type": "Fortune-500/Enterprise AI Leader",
+      "linkedin_url": "https://www.linkedin.com/in/mustafa-suleyman",
+      "company_website": "https://www.microsoft.com",
+      "email_if_public": "",
+      "why_relevant": "DeepMind co-founder leading Microsoft's consumer AI products including Copilot where quantum-AI coordination infrastructure enables next-generation capabilities.",
+      "recent_activity": "Appointed Microsoft AI CEO March 2024; hired 24+ DeepMind researchers; launched Copilot personalization and memory; building AI health division with former DeepMind colleagues",
+      "strategic_problem": "Differentiating Microsoft Copilot through AI personality while preparing for quantum computing integration with Azure Quantum services",
+      "persona_bridge": "Hybrid quantum-classical coordination layer",
+      "problem_frame": "Coordinate Microsoft Copilot with Azure Quantum services enabling quantum-enhanced reasoning that differentiates from purely classical AI assistants",
+      "ice_breaker": "Your Copilot personalization needs quantum reasoning\u2014InfraFabric coordinates Copilot with Azure Quantum for differentiated quantum-enhanced AI interactions",
+      "priority_tier": "A",
+      "priority_score": "92",
+      "updated_score": "94",
+      "recent_signals_2025": "Copilot Fall Release Oct 23 2025: Mico avatar 32-person Groups Memory | Human-centered AI strategy emphasis | No simulated erotica policy vs OpenAI | 100M MAU (vs 800M ChatGPT) engagement gap",
+      "context_bridge": "I noticed your March 2024 appointment as Microsoft AI CEO, your hiring of 24+ DeepMind researchers, and your launch of Copilot personalization and memory features. As you differentiate Microsoft Copilot through AI personality while preparing for quantum computing integration with Azure Quantum services, hybrid coordination infrastructure becomes essential.",
+      "email_drafted": "yes",
+      "last_updated": "2025-10-30",
+      "confidence_level": "high",
+      "recommended_send_date": "2025-11-15 to 2025-12-01"
+    },
+    "agent_results": [
+      {
+        "agent": "GoogleSearch",
+        "contact_methods": [
+          {
+            "type": "contact_page",
+            "value": "https://www.microsoft.com/en-us/aprd/aboutus/milestones",
+            "source_url": "https://www.microsoft.com/en-us/aprd/aboutus/milestones",
+            "source_type": "company_page",
+            "snippet": "Microsoft AI CEO Mustafa Suleyman visited China, witnessing the innovative ... Contact us \u00b7 Privacy; Manage cookies; Terms of use \u00b7 Trademarks \u00b7 About our ads\u00a0...",
+            "score": 65,
+            "query_num": 2,
+            "agent": "GoogleSearch"
+          },
+          {
+            "type": "contact_page",
+            "value": "https://www.microsoft.com/en-us/microsoft-teams/group-chat-software",
+            "source_url": "https://www.microsoft.com/en-us/microsoft-teams/group-chat-software",
+            "source_type": "company_page",
+            "snippet": "Make and receive calls directly in Teams with features like group calling, voicemail, and call transfers.",
+            "score": 65,
+            "query_num": 4,
+            "agent": "GoogleSearch"
+          },
+          {
+            "type": "email",
+            "value": "TEDRadioHour@npr.org",
+            "source_url": "https://www.npr.org/2025/07/18/g-s1177-78040/microsoft-ai-ceo-on-the-future-of-ai-chatbots",
+            "source_type": "institutional",
+            "snippet": "Jul 18, 2025 ... You can follow us on Facebook @TEDRadioHour and email us at TEDRadioHour@npr.org. Web Resources. Related TED Bio: Mustafa Suleyman Related TED\u00a0...",
+            "score": 60,
+            "query_num": 5,
+            "agent": "GoogleSearch"
+          }
+        ],
+        "queries_used": 5,
+        "best_score": 65,
+        "stopped_early": false
+      },
+      {
+        "agent": "WebFetch",
+        "contact_methods": [
+          {
+            "type": "contact_form",
+            "value": "https://www.microsoft.com/about",
+            "source_url": "https://www.microsoft.com/about",
+            "source_type": "contact_form",
+            "score": 70,
+            "agent": "WebFetch"
+          },
+          {
+            "type": "contact_form",
+            "value": "https://www.microsoft.com/people",
+            "source_url": "https://www.microsoft.com/people",
+            "source_type": "contact_form",
+            "score": 70,
+            "agent": "WebFetch"
+          }
+        ],
+        "queries_used": 0,
+        "best_score": 70
+      },
+      {
+        "agent": "PatternGen",
+        "contact_methods": [
+          {
+            "type": "email_pattern",
+            "value": "mustafa.suleyman@www.microsoft.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "mustafasuleyman@www.microsoft.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "msuleyman@www.microsoft.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "mustafa.s@www.microsoft.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "suleyman.mustafa@www.microsoft.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "mustafa@www.microsoft.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          }
+        ],
+        "queries_used": 0,
+        "best_score": 45
+      },
+      {
+        "agent": "SimulatedUser",
+        "contact_methods": [
+          {
+            "type": "contact_page_user",
+            "value": "https://www.microsoft.com/en-us/microsoft-teams/group-chat-software",
+            "source_type": "user_navigation",
+            "link_text": "Teams",
+            "score": 75,
+            "agent": "SimulatedUser"
+          },
+          {
+            "type": "linkedin_search",
+            "value": "https://www.linkedin.com/search/results/people/?keywords=Mustafa%20Suleyman",
+            "source_type": "user_action",
+            "score": 70,
+            "agent": "SimulatedUser"
+          }
+        ],
+        "queries_used": 0,
+        "best_score": 75,
+        "user_path": [
+          "Step 1: Google 'Mustafa Suleyman Microsoft contact'",
+          "Step 2: Visit https://www.microsoft.com",
+          "Step 3: Search LinkedIn for Mustafa Suleyman"
+        ]
+      }
+    ],
+    "validated": {
+      "final_recommendation": {
+        "type": "contact_page_user",
+        "value": "https://www.microsoft.com/en-us/microsoft-teams/group-chat-software",
+        "source_type": "user_navigation",
+        "link_text": "Teams",
+        "score": 75,
+        "agent": "SimulatedUser"
+      },
+      "precision": 88,
+      "validation": "2_agents_agree",
+      "agreement_count": 2,
+      "all_options": [
+        {
+          "type": "contact_page_user",
+          "value": "https://www.microsoft.com/en-us/microsoft-teams/group-chat-software",
+          "source_type": "user_navigation",
+          "link_text": "Teams",
+          "score": 75,
+          "agent": "SimulatedUser"
+        },
+        {
+          "type": "contact_form",
+          "value": "https://www.microsoft.com/about",
+          "source_url": "https://www.microsoft.com/about",
+          "source_type": "contact_form",
+          "score": 70,
+          "agent": "WebFetch"
+        },
+        {
+          "type": "contact_form",
+          "value": "https://www.microsoft.com/people",
+          "source_url": "https://www.microsoft.com/people",
+          "source_type": "contact_form",
+          "score": 70,
+          "agent": "WebFetch"
+        },
+        {
+          "type": "linkedin_search",
+          "value": "https://www.linkedin.com/search/results/people/?keywords=Mustafa%20Suleyman",
+          "source_type": "user_action",
+          "score": 70,
+          "agent": "SimulatedUser"
+        },
+        {
+          "type": "contact_page",
+          "value": "https://www.microsoft.com/en-us/aprd/aboutus/milestones",
+          "source_url": "https://www.microsoft.com/en-us/aprd/aboutus/milestones",
+          "source_type": "company_page",
+          "snippet": "Microsoft AI CEO Mustafa Suleyman visited China, witnessing the innovative ... Contact us \u00b7 Privacy; Manage cookies; Terms of use \u00b7 Trademarks \u00b7 About our ads\u00a0...",
+          "score": 65,
+          "query_num": 2,
+          "agent": "GoogleSearch"
+        },
+        {
+          "type": "contact_page",
+          "value": "https://www.microsoft.com/en-us/microsoft-teams/group-chat-software",
+          "source_url": "https://www.microsoft.com/en-us/microsoft-teams/group-chat-software",
+          "source_type": "company_page",
+          "snippet": "Make and receive calls directly in Teams with features like group calling, voicemail, and call transfers.",
+          "score": 65,
+          "query_num": 4,
+          "agent": "GoogleSearch"
+        },
+        {
+          "type": "email",
+          "value": "TEDRadioHour@npr.org",
+          "source_url": "https://www.npr.org/2025/07/18/g-s1177-78040/microsoft-ai-ceo-on-the-future-of-ai-chatbots",
+          "source_type": "institutional",
+          "snippet": "Jul 18, 2025 ... You can follow us on Facebook @TEDRadioHour and email us at TEDRadioHour@npr.org. Web Resources. Related TED Bio: Mustafa Suleyman Related TED\u00a0...",
+          "score": 60,
+          "query_num": 5,
+          "agent": "GoogleSearch"
+        },
+        {
+          "type": "email_pattern",
+          "value": "mustafa.suleyman@www.microsoft.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "mustafasuleyman@www.microsoft.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "msuleyman@www.microsoft.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "mustafa.s@www.microsoft.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "suleyman.mustafa@www.microsoft.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "mustafa@www.microsoft.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        }
+      ],
+      "quality_check": {
+        "status": "matches_user_behavior",
+        "match": true,
+        "confidence": "high"
+      },
+      "total_queries_used": 5
+    }
+  },
+  {
+    "contact": {
+      "first_name": "Doreen",
+      "last_name": "Bogdan-Martin",
+      "organization": "International Telecommunication Union (ITU)",
+      "role_title": "Secretary-General",
+      "sector": "Standards Development",
+      "persona_type": "Standards Body",
+      "linkedin_url": "https://ch.linkedin.com/in/doreentbogdan",
+      "company_website": "https://www.itu.int",
+      "email_if_public": "",
+      "why_relevant": "First woman ITU Secretary-General leading international standards for AI quantum and telecommunications requiring coordination infrastructure for technology convergence.",
+      "recent_activity": "ITU Secretary-General since Jan 2023; 2025 International Year of Quantum Science & Technology; AI for Good Summit July 2025; 2025 Int'l AI Standards Summit Dec 2025; U.S. supports re-election; SIA 2025 Leadership Award",
+      "strategic_problem": "Coordinating international standards for AI, quantum, and telecommunications across 193 ITU member nations during 2025 International Year of Quantum",
+      "persona_bridge": "Multi-stakeholder quantum-AI governance framework",
+      "problem_frame": "Coordinate ITU's AI and quantum standards development with unified framework ensuring interoperability across 193 member nations",
+      "ice_breaker": "Your 193-nation mandate spans AI and quantum separately\u2014InfraFabric coordinates both with unified standards ensuring global interoperability",
+      "priority_tier": "B",
+      "priority_score": "92",
+      "updated_score": "92",
+      "recent_signals_2025": "AI for Good Global Summit July 8-11 2025 (4 days Palexpo) | Quantum computing showcase | AI Standards Exchange July 11 with ISO/IEC | UN International Year of Quantum 2025",
+      "context_bridge": "I noticed you're leading ITU through 2025 as the International Year of Quantum Science & Technology while organizing the December 2025 International AI Standards Summit and receiving the SIA 2025 Leadership Award. As you coordinate international standards for AI, quantum, and telecommunications across 193 ITU member nations, unified governance becomes critical.",
+      "email_drafted": "yes",
+      "last_updated": "2025-10-30",
+      "confidence_level": "medium",
+      "recommended_send_date": "2026-04-01 to 2026-06-30"
+    },
+    "agent_results": [
+      {
+        "agent": "GoogleSearch",
+        "contact_methods": [
+          {
+            "type": "email",
+            "value": "itumail@itu.int",
+            "source_url": "https://www.itu.int/dms_pub/itu-s/md/14/sg/cir/S14-SG-CIR-0181!!PDF-A.pdf",
+            "source_type": "company_website",
+            "snippet": "... E-mail: itumail@itu.int \u2022 www.itu.int \u2022. (SG). 10. 2014. : 181 ... (Doreen Bogdan-Martin). : . +41 22 730 5643. :/0 1. +41 22 730 6627. :2 34 5\u00a0...",
+            "score": 55,
+            "query_num": 1,
+            "agent": "GoogleSearch"
+          },
+          {
+            "type": "email",
+            "value": "ppcontributions@itu.int",
+            "source_url": "https://www.itu.int/web/pp-18/en/page/123-contact-us",
+            "source_type": "company_website",
+            "snippet": "Contact us. Audio. Agenda, Content & Coordination. Ms Doreen Bogdan-Martin ppcontributions@itu.int. Invitations and Admission. Ms B\u00e9atrice Pluchon sg\u00a0...",
+            "score": 55,
+            "query_num": 2,
+            "agent": "GoogleSearch"
+          },
+          {
+            "type": "linkedin",
+            "value": "https://ch.linkedin.com/in/doreentbogdan",
+            "source_url": "https://ch.linkedin.com/in/doreentbogdan",
+            "source_type": "linkedin_profile",
+            "snippet": "Doreen Bogdan-Martin, KD2JTX. Director of the International Telecommunication Union (ITU) Telecommunication Development Bureau and the first woman ever to hold\u00a0...",
+            "score": 75,
+            "query_num": 3,
+            "agent": "GoogleSearch"
+          },
+          {
+            "type": "contact_page",
+            "value": "https://www.itu.int/en/about/Pages/default.aspx",
+            "source_url": "https://www.itu.int/en/about/Pages/default.aspx",
+            "source_type": "company_page",
+            "snippet": "ITU is the United Nations specialized agency for digital technologies (ICTs). The Organization is made up of a membership of 194 Member States and more than\u00a0...",
+            "score": 65,
+            "query_num": 4,
+            "agent": "GoogleSearch"
+          },
+          {
+            "type": "contact_page",
+            "value": "https://sia.org/itu-secretary-general-doreen-bogdan-martin-receives-satellite-industry-association-leadership-award/",
+            "source_url": "https://sia.org/itu-secretary-general-doreen-bogdan-martin-receives-satellite-industry-association-leadership-award/",
+            "source_type": "company_page",
+            "snippet": "Mar 11, 2025 ... ITU Secretary-General Doreen Bogdan-Martin Receives Satellite Industry Association Leadership Award ... ITU's Bureau of Telecommunication\u00a0...",
+            "score": 65,
+            "query_num": 5,
+            "agent": "GoogleSearch"
+          }
+        ],
+        "queries_used": 5,
+        "best_score": 75,
+        "stopped_early": false
+      },
+      {
+        "agent": "WebFetch",
+        "contact_methods": [],
+        "queries_used": 0,
+        "best_score": 0
+      },
+      {
+        "agent": "PatternGen",
+        "contact_methods": [
+          {
+            "type": "email_pattern",
+            "value": "doreen.bogdan-martin@www.itu.int",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "doreenbogdan-martin@www.itu.int",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "dbogdan-martin@www.itu.int",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "doreen.b@www.itu.int",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "bogdan-martin.doreen@www.itu.int",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "doreen@www.itu.int",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          }
+        ],
+        "queries_used": 0,
+        "best_score": 45
+      },
+      {
+        "agent": "SimulatedUser",
+        "contact_methods": [
+          {
+            "type": "contact_page_user",
+            "value": "https://www.itu.int/en/about",
+            "source_type": "user_navigation",
+            "link_text": "About ITU",
+            "score": 75,
+            "agent": "SimulatedUser"
+          },
+          {
+            "type": "linkedin_search",
+            "value": "https://www.linkedin.com/search/results/people/?keywords=Doreen%20Bogdan-Martin",
+            "source_type": "user_action",
+            "score": 70,
+            "agent": "SimulatedUser"
+          }
+        ],
+        "queries_used": 0,
+        "best_score": 75,
+        "user_path": [
+          "Step 1: Google 'Doreen Bogdan-Martin International Telecommunication Union (ITU) contact'",
+          "Step 2: Visit https://www.itu.int",
+          "Step 3: Search LinkedIn for Doreen Bogdan-Martin"
+        ]
+      }
+    ],
+    "validated": {
+      "final_recommendation": {
+        "type": "linkedin",
+        "value": "https://ch.linkedin.com/in/doreentbogdan",
+        "source_url": "https://ch.linkedin.com/in/doreentbogdan",
+        "source_type": "linkedin_profile",
+        "snippet": "Doreen Bogdan-Martin, KD2JTX. Director of the International Telecommunication Union (ITU) Telecommunication Development Bureau and the first woman ever to hold\u00a0...",
+        "score": 75,
+        "query_num": 3,
+        "agent": "GoogleSearch"
+      },
+      "precision": 75,
+      "validation": "single_agent_best",
+      "agreement_count": 1,
+      "all_options": [
+        {
+          "type": "linkedin",
+          "value": "https://ch.linkedin.com/in/doreentbogdan",
+          "source_url": "https://ch.linkedin.com/in/doreentbogdan",
+          "source_type": "linkedin_profile",
+          "snippet": "Doreen Bogdan-Martin, KD2JTX. Director of the International Telecommunication Union (ITU) Telecommunication Development Bureau and the first woman ever to hold\u00a0...",
+          "score": 75,
+          "query_num": 3,
+          "agent": "GoogleSearch"
+        },
+        {
+          "type": "contact_page_user",
+          "value": "https://www.itu.int/en/about",
+          "source_type": "user_navigation",
+          "link_text": "About ITU",
+          "score": 75,
+          "agent": "SimulatedUser"
+        },
+        {
+          "type": "linkedin_search",
+          "value": "https://www.linkedin.com/search/results/people/?keywords=Doreen%20Bogdan-Martin",
+          "source_type": "user_action",
+          "score": 70,
+          "agent": "SimulatedUser"
+        },
+        {
+          "type": "contact_page",
+          "value": "https://www.itu.int/en/about/Pages/default.aspx",
+          "source_url": "https://www.itu.int/en/about/Pages/default.aspx",
+          "source_type": "company_page",
+          "snippet": "ITU is the United Nations specialized agency for digital technologies (ICTs). The Organization is made up of a membership of 194 Member States and more than\u00a0...",
+          "score": 65,
+          "query_num": 4,
+          "agent": "GoogleSearch"
+        },
+        {
+          "type": "contact_page",
+          "value": "https://sia.org/itu-secretary-general-doreen-bogdan-martin-receives-satellite-industry-association-leadership-award/",
+          "source_url": "https://sia.org/itu-secretary-general-doreen-bogdan-martin-receives-satellite-industry-association-leadership-award/",
+          "source_type": "company_page",
+          "snippet": "Mar 11, 2025 ... ITU Secretary-General Doreen Bogdan-Martin Receives Satellite Industry Association Leadership Award ... ITU's Bureau of Telecommunication\u00a0...",
+          "score": 65,
+          "query_num": 5,
+          "agent": "GoogleSearch"
+        },
+        {
+          "type": "email",
+          "value": "itumail@itu.int",
+          "source_url": "https://www.itu.int/dms_pub/itu-s/md/14/sg/cir/S14-SG-CIR-0181!!PDF-A.pdf",
+          "source_type": "company_website",
+          "snippet": "... E-mail: itumail@itu.int \u2022 www.itu.int \u2022. (SG). 10. 2014. : 181 ... (Doreen Bogdan-Martin). : . +41 22 730 5643. :/0 1. +41 22 730 6627. :2 34 5\u00a0...",
+          "score": 55,
+          "query_num": 1,
+          "agent": "GoogleSearch"
+        },
+        {
+          "type": "email",
+          "value": "ppcontributions@itu.int",
+          "source_url": "https://www.itu.int/web/pp-18/en/page/123-contact-us",
+          "source_type": "company_website",
+          "snippet": "Contact us. Audio. Agenda, Content & Coordination. Ms Doreen Bogdan-Martin ppcontributions@itu.int. Invitations and Admission. Ms B\u00e9atrice Pluchon sg\u00a0...",
+          "score": 55,
+          "query_num": 2,
+          "agent": "GoogleSearch"
+        },
+        {
+          "type": "email_pattern",
+          "value": "doreen.bogdan-martin@www.itu.int",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "doreenbogdan-martin@www.itu.int",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "dbogdan-martin@www.itu.int",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "doreen.b@www.itu.int",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "bogdan-martin.doreen@www.itu.int",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "doreen@www.itu.int",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        }
+      ],
+      "quality_check": {
+        "status": "different_from_user",
+        "match": false,
+        "note": "Automated found something user might not easily find (could be better or worse)"
+      },
+      "total_queries_used": 5
+    }
+  },
+  {
+    "contact": {
+      "first_name": "Mark",
+      "last_name": "Russinovich",
+      "organization": "Microsoft",
+      "role_title": "CTO of Microsoft Azure",
+      "sector": "AI Infrastructure",
+      "persona_type": "AI Infrastructure Company",
+      "linkedin_url": "https://linkedin.com/in/markrussinovich",
+      "company_website": "https://azure.microsoft.com",
+      "email_if_public": "",
+      "why_relevant": "Oversees Azure's cloud platform architecture that will integrate AI and quantum computing services for enterprise customers.",
+      "recent_activity": "Microsoft Ignite 2024 keynote on confidential computing and cloud-native innovation; June 2025 spoke on reasoning models and edge SLMs; cautioned against \"vibe coding\" hype; discussed quantum computing in cloud at Stanford HAI",
+      "strategic_problem": "Securing AI infrastructure against quantum threats while enabling hybrid quantum-classical cloud services for enterprise customers at Azure scale",
+      "persona_bridge": "Post-quantum cryptography integration",
+      "problem_frame": "Protect Azure's AI services from quantum threats while enabling customers to orchestrate hybrid quantum-classical workloads in a single control plane",
+      "ice_breaker": "Azure's quantum services need enterprise-grade orchestration\u2014InfraFabric provides the PQC-secured control plane that unifies your classical AI and quantum offerings",
+      "priority_tier": "A",
+      "priority_score": "91",
+      "updated_score": "95",
+      "recent_signals_2025": "Quantum-Safe Program Aug 2025: 2029 core products 2030s default | SymCrypt ML-KEM ML-DSA integration | PQC across Windows Azure M365 data platforms AI services networking | Confidential computing memory encryption",
+      "context_bridge": "I noticed your Microsoft Ignite 2024 keynote on confidential computing and your June 2025 discussion of reasoning models while cautioning against 'vibe coding' hype. As you secure AI infrastructure against quantum threats while enabling hybrid quantum-classical cloud services for Azure enterprise customers, unified orchestration becomes essential.",
+      "email_drafted": "yes",
+      "last_updated": "2025-10-30",
+      "confidence_level": "high",
+      "recommended_send_date": "2025-11-01 to 2025-11-30"
+    },
+    "agent_results": [
+      {
+        "agent": "GoogleSearch",
+        "contact_methods": [
+          {
+            "type": "linkedin",
+            "value": "https://www.linkedin.com/in/markrussinovich",
+            "source_url": "https://www.linkedin.com/in/markrussinovich",
+            "source_type": "linkedin_profile",
+            "snippet": "Experience: Microsoft \u00b7 Education: Carnegie Mellon University \u00b7 Location: Bellevue \u00b7 500+ connections on LinkedIn. View Mark Russinovich's profile on\u00a0...",
+            "score": 75,
+            "query_num": 3,
+            "agent": "GoogleSearch"
+          },
+          {
+            "type": "linkedin",
+            "value": "https://www.linkedin.com/in/markrussinovich",
+            "source_url": "https://www.linkedin.com/in/markrussinovich",
+            "source_type": "linkedin_profile",
+            "snippet": "Experience: Microsoft \u00b7 Education: Carnegie Mellon University \u00b7 Location: Bellevue \u00b7 500+ connections on LinkedIn. View Mark Russinovich's profile on\u00a0...",
+            "score": 75,
+            "query_num": 5,
+            "agent": "GoogleSearch"
+          }
+        ],
+        "queries_used": 5,
+        "best_score": 75,
+        "stopped_early": false
+      },
+      {
+        "agent": "WebFetch",
+        "contact_methods": [
+          {
+            "type": "contact_form",
+            "value": "https://azure.microsoft.com/contact",
+            "source_url": "https://azure.microsoft.com/contact",
+            "source_type": "contact_form",
+            "score": 70,
+            "agent": "WebFetch"
+          }
+        ],
+        "queries_used": 0,
+        "best_score": 70
+      },
+      {
+        "agent": "PatternGen",
+        "contact_methods": [
+          {
+            "type": "email_pattern",
+            "value": "mark.russinovich@azure.microsoft.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "markrussinovich@azure.microsoft.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "mrussinovich@azure.microsoft.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "mark.r@azure.microsoft.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "russinovich.mark@azure.microsoft.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          },
+          {
+            "type": "email_pattern",
+            "value": "mark@azure.microsoft.com",
+            "source_type": "generated",
+            "confidence": "unverified",
+            "score": 45,
+            "agent": "PatternGen"
+          }
+        ],
+        "queries_used": 0,
+        "best_score": 45
+      },
+      {
+        "agent": "SimulatedUser",
+        "contact_methods": [
+          {
+            "type": "contact_page_user",
+            "value": "https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/",
+            "source_type": "user_navigation",
+            "link_text": "Learn more about cloud computing",
+            "score": 75,
+            "agent": "SimulatedUser"
+          },
+          {
+            "type": "linkedin_search",
+            "value": "https://www.linkedin.com/search/results/people/?keywords=Mark%20Russinovich",
+            "source_type": "user_action",
+            "score": 70,
+            "agent": "SimulatedUser"
+          }
+        ],
+        "queries_used": 0,
+        "best_score": 75,
+        "user_path": [
+          "Step 1: Google 'Mark Russinovich Microsoft contact'",
+          "Step 2: Visit https://azure.microsoft.com",
+          "Step 3: Search LinkedIn for Mark Russinovich"
+        ]
+      }
+    ],
+    "validated": {
+      "final_recommendation": {
+        "type": "linkedin",
+        "value": "https://www.linkedin.com/in/markrussinovich",
+        "source_url": "https://www.linkedin.com/in/markrussinovich",
+        "source_type": "linkedin_profile",
+        "snippet": "Experience: Microsoft \u00b7 Education: Carnegie Mellon University \u00b7 Location: Bellevue \u00b7 500+ connections on LinkedIn. View Mark Russinovich's profile on\u00a0...",
+        "score": 75,
+        "query_num": 3,
+        "agent": "GoogleSearch"
+      },
+      "precision": 88,
+      "validation": "2_agents_agree",
+      "agreement_count": 2,
+      "all_options": [
+        {
+          "type": "linkedin",
+          "value": "https://www.linkedin.com/in/markrussinovich",
+          "source_url": "https://www.linkedin.com/in/markrussinovich",
+          "source_type": "linkedin_profile",
+          "snippet": "Experience: Microsoft \u00b7 Education: Carnegie Mellon University \u00b7 Location: Bellevue \u00b7 500+ connections on LinkedIn. View Mark Russinovich's profile on\u00a0...",
+          "score": 75,
+          "query_num": 3,
+          "agent": "GoogleSearch"
+        },
+        {
+          "type": "linkedin",
+          "value": "https://www.linkedin.com/in/markrussinovich",
+          "source_url": "https://www.linkedin.com/in/markrussinovich",
+          "source_type": "linkedin_profile",
+          "snippet": "Experience: Microsoft \u00b7 Education: Carnegie Mellon University \u00b7 Location: Bellevue \u00b7 500+ connections on LinkedIn. View Mark Russinovich's profile on\u00a0...",
+          "score": 75,
+          "query_num": 5,
+          "agent": "GoogleSearch"
+        },
+        {
+          "type": "contact_page_user",
+          "value": "https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/",
+          "source_type": "user_navigation",
+          "link_text": "Learn more about cloud computing",
+          "score": 75,
+          "agent": "SimulatedUser"
+        },
+        {
+          "type": "contact_form",
+          "value": "https://azure.microsoft.com/contact",
+          "source_url": "https://azure.microsoft.com/contact",
+          "source_type": "contact_form",
+          "score": 70,
+          "agent": "WebFetch"
+        },
+        {
+          "type": "linkedin_search",
+          "value": "https://www.linkedin.com/search/results/people/?keywords=Mark%20Russinovich",
+          "source_type": "user_action",
+          "score": 70,
+          "agent": "SimulatedUser"
+        },
+        {
+          "type": "email_pattern",
+          "value": "mark.russinovich@azure.microsoft.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "markrussinovich@azure.microsoft.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "mrussinovich@azure.microsoft.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "mark.r@azure.microsoft.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "russinovich.mark@azure.microsoft.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        },
+        {
+          "type": "email_pattern",
+          "value": "mark@azure.microsoft.com",
+          "source_type": "generated",
+          "confidence": "unverified",
+          "score": 45,
+          "agent": "PatternGen"
+        }
+      ],
+      "quality_check": {
+        "status": "different_from_user",
+        "match": false,
+        "note": "Automated found something user might not easily find (could be better or worse)"
+      },
+      "total_queries_used": 5
+    }
+  }
+]
