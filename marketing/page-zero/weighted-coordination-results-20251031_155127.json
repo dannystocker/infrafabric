@@ -1,0 +1,229 @@
+{
+  "session_stats": {
+    "total_contacts": 3,
+    "free_agents_sufficient": 3,
+    "google_validations_needed": 0,
+    "google_queries_used": 0,
+    "cost_saved": 0.015
+  },
+  "results": [
+    {
+      "contact": {
+        "first_name": "Emil",
+        "last_name": "Michael",
+        "organization": "Department of Defense",
+        "role_title": "Undersecretary of Defense for R&E / CTO / Acting Director DIU",
+        "sector": "Defense Innovation",
+        "persona_type": "Defense/National Security",
+        "linkedin_url": "",
+        "company_website": "https://www.diu.mil",
+        "email_if_public": "",
+        "why_relevant": "Pentagon's chief technology strategist overseeing Defense Innovation Unit and coordinating quantum-AI integration across defense technology development.",
+        "recent_activity": "Confirmed as Pentagon CTO May 2025; became acting DIU director Aug 2025; identified AI and Quantum as \"North Stars\" among 14 Critical Technology Areas; flattening DoD tech org structure",
+        "strategic_problem": "Synchronizing quantum and AI as enterprise-wide \"North Star\" technology priorities across 14 CTAs while accelerating commercial tech transition through DIU",
+        "persona_bridge": "Multi-stakeholder quantum-AI governance framework",
+        "problem_frame": "Orchestrate DoD's quantum-AI North Stars with unified coordination framework that accelerates commercial tech transition while meeting national security requirements",
+        "ice_breaker": "Your North Star strategy aligns quantum+AI across DoD\u2014InfraFabric provides the unified orchestration framework that accelerates both while meeting your security requirements",
+        "priority_tier": "A",
+        "priority_score": "97"
+      },
+      "free_agent_results": [
+        {
+          "agent": "SimulatedUser",
+          "confidence": 93,
+          "contact_info": {
+            "email_patterns": [
+              "emil.michael@diu.mil",
+              "emil@diu.mil",
+              "emilmichael@diu.mil",
+              "emichael@diu.mil",
+              "michael@diu.mil"
+            ],
+            "linkedin_url": "https://linkedin.com/in/emil-michael",
+            "source": "pattern_generation"
+          },
+          "weight": 2.0
+        },
+        {
+          "agent": "PatternGenerator",
+          "confidence": 45,
+          "contact_info": {
+            "email_patterns": [
+              "emil.michael@diu.mil",
+              "emil@diu.mil",
+              "emilmichael@diu.mil",
+              "emichael@diu.mil",
+              "michael@diu.mil"
+            ],
+            "pattern_count": 5,
+            "source": "pattern_generation"
+          },
+          "weight": 0.0
+        }
+      ],
+      "weighted_confidence": 93.0,
+      "google_invoked": false,
+      "google_boost": 0.0,
+      "final_confidence": 93.0,
+      "contact_info": {
+        "email_patterns": [
+          "emil.michael@diu.mil",
+          "emil@diu.mil",
+          "emilmichael@diu.mil",
+          "emichael@diu.mil",
+          "michael@diu.mil"
+        ],
+        "linkedin_url": "https://linkedin.com/in/emil-michael",
+        "source": "pattern_generation"
+      },
+      "cost": 0.0,
+      "decision": "Free agents sufficient (saved $0.0050)"
+    },
+    {
+      "contact": {
+        "first_name": "Amin",
+        "last_name": "Vahdat",
+        "organization": "Google Cloud",
+        "role_title": "VP & GM ML Systems and Cloud AI",
+        "sector": "AI Infrastructure",
+        "persona_type": "AI Infrastructure Company",
+        "linkedin_url": "https://linkedin.com/in/vahdat",
+        "company_website": "https://cloud.google.com",
+        "email_if_public": "",
+        "why_relevant": "Leads Google Cloud's AI infrastructure including TPUs and AI Hypercomputer systems critical for quantum-AI convergence workloads.",
+        "recent_activity": "Launched Ironwood TPU (7th gen) April 2025: 42.5 exaflops at 9,216 chips\u201424x faster than El Capitan; emphasized networking as #1 bottleneck at Optica March 2025; predicted 2025 as \"Year of Inference\"",
+        "strategic_problem": "Networking bottleneck constraining AI scaling: demand growing 10x/year but interconnects lag behind, limiting inference workload distribution at hyperscale",
+        "persona_bridge": "Quantum-safe AI infrastructure orchestration",
+        "problem_frame": "Solve the networking bottleneck for agentic AI inference workloads by orchestrating quantum-enhanced communication channels within classical TPU fabrics",
+        "ice_breaker": "Your networking bottleneck thesis is quantum's opening\u2014InfraFabric coordinates distributed inference across quantum-enhanced channels that scale with your 10x demand",
+        "priority_tier": "A",
+        "priority_score": "96"
+      },
+      "free_agent_results": [
+        {
+          "agent": "SimulatedUser",
+          "confidence": 94,
+          "contact_info": {
+            "email_patterns": [
+              "amin.vahdat@cloud.google.com",
+              "amin@cloud.google.com",
+              "aminvahdat@cloud.google.com",
+              "avahdat@cloud.google.com",
+              "vahdat@cloud.google.com"
+            ],
+            "linkedin_url": "https://linkedin.com/in/amin-vahdat",
+            "source": "pattern_generation"
+          },
+          "weight": 2.0
+        },
+        {
+          "agent": "PatternGenerator",
+          "confidence": 45,
+          "contact_info": {
+            "email_patterns": [
+              "amin.vahdat@cloud.google.com",
+              "amin@cloud.google.com",
+              "aminvahdat@cloud.google.com",
+              "avahdat@cloud.google.com",
+              "vahdat@cloud.google.com"
+            ],
+            "pattern_count": 5,
+            "source": "pattern_generation"
+          },
+          "weight": 0.0
+        }
+      ],
+      "weighted_confidence": 94.0,
+      "google_invoked": false,
+      "google_boost": 0.0,
+      "final_confidence": 94.0,
+      "contact_info": {
+        "email_patterns": [
+          "amin.vahdat@cloud.google.com",
+          "amin@cloud.google.com",
+          "aminvahdat@cloud.google.com",
+          "avahdat@cloud.google.com",
+          "vahdat@cloud.google.com"
+        ],
+        "linkedin_url": "https://linkedin.com/in/amin-vahdat",
+        "source": "pattern_generation"
+      },
+      "cost": 0.0,
+      "decision": "Free agents sufficient (saved $0.0050)"
+    },
+    {
+      "contact": {
+        "first_name": "Jeremy",
+        "last_name": "O'Brien",
+        "organization": "PsiQuantum",
+        "role_title": "CEO & Co-founder",
+        "sector": "Quantum Computing",
+        "persona_type": "Quantum Networking/Cryptography Vendor",
+        "linkedin_url": "https://www.linkedin.com/in/jeremy-o-brien-39482631/",
+        "company_website": "https://www.psiquantum.com",
+        "email_if_public": "",
+        "why_relevant": "Leading photonic quantum computing with distributed architecture requiring coordination infrastructure for quantum networking and AI integration.",
+        "recent_activity": "Announced Omega photonic chipset Feb 2025 (Nature paper, all components for million-qubit systems); breaking ground Brisbane and Chicago quantum compute centers 2025; Australian and Illinois government partnerships",
+        "strategic_problem": "Building first utility-scale million-qubit photonic quantum computers in manufacturing-ready silicon photonics while coordinating distributed architecture at unprecedented scale",
+        "persona_bridge": "Distributed quantum network management",
+        "problem_frame": "Coordinate PsiQuantum's distributed photonic architecture across million-qubit systems using quantum networking that leverages your silicon photonics infrastructure",
+        "ice_breaker": "Your photonic architecture is inherently networked\u2014InfraFabric orchestrates your million-qubit systems with quantum networking native to your silicon photonics platform",
+        "priority_tier": "A",
+        "priority_score": "95"
+      },
+      "free_agent_results": [
+        {
+          "agent": "SimulatedUser",
+          "confidence": 87,
+          "contact_info": {
+            "email_patterns": [
+              "jeremy.o'brien@psiquantum.com",
+              "jeremy@psiquantum.com",
+              "jeremyo'brien@psiquantum.com",
+              "jo'brien@psiquantum.com",
+              "o'brien@psiquantum.com"
+            ],
+            "linkedin_url": "https://linkedin.com/in/jeremy-o'brien",
+            "source": "pattern_generation"
+          },
+          "weight": 2.0
+        },
+        {
+          "agent": "PatternGenerator",
+          "confidence": 45,
+          "contact_info": {
+            "email_patterns": [
+              "jeremy.o'brien@psiquantum.com",
+              "jeremy@psiquantum.com",
+              "jeremyo'brien@psiquantum.com",
+              "jo'brien@psiquantum.com",
+              "o'brien@psiquantum.com"
+            ],
+            "pattern_count": 5,
+            "source": "pattern_generation"
+          },
+          "weight": 0.0
+        }
+      ],
+      "weighted_confidence": 87.0,
+      "google_invoked": false,
+      "google_boost": 0.0,
+      "final_confidence": 87.0,
+      "contact_info": {
+        "email_patterns": [
+          "jeremy.o'brien@psiquantum.com",
+          "jeremy@psiquantum.com",
+          "jeremyo'brien@psiquantum.com",
+          "jo'brien@psiquantum.com",
+          "o'brien@psiquantum.com"
+        ],
+        "linkedin_url": "https://linkedin.com/in/jeremy-o'brien",
+        "source": "pattern_generation"
+      },
+      "cost": 0.0,
+      "decision": "Free agents sufficient (saved $0.0050)"
+    }
+  ],
+  "timestamp": "20251031_155127",
+  "num_contacts": 3
+}
