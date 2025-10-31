@@ -1,0 +1,563 @@
+{
+  "session_stats": {
+    "total_contacts": 5,
+    "free_agents_sufficient": 5,
+    "google_validations_needed": 0,
+    "google_queries_used": 0,
+    "cost_saved": 0.025,
+    "agent_success_rates": {
+      "ProfessionalNetworker": {
+        "attempts": 5,
+        "successes": 5
+      },
+      "AcademicResearcher": {
+        "attempts": 5,
+        "successes": 0
+      },
+      "IntelAnalyst": {
+        "attempts": 5,
+        "successes": 2
+      },
+      "InvestigativeJournalist": {
+        "attempts": 5,
+        "successes": 0
+      },
+      "RecruiterUser": {
+        "attempts": 5,
+        "successes": 1
+      },
+      "SocialEngineer": {
+        "attempts": 5,
+        "successes": 2
+      }
+    }
+  },
+  "results": [
+    {
+      "contact": {
+        "first_name": "Emil",
+        "last_name": "Michael",
+        "organization": "Department of Defense",
+        "role_title": "Undersecretary of Defense for R&E / CTO / Acting Director DIU",
+        "sector": "Defense Innovation",
+        "persona_type": "Defense/National Security",
+        "linkedin_url": "",
+        "company_website": "https://www.diu.mil",
+        "email_if_public": "",
+        "why_relevant": "Pentagon's chief technology strategist overseeing Defense Innovation Unit and coordinating quantum-AI integration across defense technology development.",
+        "recent_activity": "Confirmed as Pentagon CTO May 2025; became acting DIU director Aug 2025; identified AI and Quantum as \"North Stars\" among 14 Critical Technology Areas; flattening DoD tech org structure",
+        "strategic_problem": "Synchronizing quantum and AI as enterprise-wide \"North Star\" technology priorities across 14 CTAs while accelerating commercial tech transition through DIU",
+        "persona_bridge": "Multi-stakeholder quantum-AI governance framework",
+        "problem_frame": "Orchestrate DoD's quantum-AI North Stars with unified coordination framework that accelerates commercial tech transition while meeting national security requirements",
+        "ice_breaker": "Your North Star strategy aligns quantum+AI across DoD\u2014InfraFabric provides the unified orchestration framework that accelerates both while meeting your security requirements",
+        "priority_tier": "A",
+        "priority_score": "97"
+      },
+      "agent_results": [
+        {
+          "agent": "ProfessionalNetworker",
+          "confidence": 75,
+          "contact_info": {
+            "email_patterns": [
+              "emil.michael@diu.mil",
+              "emil@diu.mil",
+              "emilmichael@diu.mil",
+              "emichael@diu.mil"
+            ],
+            "linkedin_url": "https://linkedin.com/in/emil-michael",
+            "source": "pattern_generation"
+          },
+          "weight": 1.0,
+          "tier": "baseline"
+        },
+        {
+          "agent": "AcademicResearcher",
+          "confidence": 0,
+          "contact_info": {
+            "source": "not_applicable"
+          },
+          "weight": 0.0,
+          "tier": "specialist"
+        },
+        {
+          "agent": "IntelAnalyst",
+          "confidence": 0,
+          "contact_info": {
+            "source": "not_public_company"
+          },
+          "weight": 0.0,
+          "tier": "specialist"
+        },
+        {
+          "agent": "InvestigativeJournalist",
+          "confidence": 43,
+          "contact_info": {
+            "source": "no_hidden_contacts_found"
+          },
+          "weight": 0.0,
+          "tier": "exploratory"
+        },
+        {
+          "agent": "RecruiterUser",
+          "confidence": 85,
+          "contact_info": {
+            "github": "https://github.com/EmilM",
+            "stackoverflow": "https://stackoverflow.com/users/Emil",
+            "source": "tech_community"
+          },
+          "weight": 1.3,
+          "tier": "exploratory"
+        },
+        {
+          "agent": "SocialEngineer",
+          "confidence": 51,
+          "contact_info": {
+            "department_email": "undersecretary@diu.mil",
+            "general_contact": "info@diu.mil",
+            "source": "organizational_intelligence",
+            "note": "Alternative contact paths identified"
+          },
+          "weight": 0.5,
+          "tier": "exploratory"
+        }
+      ],
+      "weighted_confidence": 75.35714285714286,
+      "google_invoked": false,
+      "google_boost": 0.0,
+      "final_confidence": 75.35714285714286,
+      "best_contact_info": {
+        "github": "https://github.com/EmilM",
+        "stackoverflow": "https://stackoverflow.com/users/Emil",
+        "source": "tech_community"
+      },
+      "cost": 0.0,
+      "decision": "Free agents sufficient (saved $0.0050)"
+    },
+    {
+      "contact": {
+        "first_name": "Amin",
+        "last_name": "Vahdat",
+        "organization": "Google Cloud",
+        "role_title": "VP & GM ML Systems and Cloud AI",
+        "sector": "AI Infrastructure",
+        "persona_type": "AI Infrastructure Company",
+        "linkedin_url": "https://linkedin.com/in/vahdat",
+        "company_website": "https://cloud.google.com",
+        "email_if_public": "",
+        "why_relevant": "Leads Google Cloud's AI infrastructure including TPUs and AI Hypercomputer systems critical for quantum-AI convergence workloads.",
+        "recent_activity": "Launched Ironwood TPU (7th gen) April 2025: 42.5 exaflops at 9,216 chips\u201424x faster than El Capitan; emphasized networking as #1 bottleneck at Optica March 2025; predicted 2025 as \"Year of Inference\"",
+        "strategic_problem": "Networking bottleneck constraining AI scaling: demand growing 10x/year but interconnects lag behind, limiting inference workload distribution at hyperscale",
+        "persona_bridge": "Quantum-safe AI infrastructure orchestration",
+        "problem_frame": "Solve the networking bottleneck for agentic AI inference workloads by orchestrating quantum-enhanced communication channels within classical TPU fabrics",
+        "ice_breaker": "Your networking bottleneck thesis is quantum's opening\u2014InfraFabric coordinates distributed inference across quantum-enhanced channels that scale with your 10x demand",
+        "priority_tier": "A",
+        "priority_score": "96"
+      },
+      "agent_results": [
+        {
+          "agent": "ProfessionalNetworker",
+          "confidence": 85,
+          "contact_info": {
+            "email_patterns": [
+              "amin.vahdat@cloud.google.com",
+              "amin@cloud.google.com",
+              "aminvahdat@cloud.google.com",
+              "avahdat@cloud.google.com"
+            ],
+            "linkedin_url": "https://linkedin.com/in/amin-vahdat",
+            "source": "pattern_generation"
+          },
+          "weight": 1.0,
+          "tier": "baseline"
+        },
+        {
+          "agent": "AcademicResearcher",
+          "confidence": 0,
+          "contact_info": {
+            "source": "not_applicable"
+          },
+          "weight": 0.0,
+          "tier": "specialist"
+        },
+        {
+          "agent": "IntelAnalyst",
+          "confidence": 75,
+          "contact_info": {
+            "sec_filing": "https://sec.gov/cgi-bin/browse-edgar?company=Google Cloud",
+            "investor_relations": "ir@cloud.google.com",
+            "source": "sec_filings"
+          },
+          "weight": 1.2,
+          "tier": "specialist"
+        },
+        {
+          "agent": "InvestigativeJournalist",
+          "confidence": 36,
+          "contact_info": {
+            "source": "no_hidden_contacts_found"
+          },
+          "weight": 0.0,
+          "tier": "exploratory"
+        },
+        {
+          "agent": "RecruiterUser",
+          "confidence": 34,
+          "contact_info": {
+            "source": "no_tech_community_presence"
+          },
+          "weight": 0.0,
+          "tier": "exploratory"
+        },
+        {
+          "agent": "SocialEngineer",
+          "confidence": 55,
+          "contact_info": {
+            "department_email": "vp@cloud.google.com",
+            "general_contact": "info@cloud.google.com",
+            "source": "organizational_intelligence",
+            "note": "Alternative contact paths identified"
+          },
+          "weight": 0.5,
+          "tier": "exploratory"
+        }
+      ],
+      "weighted_confidence": 75.0,
+      "google_invoked": false,
+      "google_boost": 0.0,
+      "final_confidence": 75.0,
+      "best_contact_info": {
+        "email_patterns": [
+          "amin.vahdat@cloud.google.com",
+          "amin@cloud.google.com",
+          "aminvahdat@cloud.google.com",
+          "avahdat@cloud.google.com"
+        ],
+        "linkedin_url": "https://linkedin.com/in/amin-vahdat",
+        "source": "pattern_generation"
+      },
+      "cost": 0.0,
+      "decision": "Free agents sufficient (saved $0.0050)"
+    },
+    {
+      "contact": {
+        "first_name": "Jeremy",
+        "last_name": "O'Brien",
+        "organization": "PsiQuantum",
+        "role_title": "CEO & Co-founder",
+        "sector": "Quantum Computing",
+        "persona_type": "Quantum Networking/Cryptography Vendor",
+        "linkedin_url": "https://www.linkedin.com/in/jeremy-o-brien-39482631/",
+        "company_website": "https://www.psiquantum.com",
+        "email_if_public": "",
+        "why_relevant": "Leading photonic quantum computing with distributed architecture requiring coordination infrastructure for quantum networking and AI integration.",
+        "recent_activity": "Announced Omega photonic chipset Feb 2025 (Nature paper, all components for million-qubit systems); breaking ground Brisbane and Chicago quantum compute centers 2025; Australian and Illinois government partnerships",
+        "strategic_problem": "Building first utility-scale million-qubit photonic quantum computers in manufacturing-ready silicon photonics while coordinating distributed architecture at unprecedented scale",
+        "persona_bridge": "Distributed quantum network management",
+        "problem_frame": "Coordinate PsiQuantum's distributed photonic architecture across million-qubit systems using quantum networking that leverages your silicon photonics infrastructure",
+        "ice_breaker": "Your photonic architecture is inherently networked\u2014InfraFabric orchestrates your million-qubit systems with quantum networking native to your silicon photonics platform",
+        "priority_tier": "A",
+        "priority_score": "95"
+      },
+      "agent_results": [
+        {
+          "agent": "ProfessionalNetworker",
+          "confidence": 80,
+          "contact_info": {
+            "email_patterns": [
+              "jeremy.o'brien@psiquantum.com",
+              "jeremy@psiquantum.com",
+              "jeremyo'brien@psiquantum.com",
+              "jo'brien@psiquantum.com"
+            ],
+            "linkedin_url": "https://linkedin.com/in/jeremy-o'brien",
+            "source": "pattern_generation"
+          },
+          "weight": 1.0,
+          "tier": "baseline"
+        },
+        {
+          "agent": "AcademicResearcher",
+          "confidence": 0,
+          "contact_info": {
+            "source": "not_applicable"
+          },
+          "weight": 0.0,
+          "tier": "specialist"
+        },
+        {
+          "agent": "IntelAnalyst",
+          "confidence": 0,
+          "contact_info": {
+            "source": "not_public_company"
+          },
+          "weight": 0.0,
+          "tier": "specialist"
+        },
+        {
+          "agent": "InvestigativeJournalist",
+          "confidence": 36,
+          "contact_info": {
+            "source": "no_hidden_contacts_found"
+          },
+          "weight": 0.0,
+          "tier": "exploratory"
+        },
+        {
+          "agent": "RecruiterUser",
+          "confidence": 28,
+          "contact_info": {
+            "source": "no_tech_community_presence"
+          },
+          "weight": 0.0,
+          "tier": "exploratory"
+        },
+        {
+          "agent": "SocialEngineer",
+          "confidence": 63,
+          "contact_info": {
+            "department_email": "ceo@psiquantum.com",
+            "general_contact": "info@psiquantum.com",
+            "source": "organizational_intelligence",
+            "note": "Alternative contact paths identified"
+          },
+          "weight": 0.5,
+          "tier": "exploratory"
+        }
+      ],
+      "weighted_confidence": 74.33333333333333,
+      "google_invoked": false,
+      "google_boost": 0.0,
+      "final_confidence": 74.33333333333333,
+      "best_contact_info": {
+        "email_patterns": [
+          "jeremy.o'brien@psiquantum.com",
+          "jeremy@psiquantum.com",
+          "jeremyo'brien@psiquantum.com",
+          "jo'brien@psiquantum.com"
+        ],
+        "linkedin_url": "https://linkedin.com/in/jeremy-o'brien",
+        "source": "pattern_generation"
+      },
+      "cost": 0.0,
+      "decision": "Free agents sufficient (saved $0.0050)"
+    },
+    {
+      "contact": {
+        "first_name": "Mark",
+        "last_name": "Papermaster",
+        "organization": "AMD",
+        "role_title": "EVP & Chief Technology Officer",
+        "sector": "AI Infrastructure",
+        "persona_type": "AI Infrastructure Company",
+        "linkedin_url": "https://linkedin.com/in/mark-papermaster-66914925",
+        "company_website": "https://www.amd.com",
+        "email_if_public": "mark.papermaster@amd.com",
+        "why_relevant": "Drives AMD's AI strategy across hardware and software portfolio with focus on open rack-scale AI infrastructure for quantum-ready systems.",
+        "recent_activity": "Keynoting ISC 2025 on HPC-AI convergence; launched OCP 2025 open rack-scale AI platform with MI355X GPUs; achieved 38X energy efficiency (exceeded 30X goal); taped out 2nm Venice chips",
+        "strategic_problem": "Open rack-scale standards for AI infrastructure that enable hyperscaler adoption while competing with NVIDIA's closed ecosystem at massive scale",
+        "persona_bridge": "Hybrid quantum-classical coordination layer",
+        "problem_frame": "Build open AI infrastructure today that gracefully incorporates quantum accelerators tomorrow through standards-based rack-scale orchestration",
+        "ice_breaker": "Your OCP rack-scale vision needs quantum extensibility\u2014InfraFabric brings the same open standards philosophy to quantum-classical hybrid coordination",
+        "priority_tier": "A",
+        "priority_score": "94"
+      },
+      "agent_results": [
+        {
+          "agent": "ProfessionalNetworker",
+          "confidence": 86,
+          "contact_info": {
+            "email_patterns": [
+              "mark.papermaster@amd.com",
+              "mark@amd.com",
+              "markpapermaster@amd.com",
+              "mpapermaster@amd.com"
+            ],
+            "linkedin_url": "https://linkedin.com/in/mark-papermaster",
+            "source": "pattern_generation"
+          },
+          "weight": 1.0,
+          "tier": "baseline"
+        },
+        {
+          "agent": "AcademicResearcher",
+          "confidence": 0,
+          "contact_info": {
+            "source": "not_applicable"
+          },
+          "weight": 0.0,
+          "tier": "specialist"
+        },
+        {
+          "agent": "IntelAnalyst",
+          "confidence": 81,
+          "contact_info": {
+            "sec_filing": "https://sec.gov/cgi-bin/browse-edgar?company=AMD",
+            "investor_relations": "ir@amd.com",
+            "source": "sec_filings"
+          },
+          "weight": 1.2,
+          "tier": "specialist"
+        },
+        {
+          "agent": "InvestigativeJournalist",
+          "confidence": 38,
+          "contact_info": {
+            "source": "no_hidden_contacts_found"
+          },
+          "weight": 0.0,
+          "tier": "exploratory"
+        },
+        {
+          "agent": "RecruiterUser",
+          "confidence": 34,
+          "contact_info": {
+            "source": "no_tech_community_presence"
+          },
+          "weight": 0.0,
+          "tier": "exploratory"
+        },
+        {
+          "agent": "SocialEngineer",
+          "confidence": 73,
+          "contact_info": {
+            "department_email": "evp@amd.com",
+            "general_contact": "info@amd.com",
+            "source": "organizational_intelligence",
+            "note": "Alternative contact paths identified"
+          },
+          "weight": 1.2,
+          "tier": "exploratory"
+        }
+      ],
+      "weighted_confidence": 79.64705882352939,
+      "google_invoked": false,
+      "google_boost": 0.0,
+      "final_confidence": 79.64705882352939,
+      "best_contact_info": {
+        "email_patterns": [
+          "mark.papermaster@amd.com",
+          "mark@amd.com",
+          "markpapermaster@amd.com",
+          "mpapermaster@amd.com"
+        ],
+        "linkedin_url": "https://linkedin.com/in/mark-papermaster",
+        "source": "pattern_generation"
+      },
+      "cost": 0.0,
+      "decision": "Free agents sufficient (saved $0.0050)"
+    },
+    {
+      "contact": {
+        "first_name": "Swami",
+        "last_name": "Sivasubramanian",
+        "organization": "AWS",
+        "role_title": "VP of Agentic AI",
+        "sector": "AI Infrastructure",
+        "persona_type": "AI Infrastructure Company",
+        "linkedin_url": "https://linkedin.com/in/swaminathansivasubramanian",
+        "company_website": "https://aws.amazon.com",
+        "email_if_public": "",
+        "why_relevant": "Manages AWS's AI and data services including infrastructure for foundation models that require quantum-enhanced coordination systems.",
+        "recent_activity": "Appointed VP of Agentic AI March 2025; AWS Summit NYC keynote on AgentCore (1M+ SDK downloads); re:Invent 2024 launched multi-agent collaboration (40% better completion); saved 4,500 developer-years with Amazon Q",
+        "strategic_problem": "Scaling production-ready agentic AI systems that reliably orchestrate multi-agent collaboration across distributed enterprise infrastructure at AWS global scale",
+        "persona_bridge": "Multi-stakeholder quantum-AI governance framework",
+        "problem_frame": "Orchestrate multi-agent AI systems with quantum-secured communication channels and hybrid quantum-classical task routing for enterprise-grade reliability",
+        "ice_breaker": "Your agentic AI architecture needs quantum coordination\u2014InfraFabric orchestrates multi-agent collaboration with quantum-secure channels and hybrid task routing at AWS scale",
+        "priority_tier": "A",
+        "priority_score": "93"
+      },
+      "agent_results": [
+        {
+          "agent": "ProfessionalNetworker",
+          "confidence": 77,
+          "contact_info": {
+            "email_patterns": [
+              "swami.sivasubramanian@aws.amazon.com",
+              "swami@aws.amazon.com",
+              "swamisivasubramanian@aws.amazon.com",
+              "ssivasubramanian@aws.amazon.com"
+            ],
+            "linkedin_url": "https://linkedin.com/in/swami-sivasubramanian",
+            "source": "pattern_generation"
+          },
+          "weight": 1.0,
+          "tier": "baseline"
+        },
+        {
+          "agent": "AcademicResearcher",
+          "confidence": 0,
+          "contact_info": {
+            "source": "not_applicable"
+          },
+          "weight": 0.0,
+          "tier": "specialist"
+        },
+        {
+          "agent": "IntelAnalyst",
+          "confidence": 0,
+          "contact_info": {
+            "source": "not_public_company"
+          },
+          "weight": 0.0,
+          "tier": "specialist"
+        },
+        {
+          "agent": "InvestigativeJournalist",
+          "confidence": 38,
+          "contact_info": {
+            "source": "no_hidden_contacts_found"
+          },
+          "weight": 0.0,
+          "tier": "exploratory"
+        },
+        {
+          "agent": "RecruiterUser",
+          "confidence": 25,
+          "contact_info": {
+            "source": "no_tech_community_presence"
+          },
+          "weight": 0.0,
+          "tier": "exploratory"
+        },
+        {
+          "agent": "SocialEngineer",
+          "confidence": 73,
+          "contact_info": {
+            "department_email": "vp@aws.amazon.com",
+            "general_contact": "info@aws.amazon.com",
+            "source": "organizational_intelligence",
+            "note": "Alternative contact paths identified"
+          },
+          "weight": 1.2,
+          "tier": "exploratory"
+        }
+      ],
+      "weighted_confidence": 74.81818181818181,
+      "google_invoked": false,
+      "google_boost": 0.0,
+      "final_confidence": 74.81818181818181,
+      "best_contact_info": {
+        "email_patterns": [
+          "swami.sivasubramanian@aws.amazon.com",
+          "swami@aws.amazon.com",
+          "swamisivasubramanian@aws.amazon.com",
+          "ssivasubramanian@aws.amazon.com"
+        ],
+        "linkedin_url": "https://linkedin.com/in/swami-sivasubramanian",
+        "source": "pattern_generation"
+      },
+      "cost": 0.0,
+      "decision": "Free agents sufficient (saved $0.0050)"
+    }
+  ],
+  "timestamp": "20251031_155415",
+  "num_contacts": 5,
+  "agents_used": [
+    "ProfessionalNetworker",
+    "AcademicResearcher",
+    "IntelAnalyst",
+    "InvestigativeJournalist",
+    "RecruiterUser",
+    "SocialEngineer"
+  ]
+}
