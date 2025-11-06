@@ -23,13 +23,13 @@
     - Cross-Domain Validation Matrix
     - Contrarian Veto Mechanism
   - **[2. IF.foundations - Foundational Methodologies](IF-foundations.md)** (10,621 words)
-    - Part 1: IF.ground (8 Anti-Hallucination Principles)
-    - Part 2: IF.search (8-Pass Investigation Methodology)
-      - Case Study 1: Email Contact Discovery
-      - **Case Study 2: Epic Games Infrastructure Investigation** ⭐
-      - Case Study 3: Model Bias Discovery
-    - Part 3: IF.persona (Bloom Patterns & Cognitive Diversity)
-    - Appendix A: IF.philosophy Database
+    - [Part 1: IF.ground](IF-foundations.md#2-part-1-ifground---the-epistemology) (8 Anti-Hallucination Principles)
+    - [Part 2: IF.search](IF-foundations.md#3-part-2-ifsearch---the-investigation) (8-Pass Investigation Methodology)
+      - [Case Study 1: Email Contact Discovery](IF-foundations.md#case-study-1-email-contact-discovery-october-2025)
+      - **[Case Study 2: Epic Games Infrastructure Investigation](IF-foundations.md#case-study-2-epic-games-infrastructure-investigation-november-2025)** ⭐
+      - [Case Study 3: Model Bias Discovery](IF-foundations.md#case-study-3-model-bias-discovery-november-2025)
+    - [Part 3: IF.persona](IF-foundations.md#4-part-3-ifpersona---the-agent) (Bloom Patterns & Cognitive Diversity)
+    - [Appendix A: IF.philosophy Database](IF-foundations.md#appendix-a-ifphilosophy---a-framework-for-queryable-epistemology)
   - **[3. IF.armour - Security Architecture](IF-armour.md)** (5,935 words)
     - 4-Tier Defense Architecture
     - 100× False Positive Reduction (4% → 0.04%)
@@ -66,44 +66,44 @@
     - 7 Personas (Crime Beat Reporter, Forensic Investigator, Internal Affairs, etc.)
 - [Repository Structure](#repository-structure)
 - **[Supplementary Materials - Complete Council Debates](annexes/infrafabric-IF-annexes.md)**
-  - **ANNEX A:** Dossier 01 - RRAM Hardware Acceleration (99.1%)
+  - **[ANNEX A: Dossier 01 - RRAM Hardware Acceleration](annexes/infrafabric-IF-annexes.md#annex-a-dossier-01---rram-hardware-acceleration)** (99.1%)
     - Executive Summary
     - Guardian Deliberations
     - Weighted Consensus Calculation
-  - **ANNEX B:** Dossier 02 - Singapore GARP Governance (77.5-80%)
+  - **[ANNEX B: Dossier 02 - Singapore GARP Governance](annexes/infrafabric-IF-annexes.md#annex-b-dossier-02---singapore-garp-governance)** (77.5-80%)
     - Executive Summary
     - Guardian Deliberations
     - Tiered Consensus Calculation
-  - **ANNEX C:** Dossier 03 - NVIDIA Integration (97.7%)
+  - **[ANNEX C: Dossier 03 - NVIDIA Integration](annexes/infrafabric-IF-annexes.md#annex-c-dossier-03---nvidia-integration)** (97.7%)
     - Executive Summary
     - Guardian Deliberations
     - Weighted Consensus Calculation
-  - **ANNEX D:** Dossier 04 - Police Chase Coordination Failure (97.3%)
+  - **[ANNEX D: Dossier 04 - Police Chase Coordination Failure](annexes/infrafabric-IF-annexes.md#annex-d-dossier-04---police-chase-coordination-failure)** (97.3%)
     - Executive Summary
     - Complete Strategic Analysis
     - Seven Coordination Failure Patterns
     - Guardian Deliberations
-  - **ANNEX E:** Dossier 05 - Neurogenesis Biological Parallels (89.1%)
+  - **[ANNEX E: Dossier 05 - Neurogenesis Biological Parallels](annexes/infrafabric-IF-annexes.md#annex-e-dossier-05---neurogenesis-biological-parallels)** (89.1%)
     - 5 Core Parallels to InfraFabric
     - New IF Component Proposal: IF.vesicle
     - IF.guard Council Evaluation
-  - **ANNEX F:** Dossier 06 - KERNEL Framework Integration (70.0%)
+  - **[ANNEX F: Dossier 06 - KERNEL Framework Integration](annexes/infrafabric-IF-annexes.md#annex-f-dossier-06---kernel-framework-integration)** (70.0%)
     - KERNEL Framework (6 Principles)
     - IF.optimise Integration
     - Guardian Council Votes
     - Implementation Roadmap
-  - **ANNEX G:** Dossier 07 - Civilizational Collapse Patterns (100% ⭐)
+  - **[ANNEX G: Dossier 07 - Civilizational Collapse Patterns](annexes/infrafabric-IF-annexes.md#annex-g-dossier-07---civilizational-collapse-patterns-100-)** (100% ⭐)
     - Historic First: 100% Consensus Achievement
     - Complete Guardian Unanimity
-  - **ANNEX H:** Consolidation Debate (82.87%)
+  - **[ANNEX H: Consolidation Debate](annexes/infrafabric-IF-annexes.md#annex-h-consolidation-debate---extended-20-voice-council)** (82.87%)
     - 20-Voice Extended Council
     - 3 Western Philosophers
     - 3 Eastern Philosophers
     - 8 IF.sam Facets
-  - **ANNEX I:** IF.yologuard Test Data (31,000+ operations)
+  - **[ANNEX I: IF.yologuard Test Data](annexes/infrafabric-IF-annexes.md#annex-i-ifyologuard-test-data--validation-results)** (31,000+ operations)
     - Secret Redaction Validation
     - False Positive Analysis
-  - **ANNEX J:** External Citations Database (30 sources)
+  - **ANNEX J: External Citations Database** (30 sources)
 - [Installation & Usage](#installation--usage)
   - [Philosophy Database Queries](#philosophy-database-queries)
   - [Guardian Council Simulation](#guardian-council-simulation)
@@ -137,6 +137,7 @@ Complete map of all IF.* components mentioned across papers and annexes:
 - **[IF.witness](IF-witness.md)** - Meta-validation via IF.forge & IF.swarm
 - **[IF.ground](IF-foundations.md#2-part-1-ifground---the-epistemology)** - 8 anti-hallucination principles, epistemological foundation
 - **[IF.search](IF-foundations.md#3-part-2-ifsearch---the-investigation)** - 8-pass investigation methodology with multi-engine consensus
+  - Includes [Epic Games Infrastructure Investigation](IF-foundations.md#case-study-2-epic-games-infrastructure-investigation-november-2025) case study
 - **[IF.persona](IF-foundations.md#4-part-3-ifpersona---the-agent)** - Bloom patterns, cognitive diversity, character bible system
 - **[IF.philosophy](philosophy/IF.philosophy-database.yaml)** - Queryable database mapping 2,500 years of philosophy to AI safety
 - **[IF.forge](IF-witness.md)** - 7-stage Multi-Agent Reflexion Loop (MARL)
