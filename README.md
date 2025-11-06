@@ -10,7 +10,7 @@
 - [Overview](#overview)
 - **[InfraFabric Component Index](#infrafabric-component-index)** - Complete IF.* component map
   - 📄 Documented in Research Papers (12 components with links)
-  - 🔬 Proposed in Annexes (IF.vesicle, IF.sam, IF.kernel)
+  - 🔬 Proposed in Annexes (IF.vesicle, IF.ceo, IF.kernel)
   - 🔧 Operational & Integration Components
   - 🌐 Domain-Specific Applications (IF.chase, IF.collapse, IF.garp)
   - 🏗️ Architectural Patterns
@@ -99,7 +99,7 @@
     - 20-Voice Extended Council
     - 3 Western Philosophers
     - 3 Eastern Philosophers
-    - 8 IF.sam Facets
+    - 8 IF.ceo Facets (Executive Strategic Spectrum)
   - **[ANNEX I: IF.yologuard Test Data](annexes/infrafabric-IF-annexes.md#annex-i-ifyologuard-test-data--validation-results)** (31,000+ operations)
     - Secret Redaction Validation
     - False Positive Analysis
@@ -147,7 +147,7 @@ Complete map of all IF.* components mentioned across papers and annexes:
 
 ### 🔬 **Proposed in Annexes**
 - **[IF.vesicle](annexes/infrafabric-IF-annexes.md#annex-e-dossier-05---neurogenesis-biological-parallels)** - Biological memory transport inspired component (Annex E)
-- **[IF.sam](annexes/infrafabric-IF-annexes.md#annex-h-consolidation-debate---extended-20-voice-council)** - 16 facets of Sam Altman's strategic spectrum (8 Light + 8 Dark, Annex H)
+- **[IF.ceo](annexes/infrafabric-IF-annexes.md#annex-h-consolidation-debate---extended-20-voice-council)** - 16 facets of executive strategic spectrum (8 Light + 8 Dark, Annex H)
 - **[IF.kernel](annexes/infrafabric-IF-annexes.md#annex-f-dossier-06---kernel-framework-integration)** - KERNEL framework integration (6 principles, Annex F)
 
 ### 🔧 **Operational & Integration Components**
