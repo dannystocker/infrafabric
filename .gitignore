@@ -1,0 +1,9 @@
+# Exclude all non-research files
+marketing/
+council/drafts/
+*.backup
+*.log
+*.aux
+*.toc
+
+# Keep only what's essential for arXiv
