@@ -386,11 +386,11 @@ if_components:
     name: "IF.guardian"
     category: "Advanced Governance"
     emotional_function: "Distributed authority with accountability"
-    council_structure: "20-voice extended (6 Core + 3 Western + 3 Eastern + 8 IF.sam)"
+    council_structure: "20-voice extended (6 Core + 3 Western + 3 Eastern + 8 IF.ceo)"
     philosophers:
       - "Western: Locke, Quine, Popper"
       - "Eastern: Buddha, Lao Tzu, Confucius"
-      - "IF.sam: 8 facets of ethical spectrum"
+      - "IF.ceo: 8 facets of ethical spectrum"
     practical_validation: "100% consensus on Dossier 07 (first in IF history)"
     key_metrics:
       - "Average approval: 90.1% across 7 dossiers"
@@ -762,63 +762,63 @@ emotional_cycles:
 
 if_sam_facets:
   light_side_1:
-    name: "IF.sam Light 1: Idealistic Altruism"
+    name: "IF.ceo Light 1: Idealistic Altruism"
     description: "Open research democratizes AI coordination knowledge"
     ethical_stance: "Maximum transparency, knowledge sharing"
     paper_references:
       - "IF-witness.md: Line 156"
 
   light_side_2:
-    name: "IF.sam Light 2: Ethical AI Advancement"
+    name: "IF.ceo Light 2: Ethical AI Advancement"
     description: "Build safe coordination to prevent catastrophic failures"
     ethical_stance: "Safety over speed"
     paper_references:
       - "IF-vision.md: Lines 260-283 (Dossier 07 - civilization collapse prevention)"
 
   light_side_3:
-    name: "IF.sam Light 3: Inclusive Coordination"
+    name: "IF.ceo Light 3: Inclusive Coordination"
     description: "Enable substrate diversity to prevent AI monoculture"
     ethical_stance: "Computational plurality"
     paper_references:
       - "IF-vision.md: Lines 305-315 (IF.core substrate-agnostic)"
 
   light_side_4:
-    name: "IF.sam Light 4: Transparent Governance"
+    name: "IF.ceo Light 4: Transparent Governance"
     description: "IF.guard 20-voice council with public deliberation"
     ethical_stance: "Distributed authority, accountability"
     paper_references:
       - "IF-vision.md: Lines 199-283"
 
   dark_side_1:
-    name: "IF.sam Dark 1: Ruthless Pragmatism"
+    name: "IF.ceo Dark 1: Ruthless Pragmatism"
     description: "MARL reduces dependency on large teams - strategic hiring advantage"
     ethical_stance: "Competitive efficiency"
     paper_references:
       - "IF-witness.md: Line 157"
 
   dark_side_2:
-    name: "IF.sam Dark 2: Strategic Ambiguity"
+    name: "IF.ceo Dark 2: Strategic Ambiguity"
     description: "87-90% token reduction creates cost moat vs competitors"
     ethical_stance: "Operational advantage through efficiency"
     paper_references:
       - "IF-vision.md: Lines 370-376 (IF.optimise)"
 
   dark_side_3:
-    name: "IF.sam Dark 3: Velocity Weaponization"
+    name: "IF.ceo Dark 3: Velocity Weaponization"
     description: "6.9× velocity improvement (PAGE-ZERO v7) outpaces competition"
     ethical_stance: "Speed as competitive weapon"
     paper_references:
       - "IF-vision.md: Line 374"
 
   dark_side_4:
-    name: "IF.sam Dark 4: Information Asymmetry"
+    name: "IF.ceo Dark 4: Information Asymmetry"
     description: "Warrant canaries protect while maintaining compliance - legal judo"
     ethical_stance: "Strategic compliance without full disclosure"
     paper_references:
       - "IF-witness.md: Lines 329-374"
 
   synthesis:
-    name: "IF.sam Synthesis"
+    name: "IF.ceo Synthesis"
     description: "Dual motivations create resilience - benefits align across ethical frameworks"
     observation: "System serves both idealistic (open research) and pragmatic (competitive advantage) goals simultaneously"
     paper_references:

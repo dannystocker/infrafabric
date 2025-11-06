@@ -157,7 +157,7 @@ IF evidence_strength > 0.85 AND impact_score > 7/10 AND defense_tested == True:
 
 Each test attempts to falsify the security hypothesis: "This system cannot be bypassed." Following Karl Popper's falsificationism, we can never prove security, only fail to disprove it through rigorous testing.
 
-**Inspector General**: Monthly audits with IF.guard philosophical review. Conducts retrospective analysis of all security decisions with independent evaluation by IF.guard council (6 Core Guardians + 6 Philosophers + 8 IF.sam facets).
+**Inspector General**: Monthly audits with IF.guard philosophical review. Conducts retrospective analysis of all security decisions with independent evaluation by IF.guard council (6 Core Guardians + 6 Philosophers + 8 IF.ceo facets).
 
 **Audit Questions**:
 - Did evidence meet epistemological standards (coherentism, verificationism)?

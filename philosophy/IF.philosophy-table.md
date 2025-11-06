@@ -64,7 +64,7 @@
 
 | Component | Category | Philosophy | Philosopher(s) | IF Application | Key Metrics | Paper Reference |
 |-----------|----------|-----------|---------------|----------------|-------------|-----------------|
-| **IF.guardian** | Distributed Authority | Cross-tradition validation | 6 Core + 3 Western + 3 Eastern + 8 IF.sam | Context-adaptive weighting; Contrarian veto at >95% approval | 90.1% avg approval, 100% Dossier 07 | IF-vision.md:417-424 |
+| **IF.guardian** | Distributed Authority | Cross-tradition validation | 6 Core + 3 Western + 3 Eastern + 8 IF.ceo | Context-adaptive weighting; Contrarian veto at >95% approval | 90.1% avg approval, 100% Dossier 07 | IF-vision.md:417-424 |
 | **IF.constitution** | Evidence-Based Rules | Patterns not ideology | Empirical governance | 100+ incidents → 30-day assessment → 75% supermajority rule | 3-year point expungement | IF-vision.md:425-430 |
 | **IF.collapse** | Graceful Degradation | Organisms degrade, civilizations crash | Tainter's law | 5 degradation levels (financial → cultural); 5,000 years collapse data | Functions under 10× stress | IF-vision.md:431-440 |
 
@@ -124,7 +124,7 @@
 | **Lao Tzu** | Daoism | c. 6th century BCE | Recognition of limits? | "MARL breaks down when signals ambiguous"; Document failure modes | IF-witness.md:147, 452 |
 | **Confucius** | Confucianism | 551-479 BCE | Tangible outcomes? | IF.yologuard deployed, measurable impact; Practical benefit validation | IF-witness.md:151, 456 |
 
-### IF.sam Facets (8 Light + 8 Dark = 16 total, representing Sam Altman's ethical spectrum)
+### IF.ceo Facets (8 Light + 8 Dark = 16 total, representing executive strategic spectrum)
 
 | Facet | Ethical Stance | Description | Paper Reference |
 |-------|---------------|-------------|-----------------|
@@ -284,7 +284,7 @@ Total span: 2,500 years of philosophical inquiry operationalized
 |--------|-------|
 | **Total Philosophers Mapped** | 12 (9 Western + 3 Eastern) |
 | **IF Components Mapped** | 17 core + 3 meta (IF.armour, IF.witness, IF.yologuard) = 20 total |
-| **IF.guard Council Voices** | 20 (6 Core Guardians + 3 Western + 3 Eastern + 8 IF.sam) |
+| **IF.guard Council Voices** | 20 (6 Core Guardians + 3 Western + 3 Eastern + 8 IF.ceo) |
 | **Philosophical Span** | 2,500 years (500 BCE Buddha → 2025 CE Schmidhuber) |
 | **IF.ground Principles** | 8 (each mapped to philosopher and era) |
 | **Emotional Cycles** | 4 (Manic, Depressive, Dream, Reward) |
@@ -316,9 +316,9 @@ InfraFabric is not novel philosophy - it's operational encoding of established e
 - **20th Century:** Vienna Circle (1920s), Popper (1934), Quine (1951) → IF.ground Principles 2, 5, 7
 - **Contemporary:** Tainter (1988), Schmidhuber (2025) → IF.simplify, IF.persona
 
-### 3. IF.sam Dual-Motivation Resilience
+### 3. IF.ceo Dual-Motivation Resilience
 
-The IF.sam 16-facet spectrum (8 Light + 8 Dark) demonstrates:
+The IF.ceo 16-facet spectrum (8 Light + 8 Dark) demonstrates:
 - **Light Side (Idealistic):** Open research, safety, transparency, inclusion
 - **Dark Side (Pragmatic):** Competitive advantage, strategic efficiency, velocity, information asymmetry
 

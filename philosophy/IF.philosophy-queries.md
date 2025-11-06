@@ -901,7 +901,7 @@ SELECT * FROM meta_statistics
 |--------|-------|
 | **Total Philosophers Mapped** | 12 (9 Western + 3 Eastern) |
 | **IF Components Mapped** | 20 (17 core + 3 meta: IF.armour, IF.witness, IF.yologuard) |
-| **IF.guard Council Voices** | 20 (6 Core Guardians + 3 Western + 3 Eastern + 8 IF.sam) |
+| **IF.guard Council Voices** | 20 (6 Core Guardians + 3 Western + 3 Eastern + 8 IF.ceo) |
 | **Philosophical Span** | 2,500 years (500 BCE → 2025 CE) |
 | **IF.ground Principles** | 8 (each mapped to philosopher and era) |
 | **Emotional Cycles** | 4 (Manic, Depressive, Dream, Reward) |

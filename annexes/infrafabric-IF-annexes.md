@@ -4,7 +4,7 @@
 
 **Cross-Reference:** These annexes are referenced throughout `infrafabric-complete-v7.01.md` with inline guardian quotes and section pointers.
 
-**Council Composition:** 20-voice extended council (6 Core Guardians + 3 Western Philosophers + 3 Eastern Philosophers + 8 IF.sam facets)
+**Council Composition:** 20-voice extended council (6 Core Guardians + 3 Western Philosophers + 3 Eastern Philosophers + 8 IF.ceo facets)
 
 ---
 
@@ -2407,7 +2407,7 @@ class ComplexityMonitor:
 **Confucian Scholar**:
 > "温故而知新，可以为师矣 (Review the old to understand the new.) InfraFabric reviews 5,000 years to design future coordination. This is the superior person's method: learn from ancestors' mistakes."
 
-**IF.sam (Long-term Thinker)**:
+**IF.ceo (Long-term Thinker)**:
 > "In 2035, when people ask 'Why is InfraFabric still here while competitors collapsed?' We'll say: 'We studied empires, not just algorithms.' That's a 10-year moat."
 
 ---
@@ -2434,7 +2434,7 @@ class ComplexityMonitor:
 
 ## Executive Summary
 
-The IF.guard extended council (20 voices: 6 Core Guardians + 3 Western Philosophers + 3 Eastern Philosophers + 8 IF.sam facets) evaluated whether InfraFabric's 50+ markdown documents should be consolidated to improve clarity and maintainability.
+The IF.guard extended council (20 voices: 6 Core Guardians + 3 Western Philosophers + 3 Eastern Philosophers + 8 IF.ceo facets) evaluated whether InfraFabric's 50+ markdown documents should be consolidated to improve clarity and maintainability.
 
 **Key Finding:** 82.87% weighted consensus to consolidate marketing materials, formalize research as dossiers, and preserve council debates with full provenance.
 
@@ -2464,7 +2464,7 @@ The IF.guard extended council (20 voices: 6 Core Guardians + 3 Western Philosoph
 - Confucian Scholar (Kong Fuzi): CONSOLIDATE WITH RITUAL (conditional)
 - Buddhist Monk: CONSOLIDATE (release attachment to documents)
 
-### IF.sam Facets (Weight 88.8%)
+### IF.ceo Facets (Weight 88.8%)
 - Visionary: CONSOLIDATE FOR CLARITY OF VISION
 - Pragmatist: CONSOLIDATE IMMEDIATELY
 - Networker: CONSOLIDATE MARKETING, KEEP TECHNICAL (conditional)
@@ -2478,12 +2478,12 @@ The IF.guard extended council (20 voices: 6 Core Guardians + 3 Western Philosoph
 
 ## Final Consensus Calculation
 
-**Formula**: (Core × 0.5) + (Western × 0.2) + (Eastern × 0.2) + (IF.sam × 0.1)
+**Formula**: (Core × 0.5) + (Western × 0.2) + (Eastern × 0.2) + (IF.ceo × 0.1)
 
 - Core Guardians: 77.3% × 0.5 = 38.65%
 - Western Philosophers: 86.7% × 0.2 = 17.34%
 - Eastern Philosophers: 90.0% × 0.2 = 18.00%
-- IF.sam: 88.8% × 0.1 = 8.88%
+- IF.ceo: 88.8% × 0.1 = 8.88%
 
 **TOTAL**: 82.87% approval
 
@@ -2520,7 +2520,7 @@ The IF.guard extended council (20 voices: 6 Core Guardians + 3 Western Philosoph
 ### Meta-Observation (Meta Guardian M-01):
 "This debate IS InfraFabric philosophy in action. 20 diverse voices coordinated without uniformity to reach 82.87% consensus on a complex meta-question about InfraFabric itself."
 
-### Long-term Vision (IF.sam Long-term Thinker):
+### Long-term Vision (IF.ceo Long-term Thinker):
 "In 2035, when InfraFabric has 1,000 documents and a new team debates the next consolidation, they'll read this document. That's how institutional memory survives—through documents that record their own evolution."
 
 ### Buddhist Wisdom (Buddhist Monk):

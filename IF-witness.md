@@ -107,7 +107,7 @@ MARL introduces recursive validation through seven stages:
 **Stage 7: Meta-Validation (Gemini 2.5 Pro + IF.guard Council)**
 - Evaluate entire MARL process, not just original signal
 - Gemini 2.5 Pro demonstrated exceptional late-blooming performance—excels when context accumulates
-- 20-voice IF.guard council (6 Core Guardians + 3 Western Philosophers + 3 Eastern Philosophers + 8 IF.sam facets) deliberates on:
+- 20-voice IF.guard council (6 Core Guardians + 3 Western Philosophers + 3 Eastern Philosophers + 8 IF.ceo facets) deliberates on:
   - Methodology soundness (did we follow principles?)
   - Output quality (are claims grounded?)
   - Strategic alignment (does this advance coordination goals?)
@@ -152,7 +152,7 @@ The most compelling MARL demonstration is Gemini 2.5 Pro validating the MARL pro
    - Gemini finding: "IF.yologuard deployed in 6 days, 96.43% recall—demonstrates rapid prototyping ✓"
    - Recommendation: "Track velocity metrics—MARL claims to compress months to weeks, measure this"
 
-7. **Ethical Spectrum Validation (IF.sam 16 Facets):** Light side (idealistic altruism) vs Dark side (ruthless pragmatism)
+7. **Ethical Spectrum Validation (IF.ceo 16 Facets):** Light side (idealistic altruism) vs Dark side (ruthless pragmatism)
    - Light Sam: "MARL enables open research—democratizes AI coordination knowledge"
    - Dark Sam: "MARL reduces dependency on large teams—strategic hiring advantage"
    - Synthesis: "Dual motivations create resilience—benefits align across ethical frameworks"
@@ -638,7 +638,7 @@ This work was developed through the Multi-Agent Reflexion Loop (MARL) methodolog
 - **Gemini 2.5 Pro (Google):** Meta-validation agent (Stage 7), 20-voice IF.guard council deliberation
 
 Special recognition:
-- **IF.guard Council:** 20-voice philosophical validation (6 Core Guardians + 3 Western Philosophers + 3 Eastern Philosophers + 8 IF.sam facets)
+- **IF.guard Council:** 20-voice philosophical validation (6 Core Guardians + 3 Western Philosophers + 3 Eastern Philosophers + 8 IF.ceo facets)
 - **15-Agent Epistemic Swarm:** Validation gap identification across 102 source documents
 - **Singapore Traffic Police:** Real-world dual-system governance empirical validation (2021-2025 data)
 - **Yale Law Journal:** Warrant canary legal foundation (Wexler, 2015)
