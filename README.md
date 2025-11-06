@@ -9,14 +9,31 @@
 
 - [Overview](#overview)
 - [Research Papers](#research-papers)
-  - [1. IF.vision - Vision and Architecture](#1-ifvision---infrafabric-vision-and-architecture)
-    - Novel Contributions
-  - [2. IF.foundations - Foundational Methodologies](#2-iffoundations---foundational-methodologies)
-    - Novel Contributions
-  - [3. IF.armour - Security Architecture](#3-ifarmour---security-architecture)
-    - Novel Contributions
-  - [4. IF.witness - Meta-Validation](#4-ifwitness---meta-validation-as-architecture)
-    - Novel Contributions
+  - **[1. IF.vision - Vision and Architecture](IF-vision.md)** (4,099 words)
+    - Cyclical Coordination Model (Manic/Depressive/Dream/Reward)
+    - Guardian Council Architecture (5 Archetypes)
+    - Context-Adaptive Guardian Weighting
+    - Cross-Domain Validation Matrix
+    - Contrarian Veto Mechanism
+  - **[2. IF.foundations - Foundational Methodologies](IF-foundations.md)** (10,621 words)
+    - Part 1: IF.ground (8 Anti-Hallucination Principles)
+    - Part 2: IF.search (8-Pass Investigation Methodology)
+      - Case Study 1: Email Contact Discovery
+      - **Case Study 2: Epic Games Infrastructure Investigation** ⭐
+      - Case Study 3: Model Bias Discovery
+    - Part 3: IF.persona (Bloom Patterns & Cognitive Diversity)
+    - Appendix A: IF.philosophy Database
+  - **[3. IF.armour - Security Architecture](IF-armour.md)** (5,935 words)
+    - 4-Tier Defense Architecture
+    - 100× False Positive Reduction (4% → 0.04%)
+    - Graduated Response Protocol (5 Severity Tiers)
+    - Biological Immune System Inspiration
+    - IF.yologuard Production Validation (96.43% accuracy)
+  - **[4. IF.witness - Meta-Validation](IF-witness.md)** (4,884 words)
+    - IF.forge (7-Stage Multi-Agent Reflexion Loop)
+    - IF.swarm (15-Agent Epistemic Swarm)
+    - Gemini 2.5 Pro Late Bloomer Analysis
+    - Bloom Pattern Taxonomy
 - [IF.philosophy Database](#ifphilosophy-database)
   - 12 Philosophers (Locke, Popper, Peirce, Quine, Dewey, Epictetus, Buddha, Vienna Circle)
   - 20 Components
@@ -41,18 +58,45 @@
   - [Epistemic Personas (IF.ground)](#epistemic-personas-ifground)
     - 7 Personas (Crime Beat Reporter, Forensic Investigator, Internal Affairs, etc.)
 - [Repository Structure](#repository-structure)
-- [Supplementary Materials](#supplementary-materials)
-  - Annex A-G: 7 Dossiers
-    - Dossier 01: RRAM Hardware Acceleration (99.1%)
-    - Dossier 02: Singapore GARP Governance (77.5-80%)
-    - Dossier 03: NVIDIA Integration (97.7%)
-    - Dossier 04: Police Chase Coordination (97.3%)
-    - Dossier 05: Neurogenesis Biological Parallels (89.1%)
-    - Dossier 06: KERNEL Framework Integration (70.0%)
-    - Dossier 07: Civilizational Collapse Patterns (100% ⭐)
-  - Annex H: Consolidation Debate (82.87%)
-  - Annex I: IF.yologuard Test Data (31,000+ operations)
-  - Annex J: External Citations Database (30 sources)
+- **[Supplementary Materials - Complete Council Debates](annexes/infrafabric-IF-annexes.md)**
+  - **ANNEX A:** Dossier 01 - RRAM Hardware Acceleration (99.1%)
+    - Executive Summary
+    - Guardian Deliberations
+    - Weighted Consensus Calculation
+  - **ANNEX B:** Dossier 02 - Singapore GARP Governance (77.5-80%)
+    - Executive Summary
+    - Guardian Deliberations
+    - Tiered Consensus Calculation
+  - **ANNEX C:** Dossier 03 - NVIDIA Integration (97.7%)
+    - Executive Summary
+    - Guardian Deliberations
+    - Weighted Consensus Calculation
+  - **ANNEX D:** Dossier 04 - Police Chase Coordination Failure (97.3%)
+    - Executive Summary
+    - Complete Strategic Analysis
+    - Seven Coordination Failure Patterns
+    - Guardian Deliberations
+  - **ANNEX E:** Dossier 05 - Neurogenesis Biological Parallels (89.1%)
+    - 5 Core Parallels to InfraFabric
+    - New IF Component Proposal: IF.vesicle
+    - IF.guard Council Evaluation
+  - **ANNEX F:** Dossier 06 - KERNEL Framework Integration (70.0%)
+    - KERNEL Framework (6 Principles)
+    - IF.optimise Integration
+    - Guardian Council Votes
+    - Implementation Roadmap
+  - **ANNEX G:** Dossier 07 - Civilizational Collapse Patterns (100% ⭐)
+    - Historic First: 100% Consensus Achievement
+    - Complete Guardian Unanimity
+  - **ANNEX H:** Consolidation Debate (82.87%)
+    - 20-Voice Extended Council
+    - 3 Western Philosophers
+    - 3 Eastern Philosophers
+    - 8 IF.sam Facets
+  - **ANNEX I:** IF.yologuard Test Data (31,000+ operations)
+    - Secret Redaction Validation
+    - False Positive Analysis
+  - **ANNEX J:** External Citations Database (30 sources)
 - [Installation & Usage](#installation--usage)
   - [Philosophy Database Queries](#philosophy-database-queries)
   - [Guardian Council Simulation](#guardian-council-simulation)
