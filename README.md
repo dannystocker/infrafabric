@@ -16,7 +16,7 @@ InfraFabric is a research framework for coordinating multiple large language mod
 This repository contains a 4-paper series submitted to arXiv:
 
 ### 1. IF.vision - InfraFabric Vision and Architecture
-**4,099 words** | [LaTeX Source](papers/IF-vision.tex) | [Submission Package](papers/IF-vision-arxiv-submission.tar.gz)
+**4,099 words** | [Read Paper](IF-vision.md) | [LaTeX Source](papers/IF-vision.tex) | [Submission Package](papers/IF-vision-arxiv-submission.tar.gz)
 
 Hub paper establishing the cyclical coordination model (Manic/Depressive/Dream/Reward) and Guardian Council architecture (Technical, Civic, Ethical, Cultural, Contrarian).
 
@@ -26,7 +26,7 @@ Hub paper establishing the cyclical coordination model (Manic/Depressive/Dream/R
 - Contrarian veto mechanism preventing groupthink (>95% consensus triggers cooling-off)
 
 ### 2. IF.foundations - Foundational Methodologies
-**10,621 words** | [LaTeX Source](papers/IF-foundations.tex) | [Submission Package](papers/IF-foundations-arxiv-submission.tar.gz)
+**10,621 words** | [Read Paper](IF-foundations.md) | [LaTeX Source](papers/IF-foundations.tex) | [Submission Package](papers/IF-foundations-arxiv-submission.tar.gz)
 
 Consolidates observable artifacts methodology (IF.ground), multi-engine validation (IF.search), and architectural personas (IF.persona). Includes IF.philosophy database mapping 2,500 years of philosophical thought to AI safety principles.
 
@@ -36,7 +36,7 @@ Consolidates observable artifacts methodology (IF.ground), multi-engine validati
 - Multi-engine consensus (5 search engines) preventing single-source hallucination
 
 ### 3. IF.armour - Security Architecture
-**5,935 words** | [LaTeX Source](papers/IF-armour.tex) | [Submission Package](papers/IF-armour-arxiv-submission.tar.gz)
+**5,935 words** | [Read Paper](IF-armour.md) | [LaTeX Source](papers/IF-armour.tex) | [Submission Package](papers/IF-armour-arxiv-submission.tar.gz)
 
 4-tier defense architecture with biological false positive reduction. Production validation through IF.yologuard (96.43% secret redaction accuracy).
 
@@ -46,7 +46,7 @@ Consolidates observable artifacts methodology (IF.ground), multi-engine validati
 - Biological immune system inspiration (two-signal model: pattern + context)
 
 ### 4. IF.witness - Meta-Validation as Architecture
-**4,884 words** | [LaTeX Source](papers/IF-witness.tex) | [Submission Package](papers/IF-witness-arxiv-submission.tar.gz)
+**4,884 words** | [Read Paper](IF-witness.md) | [LaTeX Source](papers/IF-witness.tex) | [Submission Package](papers/IF-witness-arxiv-submission.tar.gz)
 
 Formalizes meta-validation through IF.forge (7-stage Multi-Agent Reflexion Loop) and IF.swarm (15-agent epistemic swarm). Case study: Gemini 2.5 Pro late bloomer pattern analysis.
 
@@ -121,20 +121,20 @@ Context-adaptive weighting adjusts based on scenario:
 
 ```
 infrafabric-core/
-├── papers/                                        # Research papers
-│   ├── IF-vision.tex                              # Hub paper (4,099 words)
-│   ├── IF-vision.md                               # Markdown source
-│   ├── IF-vision-arxiv-submission.tar.gz          # arXiv package
-│   ├── IF-foundations.tex                         # Foundations (10,621 words)
-│   ├── IF-foundations.md                          # Markdown source
-│   ├── IF-foundations-arxiv-submission.tar.gz     # arXiv package
-│   ├── IF-armour.tex                              # Security (5,935 words)
-│   ├── IF-armour.md                               # Markdown source
-│   ├── IF-armour-arxiv-submission.tar.gz          # arXiv package
-│   ├── IF-witness.tex                             # Meta-validation (4,884 words)
-│   ├── IF-witness.md                              # Markdown source
-│   ├── IF-witness-arxiv-submission.tar.gz         # arXiv package
-│   └── ARXIV-SUBMISSION-README.md                 # Submission instructions
+├── IF-vision.md                                   # Hub paper (4,099 words)
+├── IF-foundations.md                              # Foundations (10,621 words)
+├── IF-armour.md                                   # Security (5,935 words)
+├── IF-witness.md                                  # Meta-validation (4,884 words)
+├── papers/                                        # LaTeX sources & submission packages
+│   ├── IF-vision.tex
+│   ├── IF-vision-arxiv-submission.tar.gz
+│   ├── IF-foundations.tex
+│   ├── IF-foundations-arxiv-submission.tar.gz
+│   ├── IF-armour.tex
+│   ├── IF-armour-arxiv-submission.tar.gz
+│   ├── IF-witness.tex
+│   ├── IF-witness-arxiv-submission.tar.gz
+│   └── ARXIV-SUBMISSION-README.md
 ├── philosophy/                                    # Philosophy database
 │   ├── IF.philosophy-database.yaml                # Queryable database (866 lines)
 │   ├── IF.philosophy-database.md                  # Human-readable markdown
