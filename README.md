@@ -57,7 +57,7 @@ Formalizes meta-validation through IF.forge (7-stage Multi-Agent Reflexion Loop)
 
 ## IF.philosophy Database
 
-**[IF.philosophy-database.yaml](IF.philosophy-database.yaml)** | 866 lines | 38 KB
+**[IF.philosophy-database.yaml](philosophy/IF.philosophy-database.yaml)** | 866 lines | 38 KB
 
 Queryable database mapping 2,500 years of philosophical thought to InfraFabric components:
 
@@ -66,8 +66,8 @@ Queryable database mapping 2,500 years of philosophical thought to InfraFabric c
 - **8 Anti-Hallucination Principles**: Observable artifacts, explicit toolchain, unknowns explicit, schema tolerance, SSR/CSR alignment, progressive enhancement, reversibility, observability
 
 **Human-Readable Formats:**
-- [IF.philosophy-table.md](IF.philosophy-table.md) - Timeline visualization (500 BCE → 2025 CE)
-- [IF.philosophy-queries.md](IF.philosophy-queries.md) - 29 example queries with expected results
+- [IF.philosophy-table.md](philosophy/IF.philosophy-table.md) - Timeline visualization (500 BCE → 2025 CE)
+- [IF.philosophy-queries.md](philosophy/IF.philosophy-queries.md) - 29 example queries with expected results
 
 ## Production Validation
 
@@ -121,30 +121,34 @@ Context-adaptive weighting adjusts based on scenario:
 
 ```
 infrafabric-core/
-├── papers/
+├── papers/                                        # Research papers
 │   ├── IF-vision.tex                              # Hub paper (4,099 words)
 │   ├── IF-vision.md                               # Markdown source
-│   ├── IF-vision-arxiv-submission.tar.gz          # arXiv package (16 KB)
+│   ├── IF-vision-arxiv-submission.tar.gz          # arXiv package
 │   ├── IF-foundations.tex                         # Foundations (10,621 words)
 │   ├── IF-foundations.md                          # Markdown source
-│   ├── IF-foundations-arxiv-submission.tar.gz     # arXiv package (44 KB)
+│   ├── IF-foundations-arxiv-submission.tar.gz     # arXiv package
 │   ├── IF-armour.tex                              # Security (5,935 words)
 │   ├── IF-armour.md                               # Markdown source
-│   ├── IF-armour-arxiv-submission.tar.gz          # arXiv package (22 KB)
+│   ├── IF-armour-arxiv-submission.tar.gz          # arXiv package
 │   ├── IF-witness.tex                             # Meta-validation (4,884 words)
 │   ├── IF-witness.md                              # Markdown source
-│   ├── IF-witness-arxiv-submission.tar.gz         # arXiv package (18 KB)
+│   ├── IF-witness-arxiv-submission.tar.gz         # arXiv package
 │   └── ARXIV-SUBMISSION-README.md                 # Submission instructions
-├── IF.philosophy-database.yaml                    # Queryable database (866 lines)
-├── IF.philosophy-table.md                         # Human-readable tables (33 KB)
-├── IF.philosophy-queries.md                       # Example queries (43 KB)
-├── infrafabric-IF-annexes.md                      # Complete council debates & validation data
-└── README.md                                      # This file
+├── philosophy/                                    # Philosophy database
+│   ├── IF.philosophy-database.yaml                # Queryable database (866 lines)
+│   ├── IF.philosophy-database.md                  # Human-readable markdown
+│   ├── IF.philosophy-table.md                     # Timeline visualization
+│   └── IF.philosophy-queries.md                   # Example queries (29)
+├── annexes/                                       # Supplementary materials
+│   └── infrafabric-IF-annexes.md                  # Council debates & validation data
+├── README.md                                      # This file
+└── .gitignore                                     # Git ignore rules
 ```
 
 ## Supplementary Materials
 
-**[infrafabric-IF-annexes.md](infrafabric-IF-annexes.md)** - Complete council debates and validation data (not included in arXiv submissions but available for transparency):
+**[infrafabric-IF-annexes.md](annexes/infrafabric-IF-annexes.md)** - Complete council debates and validation data (not included in arXiv submissions but available for transparency):
 
 - **Annex A-G:** 7 dossiers with full IF.guard council deliberations
   - Dossier 01: RRAM Hardware Acceleration (99.1% consensus)
