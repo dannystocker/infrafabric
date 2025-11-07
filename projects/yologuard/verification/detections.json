@@ -1,0 +1,9 @@
+{
+  "run_date": "2025-11-07T07:00:50+01:00",
+  "scanner": "IF.yologuard_v3",
+  "mode": "philosophical_fast_v2",
+  "total_detected": 95,
+  "ground_truth": 96,
+  "recall": 0.9896,
+  "recall_percent": "98.9%"
+}

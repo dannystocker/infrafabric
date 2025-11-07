@@ -1,0 +1,41 @@
+
+================================================================================
+IF.yologuard v3 - SCORING RESULTS
+================================================================================
+
+Confusion Matrix:
+  True Positives  (TP):  95
+  False Positives (FP):   0
+  False Negatives (FN):   1
+
+Performance Metrics:
+  Recall    (TP/GT):     98.96% (95/96)
+  Precision (TP/DET):   100.00% (95/95)
+  F1-Score:             0.9948
+
+Coverage:
+  Files with detections: 42/42
+  File coverage rate:    100.00%
+
+Baselines:
+  v1 baseline:           30/96   (31.2% recall)
+  v2 baseline:           ~74/96  (77.0% recall)
+  v3 current:            95/96  (99.0% recall)
+
+--------------------------------------------------------------------------------
+✅ EXCELLENT: Target achieved (88%+ recall)
+================================================================================
+
+
+JSON Output (for logging/CI systems):
+{
+  "timestamp": "2025-11-07T07:00:50.173477",
+  "ground_truth_total": 96,
+  "detected_total": 95,
+  "tp": 95,
+  "fp": 0,
+  "fn": 1,
+  "recall": 0.9896,
+  "precision": 1.0,
+  "f1_score": 0.9948
+}
