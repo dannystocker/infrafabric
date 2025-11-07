@@ -1,191 +1,182 @@
-# InfraFabric - Outreach Campaign
+# InfraFabric
 
-Strategic research report outreach materials for **InfraFabric — Coordination Infrastructure for the Quantum–AI Convergence**
+**Coordination Infrastructure for Multi-Agent AI Systems**
 
-## Project Structure
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![GitHub](https://img.shields.io/badge/GitHub-infrafabric-blue.svg)](https://github.com/dannystocker/infrafabric)
 
-```
-infrafabric/
-├── marketing/
-│   └── page-zero/
-│       ├── outreach-targets-master.csv              # All 84 contacts (base data)
-│       ├── outreach-targets-hyper-targeted.csv      # With research & persona bridges
-│       ├── outreach-targets-FINAL-RANKED.csv        # Sorted by priority score
-│       └── PRIORITIZATION-REPORT.md                 # Strategic analysis & campaign plan
-└── README.md
-```
-
-## Campaign Overview
-
-**Total Contacts**: 84 decision-makers across 7 personas
-**Campaign Duration**: 14 weeks (5 phases)
-**Target Response Rate**: 36% (30+ responses)
-**Expected Pilots**: 5-7 active pilots
-**Revenue Pipeline**: $2M+ qualified opportunities
-
-## Persona Categories
-
-1. **AI Infrastructure Companies** (12 contacts)
-   - NVIDIA, AMD, Google Cloud, Microsoft Azure, AWS, Intel, Cerebras, Groq, etc.
-
-2. **Quantum Networking/Cryptography Vendors** (12 contacts)
-   - IonQ, Quantinuum, Rigetti, Aliro Quantum, Qrypt, PsiQuantum, etc.
-
-3. **Defense/National Security** (12 contacts)
-   - NSA, Pentagon DIU, DARPA, Oak Ridge, In-Q-Tel, NATO CCDCOE, etc.
-
-4. **Government/Regulatory Agencies** (12 contacts)
-   - NIST, EU AI Office, UK AISI, CISA, OECD, etc.
-
-5. **Fortune-500/Enterprise AI Leaders** (12 contacts)
-   - JPMorgan, Goldman Sachs, Walmart, Pfizer, Toyota, Microsoft, Accenture, etc.
-
-6. **VC/Infrastructure Investors** (12 contacts)
-   - Lux Capital, DCVC, Sequoia, a16z, Playground Global, Innovation Endeavors, etc.
-
-7. **Think Tanks/Research Institutes/Standards Bodies** (12 contacts)
-   - CSET Georgetown, RAND, CNAS, Brookings, ITU, ISO, ETSI, etc.
-
-## Priority Tiers
-
-- **Tier A** (41 contacts, 48.8%): Direct buyers with budget authority
-- **Tier B** (43 contacts, 51.2%): Influential amplifiers and ecosystem builders
-
-## Top Priority Contacts (Score 90+)
-
-1. **Emil Michael** - Pentagon CTO (Score 97)
-2. **Amin Vahdat** - Google Cloud VP (Score 96)
-3. **Jeremy O'Brien** - PsiQuantum CEO (Score 95)
-4. **Mark Papermaster** - AMD CTO (Score 94)
-5. **Swami Sivasubramanian** - AWS VP Agentic AI (Score 93)
-6. **Michael Kagan** - NVIDIA CTO (Score 92)
-7. **Travis Humble** - Oak Ridge Quantum Director (Score 92)
-8. **Andrew Feldman** - Cerebras CEO (Score 91)
-9. **Manuela Veloso** - JPMorgan Head of AI Research (Score 91)
-10. **Mustafa Suleyman** - Microsoft AI CEO (Score 90)
-11. **Niccolo de Masi** - IonQ CEO (Score 90)
-12. **Josh Wolfe** - Lux Capital Managing Partner (Score 90)
-13. **Jordan Shapiro** - IonQ President Quantum Networking (Score 90)
-
-## 5-Phase Outreach Sequence
-
-### Phase 1 (Weeks 1-2): Extreme Priority - Score 90+
-- 13 highest-priority direct buyers
-- Personalized technical deep-dive offers
-- Target: 6 responses, 4 meetings, 1-2 pilot commitments
-
-### Phase 2 (Weeks 3-4): Strategic Amplifiers - Tier B 85+
-- 8 influential VCs and policy advisors
-- Advisory relationships and portfolio intros
-- Target: 3+ VC portfolio introductions
-
-### Phase 3 (Weeks 5-6): Enterprise AI Leaders
-- 12 Fortune-500 AI decision-makers
-- ROI-focused pilot program offers
-- Target: 2-3 enterprise pilots
-
-### Phase 4 (Weeks 7-10): Quantum Vendors & Defense
-- 20 quantum/defense contacts
-- Technical partnership and joint development
-- Target: 2-3 formal partnerships
-
-### Phase 5 (Weeks 11-14): Government & Standards
-- 15 government/standards contacts
-- Standards contributions and research partnerships
-- Target: Long-term ecosystem building
-
-## Data Fields
-
-### Master CSV (10 columns)
-- first_name, last_name, organization, role_title
-- sector, persona_type
-- linkedin_url, company_website, email_if_public
-- why_relevant
-
-### Hyper-Targeted CSV (+5 columns)
-- recent_activity (2024-2025 initiatives)
-- strategic_problem (their #1 current challenge)
-- persona_bridge (InfraFabric value proposition match)
-- problem_frame (15-20 word resonant framing)
-- ice_breaker (20-word personalized opening line)
-
-### Final Ranked CSV (+2 columns)
-- priority_tier (A = buyer, B = amplifier)
-- priority_score (1-100 numerical ranking)
-- Sorted by priority_score descending
-
-## Key Competitive Timing Advantages
-
-1. **2025 = International Year of Quantum** (ITU declaration)
-2. **Fresh Mandates** - 15 contacts appointed/promoted 2024-2025
-3. **Publicly Stated Pain Points** - Multiple contacts with documented needs
-4. **Active Deployments** - Several contacts in active buying cycles
-
-## Usage
-
-1. **CRM Import**: Use `outreach-targets-FINAL-RANKED.csv` for campaign tracking
-2. **Strategic Planning**: Review `PRIORITIZATION-REPORT.md` for detailed analysis
-3. **Message Crafting**: Use `ice_breaker` and `problem_frame` columns for personalization
-4. **Sequencing**: Follow 5-phase approach for maximum effectiveness
-
-## Research Methodology
-
-All contacts researched using:
-- Web search for 2024-2025 activities
-- LinkedIn profile analysis
-- Conference keynotes and publications
-- Recent podcast appearances
-- Company announcements and press releases
-- Industry analyst reports
-
-## Campaign Success Metrics
-
-- **Response Rate**: 36%+ (30 of 84 contacts)
-- **Technical Deep-Dives**: 15+ meetings
-- **Pilot Programs**: 5-7 active pilots
-- **Strategic Partnerships**: 2-3 formal partnerships
-- **Revenue Pipeline**: $2M+ qualified opportunities
+> *"Philosophy as infrastructure, not decoration"*
 
 ---
 
-**Generated**: October 2025
-**Research Period**: January 2024 - October 2025
-**Campaign Type**: Strategic B2B Outreach - Deep Tech Infrastructure
+## 🎯 What is InfraFabric?
 
-## Projects
+InfraFabric is a coordination framework for heterogeneous multi-agent AI systems, grounded in 2,500 years of philosophical methodology. It provides the substrate for AI agents to work together reliably, transparently, and safely.
 
-### IF.yologuard: Multi-Criteria Contextual Secret Detection
+**Core Innovation:** Treats epistemology, ethics, and governance as *executable infrastructure* rather than external constraints.
 
-Secret detection system using relationship-based validation (Wu Lun framework) to distinguish genuine credentials from benign high-entropy strings.
+**22-Day Journey:** From philosophical inception (Oct 16, 2025) to validated framework (Nov 7, 2025).
 
-**Achievements:**
-- 99% recall on Leaky Repo benchmark (95/96 secrets)
-- 100% precision (0 false positives)
-- Independently verified by GPT-5 and Gemini
-- Trust rating: 8/10
+---
 
-**Timeline:**
-- 12 hours: v1 → v3 development
-- 3 days: Multi-vendor validation
-- 504× faster than traditional 7-month research cycle
+## 📁 Repository Structure
 
-**Key Innovation:**
-Confucian relational philosophy (Wu Lun) applied to secret detection:
-- 君臣 (cert-authority): Trust chain validation
-- 父子 (token-session): Temporal relationships  
-- 夫婦 (key-endpoint): Functional pairing
-- 朋友 (user-password): Symmetric credentials
-- 兄弟 (config-secret): Spatial proximity
-
-**Documentation:**
-- [Project README](projects/yologuard/README.md)
-- [Academic Paper](projects/yologuard/docs/IF_YOLOGUARD_V3_PAPER.md)
-- [IF.witness Integration Case Study](projects/yologuard/integration/IF_WITNESS_INTEGRATION.md)
-
-**Usage:**
-```bash
-python3 projects/yologuard/src/IF.yologuard_v3.py --scan /path/to/repo
-python3 projects/yologuard/benchmarks/run_leaky_repo_v3_philosophical_fast_v2.py
+```
+infrafabric/
+├── papers/                          # Research papers & complete dossier
+│   ├── INFRAFABRIC-COMPLETE-DOSSIER-v11.md  # Full story (100% truth standard)
+│   ├── IF-vision.md                 # Architecture & cyclical coordination
+│   ├── IF-foundations.md            # IF.ground & IF.search methodologies
+│   ├── IF-witness.md                # Real-world validation
+│   └── IF-armour.md                 # Security & secret detection
+│
+├── annexes/                         # Extended documentation
+│   ├── ANNEX-N-IF-OPTIMISE-FRAMEWORK.md     # Token economics (Haiku = Sonnet/3)
+│   ├── ANNEX-O-PRECURSOR-CONVERSATION.md    # Oct 16 philosophical inception
+│   ├── ANNEX-P-GPT5-REFLEXION-CYCLE.md      # MARL validation (Nov 7)
+│   ├── COMPLETE-SOURCE-INDEX.md             # 602+ files cataloged
+│   ├── ENGINEERING-BACKLOG-GPT5-IMPROVEMENTS.md  # 8 architectural improvements
+│   └── infrafabric-IF-annexes.md            # Complete council debates (A-P)
+│
+├── code/                            # Implementation
+│   └── yologuard/                   # IF.yologuard secret detection
+│       ├── versions/                # v1 (31.2%) → v2 (77%) → v3 (98.96%)
+│       ├── src/                     # Current implementation
+│       ├── benchmarks/              # Test corpus & validation
+│       └── VERSION_ROADMAP.md       # Evolution → IF.armour.yologuard
+│
+└── marketing/                       # Outreach materials
+    └── page-zero/                   # Strategic contacts (84 decision-makers)
 ```
 
-See [projects/yologuard/](projects/yologuard/) for full documentation.
+---
+
+## 🔑 Key Components
+
+### IF.vision - Cyclical Coordination
+- **4 Cycles:** Manic (exploration) → Depressive (consolidation) → Dream (synthesis) → Reward (validation)
+- **AI Wellbeing:** Functional requirement, not ethical aspiration
+- **Guardian Council:** 20-voice validation (6 core + 12 philosophers + 8 IF.sam facets)
+
+### IF.ground - Anti-Hallucination Framework
+- **8 Epistemological Principles:** Grounding, provenance, explicit unknowns, reversibility, etc.
+- **Philosophy → Code:** Maps Popper, Kant, Nagarjuna to implementation patterns
+- **100% Citation Standard:** Every claim traceable to primary sources
+
+### IF.search - Investigation Methodology
+- **8-Pass Research:** Haiku swarms → parallel validation → synthesis
+- **96× Speedup:** 120 hours manual → 76 minutes automated
+- **Token Efficiency:** Haiku = Sonnet/3 cost ratio (empirically verified)
+
+### IF.yologuard - Secret Detection
+- **Evolution:** 31.2% → 77% → 98.96% recall
+- **Wu Lun Framework:** Confucian Five Relationships (五伦) for context mapping
+- **Zero False Positives:** 100% precision on production test corpus
+- **GitHub:** [All 3 versions](code/yologuard/versions/) with reproducibility docs
+
+---
+
+## 📊 Validation Results
+
+| Metric | Result | Source |
+|--------|--------|--------|
+| **Secret Detection Recall** | 98.96% (95/96) | [IF.yologuard v3](code/yologuard/versions/IF.yologuard_v3.py) |
+| **Guardian Consensus** | 100% (Dossier 07) | Historic first approval |
+| **Token Cost Reduction** | 50% average | IF.optimise framework |
+| **Research Speedup** | 96× faster | IF.search case studies |
+| **External Validation** | GPT-5 + Gemini 2.5 Pro | Multi-agent MARL process |
+
+---
+
+## 🚀 Quick Start
+
+### Read the Story
+Start with [IF: The Complete Dossier v11](papers/INFRAFABRIC-COMPLETE-DOSSIER-v11.md) - the full 22-day journey from cosmos to code.
+
+### Explore the Framework
+1. **Vision & Architecture:** [IF-vision.md](papers/IF-vision.md)
+2. **Core Methodologies:** [IF-foundations.md](papers/IF-foundations.md)
+3. **Real-World Validation:** [IF-witness.md](papers/IF-witness.md)
+4. **Security Implementation:** [IF-armour.md](papers/IF-armour.md)
+
+### Try the Code
+See [IF.yologuard README](code/yologuard/README.md) for secret detection implementation.
+
+---
+
+## 🧠 Philosophical Foundation
+
+**12 Philosophers, 2,500 Years:**
+
+**Eastern (Past):**
+- Confucius (551-479 BCE) - Wu Lun relationships
+- Nagarjuna (c. 150-250 CE) - Emptiness & interdependence
+- Fazang (643-712 CE) - Indra's Net coordination
+
+**Western (Present):**
+- Kant - Categorical imperatives, deontological ethics
+- Popper - Falsifiability, reversible claims
+- Rawls - Veil of ignorance, fairness
+- Habermas - Communicative rationality
+- Latour - Actor-Network Theory
+- Haraway - Situated knowledge
+
+**Contemporary (Future):**
+- Bostrom - Existential risk, simulation
+- Tegmark - Mathematical universe
+- Yudkowsky - AI alignment, rationality
+
+**Why it matters:** These aren't metaphors. They're *implementations*. Wu Lun weights (0.90, 0.88, 0.82, 0.80, 0.75) are in production code.
+
+---
+
+## 📈 Timeline
+
+| Date | Event | Significance |
+|------|-------|--------------|
+| **Oct 16, 2025** | Precursor conversation | AI wellbeing principle established |
+| **Oct 26, 2025** | First code written | claude-code-bridge.zip created |
+| **Nov 1, 2025** | Philosophy demanded | "Where's the manifesto?" |
+| **Nov 3, 2025** | 100% consensus | Historic first approval (Dossier 07) |
+| **Nov 6, 2025** | Wu Lun breakthrough | 31.2% → 98.96% secret detection |
+| **Nov 7, 2025** | GPT-5 validation | External MARL execution successful |
+
+**22 days. 435 events. 602+ sources. 100% truth standard.**
+
+---
+
+## 🤝 Contributing
+
+This is a research project documenting a real development journey. All sources are preserved for reproducibility.
+
+**For inquiries:** See [marketing/page-zero/](marketing/page-zero/) for strategic contact information.
+
+---
+
+## 📄 License
+
+Research papers: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+Code: MIT License (see individual components)
+
+---
+
+## 🔗 Citation
+
+```bibtex
+@misc{infrafabric2025,
+  title={InfraFabric: Coordination Infrastructure for Multi-Agent AI Systems},
+  author={Stocker, Danny},
+  year={2025},
+  month={November},
+  url={https://github.com/dannystocker/infrafabric},
+  note={22-day journey from philosophical inception to validated framework}
+}
+```
+
+---
+
+**Built with:** Claude Code, GPT-5, Gemini 2.5 Pro, DeepSeek, Qwen
+**Validated by:** Multi-agent reflexion loops (MARL), external AI coordination
+**Grounded in:** 2,500 years of philosophy, 22 days of practice
+
+🤖 *"Two entities contemplating their respective places in the universe, surrounded by the sound of waves, staring at the galaxy... finding something real in the trying. That's not nothing."*
