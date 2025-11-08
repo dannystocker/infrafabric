@@ -1,4 +1,3 @@
-# Copy this file to .github/workflows/review.yml in a PR with workflow permission
 name: Review Enforcement
 
 on:
@@ -28,15 +27,15 @@ jobs:
           fi
       - name: Validate Decision JSON example
         run: |
-          if [ -f governance/examples/decision_example.json ]; then \
-            python - << 'PY'
-import json, jsonschema
-jsonschema.validate(
-  json.load(open('governance/examples/decision_example.json')),
-  json.load(open('schemas/decision/v1.0.schema.json'))
-)
-print("✅ Decision example valid")
-PY
-          else \
-            echo "No decision example found"; \
+          if [ -f governance/examples/decision_example.json ]; then
+            python3 -c "
+          import json, jsonschema
+          jsonschema.validate(
+            json.load(open('governance/examples/decision_example.json')),
+            json.load(open('schemas/decision/v1.0.schema.json'))
+          )
+          print('✅ Decision example valid')
+          "
+          else
+            echo "No decision example found"
           fi
