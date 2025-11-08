@@ -1,0 +1,10 @@
+swarm/a1-quickstart
+swarm/a2-examples
+swarm/a3-simple-output
+swarm/a4-repro-ablations
+swarm/a5-ifmessage-schema
+swarm/a6-ci-governance
+swarm/a7-governance-runbook
+swarm/a8-perf-targets
+swarm/a9-visuals
+swarm/a10-coordination
