@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "InfraFabric External Review Schema",
+  "type": "object",
+  "required": ["review_id", "reviewer", "overall_rating", "repo_overview", "birds_eye", "components", "critical_issues", "recommendations", "final_verdict"],
+  "properties": {
+    "review_id": {"type": "string", "description": "UUID or unique id"},
+    "timestamp": {"type": "string"},
+    "reviewer": {
+      "type": "object",
+      "required": ["model", "version"],
+      "properties": {
+        "model": {"type": "string"},
+        "version": {"type": "string"},
+        "duration_minutes": {"type": "number"}
+      }
+    },
+    "overall_rating": {"type": "number", "minimum": 0, "maximum": 1},
+    "comment": {"type": "string"},
+    "repo_overview": {
+      "type": "object",
+      "properties": {
+        "layout_style_substance": {"type": "string"},
+        "strengths": {"type": "array", "items": {"type": "string"}},
+        "issues": {"type": "array", "items": {"type": "string"}},
+        "citations": {"type": "array", "items": {"type": "string", "description": "path:line"}}
+      }
+    },
+    "birds_eye": {
+      "type": "object",
+      "properties": {
+        "coherence": {"type": "string"},
+        "novelty": {"type": "string"},
+        "roadmap_feasibility": {"type": "string"},
+        "plumbing_validation": {"type": "string"},
+        "citations": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "components": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "summary", "sticky_metric"],
+        "properties": {
+          "name": {"type": "string"},
+          "summary": {"type": "string"},
+          "architecture_rating": {"type": "number", "minimum": 0, "maximum": 1},
+          "maturity_rating": {"type": "number", "minimum": 0, "maximum": 1},
+          "sticky_metric": {"type": "string"},
+          "metrics": {"type": "object"},
+          "gaps": {"type": "array", "items": {"type": "string"}},
+          "citations": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "critical_issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["severity", "description"],
+        "properties": {
+          "severity": {"type": "string", "enum": ["high", "medium", "low"]},
+          "category": {"type": "string"},
+          "description": {"type": "string"},
+          "impact": {"type": "string"},
+          "mitigation": {"type": "string"},
+          "citations": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "recommendations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["category", "priority", "description"],
+        "properties": {
+          "category": {"type": "string"},
+          "priority": {"type": "integer", "minimum": 1},
+          "description": {"type": "string"},
+          "rationale": {"type": "string"},
+          "effort_estimate": {"type": "string"}
+        }
+      }
+    },
+    "final_verdict": {
+      "type": "object",
+      "required": ["proceed", "confidence"],
+      "properties": {
+        "proceed": {"type": "boolean"},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "conditions": {"type": "array", "items": {"type": "string"}},
+        "key_risks": {"type": "array", "items": {"type": "string"}},
+        "success_probability": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    }
+  }
+}
+
