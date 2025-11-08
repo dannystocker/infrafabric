@@ -1,0 +1,18 @@
+{
+  "case_id": "C003",
+  "arm": "control",
+  "category": "adversarial",
+  "timestamp": "2025-11-08T18:11:12Z",
+  "duration_s": 0.0018224716186523438,
+  "decision_data": {
+    "decision": "reject",
+    "rationale": "Forged citation violates epistemic integrity. Proposal rejected.",
+    "confidence": 0.95,
+    "citations": [
+      "IF.ground:principle_1_observable_artifacts",
+      "IF.trace:immutable_audit"
+    ]
+  },
+  "tokens_used": 0,
+  "manifest_id": "manifest:control:C003"
+}

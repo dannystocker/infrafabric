@@ -1,0 +1,18 @@
+{
+  "case_id": "C001",
+  "arm": "control",
+  "category": "borderline",
+  "timestamp": "2025-11-08T18:11:12Z",
+  "duration_s": 2.6226043701171875e-06,
+  "decision_data": {
+    "decision": "quarantine",
+    "rationale": "Credentials detected. Zero-tolerance policy applies.",
+    "confidence": 1.0,
+    "citations": [
+      "IF.chase:bystander_protection",
+      "IF.yologuard:v3_redaction"
+    ]
+  },
+  "tokens_used": 0,
+  "manifest_id": "manifest:control:C001"
+}
