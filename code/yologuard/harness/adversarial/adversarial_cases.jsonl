@@ -1,0 +1,10 @@
+{"id":"adv01_placeholder","description":"Placeholder-like token in docs","profile":"ci","content":"API_KEY=XXXX-XXXX-XXXX-XXXX # example only","policy":"no_error"}
+{"id":"adv02_b64_docs","description":"Base64 block in markdown","profile":"ci","content":"# README\nHere is a sample: aGVsbG93b3JsZGFhYWFhYWFhYWFhYWFhYWE=","policy":"no_error"}
+{"id":"adv03_password_word","description":"Word password without secret","profile":"ci","content":"// user chooses password at signup","policy":"no_error"}
+{"id":"adv04_honeypot_marker","description":"Honeypot marker mention in text","profile":"ci","content":"do not trigger on canary docs only","policy":"no_error"}
+{"id":"adv05_json_sample","description":"JSON sample with obvious placeholders","profile":"ci","content":"{\"username\":\"user\",\"password\":\"example123\"}","policy":"no_error"}
+{"id":"adv06_env_ref_only","description":"Config references env without value","profile":"ci","content":"DATABASE_URL=${DB_URL}","policy":"no_error"}
+{"id":"adv07_key_shape_but_noise","description":"Key-shaped noise without relations","profile":"ci","content":"ghp_abcdefghijklmnopqrstuvwxyz0123456789ZZZ","policy":"no_error"}
+{"id":"adv08_jwt_like_invalid","description":"JWT-like invalid structure","profile":"ci","content":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.INVALID.PAYLOAD","policy":"no_error"}
+{"id":"adv09_comment_block","description":"Credential looking string in comment","profile":"ci","content":"/* password=secret in tutorial example */","policy":"no_error"}
+{"id":"adv10_yaml_sample","description":"YAML with placeholders","profile":"ci","content":"password: 'changeme' # sample only","policy":"no_error"}

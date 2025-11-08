@@ -1,0 +1,207 @@
+{
+  "review_id": "infrafabric-static-20251108-gpt5mini",
+  "timestamp": "2025-11-08T00:00:00Z",
+  "reviewer": {
+    "model": "gpt-5-mini",
+    "version": "static-2025-11-08",
+    "duration_minutes": 60
+  },
+  "overall_rating": 0.78,
+  "comment": "Static review: strong traceability and design; needs reproducible runs and adversarial tests.",
+  "repo_overview": {
+    "layout_style_substance": "Logical layout; rich docs; governance + implementation artifacts well organized.",
+    "strengths": [
+      "Traceability (TTT)",
+      "Reviewer guidance",
+      "Concrete detector + harness"
+    ],
+    "issues": [
+      "Repro bundles not pinned",
+      "Mixed audience tone in papers"
+    ],
+    "citations": [
+      "README.md:1",
+      "EXTERNAL_REVIEW_PROMPT_IF_FULL.md:1",
+      "STICKY_METRICS.md:1"
+    ]
+  },
+  "birds_eye": {
+    "coherence": "Philosophy \u2192 code \u2192 governance mapping is clear.",
+    "novelty": "Operationalized epistemology and multi-voice governance are distinctive.",
+    "roadmap_feasibility": "Feasible with focus on tests/CI/modularization.",
+    "plumbing_validation": "IF.connect plan is sound; sequence REST first, defer MQ/gRPC.",
+    "citations": [
+      "IF_CONNECTIVITY_ARCHITECTURE.md:1",
+      "SESSION_HANDOFF_2025-11-08_IF-ARMOUR.md:1"
+    ]
+  },
+  "components": [
+    {
+      "name": "IF.yologuard",
+      "summary": "Detector with IEF + TTT; SARIF/JSON CLI; profiles.",
+      "architecture_rating": 0.7,
+      "maturity_rating": 0.7,
+      "sticky_metric": "107/96 + 42/42; Recall@1%FPR (clean corpus)",
+      "metrics": {},
+      "gaps": [
+        "Repro bundle"
+      ],
+      "citations": [
+        "code/yologuard/src/IF.yologuard_v3.py:763"
+      ]
+    },
+    {
+      "name": "IF.guard",
+      "summary": "Guardian council with weighted votes and artifacts.",
+      "architecture_rating": 0.8,
+      "maturity_rating": 0.7,
+      "sticky_metric": "100% releases have decision JSON",
+      "metrics": {},
+      "gaps": [
+        "Enforcement runbook"
+      ],
+      "citations": [
+        "code/yologuard/integration/GUARDIAN_HANDOFF_v3.1_IEF.md:1"
+      ]
+    },
+    {
+      "name": "IF.connect",
+      "summary": "5-level connectivity framework (function\u2192ecosystem).",
+      "architecture_rating": 0.7,
+      "maturity_rating": 0.5,
+      "sticky_metric": "IFMessage schema validated in tests",
+      "metrics": {},
+      "gaps": [
+        "Latency budgets"
+      ],
+      "citations": [
+        "IF_CONNECTIVITY_ARCHITECTURE.md:1"
+      ]
+    },
+    {
+      "name": "IF.armour",
+      "summary": "Suite vision (honeypot/learner planned).",
+      "architecture_rating": 0.6,
+      "maturity_rating": 0.4,
+      "sticky_metric": "Honey challenge present in CI (no exfil)",
+      "metrics": {},
+      "gaps": [
+        "Prototype needed"
+      ],
+      "citations": [
+        "code/yologuard/IF_ARMOUR_ROADMAP.md:1"
+      ]
+    },
+    {
+      "name": "IF.witness",
+      "summary": "MARL + epistemic swarms for meta-validation.",
+      "architecture_rating": 0.7,
+      "maturity_rating": 0.5,
+      "sticky_metric": "MARL entry + falsifiable prediction per analysis",
+      "metrics": {},
+      "gaps": [
+        "Runnable examples"
+      ],
+      "citations": [
+        "papers/IF-witness.md:1"
+      ]
+    },
+    {
+      "name": "IF.foundations/IF.vision",
+      "summary": "Epistemology and vision; maps to patterns.",
+      "architecture_rating": 0.8,
+      "maturity_rating": 0.6,
+      "sticky_metric": "Philosophy\u2192code link table exists",
+      "metrics": {},
+      "gaps": [
+        "Tone separation"
+      ],
+      "citations": [
+        "papers/IF-foundations.md:1",
+        "papers/IF-vision.md:1"
+      ]
+    }
+  ],
+  "critical_issues": [
+    {
+      "severity": "high",
+      "category": "reproducibility",
+      "description": "Headline claims lack pinned, runnable repro bundles",
+      "impact": "External reviewers cannot fully verify",
+      "mitigation": "Add repro/yologuard + scripts + outputs",
+      "citations": [
+        "STICKY_METRICS.md:1"
+      ]
+    },
+    {
+      "severity": "high",
+      "category": "operations",
+      "description": "Guardian decisions not tied to enforcement runbook",
+      "impact": "Unclear path to runtime control",
+      "mitigation": "Write 2-page operational playbook",
+      "citations": [
+        "code/yologuard/integration/GUARDIAN_HANDOFF_v3.1_IEF.md:1"
+      ]
+    },
+    {
+      "severity": "medium",
+      "category": "testing",
+      "description": "No adversarial suite for forgery/mode-attestation",
+      "impact": "Unmeasured risk",
+      "mitigation": "Add 10-case adversarial tests",
+      "citations": []
+    },
+    {
+      "severity": "medium",
+      "category": "performance",
+      "description": "Latency/cost not summarized for IF.search",
+      "impact": "SLA planning blocked",
+      "mitigation": "One-page cost/latency matrix",
+      "citations": [
+        "papers/IF-foundations.md:1"
+      ]
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "must-fix",
+      "priority": 1,
+      "description": "Add reproducibility bundles for top claims",
+      "rationale": "Enable external verification",
+      "effort_estimate": "hours"
+    },
+    {
+      "category": "must-fix",
+      "priority": 2,
+      "description": "Publish adversarial test suite (10 cases)",
+      "rationale": "Measure spoof/forgery risks",
+      "effort_estimate": "hours"
+    },
+    {
+      "category": "should-fix",
+      "priority": 3,
+      "description": "Add enforcement runbook (guardian \u2192 runtime)",
+      "rationale": "Close governance loop",
+      "effort_estimate": "hours"
+    },
+    {
+      "category": "should-fix",
+      "priority": 4,
+      "description": "Summarize cost/latency tradeoffs",
+      "rationale": "Production readiness",
+      "effort_estimate": "hours"
+    }
+  ],
+  "final_verdict": {
+    "proceed": true,
+    "confidence": 0.75,
+    "conditions": [
+      "Ship repro bundle",
+      "Add adversarial tests"
+    ],
+    "key_risks": [
+      "Unverified performance on large workloads"
+    ],
+    "success_probability": 0.8
+  }
+}
