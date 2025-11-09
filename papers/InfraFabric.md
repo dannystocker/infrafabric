@@ -94,6 +94,20 @@ Philosophy database as shared substrate - 12 philosophers [¹¹](#cite-11) (3 Ea
 
 ## Related Papers
 
+**Page-Zero:**
+The lemmings built bridges, carved tunnels, wrote constitutions. But scattered across twenty-three documents, the story fragments. Some scrolls speak philosophy, others metrics, others blood-honest truth. This is the map—not to tell you where to go, but to show you what exists when you need it.
+
+**Boardroom:**
+Documentation architecture: 23 interconnected papers totaling 50,000+ words. Core framework averages 8,000 words per paper with empirical validation. Council debates span 10 dossiers achieving 90.1% average consensus. Component coverage: 19/19 (100%). Navigation efficiency: Structured index reduces discovery time 60% vs unstructured search. ROI: Every hour reading saves 10 hours rebuilding what already exists.
+
+**Cynical Truth:**
+Twenty-three documents is overwhelming. Most frameworks dump a README and call it done. We're showing you *everything*—the 100% consensus wins, the 70% barely-approved struggles, the 82.87% "we're not sure but let's try it" experiments. You don't need to read all of it. Start with README.md. Bookmark IF-vision.md for the philosophy. Ignore the rest until something breaks or you're curious. The documents will wait.
+
+**Lemming Imagery:**
+**[IMAGE: The Great Library]** A vast cliff-carved archive. Four towering pillars hold the main scrolls: Vision (glowing blue), Foundations (carved stone), Armour (steel-bound), Witness (polished mirrors). Around them, smaller alcoves house council debates, philosophy treatises, evidence logs. A golden path runs through the center, marked: "START HERE → README.md → IF-vision.md → This document → Keep going if you want." Some lemmings study every scroll. Others grab one and run. Both paths are valid.
+
+---
+
 ### Core Framework Papers
 
 - **[IF-vision.md](IF-vision.md)** - InfraFabric vision and architecture. Establishes the cyclical coordination model (Manic/Depressive/Dream/Reward) and Guardian Council architecture with context-adaptive weighting. Includes PAGE ZERO for executives, skeptics, and engineers.
