@@ -57,25 +57,48 @@ infrafabric/
 ## 🔑 Key Components
 
 ### IF.vision - Cyclical Coordination
+**Status:** 🎨 Conceptual | 📋 Roadmap
+
 - **4 Cycles:** Manic (exploration) → Depressive (consolidation) → Dream (synthesis) → Reward (validation)
 - **AI Wellbeing:** Functional requirement, not ethical aspiration
 - **Guardian Council:** 20-voice validation (6 core + 12 philosophers + 8 IF.ceo facets)
 
 ### IF.ground - Anti-Hallucination Framework
+**Status:** ✅ Production | 📚 Documented | 🧪 95%+ Validation
+
 - **8 Epistemological Principles:** Grounding, provenance, explicit unknowns, reversibility, etc.
 - **Philosophy → Code:** Maps Popper, Kant, Nagarjuna to implementation patterns
 - **100% Citation Standard:** Every claim traceable to primary sources
 
 ### IF.search - Investigation Methodology
+**Status:** 🎨 Conceptual | 📊 Benchmarks Planned
+
 - **8-Pass Research:** Haiku swarms → parallel validation → synthesis
 - **96× Speedup:** 120 hours manual → 76 minutes automated
 - **Token Efficiency:** Haiku = Sonnet/3 cost ratio (empirically verified)
 
 ### IF.yologuard - Secret Detection
+**Status:** ✅ Production | 🧪 98.96% Recall | 📊 Validated
+
 - **Evolution:** 31.2% → 77% → 98.96% recall
 - **Wu Lun Framework:** Confucian Five Relationships (五伦) for context mapping
 - **Zero False Positives:** 100% precision on production test corpus
 - **GitHub:** [All 3 versions](code/yologuard/versions/) with reproducibility docs
+
+---
+
+## 📊 Implementation Status
+
+| Component | Code | Tests | Docs | Validation | Status |
+|-----------|------|-------|------|------------|--------|
+| **IF.yologuard** | ✅ v1-v3 | ✅ 96 secrets | ✅ Complete | ✅ 98.96% | ✅ Production |
+| **IF.ground** | ✅ Patterns | ✅ Case studies | ✅ Complete | ✅ 95%+ | ✅ Production |
+| **IF.witness** | ✅ Council | ✅ MARL tests | ✅ Complete | ✅ 88.7% | ✅ Validated |
+| **IF.vision** | 📋 Design docs | 📋 Planned | ✅ Complete | 📋 Pending | 🎨 Conceptual |
+| **IF.search** | 📋 Methodology | 📋 Planned | ✅ Complete | 📋 Pending | 🎨 Conceptual |
+| **IF.optimise** | ✅ Framework | ✅ Token tests | ✅ Complete | ✅ 50% savings | ✅ Validated |
+
+**Legend:** ✅ Complete | 📋 Planned | 🎨 Conceptual | 🧪 Tested | 📊 Validated
 
 ---
 
@@ -93,17 +116,24 @@ infrafabric/
 
 ## 🚀 Quick Start
 
-### Read the Story
-Start with [InfraFabric: The 14-Day Journey](papers/InfraFabric.md) - the complete story from first code to production validation.
+### New Here? Start Small
+
+- **5 minutes:** [QUICK_START_LITE.md](QUICK_START_LITE.md) - What works today vs what's conceptual
+- **30 minutes:** This README + [IF.yologuard code](code/yologuard/README.md)
+- **2 hours:** [InfraFabric: The 14-Day Journey](papers/InfraFabric.md)
+- **Deep dive:** [All papers](papers/) - Architecture, philosophy, validation
+
+### Read the Full Story
+[InfraFabric: The 14-Day Journey](papers/InfraFabric.md) - Complete narrative from first code to production validation (100% truth standard).
 
 ### Explore the Framework
-1. **Vision & Architecture:** [IF-vision.md](papers/IF-vision.md)
-2. **Core Methodologies:** [IF-foundations.md](papers/IF-foundations.md)
-3. **Real-World Validation:** [IF-witness.md](papers/IF-witness.md)
-4. **Security Implementation:** [IF-armour.md](papers/IF-armour.md)
+1. **Vision & Architecture:** [IF-vision.md](papers/IF-vision.md) - Includes PAGE ZERO (4-prong framework)
+2. **Core Methodologies:** [IF-foundations.md](papers/IF-foundations.md) - IF.ground + IF.search
+3. **Real-World Validation:** [IF-witness.md](papers/IF-witness.md) - Guardian Council + MARL
+4. **Security Implementation:** [IF-armour.md](papers/IF-armour.md) - Secret detection + biological FP reduction
 
 ### Try the Code
-See [IF.yologuard README](code/yologuard/README.md) for secret detection implementation.
+See [IF.yologuard README](code/yologuard/README.md) for production-ready secret detection (98.96% recall).
 
 ---
 
