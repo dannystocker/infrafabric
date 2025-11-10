@@ -66,6 +66,48 @@ All agent outputs must meet these three criteria:
 
 ---
 
+## Component Naming Conventions (CURRENT STANDARD)
+
+**Effective:** 2025-11-10 (going forward)
+**Status:** Active naming standard for all new work
+
+### Official Component Names
+
+**IF.armour.yologuard** (Current Official Name)
+- Full hierarchical name showing architectural relationship
+- `IF.armour` = Security framework (parent)
+- `IF.armour.yologuard` = Secret detection tool (child component)
+- **Alias:** `IF.yologuard` (historical, still used in legacy docs)
+
+**Naming Pattern:**
+```
+IF.<layer>.<component>.<subcomponent>
+Examples:
+- IF.armour.yologuard (secret detection under security framework)
+- IF.witness.forge (MARL validation under meta-validation)
+- IF.ground (substrate-level, no parent layer)
+```
+
+### Historical Context Preservation
+
+**Important:** Historical documents (papers, session logs, commits before 2025-11-10) use `IF.yologuard`.
+- ✅ **DO NOT** mass-rename historical references
+- ✅ **DO** use `IF.armour.yologuard` in all new work going forward
+- ✅ **DO** recognize both names refer to the same component
+- ✅ **DO** add redirect notes when disambiguation is needed
+
+**Rationale (IF.ground - Fallibilism):**
+> "Preserve historical context. Changing past documents creates confusion and breaks traceable lineage.
+> Establish naming convention for future work while honoring how discussions actually happened."
+
+### Other Component Aliases
+
+**IF.ceo** = **IF.sam** (both refer to 16 Sam Altman facets)
+**IF.citation** = **IF.citate** (both refer to citation infrastructure)
+**IF.forge** = **IF.marl** (both refer to Multi-Agent Reflexion Loop)
+
+---
+
 ## Agent Coordination Model
 
 ### IF.optimise Status (Always Visible)
@@ -397,10 +439,14 @@ git log --grep="if://citation/" --oneline | wc -l
 
 ## Integration Points
 
-### IF.yologuard
+### IF.armour.yologuard (Secret Detection)
+**Current Name:** IF.armour.yologuard | **Historical Alias:** IF.yologuard
+
 - Emit citation IDs alongside manifests (`--manifest`)
 - Provenance fields at `code/yologuard/src/IF.yologuard_v3.py:1210`
 - Link secret detections to Wu Lun principle citations
+- **Primary Metric:** 107/96 (111.46% GitHub-parity recall), 100% precision
+- **Status:** VERIFIED (Guardian Council 18/20 approval, 2025-11-10)
 
 ### IF.guard
 - Decisions include `citation_ids` array (optional)
