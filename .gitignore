@@ -18,6 +18,13 @@ code/yologuard/reports/
 code/yologuard/benchmarks/results.json
 code/yologuard/benchmarks/leaky_repo_v3_fast_v2_results.txt
 
+# Research outputs (private - contain endorser info)
+code/research/ARXIV_ENDORSERS.*.md
+code/research/arxiv_endorsers.*.json
+code/research/IF_RESEARCH_INTEGRATION.*.md
+code/research/if_trace.*.jsonl
+code/research/if_citations.*.jsonl
+
 # OS/editor noise
 .DS_Store
 Thumbs.db
