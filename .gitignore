@@ -22,7 +22,7 @@ code/yologuard/benchmarks/leaky_repo_v3_fast_v2_results.txt
 code/research/ARXIV_ENDORSERS.*.md
 code/research/arxiv_endorsers.*.json
 code/research/IF_RESEARCH_INTEGRATION.*.md
-code/research/IF_GAP_ANALYSIS.*.md
+code/research/IF_GAP_ANALYSIS*.md
 code/research/IF_ENDORSER_STRATEGY.*.md
 code/research/IF_ENDORSER_EMAILS.*.md
 code/research/IF_ENDORSER_EMAILS.*.json
