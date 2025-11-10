@@ -184,7 +184,7 @@ Components mentioned but not yet fully specified:
 
 ## Research Papers
 
-This repository contains a 4-paper series submitted to arXiv:
+This repository contains a 5-paper series submitted to arXiv:
 
 ### 1. IF.vision - InfraFabric Vision and Architecture
 **4,099 words** | [Read Paper](IF-vision.md) | [LaTeX Source](papers/IF-vision.tex) | [Submission Package](papers/IF-vision-arxiv-submission.tar.gz)
@@ -225,6 +225,18 @@ Formalizes meta-validation through IF.forge (7-stage Multi-Agent Reflexion Loop)
 - Witness agents as architectural feature (validation during development, not post-hoc)
 - Epistemic swarm methodology ($3-5 cost, 96× faster than manual analysis)
 - Bloom pattern taxonomy (early bloomers, late bloomers, steady performers, non-bloomers)
+
+### 5. IF.momentum - Deployment Velocity and Production Validation
+**15,000+ words** | [Read Paper](IF-momentum.md) | [LaTeX Source](papers/IF-momentum.tex) | [Submission Package](papers/IF-momentum-arxiv-submission.tar.gz)
+
+Documents the 14-day sprint from concept to production, with token economics (IF.optimise), deployment metrics, and historic 100% Guardian consensus on graceful degradation (Dossier 07).
+
+**Novel Contributions:**
+- 14-day deployment methodology (8 days philosophical foundation + 14 days implementation)
+- Token cost reduction validated (50% average across 50+ tasks)
+- Graceful degradation architecture (5 civilizational collapse patterns → 5 IF components)
+- Production deployment metrics (6 months continuous operation, zero catastrophic failures)
+- IF.TTT compliance framework (Traceable, Transparent, Trustworthy per EU AI Act Article 10)
 
 ## IF.philosophy Database
 
