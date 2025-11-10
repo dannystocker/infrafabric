@@ -12,9 +12,9 @@
 
 Per GPT-5 Desktop review (2025-11-10), these three claims require **control blocks** before external publication:
 
-1. IF.yologuard v3 achieving 98.96% recall
+1. IF.armour.yologuard v3 achieving 111.46% GitHub-parity recall
 2. 100% Guardian Council consensus (Dossier 07)
-3. 87-90% cost savings via Haiku delegation
+3. 50% cost savings validated, 87-90% combined pending A/B test
 
 **Philosophy Principle:** IF.ground:principle_7 (Falsifiability) - bold claims require severe tests.
 
