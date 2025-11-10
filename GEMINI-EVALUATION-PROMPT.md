@@ -30,7 +30,7 @@
 
 ## Documents to Review
 
-### Core Papers (5 documents)
+### Core Papers (6 documents)
 
 **Required Reading:**
 
@@ -60,9 +60,13 @@
    - Merkle trees, Ed25519 signatures, OpenTimestamps Bitcoin anchoring
    - 500+ citations with content-addressing
 
-**Note:** IF-momentum.md was originally planned as 6th paper but content exists in:
-   - Production deployment metrics: papers/IF-armour.md (142,350 files, 6 months)
-   - Civilizational collapse analysis: annexes/ANNEX-G-CIVILIZATIONAL-COLLAPSE.md (Dossier 07, 100% consensus)
+6. **papers/IF-momentum.md** (15,000+ words, comprehensive deployment analysis)
+   - 14-day sprint timeline (Oct 26 - Nov 9, 2025)
+   - Token economics: 50% cost reduction via IF.optimise (validated)
+   - IF.armour.yologuard: 111.46% GitHub-parity recall (107/96 detections)
+   - Dossier 07: Historic 100% Guardian consensus on graceful degradation
+   - Production deployment metrics: 6 months, zero catastrophic failures
+   - 5 civilizational collapse patterns → 5 IF components
 
 ### Latest Work - Operational Framework (Nov 10, 2025)
 
