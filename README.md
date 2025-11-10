@@ -27,8 +27,9 @@ infrafabric/
 │   ├── InfraFabric.md               # The 14-day journey (100% truth standard)
 │   ├── IF-vision.md                 # Architecture & cyclical coordination
 │   ├── IF-foundations.md            # IF.ground & IF.search methodologies
-│   ├── IF-witness.md                # Real-world validation
-│   └── IF-armour.md                 # Security & secret detection
+│   ├── IF-armour.md                 # Security & secret detection
+│   ├── IF-witness.md                # Meta-validation (IF.forge, IF.swarm)
+│   └── IF-momentum.md               # Deployment velocity & production metrics
 │
 ├── annexes/                         # Extended documentation
 │   ├── ANNEX-N-IF-OPTIMISE-FRAMEWORK.md     # Token economics (Haiku = Sonnet/3)
@@ -130,8 +131,9 @@ infrafabric/
 ### Explore the Framework
 1. **Vision & Architecture:** [IF-vision.md](papers/IF-vision.md) - Includes PAGE ZERO (4-prong framework)
 2. **Core Methodologies:** [IF-foundations.md](papers/IF-foundations.md) - IF.ground + IF.search
-3. **Real-World Validation:** [IF-witness.md](papers/IF-witness.md) - Guardian Council + MARL
-4. **Security Implementation:** [IF-armour.md](papers/IF-armour.md) - Secret detection + biological FP reduction
+3. **Security Implementation:** [IF-armour.md](papers/IF-armour.md) - Secret detection + biological FP reduction
+4. **Meta-Validation:** [IF-witness.md](papers/IF-witness.md) - Guardian Council + MARL
+5. **Deployment Velocity:** [IF-momentum.md](papers/IF-momentum.md) - 14-day sprint, token economics, graceful degradation
 
 ### Try the Code
 See [IF.armour.yologuard README](code/yologuard/README.md) for production-ready secret detection (111.46% GitHub-parity, 18/20 Guardian approval).
