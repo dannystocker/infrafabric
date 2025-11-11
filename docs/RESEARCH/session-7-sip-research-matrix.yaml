@@ -1,0 +1,186 @@
+# Session 7: SIP Server API Research Matrix
+# Agent 10 Synthesis Output | IF.search Swarm
+# Date: 2025-11-11 | Status: Template for Agent Research
+
+research_matrix:
+  metadata:
+    version: "1.0"
+    phase: "2-api-integration"
+    agents: 10
+    servers_covered: 7
+    auth_methods: 4
+
+  servers:
+    # Agent 1: Asterisk
+    asterisk:
+      api_type: "AMI (Asterisk Manager Interface) + REST"
+      endpoints:
+        - name: "originate"
+          protocol: "AMI/REST"
+          format: "Action: Originate"
+        - name: "hangup"
+          protocol: "AMI"
+          format: "Action: Hangup"
+        - name: "transfer"
+          protocol: "AMI"
+          format: "Action: Redirect"
+        - name: "conference"
+          protocol: "REST"
+          endpoint: "/api/bridges"
+      auth_method: "username:password"
+      error_codes: ["100", "102", "200", "202", "500"]
+
+    # Agent 2: FreeSWITCH
+    freswitch:
+      api_type: "ESL (Event Socket Layer) + REST"
+      endpoints:
+        - name: "originate"
+          protocol: "ESL"
+          format: "originate {key=value} extension"
+        - name: "hangup"
+          protocol: "ESL"
+          format: "uuid_kill"
+        - name: "transfer"
+          protocol: "ESL"
+          format: "uuid_transfer"
+        - name: "conference"
+          protocol: "REST"
+          endpoint: "/conference"
+      auth_method: "password-based ESL"
+      error_codes: ["EXECUTED", "COMMAND_REPLY", "ERR"]
+
+    # Agent 3: Kamailio
+    kamailio:
+      api_type: "RPC (JSON-RPC) + REST"
+      endpoints:
+        - name: "originate"
+          protocol: "JSON-RPC"
+          format: "tm.t_uac_send"
+        - name: "hangup"
+          protocol: "JSON-RPC"
+          format: "dlg.end_dialog"
+        - name: "transfer"
+          protocol: "JSON-RPC"
+          format: "pv.sets"
+        - name: "conference"
+          protocol: "REST"
+          endpoint: "/api/conference"
+      auth_method: "RPC credentials"
+      error_codes: ["200", "400", "404", "500"]
+
+    # Agent 4: OpenSIPs
+    opensips:
+      api_type: "REST + MI (Management Interface)"
+      endpoints:
+        - name: "originate"
+          protocol: "MI"
+          format: "t_uac_send"
+        - name: "hangup"
+          protocol: "MI"
+          format: "dlg_end_dlg"
+        - name: "transfer"
+          protocol: "MI"
+          format: "dlg_list"
+        - name: "conference"
+          protocol: "REST"
+          endpoint: "/api/dialogs"
+      auth_method: "API key + Basic Auth"
+      error_codes: ["200", "400", "403", "500"]
+
+    # Agent 5: Elastix
+    elastix:
+      api_type: "REST (wrapper on Asterisk)"
+      endpoints:
+        - name: "originate"
+          protocol: "REST"
+          endpoint: "/api/calls"
+        - name: "hangup"
+          protocol: "REST"
+          endpoint: "/api/calls/{id}/hangup"
+        - name: "transfer"
+          protocol: "REST"
+          endpoint: "/api/calls/{id}/transfer"
+        - name: "conference"
+          protocol: "REST"
+          endpoint: "/api/conferences"
+      auth_method: "OAuth 2.0 + API key"
+      error_codes: ["200", "400", "401", "404", "500"]
+
+    # Agent 6: Yate
+    yate:
+      api_type: "RPC + REST"
+      endpoints:
+        - name: "originate"
+          protocol: "RPC"
+          format: "call.route"
+        - name: "hangup"
+          protocol: "RPC"
+          format: "call.drop"
+        - name: "transfer"
+          protocol: "RPC"
+          format: "call.transfer"
+        - name: "conference"
+          protocol: "REST"
+          endpoint: "/api/conferences"
+      auth_method: "custom bearer token"
+      error_codes: ["200", "400", "407", "500"]
+
+    # Agent 7: Flexisip
+    flexisip:
+      api_type: "REST + WebSocket"
+      endpoints:
+        - name: "originate"
+          protocol: "REST"
+          endpoint: "/api/calls/originate"
+        - name: "hangup"
+          protocol: "WebSocket"
+          format: "hangup {uuid}"
+        - name: "transfer"
+          protocol: "REST"
+          endpoint: "/api/calls/{id}/transfer"
+        - name: "conference"
+          protocol: "WebSocket"
+          endpoint: "/ws/conference"
+      auth_method: "JWT token + API key"
+      error_codes: ["200", "400", "401", "422", "500"]
+
+  # Agent 8: Unified Adapter Pattern
+  adapter_pattern:
+    base_class: "SIPAdapter"
+    methods:
+      - "originate(destination, caller_id, timeout) -> CallID"
+      - "hangup(call_id) -> Status"
+      - "transfer(call_id, target) -> Status"
+      - "conference(call_ids, room_name) -> ConferenceID"
+      - "get_call_status(call_id) -> CallState"
+    auth_interface: "authenticate(credentials) -> Token"
+    error_handler: "handle_error(error_code) -> Exception"
+
+  # Agent 9: Authentication Methods
+  auth_comparison:
+    - method: "API Key"
+      servers: ["Elastix", "OpenSIPs", "Flexisip"]
+      security: "Medium"
+      usability: "High"
+
+    - method: "OAuth 2.0"
+      servers: ["Elastix"]
+      security: "High"
+      usability: "Medium"
+
+    - method: "Basic Auth"
+      servers: ["Asterisk", "OpenSIPs"]
+      security: "Low"
+      usability: "High"
+
+    - method: "Custom Bearer"
+      servers: ["Yate", "Flexisip"]
+      security: "High"
+      usability: "Low"
+
+phase_2_checklist:
+  - "Implement SIPAdapter base class"
+  - "Create server-specific adapter subclasses (7)"
+  - "Build auth factory pattern"
+  - "Write integration tests"
+  - "Validate error handling consistency"
