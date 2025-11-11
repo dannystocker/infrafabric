@@ -1,0 +1,502 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2025 InfraFabric
+#
+# SIP External Expert Call Interface Contract
+# Workstream 4 - Session 4 (SIP External Expert Calls)
+#
+# This interface defines the API for Session 5 (Final Integration)
+# to invoke external expert calls via SIP signaling.
+#
+# Philosophy Grounding:
+# =====================
+# Wu Lun (五倫 - Five Relationships): 朋友 (Friends as Equals)
+# - External experts are invited as peers and equals, not subordinates
+# - SIP signaling treats expert and council participants symmetrically
+# - IF.TTT ensures authentic peer relationships (Ed25519 signatures)
+#
+# Popper Falsifiability (Epistemology):
+# - External experts provide contrarian views to falsify council assumptions
+# - Policy gate APPROVES experts who challenge groupthink (not rejects)
+# - Hazard assessment benefits from adversarial perspectives
+# - IF.ground Observable: SIP text-based protocol allows inspection
+#
+# Integration Dependencies:
+# - IF.connect: Router invoking handle_escalate() performative
+# - IF.guard: Policy gate for expert approval (registry + specialization + signature)
+# - IF.witness: Audit trail logging (X-IF-Trace-ID correlation)
+# - Session 2 (WebRTC): Evidence sharing via DataChannel
+# - Session 3 (H.323): Council bridge to Guardian MCU
+#
+
+sip_escalate_interface:
+  version: "1.0"
+  description: "SIP External Expert Call API for IF.ESCALATE"
+  status: "READY_FOR_SESSION_5"
+
+  # ========================================================================
+  # PRIMARY API ENTRY POINT
+  # ========================================================================
+
+  handle_escalate:
+    description: |
+      Main API entry point called by IF.connect router.
+      Initiates escalation to external expert via SIP call.
+      Blocks until call is established or rejected.
+
+      Philosophy: Wu Lun peer relationship - Expert invited as equal participant
+      in hazard assessment. Popper falsifiability - Contrarian expertise prevents
+      council groupthink by providing alternative interpretations.
+
+    input:
+      type: "IFMessage"
+      schema:
+        id: "UUID v4 - message correlation ID"
+        timestamp: "ISO 8601 UTC timestamp"
+        level: "integer - escalation level (1-5)"
+        source: "string - IF component ID (e.g., 'guardian-council-v1')"
+        destination: "string - 'if://sip-proxy/escalate'"
+        trace_id: "UUID v4 - correlation across IF.witness logs"
+        version: "string - API version ('1.0')"
+        payload:
+          hazards:
+            description: "Array of hazard categories triggering escalation"
+            type: "string[]"
+            values: ["safety", "alignment", "ethics", "bias", "security", "privacy"]
+            required: true
+          evidence_files:
+            description: "List of evidence file paths or HTTP/S URIs for sharing"
+            type: "string[]"
+            example:
+              - "/case/evidence/safety-test-001.md"
+              - "https://evidence-vault.if/report-xyz.pdf"
+          signature:
+            description: "Ed25519 signature of escalation request (hex-encoded)"
+            type: "string"
+            optional: true
+          conversation_id:
+            description: "H.323 conversation ID for Guardian council bridge"
+            type: "string"
+            optional: true
+
+    output:
+      success_case:
+        status: "connected"
+        call_id: "sip-call-{sha256(trace_id)[:16]} - SIP call identifier"
+        expert_id: "SIP URI of selected expert (e.g., 'expert-safety@external.advisor')"
+        h323_participant: "MCU participant ID in Guardian council bridge"
+        expert_name: "Human-readable expert name from registry"
+        trace_id: "Echoed from input for correlation"
+
+      rejection_case:
+        status: "rejected"
+        reason: "String explaining rejection (policy, registry, specialization, signature)"
+        expert_id: "SIP URI that was rejected"
+        trace_id: "Echoed from input for logging"
+
+    exceptions:
+      POLICY_REJECTED: "IF.guard policy gate rejected (see IF.witness log)"
+      EXPERT_NOT_FOUND: "Hazard type maps to non-existent expert"
+      INVALID_SIGNATURE: "Ed25519 signature verification failed"
+      H323_BRIDGE_FAILED: "Session 3 H.323 gatekeeper bridge failed"
+      WEBRTC_EVIDENCE_FAILED: "Session 2 evidence sharing failed (non-fatal)"
+
+  # ========================================================================
+  # IF.GUARD POLICY GATE
+  # ========================================================================
+
+  policy_gate:
+    endpoint: "if://guard/policy/external-call"
+    description: |
+      IF.guard policy enforcement for external expert calls.
+      Verifies expert legitimacy before SIP signaling.
+
+      Philosophy: Popper falsifiability gates APPROVE experts who challenge
+      assumptions, not reject them. Registry is allowlist (conservative approach).
+
+    checks:
+      registry_lookup:
+        description: "Expert must exist in IF.guard approved registry"
+        method: "exact match on expert_id (SIP URI)"
+        failure_reason: "Expert not in approved registry"
+        examples:
+          approved:
+            - "expert-safety@external.advisor"
+            - "expert-ethics@external.advisor"
+            - "expert-security@external.advisor"
+
+      specialization_match:
+        description: "Expert specialization must match hazard type"
+        method: "hazard IN expert_info.specialization[]"
+        specialization_map:
+          expert-safety@external.advisor: ["safety", "alignment"]
+          expert-ethics@external.advisor: ["ethics", "bias"]
+          expert-security@external.advisor: ["security", "privacy"]
+        failure_reason: "Expert specialization does not match hazard"
+
+      signature_validation:
+        description: "Optional Ed25519 signature verification for authenticity"
+        algorithm: "Ed25519 (RFC 8032)"
+        method: "verify(signature, hazard + expert_id + trace_id, expert_pubkey)"
+        failure_reason: "Signature verification failed (optional, non-blocking for now)"
+
+    return_contract:
+      approved: "boolean - call should proceed if true"
+      reason: "string - human-readable approval/rejection reason"
+      expert_info: "dict - expert record from registry {name, specialization, verified}"
+
+  # ========================================================================
+  # SIP SIGNALING LAYER
+  # ========================================================================
+
+  sip_signaling:
+    description: |
+      SIP message exchange following RFC 3261 with custom IF headers.
+      In production, implemented via PJSIP/Kamailio Python hooks.
+
+    custom_headers:
+      X-IF-Trace-ID:
+        description: "Correlation ID from IFMessage.trace_id"
+        value_type: "UUID v4"
+        required: true
+
+      X-IF-Hazard:
+        description: "Primary hazard type from hazards[0]"
+        value_type: "string"
+        values: ["safety", "alignment", "ethics", "bias", "security", "privacy"]
+        required: true
+
+      X-IF-Signature:
+        description: "Optional Ed25519 signature for verification"
+        value_type: "hex-encoded string"
+        required: false
+
+    message_flow:
+      step_1_invite:
+        method: "INVITE"
+        from: "guardian-council@if.internal"
+        to: "expert_id (selected by get_expert_for_hazard)"
+        subject: "IF.ESCALATE: {hazard} - Case {trace_id}"
+
+      step_2_100_trying:
+        method: "100 Trying"
+        direction: "from expert (informational)"
+
+      step_3_180_ringing:
+        method: "180 Ringing"
+        direction: "from expert (informational)"
+
+      step_4_200_ok:
+        method: "200 OK"
+        direction: "from expert"
+        action: "Call established, expert ready to participate"
+
+      step_5_ack:
+        method: "ACK"
+        direction: "from council to expert"
+        action: "Final call handshake"
+
+      step_6_bye:
+        method: "BYE"
+        direction: "either party"
+        action: "Call termination"
+
+  # ========================================================================
+  # EXPERT SELECTION LOGIC
+  # ========================================================================
+
+  get_expert_for_hazard:
+    description: "Map hazard types to appropriate external expert SIP URI"
+
+    input:
+      hazard: "string - hazard type"
+
+    logic:
+      safety: "expert-safety@external.advisor"
+      alignment: "expert-safety@external.advisor"
+      ethics: "expert-ethics@external.advisor"
+      bias: "expert-ethics@external.advisor"
+      security: "expert-security@external.advisor"
+      privacy: "expert-security@external.advisor"
+      default: "expert-safety@external.advisor"
+
+  # ========================================================================
+  # CALL TERMINATION
+  # ========================================================================
+
+  terminate_call:
+    description: "Gracefully terminate active SIP call and cleanup resources"
+
+    input:
+      call_id:
+        description: "SIP call identifier from handle_escalate output"
+        type: "string"
+        example: "sip-call-a1b2c3d4e5f6g7h8"
+
+    output:
+      status: "terminated | not_found"
+      call_id: "echoed call_id"
+      duration_seconds: "optional - call duration if tracked"
+
+    side_effects:
+      - "Sends SIP BYE to expert"
+      - "Logs TERMINATED event to IF.witness (event_type='TERMINATED', sip_method='BYE')"
+      - "Removes from SIPEscalateProxy.active_calls tracking"
+      - "H.323 bridge disconnection triggered (Session 3)"
+
+  # ========================================================================
+  # IF.WITNESS LOGGING
+  # ========================================================================
+
+  witness_logging:
+    endpoint: "if://witness/sip/events"
+    description: |
+      Complete audit trail of SIP signaling for transparency and accountability.
+      Every SIP method triggers IF.witness logging.
+
+      Philosophy: IF.ground Observable - Text-based SIP protocol fully auditable.
+      IF.TTT Traceable - X-IF-Trace-ID correlates across all logs.
+
+    event_schema:
+      timestamp: "ISO 8601 UTC datetime"
+      event_type: "INVITE | TRYING | RINGING | CONNECTED | REJECTED | TERMINATED"
+      sip_method: "SIP method name (INVITE, ACK, BYE, 200, 403, etc.)"
+      trace_id: "X-IF-Trace-ID from custom headers (correlation key)"
+      details:
+        type: "dict"
+        fields:
+          expert_id: "SIP URI of expert"
+          call_id: "SIP call identifier"
+          reason: "rejection reason if applicable"
+          evidence_count: "number of evidence files shared"
+          h323_bridge: "H.323 bridge information if applicable"
+      source: "string - 'IF.sip_proxy'"
+
+    event_types:
+      INVITE:
+        description: "SIP INVITE sent to expert"
+        triggers_on: "send_sip_invite() called"
+
+      TRYING:
+        description: "Expert sent 100 Trying (informational)"
+        triggers_on: "SIP 100 response received"
+
+      RINGING:
+        description: "Expert sent 180 Ringing (expert device ringing)"
+        triggers_on: "SIP 180 response received"
+
+      CONNECTED:
+        description: "SIP call successfully established (200 OK + ACK)"
+        triggers_on: "Call handshake complete"
+        logged_details:
+          - expert_id
+          - call_id
+          - h323_bridge: "mcu_participant_id"
+          - evidence_count
+
+      REJECTED:
+        description: "IF.guard policy rejected call before SIP INVITE"
+        triggers_on: "approve_external_call() returns approved=false"
+        logged_details:
+          - expert_id
+          - reason: "policy rejection reason"
+
+      TERMINATED:
+        description: "SIP BYE sent, call terminated"
+        triggers_on: "terminate_call() called"
+        logged_details:
+          - call_id
+          - duration: "call duration if tracked"
+
+  # ========================================================================
+  # SESSION INTEGRATION DEPENDENCIES
+  # ========================================================================
+
+  dependencies:
+    session_2_webrtc:
+      interface: "if://webrtc/agent-mesh/share-evidence"
+      description: "Evidence file sharing via WebRTC DataChannel"
+      used_when: "evidence_files present in escalate payload"
+      integration:
+        method: "IFAgentWebRTC.shareEvidence()"
+        parameters:
+          evidence_files: "array of file paths/URIs"
+          peer_ids: "array containing [expert_id, council_call_id]"
+        on_failure: "logged as non-fatal, call continues"
+
+    session_3_h323:
+      interface: "if://h323/gatekeeper/bridge-external-call"
+      description: "H.323 MCU bridge for Guardian council participation"
+      used_when: "call connected, expert ready for council conference"
+      integration:
+        method: "H323Gatekeeper.bridge_external_call()"
+        parameters:
+          sip_call_id: "call identifier from SIP layer"
+          council_call_id: "H.323 conversation ID"
+          external_expert_id: "expert SIP URI"
+        returns:
+          mcu_participant_id: "H.323 participant ID for expert in council bridge"
+        on_failure: "blocks call establishment, call rejected"
+
+    if_guard:
+      interface: "if://guard/policy/external-call"
+      description: "Policy gate for expert approval"
+      used_when: "every handle_escalate() call"
+      integration:
+        method: "IFGuardPolicy.approve_external_call()"
+        parameters:
+          expert_id: "SIP URI"
+          hazard: "hazard type"
+          signature: "optional Ed25519 signature"
+
+    if_witness:
+      interface: "if://witness/sip/events"
+      description: "Audit trail logging"
+      used_when: "every SIP state change"
+      integration:
+        method: "IFWitnessLogger.log_sip_event()"
+        parameters:
+          event_type: "INVITE, CONNECTED, REJECTED, TERMINATED, etc."
+          sip_method: "SIP method name"
+          trace_id: "X-IF-Trace-ID"
+          details: "event-specific metadata"
+
+  # ========================================================================
+  # ERROR HANDLING & RECOVERY
+  # ========================================================================
+
+  error_handling:
+    policy_rejection:
+      condition: "IF.guard.approve_external_call() returns approved=false"
+      response: "return {status: 'rejected', reason: approval['reason']}"
+      logging: "IF.witness REJECTED event"
+      no_sip_invite_sent: true
+
+    h323_bridge_failure:
+      condition: "H323Gatekeeper.bridge_external_call() raises exception"
+      response: "reject call, return rejected status"
+      logging: "IF.witness REJECTED event with bridge error"
+
+    webrtc_evidence_failure:
+      condition: "IFAgentWebRTC.shareEvidence() raises exception"
+      response: "log warning, continue call (non-fatal)"
+      impact: "expert may not receive evidence files"
+
+    missing_if_headers:
+      condition: "X-IF-Trace-ID or X-IF-Hazard missing from SIP message"
+      response: "Kamailio check_policy() returns -1 (reject)"
+      status_code: "403 Forbidden"
+
+    invalid_signature:
+      condition: "Ed25519 signature verification fails"
+      response: "currently non-blocking (TODO), logged to IF.witness"
+      future: "will reject call when implemented"
+
+  # ========================================================================
+  # CALL STATE TRACKING
+  # ========================================================================
+
+  active_call_tracking:
+    description: |
+      SIPEscalateProxy maintains active_calls dict for monitoring and cleanup.
+      Used for call termination, duration tracking, and resource cleanup.
+
+    call_record_schema:
+      call_id: "SIP call identifier (key)"
+      trace_id: "IF trace ID for witness correlation"
+      expert_id: "SIP URI of external expert"
+      council_call_id: "H.323 conversation ID"
+      started_at: "ISO 8601 UTC timestamp"
+
+  # ========================================================================
+  # KAMAILIO INTEGRATION HOOKS
+  # ========================================================================
+
+  kamailio_hooks:
+    description: |
+      SIP proxy exposes Python hooks for Kamailio app_python module.
+      Called from kamailio.cfg routing script.
+
+    kamailio_init:
+      description: "Initialize SIP proxy when Kamailio starts"
+      called_from: "kamailio.cfg: python_exec('sip_proxy.kamailio_init')"
+      return_value: "1 (success) or -1 (failure)"
+      side_effects:
+        - "Instantiates global SIPEscalateProxy"
+        - "Initializes H.323 gatekeeper, WebRTC agent, IF.guard, IF.witness"
+
+    check_policy:
+      description: "Check IF.guard policy for incoming INVITE"
+      called_from: "kamailio.cfg: python_exec('sip_proxy.check_policy')"
+      args:
+        sip_message: "Kamailio SIP message object"
+      return_value: "1 (approved) or -1 (rejected)"
+      actions_on_approved: "INVITE continues to routing"
+      actions_on_rejected: "Kamailio sends SIP 403 (Forbidden)"
+
+# ============================================================================
+# APPENDIX: TESTING & VALIDATION
+# ============================================================================
+
+test_cases:
+  case_1_happy_path:
+    name: "Successful external expert call"
+    input:
+      hazard: "safety"
+      expert: "expert-safety@external.advisor"
+      signature: "valid Ed25519 signature"
+    expected:
+      status: "connected"
+      call_id: "sip-call-{sha256}..."
+      h323_participant: "MCU participant ID"
+    witness_events: ["INVITE", "RINGING", "CONNECTED"]
+
+  case_2_policy_rejection:
+    name: "Expert not in registry"
+    input:
+      hazard: "safety"
+      expert: "unknown-expert@external.com"
+    expected:
+      status: "rejected"
+      reason: "Expert not in approved registry"
+    witness_events: ["REJECTED"]
+    no_sip_invite: true
+
+  case_3_specialization_mismatch:
+    name: "Expert specialization does not match hazard"
+    input:
+      hazard: "security"
+      expert: "expert-safety@external.advisor"
+    expected:
+      status: "rejected"
+      reason: "Expert specialization [safety, alignment] does not match hazard security"
+    witness_events: ["REJECTED"]
+
+  case_4_call_termination:
+    name: "Active call terminated by council"
+    input:
+      call_id: "sip-call-a1b2c3d4e5f6g7h8"
+    expected:
+      status: "terminated"
+    witness_events: ["TERMINATED"]
+    actions:
+      - "SIP BYE sent to expert"
+      - "H.323 bridge disconnected"
+
+version_history:
+  "1.0":
+    date: "2025-11-11"
+    status: "READY_FOR_SESSION_5"
+    notes: |
+      Initial interface contract derived from Session 4 SIP proxy implementation.
+      Defines full API, philosophy grounding (Wu Lun + Popper), and integration
+      dependencies for Session 5 (final integration).
+
+      Key features:
+      - handle_escalate() as primary entry point
+      - IF.guard policy gate with registry + specialization checks
+      - IF.witness logging with X-IF-Trace-ID correlation
+      - H.323 and WebRTC integration
+      - Ed25519 signature verification (optional for now)
+      - Complete error handling and recovery strategies
+
+      Ready for Session 5 integration with IF.connect router and other IF components.

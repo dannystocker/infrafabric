@@ -1,0 +1,135 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2025 InfraFabric
+#
+# Prometheus Scrape Configuration for SIP Escalate Proxy
+# ====================================================
+#
+# This file configures Prometheus to scrape SIP proxy metrics
+# from Kamailio and IF.ESCALATE system.
+#
+# Usage: Add to prometheus.yml global scrape_configs section
+# or include this file with:
+#   - job_name: 'sip-escalate'
+#     static_configs:
+#       - files: ['/path/to/sip_metrics.yml']
+#         group: 'sip'
+
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    monitor: 'if-sip-escalate'
+    component: 'communication'
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+            - localhost:9093
+
+rule_files:
+  - '/etc/prometheus/rules/alert_rules.yml'
+  - '/etc/prometheus/rules/recording_rules.yml'
+
+scrape_configs:
+  # SIP Escalate Proxy Metrics (Python Prometheus exporter)
+  - job_name: 'sip-escalate-proxy'
+    scheme: 'http'
+    scrape_interval: 10s
+    scrape_timeout: 5s
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['localhost:8000']
+        labels:
+          instance: 'sip-proxy-01'
+          service: 'sip-escalate'
+          environment: 'production'
+
+  # Kamailio SIP Proxy Metrics (via Prometheus module or exporter)
+  - job_name: 'kamailio-sip'
+    scheme: 'http'
+    scrape_interval: 15s
+    scrape_timeout: 10s
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['localhost:8888']
+        labels:
+          instance: 'kamailio-01'
+          service: 'kamailio-sip'
+          component: 'signaling'
+
+  # IF.Guard Policy Engine Metrics
+  - job_name: 'if-guard'
+    scheme: 'http'
+    scrape_interval: 15s
+    scrape_timeout: 10s
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['localhost:9090']
+        labels:
+          instance: 'if-guard-01'
+          service: 'policy-engine'
+          component: 'security'
+
+  # IF.Witness Audit Logging Service
+  - job_name: 'if-witness'
+    scheme: 'http'
+    scrape_interval: 30s
+    scrape_timeout: 10s
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['localhost:9091']
+        labels:
+          instance: 'if-witness-01'
+          service: 'audit-logger'
+          component: 'logging'
+
+  # H.323 Gatekeeper (Session 3) Metrics
+  - job_name: 'h323-gatekeeper'
+    scheme: 'http'
+    scrape_interval: 20s
+    scrape_timeout: 10s
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['localhost:9092']
+        labels:
+          instance: 'h323-gk-01'
+          service: 'h323-gatekeeper'
+          component: 'conference'
+
+  # WebRTC Agent Mesh (Session 2) Metrics
+  - job_name: 'webrtc-agents'
+    scheme: 'http'
+    scrape_interval: 20s
+    scrape_timeout: 10s
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['localhost:9093']
+        labels:
+          instance: 'webrtc-mesh-01'
+          service: 'webrtc-agents'
+          component: 'communication'
+
+  # Node Exporter (System Metrics)
+  - job_name: 'node'
+    scheme: 'http'
+    scrape_interval: 15s
+    scrape_timeout: 10s
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['localhost:9100']
+        labels:
+          instance: 'sip-node-01'
+          service: 'node-exporter'
+
+  # Application Performance Monitoring (APM)
+  - job_name: 'apm-server'
+    scheme: 'http'
+    scrape_interval: 30s
+    scrape_timeout: 10s
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['localhost:8200']
+        labels:
+          instance: 'apm-01'
+          service: 'apm-server'

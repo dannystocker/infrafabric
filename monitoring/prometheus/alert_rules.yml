@@ -1,0 +1,231 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2025 InfraFabric
+#
+# Prometheus Alert Rules for SIP Escalate Proxy
+# =============================================
+#
+# Alert conditions for IF.ESCALATE SIP proxy monitoring.
+# Used for compliance audits and IF.guard policy violations.
+#
+# Severity Levels:
+# - CRITICAL: System non-functional, manual intervention required
+# - WARNING: Degradation detected, investigation recommended
+# - INFO: Informational alerts for audit trail
+
+groups:
+  - name: 'SIP_Escalate_Alerts'
+    interval: 30s
+    rules:
+      # Alert 1: High rate of failed SIP calls
+      - alert: SIPCallFailureRate
+        expr: |
+          (
+            rate(sip_calls_total{result="failed"}[5m]) > 0
+          ) and (
+            rate(sip_calls_total{result="failed"}[5m]) /
+            (rate(sip_calls_total{result="success"}[5m]) + rate(sip_calls_total{result="failed"}[5m])) > 0.1
+          )
+        for: 5m
+        labels:
+          severity: warning
+          component: sip-escalate
+          audit_trail: true
+        annotations:
+          summary: "High SIP call failure rate detected"
+          description: |
+            SIP call failure rate is {{ $value | humanizePercentage }} over the last 5 minutes.
+            This indicates potential issues with external expert availability or IF.guard policy.
+            Instance: {{ $labels.instance }}
+          runbook_url: "https://infrafabric.io/docs/runbook/sip-failure-rate"
+
+      # Alert 2: Excessive number of failed calls
+      - alert: SIPExcessiveCallFailures
+        expr: |
+          increase(sip_calls_total{result="failed"}[5m]) > 5
+        for: 5m
+        labels:
+          severity: critical
+          component: sip-escalate
+          audit_trail: true
+        annotations:
+          summary: "Excessive SIP call failures (>5 in 5 minutes)"
+          description: |
+            {{ $value | humanize }} SIP calls have failed in the last 5 minutes.
+            Notify IF.guard for compliance audit.
+            Instance: {{ $labels.instance }}
+          runbook_url: "https://infrafabric.io/docs/runbook/sip-excess-failures"
+          action: "notify_if_guard"
+
+      # Alert 3: Call duration anomaly (potential stuck call)
+      - alert: SIPCallDurationAnomaly
+        expr: |
+          histogram_quantile(0.99, rate(sip_call_duration_seconds_bucket[5m])) > 3600
+        for: 10m
+        labels:
+          severity: warning
+          component: sip-escalate
+          audit_trail: true
+        annotations:
+          summary: "SIP call duration exceeds 1 hour (potential stuck call)"
+          description: |
+            99th percentile call duration is {{ $value | humanizeDuration }}.
+            This may indicate a stuck call or resource leak.
+            Instance: {{ $labels.instance }}
+          runbook_url: "https://infrafabric.io/docs/runbook/sip-duration-anomaly"
+
+      # Alert 4: High latency in SIP calls
+      - alert: SIPHighLatency
+        expr: |
+          histogram_quantile(0.95, rate(sip_call_duration_seconds_bucket[5m])) > 10
+        for: 5m
+        labels:
+          severity: warning
+          component: sip-escalate
+          audit_trail: true
+        annotations:
+          summary: "SIP call latency elevated (p95 > 10 seconds)"
+          description: |
+            95th percentile latency: {{ $value | humanizeDuration }}
+            Instance: {{ $labels.instance }}
+          runbook_url: "https://infrafabric.io/docs/runbook/sip-latency"
+
+      # Alert 5: IF.guard policy rejection rate too high
+      - alert: IFGuardHighRejectionRate
+        expr: |
+          (
+            rate(sip_policy_decisions_total{result="rejected"}[5m]) /
+            (rate(sip_policy_decisions_total{result="approved"}[5m]) +
+             rate(sip_policy_decisions_total{result="rejected"}[5m])) > 0.5
+          )
+        for: 5m
+        labels:
+          severity: critical
+          component: if-guard
+          audit_trail: true
+        annotations:
+          summary: "IF.guard policy rejection rate >50% (audit investigation required)"
+          description: |
+            Policy rejection rate is {{ $value | humanizePercentage }} over last 5 minutes.
+            This may indicate misconfiguration or security threat.
+            Instance: {{ $labels.instance }}
+          runbook_url: "https://infrafabric.io/docs/runbook/ifguard-rejection-rate"
+          action: "investigate_policy"
+
+      # Alert 6: IF.guard policy evaluation latency
+      - alert: IFGuardHighEvaluationLatency
+        expr: |
+          histogram_quantile(0.99, rate(sip_policy_eval_duration_seconds_bucket[5m])) > 1
+        for: 5m
+        labels:
+          severity: warning
+          component: if-guard
+          audit_trail: true
+        annotations:
+          summary: "IF.guard policy evaluation latency elevated (p99 > 1 second)"
+          description: |
+            99th percentile evaluation latency: {{ $value | humanizeDuration }}
+            Instance: {{ $labels.instance }}
+          runbook_url: "https://infrafabric.io/docs/runbook/ifguard-eval-latency"
+
+      # Alert 7: SIP proxy error rate elevated
+      - alert: SIPErrorRateElevated
+        expr: |
+          (
+            rate(sip_errors_total[5m]) /
+            (rate(sip_responses_total[5m]) + rate(sip_errors_total[5m])) > 0.05
+          )
+        for: 5m
+        labels:
+          severity: warning
+          component: sip-escalate
+          audit_trail: true
+        annotations:
+          summary: "SIP error rate elevated (>5% of responses)"
+          description: |
+            SIP error rate: {{ $value | humanizePercentage }}
+            Top status codes: {{ $labels.status_code }}
+            Instance: {{ $labels.instance }}
+          runbook_url: "https://infrafabric.io/docs/runbook/sip-error-rate"
+
+      # Alert 8: Active SIP calls at capacity
+      - alert: SIPActiveCallsHigh
+        expr: |
+          sip_active_calls > 100
+        for: 5m
+        labels:
+          severity: warning
+          component: sip-escalate
+          audit_trail: false
+        annotations:
+          summary: "High number of active SIP calls (>100)"
+          description: |
+            Currently {{ $value | humanize }} active SIP calls.
+            Instance: {{ $labels.instance }}
+          runbook_url: "https://infrafabric.io/docs/runbook/sip-capacity"
+
+      # Alert 9: SIP proxy availability
+      - alert: SIPProxyDown
+        expr: |
+          up{job="sip-escalate-proxy"} == 0
+        for: 2m
+        labels:
+          severity: critical
+          component: sip-escalate
+          audit_trail: true
+        annotations:
+          summary: "SIP Escalate Proxy is down"
+          description: |
+            SIP proxy at {{ $labels.instance }} is not responding.
+            Immediate intervention required.
+          runbook_url: "https://infrafabric.io/docs/runbook/sip-proxy-down"
+          action: "escalate_critical"
+
+      # Alert 10: 5xx errors from SIP proxy
+      - alert: SIPServerErrors
+        expr: |
+          increase(sip_errors_total{status_code=~"5.."}[5m]) > 3
+        for: 5m
+        labels:
+          severity: critical
+          component: sip-escalate
+          audit_trail: true
+        annotations:
+          summary: "SIP server errors detected (5xx responses)"
+          description: |
+            {{ $value | humanize }} server errors in last 5 minutes.
+            Status codes: {{ $labels.status_code }}
+            Instance: {{ $labels.instance }}
+          runbook_url: "https://infrafabric.io/docs/runbook/sip-5xx-errors"
+
+      # Alert 11: Method-specific latency
+      - alert: SIPMethodLatencyHigh
+        expr: |
+          histogram_quantile(0.95, rate(sip_method_duration_seconds_bucket[5m])) > 5
+        for: 5m
+        labels:
+          severity: warning
+          component: sip-escalate
+          audit_trail: true
+        annotations:
+          summary: "SIP {{ $labels.method }} latency elevated (p95 > 5 seconds)"
+          description: |
+            95th percentile latency for {{ $labels.method }}: {{ $value | humanizeDuration }}
+            Instance: {{ $labels.instance }}
+          runbook_url: "https://infrafabric.io/docs/runbook/sip-method-latency"
+
+      # Alert 12: Policy decision rate anomaly
+      - alert: PolicyDecisionRateAnomalous
+        expr: |
+          rate(sip_policy_decisions_total[5m]) < 0.01 and
+          time() - max(sip_calls_total) > 300
+        for: 10m
+        labels:
+          severity: warning
+          component: if-guard
+          audit_trail: false
+        annotations:
+          summary: "IF.guard policy decision rate is very low"
+          description: |
+            Policy decisions are infrequent. Check if system is operational.
+            Instance: {{ $labels.instance }}
+          runbook_url: "https://infrafabric.io/docs/runbook/policy-decision-rate"
