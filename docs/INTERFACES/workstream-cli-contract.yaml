@@ -1,0 +1,1080 @@
+# IF Workstream CLI Interface Contract
+# Purpose: Session CLI integration contract for cross-session witness logging and cost tracking
+# Version: 1.0.0
+# Created: 2025-11-11
+# Status: Active
+
+metadata:
+  contract_name: workstream-cli-contract
+  version: 1.0.0
+  created: '2025-11-11'
+  owner: Session 3 (CLI Implementation)
+  consumers:
+    - Session 4 (SIP - Strategic Infrastructure Persona)
+    - Future sessions requiring witness logging and cost tracking
+  philosophy: IF.ground Principle 8 - Observability without fragility
+  description: |
+    Interface contract for IF.witness and IF.optimise CLI tools.
+    Provides provenance, audit trails, and cost management for all sessions.
+
+# ============================================================================
+# CLI COMMANDS - IF.witness (src/cli/if-witness.py)
+# ============================================================================
+
+if_witness:
+  description: Provenance, tracing, and audit tool for IF workstreams
+  executable: src/cli/if-witness.py
+  database_location: ~/.if-witness/witness.db
+
+  commands:
+    log:
+      description: Create new witness entry with hash chain verification
+      usage: |
+        if witness log --event <event> --component <component> --trace-id <trace_id>
+                       --payload <json_payload> [--tokens-in N] [--tokens-out N]
+                       [--cost USD] [--model <model>] [--db <path>]
+
+      parameters:
+        required:
+          - name: event
+            type: string
+            description: Event type (e.g., yologuard_scan, guard_decision, sip_analysis)
+            examples:
+              - yologuard_scan
+              - guard_decision
+              - sip_session_start
+              - sip_analysis_complete
+
+          - name: component
+            type: string
+            description: Component name (e.g., IF.yologuard, IF.guard, SIP)
+            examples:
+              - IF.yologuard
+              - IF.guard
+              - SIP
+              - IF.search
+
+          - name: trace-id
+            type: string
+            description: Trace ID linking related operations (use UUIDs)
+            examples:
+              - trace-001-yologuard-analysis
+              - 550e8400-e29b-41d4-a716-446655440000
+
+          - name: payload
+            type: json_string
+            description: Event payload as JSON string
+            examples:
+              - '{"status": "scan_complete", "files_analyzed": 42}'
+              - '{"decision": "approved", "confidence": 0.95}'
+
+        optional:
+          - name: tokens-in
+            type: integer
+            description: Input tokens used
+
+          - name: tokens-out
+            type: integer
+            description: Output tokens used
+
+          - name: cost
+            type: float
+            description: Cost in USD
+
+          - name: model
+            type: string
+            description: Model used (e.g., claude-sonnet-4.5, gpt-5)
+
+          - name: db
+            type: path
+            description: Custom database path (default ~/.if-witness/witness.db)
+
+      output:
+        format: text
+        success_indicators:
+          - "✓ Witness entry created: {entry_id}"
+          - "✓ Hash chain verified (entry N → N+1)"
+          - "✓ Signature: ed25519:{signature_prefix}..."
+          - "✓ Content hash: {hash_prefix}..."
+
+        error_indicators:
+          - "❌ Invalid JSON payload"
+          - "❌ Error creating entry"
+
+        exit_codes:
+          0: Success
+          1: Failure (invalid input, database error)
+
+      examples:
+        - description: Log a SIP session start
+          command: |
+            if witness log \
+              --event "sip_session_start" \
+              --component "SIP" \
+              --trace-id "trace-sip-001" \
+              --payload '{"session_id": "sess-123", "mode": "analysis"}'
+
+        - description: Log with cost tracking
+          command: |
+            if witness log \
+              --event "yologuard_scan" \
+              --component "IF.yologuard" \
+              --trace-id "trace-yolo-456" \
+              --payload '{"files_scanned": 10, "issues_found": 2}' \
+              --tokens-in 1000 \
+              --tokens-out 500 \
+              --cost 0.005 \
+              --model "claude-sonnet-4.5"
+
+    verify:
+      description: Verify hash chain integrity across all witness entries
+      usage: if witness verify [--db <path>]
+
+      parameters:
+        optional:
+          - name: db
+            type: path
+            description: Custom database path
+
+      output:
+        format: text
+        success_indicators:
+          - "✓ N entries verified"
+          - "✓ Hash chain intact (no tampering)"
+          - "✓ All signatures valid"
+
+        error_indicators:
+          - "❌ Verification failed: {error_message}"
+
+        exit_codes:
+          0: Verification successful
+          1: Verification failed (tampering detected)
+
+      examples:
+        - description: Verify witness database integrity
+          command: if witness verify
+
+    trace:
+      description: Follow full trace chain for a given trace ID
+      usage: if witness trace <trace_id> [--format text|json] [--db <path>]
+
+      parameters:
+        required:
+          - name: trace_id
+            type: string
+            description: Trace ID to follow
+
+        optional:
+          - name: format
+            type: choice
+            choices: [text, json]
+            default: text
+            description: Output format
+
+          - name: db
+            type: path
+            description: Custom database path
+
+      output:
+        formats:
+          text:
+            structure: |
+              Trace: {trace_id}
+              Components: {component_list}
+
+              1. [HH:MM:SS] {component}: {event}
+                 Payload: {payload_summary}
+                 Cost: ${cost} ({tokens} tokens, {model})
+              ...
+
+              Duration: {duration}s
+              Total Cost: ${total_cost} ({total_tokens} tokens)
+
+          json:
+            schema:
+              trace_id: string
+              entries: array
+              duration_seconds: float
+              total_cost_usd: float
+              total_tokens: integer
+              components: array
+
+            example: |
+              {
+                "trace_id": "trace-001",
+                "components": ["IF.yologuard", "IF.guard"],
+                "entries": [
+                  {
+                    "id": "uuid-1",
+                    "timestamp": "2025-11-11T12:00:00",
+                    "event": "yologuard_scan",
+                    "component": "IF.yologuard",
+                    "payload": {...},
+                    "tokens_in": 1000,
+                    "tokens_out": 500,
+                    "cost_usd": 0.005,
+                    "model": "claude-sonnet-4.5"
+                  }
+                ],
+                "duration_seconds": 2.5,
+                "total_cost_usd": 0.005,
+                "total_tokens": 1500
+              }
+
+        error_indicators:
+          - "❌ No entries found for trace_id: {trace_id}"
+
+        exit_codes:
+          0: Success
+          1: Trace not found
+
+      examples:
+        - description: Trace in text format
+          command: if witness trace trace-sip-001
+
+        - description: Trace in JSON format for parsing
+          command: if witness trace trace-sip-001 --format json
+
+    cost:
+      description: Show token/$ costs breakdown
+      usage: |
+        if witness cost [--trace-id <id>] [--component <name>]
+                        [--start-date YYYY-MM-DD] [--end-date YYYY-MM-DD]
+                        [--format text|json] [--db <path>]
+
+      parameters:
+        optional:
+          - name: trace-id
+            type: string
+            description: Filter by trace ID
+
+          - name: component
+            type: string
+            description: Filter by component
+
+          - name: start-date
+            type: date
+            format: YYYY-MM-DD
+            description: Start date for filtering
+
+          - name: end-date
+            type: date
+            format: YYYY-MM-DD
+            description: End date for filtering
+
+          - name: format
+            type: choice
+            choices: [text, json]
+            default: text
+
+          - name: db
+            type: path
+            description: Custom database path
+
+      output:
+        formats:
+          text:
+            structure: |
+              Cost Breakdown (trace: {trace_id})
+
+              Component                      Tokens     Cost         Model
+              --------------------------------------------------------------
+              {component}                    {tokens}   ${cost}      {model}
+              ...
+              --------------------------------------------------------------
+              Total                          {total}    ${total}
+
+          json:
+            schema:
+              type: array
+              items:
+                component: string
+                operations: integer
+                total_tokens: integer
+                total_cost: float
+                model: string
+
+        exit_codes:
+          0: Success
+          1: Error retrieving costs
+
+      examples:
+        - description: Cost for specific trace
+          command: if witness cost --trace-id trace-sip-001
+
+        - description: Cost by component as JSON
+          command: if witness cost --component SIP --format json
+
+    export:
+      description: Export audit trail to JSON or CSV
+      usage: if witness export [--format json|csv] [--output <file>] [--db <path>]
+
+      parameters:
+        optional:
+          - name: format
+            type: choice
+            choices: [json, csv]
+            default: json
+
+          - name: output
+            type: path
+            description: Output file path (stdout if not specified)
+
+          - name: db
+            type: path
+            description: Custom database path
+
+      output:
+        formats:
+          json:
+            description: Full witness database export
+            structure: Array of WitnessEntry objects
+
+          csv:
+            description: Flat CSV export for spreadsheet analysis
+            columns:
+              - id
+              - timestamp
+              - event
+              - component
+              - trace_id
+              - payload
+              - prev_hash
+              - content_hash
+              - signature
+              - tokens_in
+              - tokens_out
+              - cost_usd
+              - model
+
+        exit_codes:
+          0: Success
+          1: Export error
+
+      examples:
+        - description: Export to JSON file
+          command: if witness export --format json --output witness-audit.json
+
+        - description: Export to CSV for analysis
+          command: if witness export --format csv --output witness-audit.csv
+
+# ============================================================================
+# CLI COMMANDS - IF.optimise (src/cli/if-optimise.py)
+# ============================================================================
+
+if_optimise:
+  description: Cost tracking and budget management for IF workstreams
+  executable: src/cli/if-optimise.py
+  database_location: ~/.if-witness/witness.db
+  budget_config_location: ~/.if-witness/budget.json
+
+  commands:
+    rates:
+      description: Show current model rates (tokens → USD)
+      usage: if optimise rates [--format text|json]
+
+      parameters:
+        optional:
+          - name: format
+            type: choice
+            choices: [text, json]
+            default: text
+
+      output:
+        formats:
+          text:
+            structure: |
+              Current Model Rates (per token)
+
+              Model                     Input           Output
+              -------------------------------------------------------
+              {model}                   ${rate_in}      ${rate_out}
+              ...
+
+              Example: 1M input + 1M output tokens
+              Model                     Total Cost
+              ----------------------------------------
+              {model}                   ${total}
+
+          json:
+            schema:
+              type: object
+              properties:
+                model_name:
+                  input: float (USD per token)
+                  output: float (USD per token)
+
+            example: |
+              {
+                "claude-sonnet-4.5": {
+                  "input": 0.000003,
+                  "output": 0.000015
+                },
+                "claude-haiku-4.5": {
+                  "input": 0.00000025,
+                  "output": 0.00000125
+                }
+              }
+
+      examples:
+        - description: Show rates in text format
+          command: if optimise rates
+
+        - description: Get rates as JSON for programmatic use
+          command: if optimise rates --format json
+
+    budget:
+      description: Set and monitor budget limits
+      usage: |
+        if optimise budget [--set <amount>] [--period day|week|month]
+                           [--component <name>] [--db <path>]
+
+      parameters:
+        optional:
+          - name: set
+            type: float
+            description: Set budget limit in USD
+
+          - name: period
+            type: choice
+            choices: [day, week, month]
+            default: month
+            description: Budget period
+
+          - name: component
+            type: string
+            description: Component filter (optional)
+
+          - name: db
+            type: path
+            description: Custom database path
+
+      output:
+        format: text
+        structure: |
+          Budget Status ({period})
+          ----------------------------------------
+          Period:       {start_date} - {end_date}
+          Budget:       ${budget}
+          Spent:        ${spent}
+          Remaining:    ${remaining}
+          Usage:        {percent}%
+          Operations:   {ops}
+          Total tokens: {tokens}
+
+          [Alert if >100%]  ⚠️  ALERT: Budget exceeded!
+          [Warning if >=80%] ⚠️  WARNING: {percent}% of budget used
+          [Notice if >=50%]  ⚡ NOTICE: {percent}% of budget used
+
+          Projected {period} total: ${projected}
+
+      examples:
+        - description: Set monthly budget
+          command: if optimise budget --set 100.00 --period month
+
+        - description: Check current budget status
+          command: if optimise budget
+
+        - description: Set component-specific budget
+          command: if optimise budget --set 50.00 --component SIP
+
+    report:
+      description: Generate cost reports with grouping and filtering
+      usage: |
+        if optimise report [--component <name>] [--start-date YYYY-MM-DD]
+                           [--end-date YYYY-MM-DD] [--group-by component|model|day]
+                           [--format text|json] [--db <path>]
+
+      parameters:
+        optional:
+          - name: component
+            type: string
+            description: Filter by component
+
+          - name: start-date
+            type: date
+            format: YYYY-MM-DD
+
+          - name: end-date
+            type: date
+            format: YYYY-MM-DD
+
+          - name: group-by
+            type: choice
+            choices: [component, model, day]
+            default: component
+
+          - name: format
+            type: choice
+            choices: [text, json]
+            default: text
+
+          - name: db
+            type: path
+            description: Custom database path
+
+      output:
+        formats:
+          text:
+            structure: |
+              IF.optimise Cost Report ({date_range})
+              Group by: {group_by}
+
+              Component                      Operations   Tokens       Cost         Model
+              ---------------------------------------------------------------------------------
+              {component}                    {ops}        {tokens}     ${cost}      {model}
+              ...
+              ---------------------------------------------------------------------------------
+              Total                          {total_ops}  {total_tok}  ${total_cost}
+
+              Efficiency Metrics:
+                Average cost per operation: ${avg_cost_per_op}
+                Average tokens per operation: {avg_tokens_per_op}
+
+          json:
+            schema:
+              type: array
+              items:
+                component: string
+                operations: integer
+                total_tokens: integer
+                total_cost: float
+                model: string
+
+      examples:
+        - description: Weekly cost report
+          command: if optimise report --start-date 2025-11-04 --end-date 2025-11-11
+
+        - description: Component-specific report as JSON
+          command: if optimise report --component SIP --format json
+
+    estimate:
+      description: Estimate operation costs before execution
+      usage: |
+        if optimise estimate --tokens-in <N> --tokens-out <N> --model <model>
+                             [--operations <N>]
+
+      parameters:
+        required:
+          - name: tokens-in
+            type: integer
+            description: Estimated input tokens
+
+          - name: tokens-out
+            type: integer
+            description: Estimated output tokens
+
+          - name: model
+            type: string
+            description: Model name
+            examples:
+              - claude-sonnet-4.5
+              - claude-haiku-4.5
+              - gpt-5
+              - gemini-2.5-pro
+
+        optional:
+          - name: operations
+            type: integer
+            default: 1
+            description: Number of operations
+
+      output:
+        format: text
+        structure: |
+          Cost Estimate
+          ----------------------------------------
+          Model:          {model}
+          Input tokens:   {tokens_in}
+          Output tokens:  {tokens_out}
+          Total tokens:   {total}
+          Cost per op:    ${cost_per_op}
+          [if >1]
+          Operations:     {ops}
+          Total cost:     ${total_cost}
+
+          Budget Impact:
+            ${total_cost} / ${budget} ({percent}%)
+
+      examples:
+        - description: Estimate single operation
+          command: if optimise estimate --tokens-in 10000 --tokens-out 2000 --model claude-sonnet-4.5
+
+        - description: Estimate batch operations
+          command: if optimise estimate --tokens-in 5000 --tokens-out 1000 --model claude-haiku-4.5 --operations 100
+
+# ============================================================================
+# INTEGRATION POINTS - Python API
+# ============================================================================
+
+python_integration:
+  description: How to call CLI tools from Python code (for session automation)
+
+  direct_module_import:
+    description: Import and use witness/optimise modules directly (recommended)
+
+    examples:
+      - description: Create witness entry from Python
+        code: |
+          from witness.database import WitnessDatabase
+          from witness.models import Cost
+
+          db = WitnessDatabase()
+
+          entry = db.create_entry(
+              event="sip_analysis",
+              component="SIP",
+              trace_id="trace-sip-001",
+              payload={"status": "complete", "findings": 42},
+              cost=Cost(
+                  tokens_in=10000,
+                  tokens_out=2000,
+                  cost_usd=0.036,
+                  model="claude-sonnet-4.5"
+              )
+          )
+
+          db.close()
+
+      - description: Query trace from Python
+        code: |
+          from witness.database import WitnessDatabase
+
+          db = WitnessDatabase()
+          trace_info = db.get_trace("trace-sip-001")
+
+          print(f"Total cost: ${trace_info.total_cost_usd}")
+          print(f"Total tokens: {trace_info.total_tokens}")
+          print(f"Duration: {trace_info.duration_seconds}s")
+
+          db.close()
+
+  subprocess_calls:
+    description: Call CLI tools via subprocess (for shell script integration)
+
+    examples:
+      - description: Log witness entry via subprocess
+        code: |
+          import subprocess
+          import json
+
+          payload = {"status": "complete", "files": 10}
+
+          result = subprocess.run([
+              "src/cli/if-witness.py", "log",
+              "--event", "sip_scan",
+              "--component", "SIP",
+              "--trace-id", "trace-sip-001",
+              "--payload", json.dumps(payload),
+              "--tokens-in", "1000",
+              "--tokens-out", "500",
+              "--cost", "0.005",
+              "--model", "claude-sonnet-4.5"
+          ], capture_output=True, text=True)
+
+          if result.returncode == 0:
+              print("Success:", result.stdout)
+          else:
+              print("Error:", result.stderr)
+
+      - description: Get trace data as JSON
+        code: |
+          import subprocess
+          import json
+
+          result = subprocess.run([
+              "src/cli/if-witness.py", "trace",
+              "trace-sip-001",
+              "--format", "json"
+          ], capture_output=True, text=True)
+
+          if result.returncode == 0:
+              trace_data = json.loads(result.stdout)
+              print(f"Trace has {len(trace_data['entries'])} entries")
+          else:
+              print("Error:", result.stderr)
+
+  output_parsing:
+    description: How to parse CLI output in different formats
+
+    text_format:
+      description: Parse text output (regex patterns)
+      patterns:
+        entry_created: "✓ Witness entry created: ([a-f0-9-]+)"
+        hash_verified: "✓ Hash chain verified \\(entry (\\d+) → (\\d+)\\)"
+        signature: "✓ Signature: ed25519:([a-f0-9]+)"
+        cost: "✓ Cost: \\$([0-9.]+) \\(([0-9]+) tokens\\)"
+        verification_success: "✓ (\\d+) entries verified"
+        trace_not_found: "❌ No entries found for trace_id: (.+)"
+
+    json_format:
+      description: Parse JSON output (direct deserialization)
+      commands_with_json:
+        - trace --format json
+        - cost --format json
+        - export --format json
+        - rates --format json
+        - report --format json
+
+      example: |
+        import subprocess
+        import json
+
+        result = subprocess.run([
+            "src/cli/if-witness.py", "trace",
+            "trace-id", "--format", "json"
+        ], capture_output=True, text=True)
+
+        data = json.loads(result.stdout)
+        # Access structured data
+        total_cost = data["total_cost_usd"]
+        entries = data["entries"]
+
+# ============================================================================
+# DATA FORMATS
+# ============================================================================
+
+data_formats:
+  witness_entry:
+    description: Complete witness entry structure
+    schema:
+      id: string (UUID)
+      timestamp: string (ISO 8601)
+      event: string
+      component: string
+      trace_id: string
+      payload: object (arbitrary JSON)
+      prev_hash: string (nullable, hex)
+      content_hash: string (hex)
+      signature: string (ed25519 signature)
+      tokens_in: integer (nullable)
+      tokens_out: integer (nullable)
+      cost_usd: float (nullable)
+      model: string (nullable)
+
+    example: |
+      {
+        "id": "550e8400-e29b-41d4-a716-446655440000",
+        "timestamp": "2025-11-11T12:34:56.789012",
+        "event": "sip_analysis_complete",
+        "component": "SIP",
+        "trace_id": "trace-sip-001",
+        "payload": {
+          "session_id": "sess-123",
+          "findings": 42,
+          "status": "complete"
+        },
+        "prev_hash": "a1b2c3d4e5f6...",
+        "content_hash": "f6e5d4c3b2a1...",
+        "signature": "ed25519:0123456789abcdef...",
+        "tokens_in": 10000,
+        "tokens_out": 2000,
+        "cost_usd": 0.036,
+        "model": "claude-sonnet-4.5"
+      }
+
+  cost_object:
+    description: Cost tracking structure
+    schema:
+      tokens_in: integer
+      tokens_out: integer
+      cost_usd: float
+      model: string
+
+    example: |
+      {
+        "tokens_in": 10000,
+        "tokens_out": 2000,
+        "cost_usd": 0.036,
+        "model": "claude-sonnet-4.5"
+      }
+
+  trace_info:
+    description: Complete trace chain information
+    schema:
+      trace_id: string
+      entries: array (WitnessEntry objects)
+      duration_seconds: float
+      total_cost_usd: float
+      total_tokens: integer
+      components: array (strings)
+
+    example: |
+      {
+        "trace_id": "trace-sip-001",
+        "components": ["SIP", "IF.yologuard", "IF.guard"],
+        "entries": [
+          { /* WitnessEntry 1 */ },
+          { /* WitnessEntry 2 */ }
+        ],
+        "duration_seconds": 45.2,
+        "total_cost_usd": 0.125,
+        "total_tokens": 25000
+      }
+
+  cost_report_row:
+    description: Cost breakdown by component
+    schema:
+      component: string
+      operations: integer
+      total_tokens: integer
+      total_cost: float
+      model: string
+
+    example: |
+      {
+        "component": "SIP",
+        "operations": 15,
+        "total_tokens": 45000,
+        "total_cost": 0.162,
+        "model": "claude-sonnet-4.5"
+      }
+
+  budget_config:
+    description: Budget configuration file
+    file_path: ~/.if-witness/budget.json
+    schema:
+      amount: float (USD)
+      period: string (day|week|month)
+      component: string (nullable)
+      set_at: string (ISO 8601)
+
+    example: |
+      {
+        "amount": 100.0,
+        "period": "month",
+        "component": null,
+        "set_at": "2025-11-11T12:00:00"
+      }
+
+# ============================================================================
+# TEST FIXTURES
+# ============================================================================
+
+test_fixtures:
+  description: Example data for testing CLI integration
+
+  sample_trace_id: trace-test-001
+
+  sample_log_commands:
+    - description: Log session start
+      command: |
+        if witness log \
+          --event "session_start" \
+          --component "SIP" \
+          --trace-id "trace-test-001" \
+          --payload '{"session_id": "test-sess-001", "mode": "test"}'
+
+    - description: Log with full cost tracking
+      command: |
+        if witness log \
+          --event "analysis_complete" \
+          --component "SIP" \
+          --trace-id "trace-test-001" \
+          --payload '{"findings": 10, "status": "complete"}' \
+          --tokens-in 5000 \
+          --tokens-out 1000 \
+          --cost 0.018 \
+          --model "claude-sonnet-4.5"
+
+  sample_payloads:
+    sip_session_start:
+      event: session_start
+      component: SIP
+      payload:
+        session_id: sess-123
+        mode: analysis
+        timestamp: '2025-11-11T12:00:00'
+
+    sip_analysis_complete:
+      event: analysis_complete
+      component: SIP
+      payload:
+        session_id: sess-123
+        findings: 42
+        status: complete
+        recommendations: 15
+
+    yologuard_scan:
+      event: yologuard_scan
+      component: IF.yologuard
+      payload:
+        files_scanned: 100
+        issues_found: 5
+        scan_duration_ms: 1500
+
+    guard_decision:
+      event: guard_decision
+      component: IF.guard
+      payload:
+        decision: approved
+        confidence: 0.95
+        quorum_votes: 15
+        approval_threshold: 0.8
+
+  expected_outputs:
+    log_success:
+      pattern: "✓ Witness entry created: [a-f0-9-]+"
+      exit_code: 0
+
+    verify_success:
+      pattern: "✓ \\d+ entries verified"
+      exit_code: 0
+
+    trace_found:
+      contains:
+        - "Trace: trace-test-001"
+        - "Duration:"
+        - "Total Cost:"
+      exit_code: 0
+
+    trace_not_found:
+      pattern: "❌ No entries found for trace_id:"
+      exit_code: 1
+
+# ============================================================================
+# SUCCESS CRITERIA
+# ============================================================================
+
+success_criteria:
+  description: How to verify successful CLI integration
+
+  basic_functionality:
+    - criterion: Log witness entry
+      test: Run 'if witness log' with all required parameters
+      success: Entry created with hash chain verification
+      verification: Run 'if witness verify' - should pass
+
+    - criterion: Trace retrieval
+      test: Run 'if witness trace <trace-id>'
+      success: Returns all entries for trace ID
+      verification: JSON output contains expected entries
+
+    - criterion: Cost tracking
+      test: Run 'if witness cost --trace-id <trace-id>'
+      success: Returns cost breakdown
+      verification: Total cost matches sum of individual entries
+
+    - criterion: Budget monitoring
+      test: Set budget and check status
+      success: Budget alerts trigger at correct thresholds
+      verification: 50%, 80%, 100% alerts fire correctly
+
+  data_integrity:
+    - criterion: Hash chain verification
+      test: Create multiple entries, then verify
+      success: All entries pass verification
+      verification: No tampering detected
+
+    - criterion: Signature validation
+      test: Verify all entries have valid ed25519 signatures
+      success: All signatures verify correctly
+      verification: Database verify command passes
+
+    - criterion: Cost calculation accuracy
+      test: Log entries with known token counts
+      success: Calculated costs match expected values
+      verification: |
+        cost = (tokens_in * rate_in) + (tokens_out * rate_out)
+
+  session_integration:
+    - criterion: SIP session logging
+      test: SIP session creates witness entries
+      success: All SIP events logged with correct trace ID
+      verification: 'if witness trace <sip-trace-id>' shows all events
+
+    - criterion: Cross-session tracing
+      test: Trace spans multiple components (SIP → yologuard → guard)
+      success: Single trace ID links all operations
+      verification: Trace shows complete operation chain
+
+    - criterion: Budget compliance
+      test: Session respects budget limits
+      success: Operations stop or alert when budget exceeded
+      verification: Budget status shows accurate usage
+
+  output_parsing:
+    - criterion: JSON output validity
+      test: All --format json commands produce valid JSON
+      success: json.loads() succeeds on all outputs
+      verification: No parse errors
+
+    - criterion: Text output consistency
+      test: Text output follows documented format
+      success: Regex patterns match expected output
+      verification: Pattern matching succeeds
+
+  error_handling:
+    - criterion: Invalid input handling
+      test: Provide malformed JSON payload
+      success: Clear error message, non-zero exit code
+      verification: Error contains "Invalid JSON payload"
+
+    - criterion: Missing trace handling
+      test: Query non-existent trace ID
+      success: Clear error message, exit code 1
+      verification: Error contains "No entries found"
+
+    - criterion: Database error handling
+      test: Point to invalid database path
+      success: Graceful error with helpful message
+      verification: No stack trace, clean error message
+
+# ============================================================================
+# BEST PRACTICES
+# ============================================================================
+
+best_practices:
+  trace_id_conventions:
+    - Use descriptive prefixes (trace-sip-, trace-yolo-, trace-guard-)
+    - Include session or operation identifier
+    - Consider using UUIDs for uniqueness
+    - Examples:
+        - trace-sip-001-analysis
+        - trace-yolo-20251111-scan
+        - 550e8400-e29b-41d4-a716-446655440000
+
+  component_naming:
+    - Use official IF component names (IF.yologuard, IF.guard, IF.search)
+    - Session names in ALL CAPS (SIP, VOLO, WITNESS)
+    - Subsystems in lowercase with dots (sip.analyzer, sip.reporter)
+
+  payload_structure:
+    - Keep payloads focused and relevant
+    - Include session_id or operation_id for correlation
+    - Add timestamps if event timing is important
+    - Use status fields consistently (pending, in_progress, complete, error)
+    - Include error details in error payloads
+
+  cost_tracking:
+    - Always log costs when using LLM operations
+    - Use accurate model names from MODEL_RATES
+    - Track both input and output tokens separately
+    - Include model name for cost calculation verification
+
+  error_handling:
+    - Always check exit codes (0 = success, 1 = failure)
+    - Parse stderr for error messages
+    - Use --format json for programmatic parsing
+    - Validate JSON payloads before passing to CLI
+
+  performance:
+    - Use direct Python imports for high-frequency operations
+    - Use subprocess calls for one-off operations or shell scripts
+    - Close database connections explicitly with db.close()
+    - Consider batching operations to reduce overhead
+
+# ============================================================================
+# VERSION HISTORY
+# ============================================================================
+
+version_history:
+  - version: 1.0.0
+    date: '2025-11-11'
+    changes:
+      - Initial contract creation
+      - IF.witness CLI interface documentation
+      - IF.optimise CLI interface documentation
+      - Python integration examples
+      - Test fixtures and success criteria
+    author: Session 3 (CLI Implementation)
