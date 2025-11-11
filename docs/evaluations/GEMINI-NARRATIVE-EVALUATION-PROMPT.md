@@ -83,23 +83,41 @@ https://raw.githubusercontent.com/dannystocker/infrafabric/master/docs/evaluatio
 **Context:** Technical analysis of r4 integration process
 **Key data:** SHA-256 verification, architecture decisions, linter validation
 
+**7. V4 Epic Comprehensive Comparison (v1/v2/v3)** (1,298 lines) ⭐ NEW
+https://raw.githubusercontent.com/dannystocker/infrafabric/master/docs/evidence/V4-EPIC-COMPREHENSIVE-COMPARISON.md
+
+**Context:** Side-by-side comparison of three V4 Epic Intelligence Dossier iterations
+**Version progression:** v1 (4.2/5) → v2 (4.7/5) → v3 (5.0/5)
+**Key content:**
+- Complete merchant memo text for each version
+- Full evidence tables showing source evolution
+- Communication logs (SHARE/HOLD/ESCALATE decisions)
+- Quantitative analysis: Sources per claim (1 → 2), HOLD rate (0% → 36.4%), ESCALATE rate (0% → 18.2%)
+- Critical bug documentation: v2 ESCALATE logic broken, v3 fixed
+
+**What to verify:**
+- Is the v1 → v2 → v3 progression genuinely iterative improvement?
+- Does the ESCALATE bug explanation demonstrate real technical depth?
+- Are the quantitative metrics (sources, HOLD/ESCALATE rates) accurately calculated?
+- Does this document validate the narrative's claim that "v3 is production-ready"?
+
 ---
 
 ### 🔧 Core Philosophy & Technical Foundation
 
-**7. Philosophy Database (r4 version)** (955 lines)
+**8. Philosophy Database (r4 version)** (955 lines)
 https://raw.githubusercontent.com/dannystocker/infrafabric/master/docs/evidence/gemini-logs/core/IF.philosophy-database-r4.yaml
 
 **Context:** 26 philosophers mapped to IF components
 **Key innovation:** Embedded tensions_with and historical_context
 
-**8. Philosophy Code Examples** (125 lines)
+**9. Philosophy Code Examples** (125 lines)
 https://raw.githubusercontent.com/dannystocker/infrafabric/master/docs/PHILOSOPHY-CODE-EXAMPLES.md
 
 **Context:** 7 concrete implementations of philosophy → code mappings
 **Key examples:** Vienna Circle → CI workflow, Ubuntu → Guard consensus, Popper → Feature flags
 
-**9. Agent Behavior Documentation** (r4 upgrade section)
+**10. Agent Behavior Documentation** (r4 upgrade section)
 https://raw.githubusercontent.com/dannystocker/infrafabric/master/agents.md
 
 **Look at:** Lines 736-850 (r4 upgrade behavior changes)
@@ -109,13 +127,13 @@ https://raw.githubusercontent.com/dannystocker/infrafabric/master/agents.md
 
 ### 📚 Supporting Context (Optional - For Deep Dive)
 
-**10. IF.ground Foundations Paper**
+**11. IF.ground Foundations Paper**
 https://raw.githubusercontent.com/dannystocker/infrafabric/master/docs/papers/IF-foundations.md
 
-**11. IF.persona Paper**
+**12. IF.persona Paper**
 https://raw.githubusercontent.com/dannystocker/infrafabric/master/docs/papers/IF-persona.md
 
-**12. IF.search Methodology Paper**
+**13. IF.search Methodology Paper**
 https://raw.githubusercontent.com/dannystocker/infrafabric/master/docs/papers/IF-search.md
 
 ---
@@ -195,6 +213,43 @@ For **EPIC-GAMES-NARRATIVE-INTELLIGENCE-REPORT.md:**
 
 ---
 
+### Part 4: V4 Epic Version Progression Analysis (BONUS - 20 points)
+
+This section specifically evaluates the v1 → v2 → v3 iterative improvement process documented in the comprehensive comparison.
+
+**4.1 Version Evolution Quality (10 points)**
+- Is the v1 → v2 improvement genuine? (sources 1→2, HOLD protocol added)
+- Is the v2 → v3 fix critical? (ESCALATE bug legal liability)
+- Are the quantitative metrics accurate? (+100% sources, +36.4% HOLD rate)
+- Does the progression demonstrate methodical improvement or random changes?
+
+**4.2 Critical Bug Analysis (10 points)**
+- Is the v2 ESCALATE bug explanation technically accurate?
+- Is the legal liability assessment reasonable? (hidden revenue conflicts)
+- Is the v3 fix correct? (reordering if-statements)
+- Does this demonstrate real software engineering rigor?
+
+**Specific Verification Tasks:**
+
+1. **Trace the ESCALATE bug:**
+   - Read the v2 logic in the comparison document
+   - Verify the bug exists: `if confidence < 0.3 → HOLD` comes before `if confidence < 0.2 → ESCALATE`
+   - Confirm the fix in v3: Order reversed correctly
+
+2. **Validate quantitative claims:**
+   - Count sources in v1 vs v2 evidence tables (should be 1 → 2)
+   - Calculate HOLD rate: v1 (0/N) vs v2 (X/N) - verify 36.4%
+   - Calculate ESCALATE rate: v2 (0/N) vs v3 (Y/N) - verify 18.2%
+
+3. **Assess production readiness:**
+   - Does v3 meet all 8/8 criteria listed?
+   - Is the 5.0/5 IF.TTT rating justified?
+   - Would you deploy v3 to production? Why or why not?
+
+**Part 4 Total:** X/20
+
+---
+
 ## Your Deliverable
 
 **Please provide a structured evaluation in this format:**
@@ -203,7 +258,7 @@ For **EPIC-GAMES-NARRATIVE-INTELLIGENCE-REPORT.md:**
 # Gemini Evaluation: InfraFabric Narrative Documentation
 **Date:** [Your evaluation date]
 **Evaluator:** Gemini 2.5 Pro [Flash/Standard]
-**Documents Reviewed:** 9 primary documents (see source list)
+**Documents Reviewed:** 13 source documents (10 primary, 3 optional papers)
 
 ---
 
@@ -278,16 +333,30 @@ For **EPIC-GAMES-NARRATIVE-INTELLIGENCE-REPORT.md:**
 
 ---
 
+## Part 4: V4 Epic Version Progression Analysis
+
+### 4.1 Version Evolution Quality
+**Score:** X/10
+[Your analysis of v1 → v2 → v3 progression]
+
+### 4.2 Critical Bug Analysis
+**Score:** X/10
+[Your analysis of ESCALATE bug and fix]
+
+**Part 4 Total:** X/20
+
+---
+
 ## Overall Assessment
 
-**Total Score:** X/100
+**Total Score:** X/120
 
 **Rating Scale:**
-- 90-100: Exceptional (publication-ready, award-worthy)
-- 80-89: Excellent (minor polish needed)
-- 70-79: Good (some improvements needed)
-- 60-69: Fair (significant work needed)
-- <60: Poor (major overhaul required)
+- 108-120: Exceptional (publication-ready, award-worthy)
+- 96-107: Excellent (minor polish needed)
+- 84-95: Good (some improvements needed)
+- 72-83: Fair (significant work needed)
+- <72: Poor (major overhaul required)
 
 **Overall Rating:** [Exceptional/Excellent/Good/Fair/Poor]
 
@@ -365,6 +434,27 @@ For **EPIC-GAMES-NARRATIVE-INTELLIGENCE-REPORT.md:**
 
 ## Special Focus Areas
 
+### Complete Evolution Timeline (Context)
+
+Understanding the full progression helps evaluate whether improvements are incremental or transformative:
+
+**Philosophy Database Evolution:**
+- **v1 (Start):** 12 philosophers, 75% Western, 25% Eastern - Theory only, no implementation
+- **r3 (Nov 9, 2025):** 25 philosophers, 62% Western, 38% non-Western - Added 9 traditions, formal YAML
+- **r4 (Nov 11, 2025):** 26 philosophers, 54% Western, 46% non-Western - Added code examples, tensions, lineage
+- **Key Metric:** Time-to-implementation: 3 hours (r3) → 5 minutes (r4) = 97% reduction
+
+**V4 Epic Intelligence Dossier Evolution:**
+- **v1 (08:23:41):** Baseline - 1 source per claim, no HOLD, no ESCALATE, no contrarian view - 4.2/5
+- **v2 (08:28:48):** Multi-source + HOLD - 2 sources per claim, 36.4% HOLD rate, contrarian added - 4.7/5
+- **v3 (08:38:45):** ESCALATE fix - 18.2% ESCALATE rate, legal liability mitigated - 5.0/5
+- **Key Metric:** IF.TTT compliance: 4.2 → 4.7 → 5.0 (perfect score achieved)
+
+**The Narrative Question:**
+Do the narrative documents accurately represent this progression, or do they over-dramatize minor changes?
+
+---
+
 ### For INFRAFABRIC-NARRATIVE-STORY.md
 
 **Critical Questions:**
@@ -373,6 +463,7 @@ For **EPIC-GAMES-NARRATIVE-INTELLIGENCE-REPORT.md:**
 3. Does the v2 ESCALATE bug create genuine dramatic tension?
 4. Is the resolution (5.0/5 IF.TTT compliance) satisfying?
 5. Would this work as a conference keynote? (20-minute talk)
+6. **NEW:** Does the narrative accurately represent the v1→r3→r4 progression documented in source materials?
 
 ### For EPIC-GAMES-NARRATIVE-INTELLIGENCE-REPORT.md
 
@@ -383,6 +474,16 @@ For **EPIC-GAMES-NARRATIVE-INTELLIGENCE-REPORT.md:**
 4. Is the HOLD investment decision justified?
 5. Would an investor find this report useful?
 6. Are all claims backed by 2+ independent sources?
+7. **NEW:** Does the report correctly implement the v3 protocols (multi-source, HOLD, ESCALATE)?
+
+### For V4-EPIC-COMPREHENSIVE-COMPARISON.md
+
+**Critical Questions:**
+1. Is the side-by-side comparison format effective for showing evolution?
+2. Are the quantitative metrics (+100% sources, +36.4% HOLD, +18.2% ESCALATE) accurate?
+3. Does the ESCALATE bug explanation have sufficient technical depth?
+4. Is the v1→v2→v3 progression genuinely iterative or artificially staged?
+5. Would this document satisfy a technical peer review?
 
 ---
 
@@ -430,19 +531,20 @@ If you want to go deeper on specific sections:
 **Phase 1:** Evaluate narrative quality only (Part 1)
 **Phase 2:** Evaluate technical accuracy only (Part 2)
 **Phase 3:** Evaluate gaps and improvements only (Part 3)
-**Phase 4:** Synthesize into final comprehensive evaluation
+**Phase 4:** Evaluate V4 Epic progression only (Part 4)
+**Phase 5:** Synthesize into final comprehensive evaluation
 
 ---
 
 ## Expected Evaluation Time
 
-- **Gemini 2.5 Flash:** ~3-5 minutes (faster, lighter analysis)
-- **Gemini 2.5 Pro:** ~10-15 minutes (deeper, more thorough)
+- **Gemini 2.5 Flash:** ~5-8 minutes (faster, lighter analysis)
+- **Gemini 2.5 Pro:** ~15-25 minutes (deeper, more thorough)
 
-**Token Budget:**
-- Input: ~50K tokens (all source documents)
-- Output: ~8K tokens (comprehensive evaluation)
-- Total: ~58K tokens (well within Gemini 2M context window)
+**Token Budget (Updated with v1/v2/v3 comparison):**
+- Input: ~75K tokens (13 source documents including 1,298-line comparison)
+- Output: ~10K tokens (comprehensive 120-point evaluation)
+- Total: ~85K tokens (well within Gemini 2M context window)
 
 ---
 
@@ -454,7 +556,9 @@ If you want to go deeper on specific sections:
 3. ✅ Provides actionable recommendations (not vague suggestions)
 4. ✅ Validates or challenges IF.TTT compliance claims
 5. ✅ Assesses whether narrative methodology is sound
-6. ✅ Gives a clear verdict: publication-ready or needs work
+6. ✅ Verifies v1→v2→v3 progression accuracy (quantitative metrics)
+7. ✅ Evaluates ESCALATE bug technical depth and legal liability assessment
+8. ✅ Gives a clear verdict: publication-ready or needs work
 
 ---
 
@@ -485,6 +589,13 @@ The goal is to make this work EXCELLENT, not to feel good about it.
 ---
 
 **Citation:** if://doc/gemini-narrative-evaluation-prompt-2025-11-11
-**Version:** 1.0
-**Last Updated:** 2025-11-11
+**Version:** 2.0 (Updated with v1/v2/v3 comprehensive comparison)
+**Last Updated:** 2025-11-11 11:30
 **Status:** Ready for evaluation
+**Changes from v1.0:**
+- Added V4-EPIC-COMPREHENSIVE-COMPARISON.md (document #7, 1,298 lines)
+- Added Part 4: V4 Epic Version Progression Analysis (20 points)
+- Updated scoring: 100-point → 120-point scale
+- Added Complete Evolution Timeline section
+- Added critical questions for v1/v2/v3 progression verification
+- Updated token budget: 58K → 85K tokens
