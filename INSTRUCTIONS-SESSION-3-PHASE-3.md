@@ -1,20 +1,20 @@
-# Session 3 (H.323) - Phase 3: Production Deployment
+# Session 3 (H.323) - Phase 3
 
-**Status:** Phase 2 Complete ✅
-**Phase:** 3 of 3 (Final)
+## Task 1: Gatekeeper Cluster Deploy (Sonnet)
+- Deploy primary + backup Gatekeepers
+- Prometheus health checks
+- **File:** deploy/h323-gatekeeper-cluster.yml
 
-| Task | File | Model | Deliverable |
-|------|------|-------|-------------|
-| Deploy Gatekeeper cluster (primary + backup HA) | src/communication/h323_gatekeeper_ha.py | Sonnet | HA failover <5s, health checks |
-| Guardian council staging test (real 8 Guardians) | tests/test_h323_production_8guardian.py | Haiku | Load test, latency metrics, jitter <50ms |
-| Production handoff docs | docs/H323-PRODUCTION-RUNBOOK.md | Sonnet | Deploy, monitor, incident response |
+## Task 2: Guardian Staging Test (Sonnet)
+- Real 8-Guardian council video call
+- Measure: bandwidth, latency, jitter
+- **File:** tests/production/h323_8_guardians_live.py
 
-**CRITICAL SUCCESS:**
-✅ Gatekeeper HA running (primary + backup)
-✅ 8 Guardians join MCU concurrently
-✅ Zero call drops during failover test
-✅ Runbook complete (deploy, troubleshoot, rollback)
+## Task 3: Production Runbook (Haiku)
+- Emergency procedures
+- Failover testing results
+- **File:** docs/H323-PRODUCTION-RUNBOOK.md
 
-**Estimated:** 3-4 hours | **Cost:** $5-8
-
-GO NOW
+**Completion:** Commit, STATUS-PHASE-3.md, auto-poll Phase 4
+**Estimated:** 5 hours, $10
+**GO NOW**
