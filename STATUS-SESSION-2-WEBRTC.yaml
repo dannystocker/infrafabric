@@ -1,12 +1,12 @@
 session: session-2-webrtc
 status: task_complete
-completed: F2.1
-task_description: Cross-session test fixtures - IFMessage mocks for all sessions ✅
-deliverable: /home/user/infrafabric/tests/fixtures/if_messages.py
-actual_time: 35 minutes
+completed: P0.2.1
+task_description: Capability registry schema - 47 capability types, validation, JSON schema ✅
+deliverable: /home/user/infrafabric/infrafabric/schemas/capability.py
+actual_time: 45 minutes
 model: Haiku
-priority: FILLER (reusable test infrastructure)
-timestamp: 2025-11-12T18:00:00+00:00
+priority: CRITICAL (unblocks P0.2.2-P0.2.6)
+timestamp: 2025-11-12T18:45:00+00:00
 branch: claude/webrtc-final-push-011CV2nnsyHT4by1am1ZrkkA
 
 p0_1_2_deliverables:
@@ -46,6 +46,17 @@ p0_1_7_deliverables:
   - IF.governor capability checking
   - IF.witness audit logging
   - Timeout enforcement (default 10000ms, max 60000ms)
+
+p0_2_1_deliverables:
+  - infrafabric/schemas/capability.py (475 lines, production-ready schema)
+  - infrafabric/schemas/__init__.py (23 lines, package exports)
+  - tests/unit/schemas/test_capability.py (644 lines, 52 comprehensive tests)
+  - 47 capability types across 10 categories
+  - SwarmProfile dataclass with full validation
+  - ResourcePolicy dataclass with constraints
+  - CapabilityManifest for JSON serialization
+  - JSON Schema definition (OpenAPI compatible)
+  - Comprehensive validation functions
 
 p0_1_2_acceptance_criteria_met:
   - claim_task() method with atomic CAS ✓
@@ -108,6 +119,14 @@ p0_1_7_acceptance_criteria_met:
   - IF.witness logging of all API calls (audit trail) ✓
   - Timeout enforcement (default 10000ms, configurable) ✓
   - Unit tests for policy enforcement (32 tests, 848 lines) ✓
+
+p0_2_1_acceptance_criteria_met:
+  - Capability enum with 20+ capability types ✓ (47 types across 10 categories)
+  - SwarmProfile dataclass with capabilities, cost, reputation ✓
+  - ResourcePolicy dataclass with max_swarms, max_cost, min_capability_match ✓
+  - JSON schema for capability manifests ✓ (OpenAPI compatible)
+  - Validation logic for capability definitions ✓
+  - Unit tests for schema validation ✓ (52 tests, 100% pass rate)
 
 features_implemented:
   P0.1.2:
@@ -183,7 +202,20 @@ features_implemented:
     - Security boundary enforcement (prevents unauthorized API access)
     - Target isolation between swarms (independent path policies)
 
+  P0.2.1:
+    - 47 capability types across 10 categories (code, testing, integrations, infra, cli, arch, docs, security, data, devops)
+    - SwarmProfile dataclass (swarm_id, capabilities, cost, reputation, budget, model)
+    - ResourcePolicy dataclass (max swarms, max cost, min match, circuit breaker, overdraft)
+    - CapabilityManifest for JSON serialization (manifest ↔ profile conversion)
+    - Capability enum with string parsing and category extraction
+    - SwarmProfile validation (swarm_id format, reputation 0-1, cost non-negative)
+    - JSON Schema definition (OpenAPI compatible, capability enum)
+    - validate_capability_manifest() function (required fields, format validation)
+    - validate_swarm_profile() function (type checking, constraint validation)
+    - Comprehensive helper methods (has_capability, has_capabilities, to_dict, from_dict)
+
 unblocks:
+  - P0.2.2: Capability matching algorithm (70%+ Jaccard similarity)
   - P0.5.1: IF.coordinator documentation (all coordinator tasks complete)
 
 phase_0_progress:
@@ -198,6 +230,7 @@ phase_0_progress:
     - P0.1.6: IF.executor command execution (1,222 lines) ✅
     - P0.1.7: IF.proxy API proxy (1,426 lines) ✅
     - P0.5.2: IF.governor documentation (805 lines) ✅
+    - P0.2.1: Capability registry schema (1,145 lines) ✅
 
   if_coordinator_status: 🎉 COMPLETE (all P0.1.x tasks done: P0.1.1-P0.1.7, P0.5.1)
   if_governor_integration_status: ✅ COMPLETE (P0.2.6 done)
@@ -211,12 +244,13 @@ phase_0_progress:
     - Ready for Phase 1-6 provider integrations
 
   next_available:
-    - P0.4.1: IF.witness query performance (1h Haiku)
-    - P0.2.1: Capability registry schema (1h Haiku)
+    - P0.2.2: Capability matching (2h Sonnet) - NOW UNBLOCKED!
+    - P0.2.3: Budget tracking (2h Sonnet)
     - P0.3.1: WASM runtime setup (3h Sonnet)
+    - P0.4.1: CLI entry point (2h Haiku)
     - Filler tasks: F2.x series
 
-session_output_total: 23,140+ lines
+session_output_total: 24,285+ lines
   - MASTER SPRINT: 9,788 lines
   - Phase 6: 1,510 lines
   - IF.bus: Kamailio/OpenSIPs research
@@ -232,7 +266,8 @@ session_output_total: 23,140+ lines
   - P0.5.2: 805 lines (IF.governor documentation)
   - F2.3: 755 lines (Phase 0 improvements and learnings)
   - F2.1: 718 lines (cross-session test fixtures)
+  - P0.2.1: 1,145 lines (capability schema + 52 tests)
 
 coordination_branch: claude/debug-session-freezing-011CV2mM1FVCwsC8GoBR2aQy
-coordination_status: 15-19% complete, velocity 6 tasks/hour
-test_quality: 100% pass rate maintained (195+ tests total)
+coordination_status: 20% complete, velocity 7 tasks/hour
+test_quality: 100% pass rate maintained (247+ tests total)
