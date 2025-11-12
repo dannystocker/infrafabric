@@ -1,0 +1,24 @@
+# InfraFabric Phase 0 Requirements
+
+# IF.coordinator (P0.1.x) - Event Bus
+etcd3>=0.12.0
+grpcio>=1.50.0  # Required by etcd3
+
+# Testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.1.0
+
+# Logging and utilities
+python-json-logger>=2.0.0
+
+# IF.governor (P0.2.x) - Coming soon
+# pyyaml>=6.0
+
+# IF.chassis (P0.3.x) - Coming soon
+# wasmtime>=14.0.0
+
+# Development
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.5.0
