@@ -1,11 +1,11 @@
 session: session-1-ndi
 status: active
-claiming: null
-milestone: "100% - P0.5.1 complete: IF.coordinator documentation (~600 lines)"
-timestamp: 2025-11-12T17:45:00Z
+claiming: P0.5.4
+milestone: "0% - Starting P0.5.4: Migration guide (git → etcd)"
+timestamp: 2025-11-12T18:00:00Z
 branch: claude/ndi-witness-streaming-011CV2niqJBK5CYADJMRLNGs
 blocked_on: null
-next_action: "Ready for next task: P0.5.4 (Migration guide) or filler tasks"
+next_action: "Document migration from git polling (30s) to etcd coordination (<10ms)"
 completed_tasks:
   - IF.bus NDI-SIP integration research
   - Onboarding documentation v1.3
