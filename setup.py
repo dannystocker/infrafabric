@@ -30,7 +30,7 @@ else:
 setup(
     name='if-tools',
     version='0.1.0',
-    description='IF.witness CLI + IF.optimise - Provenance tracking and cost management for AI workflows',
+    description='IF.witness CLI + IF.optimise + IF.vmix + IF.obs + IF.ha - Provenance tracking, cost management, vMix, OBS and Home Assistant control',
     long_description=long_description,
     long_description_content_type='text/markdown',
     author='InfraFabric',
@@ -78,6 +78,9 @@ setup(
             # Main CLI tools
             'if-witness=cli.if_witness:cli',
             'if-optimise=cli.if_optimise:cli',
+            'if-vmix=cli.vmix_commands:vmix',
+            'if-obs=cli.obs_commands:obs',
+            'if-ha=cli.ha_commands:ha',
 
             # Utility tools
             'if-cost-tracker=tools.cost_tracker:cli',

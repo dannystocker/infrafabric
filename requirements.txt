@@ -4,6 +4,15 @@
 # CLI framework
 click>=8.1.0
 
+# HTTP client for vMix API
+requests>=2.31.0
+
+# OBS WebSocket client
+obs-websocket-py>=1.0
+
+# YAML config for vMix and OBS instances
+PyYAML>=6.0.0
+
 # Cryptography (Ed25519 signatures)
 cryptography>=41.0.0
 
