@@ -1,12 +1,12 @@
 session: session-2-webrtc
 status: task_complete
-completed: P0.2.1
-task_description: Capability registry schema - 47 capability types, validation, JSON schema ✅
-deliverable: /home/user/infrafabric/infrafabric/schemas/capability.py
-actual_time: 45 minutes
-model: Haiku
-priority: CRITICAL (unblocks P0.2.2-P0.2.6)
-timestamp: 2025-11-12T18:45:00+00:00
+completed: P0.2.2
+task_description: Capability matching algorithm - Jaccard similarity, combined scoring, circuit breaker ✅
+deliverable: /home/user/infrafabric/infrafabric/governor.py
+actual_time: 50 minutes
+model: Sonnet
+priority: CRITICAL (core IF.governor matching)
+timestamp: 2025-11-12T19:35:00+00:00
 branch: claude/webrtc-final-push-011CV2nnsyHT4by1am1ZrkkA
 
 p0_1_2_deliverables:
@@ -57,6 +57,18 @@ p0_2_1_deliverables:
   - CapabilityManifest for JSON serialization
   - JSON Schema definition (OpenAPI compatible)
   - Comprehensive validation functions
+
+p0_2_2_deliverables:
+  - infrafabric/governor.py (421 lines, production-ready IF.governor)
+  - tests/unit/test_governor.py (644 lines, 35 comprehensive tests)
+  - IFGovernor class with swarm registry
+  - find_qualified_swarm() with Jaccard similarity matching
+  - find_all_qualified_swarms() for Gang Up on Blocker pattern
+  - Combined scoring: (capability_match × reputation) / cost
+  - Circuit breaker pattern (failure tracking, auto-isolation)
+  - MatchResult and SwarmStats dataclasses
+  - 70% capability match threshold enforcement
+  - Cost and budget filtering
 
 p0_1_2_acceptance_criteria_met:
   - claim_task() method with atomic CAS ✓
@@ -127,6 +139,14 @@ p0_2_1_acceptance_criteria_met:
   - JSON schema for capability manifests ✓ (OpenAPI compatible)
   - Validation logic for capability definitions ✓
   - Unit tests for schema validation ✓ (52 tests, 100% pass rate)
+
+p0_2_2_acceptance_criteria_met:
+  - find_qualified_swarm(required_caps, max_cost) method ✓
+  - Capability overlap scoring (Jaccard similarity) ✓
+  - Combined score: (capability_match × reputation) / cost ✓
+  - Returns best-scoring swarm above 70% threshold ✓
+  - Returns None if no qualified swarm found ✓
+  - Unit tests with various capability combinations ✓ (35 tests, 100% pass rate)
 
 features_implemented:
   P0.1.2:
@@ -214,8 +234,24 @@ features_implemented:
     - validate_swarm_profile() function (type checking, constraint validation)
     - Comprehensive helper methods (has_capability, has_capabilities, to_dict, from_dict)
 
+  P0.2.2:
+    - IFGovernor class with swarm registry and resource policy
+    - find_qualified_swarm() - finds best-fit swarm based on capabilities, cost, reputation
+    - find_all_qualified_swarms() - returns ranked list for Gang Up on Blocker pattern
+    - Jaccard similarity scoring (|intersection| / |required|)
+    - Combined scoring: (capability_match × reputation) / cost (higher = better)
+    - 70% capability match threshold (configurable via policy)
+    - Cost filtering (max_cost enforcement)
+    - Budget filtering (excludes swarms with zero budget)
+    - Circuit breaker pattern (tracks consecutive failures, auto-isolates failing swarms)
+    - MatchResult dataclass (match_score, combined_score, capabilities_matched)
+    - SwarmStats dataclass (total/failed operations, consecutive failures, circuit state)
+    - record_operation_success/failure() methods
+    - reset_circuit_breaker() for manual recovery
+
 unblocks:
-  - P0.2.2: Capability matching algorithm (70%+ Jaccard similarity)
+  - P0.2.3: Budget tracking and enforcement
+  - P0.2.4: Circuit breaker implementation (already included in P0.2.2)
   - P0.5.1: IF.coordinator documentation (all coordinator tasks complete)
 
 phase_0_progress:
@@ -231,8 +267,10 @@ phase_0_progress:
     - P0.1.7: IF.proxy API proxy (1,426 lines) ✅
     - P0.5.2: IF.governor documentation (805 lines) ✅
     - P0.2.1: Capability registry schema (1,145 lines) ✅
+    - P0.2.2: Capability matching algorithm (1,065 lines) ✅
 
   if_coordinator_status: 🎉 COMPLETE (all P0.1.x tasks done: P0.1.1-P0.1.7, P0.5.1)
+  if_governor_status: 🚀 IN PROGRESS (P0.2.1-P0.2.2 done, P0.2.3-P0.2.5 remaining)
   if_governor_integration_status: ✅ COMPLETE (P0.2.6 done)
   if_documentation_status: 🎉 COMPLETE (P0.5.1 coordinator + P0.5.2 governor)
 
@@ -240,17 +278,18 @@ phase_0_progress:
     - Fixed coordination race conditions (30,000ms → <10ms)
     - Enabled secure process management (IF.executor)
     - Enabled secure API proxy (IF.proxy)
+    - Implemented capability-based swarm matching (Jaccard similarity)
+    - Implemented circuit breaker pattern (auto-isolation of failing swarms)
     - Documented IF.coordinator and IF.governor components
     - Ready for Phase 1-6 provider integrations
 
   next_available:
-    - P0.2.2: Capability matching (2h Sonnet) - NOW UNBLOCKED!
-    - P0.2.3: Budget tracking (2h Sonnet)
+    - P0.2.3: Budget tracking (2h Sonnet) - NOW UNBLOCKED!
     - P0.3.1: WASM runtime setup (3h Sonnet)
     - P0.4.1: CLI entry point (2h Haiku)
     - Filler tasks: F2.x series
 
-session_output_total: 24,285+ lines
+session_output_total: 25,350+ lines
   - MASTER SPRINT: 9,788 lines
   - Phase 6: 1,510 lines
   - IF.bus: Kamailio/OpenSIPs research
@@ -267,7 +306,8 @@ session_output_total: 24,285+ lines
   - F2.3: 755 lines (Phase 0 improvements and learnings)
   - F2.1: 718 lines (cross-session test fixtures)
   - P0.2.1: 1,145 lines (capability schema + 52 tests)
+  - P0.2.2: 1,065 lines (governor matching + 35 tests)
 
 coordination_branch: claude/debug-session-freezing-011CV2mM1FVCwsC8GoBR2aQy
-coordination_status: 20% complete, velocity 7 tasks/hour
-test_quality: 100% pass rate maintained (247+ tests total)
+coordination_status: 22% complete, velocity 8 tasks/hour
+test_quality: 100% pass rate maintained (282+ tests total)
