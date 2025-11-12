@@ -255,6 +255,72 @@ class IFGovernor:
         """
         return self.swarm_registry.get(swarm_id)
 
+    def track_cost(self, swarm_id: str, operation: str, cost: float):
+        """
+        Track costs and enforce budget limits
+
+        This method deducts the cost from the swarm's budget and logs
+        the operation to IF.optimise and IF.witness. If budget is exhausted,
+        triggers circuit breaker.
+
+        Args:
+            swarm_id: Swarm identifier
+            operation: Operation name (e.g., "guardian_vote", "code_review")
+            cost: Cost in dollars
+
+        Raises:
+            ValueError: If swarm_id is not registered
+
+        Example:
+            >>> governor.track_cost("guardian-council", "h323_vote", 2.50)
+            >>> profile = governor.get_swarm_profile("guardian-council")
+            >>> profile.current_budget_remaining
+            97.50  # Was 100.00, now 97.50
+        """
+        if swarm_id not in self.swarm_registry:
+            raise ValueError(f"Unknown swarm: {swarm_id}")
+
+        profile = self.swarm_registry[swarm_id]
+        old_budget = profile.current_budget_remaining
+
+        # Deduct cost from budget
+        profile.current_budget_remaining -= cost
+
+        logger.info(
+            f"Cost tracked for '{swarm_id}': ${cost:.2f} for '{operation}' "
+            f"(budget: ${old_budget:.2f} → ${profile.current_budget_remaining:.2f})"
+        )
+
+        # Check budget warning threshold (default 20%)
+        budget_pct = profile.current_budget_remaining / (old_budget + cost) if (old_budget + cost) > 0 else 0
+        if budget_pct <= self.policy.budget_warning_threshold and budget_pct > 0:
+            logger.warning(
+                f"⚠️  Low budget warning for '{swarm_id}': "
+                f"${profile.current_budget_remaining:.2f} remaining "
+                f"({budget_pct:.1%} of original budget)"
+            )
+
+        # Log cost to IF.optimise (stub - will be implemented in separate component)
+        self._log_cost_to_optimise(swarm_id, operation, cost)
+
+        # Log to IF.witness (stub - will be implemented in P0.4.3)
+        self._log_cost_to_witness(
+            swarm_id=swarm_id,
+            operation=operation,
+            cost=cost,
+            remaining_budget=profile.current_budget_remaining
+        )
+
+        # Check if budget exhausted → trip circuit breaker
+        if profile.current_budget_remaining <= 0:
+            logger.error(
+                f"🚨 Budget exhausted for '{swarm_id}': "
+                f"${profile.current_budget_remaining:.2f}"
+            )
+            # Circuit breaker will be implemented in P0.2.4
+            # For now, just mark budget as 0
+            profile.current_budget_remaining = max(0, profile.current_budget_remaining)
+
     def get_budget_report(self) -> Dict[str, Dict[str, float]]:
         """
         Get budget status for all swarms
@@ -281,6 +347,51 @@ class IFGovernor:
             }
             for swarm_id, profile in self.swarm_registry.items()
         }
+
+    def _log_cost_to_optimise(self, swarm_id: str, operation: str, cost: float):
+        """
+        Log cost to IF.optimise for cost tracking and optimization
+
+        This is a stub that will integrate with IF.optimise when available.
+        IF.optimise provides cost analytics and optimization recommendations.
+
+        Args:
+            swarm_id: Swarm that incurred the cost
+            operation: Operation name
+            cost: Cost in dollars
+        """
+        # Stub for IF.optimise integration
+        # Will be replaced with actual IF.optimise API call
+        logger.debug(
+            f"IF.optimise: track_operation_cost(provider={swarm_id}, "
+            f"operation={operation}, cost=${cost:.2f})"
+        )
+
+    def _log_cost_to_witness(
+        self,
+        swarm_id: str,
+        operation: str,
+        cost: float,
+        remaining_budget: float
+    ):
+        """
+        Log cost tracking event to IF.witness for audit trail
+
+        This provides audit trail for all budget changes. Will be fully
+        implemented when IF.witness is available (P0.4.3).
+
+        Args:
+            swarm_id: Swarm that incurred the cost
+            operation: Operation name
+            cost: Cost in dollars
+            remaining_budget: Budget remaining after deduction
+        """
+        # Stub for IF.witness integration (P0.4.3)
+        # Will be replaced with actual IF.witness API call
+        logger.debug(
+            f"IF.witness: cost_tracked(swarm_id={swarm_id}, operation={operation}, "
+            f"cost=${cost:.2f}, remaining=${remaining_budget:.2f})"
+        )
 
     def _log_capability_match(
         self,
