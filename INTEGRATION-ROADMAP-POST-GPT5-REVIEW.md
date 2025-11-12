@@ -405,6 +405,311 @@ Integrate 40+ payment providers (global + UK mobile) for payment processing with
 
 ---
 
+## Phase 5: Chat/Messaging Platform Integration (POST GPT-5 Pro Review)
+
+### Overview
+Integrate 16+ major chat and messaging platforms (global + Asia-specific) for unified communication with IF.bus.
+
+### Chat Platform List (16+ Platforms)
+
+#### Tier 1: Global Messaging Platforms (Official APIs)
+
+| Provider | API Documentation | Priority | Notes |
+|----------|------------------|----------|-------|
+| **WhatsApp** | https://green-api.com/docs/api/<br>https://whapi.readme.io/reference/sendmessagetext | Critical | Global, Asia - Green-API & Whapi.Cloud |
+| **Telegram** | https://core.telegram.org/bots/api | Critical | Global, Asia - Official Bot API |
+| **Slack** | https://api.slack.com/ | Critical | Global - Official API |
+| **Microsoft Teams** | https://docs.microsoft.com/en-us/microsoftteams/platform/ | High | Global - Official Teams API |
+| **Discord** | https://discord.com/developers/docs/intro | High | Global, Asia - Official API |
+| **Messenger (Meta)** | https://developers.facebook.com/docs/messenger-platform/ | High | Global, Asia - Facebook Messenger |
+| **Google Chat** | https://developers.google.com/chat | Medium | Global - Official API |
+| **Signal** | https://signal.ecorp.dev/ | Medium | Global - Community API (not official) |
+
+#### Tier 2: Enterprise Communication Platforms
+
+| Provider | API Documentation | Priority | Notes |
+|----------|------------------|----------|-------|
+| **Rocket.Chat** | https://developer.rocket.chat/api/rest-api/ | Medium | Global - Open source, self-hosted |
+| **Viber** | https://developers.viber.com/docs/api/rest-bot-api/ | Low | Global, Asia - REST API |
+| **Snapchat** | https://kit.snapchat.com/ | Low | Global, Asia - Snap Kit |
+
+#### Tier 3: Asia-Specific Messaging Platforms
+
+| Provider | Region | API Documentation | Priority | Notes |
+|----------|--------|------------------|----------|-------|
+| **WeChat** | China | https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/Access_Overview.html<br>https://wechat-oauth2.readthedocs.io/en/latest/api.html | High | Dominant in China |
+| **LINE** | Japan, Taiwan, Thailand | https://developers.line.biz/en/docs/messaging-api/ | High | Official Messaging API |
+| **KakaoTalk** | South Korea | https://developers.kakao.com/docs/latest/en/kakaotalk-common/ | High | Official KakaoTalk API |
+| **Zalo** | Vietnam | https://developers.zalo.me/docs/social-api/social-api-overview | Medium | Official Zalo API |
+| **QQ** | China | https://wiki.connect.qq.com/introduction | Medium | QQ Open API |
+
+### Sprint Plan: Chat/Messaging Platform Integration
+
+**Prerequisites:**
+- ✅ GPT-5 Pro review complete
+- ✅ Payment providers integration complete
+- ✅ Session 2 (WebRTC) and Session 4 (SIP) ready for messaging expansion
+
+**Execution:**
+
+**Phase 5A: Critical Global Platforms**
+- WhatsApp, Telegram, Slack, Teams, Discord
+- **Timeline:** 8-10 hours
+- **Cost:** $120-180
+- **Deliverables:** 5 chat platform adapters
+
+**Phase 5B: Enterprise & Additional Global**
+- Messenger, Google Chat, Rocket.Chat, Signal, Viber
+- **Timeline:** 8-10 hours
+- **Cost:** $120-180
+- **Deliverables:** 5 chat platform adapters
+
+**Phase 5C: Asia-Specific Platforms**
+- WeChat, LINE, KakaoTalk, Zalo, QQ
+- **Timeline:** 10-12 hours
+- **Cost:** $150-220
+- **Deliverables:** 5 Asia platform adapters
+
+**Phase 5D: Snapchat & Specialty**
+- Snapchat and any additional platforms
+- **Timeline:** 4-6 hours
+- **Cost:** $60-100
+- **Deliverables:** 1+ specialty adapters
+
+**Session Distribution:**
+
+**Session 1 (NDI):** Video Messaging Integration
+- Video messages in WhatsApp, Telegram
+- Video calls via messaging platforms
+- Screen sharing integration
+
+**Session 2 (WebRTC):** Real-time Chat Communication
+- WebRTC calling via Slack, Discord, Teams
+- Browser-based messaging integration
+- Group video calls via messaging platforms
+
+**Session 3 (H.323):** Legacy Protocol Bridging
+- Bridge H.323 to messaging platforms
+- Enterprise integration (Teams ↔ H.323)
+- Legacy system connectivity
+
+**Session 4 (SIP):** Voice Messaging Integration
+- Voice messages across platforms
+- SIP calling to/from chat platforms
+- Conference bridges via messaging
+
+**Session 5 (CLI):** Unified Messaging CLI
+```bash
+# Connection management
+if chat add [provider] [credentials]
+if chat list
+if chat test [provider]
+
+# Send messages
+if chat send whatsapp --to +1234567890 --message "Hello"
+if chat send telegram --chat @username --message "Test"
+if chat send slack --channel #general --message "Alert"
+
+# Receive messages (webhook)
+if chat webhook [provider] --url https://example.com/webhook
+
+# Group management
+if chat group create telegram --name "Project Team"
+if chat group add telegram --group [id] --user @username
+
+# Media
+if chat send whatsapp --to +1234567890 --image photo.jpg
+if chat send telegram --chat @username --video video.mp4
+
+# Bot management
+if chat bot create telegram --name "MyBot"
+if chat bot webhook telegram --bot [id] --url https://...
+
+# Status
+if chat status [provider]
+if chat history [provider] --chat [id] --limit 100
+```
+
+**Session 6 (Talent):** Chat Adapter Pattern
+- Unified messaging adapter interface
+- Bloom patterns for chat platforms
+- Bot framework integration
+- Message queue patterns
+- Webhook management patterns
+
+**Unified Chat Adapter:**
+```python
+from abc import ABC, abstractmethod
+
+class ChatAdapter(ABC):
+    """Unified interface to chat platforms"""
+
+    def __init__(self, credentials):
+        self.credentials = credentials
+
+    # Connection
+    @abstractmethod
+    async def connect(self):
+        """Connect to chat platform"""
+
+    @abstractmethod
+    async def disconnect(self):
+        """Disconnect"""
+
+    # Messaging
+    @abstractmethod
+    async def send_message(self, chat_id, text, **kwargs):
+        """Send text message"""
+
+    @abstractmethod
+    async def send_media(self, chat_id, media_type, media_url, caption=None):
+        """Send media (image, video, audio, file)"""
+
+    @abstractmethod
+    async def receive_messages(self, callback):
+        """Receive messages (webhook or polling)"""
+
+    # Groups/Channels
+    @abstractmethod
+    async def create_group(self, name, members):
+        """Create group chat"""
+
+    @abstractmethod
+    async def add_member(self, group_id, user_id):
+        """Add member to group"""
+
+    @abstractmethod
+    async def get_group_info(self, group_id):
+        """Get group information"""
+
+    # Bot management
+    @abstractmethod
+    async def set_webhook(self, webhook_url):
+        """Set webhook for receiving messages"""
+
+    @abstractmethod
+    async def get_bot_info(self):
+        """Get bot information"""
+
+    # Status
+    @abstractmethod
+    async def get_chat_history(self, chat_id, limit=100):
+        """Get message history"""
+
+    # IF.witness integration
+    def log_message(self, message, direction="outbound"):
+        """Log all messages with IF.witness"""
+        pass
+```
+
+**Bloom Pattern Classification:**
+
+**WhatsApp/Telegram:**
+- Early bloomer: Basic messaging (simple, works immediately)
+- Steady performer: Media, groups, bots (consistent API)
+- Late bloomer: Business API, advanced automation (powerful at scale)
+
+**Slack/Teams/Discord:**
+- Early bloomer: Channel messaging (simple integration)
+- Steady performer: Apps, webhooks, slash commands (reliable)
+- Late bloomer: Complex workflows, enterprise integration (powerful)
+
+**WeChat/LINE/KakaoTalk:**
+- Regional champions: Dominant in their markets
+- Feature-rich: Mini-apps, payments, enterprise features
+- Business-focused: Official accounts, API partnerships required
+
+**Session 7 (IF.bus):** Chat Platform Orchestration
+```python
+class ChatBusAdapter(InfrastructureAdapter):
+    """IF.bus adapter for chat platform orchestration"""
+
+    def discover_platforms(self):
+        """List available chat platforms"""
+
+    def add_platform(self, name, platform_type, credentials):
+        """Add chat platform to IF.bus"""
+
+    def broadcast_message(self, message, platforms=None):
+        """Broadcast message across multiple platforms"""
+        # Send to WhatsApp, Telegram, Slack, etc. simultaneously
+
+    def orchestrate_bots(self, profile):
+        """Orchestrate bots across platforms"""
+        # Multi-platform bot coordination
+
+    def message_router(self, source_platform, target_platforms):
+        """Route messages between platforms"""
+        # WhatsApp message → forward to Telegram + Slack
+
+    def unified_inbox(self):
+        """Unified inbox for all platforms"""
+        # Aggregate messages from all platforms
+```
+
+**CLI Integration:**
+```bash
+# Add chat platforms to IF.bus
+if bus add chat whatsapp --token ABC123
+if bus add chat telegram --bot-token XYZ789
+if bus add chat slack --app-token DEF456
+
+# Broadcast message
+if bus broadcast chat --message "Production started" --platforms whatsapp,telegram,slack
+
+# Message routing
+if bus route chat --from whatsapp --to telegram,slack --filter "urgent"
+
+# Unified inbox
+if bus inbox chat --platforms all --unread
+```
+
+**Production Use Cases:**
+
+**Use Case 1: Production Alerts**
+```bash
+# When stream goes down, alert via all platforms
+if bus orchestrate --profile "production-alert"
+  ├─> WhatsApp: Send alert to ops team
+  ├─> Telegram: Post to operations channel
+  ├─> Slack: Alert #production channel
+  ├─> Discord: Notify dev server
+  ├─> Teams: Create incident ticket
+  └─> IF.witness: Log all notifications
+```
+
+**Use Case 2: Multi-Platform Support Bot**
+```yaml
+# Bot that works across platforms
+support_bot:
+  platforms:
+    - whatsapp
+    - telegram
+    - slack
+  commands:
+    /status: Check production status
+    /start: Start production
+    /stop: Stop production
+    /help: Show help
+  routing: unified_handler
+```
+
+**Use Case 3: Regional Communication**
+```bash
+# Asia-specific production alerts
+if bus orchestrate --profile "asia-production"
+  ├─> WeChat: Notify China team
+  ├─> LINE: Notify Japan/Taiwan team
+  ├─> KakaoTalk: Notify Korea team
+  └─> Zalo: Notify Vietnam team
+```
+
+**Total Timeline:** 30-38 hours wall-clock (phased)
+**Total Cost:** $450-680
+**Total Deliverables:** 16+ chat platform adapters
+
+---
+
 ## Master Roadmap Summary
 
 ### Completed/In Progress
@@ -419,11 +724,12 @@ Integrate 40+ payment providers (global + UK mobile) for payment processing with
 - ⏸️ **Phase 2:** Cloud Providers (20 providers, 8-10 hours, $200-300)
 - ⏸️ **Phase 3:** SIP Providers (30+ providers, 24-30 hours phased, $370-530)
 - ⏸️ **Phase 4:** Payment Providers (40+ providers, 32-40 hours phased, $490-710)
+- ⏸️ **Phase 5:** Chat/Messaging Platforms (16+ providers, 30-38 hours phased, $450-680)
 
 ### Total Post-Review Work
-- **Timeline:** 64-80 hours wall-clock (phased over 2-3 weeks)
-- **Cost:** $1,060-1,540
-- **Deliverables:** 90+ integration modules
+- **Timeline:** 94-118 hours wall-clock (phased over 3-4 weeks)
+- **Cost:** $1,510-2,220
+- **Deliverables:** 106+ integration modules
 
 ---
 
@@ -435,7 +741,8 @@ Integrate 40+ payment providers (global + UK mobile) for payment processing with
 | **Cloud Providers (Tier 1)** | 7 | ⏸️ Post-review |
 | **SIP Providers** | 30+ | ⏸️ Post-review |
 | **Payment Providers** | 40+ | ⏸️ Post-review |
-| **TOTAL INTEGRATIONS** | **80+** | - |
+| **Chat/Messaging Platforms** | 16+ | ⏸️ Post-review |
+| **TOTAL INTEGRATIONS** | **96+** | - |
 
 ---
 
@@ -447,6 +754,7 @@ InfraFabric becomes the **unified orchestration layer** for:
 - ⏸️ Cloud infrastructure (AWS, GCP, Azure, etc.)
 - ⏸️ Communication services (Twilio, Telnyx, etc.)
 - ⏸️ Payment processing (Stripe, PayPal, etc.)
+- ⏸️ Messaging platforms (WhatsApp, Telegram, Slack, WeChat, LINE, etc.)
 
 **Result:**
 ```bash
@@ -457,6 +765,7 @@ if bus orchestrate --profile "complete-production-stack"
   ├─> vMix: Load production scene
   ├─> OBS: Start streaming
   ├─> HA: Turn on studio lights
+  ├─> Chat: Notify team "Production started" (Slack, Telegram, WhatsApp)
   ├─> Payment: Charge subscribers (Stripe)
   └─> IF.witness: Log all operations
 ```
@@ -465,11 +774,12 @@ if bus orchestrate --profile "complete-production-stack"
 Every platform, provider, and service joins InfraFabric as a "friend":
 - Production software: **Friends in creation** (生產之友)
 - Cloud providers: **Friends in infrastructure** (基建之友)
-- SIP providers: **Friends in communication** (通訊之友)
+- SIP providers: **Friends in voice communication** (語音之友)
+- Chat platforms: **Friends in messaging** (訊息之友)
 - Payment providers: **Friends in commerce** (商業之友)
 
 **IF.TTT Across All:**
-- **Traceable:** All operations logged via IF.witness (production, cloud, SIP, payments)
+- **Traceable:** All operations logged via IF.witness (production, cloud, SIP, chat, payments)
 - **Transparent:** Full visibility across all platforms
 - **Trustworthy:** IF tests + production-proven providers
 
@@ -493,9 +803,10 @@ Every platform, provider, and service joins InfraFabric as a "friend":
 1. ⏸️ **Phase 2:** Cloud Providers (1-2 days)
 2. ⏸️ **Phase 3:** SIP Providers (3-4 days, phased)
 3. ⏸️ **Phase 4:** Payment Providers (4-5 days, phased)
+4. ⏸️ **Phase 5:** Chat/Messaging Platforms (4-5 days, phased)
 
-### Final Integration (2-3 weeks from now)
-1. ⏸️ Unified CLI across all 80+ integrations
+### Final Integration (3-4 weeks from now)
+1. ⏸️ Unified CLI across all 96+ integrations
 2. ⏸️ IF.bus orchestration profiles
 3. ⏸️ Complete documentation
 4. ⏸️ Production deployment
@@ -514,4 +825,4 @@ Every platform, provider, and service joins InfraFabric as a "friend":
 
 ---
 
-**🚀 Focus now: Complete current sprint, then GPT-5 Pro review before proceeding with 80+ additional integrations!**
+**🚀 Focus now: Complete current sprint, then GPT-5 Pro review before proceeding with 96+ additional integrations!**
