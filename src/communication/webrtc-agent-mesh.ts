@@ -730,7 +730,7 @@ export class IFAgentWebRTC {
   /**
    * Log event to IF.witness
    */
-  private async logToWitness(event: WitnessEvent): Promise<void> {
+  protected async logToWitness(event: WitnessEvent): Promise<void> {
     if (this.witnessLogger) {
       await this.witnessLogger(event);
     }

@@ -49,12 +49,18 @@ declare global {
     addIceCandidate(candidate: RTCIceCandidateInit): Promise<void>;
 
     createDataChannel(label: string, dataChannelDict?: RTCDataChannelInit): RTCDataChannel;
+    getStats(): Promise<RTCStatsReport>;
 
     close(): void;
 
     onicecandidate: ((event: RTCPeerConnectionIceEvent) => void) | null;
     onconnectionstatechange: (() => void) | null;
+    oniceconnectionstatechange: (() => void) | null;
     ondatachannel: ((event: RTCDataChannelEvent) => void) | null;
+  }
+
+  interface RTCStatsReport extends Map<string, any> {
+    forEach(callbackfn: (value: any, key: string, parent: RTCStatsReport) => void, thisArg?: any): void;
   }
 
   class RTCSessionDescription {
