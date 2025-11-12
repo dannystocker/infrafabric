@@ -30,6 +30,12 @@ Core Modules:
 - infrafabric.manifests: Self-documenting provenance and manifest generation
 - infrafabric.discovery: Contact discovery using multiple agent strategies (coming soon)
 
+Phase 0 Modules (Swarm of Swarms):
+- infrafabric.governor: Capability-aware resource and budget management
+- infrafabric.witness: Cryptographic provenance and audit logging
+- infrafabric.optimise: Cost tracking and optimization
+- infrafabric.schemas: Data schemas for swarms and capabilities
+
 Author: InfraFabric Research
 License: MIT (to be formalized)
 Version: 0.1.0
@@ -45,6 +51,10 @@ from .guardians import GuardianPanel, Guardian, debate_proposal
 from .coordination import WeightedCoordinator, Agent, AgentProfile
 from .manifests import ManifestGenerator, create_manifest
 
+# Phase 0 exports
+from .governor import IFGovernor
+from .schemas.capability import Capability, SwarmProfile, ResourcePolicy
+
 __all__ = [
     'GuardianPanel',
     'Guardian',
@@ -54,4 +64,9 @@ __all__ = [
     'AgentProfile',
     'ManifestGenerator',
     'create_manifest',
+    # Phase 0
+    'IFGovernor',
+    'Capability',
+    'SwarmProfile',
+    'ResourcePolicy',
 ]
