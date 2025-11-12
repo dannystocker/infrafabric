@@ -642,3 +642,286 @@ def test_swarm_with_extra_capabilities_not_penalized(governor):
 
     # Should match perfectly (1/1 = 1.0) despite having 4 extra capabilities
     assert swarm_id == "swarm-multi"
+
+
+# ==================== Budget Tracking Tests (P0.2.3) ====================
+
+
+def test_allocate_budget(governor, webrtc_swarm):
+    """Test allocating budget to a swarm."""
+    governor.register_swarm(webrtc_swarm)
+    governor.allocate_budget("swarm-webrtc", 100.0)
+
+    profile = governor.get_swarm_profile("swarm-webrtc")
+    assert profile.current_budget_remaining == 100.0
+
+
+def test_allocate_budget_unknown_swarm(governor):
+    """Test that allocating budget to unknown swarm raises ValueError."""
+    with pytest.raises(ValueError, match="Unknown swarm"):
+        governor.allocate_budget("nonexistent", 100.0)
+
+
+def test_allocate_budget_negative_raises(governor, webrtc_swarm):
+    """Test that negative budget raises ValueError."""
+    governor.register_swarm(webrtc_swarm)
+    with pytest.raises(ValueError, match="Budget must be non-negative"):
+        governor.allocate_budget("swarm-webrtc", -50.0)
+
+
+def test_track_cost_deducts_from_budget(governor, webrtc_swarm):
+    """Test that track_cost deducts from swarm budget."""
+    governor.register_swarm(webrtc_swarm)
+    governor.allocate_budget("swarm-webrtc", 100.0)
+
+    governor.track_cost("swarm-webrtc", "task_execution", 25.0)
+
+    profile = governor.get_swarm_profile("swarm-webrtc")
+    assert profile.current_budget_remaining == 75.0
+
+
+def test_track_cost_multiple_operations(governor, webrtc_swarm):
+    """Test tracking costs for multiple operations."""
+    governor.register_swarm(webrtc_swarm)
+    governor.allocate_budget("swarm-webrtc", 100.0)
+
+    governor.track_cost("swarm-webrtc", "task_1", 25.0)
+    governor.track_cost("swarm-webrtc", "task_2", 30.0)
+    governor.track_cost("swarm-webrtc", "task_3", 15.0)
+
+    profile = governor.get_swarm_profile("swarm-webrtc")
+    assert profile.current_budget_remaining == 30.0
+
+
+def test_track_cost_updates_stats(governor, webrtc_swarm):
+    """Test that track_cost updates swarm statistics."""
+    governor.register_swarm(webrtc_swarm)
+    governor.allocate_budget("swarm-webrtc", 100.0)
+
+    governor.track_cost("swarm-webrtc", "task_execution", 25.0)
+    governor.track_cost("swarm-webrtc", "task_execution", 30.0)
+
+    stats = governor.get_swarm_stats("swarm-webrtc")
+    assert stats.total_cost == 55.0
+
+
+def test_track_cost_unknown_swarm_raises(governor):
+    """Test that tracking cost for unknown swarm raises ValueError."""
+    with pytest.raises(ValueError, match="Unknown swarm"):
+        governor.track_cost("nonexistent", "task_execution", 10.0)
+
+
+def test_track_cost_negative_raises(governor, webrtc_swarm):
+    """Test that negative cost raises ValueError."""
+    governor.register_swarm(webrtc_swarm)
+    with pytest.raises(ValueError, match="Cost must be non-negative"):
+        governor.track_cost("swarm-webrtc", "task_execution", -10.0)
+
+
+def test_track_cost_exhausts_budget(governor, webrtc_swarm):
+    """Test that budget can be fully exhausted."""
+    governor.register_swarm(webrtc_swarm)
+    governor.allocate_budget("swarm-webrtc", 50.0)
+
+    governor.track_cost("swarm-webrtc", "task_execution", 50.0)
+
+    profile = governor.get_swarm_profile("swarm-webrtc")
+    assert profile.current_budget_remaining == 0.0
+
+
+def test_track_cost_exceeds_budget(governor, webrtc_swarm):
+    """Test that cost can exceed budget (goes negative)."""
+    governor.register_swarm(webrtc_swarm)
+    governor.allocate_budget("swarm-webrtc", 50.0)
+
+    governor.track_cost("swarm-webrtc", "task_execution", 75.0)
+
+    profile = governor.get_swarm_profile("swarm-webrtc")
+    assert profile.current_budget_remaining == -25.0
+
+
+def test_budget_exhaustion_opens_circuit(governor, webrtc_swarm):
+    """Test that budget exhaustion opens circuit breaker."""
+    governor.register_swarm(webrtc_swarm)
+    governor.allocate_budget("swarm-webrtc", 50.0)
+
+    # Exhaust budget
+    governor.track_cost("swarm-webrtc", "task_execution", 50.0)
+
+    stats = governor.get_swarm_stats("swarm-webrtc")
+    assert stats.circuit_open is True
+    assert stats.circuit_opened_at is not None
+
+
+def test_budget_exhaustion_prevents_task_assignment(governor, webrtc_swarm):
+    """Test that exhausted budget prevents new task assignment."""
+    governor.register_swarm(webrtc_swarm)
+    governor.allocate_budget("swarm-webrtc", 50.0)
+
+    # Exhaust budget
+    governor.track_cost("swarm-webrtc", "task_execution", 50.0)
+
+    # Try to find swarm for new task
+    swarm_id = governor.find_qualified_swarm(
+        required_capabilities=[Capability.INTEGRATION_WEBRTC],
+        max_cost=20.0
+    )
+
+    # Should return None (budget exhausted + circuit open)
+    assert swarm_id is None
+
+
+def test_get_budget_report_single_swarm(governor, webrtc_swarm):
+    """Test getting budget report for single swarm."""
+    governor.register_swarm(webrtc_swarm)
+    governor.allocate_budget("swarm-webrtc", 100.0)
+
+    report = governor.get_budget_report()
+    assert "swarm-webrtc" in report
+    assert report["swarm-webrtc"] == 100.0
+
+
+def test_get_budget_report_multiple_swarms(governor, webrtc_swarm, sip_swarm):
+    """Test getting budget report for multiple swarms."""
+    governor.register_swarm(webrtc_swarm)
+    governor.register_swarm(sip_swarm)
+
+    governor.allocate_budget("swarm-webrtc", 100.0)
+    governor.allocate_budget("swarm-sip", 75.0)
+
+    report = governor.get_budget_report()
+    assert len(report) == 2
+    assert report["swarm-webrtc"] == 100.0
+    assert report["swarm-sip"] == 75.0
+
+
+def test_get_budget_report_after_spending(governor, webrtc_swarm):
+    """Test budget report reflects spending."""
+    governor.register_swarm(webrtc_swarm)
+    governor.allocate_budget("swarm-webrtc", 100.0)
+    governor.track_cost("swarm-webrtc", "task_execution", 25.0)
+
+    report = governor.get_budget_report()
+    assert report["swarm-webrtc"] == 75.0
+
+
+def test_get_cost_report_single_swarm(governor, webrtc_swarm):
+    """Test getting cost report for single swarm."""
+    governor.register_swarm(webrtc_swarm)
+    governor.allocate_budget("swarm-webrtc", 100.0)
+    governor.track_cost("swarm-webrtc", "task_execution", 25.0)
+    governor.track_cost("swarm-webrtc", "task_execution", 15.0)
+
+    costs = governor.get_cost_report()
+    assert "swarm-webrtc" in costs
+    assert costs["swarm-webrtc"] == 40.0
+
+
+def test_get_cost_report_multiple_swarms(governor, webrtc_swarm, sip_swarm):
+    """Test getting cost report for multiple swarms."""
+    governor.register_swarm(webrtc_swarm)
+    governor.register_swarm(sip_swarm)
+
+    governor.allocate_budget("swarm-webrtc", 100.0)
+    governor.allocate_budget("swarm-sip", 100.0)
+
+    governor.track_cost("swarm-webrtc", "task", 25.0)
+    governor.track_cost("swarm-sip", "task", 50.0)
+
+    costs = governor.get_cost_report()
+    assert costs["swarm-webrtc"] == 25.0
+    assert costs["swarm-sip"] == 50.0
+
+
+def test_is_budget_exhausted_false(governor, webrtc_swarm):
+    """Test that is_budget_exhausted returns False when budget available."""
+    governor.register_swarm(webrtc_swarm)
+    governor.allocate_budget("swarm-webrtc", 100.0)
+
+    assert governor.is_budget_exhausted("swarm-webrtc") is False
+
+
+def test_is_budget_exhausted_true_zero(governor, webrtc_swarm):
+    """Test that is_budget_exhausted returns True when budget is zero."""
+    governor.register_swarm(webrtc_swarm)
+    governor.allocate_budget("swarm-webrtc", 50.0)
+    governor.track_cost("swarm-webrtc", "task", 50.0)
+
+    assert governor.is_budget_exhausted("swarm-webrtc") is True
+
+
+def test_is_budget_exhausted_true_negative(governor, webrtc_swarm):
+    """Test that is_budget_exhausted returns True when budget is negative."""
+    governor.register_swarm(webrtc_swarm)
+    governor.allocate_budget("swarm-webrtc", 50.0)
+    governor.track_cost("swarm-webrtc", "task", 75.0)
+
+    assert governor.is_budget_exhausted("swarm-webrtc") is True
+
+
+def test_is_budget_exhausted_unknown_swarm_raises(governor):
+    """Test that checking budget for unknown swarm raises ValueError."""
+    with pytest.raises(ValueError, match="Unknown swarm"):
+        governor.is_budget_exhausted("nonexistent")
+
+
+def test_budget_workflow_complete(governor, webrtc_swarm, sip_swarm):
+    """Test complete budget tracking workflow."""
+    # Register swarms
+    governor.register_swarm(webrtc_swarm)
+    governor.register_swarm(sip_swarm)
+
+    # Allocate budgets
+    governor.allocate_budget("swarm-webrtc", 100.0)
+    governor.allocate_budget("swarm-sip", 50.0)
+
+    # Track costs
+    governor.track_cost("swarm-webrtc", "task_1", 25.0)
+    governor.track_cost("swarm-webrtc", "task_2", 30.0)
+    governor.track_cost("swarm-sip", "task_3", 50.0)  # Exhausts budget
+
+    # Check budget report
+    budget_report = governor.get_budget_report()
+    assert budget_report["swarm-webrtc"] == 45.0
+    assert budget_report["swarm-sip"] == 0.0
+
+    # Check cost report
+    cost_report = governor.get_cost_report()
+    assert cost_report["swarm-webrtc"] == 55.0
+    assert cost_report["swarm-sip"] == 50.0
+
+    # Check exhaustion status
+    assert governor.is_budget_exhausted("swarm-webrtc") is False
+    assert governor.is_budget_exhausted("swarm-sip") is True
+
+    # Verify circuit breaker opened for exhausted swarm
+    sip_stats = governor.get_swarm_stats("swarm-sip")
+    assert sip_stats.circuit_open is True
+
+
+def test_track_cost_zero_cost(governor, webrtc_swarm):
+    """Test tracking zero cost (should be allowed)."""
+    governor.register_swarm(webrtc_swarm)
+    governor.allocate_budget("swarm-webrtc", 100.0)
+
+    governor.track_cost("swarm-webrtc", "free_operation", 0.0)
+
+    profile = governor.get_swarm_profile("swarm-webrtc")
+    assert profile.current_budget_remaining == 100.0
+
+
+def test_budget_allows_overdraft_within_policy(governor, webrtc_swarm):
+    """Test that budget can go negative (overdraft allowed by default)."""
+    # ResourcePolicy has allow_budget_overdraft=1.1 (10% overdraft)
+    governor.register_swarm(webrtc_swarm)
+    governor.allocate_budget("swarm-webrtc", 100.0)
+
+    # Spend more than budget
+    governor.track_cost("swarm-webrtc", "expensive_task", 110.0)
+
+    profile = governor.get_swarm_profile("swarm-webrtc")
+    assert profile.current_budget_remaining == -10.0
+
+    # Circuit should be open (budget <= 0)
+    stats = governor.get_swarm_stats("swarm-webrtc")
+    assert stats.circuit_open is True

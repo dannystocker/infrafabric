@@ -419,3 +419,150 @@ class IFGovernor:
             stats.circuit_open = False
             stats.circuit_opened_at = None
             stats.consecutive_failures = 0
+
+    # ==================== Budget Tracking (P0.2.3) ====================
+
+    def allocate_budget(self, swarm_id: str, budget: float) -> None:
+        """
+        Allocate budget to a swarm.
+
+        This sets the initial budget for a swarm. The budget will be
+        decremented as costs are tracked via track_cost().
+
+        Args:
+            swarm_id: ID of swarm to allocate budget to
+            budget: Budget amount in USD
+
+        Raises:
+            ValueError: If swarm not found or budget is negative
+        """
+        if swarm_id not in self.swarm_registry:
+            raise ValueError(f"Unknown swarm: {swarm_id}")
+
+        if budget < 0:
+            raise ValueError(f"Budget must be non-negative, got {budget}")
+
+        profile = self.swarm_registry[swarm_id]
+        profile.current_budget_remaining = budget
+
+    def track_cost(self, swarm_id: str, operation: str, cost: float) -> None:
+        """
+        Track cost for a swarm operation and deduct from budget.
+
+        This method:
+        1. Deducts cost from swarm's remaining budget
+        2. Updates swarm statistics
+        3. Opens circuit breaker if budget exhausted
+        4. Optionally integrates with IF.optimise for cost tracking
+
+        Args:
+            swarm_id: ID of swarm that incurred the cost
+            operation: Operation type (e.g., "task_execution", "api_call")
+            cost: Cost amount in USD
+
+        Raises:
+            ValueError: If swarm not found or cost is negative
+
+        Example:
+            # Track cost of a task execution
+            governor.track_cost("swarm-webrtc", "task_execution", 2.50)
+
+            # Check remaining budget
+            profile = governor.get_swarm_profile("swarm-webrtc")
+            print(f"Remaining: ${profile.current_budget_remaining}")
+        """
+        if swarm_id not in self.swarm_registry:
+            raise ValueError(f"Unknown swarm: {swarm_id}")
+
+        if cost < 0:
+            raise ValueError(f"Cost must be non-negative, got {cost}")
+
+        # Get profile and stats
+        profile = self.swarm_registry[swarm_id]
+        stats = self.swarm_stats.get(swarm_id)
+        if not stats:
+            stats = SwarmStats(swarm_id=swarm_id)
+            self.swarm_stats[swarm_id] = stats
+
+        # Deduct cost from budget
+        profile.current_budget_remaining -= cost
+
+        # Update stats
+        stats.total_cost += cost
+
+        # Check for budget exhaustion
+        if profile.current_budget_remaining <= 0:
+            # Open circuit breaker
+            if not stats.circuit_open:
+                stats.circuit_open = True
+                stats.circuit_opened_at = time.time()
+
+        # TODO: Integrate with IF.optimise when available
+        # from infrafabric.optimise import track_operation_cost
+        # track_operation_cost(provider=swarm_id, operation=operation, cost=cost)
+
+        # TODO: Integrate with IF.witness when available
+        # from infrafabric.witness import log_operation
+        # log_operation(
+        #     component='IF.governor',
+        #     operation='cost_tracked',
+        #     params={
+        #         'swarm_id': swarm_id,
+        #         'operation': operation,
+        #         'cost': cost,
+        #         'remaining_budget': profile.current_budget_remaining
+        #     }
+        # )
+
+    def get_budget_report(self) -> Dict[str, float]:
+        """
+        Get budget status for all registered swarms.
+
+        Returns:
+            Dictionary mapping swarm_id to remaining budget
+
+        Example:
+            report = governor.get_budget_report()
+            for swarm_id, remaining in report.items():
+                print(f"{swarm_id}: ${remaining:.2f}")
+        """
+        return {
+            swarm_id: profile.current_budget_remaining
+            for swarm_id, profile in self.swarm_registry.items()
+        }
+
+    def get_cost_report(self) -> Dict[str, float]:
+        """
+        Get total costs incurred by each swarm.
+
+        Returns:
+            Dictionary mapping swarm_id to total cost
+
+        Example:
+            costs = governor.get_cost_report()
+            total_spend = sum(costs.values())
+            print(f"Total spend: ${total_spend:.2f}")
+        """
+        return {
+            swarm_id: stats.total_cost
+            for swarm_id, stats in self.swarm_stats.items()
+        }
+
+    def is_budget_exhausted(self, swarm_id: str) -> bool:
+        """
+        Check if a swarm's budget is exhausted.
+
+        Args:
+            swarm_id: ID of swarm to check
+
+        Returns:
+            True if budget is exhausted (<= 0), False otherwise
+
+        Raises:
+            ValueError: If swarm not found
+        """
+        if swarm_id not in self.swarm_registry:
+            raise ValueError(f"Unknown swarm: {swarm_id}")
+
+        profile = self.swarm_registry[swarm_id]
+        return profile.current_budget_remaining <= 0
