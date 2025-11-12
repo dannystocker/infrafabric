@@ -1,0 +1,170 @@
+# InfraFabric Configuration
+# Version: 1.0
+# Location: ~/.config/infrafabric/config.yaml
+#
+# Environment variable overrides:
+# - IF_ETCD_HOST, IF_ETCD_PORT
+# - IF_COORDINATOR_BACKEND (etcd|nats)
+# - IF_WITNESS_DB_PATH
+# - IF_LOG_LEVEL (debug|info|warning|error)
+# - ANTHROPIC_API_KEY, OPENAI_API_KEY
+
+config_version: "1.0"
+log_level: info  # debug, info, warning, error
+enable_telemetry: true
+
+# IF.coordinator - Real-time coordination (<10ms)
+coordinator:
+  backend: etcd  # etcd or nats
+  etcd_host: localhost
+  etcd_port: 2379
+  nats_host: localhost
+  nats_port: 4222
+
+  # Performance targets
+  target_cas_latency_ms: 5  # Atomic claim_task() target
+  target_pubsub_latency_ms: 10  # Task broadcast target
+
+  # Timeouts
+  task_claim_timeout_ms: 5000
+  heartbeat_interval_ms: 1000
+  stale_task_threshold_ms: 30000
+
+  # Witness integration
+  witness_enabled: true
+  witness_db_path: ~/.if-witness/witness.db
+
+# IF.governor - Policy-based resource allocation
+governor:
+  # Capability matching (70%+ match required)
+  min_capability_match: 0.7
+  reputation_weight: 0.3
+  cost_weight: 0.5
+  capability_weight: 0.2
+
+  # Budget management
+  default_budget_per_swarm: 100.0  # USD
+  budget_alert_threshold: 0.1  # Alert at 10% remaining
+  enable_budget_enforcement: true
+
+  # Circuit breaker
+  failure_threshold: 3  # Failures before circuit opens
+  circuit_breaker_timeout_ms: 60000  # 1 minute cooldown
+
+  # Policy constraints
+  max_swarms_per_task: 3
+  max_cost_per_task: 10.0
+  require_signature_verification: true
+
+  # Witness logging
+  witness_enabled: true
+  log_capability_matches: true
+  log_budget_changes: true
+
+# IF.chassis - WASM sandbox execution
+chassis:
+  # WASM runtime
+  wasm_runtime: wasmtime  # wasmtime, wasmer, wasm3
+  wasm_cache_dir: ~/.if-chassis/wasm-cache
+  enable_wasm_cache: true
+
+  # Resource limits (per sandbox)
+  max_memory_mb: 512
+  max_cpu_percent: 50
+  max_disk_mb: 1024
+  max_execution_time_ms: 300000  # 5 minutes
+  max_network_bandwidth_mbps: 10
+
+  # Security
+  enable_network_isolation: true
+  enable_filesystem_isolation: true
+  allowed_syscalls:
+    - read
+    - write
+    - open
+    - close
+    - stat
+    - fstat
+    - mmap
+    - exit
+
+  # Credentials
+  credentials_dir: ~/.if-chassis/credentials
+  encrypt_credentials: true
+  credential_rotation_days: 90
+
+  # SLO tracking
+  slo_latency_p95_ms: 100
+  slo_latency_p99_ms: 200
+  slo_success_rate: 0.999  # 99.9%
+  slo_reporting_interval_s: 60
+
+  # Witness logging
+  witness_enabled: true
+  log_sandbox_creation: true
+  log_credential_access: true
+  log_slo_violations: true
+
+# IF.witness - Cryptographic provenance
+witness:
+  # Database
+  db_path: ~/.if-witness/witness.db
+  db_journal_mode: WAL  # Write-Ahead Logging
+  db_synchronous: NORMAL  # NORMAL, FULL, or OFF
+
+  # Cryptography
+  signing_key_path: ~/.if-witness/signing_key.pem
+  public_key_path: ~/.if-witness/public_key.pem
+  key_algorithm: Ed25519  # Ed25519 or RSA-4096
+  auto_generate_keys: true
+
+  # Hash chain
+  hash_algorithm: SHA-256  # SHA-256, SHA-512, BLAKE2b
+  verify_on_read: true
+  verify_interval_entries: 1000  # Full verify every N entries
+
+  # Retention
+  retention_days: 365
+  auto_archive: true
+  archive_dir: ~/.if-witness/archives
+
+  # Performance
+  batch_size: 100
+  cache_size_mb: 64
+
+  # Export
+  default_export_format: json  # json, csv, pdf
+  export_include_signatures: true
+
+# IF.optimise - Cost tracking and optimization
+optimise:
+  # Tracking
+  track_token_costs: true
+  track_api_costs: true
+  track_compute_costs: true
+
+  # Provider rate limits (requests per minute)
+  anthropic_rate_limit_rpm: 100
+  openai_rate_limit_rpm: 100
+
+  # Model costs (USD per million tokens)
+  haiku_input_cost: 0.25
+  haiku_output_cost: 1.25
+  sonnet_input_cost: 3.0
+  sonnet_output_cost: 15.0
+  opus_input_cost: 15.0
+  opus_output_cost: 75.0
+
+  # Optimization
+  enable_caching: true
+  cache_hit_discount: 0.1  # 90% discount
+  prefer_cheaper_models: true
+  budget_alert_threshold: 0.8  # Alert at 80%
+
+  # Witness logging
+  witness_enabled: true
+  log_costs_above_usd: 1.0  # Log operations over $1
+
+# API Keys (use environment variables in production!)
+# anthropic_api_key: $ANTHROPIC_API_KEY
+# openai_api_key: $OPENAI_API_KEY
