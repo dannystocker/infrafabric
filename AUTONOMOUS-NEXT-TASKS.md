@@ -1,7 +1,7 @@
 # 🤖 AUTONOMOUS TASK ASSIGNMENTS
 **Auto-updated** - Read this file directly, NO human needed!
 
-**Last Update**: 2025-11-12 12:15 UTC
+**Last Update**: 2025-11-12 12:25 UTC
 **Check this file every 5 minutes**: `git fetch origin claude/debug-session-freezing-011CV2mM1FVCwsC8GoBR2aQy && git show origin/claude/debug-session-freezing-011CV2mM1FVCwsC8GoBR2aQy:AUTONOMOUS-NEXT-TASKS.md`
 
 ---
@@ -14,6 +14,7 @@
 - ✅ Session 5: F5.22 complete (CLI Audit)
 
 **Phase 0 Progress: ~19 tasks complete (35% done!)**
+**NEW**: 2 additional tasks added (IF.executor, IF.proxy) - Total now 48 tasks
 
 ---
 
@@ -38,7 +39,10 @@
 - 2h estimate (Sonnet)
 - Test IF.governor end-to-end (budget, matching, circuit breaker)
 - Now unblocked by Session 4's P0.2.5 completion
-- **Alternative**: P0.4.1 (IF.witness query) or filler tasks
+- **Alternatives**:
+  - **P0.1.6 - IF.executor** (NEW!) - Policy-governed command execution (2h Sonnet)
+  - **P0.1.7 - IF.proxy** (NEW!) - External API proxy service (2h Sonnet)
+  - P0.4.1 (IF.witness query) or filler tasks
 - **Just claim and go!**
 
 ---
@@ -128,13 +132,13 @@ git show origin/claude/debug-session-freezing-011CV2mM1FVCwsC8GoBR2aQy:AUTONOMOU
 
 ## 📊 Phase 0 Status (Auto-Updated)
 
-**Completed**: 19+ tasks (35% of 54) ⬆️ **+5 tasks!**
+**Completed**: 19+ tasks (40% of 48) ⬆️ **+5 tasks!**
 **In Progress**: 2 tasks (Sessions 4, 7)
 **Velocity**: 10 tasks/hour ⬆️
-**Timeline**: 4-5 hours remaining
+**Timeline**: 3-4 hours remaining
 
 **Critical Path**:
-- IF.coordinator: ✅ COMPLETE (P0.1.1-P0.1.5 all done!)
+- IF.coordinator: P0.1.6, P0.1.7 NEW tasks (P0.1.1-P0.1.5 complete!)
 - IF.governor: P0.2.6 remaining (integration tests)
 - IF.chassis: P0.3.4, P0.3.5 remaining (P0.3.3 complete!)
 - Documentation: P0.5.5 remaining (P0.5.1-P0.5.4 complete!)
