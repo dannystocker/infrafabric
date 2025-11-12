@@ -1,0 +1,379 @@
+# Home Assistant Automation Examples for InfraFabric
+# Part of MASTER INTEGRATION SPRINT - Session 2 (WebRTC)
+#
+# Add these to your Home Assistant configuration.yaml or automations.yaml
+# Adjust entity_ids and webhook_ids to match your setup
+
+# ============================================================================
+# STREAMING AUTOMATIONS
+# ============================================================================
+
+# Automation 1: Turn ON AIR light on when streaming starts
+- alias: "InfraFabric: ON AIR when streaming"
+  description: "Turn ON AIR light red when stream starts"
+  trigger:
+    - platform: webhook
+      webhook_id: "if_stream_started"
+  action:
+    - service: light.turn_on
+      target:
+        entity_id: light.on_air_sign
+      data:
+        rgb_color: [255, 0, 0]
+        brightness: 255
+    - service: notify.mobile_app_director
+      data:
+        title: "Stream Started"
+        message: "{{ trigger.json.platform }} → {{ trigger.json.destination }}"
+        data:
+          tag: "streaming"
+          group: "infrafabric"
+
+# Automation 2: Turn OFF ON AIR light when streaming stops
+- alias: "InfraFabric: OFF AIR when streaming stops"
+  description: "Turn off ON AIR light when stream ends"
+  trigger:
+    - platform: webhook
+      webhook_id: "if_stream_stopped"
+  action:
+    - service: light.turn_off
+      target:
+        entity_id: light.on_air_sign
+    - service: notify.mobile_app_director
+      data:
+        title: "Stream Ended"
+        message: "Stream duration: {{ trigger.json.duration }}m"
+
+# ============================================================================
+# PRODUCTION CONTROL AUTOMATIONS
+# ============================================================================
+
+# Automation 3: Full production environment setup
+- alias: "InfraFabric: Setup production environment"
+  description: "Set up complete studio environment for production"
+  trigger:
+    - platform: webhook
+      webhook_id: "if_production_control"
+  condition:
+    - condition: template
+      value_template: "{{ trigger.json.action == 'start' }}"
+  action:
+    # Turn on studio lights (bright white)
+    - service: light.turn_on
+      target:
+        entity_id:
+          - light.studio_key_light
+          - light.studio_fill_light
+          - light.studio_back_light
+      data:
+        brightness: 255
+        kelvin: 5500
+
+    # Lock studio door
+    - service: lock.lock
+      target:
+        entity_id: lock.studio_door
+
+    # Turn ON AIR light on
+    - service: light.turn_on
+      target:
+        entity_id: light.on_air_sign
+      data:
+        rgb_color: [255, 0, 0]
+        brightness: 255
+
+    # Set climate to comfortable temperature
+    - service: climate.set_temperature
+      target:
+        entity_id: climate.studio_ac
+      data:
+        temperature: 22
+
+    # Send confirmation
+    - service: notify.mobile_app_director
+      data:
+        title: "Production Ready"
+        message: "Studio environment configured"
+        data:
+          priority: high
+
+# Automation 4: Production teardown
+- alias: "InfraFabric: Teardown production environment"
+  description: "Restore studio after production"
+  trigger:
+    - platform: webhook
+      webhook_id: "if_production_control"
+  condition:
+    - condition: template
+      value_template: "{{ trigger.json.action == 'stop' }}"
+  action:
+    - service: light.turn_off
+      target:
+        entity_id: light.on_air_sign
+    - service: lock.unlock
+      target:
+        entity_id: lock.studio_door
+    - service: light.turn_off
+      target:
+        entity_id:
+          - light.studio_key_light
+          - light.studio_fill_light
+          - light.studio_back_light
+
+# ============================================================================
+# WEBRTC MONITORING AUTOMATIONS
+# ============================================================================
+
+# Automation 5: Log WebRTC peer connections
+- alias: "InfraFabric: Log WebRTC peer connections"
+  description: "Log all peer connections to logbook"
+  trigger:
+    - platform: event
+      event_type: if_webrtc_peer_connected
+  action:
+    - service: logbook.log
+      data:
+        name: "InfraFabric WebRTC"
+        message: >
+          Peer {{ trigger.event.data.peer_id }} connected
+          (latency: {{ trigger.event.data.latency_ms }}ms,
+          type: {{ trigger.event.data.connection_type }})
+        entity_id: sensor.if_webrtc_mesh
+
+# Automation 6: Alert on WebRTC quality issues
+- alias: "InfraFabric: WebRTC quality alert"
+  description: "Alert when WebRTC connection quality degrades"
+  trigger:
+    - platform: event
+      event_type: if_webrtc_quality_alert
+  action:
+    # Send high-priority mobile notification
+    - service: notify.mobile_app_admin
+      data:
+        title: "WebRTC Quality Alert"
+        message: >
+          Connection issue with {{ trigger.event.data.peer_id }}:
+          {{ trigger.event.data.issues | join(', ') }}
+        data:
+          priority: high
+          tag: webrtc_alert
+          group: infrafabric
+          actions:
+            - action: "VIEW_DASHBOARD"
+              title: "View Dashboard"
+            - action: "RESTART_PEER"
+              title: "Restart Peer"
+
+    # Flash warning light
+    - service: light.turn_on
+      target:
+        entity_id: light.warning_indicator
+      data:
+        effect: flash
+        rgb_color: [255, 165, 0]
+
+    # Log to system
+    - service: system_log.write
+      data:
+        message: "WebRTC quality alert: {{ trigger.event.data }}"
+        level: warning
+
+# Automation 7: Update WebRTC mesh status sensor
+- alias: "InfraFabric: Update WebRTC mesh status"
+  description: "Update sensor with latest mesh status"
+  trigger:
+    - platform: event
+      event_type: if_webrtc_mesh_status
+  action:
+    - service: input_text.set_value
+      target:
+        entity_id: input_text.if_webrtc_mesh_status
+      data:
+        value: "{{ trigger.event.data.peer_count }} peers, {{ trigger.event.data.quality }}"
+
+# ============================================================================
+# NOTIFICATION RESPONSE AUTOMATIONS
+# ============================================================================
+
+# Automation 8: Handle mobile notification actions
+- alias: "InfraFabric: Handle notification actions"
+  description: "Respond to actions from mobile notifications"
+  trigger:
+    - platform: event
+      event_type: mobile_app_notification_action
+      event_data:
+        action: "STOP_STREAM"
+  action:
+    # Trigger webhook to stop stream
+    - service: rest_command.if_stop_stream
+
+    # Send confirmation
+    - service: notify.mobile_app_director
+      data:
+        title: "Stream Stop Requested"
+        message: "Stopping stream via mobile action"
+
+# ============================================================================
+# SCHEDULED STATUS UPDATES
+# ============================================================================
+
+# Automation 9: Daily status report
+- alias: "InfraFabric: Daily status report"
+  description: "Send daily InfraFabric status report"
+  trigger:
+    - platform: time
+      at: "08:00:00"
+  action:
+    # Request status check (triggers webhook in InfraFabric)
+    - service: rest_command.if_status_check
+
+    # Send summary notification (wait for IF to update status)
+    - delay: "00:00:05"
+    - service: notify.mobile_app_admin
+      data:
+        title: "InfraFabric Daily Status"
+        message: "System check complete. All systems operational."
+        data:
+          tag: daily_status
+
+# Automation 10: Hourly WebRTC mesh check
+- alias: "InfraFabric: Hourly mesh health check"
+  description: "Check WebRTC mesh health every hour"
+  trigger:
+    - platform: time_pattern
+      hours: "/1"  # Every hour
+  action:
+    - service: rest_command.if_mesh_health_check
+
+# ============================================================================
+# SCENE-BASED AUTOMATIONS
+# ============================================================================
+
+# Automation 11: Switch to "Streaming" scene
+- alias: "InfraFabric: Activate streaming scene"
+  description: "Activate streaming scene when production starts"
+  trigger:
+    - platform: webhook
+      webhook_id: "if_production_control"
+  condition:
+    - condition: template
+      value_template: "{{ trigger.json.action == 'stream_started' }}"
+  action:
+    - service: scene.turn_on
+      target:
+        entity_id: scene.studio_streaming
+
+# Automation 12: Switch to "Recording" scene
+- alias: "InfraFabric: Activate recording scene"
+  description: "Activate recording scene for local recording"
+  trigger:
+    - platform: event
+      event_type: if_recording_started
+  action:
+    - service: scene.turn_on
+      target:
+        entity_id: scene.studio_recording
+
+# ============================================================================
+# EMERGENCY AUTOMATIONS
+# ============================================================================
+
+# Automation 13: Emergency stop all
+- alias: "InfraFabric: Emergency stop"
+  description: "Emergency stop all production activities"
+  trigger:
+    - platform: webhook
+      webhook_id: "if_emergency_stop"
+  action:
+    # Turn off ON AIR
+    - service: light.turn_off
+      target:
+        entity_id: light.on_air_sign
+
+    # Turn on emergency indicator
+    - service: light.turn_on
+      target:
+        entity_id: light.emergency_indicator
+      data:
+        rgb_color: [255, 0, 0]
+        effect: flash
+
+    # Unlock doors
+    - service: lock.unlock
+      target:
+        entity_id: lock.studio_door
+
+    # Send critical alert
+    - service: notify.mobile_app_director
+      data:
+        title: "EMERGENCY STOP"
+        message: "InfraFabric emergency stop activated"
+        data:
+          priority: high
+          ttl: 0
+          channel: emergency
+
+# ============================================================================
+# REST COMMANDS (for webhook triggers from HA to InfraFabric)
+# ============================================================================
+
+# Add to configuration.yaml:
+#
+# rest_command:
+#   if_stop_stream:
+#     url: "http://infrafabric-host:8080/api/stream/stop"
+#     method: POST
+#     content_type: "application/json"
+#     payload: '{"source": "home_assistant"}'
+#
+#   if_status_check:
+#     url: "http://infrafabric-host:8080/api/status"
+#     method: GET
+#
+#   if_mesh_health_check:
+#     url: "http://infrafabric-host:8080/api/webrtc/health"
+#     method: GET
+
+# ============================================================================
+# SENSORS (for tracking InfraFabric status)
+# ============================================================================
+
+# Add to configuration.yaml:
+#
+# input_text:
+#   if_webrtc_mesh_status:
+#     name: "InfraFabric WebRTC Mesh Status"
+#     initial: "Unknown"
+#     max: 255
+#
+# input_boolean:
+#   if_production_active:
+#     name: "InfraFabric Production Active"
+#     initial: off
+#
+# input_number:
+#   if_peer_count:
+#     name: "InfraFabric Peer Count"
+#     min: 0
+#     max: 100
+#     step: 1
+#     mode: box
+
+# ============================================================================
+# LOVELACE DASHBOARD CARD EXAMPLE
+# ============================================================================
+
+# Add to your Lovelace dashboard:
+#
+# - type: entities
+#   title: InfraFabric Status
+#   entities:
+#     - entity: input_text.if_webrtc_mesh_status
+#       name: "WebRTC Mesh"
+#     - entity: input_boolean.if_production_active
+#       name: "Production Active"
+#     - entity: input_number.if_peer_count
+#       name: "Connected Peers"
+#     - entity: light.on_air_sign
+#       name: "ON AIR"
+#   show_header_toggle: false

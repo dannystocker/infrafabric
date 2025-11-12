@@ -1,0 +1,19 @@
+# Home Assistant Notifications Integration Requirements
+# Part of InfraFabric MASTER INTEGRATION SPRINT - Session 2
+
+# Core dependencies
+requests>=2.31.0
+
+# For async operations (IF.witness integration)
+asyncio>=3.4.3  # Built-in since Python 3.4, but specified for clarity
+
+# Optional: For enhanced JSON handling
+# orjson>=3.9.0  # Faster JSON serialization
+
+# Testing dependencies (for development)
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+pytest-mock>=3.11.1
+
+# Type checking (optional)
+# mypy>=1.5.0

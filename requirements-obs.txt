@@ -1,0 +1,9 @@
+# OBS Streaming Integration Dependencies
+# Install: pip install -r requirements-obs.txt
+
+# OBS WebSocket client
+obs-websocket-py>=0.5.3
+
+# Additional utilities (optional)
+# pytest>=7.0.0  # For running tests
+# pytest-mock>=3.10.0  # For mocking in tests
