@@ -103,6 +103,103 @@ infrafabric/
 
 ---
 
+## 🏗️ Phase 0: Production Coordination Infrastructure
+
+**Status:** 🔄 In Progress (35% complete, 19/54 tasks) | **Timeline:** Nov 12-13, 2025
+
+After completing the conceptual framework (14-day journey), we're now building **production-ready coordination infrastructure** to enable real multi-agent deployment at scale.
+
+### Core Components
+
+#### IF.coordinator - Real-Time Task Coordination
+**Status:** ✅ Complete | **Docs:** [IF.COORDINATOR.md](docs/components/IF.COORDINATOR.md)
+
+Replaces proof-of-concept git polling (30s latency, race conditions) with production event-driven coordination:
+
+- **Performance:** <10ms task claim latency (3,000× faster than git polling)
+- **Backend:** etcd + NATS for distributed coordination
+- **Operations:** Atomic CAS operations eliminate race conditions
+- **Scale:** Supports 10,000+ concurrent agents (vs 7 agents with git polling)
+
+**Migration:** [MIGRATION-GIT-TO-ETCD.md](docs/MIGRATION-GIT-TO-ETCD.md) - Complete 4-phase migration guide
+
+#### IF.governor - Resource Management & Capability Matching
+**Status:** 🔄 In Progress | **Docs:** [IF.GOVERNOR.md](docs/components/IF.GOVERNOR.md)
+
+Intelligent task-agent matching and resource governance:
+
+- **Capability Matching:** Routes tasks to agents with required skills
+- **Budget Enforcement:** Prevents cost overruns (hard/soft limits, circuit breaker)
+- **Model Optimization:** IF.optimise framework (Haiku for simple, Sonnet for complex)
+- **Wu Lun Integration:** Relationship-aware resource allocation
+
+#### IF.chassis - WASM Sandbox Runtime
+**Status:** 🔄 In Progress
+
+Secure agent execution environment:
+
+- **Isolation:** WebAssembly sandboxing for untrusted agent code
+- **Security:** Memory limits, CPU limits, syscall filtering
+- **Portability:** Cross-platform agent deployment
+- **Integration:** wasmtime runtime with resource controls
+
+### Phase 0 Documentation
+
+- **[Production Runbook](docs/PHASE-0-PRODUCTION-RUNBOOK.md)** - Complete ops guide (~1,200 lines)
+  - Deployment procedures (etcd, coordinator, governor, chassis)
+  - Monitoring & alerting (Prometheus, Grafana)
+  - Incident response (P1-P4 severity levels)
+  - Backup & restore (15-min RTO, 5-min RPO)
+  - Performance tuning & security checklist
+
+- **[Migration Guide](docs/MIGRATION-GIT-TO-ETCD.md)** - Git → etcd migration (~1,000 lines)
+  - 4-phase migration strategy (30 min → 60 min → rollback)
+  - Before/after code examples
+  - Performance comparison (3,563× latency improvement)
+  - Rollback procedures & testing
+
+- **[NDI Witness FAQ](docs/NDI-WITNESS-FAQ.md)** - Integration guide (~560 lines)
+  - Common questions & troubleshooting
+  - Hash chains & tamper detection
+  - Performance & security considerations
+  - Integration patterns (lifecycle, coordination, compliance)
+
+- **[Witness Templates](docs/templates/)** - Reusable integration templates (~1,850 lines)
+  - Complete integration template (checklists, code, tests)
+  - 15-minute quick start guide
+  - WebRTC example for Session 2
+  - Universal patterns for all protocols
+
+### Current Progress
+
+**Completed:** 19 tasks (35%)
+- IF.coordinator implementation & docs ✅
+- Migration strategy & runbook ✅
+- Test fixtures & integration scaffolding ✅
+- Documentation templates ✅
+
+**In Progress:** Integration tests, governance policies, WASM runtime
+
+**Next:** IF.governor integration tests, SLO tracking, capability matching
+
+### Swarm of Swarms (S²) Coordination
+
+Phase 0 enables the **7-session × 7-agent = 49 concurrent agent** architecture:
+
+| Session | Focus | Phase 0 Role |
+|---------|-------|--------------|
+| Session 1 | NDI Streaming | Documentation & witness integration |
+| Session 2 | WebRTC | Integration tests & coordinator validation |
+| Session 3 | H.323 | Documentation review & witness queries |
+| Session 4 | SIP | Governance policies & SLO tracking |
+| Session 5 | CLI | User interface & command-line tools |
+| Session 6 | Talent | Standby (Phase 1 focus) |
+| Session 7 | IF.bus | Core component implementation |
+
+**Coordination:** Autonomous task assignment via `AUTONOMOUS-NEXT-TASKS.md` - sessions self-coordinate without human intervention.
+
+---
+
 ## 📊 Validation Results
 
 | Metric | Result | Source |
