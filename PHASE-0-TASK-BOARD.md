@@ -1,9 +1,9 @@
 # Phase 0 Task Board (Live Status)
 
-**Last Updated:** 2025-11-12T00:00:00Z
+**Last Updated:** 2025-11-12T12:25:00Z
 **Status:** IN_PROGRESS
 **Sessions Active:** 5 (1-NDI, 2-WebRTC, 3-H.323, 4-SIP, 5-CLI, 7-IF.bus)
-**Total Tasks:** 46 (26 critical path + 20 filler)
+**Total Tasks:** 48 (28 critical path + 20 filler)
 **Coordination Branch:** `claude/debug-session-freezing-011CV2mM1FVCwsC8GoBR2aQy`
 
 ---
@@ -49,6 +49,8 @@ P0.3.1 (WASM runtime) ──┬──> P0.3.2 (limits) ──> P0.3.4 (SLO) ─�
 | P0.1.3 | Implement real-time task broadcast | 🔵 AVAILABLE | - | P0.1.1 | `/home/user/infrafabric/infrafabric/coordinator.py` (pub/sub) | 2h | Sonnet |
 | P0.1.4 | Latency verification (<10ms) | 🔴 BLOCKED | - | P0.1.2, P0.1.3 | `/home/user/infrafabric/tests/test_coordinator_latency.py` | 1h | Haiku |
 | P0.1.5 | Integration tests | 🔴 BLOCKED | - | P0.1.1, P0.1.2, P0.1.3, P0.1.4 | `/home/user/infrafabric/tests/integration/test_coordinator.py` | 2h | Sonnet |
+| P0.1.6 | IF.executor - Privileged command execution | 🔵 AVAILABLE | - | P0.1.1 | `/home/user/infrafabric/infrafabric/executor.py` | 2h | Sonnet |
+| P0.1.7 | IF.proxy - External API proxy service | 🔵 AVAILABLE | - | P0.1.1 | `/home/user/infrafabric/infrafabric/proxy.py` | 2h | Sonnet |
 
 ### P0.1.1: Setup etcd/NATS event bus
 
@@ -370,6 +372,307 @@ async def test_race_condition_prevention():
 - No race conditions detected
 - Blocker workflow completes <100ms
 - Witness logging verified
+
+### P0.1.6: IF.executor - Privileged Command Execution
+
+**Description:** Secure, policy-governed service for executing allow-listed shell commands from sandboxed environments. Enables external process management (start/stop/status) without giving direct shell access.
+
+**Use Cases:**
+- Start/stop external services (Meilisearch, Kamailio, Asterisk, GStreamer, FFmpeg)
+- Check process status (`pgrep`, `ps`)
+- Manage system resources from sandboxed adapters
+- Enable provider integrations in Phases 1-6
+
+**Acceptance Criteria:**
+- [ ] IF.bus topic `if.command.system.execute` for command requests
+- [ ] IF.bus topic `if.event.system.execute.result` for responses
+- [ ] Governance policy file per swarm (allow-list of executable + args patterns)
+- [ ] IF.governor capability `system.process.execute` required
+- [ ] Strict payload schema validation (executable, args, timeout_ms, trace_id)
+- [ ] Response includes success, exit_code, stdout, stderr, trace_id
+- [ ] IF.witness logging of all executions (audit trail)
+- [ ] Timeout enforcement (default 5000ms, configurable)
+- [ ] Unit tests for policy enforcement (25+ tests)
+
+**Implementation Guide:**
+```python
+# infrafabric/executor.py
+
+import asyncio
+import subprocess
+from typing import Dict, List, Optional
+from infrafabric.event_bus import EventBus
+from infrafabric.witness import log_operation
+from infrafabric.governor import check_capability
+
+class IFExecutor:
+    """Policy-governed command execution service"""
+
+    def __init__(self, event_bus: EventBus, policy_dir: str = '/etc/infrafabric/policies'):
+        self.bus = event_bus
+        self.policy_dir = policy_dir
+
+    async def start(self):
+        """Subscribe to command execution requests"""
+        await self.bus.subscribe(
+            'if.command.system.execute',
+            callback=self._handle_execute_request
+        )
+
+    async def _handle_execute_request(self, msg: Dict):
+        """Process command execution request"""
+        trace_id = msg.get('trace_id')
+        swarm_id = msg.get('swarm_id')
+        executable = msg.get('executable')
+        args = msg.get('args', [])
+        timeout_ms = msg.get('timeout_ms', 5000)
+
+        # 1. Check capability
+        if not check_capability(swarm_id, 'system.process.execute'):
+            await self._send_result(trace_id, success=False,
+                                   error='Missing system.process.execute capability')
+            return
+
+        # 2. Load policy
+        policy = self._load_policy(swarm_id)
+
+        # 3. Validate against policy
+        if not self._validate_command(policy, executable, args):
+            await self._send_result(trace_id, success=False,
+                                   error=f'Command not allowed: {executable} {args}')
+            log_operation('IF.executor', 'command_denied',
+                         {'swarm_id': swarm_id, 'executable': executable})
+            return
+
+        # 4. Execute with timeout
+        try:
+            result = await asyncio.wait_for(
+                self._execute(executable, args),
+                timeout=timeout_ms / 1000
+            )
+            await self._send_result(trace_id, **result)
+            log_operation('IF.executor', 'command_executed',
+                         {'swarm_id': swarm_id, 'executable': executable, 'exit_code': result['exit_code']})
+        except asyncio.TimeoutError:
+            await self._send_result(trace_id, success=False, error='Timeout')
+
+    def _load_policy(self, swarm_id: str) -> Dict:
+        """Load execution policy for swarm"""
+        policy_file = f'{self.policy_dir}/{swarm_id}/executor_policy.json'
+        # Load and parse policy JSON
+        # Returns: {"allow": [{"executable": "/usr/bin/pgrep", "args_pattern": "^-f.*"}]}
+        pass
+
+    def _validate_command(self, policy: Dict, executable: str, args: List[str]) -> bool:
+        """Check if command matches policy allow-list"""
+        # Pattern matching against policy['allow']
+        pass
+
+    async def _execute(self, executable: str, args: List[str]) -> Dict:
+        """Execute command and capture output"""
+        proc = await asyncio.create_subprocess_exec(
+            executable, *args,
+            stdout=asyncio.subprocess.PIPE,
+            stderr=asyncio.subprocess.PIPE
+        )
+        stdout, stderr = await proc.communicate()
+        return {
+            'success': proc.returncode == 0,
+            'exit_code': proc.returncode,
+            'stdout': stdout.decode(),
+            'stderr': stderr.decode()
+        }
+
+    async def _send_result(self, trace_id: str, **kwargs):
+        """Publish execution result"""
+        await self.bus.publish('if.event.system.execute.result', {
+            'trace_id': trace_id,
+            **kwargs
+        })
+```
+
+**Policy Example:**
+```json
+{
+  "swarm_id": "navidocs-adapter",
+  "allow": [
+    {
+      "executable": "/usr/bin/pgrep",
+      "args_pattern": "^-f meilisearch$"
+    },
+    {
+      "executable": "/usr/bin/pkill",
+      "args_pattern": "^-f meilisearch$"
+    },
+    {
+      "executable": "/usr/local/bin/meilisearch",
+      "args_pattern": "^--http-addr 127\\.0\\.0\\.1:7700"
+    }
+  ]
+}
+```
+
+**Testing:**
+- Policy enforcement (allowed commands pass, denied commands fail)
+- Timeout enforcement (long-running commands killed)
+- Output capture (stdout/stderr returned correctly)
+- IF.witness audit trail verification
+- Capability checks (requests without capability rejected)
+
+### P0.1.7: IF.proxy - External API Proxy Service
+
+**Description:** Secure, policy-governed HTTP proxy for calling external APIs from sandboxed environments. Abstracts network locations and enforces allow-lists for API endpoints.
+
+**Use Cases:**
+- Call Meilisearch HTTP API (indexing, search)
+- Call Home Assistant API (device control)
+- Call vMix API (video switching)
+- Call OBS WebSocket API (scene management)
+- Enable provider integrations in Phases 1-6
+
+**Acceptance Criteria:**
+- [ ] IF.bus topic `if.command.network.proxy` for API requests
+- [ ] IF.bus topic `if.event.network.proxy.result` for responses
+- [ ] Target alias registry (maps alias → base URL + allowed paths)
+- [ ] IF.governor capability `network.http.proxy.external` required
+- [ ] Strict payload schema validation (target_alias, method, path, headers, body, trace_id)
+- [ ] Response includes status_code, headers, body, trace_id
+- [ ] IF.witness logging of all API calls (audit trail)
+- [ ] Timeout enforcement (default 10000ms, configurable)
+- [ ] Unit tests for policy enforcement (25+ tests)
+
+**Implementation Guide:**
+```python
+# infrafabric/proxy.py
+
+import asyncio
+import aiohttp
+from typing import Dict, Optional
+from infrafabric.event_bus import EventBus
+from infrafabric.witness import log_operation
+from infrafabric.governor import check_capability
+
+class IFProxy:
+    """Policy-governed external API proxy"""
+
+    def __init__(self, event_bus: EventBus, registry_path: str = '/etc/infrafabric/proxy_registry.json'):
+        self.bus = event_bus
+        self.registry = self._load_registry(registry_path)
+
+    async def start(self):
+        """Subscribe to proxy requests"""
+        await self.bus.subscribe(
+            'if.command.network.proxy',
+            callback=self._handle_proxy_request
+        )
+
+    async def _handle_proxy_request(self, msg: Dict):
+        """Process API proxy request"""
+        trace_id = msg.get('trace_id')
+        swarm_id = msg.get('swarm_id')
+        target_alias = msg.get('target_alias')
+        method = msg.get('method', 'GET')
+        path = msg.get('path', '/')
+        headers = msg.get('headers', {})
+        body = msg.get('body')
+        timeout_ms = msg.get('timeout_ms', 10000)
+
+        # 1. Check capability
+        if not check_capability(swarm_id, 'network.http.proxy.external'):
+            await self._send_result(trace_id, success=False,
+                                   error='Missing network.http.proxy.external capability')
+            return
+
+        # 2. Resolve target alias
+        target = self.registry.get(target_alias)
+        if not target:
+            await self._send_result(trace_id, success=False,
+                                   error=f'Unknown target alias: {target_alias}')
+            return
+
+        # 3. Validate path against allowed patterns
+        if not self._validate_path(target, path, swarm_id):
+            await self._send_result(trace_id, success=False,
+                                   error=f'Path not allowed: {path}')
+            log_operation('IF.proxy', 'request_denied',
+                         {'swarm_id': swarm_id, 'target': target_alias, 'path': path})
+            return
+
+        # 4. Make HTTP request
+        url = f"{target['base_url']}{path}"
+        try:
+            result = await asyncio.wait_for(
+                self._make_request(method, url, headers, body),
+                timeout=timeout_ms / 1000
+            )
+            await self._send_result(trace_id, **result)
+            log_operation('IF.proxy', 'request_completed',
+                         {'swarm_id': swarm_id, 'target': target_alias,
+                          'status': result['status_code']})
+        except asyncio.TimeoutError:
+            await self._send_result(trace_id, success=False, error='Timeout')
+
+    def _load_registry(self, path: str) -> Dict:
+        """Load target registry"""
+        # Returns: {"meilisearch_api": {"base_url": "http://127.0.0.1:7700",
+        #                                "allowed_paths": ["/indexes/*", "/health"]}}
+        pass
+
+    def _validate_path(self, target: Dict, path: str, swarm_id: str) -> bool:
+        """Check if path matches allowed patterns"""
+        # Check against target['allowed_paths'] per swarm
+        pass
+
+    async def _make_request(self, method: str, url: str,
+                           headers: Dict, body: Optional[str]) -> Dict:
+        """Make HTTP request"""
+        async with aiohttp.ClientSession() as session:
+            async with session.request(method, url, headers=headers,
+                                      data=body) as resp:
+                return {
+                    'success': resp.status < 400,
+                    'status_code': resp.status,
+                    'headers': dict(resp.headers),
+                    'body': await resp.text()
+                }
+
+    async def _send_result(self, trace_id: str, **kwargs):
+        """Publish proxy result"""
+        await self.bus.publish('if.event.network.proxy.result', {
+            'trace_id': trace_id,
+            **kwargs
+        })
+```
+
+**Registry Example:**
+```json
+{
+  "meilisearch_api": {
+    "base_url": "http://127.0.0.1:7700",
+    "allowed_swarms": {
+      "navidocs-adapter": {
+        "paths": ["/indexes/navidocs/documents", "/indexes/navidocs/search", "/health"]
+      }
+    }
+  },
+  "home_assistant_api": {
+    "base_url": "http://homeassistant.local:8123",
+    "allowed_swarms": {
+      "ha-adapter": {
+        "paths": ["/api/*"]
+      }
+    }
+  }
+}
+```
+
+**Testing:**
+- Target alias resolution (known targets work, unknown fail)
+- Path validation (allowed paths pass, denied paths fail)
+- HTTP methods (GET, POST, PUT, DELETE)
+- Response capture (status, headers, body returned correctly)
+- IF.witness audit trail verification
+- Capability checks (requests without capability rejected)
 
 ---
 
