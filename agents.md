@@ -987,10 +987,30 @@ S5: Guardian Validation (60-90min) → intelligence/session-5/
 
 ## NaviDocs StackCP S2 Swarm Deployment (2025-11-13)
 
-**Last Updated:** 2025-11-13 09:45 UTC (Agent 4 Documentation Synthesis Complete)
-**Status:** ✅ PREPARATION COMPLETE - Ready for user feature selection
-**Timeline:** ~5 hours to working demo (presentation deadline when user wakes)
-**Strategy:** 5 parallel Haiku agents (prep) → 5 parallel Claude Code CLI agents (development)
+**Last Updated:** 2025-11-13 10:15 UTC (Active - 4-Hour MVP Build)
+**Status:** 🚀 DEPLOYMENT IN PROGRESS - 5 parallel sessions launching
+**Timeline:** 4 hours to working demo (Riviera Plaisance presentation)
+**Strategy:** Option A MVP - 3 core features + demo polish (realistic scope)
+**Communication:** GitHub Issues (agents→local) + SSH AUTONOMOUS-NEXT-TASKS.md (local→agents)
+
+**IF.optimise Status:** ⚡ Active (Haiku agents for mechanical work, Sonnet for coordination)
+
+**MVP Scope (4-Hour Build):**
+1. **Photo Inventory + OCR** (90 min) - Upload photos, OCR receipts with Claude Code CLI, depreciation display
+2. **Document Search** (60 min) - Meilisearch integration, PDF upload, instant search <200ms
+3. **Maintenance Timeline** (60 min) - Service log, warranty alerts, provider contacts
+4. **Demo Polish** (30 min) - Load Azimut 55S case study data, professional styling
+
+**User Feature Selection:** ALL 11 features selected with detailed notes (/mnt/c/users/setup/downloads/navidocs-feature-selection-2025-11-13.json)
+**User Priority Notes:**
+- Inventory: Auto-find images online if missing, mark as example, replace option
+- Maintenance: Auto-detect warranty duration from online research
+- Document versioning: Check infrafabric repo (dannystocker/infrafabric) for IF.TTT patterns
+- Expense: Multi-currency (Canada PST/GST, France TVA), exchange rates
+- Camera: Explore NMEA2000, tablet captain dashboard, Garmin MFD mirror
+- Search: Google-style autocomplete, structured output, fractal logic for manuals
+- Contact: Check GitHub for best-in-class solutions
+- Accounting: Manual data entry primary, bank API optional
 
 **Current Progress:**
 - ✅ **Intelligence Complete** - All 5 cloud sessions merged (94 files, 1.5MB, €14.6B market analysis)
