@@ -4,7 +4,7 @@
 
 **Audience:** All Claude instances working on InfraFabric, NaviDocs, ICW (icantwait.ca), Digital-Lab, and StackCP deployments.
 
-**Last Updated:** 2025-11-13 10:20 UTC (Agent 7: StackCP Verification Complete)
+**Last Updated:** 2025-11-13 14:30 UTC (NaviDocs: 5 Cloud Sessions Active - 2 Started, 3 Ready)
 
 ---
 
@@ -165,34 +165,78 @@ All agent outputs must meet these three criteria:
 ### 2. NaviDocs (Marine Document Management)
 
 **Location:** `/home/setup/navidocs`
+**GitHub:** `https://github.com/dannystocker/navidocs` (navidocs-cloud-coordination branch)
 **Local Gitea:** `http://localhost:4000/ggq-admin/navidocs`
 
 **Purpose:** Professional boat manual management with OCR and intelligent search
-**Status:** 65% complete (MVP phase)
+**Status:** 🚀 **v0.5→v1.0 Cloud Sessions Active** (5 parallel sessions)
 **Tech Stack:** Vue 3 + Express + SQLite + Meilisearch + Tesseract OCR
+**Last Updated:** 2025-11-13 14:30 UTC
 
-**Key Features:**
-- ✅ Database schema (13 tables, multi-tenant ready)
-- ✅ OCR pipeline (Tesseract + Google Vision/Drive options)
+**Current Phase: Cloud Session Deployment**
+
+**Builder Prompts:** https://github.com/dannystocker/navidocs/tree/navidocs-cloud-coordination/builder/prompts
+
+**5 Cloud Sessions Status:**
+
+1. **Session 1: Smart OCR** 🟡 IN PROGRESS
+   - Prompt: builder/prompts/current/session-1-smart-ocr.md
+   - Branch: feature/smart-ocr
+   - Goal: 36x OCR speedup (180s → 5s for text PDFs)
+   - Duration: 60 minutes
+   - Status: Started (user confirmed)
+
+2. **Session 2: Multi-Format Upload** 🟡 IN PROGRESS
+   - Prompt: builder/prompts/current/session-2-multiformat.md
+   - Branch: feature/multiformat
+   - Goal: Enable JPG, PNG, DOCX, XLSX, TXT, MD uploads
+   - Duration: 90 minutes
+   - Status: Started (user confirmed)
+
+3. **Session 3: Timeline Feature** ⏳ READY TO LAUNCH
+   - Prompt: builder/prompts/current/session-3-timeline.md
+   - Branch: feature/timeline
+   - Goal: Organization activity timeline (reverse chronological)
+   - Duration: 2 hours
+   - Status: Prompt ready, waiting for user to launch
+   - Independent: No dependency on Sessions 1-2
+
+4. **Session 4: UI Polish & Testing** ⏳ WAITING
+   - Prompt: builder/prompts/current/session-4-polish-testing.md
+   - Branch: feature/polish-testing
+   - Goal: Merge all features, polish UI, test integration
+   - Duration: 90 minutes
+   - Status: Waiting for Sessions 1-3 to push feature branches
+
+5. **Session 5: Deployment & Documentation** ⏳ WAITING
+   - Prompt: builder/prompts/current/session-5-deployment.md
+   - Goal: Deploy to StackCP, create docs, tag v1.0-production
+   - Duration: 90 minutes
+   - Status: Waiting for Session 4 completion
+
+**Completed Baseline (v0.5-demo-ready):**
+- ✅ Database schema (multi-tenant, activity_log table)
+- ✅ OCR pipeline (Tesseract working)
 - ✅ Background worker (BullMQ + Redis)
-- ✅ Library navigation UI (glass morphism design)
-- ✅ Authentication foundation (JWT, Phase 1-3)
-- ⚠️ Frontend incomplete (1-2 days work)
-- ⚠️ Search pending Meilisearch auth fix (15 min)
+- ✅ Frontend UI (Vue 3 + Vite)
+- ✅ Authentication (JWT, multi-user)
+- ✅ Search (Meilisearch integrated, <10ms queries)
+- ✅ Upload flow (PDF working, needs multi-format)
 
-**Critical Issues:**
-- 🚨 **5 security vulnerabilities** (DELETE endpoint unprotected, no auth enforcement)
-- ⚠️ **23 uncommitted changes** (client/server modifications)
-- ⚠️ **Git divergence** (4 local commits, 3 remote commits)
+**Git Status:**
+- Branch: navidocs-cloud-coordination
+- Latest Commit: a352e44 "[CLOUD SESSIONS] Complete all 5 session prompts"
+- Tag: v0.5-demo-ready (stable baseline)
+- Feature branches expected: feature/smart-ocr, feature/multiformat, feature/timeline
 
-**Git Worktrees:** (multiple feature branches)
-- `navidocs-wt-single-tenant` - Single boat tenant features
-- `navidocs-wt-toc-polish` - Table of contents improvements
-- `navidocs-img-*` - Image extraction API work
+**Deployment Target:**
+- StackCP shared hosting (evaluated, ready)
+- Session 5 will create deployment scripts and docs
+- Target: v1.0-production tag after all sessions complete
 
-**Deployment Options:**
-- StackCP shared hosting (evaluated, ready for deployment)
-- VPS (standard deployment, $6/month minimum)
+**Critical Blockers:** ✅ None (all sessions can proceed)
+
+**Handover Doc:** SESSION_HANDOVER_2025-11-13_1430.md (latest)
 
 ---
 
