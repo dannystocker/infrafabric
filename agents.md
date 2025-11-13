@@ -1,10 +1,24 @@
-# InfraFabric Agent Architecture
+# InfraFabric Agent Architecture & Multi-Project Guide
 
-**Purpose:** Define agent behavior patterns, traceability requirements, and coordination protocols for InfraFabric work.
+**Purpose:** Define agent behavior patterns, traceability requirements, coordination protocols, and critical project context for all work.
 
-**Audience:** All Claude instances working on InfraFabric (Sonnet, Haiku, specialized agents).
+**Audience:** All Claude instances working on InfraFabric, NaviDocs, ICW (icantwait.ca), Digital-Lab, and StackCP deployments.
 
-**Last Updated:** 2025-11-10
+**Last Updated:** 2025-11-13
+
+---
+
+## 📑 TABLE OF CONTENTS
+
+**Quick Navigation:**
+
+1. [Core Principles](#core-principle-traceability-by-default) - IF.TTT Framework & Citations
+2. [Critical Projects Overview](#critical-projects-overview) - NaviDocs, ICW, Digital-Lab, StackCP
+3. [Repository State](#repository-state--branch-management) - GitHub branches & blockers
+4. [Agent Coordination](#agent-coordination-model) - IF.optimise, Haiku/Sonnet delegation
+5. [Swarm Orchestration](#swarm-orchestration-patterns-haiku-multi-agent-framework) - Multi-agent patterns
+6. [Workflows & Anti-Patterns](#traceability-workflows) - Best practices
+7. [Session Handoff](#session-handoff-protocol) - Context preservation
 
 ---
 
@@ -54,7 +68,7 @@ All agent outputs must meet these three criteria:
   "rationale": "Why this claim is supported",
   "status": "unverified|verified|disputed|revoked",
   "created_by": "if://agent/<agent-name>",
-  "created_at": "2025-11-10T00:00:00Z",
+  "created_at": "2025-11-13T00:00:00Z",
   "signature": "ed25519:..."
 }
 ```
@@ -66,10 +80,130 @@ All agent outputs must meet these three criteria:
 
 ---
 
+## Critical Projects Overview
+
+### 1. InfraFabric (AI Multi-Agent Framework)
+
+**Location:** `/home/setup/infrafabric`
+**GitHub:** `https://github.com/dannystocker/infrafabric`
+**Local Gitea:** `http://localhost:4000/dannystocker/infrafabric.git`
+
+**Purpose:** Philosophy-grounded multi-agent coordination framework
+**Status:** Production (14-day sprint Oct 26 - Nov 9, 2025)
+**Key Components:**
+- IF.ground - 8 anti-hallucination principles
+- IF.armour.yologuard - Secret detection (111.46% GitHub-parity)
+- IF.guard - 20-voice Guardian Council
+- IF.optimise - 50% token cost reduction (validated)
+- IF.swarm - Haiku multi-agent orchestration
+
+**Current Blockers:**
+1. ✅ ~~IF.armour.yologuard benchmark dispute~~ **RESOLVED** (111.46% GitHub-parity validated)
+2. ⚠️ Citation evidence tracking (45/46 citations unreferenced)
+3. ⚠️ CI workflow deployment (needs GitHub permissions)
+4. ⚠️ Unmerged swarm work (90 commits, 4 days stale)
+
+**Branch Strategy:**
+- `master` - Production code
+- `claude/*` - 13 active development branches (WebRTC, SIP, sessions)
+- `swarm/*` - 4 foundational branches (philosophy, citations)
+
+---
+
+### 2. NaviDocs (Marine Document Management)
+
+**Location:** `/home/setup/navidocs`
+**Local Gitea:** `http://localhost:4000/ggq-admin/navidocs`
+
+**Purpose:** Professional boat manual management with OCR and intelligent search
+**Status:** 65% complete (MVP phase)
+**Tech Stack:** Vue 3 + Express + SQLite + Meilisearch + Tesseract OCR
+
+**Key Features:**
+- ✅ Database schema (13 tables, multi-tenant ready)
+- ✅ OCR pipeline (Tesseract + Google Vision/Drive options)
+- ✅ Background worker (BullMQ + Redis)
+- ✅ Library navigation UI (glass morphism design)
+- ✅ Authentication foundation (JWT, Phase 1-3)
+- ⚠️ Frontend incomplete (1-2 days work)
+- ⚠️ Search pending Meilisearch auth fix (15 min)
+
+**Critical Issues:**
+- 🚨 **5 security vulnerabilities** (DELETE endpoint unprotected, no auth enforcement)
+- ⚠️ **23 uncommitted changes** (client/server modifications)
+- ⚠️ **Git divergence** (4 local commits, 3 remote commits)
+
+**Git Worktrees:** (multiple feature branches)
+- `navidocs-wt-single-tenant` - Single boat tenant features
+- `navidocs-wt-toc-polish` - Table of contents improvements
+- `navidocs-img-*` - Image extraction API work
+
+**Deployment Options:**
+- StackCP shared hosting (evaluated, ready for deployment)
+- VPS (standard deployment, $6/month minimum)
+
+---
+
+### 3. ICW - ICanTwait.ca (Property Management)
+
+**Location:** `/home/setup/icw_web_2`
+**Local Gitea:** `http://localhost:4000/ggq-admin/icw-nextspread` (PRIVATE)
+**Live Site:** `https://icantwait.ca`
+**ProcessWire Admin:** `https://icantwait.ca/nextspread-admin/`
+  - User: `icw-admin`
+  - Pass: `@@Icantwait305$$`
+
+**Purpose:** Property showcase website with Next.js + ProcessWire
+**Tech Stack:** Next.js static export + ProcessWire CMS + StackCP hosting
+
+**StackCP Deployment:**
+- SSH connection for icantwait.ca
+- Live path: `/public_html/icantwait.ca`
+- Contains Next.js static export (/_next/ directory, index.html)
+- Property directories: le-champlain, aiolos, etc.
+- Main property: "Le Champlain"
+- Admin: PHP files + ProcessWire integration
+
+**Key Directories:**
+- `/public_html/icantwait.ca` - Live deployment
+- Local development: `/home/setup/icw_web_2`
+- Snapshots: `/home/setup/icantwait-snapshot-*.png`
+
+---
+
+### 4. Digital-Lab.ca
+
+**Location:** `/home/setup/digital-lab.ca`
+**Live Path:** `/home/setup/public_html/digital-lab.ca`
+
+**Purpose:** Digital laboratory/portfolio site
+**Status:** Active deployment on StackCP
+
+---
+
+### 5. Local Development Infrastructure
+
+**Gitea Server:**
+- URL: `http://localhost:4000/`
+- Config: `/home/setup/gitea/custom/conf/app.ini`
+- Admin: `ggq-admin` / `Admin_GGQ-2025!`
+- User: `dannystocker` / `@@Gitea305$$`
+
+**System Credentials:**
+- WSL user: `setup` / `setup`
+- Node.js: v20.19.5
+- npm: v10.8.2
+
+**Services Running:**
+- Redis (port 6379) - For BullMQ job queues
+- Meilisearch (port 7700) - Search indexing
+- Gitea (port 4000) - Local git server
+
+---
+
 ## Component Naming Conventions (CURRENT STANDARD)
 
 **Effective:** 2025-11-10 (going forward)
-**Status:** Active naming standard for all new work
 
 ### Official Component Names
 
@@ -96,15 +230,66 @@ Examples:
 - ✅ **DO** recognize both names refer to the same component
 - ✅ **DO** add redirect notes when disambiguation is needed
 
-**Rationale (IF.ground - Fallibilism):**
-> "Preserve historical context. Changing past documents creates confusion and breaks traceable lineage.
-> Establish naming convention for future work while honoring how discussions actually happened."
-
 ### Other Component Aliases
 
 **IF.ceo** = **IF.sam** (both refer to 16 Sam Altman facets)
 **IF.citation** = **IF.citate** (both refer to citation infrastructure)
 **IF.forge** = **IF.marl** (both refer to Multi-Agent Reflexion Loop)
+
+---
+
+## Repository State & Branch Management
+
+### GitHub Repository Status (As of 2025-11-13)
+
+**Primary Repository:** `github.com/dannystocker/infrafabric`
+
+**Branch Inventory:**
+- **master** (primary): Last updated Nov 11, 2025 - Stable production code
+- **13 Claude branches** (active development as of Nov 12):
+  - WebRTC/SIP/media streaming infrastructure (6 branches)
+  - Session management & stability (3 branches)
+  - CLI optimization & witness mode (1 branch)
+  - Cloud handover documentation (1 branch)
+  - Debug/incomplete work (2 branches)
+- **4 Swarm branches** (foundational work as of Nov 8):
+  - `swarm/w2-philosophy-map` - Core philosophy definitions
+  - `swarm/w2-citation-schemas` - IF.TTT citation structures
+  - `swarm/w2-a6-checklist` - ⚠️ **UNMERGED** complete dossier (90 commits, 56 files)
+  - `swarm/w2-a6-ci-workflow` - CI/CD automation (awaiting workflow permissions)
+
+**Critical Issues Identified:**
+
+1. ✅ **RESOLVED: IF.armour.yologuard Benchmark**
+   - Final metrics: 111.46% GitHub-parity recall (107/96 detections)
+   - Guardian Council: 18/20 approval (90%)
+   - Status: **VERIFIED** (see IF-momentum.md)
+   - Resolution: Corpus mismatch identified (96 RISK vs 175 total secrets)
+
+2. **BLOCKER: Citation Evidence Tracking Failure**
+   - 45/46 citations unreferenced in component index
+   - Impact: Credibility of evidence base questioned
+   - Required: Complete citation → evidence file mapping
+
+3. **BLOCKER: CI Workflow Deployment**
+   - Workflow staged at `docs/ci/review.yml` but not deployed
+   - Required: GitHub workflow permissions
+
+4. **CRITICAL: Unmerged Swarm Work**
+   - `swarm/w2-a6-checklist` contains 90 commits of complete work (4 days stale)
+   - Decision needed: merge or archive
+   - Includes complete dossier + validation evidence
+
+**Active Development Streams (Nov 12):**
+- Media/streaming infrastructure (WebRTC, SIP, H.323, NDI)
+- Session management (parallel sessions, freezing fixes, cloud handover)
+- Witness/optimization (CLI enhancements)
+
+**Recommendation for New Sessions:**
+1. Check `SESSION-RESUME.md` first (if exists)
+2. Review open blockers before starting new work
+3. Coordinate with existing Claude branches to avoid conflicts
+4. Update `COMPONENT-INDEX.md` when adding new IF.* components
 
 ---
 
@@ -131,7 +316,7 @@ Incoming Task → IF.optimise Evaluation:
 **Cost Optimization:**
 - Haiku = Sonnet / 10 (cost ratio)
 - Target: 50% average token reduction
-- Measured: 87-90% reduction for mechanical tasks
+- Validated: 49.3% reduction (14-day sprint, $45 → $22.80)
 
 ---
 
@@ -151,19 +336,6 @@ Incoming Task → IF.optimise Evaluation:
 - MUST link decisions to philosophy database when applicable
 - MUST generate IF.citation entries for all major decisions
 
-**Example:**
-```
-Decision: Expand philosophy database to 18 philosophers
-Citation: if://decision/philosophy-expansion-2025-11-09
-Sources:
-  - /evidence/philosophy_database_evaluation_2025-11-09.md
-  - IF-foundations.md:89-140 (philosophy database definition)
-Rationale: Evaluate marginal utility of adding 6 philosophers
-Result: HOLD at 12 philosophers (90% simplification already achieved)
-Status: verified
-Created_by: if://agent/claude-sonnet-4.5
-```
-
 ### 2. Haiku Agents (Cheap, Mechanical)
 
 **When to use:**
@@ -179,18 +351,6 @@ Created_by: if://agent/claude-sonnet-4.5
 - MUST timestamp all operations (ISO 8601 format)
 - MUST return structured output (JSON/YAML when possible)
 
-**Example:**
-```
-Task: Summarize IF-vision.md
-Output:
-  summary: "[400 word summary]"
-  source: "papers/IF-vision.md"
-  hash: "1f9a453a11c3728138ad883d89086edb"
-  lines_read: 850
-  last_modified: "2025-11-09"
-  agent: "if://agent/haiku-4.5-summarizer"
-```
-
 ### 3. Specialized Agents (Domain-Specific)
 
 **Available Agents:**
@@ -201,11 +361,149 @@ Output:
 - Project-Manager: Scoping, acceptance criteria, roadmaps
 - Release-Manager-Resume-Specialist: Release cuts, session handoffs
 
-**Traceability Requirements:**
-- MUST generate domain-specific evidence artifacts
-- MUST link to relevant IF.ground principles
-- MUST preserve audit trail in `/docs/evidence/`
-- MUST flag high-risk changes for Guardian review
+---
+
+## Swarm Orchestration Patterns (Haiku Multi-Agent Framework)
+
+### Overview
+
+InfraFabric implements philosophy-grounded distributed agent communication based on the **Haiku Swarm Test Framework** (see `docs/HAIKU-SWARM-TEST-FRAMEWORK.md`).
+
+### C-UAS Layered Defense Architecture
+
+**Concept:** Counter-Unmanned Aircraft Systems (C-UAS) 4-layer pattern applied to agent coordination:
+
+| Layer | Agent Role | Purpose | Communication Pattern |
+|-------|------------|---------|---------------------|
+| **1. Detect** | Observer agents | Passive observation | Pub: `if://topic/observations/raw` (BEST_EFFORT) |
+| **2. Track** | Tracker agents | Maintain consistency | Sub: observations, Pub: `if://topic/tracks/maintained` (RELIABLE) |
+| **3. Identify** | Classifier agents | Verify patterns | Sub: tracks, Pub: `if://topic/classifications/verified` (RELIABLE) |
+| **4. Counter** | Effector agents | Execute actions | Sub: classifications, Pub: `if://topic/effects/executed` (PERSISTENT) |
+
+**Coordinator:** 1 agent orchestrates all layers, tracks IF.optimise metrics, generates reports with citations
+
+### Wu Lun (五伦) Relationship Mapping
+
+**Confucian Five Relationships Applied to Agent Roles:**
+
+1. **Ruler → Subject** = Coordinator → Worker
+2. **Father → Son** = Senior Agent → Junior Agent
+3. **Husband → Wife** = Leader Agent → Support Agent
+4. **Elder → Younger** = Experienced → Novice Agent
+5. **Friend → Friend** = Peer Agents (equal status)
+
+**Message Routing:** All IFMessages include `wu_lun_relationship` field indicating hierarchical context
+
+**Anti-Pattern Detection:** Workers shouldn't coordinate, coordinators shouldn't observe (violates role boundaries)
+
+### Philosophy Principle Auto-Detection
+
+Every agent message automatically infers which IF.ground principles are being invoked:
+
+```python
+def infer_principles(performative, content):
+    principles = []
+
+    # Pragmatism (Principle 6): All speech acts
+    if performative in ["request", "inform", "agree", "query-if"]:
+        principles.append("IF.ground:principle_6_pragmatism_speech_acts")
+
+    # Empiricism (Principle 1): Messages with evidence
+    if "evidence" in content and content["evidence"]:
+        principles.append("IF.ground:principle_1_observable_artifacts")
+
+    # Verificationism (Principle 2): Content-addressed messages
+    if "content_hash" in content:
+        principles.append("IF.ground:principle_2_verificationism")
+
+    # Fallibilism (Principle 3): Validation requests
+    if performative == "query-if" or "validation_requested" in content:
+        principles.append("IF.ground:principle_3_fallibilism")
+
+    # Coherentism (Principle 5): Messages referencing conversation history
+    if "in_reply_to" in content or "conversation_id" in content:
+        principles.append("IF.ground:principle_5_coherentism")
+
+    # Falsifiability (Principle 7): All signed messages
+    if "signature" in content:
+        principles.append("IF.ground:principle_7_falsifiability")
+
+    # Stoic Prudence (Principle 8): Retry logic
+    if "stoic_resilience" in content:
+        principles.append("IF.ground:principle_8_stoic_prudence")
+
+    return principles
+```
+
+### IFMessage Schema (Philosophy-Annotated)
+
+```json
+{
+  "performative": "inform",
+  "sender": "if://agent/swarm/worker-1",
+  "receiver": "if://agent/coordinator",
+  "conversation_id": "if://conversation/mission-2025-11-13",
+  "content": {
+    "claim": "Task X completed",
+    "evidence": ["file.py:123"],
+    "cost_tokens": 1247
+  },
+  "citation_ids": ["if://citation/uuid"],
+  "timestamp": 1699632000000000000,
+  "sequence_num": 42,
+  "content_hash": "sha256:...",
+  "signature": {
+    "algorithm": "ed25519",
+    "public_key": "ed25519:...",
+    "signature_bytes": "ed25519:..."
+  },
+  "philosophy_metadata": {
+    "principles_invoked": [
+      "IF.ground:principle_1_observable_artifacts",
+      "IF.ground:principle_6_pragmatism_speech_acts",
+      "IF.ground:principle_7_falsifiability"
+    ],
+    "wu_lun_relationship": "worker→coordinator",
+    "stoic_resilience": "retry_3x_exponential_backoff"
+  }
+}
+```
+
+### Swarm Token Economics (IF.optimise)
+
+**Validated Results (14-day sprint, Nov 10):**
+- Total tokens: 2.5M
+- Sonnet: 1.2M (48%), Haiku: 1.3M (52%)
+- Projected Sonnet-only cost: $45.00
+- Actual mixed cost: $22.80
+- **Realized savings: 49.3%** (validates 50% claim)
+
+### Swarm Execution Patterns
+
+**Minimal 3-Agent Test:**
+```python
+# Parallel file summarization (IF.search Pass 1 simulation)
+tasks = [
+    spawn_agent("worker-1", "Summarizer", "Summarize /papers/IF-vision.md"),
+    spawn_agent("worker-2", "Summarizer", "Summarize /papers/IF-foundations.md"),
+    spawn_agent("worker-3", "Summarizer", "Summarize /papers/IF-armour.md")
+]
+results = await asyncio.gather(*tasks)
+```
+
+**Production 15-Agent Swarm:**
+- Layer 1 (Detect): 5 observers scan codebase
+- Layer 2 (Track): 3 trackers maintain consistency
+- Layer 3 (Identify): 4 classifiers verify against IF.ground
+- Layer 4 (Counter): 3 effectors generate recommendations
+- Coordinator: 1 orchestrator with IF.optimise tracking
+
+**Expected Metrics:**
+- Total tokens: 80,000-120,000
+- Baseline (Sonnet): 250,000 tokens
+- Savings: 52-68% (accounting for 26% TTT overhead)
+- Citations: 60-80 (15 agents × avg 4-5 findings)
+- Philosophy usage: Empiricism (45%), Pragmatism (30%), Coherentism (15%)
 
 ---
 
@@ -236,11 +534,6 @@ Output:
    └─ Verification checklist
 ```
 
-**Traceability Artifacts:**
-- `/docs/evidence/<research-topic>-<date>.md` - Research findings
-- `/citations/<research-topic>-<date>.json` - Citation database
-- `/annexes/<dossier-number>.md` - Guardian Council debate
-
 ### Workflow 2: Code Changes
 
 **Pattern:**
@@ -263,11 +556,6 @@ Output:
    ├─ Commit message includes citation ID
    └─ Git commit signed (if configured)
 ```
-
-**Traceability Artifacts:**
-- Git commit with citation in message
-- `/citations/code-changes-<date>.json`
-- Optional: `/docs/evidence/code-review-<date>.md`
 
 ### Workflow 3: Guardian Council Decisions
 
@@ -294,11 +582,6 @@ Output:
    └─ Post-execution validation (did it work as predicted?)
 ```
 
-**Traceability Artifacts:**
-- `/annexes/ANNEX-<letter>-<topic>.md` - Full debate transcript
-- `/schemas/decision/v1.0.schema.json` - Decision citation
-- `/docs/evidence/guardian-verdict-<date>.md` - Executive summary
-
 ---
 
 ## Anti-Patterns (What NOT To Do)
@@ -318,73 +601,6 @@ Citation:
   claim_id: "if://claim/philosophy-db-count"
   sources: [{"type":"paper","ref":"papers/IF-foundations.md:89","hash":"sha256:493dd69b..."}]
   status: "verified"
-```
-
-### ❌ Unverifiable Architecture Decisions
-
-**Bad:**
-```
-User: Should we expand the philosophy database?
-Agent: Yes, we should add 6 more philosophers.
-[No citation, no Guardian vote, no rationale]
-```
-
-**Good:**
-```
-User: Should we expand the philosophy database?
-Agent: Let me evaluate this with IF.guard protocol.
-
-1. Spawn Haiku agent to analyze marginal utility
-2. Generate evidence document with citations
-3. Present to Guardian Council for deliberation
-4. Record decision with dissent preserved
-
-Result: HOLD at 12 philosophers (Dossier evaluation, 2025-11-09)
-Citation: /evidence/philosophy_database_evaluation_2025-11-09.md
-```
-
-### ❌ Silent Failures
-
-**Bad:**
-```
-[Test fails, agent doesn't report it, marks task as complete]
-```
-
-**Good:**
-```
-Test failed (3/10 passing).
-
-Citation:
-  claim_id: "if://test-run/yologuard-v3-2025-11-10"
-  sources: [{"type":"code","ref":"tests/test_corpus.py:45","hash":"sha256:..."}]
-  status: "disputed"
-  rationale: "Regression in Wu Lun weight calibration"
-  created_by: "if://agent/haiku-test-runner"
-
-Action: Mark task as IN_PROGRESS (not completed), create blocker citation.
-```
-
-### ❌ Opaque Token Costs
-
-**Bad:**
-```
-[Uses Sonnet to read 6 papers directly, consumes 50K tokens, doesn't report cost]
-```
-
-**Good:**
-```
-⚡ IF.optimise Active
-Task: Understand InfraFabric papers
-Strategy: 🚀 Spawn 4 Haiku agents to summarize papers in parallel
-
-Cost Analysis:
-- Direct reading: 50,000 tokens @ Sonnet pricing
-- Haiku delegation: 5,000 tokens @ Haiku pricing (10× savings)
-
-Traceability:
-- Each Haiku agent reports source file hash
-- Summaries stored in /docs/evidence/paper-summaries-2025-11-10.json
-- Token costs logged in IF.optimise report
 ```
 
 ### ❌ Bypassing Gitignore for Privacy-Sensitive Research
@@ -408,12 +624,6 @@ git status
 # Files stay local-only, never committed
 ls code/research/IF_ENDORSER_EMAILS*.md  # ✅ Available locally for user
 git ls-files | grep ENDORSER_EMAILS       # ✅ Not tracked in git
-
-Rationale: Draft outreach contains:
-- Personal framing ("I was struggling with...")
-- Gap admissions (internal decision-making)
-- Researcher names associated with your strategy
-These are private until user chooses to send them.
 ```
 
 **Why This Matters:**
@@ -421,31 +631,6 @@ These are private until user chooses to send them.
 - Ethics: Names in your outreach strategy should not be public
 - Professional: Draft emails expose your thinking before you've refined it
 - Legal: May violate data protection if researchers didn't consent
-
-**Lesson Learned (2025-11-10):**
-> "When .gitignore patterns exist for research outputs, respect them.
-> They're there for privacy protection. Use `git add -f` only for
-> intentional override of build artifacts, never for people's names
-> or correspondence." - Session: claude/review-cloud-handover-docs
-
-**Recovery Pattern:**
-```bash
-# If privacy-sensitive files were accidentally committed:
-git rm --cached code/research/IF_ENDORSER_EMAILS*.md
-git commit -m "Remove private research files from tracking"
-
-# Scrub from history if already pushed:
-git filter-branch --force --index-filter \
-  'git rm --cached --ignore-unmatch code/research/IF_ENDORSER_EMAILS*.md' \
-  --prune-empty --tag-name-filter cat -- <commit-range>..HEAD
-
-git push -f origin <branch>
-
-# Clean up filter-branch artifacts:
-rm -rf .git/refs/original/
-git reflog expire --expire=now --all
-git gc --prune=now --aggressive
-```
 
 ---
 
@@ -481,106 +666,39 @@ git gc --prune=now --aggressive
 4. Verify git status matches recorded state
 5. Continue work with full citation continuity
 
-**Traceability Validation:**
-```bash
-# Verify all citations are valid
-python tools/citation_validate.py citations/session-2025-11-10.json
+---
 
-# Check for broken references
-grep -r "if://citation/" docs/ | while read ref; do
-  # Verify citation exists and hash matches
-done
+## Quick Reference
 
-# Audit trail completeness
-git log --grep="if://citation/" --oneline | wc -l
+**Generate Citation:**
+```python
+citation = {
+    "citation_id": f"if://citation/{uuid4()}",
+    "claim_id": "if://claim/doc/section",
+    "sources": [
+        {"type": "paper", "ref": "path:line", "hash": "sha256:..."}
+    ],
+    "rationale": "Why this claim is supported",
+    "status": "unverified",
+    "created_by": "if://agent/name",
+    "created_at": datetime.utcnow().isoformat() + "Z",
+    "signature": "ed25519:PLACEHOLDER"
+}
 ```
 
----
+**IF.optimise Status:**
+```
+⚡ Active | 🧠 Sonnet mode | 🚀 Multi-Haiku | 💤 Disabled
+```
 
-## Integration Points
-
-### IF.armour.yologuard (Secret Detection)
-**Current Name:** IF.armour.yologuard | **Historical Alias:** IF.yologuard
-
-- Emit citation IDs alongside manifests (`--manifest`)
-- Provenance fields at `code/yologuard/src/IF.yologuard_v3.py:1210`
-- Link secret detections to Wu Lun principle citations
-- **Primary Metric:** 107/96 (111.46% GitHub-parity recall), 100% precision
-- **Status:** VERIFIED (Guardian Council 18/20 approval, 2025-11-10)
-
-### IF.guard
-- Decisions include `citation_ids` array (optional)
-- Schema: `schemas/decision/v1.0.schema.json`
-- Links Guardian votes to supporting evidence
-
-### IF.search
-- Each of 8 passes generates citations
-- Pass 8 (Monitor) includes warrant canary citations
-- IF.swarm parallelization preserves per-agent citations
-
-### IF.forge
-- Multi-Agent Reflexion Loop citations at each stage
-- Stage 3 (External Validator) must cite cross-model sources
-- Stage 7 (Final Validation) links to Guardian decision citations
-
-### IF.witness
-- Meta-validation citations prove validation occurred
-- Gemini recursive validation: cite external review documents
-- GPT-5 MARL: cite 8 architectural improvements proposed
-
----
-
-## Citation Service Roadmap
-
-**Current (v1.0):**
-- JSON schema validation
-- Manual citation creation
-- File-based storage
-
-**Planned (v1.1 - IF.citation Service):**
-- REST API: POST /v1/citations, GET /v1/citations/{id}
-- Verification endpoint: POST /v1/citations/{id}/verify
-- Revocation endpoint: POST /v1/citations/{id}/revoke
-- Content-addressed artifacts (SHA-256)
-- Optional IPFS/S3 pointers
-- Graph-friendly lineage (claim → sources → decisions)
-
-**Future (v2.0):**
-- Auto-verifier job (check source hashes, update status)
-- Decision UI (show linked citations in web interface)
-- Merkle tree append-only log (EU AI Act Article 10 compliance)
-- Cryptographic signatures (ed25519)
-- Cross-repository citation resolution
-
----
-
-## Compliance & Standards
-
-### EU AI Act Article 10 (Traceability Requirements)
-
-InfraFabric agents comply with EU AI Act traceability mandates:
-- **Article 10.2(a):** All decisions traceable to data/logic via IF.citation
-- **Article 10.2(b):** Audit logs preserved (Merkle tree append-only)
-- **Article 10.2(c):** Human oversight supported (Guardian Council votes)
-- **Article 10.2(d):** Provenance chains cryptographically verifiable
-
-**Implementation:**
-- IF.trace: Merkle tree audit trail
-- IF.citation: Provenance graph with signatures
-- IF.guard: Human-in-the-loop governance
-- IF.witness: Third-party validation with citations
-
-### IF.ground Epistemological Standards
-
-Every agent operation maps to IF.ground principles:
-1. **Ground in Observable Artifacts** → Every claim has file:line citation
-2. **Validate with Toolchain** → Test results cited, hashes verified
-3. **Make Unknowns Explicit** → Status: unverified (not hidden)
-4. **Schema-Tolerant Parsing** → Citations support multiple source types
-5. **Gate Client-Only Features** → Citations link to capability evidence
-6. **Progressive Enhancement** → Citations added iteratively (unverified → verified)
-7. **Reversible Switches** → Citations can be revoked with rationale
-8. **Observability Without Fragility** → Warrant canaries detect missing citations
+**Session Handoff:**
+```
+1. Update SESSION-RESUME.md
+2. Export citations to /citations/session-<date>.json
+3. Verify all evidence in /docs/evidence/
+4. Commit with citation references
+5. Next session reads SESSION-RESUME.md ONLY
+```
 
 ---
 
@@ -603,193 +721,138 @@ Before completing any major task, verify traceability:
 
 ---
 
-## Quick Reference
+## Credentials & Access Reference
 
-**Generate Citation:**
-```python
-citation = {
-    "citation_id": f"if://citation/{uuid4()}",
-    "claim_id": "if://claim/doc/section",
-    "sources": [
-        {"type": "paper", "ref": "path:line", "hash": "sha256:..."}
-    ],
-    "rationale": "Why this claim is supported",
-    "status": "unverified",
-    "created_by": "if://agent/name",
-    "created_at": datetime.utcnow().isoformat() + "Z",
-    "signature": "ed25519:PLACEHOLDER"
-}
-```
+**Purpose:** Centralized reference for all system credentials and access points.
+**Security Note:** This section references credential locations; actual passwords stored in `/home/setup/.claude/CLAUDE.md`
 
-**Validate Citation:**
+### Local Development
+
+**Gitea Server:**
+- URL: `http://localhost:4000/`
+- Config: `/home/setup/gitea/custom/conf/app.ini`
+- Admin User: `ggq-admin`
+- Admin Pass: See `/home/setup/.claude/CLAUDE.md`
+- Regular User: `dannystocker`
+- Regular Pass: See `/home/setup/.claude/CLAUDE.md`
+
+**WSL System:**
+- User: `setup`
+- Pass: `setup`
+
+**System Tools:**
+- Node.js: v20.19.5
+- npm: v10.8.2
+- Gemini CLI: v0.11.3
+
+### Project Repositories
+
+**InfraFabric:**
+- Local: `/home/setup/infrafabric`
+- GitHub: `https://github.com/dannystocker/infrafabric`
+- Local Gitea: `http://localhost:4000/dannystocker/infrafabric.git`
+- Credentials: Use `dannystocker` Gitea account
+
+**NaviDocs:**
+- Local: `/home/setup/navidocs`
+- Local Gitea: `http://localhost:4000/ggq-admin/navidocs`
+- Credentials: Use `ggq-admin` Gitea account
+
+**ICW (icantwait.ca):**
+- Local: `/home/setup/icw_web_2`
+- Local Gitea (PRIVATE): `http://localhost:4000/ggq-admin/icw-nextspread`
+- Live Site: `https://icantwait.ca`
+- ProcessWire Admin: `https://icantwait.ca/nextspread-admin/`
+  - User: `icw-admin`
+  - Pass: See `/home/setup/.claude/CLAUDE.md`
+- Credentials: Use `ggq-admin` Gitea account
+
+**Digital-Lab.ca:**
+- Local: `/home/setup/digital-lab.ca`
+- Live Path: `/home/setup/public_html/digital-lab.ca`
+
+### StackCP Hosting
+
+**Access:**
+- SSH connection for icantwait.ca
+- Credentials: See `/home/setup/.claude/CLAUDE.md`
+
+**Paths:**
+- icantwait.ca: `/public_html/icantwait.ca`
+- digital-lab.ca: `/public_html/digital-lab.ca`
+
+### API Keys & Services
+
+**OpenRouter:**
+- Status: **REVOKED** (2025-11-07) - Exposed in GitHub
+- Detection: IF.yologuard v3.0 (2025-11-08)
+- Whitelist: `/home/setup/.security/revoked-keys-whitelist.md`
+
+**DeepSeek:**
+- Key location: See `/home/setup/.claude/CLAUDE.md`
+- Status: Active
+
+**Google Cloud:**
+- Status: Credentials removed from git history (132 commits rewritten, 2025-11-10)
+- Secret scanning: Enabled with test fixture allowlist
+- `.env` files: All gitignored (never commit)
+
+### Local Services
+
+**Redis:**
+- Port: 6379
+- Purpose: BullMQ job queues (NaviDocs background workers)
+
+**Meilisearch:**
+- Port: 7700
+- Purpose: Search indexing (NaviDocs)
+- Auth: See NaviDocs documentation
+
+**Gitea:**
+- Port: 4000
+- Purpose: Local git server for all repositories
+
+### File Paths Reference
+
+**Windows Paths (via WSL):**
+- Downloads: `/mnt/c/users/setup/downloads`
+- Screenshots: `/mnt/c/users/setup/pictures/screencaptures/`
+
+**Project Worktrees (NaviDocs):**
+- Single tenant: `/home/setup/navidocs-wt-single-tenant`
+- TOC polish: `/home/setup/navidocs-wt-toc-polish`
+- Image API: `/home/setup/navidocs-img-api`
+- Image backend: `/home/setup/navidocs-img-backend`
+- Image frontend: `/home/setup/navidocs-img-frontend`
+- UI test: `/home/setup/navidocs-ui-test`
+- PDF loop: `/home/setup/navidocs-wt-pdf-loop`
+
+**InfraFabric Core (Research Papers):**
+- Local: `/home/setup/infrafabric-core`
+- GitHub: `https://github.com/dannystocker/infrafabric-core.git`
+- Gitea: `http://localhost:4000/dannystocker/infrafabric-core.git`
+- Note: Separate repo for research papers vs marketing (infrafabric)
+
+### Security Best Practices
+
+**NEVER commit:**
+- `.env` files (always gitignored)
+- API keys or tokens
+- Passwords or credentials
+- Privacy-sensitive data (researcher names, draft emails)
+
+**ALWAYS check before commit:**
 ```bash
-python tools/citation_validate.py citations/my-citation.json
+git status                           # Check what's being committed
+git diff --cached                    # Review staged changes
+grep -r "password\|api_key\|secret" .env 2>&1 | head -5  # Double-check for leaks
 ```
 
-**IF.optimise Status:**
-```
-⚡ Active | 🧠 Sonnet mode | 🚀 Multi-Haiku | 💤 Disabled
-```
-
-**Session Handoff:**
-```
-1. Update SESSION-RESUME.md
-2. Export citations to /citations/session-<date>.json
-3. Verify all evidence in /docs/evidence/
-4. Commit with citation references
-5. Next session reads SESSION-RESUME.md ONLY
-```
-
----
-
-## Cloud Environment Instructions (Claude Code Web)
-
-**For Claude instances running in Claude Code Web with GitHub integration:**
-
-### Initial Setup (First Cloud Session)
-
-**Step 1: Clone and Verify**
-```bash
-# Repository will be auto-cloned by Claude Code Web
-cd infrafabric
-git status                               # Verify clean state
-git log --oneline -5                     # Check latest commits
-ls .env 2>&1 | grep "No such file"       # Verify .env absent (gitignored)
-```
-
-**Step 2: Read Session Handover**
-```
-Read SESSION-HANDOVER-TO-CLOUD.md FIRST
-- Contains current mission (yologuard benchmark fix)
-- Token budget ($1000 with Haiku/Sonnet strategy)
-- Three paths forward (verify → fix → document)
-- Security reminders
-```
-
-**Step 3: Adopt Agent Protocol**
-```
-Read THIS FILE (agents.md) and:
-1. Understand IF.TTT framework (Traceable, Transparent, Trustworthy)
-2. Note IF.optimise default behavior (Haiku delegation)
-3. Learn citation generation pattern
-4. Review anti-patterns to avoid
-5. Commit to traceability checklist
-```
-
-**Step 4: Display IF.optimise Status**
-```
-Always show current mode in responses:
-⚡ Active       - Haiku delegation for mechanical tasks (default)
-🧠 Sonnet mode  - Complex reasoning (architecture, council)
-🚀 Multi-Haiku  - Parallel agents running
-💤 Disabled     - Sonnet-only (user requested)
-```
-
-### Cloud-Specific Traceability
-
-**Token Cost Tracking (MANDATORY):**
-- Report Haiku vs Sonnet token ratio after first major task
-- Track cost per task
-- Alert if burning budget too fast (>$100/day for setup work)
-- Target: 50-80% Haiku delegation
-
-**Git Operations:**
-```bash
-# Before commits
-git status                               # Always check first
-
-# Commits MUST include citations
-git commit -m "Fix yologuard benchmark
-
-- Created canonical benchmark script
-- Documented usable-only filtering
-- Explained 96 vs 175 corpus discrepancy
-
-Citation: if://fix/yologuard-benchmark-2025-11-10
-
-🤖 Generated with [Claude Code](https://claude.com/claude-code)
-
-Co-Authored-By: Claude <noreply@anthropic.com>"
-
-# Push to GitHub
-git push origin master
-```
-
-**Session Boundaries:**
-- Update SESSION-RESUME.md after each major task
-- Export citations to /citations/session-<date>.json
-- Commit progress frequently (don't lose work)
-- Use TodoWrite tool to track multi-step tasks
-
-### Security Protocol (CRITICAL)
-
-**NEVER in cloud environment:**
-- ❌ Create .env file
-- ❌ Commit credentials
-- ❌ Store API keys
-- ❌ Push sensitive data
-
-**Safe operations:**
-- ✅ Read code and documentation from GitHub
-- ✅ Modify papers with verified metrics
-- ✅ Create test scripts (no real credentials)
-- ✅ Update documentation
-
-**Test Data (Safe):**
-- code/yologuard/benchmarks/leaky-repo/** (public benchmark corpus)
-- Allowlisted in .github/secret_scanning.yml
-- GitHub may flag - these are false positives
-
-### Haiku Agent Spawning (Cloud)
-
-**Pattern for parallel work:**
-```
-Spawn 3 Haiku agents in parallel (single message with multiple Task calls):
-
-Agent 1: Read papers/IF-armour.md yologuard section, report claimed metrics
-Agent 2: Read docs/GUARDED-CLAIMS.md Claim 1, report verification status
-Agent 3: Read code/yologuard/benchmarks/run_leaky_repo_test.py, report test corpus size
-
-Then (Sonnet): Analyze discrepancies between claims and actual test results
-```
-
-**Cost estimate:**
-- 3 Haiku agents: ~1,500 tokens each = 4,500 Haiku tokens
-- Sonnet analysis: ~2,000 Sonnet tokens
-- Total cost: ~$0.03-0.06 (vs $0.15-0.30 Sonnet-only)
-
-### IF.ground Compliance in Cloud
-
-Every cloud operation must map to principles:
-
-**Principle 1 (Empiricism):**
-- Verify claims against actual files (don't trust SESSION-RESUME.md blindly)
-- Run benchmarks yourself (don't cite unverified metrics)
-
-**Principle 2 (Verificationism):**
-- Generate file hashes for all sources cited
-- Include verification commands in documentation
-
-**Principle 3 (Fallibilism):**
-- Mark claims as "unverified" until independently tested
-- Preserve Gemini's contradicting evidence (don't delete)
-
-**Principle 7 (Falsifiability):**
-- Include testable predictions in commit messages
-- Document how to reproduce results
-
-### Cloud Session Checklist
-
-Before ending each cloud session:
-
-- [ ] SESSION-RESUME.md updated with current state
-- [ ] Token costs tracked (Haiku vs Sonnet ratio calculated)
-- [ ] All changes committed to git
-- [ ] All changes pushed to GitHub
-- [ ] Citations exported to /citations/session-<date>.json
-- [ ] IF.optimise status indicator shown in last message
-- [ ] Next session path clearly specified
-- [ ] No sensitive data left in workspace
+**IF.armour.yologuard Integration:**
+- Runs automatically on commits (if configured)
+- Detects 96 RISK secret types
+- 111.46% GitHub-parity recall
+- Location: `/home/setup/infrafabric/code/yologuard/`
 
 ---
 
@@ -800,16 +863,71 @@ Before ending each cloud session:
 - Citation service API changes (v1.0 → v1.1)
 - New agent type added
 - Traceability patterns discovered
+- Repository state changes (branches, blockers)
+- Swarm orchestration patterns evolve
+- New critical project added
 
 **Who updates:**
 - Any agent that identifies gaps in traceability protocol
 - Requires user approval for changes
 - Update must include citation to evidence for change
 
-**Last Updated:** 2025-11-10 (initial creation for IF.TTT integration)
+**Last Updated:** 2025-11-13 (restructured with multi-project context, optimized navigation)
 **Updated By:** if://agent/claude-sonnet-4.5
-**Citation:** if://decision/agents-md-creation-2025-11-10
+**Citation:** if://decision/agents-md-comprehensive-cleanup-2025-11-13
+
+**Sources:**
+- GitHub repository comprehensive review (Nov 12-13, 2025)
+- `/home/setup/infrafabric/docs/HAIKU-SWARM-TEST-FRAMEWORK.md`
+- `/home/setup/infrafabric/papers/InfraFabric.md`
+- `/home/setup/infrafabric/papers/IF-momentum.md`
+- `/home/setup/navidocs/NAVIDOCS_HANDOVER.md`
+- `/home/setup/navidocs/IMPLEMENTATION_SUMMARY.md`
+- `/home/setup/.claude/CLAUDE.md`
+- Repository branch analysis and git history
 
 ---
 
 **Remember:** Traceability is NOT optional. IF.citate and IF.TTT are mandatory for all InfraFabric agent operations.
+
+---
+
+## NaviDocs Cloud Sessions (2025-11-13)
+
+**Status:** ✅ Ready to launch
+**Repo:** https://github.com/dannystocker/navidocs
+**Summary:** `/home/setup/infrafabric/NAVIDOCS_SESSION_SUMMARY.md`
+
+### Session Architecture
+- **5 sequential cloud sessions** (3-5 hours total)
+- **Agent identity system:** S1-H01 through S5-H10 (50 Haiku agents total)
+- **Budget:** $90 of $100 Claude Code Cloud credit
+
+### Mission
+Build sticky boat management app for Riviera Plaisance Euro Voiles:
+- **Target:** Prestige + Sunseeker 40-60ft owners (€800K-€1.5M boats)
+- **Features:** Inventory tracking, cameras, maintenance, contacts, expenses
+- **Pitch:** Include NaviDocs with every boat sale (Sylvain meeting)
+
+### Launch Order (SEQUENTIAL ONLY)
+```
+S1: Market Research (30-45min) → intelligence/session-1/
+S2: Technical Architecture (45-60min) → intelligence/session-2/
+S3: UX/Sales Pitch (30-45min) → intelligence/session-3/
+S4: Implementation Plan (45-60min) → intelligence/session-4/
+S5: Guardian Validation (60-90min) → intelligence/session-5/
+```
+
+### Critical Corrections Applied
+- ✅ Price: €800K-€1.5M (not €250K-€480K)
+- ✅ Brands: Prestige + Sunseeker
+- ✅ Agent 1: Joe Trader persona (actual sale price research)
+- ✅ Dependencies documented in SESSION_DEBUG_BLOCKERS.md
+
+### Files Created
+- `CLOUD_SESSION_1_MARKET_RESEARCH.md` through `CLOUD_SESSION_5_SYNTHESIS_VALIDATION.md`
+- `SESSION_DEBUG_BLOCKERS.md` (P0 blockers fixed)
+- `intelligence/session-{1,2,3,4,5}/` directories ready
+
+**Next:** Launch Session 1 via Claude Code Cloud web interface (copy-paste full file content)
+
