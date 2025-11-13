@@ -1,0 +1,62 @@
+{
+  "timestamp": 1762955299.5320776,
+  "results": [
+    {
+      "name": "task_claiming_throughput",
+      "duration_seconds": 8.43679999888991e-05,
+      "operations": 10,
+      "throughput_ops_per_sec": 118528.35199738966,
+      "latencies_ms": "10 samples",
+      "p50_ms": 0.004757000056088145,
+      "p95_ms": 0.027041999942412076,
+      "p99_ms": 0.027041999942412076,
+      "min_ms": 0.0037329999713620055,
+      "max_ms": 0.027041999942412076,
+      "mean_ms": 0.007532600000104139,
+      "median_ms": 0.0046485000098073215
+    },
+    {
+      "name": "broadcast_latency",
+      "duration_seconds": 0.00781543799996598,
+      "operations": 1000,
+      "throughput_ops_per_sec": 127951.88190404083,
+      "latencies_ms": "1000 samples",
+      "p50_ms": 0.004033999971397861,
+      "p95_ms": 0.012647000062315783,
+      "p99_ms": 0.028412000006028393,
+      "min_ms": 0.003178000042680651,
+      "max_ms": 0.9273650000523048,
+      "mean_ms": 0.007356983999670774,
+      "median_ms": 0.004033499976685562
+    },
+    {
+      "name": "multi_swarm_coordination",
+      "duration_seconds": 0.20420336399797634,
+      "operations": 1550,
+      "throughput_ops_per_sec": 7590.472407767781,
+      "latencies_ms": "605 samples",
+      "p50_ms": 0.08838000007926894,
+      "p95_ms": 1.300415999935467,
+      "p99_ms": 1.637424000023202,
+      "min_ms": 0.06684799996037327,
+      "max_ms": 21.582989999956226,
+      "mean_ms": 0.3375262214842584,
+      "median_ms": 0.08838000007926894
+    },
+    {
+      "name": "blocker_escalation_throughput",
+      "duration_seconds": 0.020899004999932913,
+      "operations": 1000,
+      "throughput_ops_per_sec": 47849.16793901002,
+      "latencies_ms": "1000 samples",
+      "p50_ms": 0.015156000017668703,
+      "p95_ms": 0.041151999994326616,
+      "p99_ms": 0.10217099998044432,
+      "min_ms": 0.010259000077894598,
+      "max_ms": 0.6253519999290802,
+      "mean_ms": 0.02041797599815709,
+      "median_ms": 0.015153000049394905
+    }
+  ],
+  "baseline": {}
+}
