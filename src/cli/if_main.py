@@ -15,6 +15,9 @@ import click
 import sys
 from typing import Optional
 
+# Import CLI modules
+from src.cli.if_witness import witness_group
+
 
 @click.group()
 @click.version_option(version='0.1.0', prog_name='InfraFabric')
@@ -312,59 +315,7 @@ def chassis_status(ctx, swarm_id):
 
 
 # ==================== IF.witness Commands ====================
-
-
-@cli.group()
-@click.pass_context
-def witness(ctx):
-    """
-    IF.witness - Audit logging and provenance tracking.
-
-    Provides:
-    - Tamper-evident audit logs (hash chain)
-    - Operation provenance tracking
-    - Query interface for audit history
-    - Cost and usage analytics
-
-    Examples:
-      if witness query --swarm-id swarm-webrtc --limit 100
-      if witness verify --start-hash abc123
-      if witness export --format json --output audit.json
-    """
-    pass
-
-
-@witness.command('query')
-@click.option('--swarm-id', help='Filter by swarm ID')
-@click.option('--component', help='Filter by component (coordinator, governor, etc.)')
-@click.option('--operation', help='Filter by operation type')
-@click.option('--limit', type=int, default=100,
-              help='Maximum number of records to return')
-@click.option('--format', type=click.Choice(['text', 'json']), default='text',
-              help='Output format')
-@click.pass_context
-def query(ctx, swarm_id, component, operation, limit, format):
-    """Query audit logs."""
-    filters = []
-    if swarm_id:
-        filters.append(f"swarm_id={swarm_id}")
-    if component:
-        filters.append(f"component={component}")
-    if operation:
-        filters.append(f"operation={operation}")
-
-    filter_str = ", ".join(filters) if filters else "none"
-    click.echo(f"🔍 Querying audit logs (filters: {filter_str}, limit: {limit})")
-
-    if format == 'json':
-        import json
-        logs = [
-            {'timestamp': '2025-11-12T20:00:00Z', 'component': 'IF.coordinator', 'operation': 'task_claimed', 'swarm_id': 'swarm-webrtc'}
-        ]
-        click.echo(json.dumps(logs, indent=2))
-    else:
-        click.echo("\n📜 Audit Log:")
-        click.echo("   2025-11-12 20:00:00 | IF.coordinator | task_claimed | swarm-webrtc")
+# Witness commands are defined in if_witness.py and registered below
 
 
 # ==================== IF.optimise Commands ====================
@@ -416,6 +367,12 @@ def report(ctx, period, format):
         click.echo("   Swarms:")
         click.echo("     - swarm-webrtc: $75.00 (320 operations)")
         click.echo("     - swarm-sip: $50.50 (180 operations)")
+
+
+# ==================== Register CLI Modules ====================
+
+# Register witness commands from if_witness.py
+cli.add_command(witness_group, name='witness')
 
 
 if __name__ == '__main__':
