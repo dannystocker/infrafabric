@@ -999,8 +999,8 @@ S5: Guardian Validation (60-90min) → intelligence/session-5/
 - ✅ **Session Handover** - SESSION_HANDOVER_2025-11-13.md created (15KB, comprehensive)
 - ✅ **agents.md Update Protocol** - Mandatory update requirements added (this section)
 - ✅ **/tmp Persistence Verified** - ext4 filesystem, survives reboots (df -h confirmed)
-- 🟡 **Feature Selector Enhancement** - exportAgentTasks() function IN PROGRESS
-- ⏳ **Haiku Swarm Deployment** - 5 agents ready to launch in parallel
+- ✅ **Feature Selector Enhancement** - exportAgentTasks() function COMPLETE (813 lines, generates 5-agent task JSON)
+- 🟡 **Haiku Swarm Deployment** - Ready to launch 5 parallel agents (NEXT STEP)
 - ⏳ **StackCP Environment Setup** - npm/npx wrappers, directory structure pending
 - ⏳ **NaviDocs Deployment** - Static site deployment to ~/public_html pending
 
