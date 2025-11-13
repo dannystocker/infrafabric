@@ -987,13 +987,14 @@ S5: Guardian Validation (60-90min) → intelligence/session-5/
 
 ## NaviDocs StackCP S2 Swarm Deployment (2025-11-13)
 
-**Last Updated:** 2025-11-13 10:15 UTC (Active - 4-Hour MVP Build)
-**Status:** 🚀 DEPLOYMENT IN PROGRESS - 5 parallel sessions launching
+**Last Updated:** 2025-11-13 11:30 UTC (10-Agent Haiku Swarm DEPLOYMENT IN PROGRESS)
+**Status:** 🚀 DEPLOYMENT IN PROGRESS - 5 parallel cloud sessions launching (10 agents each = 50 total agents)
 **Timeline:** 4 hours to working demo (Riviera Plaisance presentation)
 **Strategy:** Option A MVP - 3 core features + demo polish (realistic scope)
-**Communication:** GitHub Issues (agents→local) + SSH AUTONOMOUS-NEXT-TASKS.md (local→agents)
+**Communication:** GitHub Issues + AUTONOMOUS-COORDINATION-STATUS.md polling + SSH file sync
+**Current Operation:** Session 1 (S1-H01 to S1-H10) - Market Research launch
 
-**IF.optimise Status:** ⚡ Active (Haiku agents for mechanical work, Sonnet for coordination)
+**IF.optimise Status:** ⚡ Active - 10 Haiku agents (Session 1 Market Research) + 4-5 helper agents per remaining session
 
 **MVP Scope (4-Hour Build):**
 1. **Photo Inventory + OCR** (90 min) - Upload photos, OCR receipts with Claude Code CLI, depreciation display
@@ -1048,6 +1049,112 @@ S5: Guardian Validation (60-90min) → intelligence/session-5/
   - StackCP deployment target: ~/navidocs-app/ (codebase) + ~/public_html/digital-lab.ca/navidocs/ (static build)
   - Blockers identified: 3 (Redis Cloud credentials, .htaccess proxy config, environment variables - see below)
 - 🟡 **NaviDocs StackCP Deployment** - Ready to transfer (awaiting Agent 1 StackCP environment setup)
+
+---
+
+### 🚀 10-Agent Haiku Swarm Deployment (2025-11-13 11:30 UTC)
+
+**LIVE NOW:** 5 parallel cloud sessions spawning 10 Haiku agents each (50 total agents)
+
+**Status Table:**
+
+| Session | Agents | Type | Status | Output Dir | Dependencies |
+|---------|--------|------|--------|------------|--------------|
+| **1: Market Research** | S1-H01 to S1-H10 | 10 workers | 🟡 READY | `intelligence/session-1/` | NONE - Start immediately |
+| **2: Technical + Helpers** | S2-H0A to S2-H10 (15 total) | 4 helpers + 11 workers | 🟢 ACTIVE | `intelligence/session-2/` | Session 1 complete |
+| **3: UX/Sales + Helpers** | S3-H01 to S3-H10 (10+ agents) | 7 workers + 3+ support | 🟡 READY | `intelligence/session-3/` | Sessions 1-2 handoffs |
+| **4: Impl. Planning + Helpers** | S4-H0A to S4-H10 (14 total) | 4 helpers + 10 workers | 🟢 ACTIVE | `intelligence/session-4/` | Sessions 1-3 complete |
+| **5: Guardian QA + Validation** | S5-H0A to S5-H10 (13 total) | 3 helpers + 10 workers | 🟢 ACTIVE | `intelligence/session-5/` | Continuous - all sessions |
+
+**Agent Roles by Session:**
+
+**Session 1: Market Research (10 Pure Workers)**
+- **Agents 1-9:** Parallel market research (each studies specific competitor/region/feature)
+- **Agent 10:** Synthesis + conflict detection (>20% variance = ESCALATE)
+- **Output:** `intelligence/session-1/session-1-handoff.md` (market-analysis, citations.json)
+- **Expected Duration:** 30-45 minutes
+
+**Session 2: Technical Integration (4 Helpers + 11 Workers)**
+- **Agents 0A-0D:** Immediate helper tasks (API validation, citation automation, web scraping, ROI calc prep)
+- **Agents 1-9 + 3A + 7A:** Technical architecture (11 agents - codebase analysis + feature design)
+- **Agent 10:** Synthesize with Session 1 pain point priorities
+- **Output:** `intelligence/session-2/session-2-architecture.md` + integration-specs.md
+- **Expected Duration:** 45-60 minutes (20-30 min prep + 15-30 min synthesis)
+
+**Session 3: UX/Sales Enablement (7 Workers + 3+ Support)**
+- **Agents 1-7:** Research pitch templates, ROI calculators, demo scripts (NO DEPENDENCIES)
+- **Agents 8-9:** Integrate market findings + technical feasibility (wait for Sessions 1-2)
+- **Agent 10:** Guardian-ready sales enablement package synthesis
+- **Output:** `intelligence/session-3/session-3-handoff.md` (pitch-deck, roi-calculator, demo-script)
+- **Expected Duration:** 30-45 minutes
+
+**Session 4: Implementation Planning (4 Helpers + 10 Workers)**
+- **Agents 0A-0D (CONTINUOUS):** Project coordination, citation QA, demo scripts, dependency tracking
+- **Agents 1-9:** 4-week sprint plan with feature priorities (wait for Sessions 1-3)
+- **Agent 10:** Integrated roadmap synthesis
+- **Output:** `intelligence/session-4/session-4-handoff.md` (sprint-plan, roadmap)
+- **Expected Duration:** 45-60 minutes
+
+**Session 5: Guardian QA (3 Helpers + 10 Workers)**
+- **Agents 0A-0C (CONTINUOUS - 5 min loops):** Deploy quality standards, real-time monitoring, guardian briefings
+- **Agents 1-9:** Evidence extraction & claim validation (wait for Sessions 1-4)
+- **Agent 10:** Guardian Council vote + escalation (need >80% consensus)
+- **Output:** `intelligence/session-5/complete-intelligence-dossier.md` + guardian-vote.json
+- **Expected Duration:** 50-60 minutes
+
+**Communication Protocols:**
+
+1. **Polling Mechanism:** All sessions read `AUTONOMOUS-COORDINATION-STATUS.md` every 60 seconds
+2. **File-Based Handoff:** Completion signals via `intelligence/session-*/session-*-handoff.md` existence
+3. **GitHub Issues:** Status updates + blocker escalation to Danny (human coordinator)
+4. **SSH File Sync:** `/tmp/coordination.json` synced bidirectionally between agents and local
+5. **Conflict Detection:** Agent 10 (each session) flags >20% variance in findings → ESCALATE to Session 5
+
+**Agent Responsibilities Breakdown:**
+
+```yaml
+Agent Numbering Scheme:
+├── Core Agents (1-10): Main task workers
+├── Helper Agents:
+│   ├── 0A: Continuous background support (tech validation / project tracking / QA monitoring)
+│   ├── 0B: Citation automation / quality checking / validator prep
+│   ├── 0C: Web scraping / demo templates / guardian briefings
+│   └── 0D: ROI prep / dependency tracking / consensus prediction
+└── Specialist Agents (per session):
+    ├── 3A: UX design validation (Session 2 helper)
+    └── 7A: Feature design review (Session 2 helper)
+```
+
+**Feature Extraction Status:**
+- ✅ Feature selector deployed: `/home/setup/navidocs/feature-selector.html` (32KB)
+- ✅ All 11 features extracted + priority-scored
+- ✅ `exportAgentTasks()` function generates agent task JSON
+- ✅ Sample output: `/home/setup/navidocs/sample-agent-tasks-tier1.json` (21 tasks, 53h, 100% P0)
+
+**Next Steps (Sequential):**
+1. 🟢 Session 1 launches (Market Research, 10 agents) - NOW
+2. ⏳ Session 1 completes → Session 2 Phase 1 continues + Phase 2 unblocked
+3. ⏳ Sessions 1-2 complete → Session 3 Phase 2 unblocked + Session 4 Phase 2 unblocked
+4. ⏳ Sessions 1-4 complete → Session 5 Phase 2 final validation + Guardian Council vote
+5. ⏳ All sessions complete → Intelligence dossier + StackCP deployment ready
+
+**Time Budget (4 Hours to Presentation):**
+- T+0h00min - T+0h45min: Sessions 1, 2 Phase 1, 3 Phase 1, 4 Phase 1, 5 Phase 1 (parallel)
+- T+0h45min - T+1h30min: Sessions 2 Phase 2, 3 Phase 2, 4 Phase 2 (wait for Session 1)
+- T+1h30min - T+2h30min: Session 5 Phase 2 validation + Guardian Council
+- T+2h30min - T+4h00min: StackCP deployment + final demo preparation
+
+**IF.TTT Citations:**
+- Source: `/home/setup/navidocs/AUTONOMOUS-COORDINATION-STATUS.md:1-200` (Session coordination spec)
+- Source: `/home/setup/navidocs/STACKCP_S2_SWARM_DEPLOYMENT.md` (5-agent pattern foundation)
+- Source: User directive "10-agent swarm deployment" (2025-11-13 11:30 UTC)
+- Citation file: `/home/setup/infrafabric/citations/2025-11-13-10agent-swarm.json` (created below)
+
+**Critical Files:**
+- Coordination Status: `/home/setup/navidocs/AUTONOMOUS-COORDINATION-STATUS.md` (read every 60 sec)
+- Session 1 Output: `/home/setup/navidocs/intelligence/session-1/session-1-handoff.md` (polling trigger)
+- Haiku Agent Logs: `/tmp/coordination.json` (synced via SSH, tracks agent progress)
+- Feature Selector: `/home/setup/navidocs/feature-selector.html` (11 features pre-extracted)
 
 **IF.TTT Citation:**
 - Source: User directive 2025-11-13 09:00 UTC + /home/setup/navidocs/SESSION_HANDOVER_2025-11-13.md:1-600
