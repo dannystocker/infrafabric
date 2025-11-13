@@ -1060,6 +1060,16 @@ S5: Guardian Validation (60-90min) → intelligence/session-5/
   - Deployment script: deploy-stackcp.sh (automated full deployment pipeline)
   - Critical fix applied: chmod +x /tmp/node (verified with node --version v20.19.5)
   - Status: ✅ **DEPLOY-READY** (4 hours to showtime - all blockers resolved)
+- ✅ **NaviDocs Intelligence Brief Website** - DEPLOYED (Agent 8, 2025-11-13 11:14 UTC)
+  - Live URL: https://digital-lab.ca/navidocs/brief/
+  - Deployment path: /home/setup/public_html/digital-lab.ca/navidocs/brief/
+  - File size: 68 KB (single HTML file, <2 second load time)
+  - Content: 94 intelligence files, 52 features, 5 cloud sessions, €14.6B market analysis
+  - Features: Interactive navigation, 7 category filters, full-text search, responsive mobile design
+  - Sessions covered: Market Research, Technical Architecture, UX & Sales, Implementation, Guardian Validation
+  - Time to build: 45 minutes (within 60-minute budget)
+  - Status: ✅ **LIVE** - Ready for stakeholder presentation
+  - Deployment report: /tmp/DEPLOYMENT_REPORT.md
 
 ---
 
