@@ -17,6 +17,7 @@ from typing import Optional
 
 # Import CLI modules
 from src.cli.if_witness import witness_group
+from src.cli.if_cost import cost_group
 
 
 @click.group()
@@ -373,6 +374,9 @@ def report(ctx, period, format):
 
 # Register witness commands from if_witness.py
 cli.add_command(witness_group, name='witness')
+
+# Register cost commands from if_cost.py
+cli.add_command(cost_group, name='cost')
 
 
 if __name__ == '__main__':
