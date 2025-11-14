@@ -323,6 +323,34 @@ Joe.Core.expands("Epic competes in 3 markets: tooling, distribution, content")
 - V4 Epic Intelligence: `docs/evidence/INTRA-AGENT-COMMUNICATION-VALUE-ANALYSIS.md`
 - IF.philosophy-database.yaml: Currently lacks Joe Coulombe entry (gap identified 2025-11-14)
 
+### Case Study: MCP Bridge Philosophy Patching (2025-11-14)
+
+**Validation of Philosophy-Embodied-in-Code Pattern**
+
+External repository: mcp-multiagent-bridge (724 → 857 LOC, +18%)
+
+**What Worked:**
+- ✅ **Rejected runtime philosophy parsing** - GPT-5 Pro added 173 LOC to parse philosophy database at runtime (WRONG approach violating "Do Without")
+- ✅ **Philosophy shapes code design** - Applied 4 minimal unified diffs with philosophy citations in comments explaining WHY
+- ✅ **Measurable compliance** - 9/13 criteria (69%), 14 citations, 8 philosophers (Epictetus, Locke, Vienna, Peirce, Buddha, Joe Coulombe, IF.TTT)
+- ✅ **Fixed bugs with philosophy** - 4 of 6 bugs fixed while embodying philosophical principles
+
+**4 Patches Applied:**
+1. **Bearer Tokens** (Joe Coulombe, Locke, Vienna) - Removed fake HMAC security theater (-5 LOC)
+2. **Soft-Fail Audit** (Epictetus) - Observability without fragility (+14 LOC)
+3. **Error Taxonomy** (Peirce + Buddha) - Explicit UNKNOWN states (+43 LOC)
+4. **Tamper-Evident Chain** (IF.TTT, Locke, Vienna) - Hash-linked audit log (+81 LOC)
+
+**Key Insight:** Philosophy should change CODE SHAPE (design-time decisions), not be PARSED at runtime (configuration parameters).
+
+**Deliverables:**
+- `/tmp/mcp-multiagent-bridge-patched.tar.gz` (164KB)
+- `/tmp/philosophy_compliance_report.md` (235 lines, comprehensive analysis)
+- Git commit: 0f349d4c0d95350efc4d0b766f0968e6a73ed68e
+- Copied to: `/mnt/c/users/setup/downloads/`
+
+**Citation:** if://case-study/mcp-bridge-philosophy-patching-2025-11-14
+
 ---
 
 ## Critical Projects Overview
