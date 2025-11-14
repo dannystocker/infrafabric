@@ -165,6 +165,94 @@ philosophers:
       - "IF-witness.md: Line 456 (Practical validation)"
       - "IF-vision.md: Line 405 (E pluribus unum - Civic Guardian)"
 
+  joe_coulombe:
+    name: "Joe Coulombe"
+    tradition: "American Retail Philosophy"
+    era: "1958-2001"
+    key_concept: "Constraints drive quality; reasonable strategies with tenacity outperform optimization paralysis"
+    if_components: ["IF.optimise", "IF.simplify", "Joe.Core"]
+    if_principles: ["Non-convex problem solving", "Four Curation Tests", "Do Without (HOLD Protocol)"]
+    practical_application: "Joe.Core agent monitors HOLD rate (18.2%); IF.optimise uses 'reasonable' delegation (50% cost reduction); IF.simplify applies Four Tests to component selection"
+    core_philosophies:
+      non_convex_solving:
+        principle: "Act at 70% confidence, learn remaining 30% from market feedback"
+        formula: "(Trust × Distinction × Repeatability) / Complexity"
+        if_mapping: "IF.optimise (Haiku delegation is 'reasonable' not 'optimal')"
+      four_curation_tests:
+        test_1: "High value per cubic inch → High impact per line of code (IF.simplify)"
+        test_2: "High consumption rate → Frequently used/referenced (IF.optimise token tracking)"
+        test_3: "Easy handling → Simple interfaces, clear documentation (IF.ground)"
+        test_4: "Differentiation → Unique capabilities competitors lack (IF.armour.yologuard 111% GitHub-parity)"
+        anti_pattern: "Components failing ≥2 tests deprecated (see IF.talent in ANNEX-Q)"
+      do_without_strategy:
+        trader_joes_metric: "4,000 SKUs vs 50,000 supermarket → 60× inventory turns"
+        infrafabric_metric: "18.2% HOLD rate, 63.6% SHARE rate, 18.2% ESCALATE rate (V4 Epic v3)"
+        principle: "Ability to say 'no' creates freedom to say 'yes' to exceptional items"
+      high_wages_philosophy:
+        principle: "Good people pay by their extra productivity, not by reduced headcount"
+        if_translation: "Use Sonnet for critical reasoning (expensive but prevents costly errors)"
+        decision_rule: "If error_cost > (Sonnet_cost - Haiku_cost), use Sonnet"
+        validation: "50% cost reduction via delegation, not corner-cutting ($45 → $22.80)"
+      demographic_foresight:
+        historical_prediction: "College attendance 2% (1940s) → 60% (1980s) created 'overeducated, underpaid' demographic"
+        infrafabric_application: "Target AI researchers who understand philosophy but need production tooling"
+      discontinuity_as_opportunity:
+        trader_joes_example: "Extra Large Eggs (USDA didn't grade → supply glut → competitive advantage)"
+        infrafabric_examples:
+          - "LLM hallucinations → IF.citate opportunity"
+          - "Cheap Haiku tokens underutilized → IF.optimise delegation"
+          - "No philosophy-grounded frameworks → InfraFabric fills void"
+      private_label_moat:
+        trader_joes_strategy: "80%+ private label eliminates price comparison, enables storytelling"
+        infrafabric_parallel: "IF.* namespace prevents commoditization (can't compare IF.armour.yologuard to GitHub - different guarantees)"
+      simplicity_as_moral_design:
+        manifestation:
+          - "IF.ground: 8 principles (not 80) - memorable, auditable"
+          - "IF.URI: 11 resource types (not unlimited) - constrained design"
+          - "Guardian Council: 20 voices (not 200) - tractable deliberation"
+          - "Session Handoff: 3-tier architecture (<2K → <5K → archives) - bounded context"
+      joe_core_agent_pattern:
+        role: "Process quality meta-analysis and anomaly detection"
+        behaviors:
+          - "Monitor HOLD rate (Are we curating like Trader Joe's?)"
+          - "Detect discontinuities other agents miss"
+          - "Challenge single-agent blind spots"
+        v4_epic_validation: "5 references in INTRA-AGENT-COMMUNICATION-VALUE-ANALYSIS.md"
+      merchant_philosopher_loop:
+        decision_cycle: "Observe → Hypothesize → Prototype → Sell/Deploy → Measure → Document → Iterate"
+        philosophy: "Market feedback over theoretical perfection"
+        maxim: "Profit follows fairness; exploitation leaks trust"
+    empirical_validation:
+      v4_epic_intelligence:
+        hold_rate: "18.2%"
+        share_rate: "63.6%"
+        escalate_rate: "18.2%"
+        document: "docs/evidence/INTRA-AGENT-COMMUNICATION-VALUE-ANALYSIS.md:217-239"
+      trader_joes_track_record:
+        years_operated: "50+ years (1958-present)"
+        inventory_turns: "60× vs industry 12-15×"
+        sku_count: "4,000 vs supermarket 50,000"
+        private_label_percentage: "80%+"
+    if_ttt_alignment:
+      traceable: "Product knowledge depth = IF.citate source linking"
+      transparent: "Fearless Flyer newsletter = InfraFabric documentation and citations"
+      trustworthy: "Market feedback loop (70% act, 30% learn) = falsifiable predictions"
+    paper_references:
+      - "agents.md: Lines 135-326 (Joe Coulombe Curation Philosophy section)"
+      - "docs/evidence/INTRA-AGENT-COMMUNICATION-VALUE-ANALYSIS.md (V4 Epic Intelligence - Joe.Core usage)"
+    external_sources:
+      - "Becoming Trader Joe (book): https://digital-lab.ca/books/becoming-trader-joe.md"
+      - "Acquired Podcast (Trader Joe's episode): https://digital-lab.ca/books/aquired-trader-joes.txt"
+      - "GPT-5 Pro Joe Persona Spec: https://digital-lab.ca/books/gpt5pro-joe-persona-full-spec.txt"
+    guardian_council_approval:
+      dossier: "Dossier 08"
+      date: "2025-11-14"
+      vote_tally: "19/20 APPROVE, 1 CONDITIONAL"
+      consensus: "95%"
+      citation: "if://decision/joe-coulombe-philosophy-integration-2025-11-14"
+      contrarian_caveat: "Monitor for confirmation bias in future philosophy additions"
+    gap_filled: "First retail/consumer philosophy; first organizational culture philosophy in database"
+
 if_components:
   if_chase:
     name: "IF.chase"
@@ -833,8 +921,9 @@ meta_statistics:
   tradition_distribution:
     western_philosophers: 9
     eastern_philosophers: 3
+    american_retail: 1
     if_sam_facets: 8
-    total_voices: 20
+    total_voices: 21
 
   if_components:
     total_components: 17
@@ -857,10 +946,21 @@ meta_statistics:
     publication_threshold: "75% (supermajority)"
     contrarian_veto_trigger: "95%+"
 
-version: "1.0"
-generated: "2025-11-06"
+version: "1.1"
+generated: "2025-11-14"
+changelog:
+  v1.1:
+    date: "2025-11-14"
+    changes: "Added Joe Coulombe (Trader Joe's founder) - American Retail Philosophy"
+    guardian_approval: "Dossier 08: 19/20 APPROVE (95% consensus)"
+    citation: "if://decision/joe-coulombe-philosophy-integration-2025-11-14"
+  v1.0:
+    date: "2025-11-06"
+    changes: "Initial philosophy database with 20 voices"
 source_papers:
   - "/mnt/c/users/setup/Downloads/infrafabric/papers/IF-vision.md"
   - "/mnt/c/users/setup/Downloads/infrafabric/papers/IF-foundations.md"
   - "/mnt/c/users/setup/Downloads/infrafabric/papers/IF-armour.md"
   - "/mnt/c/users/setup/Downloads/infrafabric/papers/IF-witness.md"
+  - "agents.md (Joe Coulombe section: Lines 135-326)"
+  - "docs/evidence/INTRA-AGENT-COMMUNICATION-VALUE-ANALYSIS.md (V4 Epic Intelligence validation)"
