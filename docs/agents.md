@@ -42,6 +42,86 @@ You're joining a **meta-coordination system** where one swarm coordinates other 
 
 ---
 
+## ⚡ CRITICAL: Session Handover Protocol (READ THIS FIRST!)
+
+**If you're a new orchestrator session starting work:**
+
+### Immediate Actions (< 5 minutes)
+
+1. **Read handover file:** `SESSION-HANDOVER-PROTOCOL.md` (mandatory)
+   - Current status snapshot
+   - Active work streams
+   - Deployment commands ready to execute
+   - File locations and critical paths
+
+2. **Check git status:**
+   ```bash
+   cd /home/user/infrafabric
+   git status
+   git log --oneline -10
+   ```
+
+3. **Pull latest changes:**
+   ```bash
+   git pull origin claude/debug-session-freezing-011CV2mM1FVCwsC8GoBR2aQy
+   ```
+
+4. **Read current mission:**
+   - Look for `HAIKU-SWARM-*.md` or `MISSION-*.md` files
+   - Check `INTEGRATIONS-COMPLETE-LIST.md` for roadmap context
+   - Review last commit messages for recent work
+
+### Current Mission (2025-11-14)
+
+**Active:** 20-agent Haiku swarm for hosting panel API research
+**File:** `HAIKU-SWARM-HOSTING-API-RESEARCH.md`
+**Status:** Deployment plan complete, ready to execute
+**Next Step:** Create 20 MCP conversations and deploy agents
+**Timeline:** 4 hours research + 1 hour compilation
+
+### Context Loss Prevention
+
+**Every session MUST:**
+- ✅ Update `SESSION-HANDOVER-PROTOCOL.md` before ending
+- ✅ Commit all work to git (nothing uncommitted)
+- ✅ Document blockers in handover file
+- ✅ Update this section if mission changes
+
+**If context is lost:**
+- ⚠️  Read `SESSION-HANDOVER-PROTOCOL.md` top to bottom
+- ⚠️  Check `docs/evidence/session-summaries/` for previous session logs
+- ⚠️  Look at git log for commit messages explaining recent work
+
+### Aggressive Handover Philosophy
+
+**Every file created should answer:**
+1. Why does this exist?
+2. What's the current status?
+3. What's the next action?
+4. Who should work on it next?
+5. What are the success criteria?
+
+**Every commit message should include:**
+- What was done
+- Why it was done
+- What's left to do
+- Any blockers encountered
+
+**Example good commit:**
+```
+feat(swarm): Add 20-agent Haiku deployment plan for hosting API research
+
+- Complete deployment strategy for 5 teams of 4 agents
+- IF.search x IF.swarm methodology (8-pass investigation)
+- MCP bridge coordination protocol
+- Ready to execute: see Section 5 of HAIKU-SWARM-HOSTING-API-RESEARCH.md
+
+Next: Create 20 conversations, deploy agents, collect findings after 4h
+Blockers: None
+```
+
+---
+
 ## 🏗️ Current Work: Phase 0 (BLOCKING ALL OTHER WORK)
 
 ### Why Phase 0 Is Critical
