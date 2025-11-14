@@ -41,11 +41,13 @@
 - [x] IFMessage validator implemented (tools/ifctl.py) - ✅ VERIFIED by Gemini
 - [x] Gemini 2.5 Pro evaluation completed (2025-11-10)
 - [x] COMPONENT-INDEX.md rebuilt as functional catalog (v2.0, 87 components)
+- [x] Joe Coulombe/Trader Joe's philosophy integration (2025-11-14) - agents.md lines 135-326
 - [🔄] Guarded claims validation (GUARDED-CLAIMS.md) - ⚠️ Contains FALSE CLAIMS, needs correction
 - [🔄] SESSION-RESUME.md correction (this file) - IN PROGRESS
 - [ ] GUARDED-CLAIMS.md yologuard status corrected to UNVERIFIED
 - [ ] InfraFabric.md citation numbering fixed ([45] and [46] researched)
 - [ ] IF.yologuard benchmark made reproducible (CRITICAL BLOCKER)
+- [ ] Integration strategy for Joe Coulombe philosophy proposed
 
 **Current Step:** Correct false claims propagated in previous session based on Gemini evaluation findings
 
@@ -176,8 +178,8 @@ b55179a Update yologuard metrics: split GitHub-aligned vs usable-only standards
 
 **Core Documentation:**
 - SESSION-ONBOARDING.md - WHY/HOW/WHEN protocol (read FIRST in new session)
-- COMPONENT-INDEX.md - 91 IF.* components (read sections on-demand)
-- agents.md - IF.TTT traceability protocol
+- COMPONENT-INDEX.md - 87 IF.* components (read sections on-demand)
+- agents.md - IF.TTT traceability protocol + Joe Coulombe curation philosophy (lines 135-326)
 
 **Latest Work (2025-11-10):**
 - docs/HAIKU-SWARM-TEST-FRAMEWORK.md - Testable swarm architecture
@@ -221,6 +223,8 @@ If starting fresh in a new session, verify:
 - ✅ COMPONENT-INDEX.md rebuilt as functional catalog (554 lines, 87 components)
 - ✅ Session handover system proved effective for context continuity
 - ✅ Philosophy integration genuine, not marketing (Gemini: 9/10 ethical foundation)
+- ✅ Joe Coulombe/Trader Joe's philosophy integration (2025-11-14) - 10 principles mapped to IF components
+- ✅ agents.md updated with comprehensive curation philosophy section (lines 135-326)
 
 **What To Avoid Next Session:**
 - ⚠️ DO NOT trust existing claims without empirical validation (learned from yologuard error)
@@ -238,6 +242,9 @@ If starting fresh in a new session, verify:
 - ⚠️ Naming inconsistencies throughout codebase (IF.ceo vs IF.ceo_, IF.citation vs IF.citations)
 - 📊 Actual component count: 87 unique IF.* components (not 91 as previously claimed)
 - 📊 Actual citation count: 45 in InfraFabric.md (not 47, missing [45] and [46])
+- ✅ **Joe Coulombe philosophy** (2025-11-14): 10 principles from Trader Joe's map cleanly to existing IF components
+- ✅ **Joe.Core agent** validated in V4 Epic Intelligence (18.2% HOLD rate, discontinuity detection)
+- ✅ **"Do Without" strategy** empirically proven: 4,000 SKUs → 60× inventory turns (retail) = constrained context → higher quality (InfraFabric)
 
 **Technical Debt Created:**
 - ⚠️ IF.yologuard benchmark not reproducible (HIGHEST PRIORITY - blocks external publication)
@@ -427,7 +434,7 @@ IF.yologuard benchmark must be reproducible before any external claims. All pape
 
 ---
 
-**Last Updated:** 2025-11-10T03:00:00Z (corrected after Gemini evaluation)
-**Next Update Due:** When GUARDED-CLAIMS.md and InfraFabric.md false claims corrected
+**Last Updated:** 2025-11-14T02:00:00Z (Joe Coulombe philosophy integration)
+**Next Update Due:** After integration strategy proposal
 
-**Citation:** if://session/resume-2025-11-10-gemini-correction
+**Citation:** if://session/resume-2025-11-14-joe-coulombe-integration

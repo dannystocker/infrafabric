@@ -123,7 +123,7 @@
 **Core Documentation:**
 - SESSION-ONBOARDING.md - How to onboard efficiently
 - COMPONENT-INDEX.md - Component catalog (read sections on-demand)
-- agents.md - Agent traceability protocol
+- agents.md - Agent traceability protocol + Joe Coulombe curation philosophy (lines 135-326)
 
 **Domain-Specific:**
 - [Link to specific paper section if critical to current task]
