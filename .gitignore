@@ -21,3 +21,6 @@ code/yologuard/benchmarks/leaky_repo_v3_fast_v2_results.txt
 # OS/editor noise
 .DS_Store
 Thumbs.db
+
+# External dependencies (cloned repos)
+mcp-multiagent-bridge/
