@@ -7,5 +7,6 @@ Status: Phase 0 Development
 """
 
 from infrafabric.chassis.runtime import IFChassis, ServiceContract
+from infrafabric.chassis.limits import ResourceEnforcer, ResourceLimits, TokenBucket
 
-__all__ = ['IFChassis', 'ServiceContract']
+__all__ = ['IFChassis', 'ServiceContract', 'ResourceEnforcer', 'ResourceLimits', 'TokenBucket']
