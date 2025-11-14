@@ -225,12 +225,14 @@ If starting fresh in a new session, verify:
 - ✅ Philosophy integration genuine, not marketing (Gemini: 9/10 ethical foundation)
 - ✅ Joe Coulombe/Trader Joe's philosophy integration (2025-11-14) - 10 principles mapped to IF components
 - ✅ agents.md updated with comprehensive curation philosophy section (lines 135-326)
-- ✅ **MCP Bridge Philosophy Patching (2025-11-14)** - 4 patches applied demonstrating philosophy-embodied-in-code
-  - Fixed 4 of 6 bugs (bearer tokens, soft-fail audit, error taxonomy, tamper-evident chain)
-  - 9/13 philosophy compliance criteria met (69%)
-  - 14 philosophy citations in code (8 philosophers: Epictetus, Locke, Vienna, Peirce, Buddha, Joe Coulombe, IF.TTT)
+- ✅ **MCP Bridge Philosophy Patching (2025-11-14)** - All 7 patches applied demonstrating philosophy-embodied-in-code ✅
+  - **Patches 1-4:** Fixed 4 of 6 bugs → 69% compliance (bearer tokens, soft-fail audit, error taxonomy, tamper-evident chain)
+  - **Patches 5-7:** Fixed 6 of 6 bugs → 92% compliance ✅ (Ed25519, FIPA-ACL, Lamport clocks + feature flags)
+  - 12/13 philosophy compliance criteria met (only Vienna partial - Ed25519 optional by default)
+  - 25+ philosophy citations in code (12 philosophers: Epictetus, Locke, Vienna, Peirce, Buddha, Joe Coulombe, Duhem, Quine, Popper, Lao Tzu, James, IF.TTT)
   - Rejected GPT-5 Pro's 173-line runtime philosophy parser (violated "Do Without")
-  - Philosophy shapes CODE DESIGN, not runtime configuration (key insight)
+  - **Key Validated Insight:** Philosophy shapes CODE DESIGN, not runtime configuration
+  - **Production Ready:** Deploy with ENFORCE_ED25519=1 for 13/13 compliance
 
 **What To Avoid Next Session:**
 - ⚠️ DO NOT trust existing claims without empirical validation (learned from yologuard error)
@@ -322,10 +324,16 @@ Read SESSION-RESUME.md (this file), then continue fixing false claims:
 - GEMINI-EVALUATION-PROMPT.md - Updated from Nov 9 version with component scan validation
 
 **External Repository Work (2025-11-14):**
-- `/tmp/mcp-multiagent-bridge-main/agent_bridge_secure.py` - Applied 4 philosophy patches (724 → 857 LOC)
-- `/tmp/philosophy_compliance_report.md` - Comprehensive analysis (235 lines, 9/13 compliance)
-- `/mnt/c/users/setup/downloads/mcp-multiagent-bridge-patched.tar.gz` - Final deliverable (164KB)
-- Git commit: 0f349d4c0d95350efc4d0b766f0968e6a73ed68e
+- `/tmp/mcp-multiagent-bridge-main/` - Applied all 7 philosophy patches (724 → 1,065 LOC)
+  - Patches 1-4: Bearer tokens, soft-fail audit, error taxonomy, tamper-evident chain (857 LOC, 69% compliance)
+  - Patches 5-7: Ed25519 auth, FIPA-ACL, Lamport clocks + flags (1,065 LOC, 92% compliance)
+- `/tmp/philosophy_compliance_report.md` - v1.0 analysis (235 lines, Patches 1-4)
+- `/tmp/philosophy_compliance_report_v2.md` - v2.0 analysis (13KB, Patches 1-7, 12/13 compliance ✅)
+- `/mnt/c/users/setup/downloads/mcp-multiagent-bridge-patched.tar.gz` - v1 deliverable (164KB, Patches 1-4)
+- `/mnt/c/users/setup/downloads/mcp-multiagent-bridge-patched-v2.tar.gz` - v2 deliverable (185KB, all 7 patches)
+- Git commits:
+  - 0f349d4c: Patches 1-4 (4 of 6 bugs fixed)
+  - 040992f: Patches 5-7 (6 of 6 bugs fixed ✅)
 
 **Git Commits:**
 - c6c24f0 - "Add session handover system with IF.TTT traceability framework"
