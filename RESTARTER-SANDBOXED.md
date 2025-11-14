@@ -62,8 +62,13 @@ Note these fields:
 - Repository: Which repo (infrafabric or navidocs)
 - Mission File: Detailed instructions (if NaviDocs)
 
-STEP 5: Execute based on your assignment
+STEP 5: DEPLOY YOUR HAIKU SWARM IMMEDIATELY
 ===========================================
+
+⚠️⚠️⚠️ CRITICAL: YOU MUST USE THE TASK TOOL TO SPAWN HAIKU AGENTS ⚠️⚠️⚠️
+
+DO NOT just read the assignment. DO NOT wait. DO NOT ask for permission.
+YOU MUST DEPLOY AGENTS RIGHT NOW using the Task tool.
 
 ### If you claimed Cloud Provider APIs (Session 2):
 
@@ -71,22 +76,73 @@ Research Scope: AWS, GCP, Azure, DigitalOcean, Linode, Vultr, Hetzner, S3-compat
 Agents: 10 Haiku (Haiku-21 to Haiku-30)
 Output: INTEGRATIONS-CLOUD-PROVIDERS.md
 
-ACTION: Deploy 10 Haiku agents NOW using Task tool:
-- Each agent researches ONE cloud provider API
-- Use IF.search 8-pass methodology
-- Write comprehensive report for each API
-- Combine all reports into INTEGRATIONS-CLOUD-PROVIDERS.md
-- Use model: haiku for cost efficiency
-- Deploy them ALL IN PARALLEL
+🚀 DEPLOY 10 HAIKU AGENTS NOW - COPY AND PASTE THIS:
 
-Example Task call:
-Task tool with:
-- description: "Research AWS APIs (EC2, S3, Lambda)"
+USE THE TASK TOOL 10 TIMES IN PARALLEL (one message, 10 tool calls):
+
+Task #1: Research AWS APIs
+- description: "Research AWS cloud APIs"
 - model: "haiku"
 - subagent_type: "general-purpose"
-- prompt: "Research AWS cloud APIs using IF.search 8-pass methodology. Cover EC2, S3, Lambda, CloudFront, Route53. Provide integration complexity, cost analysis, implementation timeline. Output 2000+ lines."
+- prompt: "You are Haiku-21 researching AWS cloud APIs for InfraFabric integration. Use IF.search 8-pass methodology: 1) Signal Capture (scan AWS docs), 2) Primary Analysis (EC2, S3, Lambda, CloudFront, Route53), 3) Rigor & Refinement (edge cases, limits), 4) Cross-Domain (cost, security), 5) Framework Mapping (how it fits InfraFabric), 6) Specification (implementation steps), 7) Meta-Validation (cite sources), 8) Deployment Planning (timeline estimate). Output: 2500+ lines with integration complexity (1-10), cost model, security considerations, 8+ test scenarios. Format: Markdown with ## headers for each pass."
 
-Repeat for all 10 cloud providers.
+Task #2: Research GCP APIs
+- description: "Research GCP cloud APIs"
+- model: "haiku"
+- subagent_type: "general-purpose"
+- prompt: "You are Haiku-22 researching Google Cloud Platform APIs. Same 8-pass IF.search methodology. Cover: Compute Engine, Cloud Storage, Cloud Functions, Cloud CDN, Cloud DNS. Output 2500+ lines. Focus on GCP-specific features vs AWS."
+
+Task #3: Research Azure APIs
+- description: "Research Azure cloud APIs"
+- model: "haiku"
+- subagent_type: "general-purpose"
+- prompt: "You are Haiku-23 researching Microsoft Azure APIs. Same 8-pass methodology. Cover: Virtual Machines, Blob Storage, Azure Functions, Azure CDN, Azure DNS. Output 2500+ lines. Include enterprise integration features."
+
+Task #4: Research DigitalOcean APIs
+- description: "Research DigitalOcean APIs"
+- model: "haiku"
+- subagent_type: "general-purpose"
+- prompt: "You are Haiku-24 researching DigitalOcean APIs. Same 8-pass methodology. Cover: Droplets, Spaces, Functions, CDN. Output 2500+ lines. Emphasize developer-friendly simplicity vs enterprise providers."
+
+Task #5: Research Linode APIs
+- description: "Research Linode cloud APIs"
+- model: "haiku"
+- subagent_type: "general-purpose"
+- prompt: "You are Haiku-25 researching Linode cloud APIs. Same 8-pass methodology. Cover: Instances, Object Storage, NodeBalancers. Output 2000+ lines. Compare pricing to major providers."
+
+Task #6: Research Vultr APIs
+- description: "Research Vultr cloud APIs"
+- model: "haiku"
+- subagent_type: "general-purpose"
+- prompt: "You are Haiku-26 researching Vultr cloud APIs. Same 8-pass methodology. Cover: Instances, Object Storage, Load Balancers. Output 2000+ lines. Focus on global presence and bare metal options."
+
+Task #7: Research Hetzner APIs
+- description: "Research Hetzner cloud APIs"
+- model: "haiku"
+- subagent_type: "general-purpose"
+- prompt: "You are Haiku-27 researching Hetzner Cloud APIs. Same 8-pass methodology. Cover: Cloud Servers, Object Storage, Load Balancers. Output 2000+ lines. Emphasize EU data residency and cost efficiency."
+
+Task #8: Research S3-Compatible APIs
+- description: "Research S3-compatible storage APIs"
+- model: "haiku"
+- subagent_type: "general-purpose"
+- prompt: "You are Haiku-28 researching S3-compatible storage APIs. Same 8-pass methodology. Cover: MinIO, Wasabi, Backblaze B2, Cloudflare R2. Output 2500+ lines. Focus on S3 API compatibility and migration path."
+
+Task #9: Research CDN APIs
+- description: "Research CDN provider APIs"
+- model: "haiku"
+- subagent_type: "general-purpose"
+- prompt: "You are Haiku-29 researching CDN APIs. Same 8-pass methodology. Cover: Cloudflare, Fastly, KeyCDN, BunnyCDN. Output 2500+ lines. Focus on edge computing, caching strategies, and global performance."
+
+Task #10: Synthesize Cloud Research
+- description: "Synthesize cloud provider research"
+- model: "haiku"
+- subagent_type: "general-purpose"
+- prompt: "You are Haiku-30 synthesizing cloud provider research. Wait for Haiku-21 to 29 to complete. Then: 1) Aggregate all findings into INTEGRATIONS-CLOUD-PROVIDERS.md, 2) Create comparison table (features, pricing, complexity), 3) Recommend implementation priority (Phase 1/2/3), 4) Estimate total implementation hours, 5) Identify common patterns across providers. Output: Master integration document 3000+ lines."
+
+⚠️ DEPLOY ALL 10 AGENTS IN ONE MESSAGE (parallel execution, not sequential!)
+
+After deploying, you should see agent activity within 2-3 minutes.
 
 ### If you claimed SIP/Communication APIs (Session 3):
 
@@ -94,9 +150,21 @@ Research Scope: Twilio, SendGrid, Mailgun, Postmark, Vonage, Plivo, Bandwidth, M
 Agents: 10 Haiku (Haiku-31 to Haiku-40)
 Output: INTEGRATIONS-SIP-COMMUNICATION.md
 
-ACTION: Deploy 10 Haiku agents NOW
-- Same pattern as Cloud APIs above
-- Each agent = one communication API
+🚀 DEPLOY 10 HAIKU AGENTS NOW - USE TASK TOOL 10 TIMES:
+
+Each agent researches ONE communication API using same IF.search 8-pass methodology:
+- Haiku-31: Twilio (Voice, SMS, Video APIs)
+- Haiku-32: SendGrid (Email delivery API)
+- Haiku-33: Mailgun (Email API, webhooks)
+- Haiku-34: Postmark (Transactional email)
+- Haiku-35: Nexmo/Vonage (SMS, Voice, Video)
+- Haiku-36: Plivo (Voice, SMS APIs)
+- Haiku-37: Bandwidth (Voice, Messaging)
+- Haiku-38: MessageBird (SMS, Voice, WhatsApp)
+- Haiku-39: Slack (Webhooks, Bot API, Events API)
+- Haiku-40: Discord (Webhooks, Bot API) + Synthesis
+
+Same pattern as Cloud APIs - deploy ALL 10 in parallel, each outputs 2000+ lines.
 
 ### If you claimed Payment/Billing APIs (Session 4):
 
@@ -104,9 +172,21 @@ Research Scope: Stripe, PayPal, WHMCS, Blesta, FOSSBilling, Chargebee, Recurly, 
 Agents: 10 Haiku (Haiku-41 to Haiku-50)
 Output: INTEGRATIONS-PAYMENT-BILLING.md
 
-ACTION: Deploy 10 Haiku agents NOW
-- Same pattern as above
-- Each agent = one payment API
+🚀 DEPLOY 10 HAIKU AGENTS NOW - USE TASK TOOL 10 TIMES:
+
+Each agent researches ONE payment API using same IF.search 8-pass methodology:
+- Haiku-41: Stripe (Payments, Subscriptions, Connect)
+- Haiku-42: PayPal (Checkout, Subscriptions, Payouts)
+- Haiku-43: WHMCS (Hosting billing, automation)
+- Haiku-44: Blesta (Billing automation, modules)
+- Haiku-45: FOSSBilling (Open-source billing)
+- Haiku-46: Chargebee (Subscription management)
+- Haiku-47: Recurly (Recurring billing platform)
+- Haiku-48: Braintree (Payment processing, vault)
+- Haiku-49: Authorize.net (Payment gateway)
+- Haiku-50: Paddle (SaaS billing) + Synthesis
+
+Deploy ALL 10 in parallel using Task tool.
 
 ### If you claimed NaviDocs Backend/Frontend/Integration/Planner:
 
@@ -114,7 +194,9 @@ Repository: dannystocker/navidocs (NOT infrafabric!)
 
 SWITCH REPOSITORIES FIRST:
 cd /home/user
-git clone https://github.com/dannystocker/navidocs.git navidocs
+if [ ! -d "navidocs" ]; then
+  git clone https://github.com/dannystocker/navidocs.git navidocs
+fi
 cd navidocs
 git checkout navidocs-cloud-coordination
 git pull origin navidocs-cloud-coordination
@@ -125,7 +207,23 @@ READ YOUR MISSION FILE:
 - Integration: cat S2_MISSION_3_INTEGRATION_SWARM.md
 - Planner: cat S2_MISSION_4_SONNET_PLANNER.md
 
-THEN: Deploy agents per mission file instructions
+🚀 DEPLOY AGENTS NOW - USE TASK TOOL:
+
+Backend: Deploy 10 Haiku agents (Haiku-51 to 60) per mission file
+- Each agent implements a backend component (API routes, database, auth, etc.)
+- Deploy ALL 10 in parallel
+
+Frontend: Deploy 10 Haiku agents (Haiku-61 to 70) per mission file
+- Each agent builds a frontend component (dashboard, components, routing)
+- Deploy ALL 10 in parallel
+
+Integration: Deploy 10 Haiku agents (Haiku-71 to 80) per mission file
+- Each agent handles integration testing and deployment
+- Deploy ALL 10 in parallel
+
+Planner: Deploy 1 Sonnet agent for coordination
+- Use model: "sonnet" (NOT haiku for this one)
+- Coordinates all 30 Haiku agents across Backend/Frontend/Integration
 
 STEP 6: Update status when work starts
 ===========================================
