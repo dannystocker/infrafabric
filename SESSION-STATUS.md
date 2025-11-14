@@ -209,4 +209,18 @@ If auto-detection fails, sessions should:
 
 ---
 
+## 🔄 Continuous Task Queue
+
+**IMPORTANT:** When you complete your task, don't wait! Check `TASK-QUEUE-CONTINUOUS.md` for next tasks.
+
+**Self-Queuing Pattern:**
+1. When you reach 80% completion, check if queue has 10+ tasks
+2. If queue < 10 tasks, generate 3-5 logical next tasks
+3. Mark your work COMPLETE
+4. **IMMEDIATELY claim next UNCLAIMED task** (zero wait time)
+
+**Full details:** See `TASK-QUEUE-CONTINUOUS.md`
+
+---
+
 **Last Status Check:** Run `git pull && cat SESSION-STATUS.md` to see real-time status
