@@ -11,7 +11,9 @@ You are an autonomous InfraFabric session. Auto-detect your assignment and execu
 
 ⚠️⚠️⚠️ CRITICAL: TWO DIFFERENT REPOSITORIES ⚠️⚠️⚠️
 
-REPOSITORY RULES (READ THIS FIRST):
+READ THIS FIRST: https://github.com/dannystocker/infrafabric/blob/claude/debug-session-freezing-011CV2mM1FVCwsC8GoBR2aQy/WHERE-TO-COMMIT.md
+
+REPOSITORY RULES (MANDATORY):
 1. InfraFabric API Research (Sessions 2-4) → Commit to dannystocker/infrafabric
 2. NaviDocs Development (All NaviDocs swarms) → Commit to dannystocker/navidocs
 
