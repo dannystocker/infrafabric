@@ -1,0 +1,11 @@
+Version,Confidence,Coverage,Time_Minutes,Cost_USD,Domains,Notes
+V1,87%,10%,2880,1600.00,Manual research (all domains),Manual baseline - human analyst
+V2,68%,13%,45,0.15,8-pass validation (all domains),"IF.swarm validation - ""disappointing"" shallow coverage"
+V3,72%,72%,70,0.48,5 specialized swarms (Legal/Financial/Technical/Cultural/Talent),IF.subjectmap entity mapping breakthrough
+V3.1,72%,80%,90,0.56,5 specialized swarms + Gemini/GPT-5 review,AI feedback iteration (external validation)
+V3.2_Speed_Demon,75%,68%,25,0.05,Financial/Technical/Legal (Cultural/Talent skipped),Haiku-only fast mode - 10x speed & cost savings
+V3.2_Evidence_Builder,90%,92%,85,0.58,Legal 60% / Financial 25% / Technical 15%,Compliance-grade citations - judges/lawyers/regulators
+V3.2_Money_Mover,75%,80%,50,0.32,Financial 55% / Talent 30% / Technical 15%,Cache reuse - hedge funds/PE/M&A advisors
+V3.2_Tech_Deep_Diver,88%,90%,75,0.58,Technical 75% / Legal 20% / Financial 5%,Peer-reviewed sources - pharma R&D/hospital CMOs
+V3.2_People_Whisperer,72%,77%,55,0.40,Talent 65% / Financial 25% / Cultural 10%,IF.talent methodology - VCs/sports GMs/admissions
+V3.2_Narrative_Builder,78%,82%,70,0.50,Cultural 50% / Legal 30% / Financial 20%,IF.arbitrate cross-domain - journalists/policy analysts
