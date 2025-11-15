@@ -1099,13 +1099,36 @@ Return JSON array with all extracted data.
 - Québec: 555 (8.5%)
 - Rivière-du-Loup: 436 (6.6%)
 
-### Next Actions (GGQ-CRM)
-1. ✅ Color mappings confirmed
-2. ✅ Split ICS files by date (Jan 1 2024 cutoff)
-3. ✅ Calendar parsing via GPT-5 Pro (100% success)
-4. ✅ Merge results + build SuiteCRM import
-5. ⏭️ User completes offline setup during train travel (OFFLINE-WORK-GUIDE.md)
-6. ⏭️ Build sync engine implementation (after user verifies import)
+### Production Import Status (2025-11-15)
+**✅ COMPLETED:**
+- 23,581 records imported to https://digital-lab.ca/ggq/crm
+  - 6,561 Accounts
+  - 11,091 Contacts (linked via accounts_contacts)
+  - 2,975 Calls
+  - 2,952 Notes
+  - 2 Tasks
+- Users created: Marc Gauvran (59d9811f-c1e7-11f0-bd57-e4434b5f9a43), André Gagnon (59d98f50-c1e7-11f0-bd57-e4434b5f9a43)
+- Data merged: 1,508 business DB + 730 Rivière-du-Loup + 9,094 calendar entries
+
+**❌ CRITICAL BLOCKERS:**
+- **P0:** Timeline visibility - Marc needs to see Calls/Notes in Account subpanels (verify parent_type relationships)
+- **P0:** Email addresses NOT imported (0 in email_addresses table - add_email_address() function not called properly)
+- **P1:** Custom fields missing (calendar_uid_c, source_c, quality_c, region_c, etc. - all in description field instead)
+- **P2:** Bidirectional sync engine NOT built (André still using Google Calendar only - 40-60 hours dev needed)
+- **P3:** Calendar AI parsing NOT run (needs ANTHROPIC_API_KEY)
+
+**📋 NEXT SESSION PRIORITY:**
+1. Fix timeline visibility (30 min) - verify parent_type='Accounts' in calls/notes tables
+2. Import email addresses (1 hour) - debug add_email_address() execution
+3. Create 7 custom fields via SuiteCRM UI (2 hours) - then re-import to populate them
+4. Verify Marc can see full client history in SuiteCRM UI
+5. Build sync engine (40-60 hours) - see BIDIRECTIONAL-SYNC-ARCHITECTURE.md
+
+**🔗 Key Documents:**
+- `/home/setup/ggq-crm/SESSION-HANDOVER.md` - Complete session handover with credentials, testing checklist
+- `/home/setup/ggq-crm/docs/BIDIRECTIONAL-SYNC-ARCHITECTURE.md` (758 lines) - Full sync design (not built)
+- `/home/setup/ggq-crm/docs/CALENDAR-COLOR-MAPPINGS.md` - Marc/André color → stage mappings
+- `/home/setup/ggq-crm/import_production.py` - Production import script (23,581 records imported)
 
 ---
 
