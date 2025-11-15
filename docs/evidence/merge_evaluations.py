@@ -11,9 +11,43 @@ from typing import Dict, List, Any
 from collections import defaultdict
 
 def load_evaluation(filepath: Path) -> Dict:
-    """Load a YAML evaluation file."""
+    """Load a YAML evaluation file and normalize structure."""
     with open(filepath) as f:
-        return yaml.safe_load(f)
+        data = yaml.safe_load(f)
+
+    # Normalize Gemini's format to match the standard schema
+    if 'evaluation_summary' in data and 'evaluator' not in data:
+        # Gemini uses evaluation_summary wrapper
+        normalized = {
+            'evaluator': data['evaluation_summary'].get('evaluator', 'Unknown'),
+            'evaluation_date': data['evaluation_summary'].get('evaluation_date', ''),
+            'repository': data['evaluation_summary'].get('repository', ''),
+            'commit_hash': '',
+            'executive_summary': {
+                'overall_score': 0,  # Gemini doesn't provide numeric scores in this format
+                'one_liner': data['evaluation_summary'].get('summary', '').split('\n')[0],
+                'key_strength': 'See evaluation_summary',
+                'key_weakness': 'See evaluation_summary',
+                'buyer_fit': 'See evaluation_summary',
+                'recommended_action': 'See evaluation_summary'
+            },
+            'conceptual_quality': {
+                'substance_score': 0,
+                'novelty_score': 0,
+                'rigor_score': 0,
+                'coherence_score': 0,
+                'findings': []
+            },
+            'technical_implementation': data.get('technical_implementation', {}),
+            'market_analysis': data.get('market_analysis', {}),
+            'gaps_and_issues': data.get('gaps_and_issues', {}),
+            'style_assessment': data.get('style_assessment', {}),
+            '_original_format': 'gemini',
+            '_original_data': data
+        }
+        return normalized
+
+    return data
 
 def compare_scores(evals: List[Dict]) -> Dict:
     """Compare numeric scores across evaluators."""
@@ -23,27 +57,36 @@ def compare_scores(evals: List[Dict]) -> Dict:
         evaluator = eval_data['evaluator']
 
         # Executive summary
-        scores['overall_score'].append({
-            'evaluator': evaluator,
-            'value': eval_data['executive_summary']['overall_score']
-        })
+        overall = eval_data.get('executive_summary', {}).get('overall_score')
+        if overall is not None and overall > 0:  # Skip 0 scores from Gemini normalization
+            scores['overall_score'].append({
+                'evaluator': evaluator,
+                'value': overall
+            })
 
         # Conceptual quality
         for key in ['substance_score', 'novelty_score', 'rigor_score', 'coherence_score']:
-            scores[key].append({
-                'evaluator': evaluator,
-                'value': eval_data['conceptual_quality'][key]
-            })
+            value = eval_data.get('conceptual_quality', {}).get(key)
+            if value is not None and value > 0:
+                scores[key].append({
+                    'evaluator': evaluator,
+                    'value': value
+                })
 
         # Technical implementation
-        scores['code_quality_score'].append({
-            'evaluator': evaluator,
-            'value': eval_data['technical_implementation']['code_quality_score']
-        })
-        scores['test_coverage'].append({
-            'evaluator': evaluator,
-            'value': eval_data['technical_implementation']['test_coverage']
-        })
+        code_quality = eval_data.get('technical_implementation', {}).get('code_quality_score')
+        if code_quality is not None and code_quality > 0:
+            scores['code_quality_score'].append({
+                'evaluator': evaluator,
+                'value': code_quality
+            })
+
+        test_cov = eval_data.get('technical_implementation', {}).get('test_coverage')
+        if test_cov is not None and test_cov > 0:
+            scores['test_coverage'].append({
+                'evaluator': evaluator,
+                'value': test_cov
+            })
 
     return scores
 
@@ -78,12 +121,17 @@ def merge_if_components(evals: List[Dict]) -> Dict:
 
     for eval_data in evals:
         evaluator = eval_data['evaluator']
-        components = eval_data['technical_implementation']['if_components']
+        tech_impl = eval_data.get('technical_implementation', {})
+        components = tech_impl.get('if_components', {})
+
+        # Skip if no IF components data
+        if not components:
+            continue
 
         # Process each category
         for category in ['implemented', 'partial', 'vaporware']:
             for component in components.get(category, []):
-                name = component['name']
+                name = component.get('name', 'Unknown')
 
                 if name not in merged[category]:
                     merged[category][name] = {

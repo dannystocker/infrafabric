@@ -1,0 +1,236 @@
+evaluator: GPT-5.1
+evaluation_date: '2025-11-15'
+repository: 'local snapshot of github.com/dannystocker/infrafabric'
+commit_hash: '<unknown-from-zip>'
+
+executive_summary:
+  overall_score: 6.2
+  one_liner: "Research-heavy AI governance and multi-LLM framework with almost no in-repo production code."
+  key_strength: "Deep, coherent conceptual architecture with unusually strong philosophical grounding and an embedded evaluation framework."
+  key_weakness: "Very little executable InfraFabric implementation in this repo; almost entirely documentation and design."
+  buyer_fit: "Academic AI-safety/governance labs (8/10 fit, 3/10 willingness to pay), enterprise AI governance teams (6/10 fit, 6/10 willingness to pay if implementation exists)."
+  recommended_action: "Ship a minimal reference stack for a small set of IF.* components and add tests/CI, using the embedded evaluation system to drive a short, focused hardening sprint."
+
+conceptual_quality:
+  substance_score: 8
+  novelty_score: 8
+  rigor_score: 7
+  coherence_score: 8
+  findings:
+    - text: "InfraFabric offers a dense, well-structured conceptual architecture for multi-LLM governance, spanning IF.vision, IF.foundations, IF.armour, and IF.witness, plus a comprehensive Dossier."
+      file: "INFRAFABRIC-COMPLETE-DOSSIER-v11.md"
+      evidence: "Cross-references between Dossier, IF.* papers, and annexes show consistent terminology and layered design."
+      severity: "info"
+    - text: "A curated philosophy database (13 philosophers, 29 example queries) grounds governance decisions in explicit epistemic and ethical traditions."
+      file: "philosophy/IF.philosophy-database.yaml"
+      evidence: "Each philosopher entry includes traditions and tags that are referenced from the IF.* texts and example query file."
+      severity: "info"
+    - text: "Some sections repeat similar explanations across Dossier, papers, and annexes, increasing cognitive load without adding new constraints or algorithms."
+      file: "annexes/INFRAFABRIC-SOURCE-INDEX-AND-COMPONENT-STATUS.md"
+      evidence: "Concepts like IF.guard councils and IF.yologuard are described in multiple places with overlapping prose."
+      severity: "low"
+
+technical_implementation:
+  code_quality_score: 3
+  test_coverage: 0
+  documentation_ratio: 0.987
+  if_components:
+    implemented:
+      - name: "InfraFabric evaluation merger"
+        files:
+          - "docs/evidence/merge_evaluations.py"
+        completeness: 80
+        test_coverage: 0
+        issues:
+          - "No automated tests or CI coverage for the merger script."
+          - "Assumes a fixed schema; no validation or graceful handling of schema drift."
+      - name: "IF.philosophy data layer"
+        files:
+          - "philosophy/IF.philosophy-database.yaml"
+          - "philosophy/IF.philosophy-queries.md"
+        completeness: 70
+        test_coverage: 0
+        issues:
+          - "No packaged loader or library—usage is shown only via README snippets."
+          - "No validation of schema for philosophy entries."
+    partial:
+      - name: "IF.guard"
+        design_file: "IF-armour.md"
+        implementation_file: null
+        blockers:
+          - "No reference implementation of guard council logic in this repo."
+          - "No explicit threat model translated into testable invariants."
+        priority: "P0"
+      - name: "IF.citate"
+        design_file: "INFRAFABRIC-COMPLETE-DOSSIER-v11.md"
+        implementation_file: null
+        blockers:
+          - "Citation governance is specified conceptually but not exposed as a tool or API."
+          - "No integration with link checking or DOI metadata."
+        priority: "P1"
+      - name: "IF.yologuard"
+        design_file: "IF-armour.md"
+        implementation_file: null
+        blockers:
+          - "Static analysis and doc-marker-aware scanning are described but not implemented here."
+          - "No test corpus or benchmark for detection quality."
+        priority: "P0"
+    vaporware:
+      - name: "IF.swarm"
+        description: "Multi-agent coordination fabric mentioned in Dossier and papers but without a concrete specification or code in this repo."
+        reason: "Appears only in conceptual text; no API, schema, or prototype present."
+      - name: "IF.sam"
+        description: "Scenario-aware mediator referenced in design text but without an implementation or machine-readable spec."
+        reason: "Only appears as a named concept; not backed by code here."
+  dependencies:
+    - name: "PyYAML"
+      used_by:
+        - "docs/evidence/merge_evaluations.py"
+      status: "required at runtime for evaluation merging"
+      risk: "low"
+  security_issues: []
+  citation_verification:
+    papers_reviewed: 9
+    total_citations: 51
+    citations_verified: 0
+    issues:
+      - severity: "medium"
+        issue: "Citation and link-health verification system is specified in docs but not recorded as executed for this snapshot."
+        file: "docs/evidence/EVALUATION_FILES_SUMMARY.md"
+        fix: "Run the multi-evaluator citation and README checks end-to-end, and commit the resulting audit report."
+    readme_audit:
+      accuracy_score: 7
+      links_checked: 5
+      broken_links: 0
+      install_instructions_current: false
+      examples_current: true
+      issues:
+        - severity: "medium"
+          issue: "README explains philosophy DB and conceptual goals but does not provide an infra-level quickstart or deployment guide."
+          fix: "Add a minimal 'InfraFabric in 60 minutes' section with concrete commands and expected outputs."
+        - severity: "low"
+          issue: "It is not always clear which IF.* components are implemented in this repo versus described conceptually or implemented elsewhere."
+          fix: "Add a short 'Implementation status' table listing each IF.* component and its code location or status."
+
+market_analysis:
+  tam_estimate: "Tens to low hundreds of millions of dollars annually across AI governance tooling, internal policy enforcement, and AI safety research support, assuming a mature implementation."
+  buyer_personas:
+    - rank: 1
+      name: "Academic AI safety / governance research labs"
+      fit_score: 9
+      willingness_to_pay: 3
+      rationale: "Very strong fit with their research agendas and citation culture, but budgets tend to favor grants and collaboration over software licensing."
+    - rank: 2
+      name: "Enterprise AI governance and compliance teams"
+      fit_score: 7
+      willingness_to_pay: 6
+      rationale: "Clear need for policy enforcement and traceable AI behavior; InfraFabric ideas are compelling if backed by a hardened reference implementation."
+    - rank: 3
+      name: "LLM platform / infra vendors"
+      fit_score: 5
+      willingness_to_pay: 5
+      rationale: "Could adopt patterns like multi-LLM orchestration and evaluation, but would likely integrate concepts into existing products rather than buying InfraFabric as-is."
+  competitors:
+    - name: "LangSmith (LangChain)"
+      overlap: "Agent tracing, run metadata, debugging and evaluation of LLM applications."
+      differentiation: "InfraFabric emphasizes epistemic governance, philosophy-backed design, and multi-LLM coordination rather than just tracing and metrics."
+    - name: "Weights & Biases"
+      overlap: "Experiment tracking and model evaluation infrastructure."
+      differentiation: "InfraFabric focuses on agentic systems and AI governance layers, not primarily on model training experiments."
+    - name: "Humanloop / other LLMops tools"
+      overlap: "Prompt and evaluation management for LLM applications."
+      differentiation: "InfraFabric frames evaluation as part of a broader governance fabric with philosophy and organizational design built in."
+  monetization_paths:
+    - strategy: "Open-core reference implementation plus governance SaaS"
+      viability: 7
+      timeline: "12–18 months, contingent on shipping a minimal IF.* reference stack and securing a few design partners."
+    - strategy: "Consulting and custom InfraFabric implementations for safety-conscious organizations"
+      viability: 8
+      timeline: "Immediate; relies on expertise rather than polished product."
+
+gaps_and_issues:
+  p0_blockers:
+    - issue: "Core IF.* components such as IF.guard, IF.yologuard, and IF.citate lack in-repo implementations."
+      impact: "The repo cannot be used as a standalone product; users cannot run or test most of the architecture described in the documentation."
+      effort: "Several weeks to months to build even minimal, well-tested implementations of a subset of components."
+      files:
+        - "IF-armour.md"
+        - "INFRAFABRIC-COMPLETE-DOSSIER-v11.md"
+    - issue: "No automated tests or CI pipeline anywhere in the repo."
+      impact: "Future code additions will be fragile and changes to evaluation scripts or data pipelines will be hard to validate."
+      effort: "3–7 days to introduce basic unit tests and CI for the evaluation script and any new reference implementations."
+      files:
+        - "docs/evidence/merge_evaluations.py"
+  p1_high_priority:
+    - issue: "Ambiguous implementation status for many named components."
+      impact: "External readers and collaborators cannot easily tell which parts are research-only vs. deployed elsewhere vs. missing."
+      effort: "1–2 days to add an implementation status table and update README/Dossier language."
+      files:
+        - "README.md"
+        - "INFRAFABRIC-COMPLETE-DOSSIER-v11.md"
+    - issue: "Citation and link-health audit is specified but not present as a committed artifact."
+      impact: "Harder for reviewers to trust that all claims and references have actually been checked."
+      effort: "2–4 days to run the audit and add a results file."
+      files:
+        - "docs/evidence/EVALUATION_FILES_SUMMARY.md"
+  p2_medium_priority:
+    - issue: "Documentation is extensive but scattered and dense, with repeated explanations across multiple files."
+      impact: "Onboarding time for engineers and potential adopters is higher than necessary."
+      effort: "1–2 weeks to consolidate into a shorter primary guide and move deep dives into clearly labeled appendices."
+      files:
+        - "INFRAFABRIC-COMPLETE-DOSSIER-v11.md"
+        - "IF-vision.md"
+        - "IF-foundations.md"
+    - issue: "Philosophy database is not exposed as a stable API or library."
+      impact: "Reusers must copy-paste snippets or roll their own loader, which discourages reuse."
+      effort: "3–5 days to publish a small Python package or module with clear API docs and tests."
+      files:
+        - "philosophy/IF.philosophy-database.yaml"
+        - "README.md"
+
+style_assessment:
+  documentation_quality: 8
+  narrative_coherence: 7
+  jargon_density: 8
+  accessibility: 5
+  recommendations:
+    - "Create a short, opinionated 'InfraFabric for practitioners' guide that sits above the Dossier and deep-dive papers."
+    - "Add diagrams and concrete data-flow examples for 2–3 flagship IF.* components."
+    - "Clearly tag sections as 'conceptual', 'descriptive of an external implementation', or 'implemented in this repo'."
+
+metrics:
+  total_files: 32
+  total_lines_code: 333
+  total_lines_docs: 25291
+  code_to_docs_ratio: 0.013167
+  languages:
+    Markdown: 17411
+    Text: 345
+    Python: 333
+    LaTeX: 6569
+    YAML: 966
+  test_files: 0
+  test_lines: 0
+
+next_steps:
+  immediate:
+    - action: "Add an 'Implementation status' table for all IF.* components in README or a dedicated status file."
+      effort: "1–2 days"
+    - action: "Run a first full pass of the embedded multi-evaluator workflow and commit the resulting consensus report."
+      effort: "2–4 days"
+  short_term:
+    - action: "Implement and test a minimal IF.yologuard-style scanner as a reference component, including unit tests and CI."
+      effort: "1–3 weeks"
+    - action: "Package the philosophy database usage into a small, documented Python module."
+      effort: "3–5 days"
+  long_term:
+    - action: "Design and implement an end-to-end InfraFabric reference stack wiring together at least two IF.* components with logging and evaluation hooks."
+      effort: "1–3 months"
+    - action: "Gradually refactor and condense documentation into a two-part structure: Conceptual Book and Implementation Guide."
+      effort: "1–2 months (part-time while building features)"
+
+attachments:
+  - name: "infrafabric_metrics.json"
+    description: "Static analysis metrics for this repo snapshot."
+  - name: "infrafabric_url_manifest.csv"
+    description: "Extracted list of external URLs with file and line context."

@@ -1,0 +1,106 @@
+file,line,url,snippet
+IF-armour.md,582,http://localhost:4000/ggq-admin/icw-nextspread,- Repo: Private Gitea instance at http://localhost:4000/ggq-admin/icw-nextspread
+IF-armour.md,591,"https://icantwait.ca/api/properties/',","const response = await fetch('https://icantwait.ca/api/properties/', {"
+IF-armour.md,621,https://icantwait.ca,NEXT_PUBLIC_SITE_URL=https://icantwait.ca
+IF-armour.md,886,https://github.com/infrafabric,- Source Code: https://github.com/infrafabric (private repo on local Gitea)
+IF-foundations.md,1169,https://www.youtube.com/watch?v=TCDpDXjpgPI,"- **Popular Science:** Roth, W. (2025). ""Self Improving AI is getting wild."" YouTube. https://www.youtube.com/watch?v=TCDpDXjpgPI"
+IF-foundations.md,1459,https://github.com/dannystocker/infrafabric-core,**Repository:** https://github.com/dannystocker/infrafabric-core
+IF-foundations.md,1507,https://www.youtube.com/watch?v=TCDpDXjpgPI.,"14. Roth, W. (2025). ""Self Improving AI is getting wild."" YouTube. https://www.youtube.com/watch?v=TCDpDXjpgPI. Accessible explanation of late bloomer concept."
+IF-foundations.md,1534,https://github.com/infrafabric/core,- **Open Research:** InfraFabric framework available at https://github.com/infrafabric/core
+IF-vision.md,685,https://github.com/dannystocker/infrafabric-core,**Code:** Available at https://github.com/dannystocker/infrafabric-core
+IF-witness.md,590,https://superagi.com/swarms,6. SuperAGI (2025). *Swarm Optimization Framework*. Retrieved from https://superagi.com/swarms
+IF-witness.md,604,https://www.yalelawjournal.org/pdf/WexlerPDF_vbpja76f.pdf,"11. Wexler, A. (2015). *Warrant Canaries and Disclosure by Design*. Yale Law Journal Forum, 124, 1-10. Retrieved from https://www.yalelawjournal.org/pdf/WexlerPDF_vbpja76f.pdf"
+IF-witness.md,606,https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2498150,12. SSRN (2014). *Warrant Canaries: Constitutional Analysis*. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2498150
+IF-witness.md,608,https://www.apple.com/legal/transparency/,13. Apple Inc. (2013-2016). *Transparency Reports*. Retrieved from https://www.apple.com/legal/transparency/
+IF-witness.md,647,https://github.com/dannystocker/infrafabric-core,"The InfraFabric project is open research—all methodologies, frameworks, and validation data available at https://github.com/dannystocker/infrafabric-core"
+IF-witness.md,652,https://github.com/dannystocker/infrafabric-core,**Code & Data:** Available at https://github.com/dannystocker/infrafabric-core
+INFRAFABRIC-COMPLETE-DOSSIER-v11.md,205,https://github.com/dannystocker/mcp-multiagent-bridge,"> ""https://github.com/dannystocker/mcp-multiagent-bridge created"""
+INFRAFABRIC-COMPLETE-DOSSIER-v11.md,1449,https://github.com/dannystocker/mcp-multiagent-bridge,"<a name=""cite-4""></a>**[4]** IF_MASTER_TIMELINE_RAW.csv:55 (2025-10-27 00:52:16 UTC) - ""https://github.com/dannystocker/mcp-multiagent-bridge created"""
+INFRAFABRIC-COMPLETE-DOSSIER-v11.md,1465,https://github.com/dannystocker/infrafabric/blob/master/projects/yologuard/versions/IF.yologuard_v1.py,"<a name=""cite-12""></a>**[12]** [IF.yologuard v1](https://github.com/dannystocker/infrafabric/blob/master/projects/yologuard/versions/IF.yologuard_v1.py) - 31.2% recall baseline ..."
+INFRAFABRIC-COMPLETE-DOSSIER-v11.md,1467,https://github.com/dannystocker/infrafabric/blob/master/projects/yologuard/versions/IF.yologuard_v3.py,"<a name=""cite-13""></a>**[13]** [IF.yologuard v3](https://github.com/dannystocker/infrafabric/blob/master/projects/yologuard/versions/IF.yologuard_v3.py) - 98.96% recall with Wu ..."
+INFRAFABRIC-COMPLETE-DOSSIER-v11.md,1545,https://github.com/dannystocker/infrafabric-core,**Repository:** https://github.com/dannystocker/infrafabric-core
+INFRAFABRIC-COMPLETE-DOSSIER-v11.md,1566,https://claude.com/claude-code,Generated with [Claude Code](https://claude.com/claude-code)
+README.md,5,https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg,[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+README.md,5,https://creativecommons.org/licenses/by/4.0/,[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+README.md,6,https://img.shields.io/badge/arXiv-Pending-red.svg,[![arXiv](https://img.shields.io/badge/arXiv-Pending-red.svg)](https://arxiv.org/)
+README.md,6,https://arxiv.org/,[![arXiv](https://img.shields.io/badge/arXiv-Pending-red.svg)](https://arxiv.org/)
+README.md,398,https://creativecommons.org/licenses/by/4.0/,All research papers and code are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+README.md,416,"https://github.com/dannystocker/infrafabric-core}},","howpublished = {\url{https://github.com/dannystocker/infrafabric-core}},"
+README.md,432,https://www.linkedin.com/in/dannystocker/,- LinkedIn: https://www.linkedin.com/in/dannystocker/
+annexes/ANNEX-N-IF-OPTIMISE-FRAMEWORK.md,128,https://claude.com/pricing,**Source:** https://claude.com/pricing (fetched and verified)
+annexes/ANNEX-N-IF-OPTIMISE-FRAMEWORK.md,502,https://claude.com/pricing,- Anthropic Claude Pricing: https://claude.com/pricing (verified 2025-11-07)
+annexes/ANNEX-N-IF-OPTIMISE-FRAMEWORK.md,517,https://github.com/dannystocker/infrafabric-core,**Repository:** https://github.com/dannystocker/infrafabric-core
+annexes/ANNEX-N-IF-OPTIMISE-FRAMEWORK.md,519,https://claude.com/claude-code,🤖 Generated with [Claude Code](https://claude.com/claude-code)
+annexes/ANNEX-O-PRECURSOR-CONVERSATION.md,358,https://claude.com/claude-code,🤖 Generated with [Claude Code](https://claude.com/claude-code)
+annexes/ANNEX-P-GPT5-REFLEXION-CYCLE.md,433,https://claude.com/claude-code,🤖 Generated with [Claude Code](https://claude.com/claude-code)
+annexes/COMPLETE-SOURCE-INDEX.md,322,https://github.com/dannystocker/mcp-multiagent-bridge,- **GitHub:** https://github.com/dannystocker/mcp-multiagent-bridge
+annexes/COMPLETE-SOURCE-INDEX.md,407,https://github.com/dannystocker/infrafabric-core,- **GitHub:** https://github.com/dannystocker/infrafabric-core
+annexes/COMPLETE-SOURCE-INDEX.md,408,http://localhost:4000/dannystocker/infrafabric-core,- **Gitea:** http://localhost:4000/dannystocker/infrafabric-core
+annexes/ENGINEERING-BACKLOG-GPT5-IMPROVEMENTS.md,725,https://claude.com/claude-code,🤖 Generated with [Claude Code](https://claude.com/claude-code)
+annexes/infrafabric-IF-annexes.md,1403,https://www.psypost.org/in-neuroscience-breakthrough-scientists-identify-key-component-of-how-exercise-triggers-neurogenesis/,**Source**: https://www.psypost.org/in-neuroscience-breakthrough-scientists-identify-key-component-of-how-exercise-triggers-neurogenesis/
+annexes/infrafabric-IF-annexes.md,1693,https://www.psypost.org/in-neuroscience-breakthrough-scientists-identify-key-component-of-how-exercise-triggers-neurogenesis/,**Neuroscience Source**: https://www.psypost.org/in-neuroscience-breakthrough-scientists-identify-key-component-of-how-exercise-triggers-neurogenesis/
+annexes/infrafabric-IF-annexes.md,1732,https://www.reddit.com/r/PromptEngineering/comments/1nt7x7v/after_1000_hours_of_prompt_engineering_i_found/,**Source:** https://www.reddit.com/r/PromptEngineering/comments/1nt7x7v/after_1000_hours_of_prompt_engineering_i_found/
+annexes/infrafabric-IF-annexes.md,1785,https://www.reddit.com/r/PromptEngineering/comments/1nt7x7v/,**Attribution**: https://www.reddit.com/r/PromptEngineering/comments/1nt7x7v/
+annexes/infrafabric-IF-annexes.md,1924,https://www.reddit.com/r/PromptEngineering/comments/1nt7x7v/,**Link**: https://www.reddit.com/r/PromptEngineering/comments/1nt7x7v/
+annexes/infrafabric-IF-annexes.md,1952,https://www.reddit.com/r/PromptEngineering/comments/1nt7x7v/,Source: https://www.reddit.com/r/PromptEngineering/comments/1nt7x7v/
+annexes/infrafabric-IF-annexes.md,3201,https://claude.com/pricing,**Source:** https://claude.com/pricing (fetched and verified)
+annexes/infrafabric-IF-annexes.md,3575,https://claude.com/pricing,- Anthropic Claude Pricing: https://claude.com/pricing (verified 2025-11-07)
+annexes/infrafabric-IF-annexes.md,3590,https://github.com/dannystocker/infrafabric-core,**Repository:** https://github.com/dannystocker/infrafabric-core
+annexes/infrafabric-IF-annexes.md,3592,https://claude.com/claude-code,🤖 Generated with [Claude Code](https://claude.com/claude-code)
+annexes/infrafabric-IF-annexes.md,3955,https://claude.com/claude-code,🤖 Generated with [Claude Code](https://claude.com/claude-code)
+annexes/infrafabric-IF-annexes.md,4393,https://claude.com/claude-code,🤖 Generated with [Claude Code](https://claude.com/claude-code)
+docs/evidence/EVALUATION_FILES_SUMMARY.md,56,https://doi.org/10.1234/broken,"citation: ""https://doi.org/10.1234/broken"""
+docs/evidence/EVALUATION_FILES_SUMMARY.md,64,https://example.com/deprecated,"- url: ""https://example.com/deprecated"""
+docs/evidence/EVALUATION_FILES_SUMMARY.md,101,https://example.com/deprecated,- https://example.com/deprecated
+docs/evidence/EVALUATION_FILES_SUMMARY.md,102,https://old-domain.com/research,- https://old-domain.com/research
+docs/evidence/INFRAFABRIC_COMPREHENSIVE_EVALUATION_PROMPT.md,7,https://github.com/dannystocker/infrafabric,**Repository:** https://github.com/dannystocker/infrafabric
+docs/evidence/INFRAFABRIC_COMPREHENSIVE_EVALUATION_PROMPT.md,258,https://github.com/dannystocker/infrafabric,"repository: ""https://github.com/dannystocker/infrafabric"""
+docs/evidence/INFRAFABRIC_COMPREHENSIVE_EVALUATION_PROMPT.md,353,https://doi.org/10.1234/broken,"citation: ""https://doi.org/10.1234/broken"""
+docs/evidence/INFRAFABRIC_COMPREHENSIVE_EVALUATION_PROMPT.md,366,https://example.com/deprecated,"- url: ""https://example.com/deprecated"""
+docs/evidence/INFRAFABRIC_EVAL_PASTE_PROMPT.txt,3,https://github.com/dannystocker/infrafabric,"I'm the developer of InfraFabric (https://github.com/dannystocker/infrafabric), a research project on AI agent coordination and civilizational resilience. I need a brutally hone..."
+docs/evidence/INFRAFABRIC_EVAL_PASTE_PROMPT.txt,107,https://github.com/dannystocker/infrafabric,"repository: ""https://github.com/dannystocker/infrafabric"""
+docs/evidence/INFRAFABRIC_EVAL_PASTE_PROMPT.txt,201,https://doi.org/10.1234/broken,"citation: ""https://doi.org/10.1234/broken"""
+papers/ARXIV-SUBMISSION-README.md,126,https://arxiv.org/register,1. Go to https://arxiv.org/register
+papers/ARXIV-SUBMISSION-README.md,130,https://orcid.org,5. (Recommended) Create ORCID account at https://orcid.org and link to arXiv
+papers/ARXIV-SUBMISSION-README.md,140,https://arxiv.org/help/endorsement,- Visit https://arxiv.org/help/endorsement
+papers/ARXIV-SUBMISSION-README.md,178,https://arxiv.org/user/,1. Go to https://arxiv.org/user/
+papers/ARXIV-SUBMISSION-README.md,518,https://arxiv.org/user/,2. Go to https://arxiv.org/user/
+papers/ARXIV-SUBMISSION-README.md,540,https://arxiv.org/abs/2025.11.XXXXX},url = {https://arxiv.org/abs/2025.11.XXXXX}
+papers/ARXIV-SUBMISSION-README.md,646,https://arxiv.org/abs/2501.12345,- Test direct URL: https://arxiv.org/abs/2501.12345
+papers/ARXIV-SUBMISSION-README.md,681,https://arxiv.org/abs/2501.12345,URL: https://arxiv.org/abs/2501.12345
+papers/ARXIV-SUBMISSION-README.md,687,https://arxiv.org/abs/2501.12346,URL: https://arxiv.org/abs/2501.12346
+papers/ARXIV-SUBMISSION-README.md,693,https://arxiv.org/abs/2501.12347,URL: https://arxiv.org/abs/2501.12347
+papers/ARXIV-SUBMISSION-README.md,699,https://arxiv.org/abs/2501.12348,URL: https://arxiv.org/abs/2501.12348
+papers/ARXIV-SUBMISSION-README.md,795,https://arxiv.org/category_taxonomy,- Review arXiv category guidelines at https://arxiv.org/category_taxonomy
+papers/ARXIV-SUBMISSION-README.md,804,https://arxiv.org/help/endorsement,2. Request endorsement at: https://arxiv.org/help/endorsement
+papers/ARXIV-SUBMISSION-README.md,840,https://arxiv.org/user/,- Reset password: https://arxiv.org/user/
+papers/ARXIV-SUBMISSION-README.md,907,https://arxiv.org/submit,- https://arxiv.org/submit - Submit new paper
+papers/ARXIV-SUBMISSION-README.md,908,https://arxiv.org/user/,- https://arxiv.org/user/ - Check status
+papers/ARXIV-SUBMISSION-README.md,909,https://arxiv.org/help/,- https://arxiv.org/help/ - Help documentation
+papers/ARXIV-SUBMISSION-README.md,916,https://arxiv.org/register,- Go to https://arxiv.org/register
+papers/ARXIV-SUBMISSION-README.md,942,https://arxiv.org/help/,- Help: https://arxiv.org/help/
+papers/ARXIV-SUBMISSION-README.md,943,https://arxiv.org/help/moderation,- Moderation Policies: https://arxiv.org/help/moderation
+papers/ARXIV-SUBMISSION-README.md,944,https://arxiv.org/help/submit,- Submission FAQ: https://arxiv.org/help/submit
+papers/ARXIV-SUBMISSION-README.md,945,https://arxiv.org/category_taxonomy,- Category Browser: https://arxiv.org/category_taxonomy
+papers/ARXIV-SUBMISSION-README.md,948,https://arxiv.org/user/,- Track submission: https://arxiv.org/user/
+papers/ARXIV-SUBMISSION-README.md,949,https://arxiv.org/help/endorsement,- Request endorsement: https://arxiv.org/help/endorsement
+papers/ARXIV-SUBMISSION-README.md,953,https://latex.org/,- LaTeX Community: https://latex.org/
+papers/ARXIV-SUBMISSION-README.md,954,https://tex.stackexchange.com/,- TeX Stack Exchange: https://tex.stackexchange.com/
+papers/IF-armour.tex,1015,http://localhost:4000/ggq-admin/icw-nextspread,http://localhost:4000/ggq-admin/icw-nextspread
+papers/IF-armour.tex,1026,"https://icantwait.ca/api/properties/\textquotesingle{}}\OperatorTok{,}\NormalTok{",\KeywordTok{const}\NormalTok{ response }\OperatorTok{=} \ControlFlowTok{await} \FunctionTok{fetch}\NormalTok{(}\StringTok{\textquotesingle{}https://icantwait.ca/api/properties/\...
+papers/IF-armour.tex,1062,https://icantwait.ca,NEXT\_PUBLIC\_SITE\_URL=https://icantwait.ca
+papers/IF-armour.tex,1497,https://github.com/infrafabric,https://github.com/infrafabric (private repo on local Gitea) - Contact:
+papers/IF-foundations.tex,1860,https://www.youtube.com/watch?v=TCDpDXjpgPI,getting wild.'' YouTube. https://www.youtube.com/watch?v=TCDpDXjpgPI
+papers/IF-foundations.tex,2382,https://github.com/dannystocker/infrafabric-core,\textbf{Repository:} https://github.com/dannystocker/infrafabric-core
+papers/IF-foundations.tex,2464,https://www.youtube.com/watch?v=TCDpDXjpgPI.,https://www.youtube.com/watch?v=TCDpDXjpgPI. Accessible explanation of
+papers/IF-foundations.tex,2528,https://github.com/infrafabric/core,https://github.com/infrafabric/core
+papers/IF-vision.tex,1072,https://github.com/dannystocker/infrafabric-core,https://github.com/dannystocker/infrafabric-core \textbf{Contact:}
+papers/IF-witness.tex,1286,https://superagi.com/swarms,https://superagi.com/swarms
+papers/IF-witness.tex,1316,https://www.yalelawjournal.org/pdf/WexlerPDF\_vbpja76f.pdf,https://www.yalelawjournal.org/pdf/WexlerPDF\_vbpja76f.pdf
+papers/IF-witness.tex,1319,https://papers.ssrn.com/sol3/papers.cfm?abstract\_id=2498150,https://papers.ssrn.com/sol3/papers.cfm?abstract\_id=2498150
+papers/IF-witness.tex,1322,https://www.apple.com/legal/transparency/,https://www.apple.com/legal/transparency/
+papers/IF-witness.tex,1400,https://github.com/dannystocker/infrafabric-core,https://github.com/dannystocker/infrafabric-core
+papers/IF-witness.tex,1406,https://github.com/dannystocker/infrafabric-core,https://github.com/dannystocker/infrafabric-core \textbf{Contact:} Danny
+philosophy/IF.philosophy-database.yaml,244,https://digital-lab.ca/books/becoming-trader-joe.md,"- ""Becoming Trader Joe (book): https://digital-lab.ca/books/becoming-trader-joe.md"""
+philosophy/IF.philosophy-database.yaml,245,https://digital-lab.ca/books/aquired-trader-joes.txt,"- ""Acquired Podcast (Trader Joe's episode): https://digital-lab.ca/books/aquired-trader-joes.txt"""
+philosophy/IF.philosophy-database.yaml,246,https://digital-lab.ca/books/gpt5pro-joe-persona-full-spec.txt,"- ""GPT-5 Pro Joe Persona Spec: https://digital-lab.ca/books/gpt5pro-joe-persona-full-spec.txt"""

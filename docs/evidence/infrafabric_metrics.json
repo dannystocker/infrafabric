@@ -1,0 +1,15 @@
+{
+  "total_files": 32,
+  "total_lines_code": 333,
+  "total_lines_docs": 25291,
+  "code_to_docs_ratio": 0.013166739156221581,
+  "languages": {
+    "Markdown": 17411,
+    "Text": 345,
+    "Python": 333,
+    "LaTeX": 6569,
+    "YAML": 966
+  },
+  "test_files": 0,
+  "test_lines": 0
+}
