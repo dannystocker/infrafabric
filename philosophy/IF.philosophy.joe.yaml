@@ -1,0 +1,32 @@
+philosophers:
+  joe:
+    name: Joe Coulombe
+    tradition: Modern Applied Pragmatism (Retail Epistemology)
+    era: 1960s–2010s (late 20th–early 21st century)
+    key_concept: Constraint-driven curation for the 'overeducated & underpaid'; blend
+      white-paper foresight with empirical field tests; outsource non-core functions;
+      treasure-hunt scarcity with private label quality.
+    if_components:
+    - IF.search
+    - IF.optimise
+    - IF.guard
+    - IF.persona
+    - IF.citation
+    - IF.quiet
+    - IF.garp
+    if_principles:
+    - 'Principle 1: Ground in Observable Artifacts'
+    - 'Principle 6: Progressive Enhancement'
+    - 'Principle 7: Reversible Decisions'
+    - 'Principle 8: Observability Without Fragility'
+    practical_application: Use IF.search to scan markets and culture; validate claims
+      via IF.citation; optimize cost and coverage via IF.optimise; govern decisions
+      through IF.guard council; instantiate curated buyer/merchant agents via IF.persona;
+      measure prevention using IF.quiet; reward reliability and fairness with IF.garp.
+    paper_references:
+    - 'IF-all-core-papers.md:14  # 8-pass investigation'
+    - 'IF-all-core-papers.md:1628  # token-efficient orchestration'
+    - 'IF-all-core-papers.md:982  # persona/character bible system'
+    - 'IF-all-core-papers.md:1452  # anti-spectacle metrics'
+    - 'IF-all-core-papers.md:1453  # Good Actor Recognition Protocol'
+    - 'IF-all-core-papers.md:20  # yologuard measured impact'

@@ -20,6 +20,49 @@ InfraFabric is a research project on AI agent coordination and civilizational re
 
 ---
 
+## File Consolidation (2025-11-15)
+
+### Duplicate Detection & Integration System
+
+**Analysis Scope:**
+- 366 total files scanned across entire repository
+- 59 duplicate groups identified (175 total duplicate files)
+- 8.31 MB total recoverable space (7.93 MB after consolidation)
+- Categories: documentation, data (JSON), misc, code
+
+**Top Duplicates by File Count:**
+1. `infrafabric-complete-v7.01` variants: 15 copies (0.09 MB per group)
+2. `infrafabric-annexes-v7.01` variants: 13 copies (0.11 MB per group)
+3. IF.yologuard documentation: 6 variants (0.22 MB)
+4. Chat-IFpersonality variants: 4 copies (0.18 MB)
+5. JSON data files (overview, prospect outreach): 2-6 copies per file
+
+**Smart Integration System:**
+
+Location: `smart_integrate.sh` (Bash script, 150+ lines)
+
+Features:
+- SHA256 content-based deduplication (not filename-based)
+- mtime-based conflict resolution (keeps newest, archives older)
+- Dry-run mode (safe preview before execution)
+- Color-coded logging with statistics
+- Timestamp-based archive organization
+
+**Integration Report:**
+
+Location: `integration_duplicates_report.json` (comprehensive analysis)
+
+Contains:
+- Duplicate group hashes and timestamps
+- File categories and sizes per group
+- mtime-based resolution decisions
+- Recovery statistics and recovery bytes
+- Ready for immediate execution
+
+**Next Step:** Run `./smart_integrate.sh execute` to consolidate (recovers 8.31 MB)
+
+---
+
 ## Multi-Evaluator Assessment (2025-11-15)
 
 ### Three Independent Evaluations Completed
@@ -359,6 +402,7 @@ python3 merge_evaluations.py eval1.yaml eval2.yaml eval3.yaml
 
 ---
 
-**Last Session:** Multi-evaluator assessment complete (3 evaluators, consensus generated)
-**Next Session Options:** Debug P0 gaps / Add Claude evaluation / Citation cleanup
-**Git Status:** Clean, all evaluation artifacts committed to master
+**Last Session:** Multi-evaluator assessment complete (3 evaluators, consensus generated) + File consolidation analysis (366 files, 59 duplicate groups, 8.31 MB identified)
+**Next Session Options:** Execute file consolidation / Debug P0 gaps / Add Claude evaluation / Citation cleanup
+**Git Status:** Clean, all evaluation artifacts and consolidation tools committed to master
+**Smart Integration:** Ready for execution (`./smart_integrate.sh execute` to recover 8.31 MB)

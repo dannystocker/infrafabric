@@ -1,0 +1,220 @@
+{
+  "analysis_date": "2025-11-15",
+  "analysis_time": "17:35:00 UTC+1",
+  "repository": "infrafabric",
+  "remote_url": "https://github.com/dannystocker/infrafabric.git",
+  "local_path": "/home/setup/infrafabric",
+  "current_branch": "master",
+  "branch_status": "ahead of origin/master by 1 commit",
+  "git_summary": {
+    "tracked_files_total": 45,
+    "untracked_files_total": 14,
+    "unpushed_commits": 1,
+    "uncommitted_changes": 0
+  },
+  "uncommitted_files": [],
+  "unpushed_commits": [
+    {
+      "hash": "dde185715045a74bf04dc76aadca0d7ade764b5d",
+      "short_hash": "dde1857",
+      "author": "Danny Stocker",
+      "email": "danny.stocker@gmail.com",
+      "date": "2025-11-15T16:22:05+01:00",
+      "message": "Update agents.md with GGQ CRM Dolibarr deployment"
+    }
+  ],
+  "untracked_files": [
+    {
+      "path": ".env",
+      "type": "file",
+      "size_bytes": 608,
+      "size_human": "608B",
+      "category": "secrets/config",
+      "requires_gitignore": true,
+      "notes": "Environment configuration file - should NOT be committed"
+    },
+    {
+      "path": ".venv_tools/",
+      "type": "directory",
+      "size_bytes": null,
+      "size_human": "38M",
+      "category": "virtualenv",
+      "requires_gitignore": true,
+      "notes": "Python virtual environment - should NOT be committed"
+    },
+    {
+      "path": "DEBUG_SESSION_PROMPT_GPT-5.1-CODEX-CLI_20251115T145456Z.md",
+      "type": "file",
+      "size_bytes": 3691,
+      "size_human": "3.6KB",
+      "category": "debug/temporary",
+      "requires_gitignore": false,
+      "notes": "Session debug output - temporary artifact from 2025-11-15"
+    },
+    {
+      "path": "EVALUATION_PROGRESS.md",
+      "type": "file",
+      "size_bytes": 9370,
+      "size_human": "9.1KB",
+      "category": "documentation",
+      "requires_gitignore": false,
+      "notes": "Evaluation progress tracking document"
+    },
+    {
+      "path": "FILE_ANALYSIS_orphaned.json",
+      "type": "file",
+      "size_bytes": 847,
+      "size_human": "847B",
+      "category": "analysis",
+      "requires_gitignore": false,
+      "notes": "Analysis artifact"
+    },
+    {
+      "path": "FILE_INVENTORY_infrafabric-core.json",
+      "type": "file",
+      "size_bytes": 6245,
+      "size_human": "6.1KB",
+      "category": "inventory",
+      "requires_gitignore": false,
+      "notes": "File inventory for infrafabric-core repository"
+    },
+    {
+      "path": "FILE_INVENTORY_infrafabric.json",
+      "type": "file",
+      "size_bytes": 21463,
+      "size_human": "20.9KB",
+      "category": "inventory",
+      "requires_gitignore": false,
+      "notes": "File inventory for infrafabric repository - 82 tracked files, 1.59MB"
+    },
+    {
+      "path": "FILE_REFERENCES_markdown.json",
+      "type": "file",
+      "size_bytes": 136061,
+      "size_human": "132.7KB",
+      "category": "analysis",
+      "requires_gitignore": false,
+      "notes": "Markdown file reference index"
+    },
+    {
+      "path": "FILE_REFERENCES_yaml_json.json",
+      "type": "file",
+      "size_bytes": 228986,
+      "size_human": "223.4KB",
+      "category": "analysis",
+      "requires_gitignore": false,
+      "notes": "YAML/JSON file reference index"
+    },
+    {
+      "path": "IF_COMPONENT_INVENTORY.yaml",
+      "type": "file",
+      "size_bytes": 3475,
+      "size_human": "3.4KB",
+      "category": "documentation",
+      "requires_gitignore": false,
+      "notes": "Component inventory in YAML format"
+    },
+    {
+      "path": "INFRAFABRIC_EVAL_GPT-5.1-CODEX-CLI_20251115T145456Z.yaml",
+      "type": "file",
+      "size_bytes": 11885,
+      "size_human": "11.6KB",
+      "category": "evaluation",
+      "requires_gitignore": false,
+      "notes": "GPT-5.1 evaluation results from 2025-11-15"
+    },
+    {
+      "path": "code/",
+      "type": "directory",
+      "size_bytes": null,
+      "size_human": "348K",
+      "category": "source",
+      "requires_gitignore": false,
+      "notes": "Code directory with yologuard reports"
+    },
+    {
+      "path": "docs/evidence/INFRAFABRIC_EVALUATION_REPORT.html",
+      "type": "file",
+      "size_bytes": null,
+      "size_human": "unknown",
+      "category": "documentation",
+      "requires_gitignore": false,
+      "notes": "Evaluation report in HTML format"
+    },
+    {
+      "path": "infrafabric_eval_Gemini_20251115_103000.yaml",
+      "type": "file",
+      "size_bytes": 5950,
+      "size_human": "5.8KB",
+      "category": "evaluation",
+      "requires_gitignore": false,
+      "notes": "Gemini evaluation results from 2025-11-15"
+    }
+  ],
+  "sync_gap_analysis": {
+    "status": "SYNC LAG DETECTED",
+    "description": "Local repository is 1 commit ahead of GitHub origin/master",
+    "action_required": "git push origin master",
+    "priority": "HIGH"
+  },
+  "recommendations": {
+    "immediate_actions": [
+      "1. PUSH: Execute 'git push origin master' to sync unpushed commit",
+      "2. GITIGNORE: Add '.env' and '.venv_tools/' to .gitignore if not already present",
+      "3. REVIEW: Evaluate which untracked files should be committed vs. ignored"
+    ],
+    "files_to_commit": [
+      "agents.md (already committed locally, needs push)",
+      "EVALUATION_PROGRESS.md (if evaluation is complete)",
+      "FILE_INVENTORY_*.json (analysis artifacts)",
+      "IF_COMPONENT_INVENTORY.yaml (documentation)"
+    ],
+    "files_to_ignore": [
+      ".env (secrets/credentials)",
+      ".venv_tools/ (virtualenv)",
+      "code/ (build/report artifacts - consider .gitignore)",
+      "DEBUG_SESSION_PROMPT_* (temporary debug artifacts)"
+    ],
+    "files_to_review": [
+      "INFRAFABRIC_EVAL_*.yaml (evaluation outputs - archive or commit?)",
+      "FILE_REFERENCES_*.json (large files - useful for analysis but generated)",
+      "docs/evidence/INFRAFABRIC_EVALUATION_REPORT.html (generated report)"
+    ]
+  },
+  "statistics": {
+    "total_untracked_size_bytes": 428542,
+    "total_untracked_size_human": "418.3KB (excluding .venv_tools and code/)",
+    "untracked_by_category": {
+      "secrets/config": 1,
+      "virtualenv": 1,
+      "debug/temporary": 1,
+      "documentation": 3,
+      "analysis": 3,
+      "inventory": 2,
+      "evaluation": 2,
+      "source": 1
+    }
+  },
+  "tracked_files_sample": [
+    {
+      "path": ".gitignore",
+      "type": "tracked"
+    },
+    {
+      "path": "README.md",
+      "type": "tracked"
+    },
+    {
+      "path": "agents.md",
+      "type": "tracked"
+    },
+    {
+      "path": "INFRAFABRIC-COMPLETE-DOSSIER-v11.md",
+      "type": "tracked"
+    },
+    {
+      "path": "annexes/",
+      "type": "tracked directory"
+    }
+  ]
+}

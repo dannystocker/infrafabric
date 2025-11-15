@@ -6,7 +6,7 @@
 
 ## Current Mission Status: ✅ COMPLETE
 
-Multi-evaluator assessment system deployed and three comprehensive evaluations completed with consensus report generated.
+Multi-evaluator assessment system deployed and three comprehensive evaluations completed with consensus report generated. File consolidation analysis completed (2025-11-15).
 
 ---
 
@@ -82,6 +82,30 @@ Multi-evaluator assessment system deployed and three comprehensive evaluations c
 - Uploaded to StackCP: `~/public_html/digital-lab.ca/navidocs/builder/`
 - Web URL: https://digital-lab.ca/navidocs/builder/NAVIDOCS_FEATURE_CATALOGUE.md
 
+### 5. File Consolidation Analysis (✅ Complete)
+
+**Analysis executed (2025-11-15):**
+- Smart integration system created: `smart_integrate.sh` (intelligent file merger with SHA256 deduplication)
+- 366 files analyzed across entire repository
+- 59 duplicate groups identified with 175 total duplicate files
+- 8.31 MB (7.93 MB recoverable) identified for consolidation
+
+**Key findings:**
+- Largest duplicates: infrafabric-annexes versions (13 copies), infrafabric-complete versions (15 copies)
+- IF.yologuard documentation duplicated across 6 variants
+- Chat-IFpersonality variants: 4 copies
+- Data files (JSON): 2-6 duplicates per group
+
+**Integration report generated:**
+- File: `integration_duplicates_report.json` (detailed analysis with timestamps and hashes)
+- Contains: Phase markers, duplicate groups, recovery metrics, file categories
+- Ready for execution phase with timestamp-based merge strategy
+
+**Tool Details:**
+- Script: `/home/setup/infrafabric/smart_integrate.sh` (Bash with dry-run capability)
+- Features: SHA256 content hashing, mtime-based conflict resolution, color-coded logging
+- Usage: `./smart_integrate.sh [dry-run|execute]` (default: dry-run mode)
+
 ---
 
 ## Current Blockers: NONE
@@ -92,17 +116,24 @@ All planned tasks complete.
 
 ## Immediate Next Actions
 
-### Option A: Implement P0 Consensus Findings
+### Option A: Execute File Consolidation
+1. Run `./smart_integrate.sh execute` to merge 175 duplicates (recover 8.31 MB)
+2. Archive consolidated files to `archives/consolidated_<date>/`
+3. Update file references in IF.* components post-consolidation
+4. Commit consolidated state to git
+5. Verify no broken links in IF-* documents after consolidation
+
+### Option B: Implement P0 Consensus Findings
 Use Codex's `DEBUG_SESSION_PROMPT_GPT-5.1-CODEX-CLI_20251115T145456Z.md` to address:
 1. IF.* component implementations (many are spec-only)
-2. Consolidate documentation
-3. Add working code examples
-4. Create IF.* status dashboard
+2. Add working code examples to consolidated documentation
+3. Create IF.* status dashboard
+4. Consolidate scattered tool implementations
 
-### Option B: Add Third-Party Evaluation
-Run Claude Code evaluation using same prompt for additional perspective.
+### Option C: Add Third-Party Evaluation
+Run Claude Code evaluation using same prompt for additional perspective on consolidated structure.
 
-### Option C: Citation Cleanup
+### Option D: Citation Cleanup
 Use `infrafabric_url_manifest.csv` (16KB, all URLs in codebase) to:
 1. Verify all external links (404 check)
 2. Update outdated citations
@@ -131,6 +162,10 @@ Use `infrafabric_url_manifest.csv` (16KB, all URLs in codebase) to:
 - URL audit: `docs/evidence/infrafabric_url_manifest.csv` (16KB)
 - File inventory: `docs/evidence/infrafabric_file_inventory.csv`
 
+**Consolidation Tools:**
+- Smart integration script: `smart_integrate.sh` (deduplication & merge automation)
+- Consolidation report: `integration_duplicates_report.json` (59 groups, 175 duplicates, 8.31 MB)
+
 ---
 
 ## Session Context
@@ -158,7 +193,9 @@ Use `infrafabric_url_manifest.csv` (16KB, all URLs in codebase) to:
 ✅ IF.* component inventory complete
 ✅ Debug session prompt ready for implementation
 ✅ All artifacts committed to GitHub
+✅ File consolidation analysis complete (366 files, 59 duplicate groups, 8.31 MB identified)
+✅ Smart integration tool created and ready for execution
 
 ---
 
-**Ready for next session. Choose Option A, B, or C above, or specify new direction.**
+**Ready for next session. Choose Option A (Execute Consolidation), B (Implement Consensus Findings), C (Third-Party Evaluation), or D (Citation Cleanup).**

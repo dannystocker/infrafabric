@@ -1,0 +1,109 @@
+[
+  {
+    "type": "high_duplication",
+    "description": "File has 6 copies (recoverable: 0.22MB)",
+    "hash": "f5ca951c8ddd8606...",
+    "action": "Keep newest, delete all others"
+  },
+  {
+    "type": "high_duplication",
+    "description": "File has 4 copies (recoverable: 0.18MB)",
+    "hash": "e829496dc5f642cf...",
+    "action": "Keep newest, delete all others"
+  },
+  {
+    "type": "high_duplication",
+    "description": "File has 13 copies (recoverable: 0.11MB)",
+    "hash": "0e7cf0f6cc51b516...",
+    "action": "Keep newest, delete all others"
+  },
+  {
+    "type": "high_duplication",
+    "description": "File has 15 copies (recoverable: 0.09MB)",
+    "hash": "4a31345f3818ead6...",
+    "action": "Keep newest, delete all others"
+  },
+  {
+    "type": "high_duplication",
+    "description": "File has 3 copies (recoverable: 0.09MB)",
+    "hash": "755d8ee1271ac3e1...",
+    "action": "Keep newest, delete all others"
+  },
+  {
+    "type": "high_duplication",
+    "description": "File has 9 copies (recoverable: 0.07MB)",
+    "hash": "fa251320ce9e3409...",
+    "action": "Keep newest, delete all others"
+  },
+  {
+    "type": "high_duplication",
+    "description": "File has 5 copies (recoverable: 0.07MB)",
+    "hash": "310cbc41c72e7a28...",
+    "action": "Keep newest, delete all others"
+  },
+  {
+    "type": "high_duplication",
+    "description": "File has 3 copies (recoverable: 0.07MB)",
+    "hash": "fc8d6d79ea6f9b26...",
+    "action": "Keep newest, delete all others"
+  },
+  {
+    "type": "high_duplication",
+    "description": "File has 3 copies (recoverable: 0.06MB)",
+    "hash": "52cbe3123b562081...",
+    "action": "Keep newest, delete all others"
+  },
+  {
+    "type": "high_duplication",
+    "description": "File has 4 copies (recoverable: 0.05MB)",
+    "hash": "2f777f9c61696e0a...",
+    "action": "Keep newest, delete all others"
+  },
+  {
+    "type": "high_duplication",
+    "description": "File has 4 copies (recoverable: 0.04MB)",
+    "hash": "e019d4ab55a1ed17...",
+    "action": "Keep newest, delete all others"
+  },
+  {
+    "type": "high_duplication",
+    "description": "File has 4 copies (recoverable: 0.03MB)",
+    "hash": "126a68b2a0f52ec4...",
+    "action": "Keep newest, delete all others"
+  },
+  {
+    "type": "high_duplication",
+    "description": "File has 3 copies (recoverable: 0.03MB)",
+    "hash": "6caa4e10d83bdc64...",
+    "action": "Keep newest, delete all others"
+  },
+  {
+    "type": "high_duplication",
+    "description": "File has 3 copies (recoverable: 0.02MB)",
+    "hash": "7e2a7d1f61ff173e...",
+    "action": "Keep newest, delete all others"
+  },
+  {
+    "type": "high_duplication",
+    "description": "File has 4 copies (recoverable: 0.02MB)",
+    "hash": "0716d0fe4ff461dd...",
+    "action": "Keep newest, delete all others"
+  },
+  {
+    "type": "high_duplication",
+    "description": "File has 3 copies (recoverable: 0.02MB)",
+    "hash": "5ce276135f2b035a...",
+    "action": "Keep newest, delete all others"
+  },
+  {
+    "type": "high_duplication",
+    "description": "File has 5 copies (recoverable: 0.01MB)",
+    "hash": "10f565ead366a6f6...",
+    "action": "Keep newest, delete all others"
+  },
+  {
+    "type": "location_analysis",
+    "description": "Found 297 files in Downloads (should be migrated to repo)",
+    "action": "Move critical files from Downloads to appropriate repo directory"
+  }
+]
