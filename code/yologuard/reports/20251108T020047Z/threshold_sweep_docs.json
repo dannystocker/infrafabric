@@ -1,0 +1,125 @@
+{
+  "root": "infrafabric/docs",
+  "grid": [
+    {
+      "error_th": 0.6,
+      "warn_th": 0.4,
+      "severity": {
+        "ERROR": 62,
+        "WARNING": 0,
+        "NOTE": 45
+      },
+      "detections": 107
+    },
+    {
+      "error_th": 0.6,
+      "warn_th": 0.5,
+      "severity": {
+        "ERROR": 62,
+        "WARNING": 0,
+        "NOTE": 45
+      },
+      "detections": 107
+    },
+    {
+      "error_th": 0.6,
+      "warn_th": 0.6,
+      "severity": {
+        "ERROR": 62,
+        "WARNING": 0,
+        "NOTE": 45
+      },
+      "detections": 107
+    },
+    {
+      "error_th": 0.7,
+      "warn_th": 0.4,
+      "severity": {
+        "ERROR": 22,
+        "WARNING": 40,
+        "NOTE": 45
+      },
+      "detections": 107
+    },
+    {
+      "error_th": 0.7,
+      "warn_th": 0.5,
+      "severity": {
+        "ERROR": 22,
+        "WARNING": 40,
+        "NOTE": 45
+      },
+      "detections": 107
+    },
+    {
+      "error_th": 0.7,
+      "warn_th": 0.6,
+      "severity": {
+        "ERROR": 22,
+        "WARNING": 40,
+        "NOTE": 45
+      },
+      "detections": 107
+    },
+    {
+      "error_th": 0.75,
+      "warn_th": 0.4,
+      "severity": {
+        "ERROR": 22,
+        "WARNING": 40,
+        "NOTE": 45
+      },
+      "detections": 107
+    },
+    {
+      "error_th": 0.75,
+      "warn_th": 0.5,
+      "severity": {
+        "ERROR": 22,
+        "WARNING": 40,
+        "NOTE": 45
+      },
+      "detections": 107
+    },
+    {
+      "error_th": 0.75,
+      "warn_th": 0.6,
+      "severity": {
+        "ERROR": 22,
+        "WARNING": 40,
+        "NOTE": 45
+      },
+      "detections": 107
+    },
+    {
+      "error_th": 0.8,
+      "warn_th": 0.4,
+      "severity": {
+        "ERROR": 16,
+        "WARNING": 46,
+        "NOTE": 45
+      },
+      "detections": 107
+    },
+    {
+      "error_th": 0.8,
+      "warn_th": 0.5,
+      "severity": {
+        "ERROR": 16,
+        "WARNING": 46,
+        "NOTE": 45
+      },
+      "detections": 107
+    },
+    {
+      "error_th": 0.8,
+      "warn_th": 0.6,
+      "severity": {
+        "ERROR": 16,
+        "WARNING": 46,
+        "NOTE": 45
+      },
+      "detections": 107
+    }
+  ]
+}

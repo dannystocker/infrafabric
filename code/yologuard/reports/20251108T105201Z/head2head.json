@@ -1,0 +1,149 @@
+{
+  "timestamp": "2025-11-08T10:52:17Z",
+  "rows": [
+    {
+      "repo": "https://github.com/psf/requests.git",
+      "files": 120,
+      "if_detections": 54,
+      "if_duration_sec": 0.704,
+      "trufflehog_detections": null,
+      "trufflehog_duration_sec": null,
+      "trufflehog_note": "trufflehog not installed",
+      "gitleaks_detections": null,
+      "gitleaks_duration_sec": null,
+      "gitleaks_note": "gitleaks not installed"
+    },
+    {
+      "repo": "https://github.com/pallets/flask.git",
+      "files": 229,
+      "if_detections": 19,
+      "if_duration_sec": 0.317,
+      "trufflehog_detections": null,
+      "trufflehog_duration_sec": null,
+      "trufflehog_note": "trufflehog not installed",
+      "gitleaks_detections": null,
+      "gitleaks_duration_sec": null,
+      "gitleaks_note": "gitleaks not installed"
+    },
+    {
+      "repo": "https://github.com/pallets/jinja.git",
+      "files": 106,
+      "if_detections": 1,
+      "if_duration_sec": 0.258,
+      "trufflehog_detections": null,
+      "trufflehog_duration_sec": null,
+      "trufflehog_note": "trufflehog not installed",
+      "gitleaks_detections": null,
+      "gitleaks_duration_sec": null,
+      "gitleaks_note": "gitleaks not installed"
+    },
+    {
+      "repo": "https://github.com/pallets/click.git",
+      "files": 141,
+      "if_detections": 5,
+      "if_duration_sec": 0.284,
+      "trufflehog_detections": null,
+      "trufflehog_duration_sec": null,
+      "trufflehog_note": "trufflehog not installed",
+      "gitleaks_detections": null,
+      "gitleaks_duration_sec": null,
+      "gitleaks_note": "gitleaks not installed"
+    },
+    {
+      "repo": "https://github.com/tiangolo/fastapi.git",
+      "files": 2391,
+      "if_detections": 662,
+      "if_duration_sec": 5.082,
+      "trufflehog_detections": null,
+      "trufflehog_duration_sec": null,
+      "trufflehog_note": "trufflehog not installed",
+      "gitleaks_detections": null,
+      "gitleaks_duration_sec": null,
+      "gitleaks_note": "gitleaks not installed"
+    },
+    {
+      "repo": "https://github.com/tqdm/tqdm.git",
+      "files": 105,
+      "if_detections": 5,
+      "if_duration_sec": 0.132,
+      "trufflehog_detections": null,
+      "trufflehog_duration_sec": null,
+      "trufflehog_note": "trufflehog not installed",
+      "gitleaks_detections": null,
+      "gitleaks_duration_sec": null,
+      "gitleaks_note": "gitleaks not installed"
+    },
+    {
+      "repo": "https://github.com/encode/starlette.git",
+      "files": 121,
+      "if_detections": 48,
+      "if_duration_sec": 0.268,
+      "trufflehog_detections": null,
+      "trufflehog_duration_sec": null,
+      "trufflehog_note": "trufflehog not installed",
+      "gitleaks_detections": null,
+      "gitleaks_duration_sec": null,
+      "gitleaks_note": "gitleaks not installed"
+    },
+    {
+      "repo": "https://github.com/axios/axios.git",
+      "files": 245,
+      "if_detections": 26,
+      "if_duration_sec": 0.921,
+      "trufflehog_detections": null,
+      "trufflehog_duration_sec": null,
+      "trufflehog_note": "trufflehog not installed",
+      "gitleaks_detections": null,
+      "gitleaks_duration_sec": null,
+      "gitleaks_note": "gitleaks not installed"
+    },
+    {
+      "repo": "https://github.com/expressjs/express.git",
+      "files": 218,
+      "if_detections": 57,
+      "if_duration_sec": 0.165,
+      "trufflehog_detections": null,
+      "trufflehog_duration_sec": null,
+      "trufflehog_note": "trufflehog not installed",
+      "gitleaks_detections": null,
+      "gitleaks_duration_sec": null,
+      "gitleaks_note": "gitleaks not installed"
+    },
+    {
+      "repo": "https://github.com/gin-gonic/gin.git",
+      "files": 127,
+      "if_detections": 11,
+      "if_duration_sec": 0.238,
+      "trufflehog_detections": null,
+      "trufflehog_duration_sec": null,
+      "trufflehog_note": "trufflehog not installed",
+      "gitleaks_detections": null,
+      "gitleaks_duration_sec": null,
+      "gitleaks_note": "gitleaks not installed"
+    },
+    {
+      "repo": "https://github.com/spring-projects/spring-petclinic.git",
+      "files": 127,
+      "if_detections": 18,
+      "if_duration_sec": 0.25,
+      "trufflehog_detections": null,
+      "trufflehog_duration_sec": null,
+      "trufflehog_note": "trufflehog not installed",
+      "gitleaks_detections": null,
+      "gitleaks_duration_sec": null,
+      "gitleaks_note": "gitleaks not installed"
+    },
+    {
+      "repo": "https://github.com/serde-rs/serde.git",
+      "files": 359,
+      "if_detections": 8,
+      "if_duration_sec": 0.311,
+      "trufflehog_detections": null,
+      "trufflehog_duration_sec": null,
+      "trufflehog_note": "trufflehog not installed",
+      "gitleaks_detections": null,
+      "gitleaks_duration_sec": null,
+      "gitleaks_note": "gitleaks not installed"
+    }
+  ]
+}

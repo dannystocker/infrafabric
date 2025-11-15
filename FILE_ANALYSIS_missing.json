@@ -1,0 +1,461 @@
+{
+  "analysis_date": "2025-11-15",
+  "analysis_scope": {
+    "infrafabric_files": 82,
+    "infrafabric_core_files": 26,
+    "total_files_in_inventory": 108
+  },
+  "reference_statistics": {
+    "markdown_references": 500,
+    "yaml_json_references": 856
+  },
+  "missing_summary": {
+    "total_unique_missing": 220,
+    "high_priority": 1,
+    "medium_priority": 219
+  },
+  "high_priority_missing": [
+    {
+      "referenced_file": "/home/setup/infrafabric/schemas/citation/v1.0.schema.json",
+      "referenced_in": [
+        {
+          "doc": "infrafabric/agents.md",
+          "lines": [
+            292
+          ]
+        }
+      ],
+      "total_references": 1,
+      "severity": "high",
+      "reason": "Critical: Tool or schema not found"
+    }
+  ],
+  "medium_priority_sample": [
+    {
+      "referenced_file": "/tmp/yolo-corpus/requests/tests/test_utils.py",
+      "referenced_in": [
+        {
+          "doc": "/home/setup/infrafabric/code/yologuard/reports/20251108T020047Z/crossfile_requests.json",
+          "lines": [
+            null
+          ]
+        }
+      ],
+      "total_references": 25,
+      "severity": "medium",
+      "reason": "Supporting file referenced but not found"
+    },
+    {
+      "referenced_file": "db/dump.sql",
+      "referenced_in": [
+        {
+          "doc": "/home/setup/infrafabric/code/yologuard/benchmarks/results.json",
+          "lines": [
+            null
+          ]
+        },
+        {
+          "doc": "/home/setup/infrafabric/code/yologuard/reports/20251108T020047Z/bench_fast.json",
+          "lines": [
+            null
+          ]
+        }
+      ],
+      "total_references": 20,
+      "severity": "medium",
+      "reason": "Supporting file referenced but not found"
+    },
+    {
+      "referenced_file": "web/var/www/public_html/wp-config.php",
+      "referenced_in": [
+        {
+          "doc": "/home/setup/infrafabric/code/yologuard/benchmarks/results.json",
+          "lines": [
+            null
+          ]
+        },
+        {
+          "doc": "/home/setup/infrafabric/code/yologuard/reports/20251108T020047Z/bench_fast.json",
+          "lines": [
+            null
+          ]
+        }
+      ],
+      "total_references": 18,
+      "severity": "medium",
+      "reason": "Supporting file referenced but not found"
+    },
+    {
+      "referenced_file": ".mozilla/firefox/logins.json",
+      "referenced_in": [
+        {
+          "doc": "/home/setup/infrafabric/code/yologuard/benchmarks/results.json",
+          "lines": [
+            null
+          ]
+        },
+        {
+          "doc": "/home/setup/infrafabric/code/yologuard/reports/20251108T020047Z/bench_fast.json",
+          "lines": [
+            null
+          ]
+        }
+      ],
+      "total_references": 16,
+      "severity": "medium",
+      "reason": "Supporting file referenced but not found"
+    },
+    {
+      "referenced_file": ".bash_profile",
+      "referenced_in": [
+        {
+          "doc": "/home/setup/infrafabric/code/yologuard/benchmarks/results.json",
+          "lines": [
+            null
+          ]
+        },
+        {
+          "doc": "/home/setup/infrafabric/code/yologuard/reports/20251108T020047Z/bench_fast.json",
+          "lines": [
+            null
+          ]
+        }
+      ],
+      "total_references": 14,
+      "severity": "medium",
+      "reason": "Supporting file referenced but not found"
+    },
+    {
+      "referenced_file": "CLAUDE.md",
+      "referenced_in": [
+        {
+          "doc": "infrafabric/IF-vision.md",
+          "lines": [
+            380
+          ]
+        },
+        {
+          "doc": "infrafabric/philosophy/IF.philosophy-database.md",
+          "lines": [
+            326
+          ]
+        },
+        {
+          "doc": "infrafabric/philosophy/IF.philosophy-table.md",
+          "lines": [
+            58
+          ]
+        },
+        {
+          "doc": "infrafabric/docs/evidence/INFRAFABRIC_COMPREHENSIVE_EVALUATION_PROMPT.md",
+          "lines": [
+            332
+          ]
+        },
+        {
+          "doc": "infrafabric/papers/ARXIV-SUBMISSION-README.md",
+          "lines": [
+            634,
+            717
+          ]
+        },
+        {
+          "doc": "infrafabric-core/IF-vision.md",
+          "lines": [
+            380
+          ]
+        },
+        {
+          "doc": "infrafabric-core/philosophy/IF.philosophy-database.md",
+          "lines": [
+            326
+          ]
+        },
+        {
+          "doc": "infrafabric-core/philosophy/IF.philosophy-table.md",
+          "lines": [
+            58
+          ]
+        },
+        {
+          "doc": "infrafabric-core/papers/ARXIV-SUBMISSION-README.md",
+          "lines": [
+            634,
+            717
+          ]
+        }
+      ],
+      "total_references": 11,
+      "severity": "medium",
+      "reason": "Supporting file referenced but not found"
+    },
+    {
+      "referenced_file": "cloud/.credentials",
+      "referenced_in": [
+        {
+          "doc": "/home/setup/infrafabric/code/yologuard/benchmarks/results.json",
+          "lines": [
+            null
+          ]
+        },
+        {
+          "doc": "/home/setup/infrafabric/code/yologuard/reports/20251108T020047Z/bench_fast.json",
+          "lines": [
+            null
+          ]
+        }
+      ],
+      "total_references": 8,
+      "severity": "medium",
+      "reason": "Supporting file referenced but not found"
+    },
+    {
+      "referenced_file": "filezilla/recentservers.xml",
+      "referenced_in": [
+        {
+          "doc": "/home/setup/infrafabric/code/yologuard/benchmarks/results.json",
+          "lines": [
+            null
+          ]
+        },
+        {
+          "doc": "/home/setup/infrafabric/code/yologuard/reports/20251108T020047Z/bench_fast.json",
+          "lines": [
+            null
+          ]
+        }
+      ],
+      "total_references": 8,
+      "severity": "medium",
+      "reason": "Supporting file referenced but not found"
+    },
+    {
+      "referenced_file": ".esmtprc",
+      "referenced_in": [
+        {
+          "doc": "/home/setup/infrafabric/code/yologuard/benchmarks/results.json",
+          "lines": [
+            null
+          ]
+        },
+        {
+          "doc": "/home/setup/infrafabric/code/yologuard/reports/20251108T020047Z/bench_fast.json",
+          "lines": [
+            null
+          ]
+        }
+      ],
+      "total_references": 6,
+      "severity": "medium",
+      "reason": "Supporting file referenced but not found"
+    },
+    {
+      "referenced_file": ".ftpconfig",
+      "referenced_in": [
+        {
+          "doc": "/home/setup/infrafabric/code/yologuard/benchmarks/results.json",
+          "lines": [
+            null
+          ]
+        },
+        {
+          "doc": "/home/setup/infrafabric/code/yologuard/reports/20251108T020047Z/bench_fast.json",
+          "lines": [
+            null
+          ]
+        }
+      ],
+      "total_references": 6,
+      "severity": "medium",
+      "reason": "Supporting file referenced but not found"
+    },
+    {
+      "referenced_file": "/tmp/yolo-corpus/requests/src/requests/auth.py",
+      "referenced_in": [
+        {
+          "doc": "/home/setup/infrafabric/code/yologuard/reports/20251108T020047Z/crossfile_requests.json",
+          "lines": [
+            null
+          ]
+        }
+      ],
+      "total_references": 6,
+      "severity": "medium",
+      "reason": "Supporting file referenced but not found"
+    },
+    {
+      "referenced_file": "/tmp/yolo-corpus/requests/tests/test_requests.py",
+      "referenced_in": [
+        {
+          "doc": "/home/setup/infrafabric/code/yologuard/reports/20251108T020047Z/crossfile_requests.json",
+          "lines": [
+            null
+          ]
+        }
+      ],
+      "total_references": 6,
+      "severity": "medium",
+      "reason": "Supporting file referenced but not found"
+    },
+    {
+      "referenced_file": "db/robomongo.json",
+      "referenced_in": [
+        {
+          "doc": "/home/setup/infrafabric/code/yologuard/benchmarks/results.json",
+          "lines": [
+            null
+          ]
+        },
+        {
+          "doc": "/home/setup/infrafabric/code/yologuard/reports/20251108T020047Z/bench_fast.json",
+          "lines": [
+            null
+          ]
+        }
+      ],
+      "total_references": 6,
+      "severity": "medium",
+      "reason": "Supporting file referenced but not found"
+    },
+    {
+      "referenced_file": "web/ruby/secrets.yml",
+      "referenced_in": [
+        {
+          "doc": "/home/setup/infrafabric/code/yologuard/benchmarks/results.json",
+          "lines": [
+            null
+          ]
+        },
+        {
+          "doc": "/home/setup/infrafabric/code/yologuard/reports/20251108T020047Z/bench_fast.json",
+          "lines": [
+            null
+          ]
+        }
+      ],
+      "total_references": 6,
+      "severity": "medium",
+      "reason": "Supporting file referenced but not found"
+    },
+    {
+      "referenced_file": "/tmp/yolo-corpus/requests/docs/user/advanced.rst",
+      "referenced_in": [
+        {
+          "doc": "/home/setup/infrafabric/code/yologuard/reports/20251108T020047Z/crossfile_requests.json",
+          "lines": [
+            null
+          ]
+        }
+      ],
+      "total_references": 5,
+      "severity": "medium",
+      "reason": "Supporting file referenced but not found"
+    },
+    {
+      "referenced_file": "/.claude/projects/-home-setup/80e455f9-7019-491c-80b8-1c8c69f731c4.json",
+      "referenced_in": [
+        {
+          "doc": "infrafabric/INFRAFABRIC-COMPLETE-DOSSIER-v11.md",
+          "lines": [
+            1059,
+            1525
+          ]
+        },
+        {
+          "doc": "infrafabric-core/INFRAFABRIC-COMPLETE-DOSSIER-v11.md",
+          "lines": [
+            1059,
+            1525
+          ]
+        }
+      ],
+      "total_references": 4,
+      "severity": "medium",
+      "reason": "Supporting file referenced but not found"
+    },
+    {
+      "referenced_file": "//img.sh",
+      "referenced_in": [
+        {
+          "doc": "infrafabric/README.md",
+          "lines": [
+            5,
+            6
+          ]
+        },
+        {
+          "doc": "infrafabric-core/README.md",
+          "lines": [
+            5,
+            6
+          ]
+        }
+      ],
+      "total_references": 4,
+      "severity": "medium",
+      "reason": "Supporting file referenced but not found"
+    },
+    {
+      "referenced_file": "ARXIV-SUBMISSION-CHECKLIST.txt",
+      "referenced_in": [
+        {
+          "doc": "infrafabric/papers/ARXIV-SUBMISSION-README.md",
+          "lines": [
+            635,
+            897
+          ]
+        },
+        {
+          "doc": "infrafabric-core/papers/ARXIV-SUBMISSION-README.md",
+          "lines": [
+            635,
+            897
+          ]
+        }
+      ],
+      "total_references": 4,
+      "severity": "medium",
+      "reason": "Supporting file referenced but not found"
+    },
+    {
+      "referenced_file": ".docker/.dockercfg",
+      "referenced_in": [
+        {
+          "doc": "/home/setup/infrafabric/code/yologuard/benchmarks/results.json",
+          "lines": [
+            null
+          ]
+        },
+        {
+          "doc": "/home/setup/infrafabric/code/yologuard/reports/20251108T020047Z/bench_fast.json",
+          "lines": [
+            null
+          ]
+        }
+      ],
+      "total_references": 4,
+      "severity": "medium",
+      "reason": "Supporting file referenced but not found"
+    },
+    {
+      "referenced_file": ".npmrc",
+      "referenced_in": [
+        {
+          "doc": "/home/setup/infrafabric/code/yologuard/benchmarks/results.json",
+          "lines": [
+            null
+          ]
+        },
+        {
+          "doc": "/home/setup/infrafabric/code/yologuard/reports/20251108T020047Z/bench_fast.json",
+          "lines": [
+            null
+          ]
+        }
+      ],
+      "total_references": 4,
+      "severity": "medium",
+      "reason": "Supporting file referenced but not found"
+    }
+  ]
+}
