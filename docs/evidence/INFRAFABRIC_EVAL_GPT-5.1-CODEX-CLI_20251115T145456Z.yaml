@@ -1,0 +1,290 @@
+evaluator: "Codex"
+evaluation_date: "2025-11-15"
+repository: "https://github.com/dannystocker/infrafabric"
+commit_hash: "a9f21929566520210ebbcba633487454c76b68ba"
+
+executive_summary:
+  overall_score: 4.5
+  one_liner: "Ambitious AI governance thesis, but this repo ships prose not platforms."
+  key_strength: "Rich epistemic/security narratives tie IF.* concepts to real-world analogies."
+  key_weakness: "Zero runnable code for the headline IF.yologuard/IF.optimise systems."
+  buyer_fit: "Academic/research institutions (6/10), Regulated enterprise (2/10)"
+  recommended_action: "Commit the actual IF.yologuard + optimiser implementations or clearly scope this repo as documentation only."
+
+conceptual_quality:
+  substance_score: 6
+  novelty_score: 7
+  rigor_score: 4
+  coherence_score: 6
+  findings:
+    - text: "IF-foundations ties IF.ground/IF.search/IF.persona into a coherent epistemic workflow with concrete personas."
+      file: "IF-foundations.md:14-1034"
+      evidence: "Sections 2-4 spell out principles, passes, and bloom personas rooted in production anecdotes."
+      severity: "info"
+    - text: "Civilizational collapse analogies in IF.vision are sweeping narratives with no quantitative backing."
+      file: "papers/IF-vision.tex:135-160"
+      evidence: "Claims about Rome/Maya/Soviet collapses lack data tables or citations beyond descriptive prose."
+      severity: "medium"
+    - text: "Reference list relies on decades-old philosophy without surfacing modern AI governance work."
+      file: "papers/IF-foundations.tex:2403-2434"
+      evidence: "Nine of nine IF.ground citations predate 1959, leaving recent validation absent."
+      severity: "low"
+
+technical_implementation:
+  code_quality_score: 2
+  test_coverage: 0
+  documentation_ratio: 0.99
+
+  if_components:
+    implemented: []
+
+    partial:
+      - name: "IF.ground"
+        design_file: "IF-foundations.md:14-96"
+        implementation_file: null
+        completeness: 30
+        blockers: ["Principles only exist as prose", "Guardrails referenced but no repo code"]
+        priority: "P1"
+      - name: "IF.search"
+        design_file: "IF-foundations.md:519-855"
+        implementation_file: null
+        completeness: 25
+        blockers: ["8-pass flow lacks orchestration scripts", "Tool outputs live in private logs"]
+        priority: "P1"
+      - name: "IF.persona"
+        design_file: "IF-foundations.md:909-1034"
+        implementation_file: null
+        completeness: 20
+        blockers: ["Character bible not connected to agents", "No schema for persona traits"]
+        priority: "P2"
+      - name: "IF.armour"
+        design_file: "IF-armour.md:81-383"
+        implementation_file: null
+        completeness: 35
+        blockers: ["Detection heuristics described but not supplied", "No reproducible benchmark harness"]
+        priority: "P1"
+      - name: "IF.witness"
+        design_file: "IF-witness.md:1-1363"
+        implementation_file: null
+        completeness: 30
+        blockers: ["MARL tooling not committed", "Guardian council weights only textual"]
+        priority: "P2"
+      - name: "IF.yologuard"
+        design_file: "annexes/infrafabric-IF-annexes.md:2621-2650"
+        implementation_file: "code/yologuard/ (empty)"
+        completeness: 40
+        blockers: ["Core detector code kept outside repo", "Metrics lack raw logs"]
+        priority: "P0"
+      - name: "IF.optimise"
+        design_file: "annexes/ANNEX-N-IF-OPTIMISE-FRAMEWORK.md:1-135"
+        implementation_file: null
+        completeness: 20
+        blockers: ["Token accounting service unspecified", "No scheduler or API hooks"]
+        priority: "P1"
+
+    vaporware:
+      - name: "IF.router"
+        mentions: ["README.md:153-159"]
+        spec_exists: false
+        priority: "P2"
+      - name: "IF.memory"
+        mentions: ["README.md:153-159"]
+        spec_exists: false
+        priority: "P2"
+      - name: "IF.trace"
+        mentions: ["README.md:153-159"]
+        spec_exists: false
+        priority: "P2"
+      - name: "IF.pulse"
+        mentions: ["README.md:153-159"]
+        spec_exists: false
+        priority: "P3"
+      - name: "IF.ceo"
+        mentions: ["README.md:149-151"]
+        spec_exists: false
+        priority: "P3"
+      - name: "IF.vesicle"
+        mentions: ["README.md:149-150"]
+        spec_exists: false
+        priority: "P3"
+      - name: "IF.kernel"
+        mentions: ["README.md:151"]
+        spec_exists: false
+        priority: "P3"
+
+  dependencies:
+    - name: "Anthropic Claude API"
+      used_by: ["IF.optimise", "IF.guard"]
+      status: "external SaaS"
+      risk: "medium - pricing + vendor lock-in dominate IF.optimise policy (annexes/ANNEX-N-IF-OPTIMISE-FRAMEWORK.md:22-134)."
+    - name: "YouTube Data API / Discord bots"
+      used_by: ["IF.armour", "IF.guard"]
+      status: "external"
+      risk: "medium - compliance + rate limits noted in IF-armour.md:83-111."
+    - name: "ProcessWire CMS / Next.js stack"
+      used_by: ["IF.yologuard deployments"]
+      status: "external"
+      risk: "low - integration claimed at IF-armour.md:624-640 but no manifests committed."
+
+  security_issues:
+    - severity: "high"
+      issue: "Honeypot guidance suggests publishing intentionally vulnerable API keys without isolating the blast radius."
+      file: "IF-armour.md:100-112"
+      fix: "Restrict honeypots to synthetic tenants, rotate keys immediately, and document containment safeguards."
+    - severity: "medium"
+      issue: "COMPLETE-SOURCE-INDEX exposes absolute /home/setup paths and archive names, leaking internal topology."
+      file: "annexes/COMPLETE-SOURCE-INDEX.md:1-76"
+      fix: "Redact local paths or replace with repo-relative references before publishing."
+
+  citation_verification:
+    papers_reviewed: 4
+    total_citations: 67
+    citations_verified: 10
+    issues:
+      - severity: "medium"
+        issue: "SuperAGI swarm reference 404s (https://superagi.com/swarms checked 2025-11-15)."
+        file: "papers/IF-witness.tex:1285-1288"
+        fix: "Link to an archived copy or cite another accessible swarm reference."
+      - severity: "low"
+        issue: "Warrant canary SSRN citation requires authentication (HTTP 403)."
+        file: "papers/IF-witness.tex:1316-1319"
+        fix: "Provide an open-access PDF or cite an alternate public source."
+      - severity: "low"
+        issue: "Most IF.ground references are >65 years old with no modern corroboration."
+        file: "papers/IF-foundations.tex:2403-2434"
+        fix: "Add recent epistemic AI safety literature or flag the section as historical context."
+
+    readme_audit:
+      accuracy_score: 3
+      links_checked: 8
+      broken_links: 0
+      install_instructions_current: false
+      examples_current: false
+      issues:
+        - severity: "medium"
+          issue: "README markets IF.yologuard as 6-month production-ready while the repo holds only documents."
+          fix: "Clarify scope or add links to the codebase actually running in production (README.md:125-145)."
+        - severity: "low"
+          issue: "Installation section only shows how to load a YAML philosophy database."
+          fix: "Provide real setup steps (dependencies, scripts) or state that code lives elsewhere (README.md:336-360)."
+
+market_analysis:
+  tam_estimate: "$40M-$100M (AI governance + security research services)"
+  buyer_personas:
+    - rank: 1
+      name: "AI safety / governance research labs"
+      fit_score: 7
+      willingness_to_pay: 3
+      rationale: "They value the philosophical depth (README.md:125-165) but expect open artefacts, limiting revenue."
+    - rank: 2
+      name: "Enterprise security leaders evaluating AI workflows"
+      fit_score: 4
+      willingness_to_pay: 4
+      rationale: "IF.armour narratives resonate, yet absence of deployable software lowers confidence."
+    - rank: 3
+      name: "Public-sector innovation units"
+      fit_score: 3
+      willingness_to_pay: 2
+      rationale: "Civilizational framing intrigues them but procurement demands auditable code and compliance packages."
+
+  competitors:
+    - name: "LangSmith"
+      overlap: "Agent tracing + evaluation."
+      differentiation: "InfraFabric emphasizes philosophical governance vs instrumentation."
+    - name: "Lakera Guard"
+      overlap: "Secret scanning and prompt security."
+      differentiation: "InfraFabric leans on multi-LLM consensus but lacks the production agents Lakera ships."
+
+  monetization_paths:
+    - strategy: "Research consortium / paid briefings"
+      viability: 4
+      timeline: "3-6 months"
+    - strategy: "Security consulting + custom IF.yologuard deployments"
+      viability: 7
+      timeline: "Immediate once code artifacts are released"
+
+gaps_and_issues:
+  p0_blockers:
+    - issue: "No runnable IF.* implementations committed"
+      impact: "Cannot validate or deploy any advertised capability."
+      effort: "2-4 weeks"
+      files: ["docs/evidence/infrafabric_metrics.json"]
+    - issue: "Broken / gated citations in core papers"
+      impact: "Reviewers cannot trace evidence for IF.witness claims."
+      effort: "1-2 days"
+      files: ["papers/IF-witness.tex:1285-1323"]
+
+  p1_high_priority:
+    - issue: "IF.optimise lacks concrete scheduler + telemetry"
+      impact: "Token-policy claims are unverifiable."
+      effort: "1-2 weeks"
+      files: ["annexes/ANNEX-N-IF-OPTIMISE-FRAMEWORK.md:1-135"]
+    - issue: "README overstates production readiness"
+      impact: "Stakeholders assume capabilities that are not in the repo."
+      effort: "1 day"
+      files: ["README.md:125-185"]
+    - issue: "IF.yologuard metrics missing supporting data"
+      impact: "96.43% recall cannot be audited."
+      effort: "3-5 days"
+      files: ["annexes/infrafabric-IF-annexes.md:2621-2650"]
+
+  p2_medium_priority:
+    - issue: "Documentation scattered across dozens of markdown files"
+      impact: "Onboarding cost remains high."
+      effort: "2-3 days"
+      files: ["README.md:129-185"]
+    - issue: "Philosophy citations skew historical"
+      impact: "Perceived rigor suffers with no modern references."
+      effort: "3-4 days"
+      files: ["papers/IF-foundations.tex:2403-2530"]
+    - issue: "Dependency footprint undocumented"
+      impact: "Unknown legal/compliance exposure for YouTube/Discord/GPT usage."
+      effort: "2 days"
+      files: ["IF-armour.md:83-111"]
+
+style_assessment:
+  documentation_quality: 7
+  narrative_coherence: 6
+  jargon_density: 8
+  accessibility: 4
+  recommendations:
+    - "Add a single-page 'What ships here?' guide clarifying doc vs code assets."
+    - "Map each IF.* component to real repos/files to cut through jargon."
+    - "Introduce fresher citations and quantitative tables to balance the storytelling."
+
+metrics:
+  total_files: 32
+  total_lines_code: 333
+  total_lines_docs: 25291
+  code_to_docs_ratio: 0.013
+  languages:
+    Markdown: 17411
+    LaTeX: 6569
+    YAML: 966
+    Python: 333
+    Text: 345
+  test_files: 0
+  test_lines: 0
+
+next_steps:
+  immediate:
+    - action: "Commit or link the real IF.yologuard + optimiser code, or downgrade claims."
+      effort: "2 days"
+    - action: "Replace dead citations / provide archives for `/papers`."
+      effort: "1 day"
+  short_term:
+    - action: "Publish IF.optimise scheduler schema + runbook."
+      effort: "1-2 weeks"
+    - action: "Bundle reproducible IF.yologuard benchmark logs."
+      effort: "3-5 days"
+  long_term:
+    - action: "Consolidate 50+ markdown papers into a navigable guide with traceable links."
+      effort: "1-2 weeks"
+    - action: "Define and implement guardian council configuration artifacts."
+      effort: "2-3 weeks"
+
+attachments:
+  - name: "IF_COMPONENT_INVENTORY.yaml"
+    description: "Current IF.* component status tracker created for this evaluation."
+  - name: "DEBUG_SESSION_PROMPT_GPT-5.1-CODEX-CLI_20251115T145456Z.md"
+    description: "Step-by-step remediation plan with P0/P1/P2 queues."
