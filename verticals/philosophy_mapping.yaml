@@ -1,0 +1,283 @@
+# InfraFabric: Philosophy to Verticals Mapping
+# Simplified guidance framework based on 50-vertical analysis
+# Date: 2025-11-09
+
+simplified_principles:
+  principle_1_show_evidence:
+    user_facing_name: "Show Me the Evidence"
+    philosophical_foundation:
+      - philosopher: "John Locke (1689)"
+        concept: "Knowledge from sensory experience"
+      - philosopher: "Vienna Circle (1920s)"
+        concept: "Empirical verification required"
+    if_components: ["IF.ground", "IF.armour", "IF.search"]
+    primary_verticals:
+      - cluster: "Evidence Builders (18 jobs)"
+      - roles: ["Antitrust Judge", "Patent Examiner", "Regulatory Commissioner", "Securities Litigator", "Constitutional Law Professor", "Academic Journal Editor"]
+    guidance: "Every claim must trace to observable artifact (court filing, sensor data, clinical trial)"
+    example: "Judge requires market share claim linked to FTC filing, not analyst opinion"
+
+  principle_2_might_be_wrong:
+    user_facing_name: "We Might Be Wrong"
+    philosophical_foundation:
+      - philosopher: "Charles Sanders Peirce (1877)"
+        concept: "All knowledge provisional and revisable"
+    if_components: ["IF.reflect", "IF.search"]
+    primary_verticals:
+      - cluster: "Money Movers (16 jobs)"
+      - roles: ["Hedge Fund Manager", "PE Portfolio Manager", "M&A Advisor", "Venture Debt Investor"]
+      - cluster: "Speed Demons (22 jobs)"
+      - roles: ["CEO in Crisis", "Defense Intelligence Analyst", "Campaign Manager"]
+    guidance: "Explicit confidence scores + known gaps upfront; admit uncertainty"
+    example: "Hedge fund gets '75% confidence' + warning about unconfirmed $500M credit line"
+
+  principle_3_pieces_fit:
+    user_facing_name: "Do the Pieces Fit Together?"
+    philosophical_foundation:
+      - philosopher: "Willard Van Orman Quine (1951)"
+        concept: "Coherence within networks validates beliefs"
+    if_components: ["IF.guardian", "IF.search"]
+    primary_verticals:
+      - cluster: "Fraud Detectors (16 jobs)"
+      - roles: ["Insurance Claims Investigator", "Customs Official", "Fact-Checker", "Securities Litigator"]
+      - cluster: "Dual-Domain Conflict (20+ jobs)"
+      - roles: ["M&A Advisor", "Diplomat", "CEO", "Regulatory Commissioner"]
+    guidance: "Check for contradictions across sources; flag incoherence; resolve conflicts"
+    example: "Insurance investigator gets automatic alert when claimant GPS contradicts police report"
+
+  principle_4_could_be_wrong:
+    user_facing_name: "How Could We Be Wrong?"
+    philosophical_foundation:
+      - philosopher: "Karl Popper (1934)"
+        concept: "Falsifiability via testable refutation"
+    if_components: ["IF.search (Pass 7: Reverse)", "IF.guardian"]
+    primary_verticals:
+      - cluster: "Tech Deep-Divers (14 jobs)"
+      - roles: ["Pharma R&D Director", "Hospital CMO", "Patent Attorney", "Environmental Consultant"]
+      - cluster: "Evidence Builders (18 jobs)"
+      - roles: ["Judges", "Regulatory Commissioners"]
+    guidance: "Design falsification tests before committing; define failure criteria"
+    example: "Pharma R&D gets preregistered failure criteria: abandon if Phase III shows <40% efficacy"
+
+  principle_5_works_practice:
+    user_facing_name: "What Works in Practice?"
+    philosophical_foundation:
+      - philosopher: "William James (1907)"
+        concept: "Truth is what works"
+      - philosopher: "John Dewey (1938)"
+        concept: "Inquiry as practical problem-solving"
+    if_components: ["IF.optimise", "IF.search"]
+    primary_verticals:
+      - cluster: "Speed Demons (22 jobs)"
+      - roles: ["CEO", "Hedge Fund Manager", "Defense Analyst"]
+      - cluster: "People Whisperers (10 jobs)"
+      - roles: ["VC Partner", "Sports GM", "Talent Agent"]
+    guidance: "Optimize for utility, not perfect truth; 'good enough' > 'perfect'"
+    example: "CEO gets 'good enough' answer in 2 hours vs. 'perfect' answer in 2 days"
+
+  principle_6_admit_unknown:
+    user_facing_name: "Admit What You Don't Know"
+    philosophical_foundation:
+      - philosopher: "Buddha (500 BCE)"
+        concept: "Non-attachment; acknowledge impermanence"
+      - philosopher: "Lao Tzu (6th century BCE)"
+        concept: "Humility; recognize limits"
+    if_components: ["IF.witness", "IF.guardian"]
+    primary_verticals:
+      - cluster: "All Verticals (50 jobs)"
+      - universal: true
+    guidance: "Non-attachment; acknowledge limits; transparent uncertainty metrics"
+    example: "M&A advisor surfaces integration uncertainty (6-18 months) upfront, not post-close"
+
+audience_presets:
+  evidence_builder:
+    name: "Evidence Builder"
+    job_examples: ["Judge", "Lawyer", "Patent Examiner", "Regulatory Commissioner", "Compliance Officer"]
+    job_count: 18
+    auto_config:
+      domain_weights:
+        legal: 60
+        financial: 25
+        technical: 15
+      coverage_target: 92  # 90-95% range
+      citation_requirements: "high"
+      time_available: "days_to_weeks"
+    philosophy_emphasis: ["principle_1_show_evidence", "principle_4_could_be_wrong"]
+    output_format: "IF.brief-thorough"
+    plain_language: "You need bulletproof evidence that will hold up in court. We'll prioritize legal analysis with comprehensive citations."
+
+  money_mover:
+    name: "Money Mover"
+    job_examples: ["Hedge Fund", "PE Investor", "M&A Advisor", "CFO", "Venture Debt"]
+    job_count: 16
+    auto_config:
+      domain_weights:
+        financial: 55
+        talent: 30
+        technical: 15
+      coverage_target: 80  # 75-85% range
+      citation_requirements: "medium"
+      time_available: "hours_to_days"
+    philosophy_emphasis: ["principle_2_might_be_wrong", "principle_5_works_practice"]
+    output_format: "IF.brief (with confidence scores)"
+    plain_language: "You need asymmetric information before the market figures it out. We'll prioritize financial analysis with explicit confidence scores."
+
+  tech_deep_diver:
+    name: "Tech Deep-Diver"
+    job_examples: ["Pharma R&D", "Hospital CMO", "Patent Attorney", "Environmental Consultant"]
+    job_count: 14
+    auto_config:
+      domain_weights:
+        technical: 75
+        legal: 20
+        financial: 5
+      coverage_target: 90  # 85-95% range
+      citation_requirements: "high"
+      time_available: "days_to_weeks"
+    philosophy_emphasis: ["principle_1_show_evidence", "principle_4_could_be_wrong"]
+    output_format: "IF.brief-technical (with falsification tests)"
+    plain_language: "You need technical accuracy on complex scientific questions. Mistakes can be deadly—expect thorough peer-reviewed analysis."
+
+  people_whisperer:
+    name: "People Whisperer"
+    job_examples: ["VC", "Sports GM", "Talent Agent", "Admissions Director"]
+    job_count: 10
+    auto_config:
+      domain_weights:
+        talent: 65
+        financial: 25
+        cultural: 10
+      coverage_target: 77  # 75-80% range
+      citation_requirements: "medium"
+      time_available: "hours_to_days"
+    philosophy_emphasis: ["principle_5_works_practice", "principle_3_pieces_fit"]
+    output_format: "IF.brief-talent (with peer benchmarking)"
+    special_methodology: "IF.talent"
+    plain_language: "You need predictions about human performance and team dynamics. No one is perfectly predictable—expect 'good enough' not 'perfect' answers."
+
+  narrative_builder:
+    name: "Narrative Builder"
+    job_examples: ["Investigative Journalist", "Campaign Manager", "Entertainment Producer", "Policy Analyst"]
+    job_count: 12
+    auto_config:
+      domain_weights:
+        cultural: 50
+        legal: 30
+        financial: 20
+      coverage_target: 82  # 80-85% range
+      citation_requirements: "high"
+      time_available: "days_to_weeks"
+    philosophy_emphasis: ["principle_3_pieces_fit", "principle_1_show_evidence"]
+    output_format: "IF.brief (with cross-domain synthesis)"
+    special_protocol: "IF.arbitrate"
+    plain_language: "You need to find patterns across culture, legal, and financial domains that tell a compelling story."
+
+  speed_demon:
+    name: "Speed Demon"
+    job_examples: ["CEO in Crisis", "Defense Analyst", "Hedge Fund Trader"]
+    job_count: 22
+    auto_config:
+      domain_weights:
+        user_specified: true  # Varies by situation
+        default_financial: 50
+        default_technical: 30
+        default_legal: 20
+      coverage_target: 70  # Lower than standard 80%
+      citation_requirements: "low_to_medium"
+      time_available: "minutes_to_hours"
+    philosophy_emphasis: ["principle_2_might_be_wrong", "principle_5_works_practice"]
+    output_format: "IF.brief-fast (confidence + gaps upfront)"
+    special_execution: "Haiku-only (10x faster, cheaper)"
+    plain_language: "You need a decision fast, even if incomplete. We'll optimize for speed with explicit gaps. Expect answers in under 30 minutes."
+
+v31_enhancements:
+  enhancement_1_profile_autoconfig:
+    name: "Profile Auto-Configuration"
+    problem: "Manual configuration is cognitive overhead; 80% of users fit 6 clusters"
+    solution: "User selects job title → auto-configure domain weights, coverage, citations"
+    effort: "2 days"
+    impact: "90% reduction in setup time"
+    priority: 1
+
+  enhancement_2_fast_mode:
+    name: "IF.brief-fast Mode"
+    problem: "44% of jobs need <12 hour decisions; current 70-minute minimum too slow"
+    solution: "Haiku-only, 70% coverage target, high-confidence patterns only"
+    effort: "1 week"
+    impact: "10× speed increase + 10× cost reduction"
+    priority: 2
+    addresses_gap: "Gap 1: Speed vs. Evidence Synthesis"
+
+  enhancement_3_arbitrate:
+    name: "IF.arbitrate Protocol"
+    problem: "20+ jobs face 'legal says yes, tech says no' moments; V3 buries conflicts"
+    solution: "Detect cross-domain conflicts; surface in exec summary with resolution options"
+    effort: "1 week"
+    impact: "90% reduction in time-to-discovery for domain conflicts"
+    priority: 2
+    addresses_gap: "Gap 2: Dual-Domain Analysis"
+
+  enhancement_4_talent:
+    name: "IF.talent Specialized Methodology"
+    problem: "22 jobs (44%) prioritize Talent; current V3 only covers 30%"
+    solution: "LinkedIn trajectory, Glassdoor sentiment, co-founder mapping, peer benchmarking"
+    effort: "2 weeks"
+    impact: "50% increase in Talent coverage (30% → 80%)"
+    priority: 3
+    addresses_gap: "Gap 3: Talent-Centric Intelligence"
+
+  enhancement_5_regulatory_timeline:
+    name: "Regulatory Timeline Layer"
+    problem: "24 jobs (48%) operate in regulatory environments; V3 shows 'today' not 'tomorrow'"
+    solution: "Current vs. proposed rules, enforcement trends, key officials, forecasts"
+    effort: "1 week"
+    impact: "70% increase in forward-looking regulatory intelligence"
+    priority: 4
+    addresses_gap: "Gap 4: Regulatory Forecasting"
+
+  enhancement_6_verify:
+    name: "IF.verify Protocol"
+    problem: "16 jobs (32%) need fraud detection; V3 finds evidence but doesn't challenge it"
+    solution: "Timeline consistency, source triangulation, implausibility detection, absence analysis"
+    effort: "1 week"
+    impact: "85% fraud detection rate"
+    priority: 4
+    addresses_gap: "Gap 5: Fraud Detection Capability"
+
+  enhancement_7_geopolitical:
+    name: "IF.geopolitical Stress-Test"
+    problem: "9 jobs (18%) vulnerable to geopolitical disruption; V3 shows current state only"
+    solution: "Base case + 2-3 scenarios with probability, impact, mitigation, triggers"
+    effort: "1 week"
+    impact: "85% risk reduction for geopolitically-sensitive supply chains"
+    priority: 5
+    addresses_gap: "Gap 6: Geopolitical Scenario Planning"
+
+implementation_timeline:
+  total_duration: "7-8 weeks"
+  parallel_tracks: true
+  phases:
+    week_1:
+      tasks: ["Profile auto-configuration"]
+      rationale: "Quick win with universal benefit"
+    weeks_2_3:
+      tasks: ["IF.brief-fast mode", "IF.arbitrate protocol"]
+      rationale: "Address biggest gaps (speed + conflict resolution)"
+    weeks_4_5:
+      tasks: ["IF.talent methodology"]
+      rationale: "High-value underserved vertical"
+    weeks_6_7:
+      tasks: ["Regulatory timeline", "IF.verify", "IF.geopolitical"]
+      rationale: "Polish specialized capabilities"
+    week_8:
+      tasks: ["Integration testing", "User acceptance testing"]
+      rationale: "Validation before production"
+
+metrics:
+  setup_time_reduction: "90%"
+  speed_increase_fast_mode: "10x"
+  cost_reduction_fast_mode: "10x"
+  talent_coverage_increase: "50% (30% → 80%)"
+  fraud_detection_rate: "85%"
+  geopolitical_risk_reduction: "85%"
+  conflict_discovery_time_reduction: "90%"
