@@ -214,6 +214,37 @@ InfraFabric is a research project on AI agent coordination and civilizational re
 **External Repo** (not on local machine)
 **Contains:** IF.yologuard + IF.search implementations
 
+### 4. GGQ CRM
+**Path:** `/home/setup/ggq-crm`
+**Repo:** http://localhost:4000/dannystocker/ggq-crm (Gitea)
+**Status:** Dolibarr 22.0 production deployment complete (2025-11-15)
+
+**Migration History:**
+- Phase 1: SuiteCRM 8 installation (23,581 records imported from calendar + business DB)
+- Phase 2: Dolibarr migration (better UX for novice user Marc Gauvran)
+
+**Current Production System: Dolibarr**
+- URL: https://digital-lab.ca/ggq/doli/htdocs/
+- Version: 22.0.0 (upgraded from 21.0.2)
+- Language: French (fr_FR)
+- Users: Marc (marc/marc123), Admin (admin/admin123)
+- Data: 1,404 companies (404 prospects + 1,000 customers)
+
+**Databases:**
+- Dolibarr: `dolibarr-353037376a57` @ `sdb-78.hosting.stackcp.net`
+- SuiteCRM (legacy): `suitecrm-3130373ec5` @ `shareddb-n.hosting.stackcp.net`
+
+**Key Files:**
+- Session handover: `/home/setup/ggq-crm/SESSION-HANDOVER.md`
+- Import script: `/home/setup/ggq-crm/import_to_dolibarr.py`
+- Source data: `/home/setup/ggq-crm/data/calendars/` (9,094 calendar entries)
+
+**Pending Work:**
+- P0: Marc UI testing and feedback
+- P1: Import remaining 5,157 customers + 11,091 contacts + timeline data
+- P2: Reset passwords to secure values after testing
+- P3: Build Google Calendar ↔ Dolibarr bidirectional sync (40-60 hours)
+
 ---
 
 ## Key Contacts & Credentials
