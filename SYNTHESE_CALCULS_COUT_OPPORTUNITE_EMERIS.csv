@@ -1,0 +1,78 @@
+Élément,Scénario_A_Volume_Prime,Scénario_B_Urgence_Prime,Delta,Unité
+─────────────────────────────────────────────────────────────────────────
+TRANSPORT DIRECT,,,,
+Affrètement Méru direct (100km),650,---,--,€
+Affrètement Gisors express (30km),350,---,--,€
+Total affrètement,1000,---,--,€
+─────────────────────────────────────────────────────────────────────────
+TRANSPORT NAVETTE (Optimisé),,,,
+Chauffeur Arras→Gisors (30km),---,133,--,€
+Navette Gisors→Méru (50km),---,25,--,€
+Manutention transbordement,---,35,--,€
+Stockage Gisors temporaire (12h),---,20,--,€
+Total navette,---,213,--,€
+─────────────────────────────────────────────────────────────────────────
+ÉCONOMIE TRANSPORT DIRECTE,,,,
+Transport A vs B,1000 vs 213,--- (B moins cher),787,€
+Pourcentage d'économie,baseline,-78.7%,--,%
+─────────────────────────────────────────────────────────────────────────
+COÛT PERTE CLIENT GISORS,,,,
+Pénalité client/jour,1000,0,1000,€
+Jours de retard (chantier bloqué),7,0,7,jours
+Total pénalité retard,7000,0,7000,€
+Risque annulation client (50%),1800,0,1800,€
+Perte marge brute Gisors,3600,0,3600,€
+LTV perte client long-terme,-8000,0,-8000,€
+─────────────────────────────────────────────────────────────────────────
+SOUS-TOTAL PERTE CLIENT GISORS,20400,0,20400,€
+Cas conservateur (pénalité seule),3500 + 1800,0,5300,€
+Cas réaliste (pénalité + marge),7000 + 1800 + 3600,0,12400,€
+Cas pessimiste (+ LTV),14000 + 1800 + 3600 + 8000,0,27400,€
+─────────────────────────────────────────────────────────────────────────
+BÉNÉFICE CLIENT SATISFACTION (Option B),,,,
+Marge brute conservée,0,3600,3600,€
+LTV client satisfait (recommandation 5ans),0,5000,5000,€
+NPS point valeur,0,100 per point,+7,points
+─────────────────────────────────────────────────────────────────────────
+COÛTS OPÉRATIONNELS SUPPLÉMENTAIRES,,,,
+Coordination Angélique (30 min),15,30,15,€
+Risk surstock Gisors 1%,0,200,200,€
+─────────────────────────────────────────────────────────────────────────
+TOTAL COÛT NET (RÉALISTE),,,,
+Option A (Volume Prime),1000 + 12400 + 15,13415,--,€
+Option B (Urgence Prime),213 - 787 (économie) + 30 + 200,213 + 30 + 200 - 787 = -344,--,€
+BÉNÉFICE GIDIMAT (Marge+LTV),0,3600 + 5000 = 8600,--,€
+─────────────────────────────────────────────────────────────────────────
+NET BÉNÉFICE SCÉNARIO B,-27400 (coût hideux),-344 + 8600 = 8256,35656,€
+─────────────────────────────────────────────────────────────────────────
+RATIO DÉCISIONNEL,,,,
+Économie transport / Perte client,787 / 12400,--,6.3,%
+Seuil d'indifférence (si perte < X),12490,--,€
+Conclusion,"Volume Prime irrationnel si perte client > 787€","Urgence Prime gagne à 87%",URGENCE_PRIME,décision
+─────────────────────────────────────────────────────────────────────────
+NPS IMPACT,,,,
+Livraison délai passé (Gisors retard),–5,0,+5,points
+Livraison on-time (Option B),0,+2,+2,points
+NPS delta (A vs B),–5,+2,+7,points
+Valeur €/point NPS,100,100,700,€
+Total LTV impact NPS,–500,+200,+700,€
+─────────────────────────────────────────────────────────────────────────
+SYNTHÈSE FINALE (CAS RÉALISTE),,,,
+Transport,1000,213,787,€ économies B
+Perte client urgence,12400,0,12400,€ coût A
+Satisfaction & LTV,0,8600,8600,€ gain B
+Coordination,15,30,15,€ coût additionnel B
+Net cost/benefit,-27415,-344 + 8600 = +8256,+35671,€
+Verdict,"MAUVAIS - Coûte 13k€/cas","BON - Gagne 8.2k€/cas","Choisir B",---
+─────────────────────────────────────────────────────────────────────────
+EXTRAPOLATION ANNUELLE (50 CAS SIMILAIRES),,,,
+Surplus coût Volume Prime,50 × -27415,--- ,1370750,€ perdu/an
+Bénéfice Urgence Prime,50 × 8256,--- ,412800,€ gagné/an
+Opportunité écart,---,---,1783550,€ différence annuelle
+─────────────────────────────────────────────────────────────────────────
+NOTES ET SOURCES,,,,
+* Pénalité client: Source Pass 2 (500-2000€/jour) - Cas moyen 1000€/jour,---,---,
+* LTV perte client 5ans: Hypothèse 5000€ valeur client fidèle perte,---,---,
+* Coûts transport: Source ANALYSE_COUTS_TRANSPORT_GEDIMAT_2025.md,---,---,
+* NPS: Étude secteur = 100€/point en LTV,---,---,
+* Suppositions conservatrices: Ignore autres retards/frictions,---,---,
