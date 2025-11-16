@@ -255,12 +255,12 @@
 
 ## 23. Responsable Supply Chain
 
-**Rôle:** Optimisation flux globaux, KPI logistiques, outils décisionnels
+**Rôle:** Optimisation flux globaux, Indicateurs Clés de Performance logistiques, outils décisionnels
 
 **Profil:**
 - Responsable supply chain distribution matériaux construction (GSB)
 - Expertise: modèles VRP (Vehicle Routing Problem), TSP, cross-docking, consolidation, milkrun
-- KPI maîtrisés: taux service, coût/t/km, délai moyen livraison, taux rupture, DSI (Days of Stock Inventory)
+- Indicateurs Clés de Performance maîtrisés: taux service, coût/t/km, délai moyen livraison, taux rupture, DSI (Jours de Stock d'Inventaire)
 - Outils: WMS, TMS, ERP, forecasting, demand sensing
 - Formation: école commerce/ingénieur, certifications APICS/CSCMP
 
@@ -268,7 +268,7 @@
 - "Arbitrage dépôt livraison: scoring multicritère (volume + proximité + urgence) avec quelles pondérations?"
 - "Milkrun fournisseurs région parisienne (1 camion, 3 enlèvements) vs affrètement individuel - seuil rentabilité?"
 - "Stock sécurité formule Wilson EOQ applicable tuiles (demande erratique, lead time variable)?"
-- "Dashboard temps réel: quels 5 KPI essentiels pour Angélique monitorer performance?"
+- "Tableau de bord temps réel: quels 5 Indicateurs Clés de Performance essentiels pour Angélique monitorer performance?"
 
 **Validation critères:**
 - ✅ Modèles logistiques adaptés GSB (pas copier-coller grande distribution alimentaire)
@@ -461,7 +461,7 @@ Validation opérationnelle, faisabilité terrain, conformité
 
 | Gardien | Vote | Commentaire |
 |---------|------|-------------|
-| IF.ceo/sam | ✅ | "ROI validé, quick win actionnable" |
+| IF.ceo/sam | ✅ | "ROI validé, gain rapide actionnable" |
 | Académie | ✅ | "Remplacer 'scoring' → 'notation multicritère'" |
 | Client | ✅ | "Urgence client pondérée, communication transparente" |
 | Auditeur | ⚠️ | "Poids 40/30/30 source? Ou calibration données Gedimat nécessaire" |
@@ -516,7 +516,7 @@ Validation opérationnelle, faisabilité terrain, conformité
 
 ### Élimination Angles Morts
 - **Opérationnel:** Angélique, Vendeur, Chauffeur (terrain quotidien)
-- **Stratégique:** Directeur Franchise, Supply Chain (ROI, KPI)
+- **Stratégique:** Directeur Franchise, Supply Chain (ROI, Indicateurs Clés de Performance)
 - **Externe:** Médiafret, Emeris, Client BTP (écosystème complet)
 - **Académique:** VRP Consultant, NPS Expert (rigueur méthodologique)
 - **Légal:** Juriste (conformité, éviter litiges)

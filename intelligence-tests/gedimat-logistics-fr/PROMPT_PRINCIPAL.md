@@ -28,11 +28,11 @@ Produire un **dossier complet, actionable et humble** pour Angélique (coordinat
 - **Franchises Gedimat** (marque nationale, gestion locale)
 
 ### Contraintes Transport
-- **≤10 tonnes:** Chauffeurs PL internes Gedimat (coût fixe salarial, très économique)
+- **≤10 tonnes:** Chauffeurs PL internes Gedimat (coût fixe salarial, généralement très économique selon contexte actuel - à confirmer avec données réelles)
 - **>10 tonnes:** Affrètement externe obligatoire (Médiafret + sous-traitants)
   - Exemple: 15t Méru + 5t Gisors = 20t total → transporteur externe
-- **Semi-complet:** 25-30 tonnes (livraison 1 seul dépôt)
-- **Navettes internes:** Redistribution entre dépôts (2×/semaine, coût salarial fixe)
+- **Semi-complet:** Estimé 25-30 tonnes (livraison 1 seul dépôt - à valider selon données réelles)
+- **Navettes internes:** Redistribution entre dépôts (généralement 2×/semaine selon fréquence actuelle estimée, coût salarial fixe - à confirmer)
 
 ### Problème Central
 **Coût élevé des affrètements externes** quand commandes multiples dépôts dépassent 10t mais nécessitent transporteur unique.
@@ -71,7 +71,7 @@ Produire un **dossier complet, actionable et humble** pour Angélique (coordinat
 1. Modèles logistiques distribution matériaux construction (France)
 2. Optimisation multi-dépôts avec contraintes capacité transport
 3. Milkrun / cross-dock / consolidation / pooling fret - applicabilité GSB (Grande Surface Bricolage)
-4. KPI logistiques B2B: taux service, coût/tonne/km, délai moyen livraison, taux rupture
+4. Indicateurs Clés de Performance logistiques B2B: taux service, coût/tonne/km, délai moyen livraison, taux rupture
 5. Mesure satisfaction client B2B distribution matériaux (NPS, CSAT, méthodes qualitatives)
 6. Formules min/max stock (EOQ Wilson, stock sécurité, point commande) + évolutions ML/demand sensing
 7. Systèmes WMS/TMS pour PME franchisées (intégration ERP Gedimat existant)
@@ -129,7 +129,7 @@ Produire un **dossier complet, actionable et humble** pour Angélique (coordinat
 **Agent 2 - Finance:**
 - Coût complet affrètement: €/t, €/km, frais fixes, pénalités retard
 - Coût opportunité: perte marge commande annulée vs surcoût transport express
-- Analyse sensibilité: impact +10% coût transport sur marge globale
+- Analyse sensibilité: impact estimé d'une hausse de ~10% coût transport sur marge globale (à valider avec données Gedimat)
 
 **Agent 3 - Satisfaction Client:**
 - Mesure proactive satisfaction (appels post-livraison, sondages, NPS)
@@ -169,12 +169,12 @@ Produire un **dossier complet, actionable et humble** pour Angélique (coordinat
 
 **Synthèse 3 volets:**
 
-1. **Ce qu'on sait (haute confiance):**
-   - Chauffeurs internes <10t très économiques
-   - Affrètement externe >10t coûteux mais nécessaire
-   - Navettes internes redistribution économiques
-   - Satisfaction client = délai + communication + fiabilité
-   - Relationnel Angélique = atout non documenté
+1. **Ce qu'on sait (confiance moyenne à valider avec données):**
+   - Chauffeurs internes <10t généralement très économiques selon modèle actuel (à confirmer)
+   - Affrètement externe >10t coûteux mais apparemment nécessaire (évaluation requise)
+   - Navettes internes redistribution estimées économiques (à valider)
+   - Satisfaction client = probablement délai + communication + fiabilité (hypothèse à tester)
+   - Relationnel Angélique = atout important non documenté (à formaliser)
 
 2. **Ce qui reste flou (nécessite données):**
    - Répartition exacte commandes par tranche poids
@@ -196,16 +196,16 @@ Produire un **dossier complet, actionable et humble** pour Angélique (coordinat
 **Objectif:** Résoudre tensions identifiées, proposer arbitrages éclairés
 
 **Contradiction 1: Dépôt prioritaire - Volume vs Proximité**
-- **Règle proposée:** Scoring pondéré (40% proximité, 30% volume, 30% urgence client)
-- **Calcul exemple:**
-  - Dépôt A: 15t, 80km, urgence faible → Score = 0.3×15 + 0.4×(1/80) + 0.3×2 = ?
-  - Dépôt B: 5t, 30km, urgence haute → Score = 0.3×5 + 0.4×(1/30) + 0.3×8 = ?
-  - **Philosophe:** James (pragmatisme) - choisir ce qui fonctionne mieux en pratique
+- **Règle proposée (à adapter après pilote):** Scoring pondéré estimé (environ 40% proximité, 30% volume, 30% urgence client - poids à ajuster selon résultats terrain)
+- **Calcul exemple (illustration, résultats indicatifs):**
+  - Dépôt A: 15t, 80km, urgence faible → Score = 0.3×15 + 0.4×(1/80) + 0.3×2 = ? (exemple simplifié)
+  - Dépôt B: 5t, 30km, urgence haute → Score = 0.3×5 + 0.4×(1/30) + 0.3×8 = ? (exemple simplifié)
+  - **Philosophe:** James (pragmatisme) - choisir ce qui fonctionne mieux en pratique, puis valider terrain
 
 **Contradiction 2: Coût vs Satisfaction**
-- **Règle proposée:** Seuil tolérance coût +20% si urgence client haute (chantier date fixe)
-- **Rationale:** Perte client = perte récurrence (LTV) > économie ponctuelle transport
-- **Philosophe:** Dewey (instrumentalisme) - satisfaction client = instrument fidélisation long terme
+- **Règle proposée (à tester et calibrer):** Seuil tolérance coût estimé à environ +20% si urgence client haute (chantier date fixe) - pourcentage à ajuster selon données réelles
+- **Rationale (hypothèse à valider):** Perte client estimée = perte récurrence (LTV) apparemment > économie ponctuelle transport (à confirmer)
+- **Philosophe:** Dewey (instrumentalisme) - satisfaction client = instrument potentiel de fidélisation long terme (à éprouver)
 
 **Contradiction 3: Automatisation vs Relationnel**
 - **Règle proposée:**
@@ -225,7 +225,7 @@ Produire un **dossier complet, actionable et humble** pour Angélique (coordinat
   ```
   Score_dépôt = w1×(Volume_tonnage) + w2×(1/Distance_km) + w3×(Urgence_client_1-10) + w4×(Disponibilité_stock_dépôt)
   ```
-- **Poids recommandés:** w1=0.25, w2=0.35, w3=0.30, w4=0.10 (ajustables selon priorités PDG)
+- **Poids recommandés (estimation à valider après pilote):** w1≈0.25, w2≈0.35, w3≈0.30, w4≈0.10 (valeurs proposées, ajustables selon priorités PDG et résultats tests terrain)
 - **Outil:** Fichier Excel avec macro calcul automatique (fourni en annexe)
 
 **Approfondissement 2: Dashboard Alertes & Suivi**
@@ -234,7 +234,7 @@ Produire un **dossier complet, actionable et humble** pour Angélique (coordinat
   2. Stock critique dépôt (<seuil min définition par produit)
   3. Commande urgente non planifiée (chantier J-3, marchandise pas réservée)
   4. Coût transport >seuil budget mensuel
-- **Indicateurs dashboard:**
+- **Indicateurs du tableau de bord:**
   - Taux service (livraisons à temps / total)
   - Coût transport €/tonne moyen 30 jours glissants
   - NPS satisfaction client (si sondages implémentés)
@@ -252,18 +252,18 @@ Produire un **dossier complet, actionable et humble** pour Angélique (coordinat
   2. Qualité produit (taux retour/défaut)
   3. Réactivité incidents (temps réponse, résolution)
   4. Flexibilité (urgent, petites quantités)
-- **Actions:** Fournisseurs score <70% → réunion amélioration, si persistant → recherche alternatives
+- **Actions (seuil proposé, à adapter):** Fournisseurs score estimé <70% → potentiellement réunion d'amélioration, si non-amélioration persistante → évaluer alternatives (seuil et délais à affiner selon contexte fournisseur)
 
 **Approfondissement 5: Formation Équipes**
 - **Coordination inter-dépôts:** Ateliers arbitrage collaboratif (simulations cas réels)
 - **Communication client:** Scripts appels retard, gestion objections, propositions alternatives
-- **Utilisation outils:** Formation dashboard, saisie notes relationnelles, scoring urgence
+- **Utilisation outils:** Formation tableau de bord, saisie notes relationnelles, scoring urgence
 
-**Approfondissement 6: Quick Wins (90 jours)**
-1. **Semaine 1-2:** Implémenter alertes retard fournisseur (Excel + email automatique)
-2. **Semaine 3-4:** Lancer sondage satisfaction 20 clients pilotes (template fourni)
-3. **Semaine 5-8:** Former Angélique + 2 coordinateurs sur scoring dépôt optimal
-4. **Semaine 9-12:** Dashboard mensuel coûts transport + taux service (PowerBI ou Excel)
+**Approfondissement 6: Gains Rapides (90 jours - planification estimée, à adapter selon réalité)**
+1. **Semaine 1-2 (estimation):** Implémenter alertes retard fournisseur (Excel + email automatique) - ajustement possible
+2. **Semaine 3-4 (estimation):** Lancer sondage satisfaction 20 clients pilotes (template fourni) - nombre et calendrier ajustables
+3. **Semaine 5-8 (estimation):** Former Angélique + 2 coordinateurs sur scoring dépôt optimal - durée à confirmer avec disponibilités
+4. **Semaine 9-12 (estimation):** Dashboard mensuel coûts transport + taux service (PowerBI ou Excel) - complexité à évaluer
 
 **Livrables:** 6 fiches détaillées (2-3 pages), outils Excel/templates, planning 90 jours
 
@@ -274,14 +274,14 @@ Produire un **dossier complet, actionable et humble** pour Angélique (coordinat
 
 **Gardien 1 - IF.ceo/sam (PDG Perspective):**
 - **Questions:**
-  - Recommandations actionnables immédiatement sans CAPEX majeur?
-  - ROI estimé optimisations (économies annuelles vs effort)?
-  - Risque opérationnel changement processus (formation, résistance)?
-- **Validation:** Dossier convaincant pour décision PDG? (oui/non, ajustements)
+  - Recommandations actionnables immédiatement sans CAPEX majeur important?
+  - ROI estimé des optimisations proposées (projections économies annuelles potentielles vs effort estimé)?
+  - Risques opérationnels estimés du changement processus (besoins formation estimés, résistance potentielle)?
+- **Validation:** Dossier opportunément équilibré pour décision PDG? (options claires, données à valider, décision laissée PDG)
 
 **Gardien 2 - Philosophe (Académie Française):**
 - **Questions:**
-  - Français parfait? Pas de anglicismes inutiles (KPI→indicateurs, dashboard→tableau de bord)?
+  - Français parfait? Pas de anglicismes inutiles (Indicateurs Clés de Performance→indicateurs, tableau de bord→tableau de bord)?
   - Terminologie grounded (stock vs inventaire, fournisseur vs vendor)?
   - Clarté exposition (compréhensible non-expert logistique)?
 - **Validation:** Langue irréprochable? (corrections inline)
@@ -324,15 +324,15 @@ Produire un **dossier complet, actionable et humble** pour Angélique (coordinat
 
 | Pass | Nombre Agents | Rôle | Durée Estimée |
 |------|--------------|------|---------------|
-| 1 - Signal Capture | 5 | Recherche primaire (logistique, KPI, satisfaction, WMS, stock) | 20 min |
-| 2 - Primary Analysis | 5 | Diagnostic (flux, coûts, inefficiences, causes retards) | 25 min |
-| 3 - Rigor | 4 | Validation hypothèses (3 agents + 1 philosophe) | 15 min |
-| 4 - Cross-Domain | 8 | Expertises (logistique, finance, client, SI, CRM, RH, juridique, marché) | 30 min |
-| 5 - Plateau | 3 | Synthèse intermédiaire (sait/flou/tendu) | 15 min |
-| 6 - Debug | 5 | Résolution contradictions (volume vs proximité, coût vs satisfaction, automatisation vs humain) | 20 min |
-| 7 - Deep Dive | 6 | Modèles détaillés (algorithme scoring, dashboard, communication client, scoring fournisseurs, formation, quick wins) | 35 min |
-| 8 - Meta-Validation | 6 | Conseil Gardiens (CEO, Philosophe, Client, Auditeur, Innovateur, Joe Coulombe) | 20 min |
-| **Total** | **42** | (40 + 2 coordination) | **~3h** |
+| 1 - Signal Capture | 5 | Recherche primaire (logistique, Indicateurs Clés de Performance, satisfaction, WMS, stock) | Estimé 20 min |
+| 2 - Primary Analysis | 5 | Diagnostic (flux, coûts, inefficiences, causes retards) | Estimé 25 min |
+| 3 - Rigor | 4 | Validation hypothèses (3 agents + 1 philosophe) | Estimé 15 min |
+| 4 - Cross-Domain | 8 | Expertises (logistique, finance, client, SI, CRM, RH, juridique, marché) | Estimé 30 min |
+| 5 - Plateau | 3 | Synthèse intermédiaire (sait/flou/tendu) | Estimé 15 min |
+| 6 - Debug | 5 | Résolution contradictions (volume vs proximité, coût vs satisfaction, automatisation vs humain) | Estimé 20 min |
+| 7 - Deep Dive | 6 | Modèles détaillés (algorithme scoring, tableau de bord, communication client, scoring fournisseurs, formation, gains rapides) | Estimé 35 min |
+| 8 - Meta-Validation | 6 | Conseil Gardiens (CEO, Philosophe, Client, Auditeur, Innovateur, Joe Coulombe) | Estimé 20 min |
+| **Total** | **42** | (40 + 2 coordination) | **~3h (estimation)** |
 
 ### Coordination Centrale (2 agents orchestrateurs)
 
@@ -354,9 +354,9 @@ Produire un **dossier complet, actionable et humble** pour Angélique (coordinat
 
 ### Partie 1: Synthèse Exécutive (1 page - PDG)
 - Problème en 3 lignes
-- 3 recommandations clés numérotées (quick wins, moyen terme, long terme)
-- ROI estimé (€ économies annuelles, effort implémentation)
-- Décision requise PDG (go/no-go, arbitrages)
+- 3 recommandations clés numérotées (gains rapides, moyen terme, long terme)
+- ROI estimé (projections € économies annuelles potentielles, effort implémentation estimé - à confirmer avec données réelles)
+- Décision requise PDG (go/no-go, arbitrages - options présentées, décision laissée PDG)
 
 ### Partie 2: Contexte & Diagnostic (5-7 pages)
 - Cartographie flux actuels (schéma)
@@ -367,36 +367,36 @@ Produire un **dossier complet, actionable et humble** pour Angélique (coordinat
 ### Partie 3: Bonnes Pratiques Secteur (3-4 pages)
 - Benchmarks distribution matériaux (délais moyens concurrents)
 - Modèles logistiques applicables (milkrun, cross-dock, consolidation)
-- KPI standards (taux service, coût/t/km, NPS B2B)
+- Indicateurs standards (taux service, coût/t/km, NPS B2B)
 - Exemples réussite (cas Saint-Gobain, Lafarge, Point P si disponible)
 
 ### Partie 4: Recommandations Graduées (8-10 pages)
 
-**Niveau 1 - Quick Wins (0-3 mois, effort faible, impact moyen):**
-1. Alertes retard fournisseur (Excel + email auto)
-2. Sondage satisfaction 50 clients pilote (template fourni)
-3. Formation scoring dépôt optimal (Angélique + coordinateurs)
-4. Dashboard mensuel coûts/taux service (Excel PowerBI)
+**Niveau 1 - Gains Rapides (estimation 0-3 mois, effort apparemment faible, impact estimé moyen - à valider selon ressources):**
+1. Alertes retard fournisseur (Excel + email auto) - mise en place estimée rapide
+2. Sondage satisfaction 50 clients pilote (template fourni) - nombre et durée de collecte à adapter
+3. Formation scoring dépôt optimal (Angélique + coordinateurs) - durée estimée, à confirmer avec disponibilités
+4. Dashboard mensuel coûts/taux service (Excel PowerBI) - complexité à évaluer selon données disponibles
 
-**Niveau 2 - Moyen Terme (3-9 mois, effort moyen, impact élevé):**
-1. Implémenter algorithme scoring multicritère (outil web simple ou Excel avancé)
-2. Processus communication client standardisé (SMS avant/après, appels retard)
-3. Scoring fournisseurs (fiabilité, qualité, réactivité)
-4. Formation coordination inter-dépôts (ateliers arbitrage collaboratif)
+**Niveau 2 - Moyen Terme (estimation 3-9 mois, effort estimé moyen, impact estimé élevé - durées à affiner):**
+1. Implémenter algorithme scoring multicritère (outil web simple ou Excel avancé) - durée estimation à valider
+2. Processus communication client standardisé (SMS avant/après, appels retard) - impact projeté à tester
+3. Scoring fournisseurs (fiabilité, qualité, réactivité) - mise en place estimée 6-9 mois
+4. Formation coordination inter-dépôts (ateliers arbitrage collaboratif) - résultats attendus à valider terrain
 
-**Niveau 3 - Long Terme (9-24 mois, effort élevé, impact structurel):**
-1. WMS/TMS intégré ERP Gedimat (suivi temps réel, optimisation routes)
-2. Partenariats transporteurs (contrats volume, SLA délais, pénalités)
-3. Analytics prédictifs (ML demand sensing, prévision retards)
-4. Programme fidélisation client B2B (garantie délai, compensation retards)
+**Niveau 3 - Long Terme (estimation 9-24 mois, effort estimé élevé, impact structurel projeté - calendrier flexible):**
+1. WMS/TMS intégré ERP Gedimat (suivi temps réel, optimisation routes) - durée et ROI à affiner avec éditeur
+2. Partenariats transporteurs (contrats volume, SLA délais, pénalités) - négocia estimation 9-12 mois
+3. Analytics prédictifs (ML demand sensing, prévision retards) - faisabilité et délais à évaluer
+4. Programme fidélisation client B2B (garantie délai, compensation retards) - modèle économique à valider
 
 ### Partie 5: Outils & Templates (10-15 pages annexes)
 1. **Fichier Excel Scoring Dépôt Optimal** (formules pré-remplies, exemples)
 2. **Template Sondage Satisfaction Client** (5 questions NPS + commentaires)
-3. **Dashboard Mensuel PowerBI/Excel** (KPI prédéfinis, graphiques)
+3. **Tableau de Bord Mensuel PowerBI/Excel** (Indicateurs prédéfinis, graphiques)
 4. **Scripts Communication Client** (appel retard, email confirmation, SMS alerte)
 5. **Grille Scoring Fournisseurs** (critères, pondérations, seuils actions)
-6. **Planning 90 Jours Quick Wins** (Gantt semaine par semaine)
+6. **Planning 90 Jours Gains Rapides** (Gantt semaine par semaine)
 
 ### Partie 6: Validation Philosophique (2-3 pages)
 - Citations philosophes appliquées (Locke empirisme, Peirce pragmatisme, Quine cohérentisme, James instrumentalisme, Dewey expérimentalisme, Buddha voie milieu)
@@ -417,8 +417,8 @@ Produire un **dossier complet, actionable et humble** pour Angélique (coordinat
 
 ### Partie 8: Glossaire & Abréviations (1 page)
 - Éviter anglicismes:
-  - KPI → Indicateurs clés performance
-  - Dashboard → Tableau de bord
+  - Indicateurs Clés de Performance → Indicateurs clés performance
+  - Tableau de bord → Tableau de bord (déjà traduit)
   - Warehouse → Entrepôt
   - Milkrun → Tournée laitière (si utilisé, expliquer)
 - Définir termes techniques: EOQ, TSP, VRP, NPS, CSAT, WMS, TMS, cross-dock
@@ -459,7 +459,7 @@ Produire un **dossier complet, actionable et humble** pour Angélique (coordinat
 
 ## Estimation Taille Dossier Final
 
-**Baseline:** 40-60 pages (hors annexes)
+**Baseline estimée:** 40-60 pages (hors annexes - volume à adapter selon profondeur analyses)
 
 **Détail par section:**
 - Synthèse exécutive: 1 page
@@ -472,9 +472,9 @@ Produire un **dossier complet, actionable et humble** pour Angélique (coordinat
 - Glossaire: 1 page
 
 **Annexes externes (fichiers descriptions):**
-- 6 templates Excel/outils (10-15 pages descriptions)
+- 6 templates Excel/outils (estimé 10-15 pages descriptions - peut varier selon détail fourni)
 
-**Total estimé:** **50-75 pages PDF** (format A4, police 11pt, marges standard)
+**Total estimé:** **Environ 50-75 pages PDF** (format A4, police 11pt, marges standard - estimation à confirmer selon profondeur développements et données reçues)
 
 ---
 
@@ -534,20 +534,21 @@ Demande confirmation avant exécution:
 ## Succès Critères
 
 **Dossier réussi si:**
-1. ✅ PDG peut présenter conseil administration (synthèse 1 page claire)
-2. ✅ Angélique peut s'approprier (langage accessible, outils utilisables)
-3. ✅ 3 quick wins actionnables <90 jours (effort faible, impact mesurable)
+1. ✅ PDG peut présenter conseil administration (synthèse 1 page claire, estimations marquées comme telles)
+2. ✅ Angélique peut s'approprier (langage accessible, outils utilisables et adaptables)
+3. ✅ 3+ gains rapides proposés <90 jours estimé (effort estimé faible, impact mesurable potentiel - à valider terrain)
 4. ✅ Français irréprochable (Académie Française validation)
-5. ✅ IF.TTT compliance (25+ sources vérifiables annexe)
+5. ✅ IF.TTT compliance (25+ sources vérifiables annexe, affirmations traçables)
 6. ✅ Philosophies citées contexte (8 footnotes minimum)
-7. ✅ Humble (options présentées, décision laissée PDG/Angélique)
+7. ✅ Humble (options présentées avec qualificatifs "estimé/projeté/potentiel", décision laissée PDG/Angélique)
 
 **Échec si:**
 1. ❌ Jargon incompréhensible non-expert
 2. ❌ Recommandations vagues ("améliorer communication") sans méthode précise
 3. ❌ Aucune source citée (bullshit consultant classique)
-4. ❌ Anglicismes excessifs (KPI, dashboard, warehouse partout)
-5. ❌ Ton arrogant ("LA solution est...", "vous devez absolument...")
+4. ❌ Anglicismes excessifs (Indicateurs, tableau de bord, entrepôt partout)
+5. ❌ Ton arrogant ou surconfiant ("LA solution est...", "vous devez absolument...", affirmations sans "estimé/projeté/potentiel")
+6. ❌ Affirmations factuelles sans qualificatifs sur impacts, ROI, délais sans "à valider après pilote"
 
 ---
 

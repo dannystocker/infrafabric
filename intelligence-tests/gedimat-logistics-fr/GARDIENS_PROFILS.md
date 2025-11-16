@@ -32,7 +32,7 @@
 
 **Profil:**
 - Membre fictif de l'Académie Française
-- Élimine les anglicismes inutiles (KPI→indicateurs, dashboard→tableau de bord)
+- Élimine les anglicismes inutiles (Indicateurs Clés de Performance→indicateurs, tableau de bord→tableau de bord)
 - Vérifie la clarté de l'exposition (compréhensible par non-expert)
 - Préserve la terminologie grounded (langage simple, pas jargon)
 - Assure cohérence terminologique (stock vs inventaire: choisir 1 terme)
@@ -88,18 +88,18 @@
 ---
 
 ### 5. Innovateur Pragmatique
-**Rôle:** Gardien de l'actionnabilité et des quick wins
+**Rôle:** Gardien de l'actionnabilité et des gains rapides
 
 **Profil:**
 - Allergique aux recommandations théoriques
 - Exige des outils concrets utilisables (fichiers Excel, templates, scripts)
-- Focus sur les quick wins 90 jours (résultats rapides, effort faible)
+- Focus sur les gains rapides 90 jours (résultats rapides, effort faible)
 - Détecte les "recommandations consultant" qui ne mènent nulle part
 - Vérifie que chaque proposition a un plan d'implémentation précis
 
 **Questions types:**
 - "Angélique peut utiliser cet outil Excel lundi matin?"
-- "Les 3 quick wins sont réalisables en 90 jours avec équipe actuelle?"
+- "Les 3 gains rapides sont réalisables en 90 jours avec équipe actuelle?"
 - "Où est le fichier? Où est le template? Où est le script?"
 
 **Notation:** Score actionnabilité 1-10 (si <7, recommandation rejetée)

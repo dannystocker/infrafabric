@@ -106,7 +106,7 @@
 
 **Recherches:**
 - Modèles logistiques distribution matériaux France (milkrun, cross-dock, consolidation, pooling)
-- KPI B2B: taux service, coût/t/km, délai moyen, taux rupture
+- Indicateurs Clés de Performance B2B: taux service, coût/t/km, délai moyen, taux rupture
 - Mesure satisfaction B2B (NPS, CSAT, méthodes qualitatives)
 - Formules stock: EOQ Wilson, safety stock, demand sensing
 - Systèmes WMS/TMS PME franchisées
@@ -135,7 +135,7 @@
 1. Logistique: VRP, TSP, consolidation dynamique
 2. Finance: Coût complet, coût opportunité, sensibilité
 3. Satisfaction Client: NPS, scoring urgence, communication proactive
-4. Systèmes Information: Alertes auto, dashboard, API tracking
+4. Systèmes Information: Alertes auto, tableau de bord, API tracking
 5. CRM: Contacts clés, notes contextuelles, scoring fournisseurs
 6. Ressources Humaines: Équité charge, formation, incitations collaboration
 7. Juridique: Franchises autonomie, pénalités, assurances
@@ -162,11 +162,11 @@
 
 **6 Approfondissements:**
 1. Algorithme scoring dépôt optimal (Excel macro)
-2. Dashboard alertes & suivi (4 alertes + 4 KPI)
+2. Tableau de bord alertes & suivi (4 alertes + 4 Indicateurs Clés de Performance)
 3. Processus communication client (SMS, appels, emails)
 4. Scoring fournisseurs (4 critères, actions <70%)
 5. Formation équipes (coordination, communication, outils)
-6. Quick wins 90 jours (planning semaine par semaine)
+6. Gains rapides 90 jours (planning semaine par semaine)
 
 ### Pass 8: Meta-Validation (Conseil 26 Voix)
 **Objectif:** Validation finale dossier
@@ -198,11 +198,11 @@
 3. **Bonnes Pratiques Secteur** (3-4 pages)
    - Benchmarks concurrents
    - Modèles logistiques
-   - KPI standards
+   - Indicateurs standards
    - Exemples réussite
 
 4. **Recommandations Graduées** (8-10 pages)
-   - Quick Wins 0-3 mois (4 actions)
+   - Gains Rapides 0-3 mois (4 actions)
    - Moyen Terme 3-9 mois (4 actions)
    - Long Terme 9-24 mois (4 actions)
 
@@ -246,7 +246,7 @@
 
 ### ✅ Langue Française
 - [ ] Académie Française validation
-- [ ] Zéro anglicismes inutiles (KPI→indicateurs)
+- [ ] Zéro anglicismes inutiles (Indicateurs Clés de Performance→indicateurs)
 - [ ] Terminologie cohérente
 - [ ] Phrases courtes <20 mots
 - [ ] Clarté (compréhensible chauffeur camion)
