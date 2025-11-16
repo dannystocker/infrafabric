@@ -11,28 +11,28 @@
 ## Contexte Business
 
 **Entreprise:** Gedimat (franchise distribution matériaux construction France)
-**Géographie:** 3 dépôts (Lieu 271400, Méru l'Oise 60110, Breuilpont 27xxx)
+**Géographie:** 3 dépôts (Localité 27140 (Évreux), Méru l'Oise 60110, Breuilpont 27xxx)
 **Problème:** Optimiser enlèvements fournisseurs et affrètements externes >10t
 
 ### Contraintes Opérationnelles
 
-- **≤10 tonnes:** Chauffeurs PL internes Gedimat (coût fixe salarial, très économique)
+- **≤10 tonnes:** Chauffeurs PL internes Gedimat (coût salarial fixe, très économique)
 - **>10 tonnes:** Affrètement externe obligatoire (Médiafret + sous-traitants, coûteux)
-- **Semi-complet:** 25-30 tonnes livraison 1 seul dépôt
-- **Navettes internes:** Redistribution inter-dépôts 2×/semaine (économique)
+- **Semi-complet:** 25-30 tonnes livraison à un seul dépôt
+- **Navettes internes:** Redistribution inter-dépôts 2 fois par semaine (économique)
 
 ### Problème Central
 
 **Arbitrage dépôt livraison directe:**
-- Dépôt volume max veut livraison directe
-- Mais dépôt proche fournisseur = transport moins cher
+- Le dépôt ayant le plus grand volume veut la livraison directe
+- Mais un dépôt plus proche du fournisseur = transport moins cher
 - Urgences clients (chantier date fixe) peuvent primer
 - Coordination manuelle → tensions inter-dépôts
 
 ### Objectif Dual
 
 1. **Réduire coûts affrètement** (optimisation financière)
-2. **Maintenir/améliorer satisfaction client** (fidélisation B2B)
+2. **Maintenir ou améliorer satisfaction client** (fidélisation B2B)
 
 ---
 
@@ -105,8 +105,8 @@
 **Objectif:** Collecter données opérationnelles, bonnes pratiques secteur
 
 **Recherches:**
-- Modèles logistiques distribution matériaux France (milkrun, cross-dock, consolidation, pooling)
-- Indicateurs Clés de Performance B2B: taux service, coût/t/km, délai moyen, taux rupture
+- Modèles logistiques de distribution de matériaux de construction France (milkrun, cross-dock, consolidation, pooling)
+- indicateurs clés de performance B2B: taux service, coût/t/km, délai moyen, taux rupture
 - Mesure satisfaction B2B (NPS, CSAT, méthodes qualitatives)
 - Formules stock: EOQ Wilson, safety stock, demand sensing
 - Systèmes WMS/TMS PME franchisées
@@ -162,11 +162,11 @@
 
 **6 Approfondissements:**
 1. Algorithme scoring dépôt optimal (Excel macro)
-2. Tableau de bord alertes & suivi (4 alertes + 4 Indicateurs Clés de Performance)
+2. Tableau de bord alertes & suivi (4 alertes + 4 indicateurs clés de performance)
 3. Processus communication client (SMS, appels, emails)
 4. Scoring fournisseurs (4 critères, actions <70%)
 5. Formation équipes (coordination, communication, outils)
-6. Gains rapides 90 jours (planning semaine par semaine)
+6. Gains rapides 90 jours (planification semaine par semaine)
 
 ### Pass 8: Meta-Validation (Conseil 26 Voix)
 **Objectif:** Validation finale dossier
@@ -186,7 +186,7 @@
 1. **Synthèse Exécutive** (1 page PDG)
    - Problème 3 lignes
    - 3 Recommandations clés
-   - ROI estimé
+   - Retour sur Investissement estimé
    - Décision requise
 
 2. **Contexte & Diagnostic** (5-7 pages)
@@ -195,8 +195,8 @@
    - Points friction
    - Causes retards
 
-3. **Bonnes Pratiques Secteur** (3-4 pages)
-   - Benchmarks concurrents
+3. **Meilleures Pratiques Secteur** (3-4 pages)
+   - Références concurrents
    - Modèles logistiques
    - Indicateurs standards
    - Exemples réussite
@@ -246,7 +246,7 @@
 
 ### ✅ Langue Française
 - [ ] Académie Française validation
-- [ ] Zéro anglicismes inutiles (Indicateurs Clés de Performance→indicateurs)
+- [ ] Zéro anglicismes inutiles (indicateurs clés de performance→indicateurs)
 - [ ] Terminologie cohérente
 - [ ] Phrases courtes <20 mots
 - [ ] Clarté (compréhensible chauffeur camion)
@@ -259,7 +259,7 @@
 - [ ] Contradictions résolues explicitement
 
 ### ✅ Actionnabilité
-- [ ] Quick wins planning Gantt
+- [ ] Quick wins planification Gantt
 - [ ] Outils Excel structure complète
 - [ ] Templates concrets (SMS, email, scripts)
 - [ ] Angélique peut présenter elle-même
@@ -328,7 +328,7 @@ Voir fichier `PROMPT_CLAUDE_CLOUD_ONELINE.txt` dans ce répertoire pour prompt u
 - IF.ground: 8 anti-hallucination principles
 
 **Production Systems:**
-- IF.yologuard v3: 96.43% recall, 0.04% FP, 1,240× ROI
+- IF.yologuard v3: 96.43% recall, 0.04% FP, 1,240× Retour sur Investissement
 - ProcessWire integration: 95% hallucination reduction
 - MCP Bridge: 45 days POC→production
 

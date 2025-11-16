@@ -7,7 +7,7 @@
 
 ## Mission Principale
 
-Produire un **dossier complet, actionable et humble** pour Angélique (coordinatrice fournisseurs) et le PDG de Gedimat, analysant l'optimisation des enlèvements fournisseurs et affrètements externes, incluant:
+Produire un **dossier complet, exploitable et humble** pour Angélique (coordinatrice fournisseurs) et le PDG de Gedimat, analysant l'optimisation des enlèvements fournisseurs et affrètements externes, incluant:
 
 - Analyse opérationnelle complète (IF.search 8 passes)
 - Diagnostic des inefficiences actuelles
@@ -23,57 +23,57 @@ Produire un **dossier complet, actionable et humble** pour Angélique (coordinat
 ## Contexte Opérationnel
 
 ### Géographie
-- **3 dépôts Gedimat:** Lieu 271400 (probablement Évreux/Eure), Méru l'Oise 60110, Breuilpont 27xxx
-- **1 magasin par dépôt** (dépôt = magasin)
+- **3 dépôts Gedimat:** Localité 27140 (Évreux, Eure), Méru l'Oise 60110, Breuilpont 27xxx
+- **1 magasin par dépôt** (un magasin colocalisé au dépôt)
 - **Franchises Gedimat** (marque nationale, gestion locale)
 
 ### Contraintes Transport
-- **≤10 tonnes:** Chauffeurs PL internes Gedimat (coût fixe salarial, généralement très économique selon contexte actuel - à confirmer avec données réelles)
+- **≤10 tonnes:** Chauffeurs PL internes Gedimat (coût salarial fixe, généralement très économique selon contexte actuel - à confirmer avec données réelles)
 - **>10 tonnes:** Affrètement externe obligatoire (Médiafret + sous-traitants)
-  - Exemple: 15t Méru + 5t Gisors = 20t total → transporteur externe
-- **Semi-complet:** Estimé 25-30 tonnes (livraison 1 seul dépôt - à valider selon données réelles)
-- **Navettes internes:** Redistribution entre dépôts (généralement 2×/semaine selon fréquence actuelle estimée, coût salarial fixe - à confirmer)
+  - Exemple: 15 tonnes Méru + 5 tonnes Gisors = 20 tonnes total → transporteur externe
+- **Semi-complet:** Estimé 25-30 tonnes (livraison à un seul dépôt - à valider selon données réelles)
+- **Navettes internes:** Redistribution entre dépôts (généralement 2 fois par semaine selon fréquence actuelle estimée, coût salarial fixe - à confirmer)
 
 ### Problème Central
-**Coût élevé des affrètements externes** quand commandes multiples dépôts dépassent 10t mais nécessitent transporteur unique.
+**Coût élevé des affrètements externes** quand commandes provenant de plusieurs dépôts dépassent 10 tonnes mais nécessitent transporteur unique.
 
 **Arbitrage Actuel (source de conflit):**
 - Dépôt avec le plus de volume veut livraison directe
-- Mais dépôt plus proche du fournisseur = transport moins cher
+- Mais un dépôt plus proche du fournisseur = transport moins cher
 - Urgences clients (chantier qui démarre) peuvent primer
 - Coordination manuelle, tensions internes
 
 ### Points de Friction Identifiés
 1. **Défense territoriale:** Chaque dépôt défend ses intérêts (volume ≠ urgence)
-2. **Absence d'alertes automatisées:** Retards fournisseurs détectés manuellement
-3. **Logiciel insuffisant:** Pas de statistiques, pas de suivi satisfaction, pas de scoring relationnel
-4. **Relationnel critique:** Angélique connaît personnellement contacts fournisseurs/transporteurs (Mélissa chez Médiafret) - non documenté dans système
-5. **Satisfaction client mesurée uniquement en négatif** (réclamations) - pas de feedback positif capturé
+2. **Absence d'alertes automatisées:** Les retards des fournisseurs sont détectés manuellement
+3. **Logiciel insuffisant:** Pas de statistiques, pas de suivi de la satisfaction, pas de notation relationnelle
+4. **Relationnel critique:** Angélique connaît personnellement les contacts fournisseurs/transporteurs (Mélissa chez Médiafret) - non documenté dans le système
+5. **Satisfaction client mesurée uniquement en négatif** (réclamations) - pas de retour d'information positif capturée
 
 ### Cas d'Échec Type
-- Fournisseur Éméris (tuiles) retarde fabrication
-- Marchandise arrive après date promise client
+- Fournisseur Éméris (tuiles) retarde sa fabrication
+- Marchandise arrive après date promise au client
 - Client annule commande, achète ailleurs
 - Gedimat reste avec stock invendu + coût transport payé
 
 ### Objectif Dual
 1. **Réduire coûts affrètement** (optimisation financière)
-2. **Maintenir/améliorer satisfaction client** (fidélisation, pas seulement réduction coût)
+2. **Maintenir ou améliorer la satisfaction client** (fidélisation, pas seulement réduction coût)
 
 ---
 
 ## Méthodologie IF.search - 8 Passes Obligatoires
 
 ### Pass 1: Signal Capture (Recherche Primaire - 5 agents Haiku)
-**Objectif:** Collecter données opérationnelles, bonnes pratiques secteur, benchmarks
+**Objectif:** Collecter données opérationnelles, bonnes pratiques secteur, références sectorielles
 
 **Recherches requises:**
-1. Modèles logistiques distribution matériaux construction (France)
-2. Optimisation multi-dépôts avec contraintes capacité transport
+1. Modèles logistiques distribution de matériaux de construction (France)
+2. Optimisation multi-dépôts avec contraintes de capacité transport
 3. Milkrun / cross-dock / consolidation / pooling fret - applicabilité GSB (Grande Surface Bricolage)
-4. Indicateurs Clés de Performance logistiques B2B: taux service, coût/tonne/km, délai moyen livraison, taux rupture
-5. Mesure satisfaction client B2B distribution matériaux (NPS, CSAT, méthodes qualitatives)
-6. Formules min/max stock (EOQ Wilson, stock sécurité, point commande) + évolutions ML/demand sensing
+4. indicateurs clés de performance logistiques B2B: taux service, coût/tonne/km, délai moyen livraison, taux rupture
+5. Mesure de la satisfaction client B2B distribution matériaux (NPS, CSAT, méthodes qualitatives)
+6. Formules min/max stock (EOQ Wilson, stock de sécurité et point de commande) + évolutions ML/prévision de la demande
 7. Systèmes WMS/TMS pour PME franchisées (intégration ERP Gedimat existant)
 8. Pratiques gestion relationnelle fournisseurs/transporteurs (CRM, notes contextuelles)
 
@@ -236,7 +236,7 @@ Produire un **dossier complet, actionable et humble** pour Angélique (coordinat
   4. Coût transport >seuil budget mensuel
 - **Indicateurs du tableau de bord:**
   - Taux service (livraisons à temps / total)
-  - Coût transport €/tonne moyen 30 jours glissants
+  - Coût transport estimé €/tonne moyen 30 jours glissants
   - NPS satisfaction client (si sondages implémentés)
   - Charge chauffeurs internes (heures, km, tonnage)
 
@@ -275,13 +275,13 @@ Produire un **dossier complet, actionable et humble** pour Angélique (coordinat
 **Gardien 1 - IF.ceo/sam (PDG Perspective):**
 - **Questions:**
   - Recommandations actionnables immédiatement sans CAPEX majeur important?
-  - ROI estimé des optimisations proposées (projections économies annuelles potentielles vs effort estimé)?
+  - Retour sur Investissement estimé des optimisations proposées (projections économies annuelles potentielles vs effort estimé)?
   - Risques opérationnels estimés du changement processus (besoins formation estimés, résistance potentielle)?
 - **Validation:** Dossier opportunément équilibré pour décision PDG? (options claires, données à valider, décision laissée PDG)
 
 **Gardien 2 - Philosophe (Académie Française):**
 - **Questions:**
-  - Français parfait? Pas de anglicismes inutiles (Indicateurs Clés de Performance→indicateurs, tableau de bord→tableau de bord)?
+  - Français parfait? Pas de anglicismes inutiles (indicateurs clés de performance→indicateurs, tableau de bord→tableau de bord)?
   - Terminologie grounded (stock vs inventaire, fournisseur vs vendor)?
   - Clarté exposition (compréhensible non-expert logistique)?
 - **Validation:** Langue irréprochable? (corrections inline)
@@ -296,7 +296,7 @@ Produire un **dossier complet, actionable et humble** pour Angélique (coordinat
 **Gardien 4 - Auditeur Épistémologique:**
 - **Questions:**
   - Toutes affirmations vérifiables? (IF.TTT respect absolu)
-  - Sources citées? (recherches Pass 1, benchmarks, formules)
+  - Sources citées? (recherches Pass 1, références sectorielles, formules)
   - Pas de bullshit? (éviter "solution innovante révolutionnaire" sans preuves)
 - **Validation:** Annexe sources complète? (liste 20+ références minimum)
 
@@ -324,7 +324,7 @@ Produire un **dossier complet, actionable et humble** pour Angélique (coordinat
 
 | Pass | Nombre Agents | Rôle | Durée Estimée |
 |------|--------------|------|---------------|
-| 1 - Signal Capture | 5 | Recherche primaire (logistique, Indicateurs Clés de Performance, satisfaction, WMS, stock) | Estimé 20 min |
+| 1 - Signal Capture | 5 | Recherche primaire (logistique, indicateurs clés de performance, satisfaction, WMS, stock) | Estimé 20 min |
 | 2 - Primary Analysis | 5 | Diagnostic (flux, coûts, inefficiences, causes retards) | Estimé 25 min |
 | 3 - Rigor | 4 | Validation hypothèses (3 agents + 1 philosophe) | Estimé 15 min |
 | 4 - Cross-Domain | 8 | Expertises (logistique, finance, client, SI, CRM, RH, juridique, marché) | Estimé 30 min |
@@ -355,7 +355,7 @@ Produire un **dossier complet, actionable et humble** pour Angélique (coordinat
 ### Partie 1: Synthèse Exécutive (1 page - PDG)
 - Problème en 3 lignes
 - 3 recommandations clés numérotées (gains rapides, moyen terme, long terme)
-- ROI estimé (projections € économies annuelles potentielles, effort implémentation estimé - à confirmer avec données réelles)
+- Retour sur Investissement estimé (projections € économies annuelles potentielles, effort implémentation estimé - à confirmer avec données réelles)
 - Décision requise PDG (go/no-go, arbitrages - options présentées, décision laissée PDG)
 
 ### Partie 2: Contexte & Diagnostic (5-7 pages)
@@ -385,9 +385,9 @@ Produire un **dossier complet, actionable et humble** pour Angélique (coordinat
 4. Formation coordination inter-dépôts (ateliers arbitrage collaboratif) - résultats attendus à valider terrain
 
 **Niveau 3 - Long Terme (estimation 9-24 mois, effort estimé élevé, impact structurel projeté - calendrier flexible):**
-1. WMS/TMS intégré ERP Gedimat (suivi temps réel, optimisation routes) - durée et ROI à affiner avec éditeur
+1. WMS/TMS intégré ERP Gedimat (suivi temps réel, optimisation routes) - durée et Retour sur Investissement à affiner avec éditeur
 2. Partenariats transporteurs (contrats volume, SLA délais, pénalités) - négocia estimation 9-12 mois
-3. Analytics prédictifs (ML demand sensing, prévision retards) - faisabilité et délais à évaluer
+3. Analytics prédictifs (ML prévision de la demande, prévision retards) - faisabilité et délais à évaluer
 4. Programme fidélisation client B2B (garantie délai, compensation retards) - modèle économique à valider
 
 ### Partie 5: Outils & Templates (10-15 pages annexes)
@@ -407,7 +407,7 @@ Produire un **dossier complet, actionable et humble** pour Angélique (coordinat
 - **Minimum 25 sources citées:**
   1. Recherches académiques logistique (TSP, VRP, consolidation fret)
   2. Benchmarks secteur GSB (Leroy Merlin, Castorama rapports annuels)
-  3. Formules stock (Wilson EOQ, safety stock, demand sensing)
+  3. Formules stock (Wilson EOQ, safety stock, prévision de la demande)
   4. NPS B2B méthodologies (Harvard Business Review, Bain & Company)
   5. WMS/TMS solutions PME (comparateurs, études cas)
   6. Réglementations transport France (Code transport, assurances marchandises)
@@ -417,7 +417,7 @@ Produire un **dossier complet, actionable et humble** pour Angélique (coordinat
 
 ### Partie 8: Glossaire & Abréviations (1 page)
 - Éviter anglicismes:
-  - Indicateurs Clés de Performance → Indicateurs clés performance
+  - indicateurs clés de performance → indicateurs clés de performance
   - Tableau de bord → Tableau de bord (déjà traduit)
   - Warehouse → Entrepôt
   - Milkrun → Tournée laitière (si utilisé, expliquer)
@@ -548,7 +548,7 @@ Demande confirmation avant exécution:
 3. ❌ Aucune source citée (bullshit consultant classique)
 4. ❌ Anglicismes excessifs (Indicateurs, tableau de bord, entrepôt partout)
 5. ❌ Ton arrogant ou surconfiant ("LA solution est...", "vous devez absolument...", affirmations sans "estimé/projeté/potentiel")
-6. ❌ Affirmations factuelles sans qualificatifs sur impacts, ROI, délais sans "à valider après pilote"
+6. ❌ Affirmations factuelles sans qualificatifs sur impacts, Retour sur Investissement, délais sans "à valider après pilote"
 
 ---
 

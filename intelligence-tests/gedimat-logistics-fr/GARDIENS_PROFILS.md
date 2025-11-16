@@ -14,7 +14,7 @@
 **Profil:**
 - Représente les intérêts et contraintes du PDG Gedimat
 - Focus sur l'actionnabilité immédiate (pas de théorie pure)
-- Évalue le retour sur investissement (ROI)
+- Évalue le Retour sur Investissement (Retour sur Investissement)
 - Vérifie la faisabilité opérationnelle sans CAPEX majeur
 - Détecte les risques de changement (résistance équipes, formation)
 
@@ -32,7 +32,7 @@
 
 **Profil:**
 - Membre fictif de l'Académie Française
-- Élimine les anglicismes inutiles (Indicateurs Clés de Performance→indicateurs, tableau de bord→tableau de bord)
+- Élimine les anglicismes inutiles (Indicateurs Clés de Performance → indicateurs clés de performance, tableau de bord → tableau de bord)
 - Vérifie la clarté de l'exposition (compréhensible par non-expert)
 - Préserve la terminologie grounded (langage simple, pas jargon)
 - Assure cohérence terminologique (stock vs inventaire: choisir 1 terme)
@@ -83,7 +83,7 @@
 - "Comment vérifier que cette recommandation a fonctionné dans 6 mois?"
 - "Vous dites 'significatif' - c'est combien en euros ou en %?"
 
-**Exigence:** Minimum 25 sources citées en annexe (études académiques, benchmarks secteur, formules reconnues)
+**Exigence:** Minimum 25 sources citées en annexe (études académiques, références sectorielles, formules reconnues)
 
 ---
 
@@ -188,7 +188,7 @@
 
 **Étape 3: Vote Confiance**
 - Chaque recommandation notée: Confiance Haute / Moyenne / Faible
-- Haute: données solides, actionnabilité claire, ROI mesurable
+- Haute: données solides, actionnabilité claire, Retour sur Investissement mesurable
 - Moyenne: hypothèse raisonnable mais nécessite validation terrain
 - Faible: spéculation, manque sources, effort/bénéfice incertain
 
@@ -218,7 +218,7 @@
 ### IF.guard (Conseil des Gardiens)
 - 6 gardiens + 8 philosophes (perspectives multiples)
 - Recommandations précises (outils Excel, templates, scripts)
-- 25+ sources académiques/benchmarks (vérifiables)
+- 25+ sources académiques/références sectorielles (vérifiables)
 - Ton humble ("voici options, vous décidez")
 - Livrable 50-75 pages + annexes outils (actionable)
 - Coût: ~50€ (40 agents Haiku, 3h session cloud)
@@ -231,9 +231,9 @@
 "Implémenter algorithme scoring multicritère pour choisir dépôt optimal: 40% proximité, 30% volume, 30% urgence"
 
 **IF.ceo/sam:**
-"ROI estimé? Si ça coûte 20 000€ développer pour économiser 5 000€/an, pas rentable."
+"Retour sur Investissement estimé? Si ça coûte 20 000€ développer pour économiser 5 000€/an, pas rentable."
 → **Réponse:** Outil Excel simple (2 jours développement interne), économies estimées 15 000€/an (réduction 30% affrètements inutiles)
-→ **Validation:** ✅ ROI acceptable
+→ **Validation:** ✅ Retour sur Investissement acceptable
 
 **Philosophe (Académie Française):**
 "Pourquoi 'scoring'? Le mot français 'notation' ou 'évaluation' existe."
@@ -301,7 +301,7 @@ Sans ce gardien → Ton arrogant consultant qui impose SA vision (résistance é
 3. Lire synthèse exécutive 1 page PDG
 
 **Pendant lecture dossier:**
-- Annotations gardiens visibles (ex: "✅ IF.ceo: ROI 3×", "⚠️ Auditeur: nécessite données réelles")
+- Annotations gardiens visibles (ex: "✅ IF.ceo: Retour sur Investissement 3×", "⚠️ Auditeur: nécessite données réelles")
 - Comprendre pourquoi recommandation validée/rejetée/ajustée
 
 **Appropriation:**

@@ -100,16 +100,16 @@
 - Enlève chez fournisseurs non-livreurs jusqu'à 10 tonnes max
 - Navettes internes 2×/semaine redistribution entre dépôts (coût salarial fixe, très économique)
 - Connaît routes, distances, fournisseurs accessibilité (quai chargement, horaires)
-- Frustration: planning last-minute, parfois enlèvement inutile (marchandise finalement pas prête)
+- Frustration: planification de dernière minute, parfois enlèvement inutile (marchandise finalement pas prête)
 
 **Questions types:**
 - "On m'envoie chercher 8t à Saint-Germaire alors que Méru est à 5km et on livre Gisors à 80km - c'est logique?"
 - "Fournisseur dit 'prêt jeudi matin' mais j'arrive, rien préparé - comment éviter trajets blancs?"
 - "Navette interne redistribution: pourquoi attendre vendredi si client urgent mardi?"
-- "Planning optimisé tournées hebdo vs appels urgence quotidiens - comment équilibrer?"
+- "Planification optimisée des tournées hebdo vs appels urgence quotidiens - comment équilibrer?"
 
 **Validation critères:**
-- ✅ Planning tournées hebdo prévisible (pas que urgences)
+- ✅ Planification des tournées hebdo prévisible (pas que urgences)
 - ✅ Confirmation fournisseur marchandise prête avant départ (éviter trajets blancs)
 - ✅ Optimisation routes multi-enlèvements (si 3 fournisseurs zone, tournée unique)
 - ✅ Équité charge travail (pas toujours même chauffeur pour urgences)
@@ -138,7 +138,7 @@
 **Validation critères:**
 - ✅ Scoring transparent arbitrage dépôt livraison (volume + proximité + urgence)
 - ✅ Pas de règle fixe "toujours le plus gros volume" (injuste si urgences Gisors)
-- ✅ Visibilité planning navettes (quand marchandise arrivera dépôt final?)
+- ✅ Visibilité planification navettes (quand marchandise arrivera dépôt final?)
 - ✅ Incitations collaboration (bonus satisfaction globale 3 dépôts vs compétition)
 
 **Poids décision:** 15% (représente 3 dépôts)
@@ -205,7 +205,7 @@
 
 **Profil:**
 - Artisan/entrepreneur BTP (maçonnerie, couverture, rénovation)
-- Chantiers planning serré: "démarre lundi, besoin matériaux samedi"
+- Chantiers planification serrée: "démarre lundi, besoin matériaux samedi"
 - Contraintes: pénalités retard client final, équipes immobilisées si rupture
 - Fidélité Gedimat basée sur: disponibilité, délais, prix, conseil vendeur
 - Tolérance retard faible si chantier date fixe, plus flexible si rénovation personnelle
@@ -238,16 +238,16 @@
 - Tensions: chauffeurs internes coût fixe (salaires) vs affrètements variables (pic saison)
 
 **Questions types:**
-- "Investir 50k€ WMS pour optimiser stocks/transports - ROI combien années?"
+- "Investir 50k€ WMS pour optimiser stocks/transports - Retour sur Investissement combien années?"
 - "Directives centrales Gedimat imposent fournisseurs nationaux (Emeris) - flexibilité locale si fournisseur régional meilleur?"
 - "Affrètements externes coûtent 120k€/an - réduire 30% = combien économies? Effort implémentation?"
 - "Satisfaction client mesurée comment? NPS, réclamations, taux réachat - quelle métrique prioritaire?"
 
 **Validation critères:**
-- ✅ ROI chiffré recommandations (€ économies annuelles vs effort implémentation)
+- ✅ Retour sur Investissement chiffré recommandations (€ économies annuelles vs effort implémentation)
 - ✅ Respect autonomie franchise (pas de directives "vous devez investir X€")
 - ✅ Quick wins <90 jours faible CAPEX (Excel amélioré, processus, formation)
-- ✅ Long terme si rentable (WMS/TMS si ROI <3 ans)
+- ✅ Long terme si rentable (WMS/TMS si Retour sur Investissement <3 ans)
 
 **Poids décision:** 18% (décideur final investissements)
 
@@ -255,12 +255,12 @@
 
 ## 23. Responsable Supply Chain
 
-**Rôle:** Optimisation flux globaux, Indicateurs Clés de Performance logistiques, outils décisionnels
+**Rôle:** Optimisation des flux globaux, indicateurs clés de performance logistiques, outils décisionnels
 
 **Profil:**
 - Responsable supply chain distribution matériaux construction (GSB)
 - Expertise: modèles VRP (Vehicle Routing Problem), TSP, cross-docking, consolidation, milkrun
-- Indicateurs Clés de Performance maîtrisés: taux service, coût/t/km, délai moyen livraison, taux rupture, DSI (Jours de Stock d'Inventaire)
+- Indicateurs clés de performance maîtrisés: taux service, coût/t/km, délai moyen livraison, taux rupture, DSI (Jours de Stock d'Inventaire)
 - Outils: WMS, TMS, ERP, forecasting, demand sensing
 - Formation: école commerce/ingénieur, certifications APICS/CSCMP
 
@@ -268,7 +268,7 @@
 - "Arbitrage dépôt livraison: scoring multicritère (volume + proximité + urgence) avec quelles pondérations?"
 - "Milkrun fournisseurs région parisienne (1 camion, 3 enlèvements) vs affrètement individuel - seuil rentabilité?"
 - "Stock sécurité formule Wilson EOQ applicable tuiles (demande erratique, lead time variable)?"
-- "Tableau de bord temps réel: quels 5 Indicateurs Clés de Performance essentiels pour Angélique monitorer performance?"
+- "Tableau de bord temps réel: quels 5 indicateurs clés de performance essentiels pour Angélique monitorer performance?"
 
 **Validation critères:**
 - ✅ Modèles logistiques adaptés GSB (pas copier-coller grande distribution alimentaire)
@@ -319,7 +319,7 @@
 - Publications académiques: revues Transportation Research, EJOR, INFORMS
 
 **Questions types:**
-- "VRP avec contraintes capacité (10t chauffeur interne, 25-30t affrètement) + fenêtres temps (urgences clients) - algorithme optimal?"
+- "VRP avec contraintes de capacité (10t chauffeur interne, 25-30t affrètement) + fenêtres temps (urgences clients) - algorithme optimal?"
 - "Scoring dépôt livraison: fonction objectif minimiser (coût transport + coût opportunité retard client)?"
 - "Données minimales: matrices distances fournisseurs↔dépôts, volumes commandes, urgences - suffisant modéliser?"
 - "Calibration poids scoring (40% proximité, 30% volume, 30% urgence) - source? Ou optimiser données réelles Gedimat?"
@@ -381,7 +381,7 @@ Exécution normale 8 passes méthodologie, production recommandations
 - Client Artisan: "Communication proactive OK?"
 
 ### Groupe C: Décideurs & Experts (5 voix - 30 min)
-- Directeur Franchise: "ROI chiffré? Quick wins actionnables?"
+- Directeur Franchise: "Retour sur Investissement chiffré? Quick wins actionnables?"
 - Supply Chain: "Modèles logistiques calibrés données réelles?"
 - NPS Expert: "Sondage satisfaction template fourni?"
 - VRP Consultant: "Algorithmes scoring implémentables?"
@@ -389,15 +389,15 @@ Exécution normale 8 passes méthodologie, production recommandations
 
 **Output Groupe A-B-C:**
 - Matrice validation (✅ validé, ⚠️ ajustements mineurs, ❌ bloquant)
-- Recommandations ajustées selon feedback terrain
+- Recommandations ajustées selon retour d'information terrain
 
 ## Phase 3: Validation Gardiens (6 voix - 20 min)
 Conseil habituel IF.guard avec inputs experts métier:
 
-1. **IF.ceo/sam:** ROI validé Directeur Franchise? Quick wins Angélique actionnables?
+1. **IF.ceo/sam:** Retour sur Investissement validé Directeur Franchise? Quick wins Angélique actionnables?
 2. **Académie Française:** Français parfait? Terminologie grounded Vendeur/Chauffeur comprennent?
 3. **Gardien Client:** Satisfaction Artisan BTP centrale? Communication proactive définie?
-4. **Auditeur:** IF.TTT 25+ sources (académiques VRP + benchmarks GSB + contrats types)?
+4. **Auditeur:** IF.TTT 25+ sources (académiques VRP + références sectorielles GSB + contrats types)?
 5. **Innovateur:** Outils Excel/templates validés Supply Chain + Angélique testables?
 6. **Joe Coulombe:** Humilité préservée? Directeur Franchise peut s'approprier?
 
@@ -444,12 +444,12 @@ Validation opérationnelle, faisabilité terrain, conformité
 |--------|------|-------------|------------|
 | Angélique | ✅ | "Utilisable si outil Excel simple fourni + formation 2h" | Annexe Excel + formation |
 | Vendeur | ✅ | "Besoin visibilité scoring temps réel pour expliquer client" | Dashboard vendeur |
-| Chauffeur | ✅ | "OK si planning tournées stable, pas que urgences" | Planning hebdo + urgences |
+| Chauffeur | ✅ | "OK si planification des tournées stable, pas que urgences" | Planification hebdo + urgences |
 | Resp. Dépôt | ⚠️ | "Poids 30% volume insuffisant si Méru 3× Gisors" | Tester 25% volume, 35% urgence |
 | Médiafret | ✅ | "Proximité = distance fournisseur-dépôt, pas siège social?" | Clarifier distance calcul |
 | Emeris | ✅ | "Urgence client visible nous? Ou seulement Gedimat interne?" | Partage info urgence fournisseur |
 | Client BTP | ✅ | "Si mon urgence justifie surcoût, transparent pourquoi" | Communication scoring client |
-| Dir. Franchise | ✅ | "ROI outil Excel 2 jours dev vs économies 15k€/an = OK" | Chiffrage validé |
+| Dir. Franchise | ✅ | "Retour sur Investissement outil Excel 2 jours dev vs économies 15k€/an = OK" | Chiffrage validé |
 | Supply Chain | ⚠️ | "Poids 40/30/30 arbitraire ou source académique?" | Citer source VRP ou calibrer données |
 | NPS Expert | ✅ | "Satisfaction client = urgences respectées, scoring cohérent" | Monitoring NPS post-implémentation |
 | VRP Consultant | ⚠️ | "Fonction objectif min(coût transport + coût opportunité retard)?" | Formaliser fonction objectif |
@@ -461,7 +461,7 @@ Validation opérationnelle, faisabilité terrain, conformité
 
 | Gardien | Vote | Commentaire |
 |---------|------|-------------|
-| IF.ceo/sam | ✅ | "ROI validé, gain rapide actionnable" |
+| IF.ceo/sam | ✅ | "Retour sur Investissement validé, gain rapide actionnable" |
 | Académie | ✅ | "Remplacer 'scoring' → 'notation multicritère'" |
 | Client | ✅ | "Urgence client pondérée, communication transparente" |
 | Auditeur | ⚠️ | "Poids 40/30/30 source? Ou calibration données Gedimat nécessaire" |
@@ -512,11 +512,11 @@ Validation opérationnelle, faisabilité terrain, conformité
 
 ### vs IF.guard Standard 6 Gardiens
 - ❌ Standard: Validation globale mais manque expertise métier Gedimat
-- ✅ Étendu: Angélique valide "utilisable lundi", Chauffeur "planning réaliste", Médiafret "SLA faisable"
+- ✅ Étendu: Angélique valide "utilisable lundi", Chauffeur "planification réaliste", Médiafret "SLA faisable"
 
 ### Élimination Angles Morts
 - **Opérationnel:** Angélique, Vendeur, Chauffeur (terrain quotidien)
-- **Stratégique:** Directeur Franchise, Supply Chain (ROI, Indicateurs Clés de Performance)
+- **Stratégique:** Directeur Franchise, Supply Chain (Retour sur Investissement, indicateurs clés de performance)
 - **Externe:** Médiafret, Emeris, Client BTP (écosystème complet)
 - **Académique:** VRP Consultant, NPS Expert (rigueur méthodologique)
 - **Légal:** Juriste (conformité, éviter litiges)
@@ -536,7 +536,7 @@ Chaque recommandation annotée validation:
 >
 > **Validation Conseil:**
 > - ✅ **Angélique:** "Excel template fourni, formation 2h OK" (Confiance: Haute)
-> - ✅ **Directeur Franchise:** "ROI 15k€/an économies, dev 2 jours = validé" (Confiance: Haute)
+> - ✅ **Directeur Franchise:** "Retour sur Investissement 15k€/an économies, dev 2 jours = validé" (Confiance: Haute)
 > - ⚠️ **Resp. Dépôt Méru:** "Tester variante 25% volume si disparités" (Confiance: Moyenne)
 > - ⚠️ **VRP Consultant:** "Calibrer poids données réelles Gedimat avant généraliser" (Confiance: Moyenne)
 > - ✅ **Philosophe Dewey:** "Expérimenter 90 jours 10 cas pilotes avant déploiement" (Validation: Méthodologie)
@@ -552,7 +552,7 @@ Chaque recommandation annotée validation:
 
 # RÉSUMÉ CONSEIL 26 VOIX (1 Paragraphe)
 
-Le Conseil IF.guard étendu Gedimat combine 6 Gardiens (validation stratégique globale), 8 Philosophes (rigueur méthodologique), et **12 Experts Consultants métier** représentant tous stakeholders: Angélique (coordination terrain 4 ans), Vendeur (voix client), Chauffeur PL (exécution), Responsable Dépôt (gestion locale), Médiafret (transport externe), Fournisseur Emeris (fabrication), Client Artisan BTP (satisfaction finale), Directeur Franchise (décisions investissement), Responsable Supply Chain (modèles VRP/TSP), Expert NPS (mesure satisfaction B2B), Consultant Logistique (algorithmes optimisation), et Juriste (conformité contrats/réglementations). Cette architecture 26 voix élimine angles morts consultation classique en validant chaque recommandation selon 3 niveaux: opérationnalité terrain (Angélique "utilisable lundi?"), faisabilité stratégique (Directeur "ROI chiffré?"), et rigueur académique (VRP "modèles calibrés données réelles?"), garantissant dossier final humble, actionnable, et appropriable par tous acteurs Gedimat.
+Le Conseil IF.guard étendu Gedimat combine 6 Gardiens (validation stratégique globale), 8 Philosophes (rigueur méthodologique), et **12 Experts Consultants métier** représentant tous stakeholders: Angélique (coordination terrain 4 ans), Vendeur (voix client), Chauffeur PL (exécution), Responsable Dépôt (gestion locale), Médiafret (transport externe), Fournisseur Emeris (fabrication), Client Artisan BTP (satisfaction finale), Directeur Franchise (décisions investissement), Responsable Supply Chain (modèles VRP/TSP), Expert NPS (mesure satisfaction B2B), Consultant Logistique (algorithmes optimisation), et Juriste (conformité contrats/réglementations). Cette architecture 26 voix élimine angles morts consultation classique en validant chaque recommandation selon 3 niveaux: opérationnalité terrain (Angélique "utilisable lundi?"), faisabilité stratégique (Directeur "Retour sur Investissement chiffré?"), et rigueur académique (VRP "modèles calibrés données réelles?"), garantissant dossier final humble, actionnable, et appropriable par tous acteurs Gedimat.
 
 ---
 
