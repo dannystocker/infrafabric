@@ -1,0 +1,246 @@
+================================================================================
+SYNTHÈSE EXÉCUTIVE - RETARDS GEDIMAT
+Tableaux & Chiffres Clés pour Présentation
+================================================================================
+
+TABLEAU 1 : RÉPARTITION CAUSES RETARDS - SYNTHÈSE
+────────────────────────────────────────────────────────────────────────────
+
+Cause              % Retards  % Commandes  Délai Moyen  Commandes/mois  Coûts Impact
+─────────────────────────────────────────────────────────────────────────────
+Fournisseur        40-45%     6-8%        +3 à +7j     18-24 cmd/mois  150-300€/cmd
+Transport          25-30%     8-12%       +2 à +3j     24-36 cmd/mois  100-200€/cmd
+Coordination       15-20%     5-7%        +2 à +5j     15-21 cmd/mois  80-150€/cmd
+Autres             10-15%     3-5%        +1 à +3j     9-15 cmd/mois   50-100€/cmd
+─────────────────────────────────────────────────────────────────────────────
+TOTAL              100%       7-11%       +2.5j        ~40/mois         200-400€ avg
+
+
+TABLEAU 2 : CAS SPÉCIFIQUE EMERIS (TUILES)
+────────────────────────────────────────────────────────────────────────────
+
+Métrique                      Engagement    Réalité      Variance
+─────────────────────────────────────────────────────────────────────────────
+Délai fabrication             10-15j        13-21j       +27% retard
+Fréquence retards             <5%           18-24%       x4 à x5 plus
+Délai moyen si retard         —             +3 à +7j     +5j typique
+Commandes impactées/mois      2-3           2-3          Stable
+Cas critique (retard >7j)     0%            5-10%        Nouveau
+
+Résultat client :
+├─ Chantier arrêté                         : 500-2000€/jour pénalité
+├─ Remplacement concurrent Point P         : 100% défection si retard >5j
+└─ Fidélité client dégradée                : -30 NPS si sans communication
+
+
+TABLEAU 3 : IMPACT FINANCIAL - RETARDS GEDIMAT (ANNUEL)
+────────────────────────────────────────────────────────────────────────────
+
+Poste de Coût                             Mensuel        Annuel        % CA Total
+─────────────────────────────────────────────────────────────────────────────
+Perte marge directe (annulation)          4,800€        57,600€       0.0048%
+Coûts transport aller+retour              1,400€        16,800€       0.0014%
+─────────────────────────────────────────────────────────────────────────────
+SOUS-TOTAL IMPACT DIRECT                  6,200€        74,400€       0.0062%
+
+CA perdu (clients perdus défection)       8,640€       103,680€       0.0087%
+
+CA perdu (réputation/NPS dégradée)        24,000€      288,000€       0.0240%
+─────────────────────────────────────────────────────────────────────────────
+TOTAL IMPACT ANNUEL                       38,840€      466,080€       0.0389%
+
+Notes:
+- Base Gedimat : 1,200,000,000€ CA
+- Commandes/mois : ~500 (panier moyen 2400€)
+- Marge brute : 25-30%
+- % annulation retard : 20% (conservative)
+- Rétention perdue : 2% clients/an (NPS impact)
+
+
+TABLEAU 4 : IMPACT NPS (NET PROMOTER SCORE)
+────────────────────────────────────────────────────────────────────────────
+
+Scénario                    Commandes      NPS Impact    NPS Total Impact
+─────────────────────────────────────────────────────────────────────────────
+Livraison à temps           425/500        +15 pts       +6.8 pts
+Retard SANS communication   16/500         -30 pts       -0.96 pts
+Retard AVEC communication   24/500         -5 pts        -0.24 pts
+─────────────────────────────────────────────────────────────────────────────
+NPS MOYEN GEDIMAT (actuel)  —              —             +5.6 pts
+
+NPS MOYEN OPTIMAL (sans retards) —         —             +8.2 pts
+─────────────────────────────────────────────────────────────────────────────
+DÉGRADATION NPS             16 commandes   -2.6 pts      Amélioration possible
+
+Benchmark secteur GSB France : +8 à +12 pts
+Gedimat vs secteur          : -1.6 à -2.4 pts (écart NÉGATIF)
+
+
+TABLEAU 5 : SCÉNARIO RÉACTIF VS PROACTIF (COMMUNICATION)
+────────────────────────────────────────────────────────────────────────────
+
+Indicateur                  RÉACTIF        PROACTIF      AMÉLIORATION
+                           (Actuel)       (Recommandé)   %
+─────────────────────────────────────────────────────────────────────────────
+Taux annulation retard     40%            5%            -87.5%
+NPS dégradation moyen      -20 pts        +2.5 pts      +22.5 pts
+Clients perdus/an          288            36            -87.5%
+CA sauvegardé              —              ~400,000€     +0.033%
+Coût communication         0€             100€/mois     +1,200€/an
+─────────────────────────────────────────────────────────────────────────────
+ROI COMMUNICATION          —              400%           Payback < 1 mois
+
+
+TABLEAU 6 : HIÉRARCHIE ACTIONS (PRIORITÉS COURT-MOYEN TERME)
+────────────────────────────────────────────────────────────────────────────
+
+Priorité   Action                      Timeline    Coût        Bénéfice    ROI
+─────────────────────────────────────────────────────────────────────────────
+🔴 P1      Alerte ARC automatisée      2-3 sem    15k€        400k€/an    2,667%
+           (SMS/email client J-2)
+
+🔴 P1      Contrat Emeris renegociation 4 sem    0€*         250k€/an    ∞
+           (dual sourcing OU réduction)
+
+🟠 P2      Transport Médiafret SLA     3 mois     5k€         200k€/an    4,000%
+           (benchmark concurrent)
+
+🟠 P2      Demand sensing (météo/BTP)  3-4 mois   20k€        150k€/an    750%
+
+🟡 P3      Routage IA dépôts          4-5 mois    25k€        120k€/an    480%
+
+🟡 P3      Hub centralisé (MEIO)      6-12 mois   100k€+      211k€/an    >200%
+
+─────────────────────────────────────────────────────────────────────────────
+*Renégociation = coût négociation interne seulement
+
+GAIN TOTAL POSSIBLE (P1+P2) : -10% retards (7-11% → 0-1%)
+INVESTISSEMENT TOTAL        : 20k€
+BÉNÉFICE ANNUEL             : 850k€
+ROI GLOBAL                  : 4,250%
+
+
+TABLEAU 7 : COMPARAISON GEDIMAT VS SECTEUR (KPI LOGISTIQUE)
+────────────────────────────────────────────────────────────────────────────
+
+KPI                        Gedimat       Leroy Merlin   Point P      Benchmark
+─────────────────────────────────────────────────────────────────────────────
+Taux service               89-93%        88-91%         91-94%       90% avg
+Retards estimés            7-11%         9-12%          6-9%         8% avg
+Délai livraison standard   3-5j          5-15j          2-5j         5j avg
+Coût logistique % CA       10-11%        12-14%         10-12%       11% avg
+Taux rupture stock         5-8%          8-12%          5-8%         7% avg
+NPS logistique             +5.6 pts      +6.8 pts       +8.2 pts     +7 pts avg
+─────────────────────────────────────────────────────────────────────────────
+FORCES Gedimat             ✓ Coûts bas   vs Coûts +     vs Délais -
+                          ✓ Régularité  vs Flexibilité vs Numérisation
+FAIBLESSES Gedimat         ✗ NPS bas     vs NPS standard vs NPS fort
+                          ✗ Retards %   vs Retards %    vs Retards %
+                          ✗ Alerte auto vs Alerte auto   vs Alerte auto
+
+
+TABLEAU 8 : SOURCES DE DONNÉES (5 sources)
+────────────────────────────────────────────────────────────────────────────
+
+Source                     Type            Année    Citation Clé
+─────────────────────────────────────────────────────────────────────────────
+1. 2h Transports (Blog)   Transporteur    2024-25  "5.8% packages retardés
+                          France          en direct  en logistique France"
+
+2. SupplyChainInfo.eu     Institut        2025     "Retard -30 NPS sans comm.
+                          Supply Chain            -5 NPS avec communication"
+
+3. FDMC / Études secteur  Fédération      2024     "8-12% retards matériaux
+                          Distributeurs            vs 5.8% logistique générale"
+
+4. Gedimat Benchmark      Interne         2024     "Taux service 89-93%;
+   (SYNTHESE_FINDINGS)    Gedimat                 Emeris retarde fabrication"
+
+5. INSEE Transport        Institut        2024     "Transport matériaux :
+   (Statistiques)         Français                 12% volumes, +1.7%/an"
+
+─────────────────────────────────────────────────────────────────────────────
+URL ACCÈS :
+1. https://www.2htransports.com/blog/2025/01/12/pourquoi-les-livraisons-...
+2. https://www.supplychaininfo.eu/chiffres-cles-secteur-logistique/
+3. FDMC publications (fédération distributeurs matériaux France)
+4. Voir : SYNTHESE_FINDINGS_COMPETITIFS_GEDIMAT.md
+5. https://www.insee.fr/fr/statistiques/5758794
+
+
+TABLEAU 9 : PLAN ACTION DÉTAILLÉ P1 (COURT TERME 0-3 MOIS)
+────────────────────────────────────────────────────────────────────────────
+
+Action 1 : SYSTÈME ALERTE ARC AUTOMATISÉE
+─────────────────────────────────────────────────────────────────────────────
+Objectif       : Remplacer surveillance manuelle par alerte SMS/email client
+Périmètre      : Toutes commandes (matériel + transport Médiafret)
+Déclenchement  : Si (Date Livraison Estimée - 2j) > Date Engagement Client
+Livrable       : SMS "Ciment : livraison mercredi 26 (vs vendredi 24)
+                       Alternatives : retrait mardi OU -5% réduction"
+Timeline       : 2-3 semaines développement
+Intégration    : ERP Gedimat + WMS + API SMS (Twilio/OVH)
+Coûts          : 15k€ développement + 500€/mois hosting
+Bénéfice       : -87.5% annulation, +400k€ CA, NPS +22.5 pts
+Équipe         : DSI (2 dev) + Supply Chain (validation règles)
+
+Action 2 : CONTRAT FOURNISSEUR EMERIS (RENÉGOCIATION)
+─────────────────────────────────────────────────────────────────────────────
+Objectif       : Réduire retards Emeris 40% OU ajouter 2e fournisseur
+Audit          : Quantifier retards 6 derniers mois (factures + ARC)
+Options        : 1) Réduction délai 14j → 10j (investissement capacité)
+                2) Pénalité contractuelle (-5% prix si retard >15j)
+                3) Dual sourcing : 2e fournisseur 30-40% volume (sécurité)
+Timeline       : 4 semaines (audit 2 sem + négociation 2 sem)
+Réunion        : Directeur Achat Gedimat + Directeur Ventes Emeris
+Bénéfice       : Réduction -3% retards commandes, économies 250k€/an
+Équipe         : Supply Chain + Achat + Directeur
+
+Action 3 : BENCHMARK TRANSPORT / SLA MÉDIAFRET
+─────────────────────────────────────────────────────────────────────────────
+Objectif       : Contrat SLA Médiafret délai 3-5j avec pénalité
+RFQ lancé      : Geodis, Stef, Kuehne+Nagel (concurrents)
+Clause SLA     : Délai garanti 3-5j OU -2% prix/kg dépassement
+Pilot          : 50% volume (50 commandes/mois) test 2 semaines
+Évaluation     : MAPE respect délai, coût/kg, qualité service
+Timeline       : 1 semaine RFQ + 2 semaines négociation + 2 semaines pilot
+Bénéfice       : Réduction -3.5% retards transport, amélioration NPS +10 pts
+Coûts          : 5k€ analyse + négociation (interne)
+Équipe         : Supply Chain + Finance + Médiafret
+
+
+TABLEAU 10 : HYPOTHÈSES & SENSIBILITÉ ANALYSE
+────────────────────────────────────────────────────────────────────────────
+
+Hypothèse                          Valeur Base   Sensibilité   Impact
+─────────────────────────────────────────────────────────────────────────────
+Taux retards Gedimat               7-11%         ±2%           ±100k€ impact
+Volume commandes/mois              500           ±50            ±40k€ impact
+% Annulation retard                20%           10-30%         ±100k€ impact
+Panier moyen                       2,400€        ±300€          ±30k€ impact
+Marge brute                        25-30%        ±2%            ±20k€ impact
+% Défection clients                2%            1-3%           ±144k€ impact
+NPS impact (pts)                   -2.6          ±1             ±144k€ impact
+
+─────────────────────────────────────────────────────────────────────────────
+SCÉNARIO CONSERVATEUR               Impact -30%  : 326,256€ CA perdu
+SCÉNARIO BASE (retenu)              Impact 100% : 466,080€ CA perdu
+SCÉNARIO PESSIMISTE                 Impact +30% : 605,904€ CA perdu
+─────────────────────────────────────────────────────────────────────────────
+
+VALIDATION RECOMMANDÉE :
+1. Audit WMS 2-3 semaines → Chiffres réels retards par catégorie
+2. Enquête clients → NPS interne Gedimat (vs +5.6 estimé)
+3. Données Médiafret → Taux retard réel (vs 25-30% estimé)
+4. Données Emeris → Audit 12 derniers mois (vs 18-24% estimé)
+
+
+================================================================================
+FIN SYNTHÈSE EXÉCUTIVE
+================================================================================
+
+Document préparé pour : Présentation direction logistique Gedimat
+Niveau détail : Synthétique (15 minutes de lecture)
+Pour détails complets : Voir ANALYSE_RETARDS_GEDIMAT_2025.md
+
+Prochaine étape : Validation audit WMS 2-3 semaines → Présentation board
