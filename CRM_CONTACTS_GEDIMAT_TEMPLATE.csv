@@ -1,0 +1,11 @@
+Société,Type Partenaire,Contact 1 Nom,Contact 1 Email,Contact 1 Telephone,Contact 1 Fonction,Contact 2 Nom,Contact 2 Telephone,Delai Standard,Delai Urgence,Tarif Urgence,Minimum Quantite,Flexibilite Urgences,Condition Paiement,Augmentation Tarifaire Derniere,Prochaine Augmentation,Depuis Annee,Nombre Commandes An,Valeur Estimee Euro,Score Novembre,Incidents Majeurs,Note Contexte,Redondance Creee,Date MAJ
+
+Médiafret,Transporteur,Mélissa Durand,mélissa.durand@mediafret.fr,+33 1 XX XX XX XX,Gestionnaire comptes,Superviseur équipe (À identifier),+33 1 XX XX XX XX (secours),2-3 jours,24-48h si demande avant 14h,Gratuit,20kg,Oui - 3/3 urgences acceptées,Net 30,+3% (octobre 2025),Q1 2026,2021,150-200,50000,96/100,Aucun,Partenaire stratégique - Excellent service - Dépendance CRITIQUE (Mélissa) - À maintenir absolument,Partiellement (contact secondaire À identifier),2025-11-10
+
+Emeris,Fournisseur Produit,À identifier,À obtenir,À obtenir,À identifier,À identifier,À obtenir,5-7 jours,À vérifier,À vérifier,À vérifier,À vérifier (75%),À vérifier,À vérifier,À vérifier,2023,130-150,15000,68/100,Retards fréquents (15-20%) - Qualité packaging problématique,Non documenté,2025-11-10
+
+Saint-Germaire,Fournisseur Produit,À identifier,À obtenir,À obtenir,À identifier,À identifier,À obtenir,3-5 jours,À vérifier,À vérifier,À vérifier,Oui (4/5),À vérifier,À vérifier,À vérifier,2023,100-120,12000,81/100,Fournisseur stable - Qualité bonne - Alternative possible tuiles,Non documenté,2025-11-10
+
+[Fournisseur 4],Fournisseur Produit ou Transporteur,À identifier,À obtenir,À obtenir,À identifier,À identifier,À obtenir,À documenter,À documenter,À documenter,À documenter,À documenter,À documenter,À documenter,À documenter,À documenter,À estimer,À estimer,À évaluer,À documenter,À créer,À compléter
+
+[Fournisseur 5],Fournisseur Produit ou Transporteur,À identifier,À obtenir,À obtenir,À identifier,À identifier,À obtenir,À documenter,À documenter,À documenter,À documenter,À documenter,À documenter,À documenter,À documenter,À documenter,À estimer,À estimer,À évaluer,À documenter,À créer,À compléter

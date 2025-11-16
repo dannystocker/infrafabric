@@ -1,0 +1,37 @@
+Critère,Shiptify,Speed WMS,Sinari TMS,Odoo Inventory,Excel/PowerBI
+Type Solution,TMS SaaS,WMS SaaS,TMS/WMS Complet,ERP Modulaire,Outils Bureautique
+Nationalité,Français,Français,Français,Belge/International,USA (Microsoft)
+Public Cible,PME Transport 3-5v,PME Entrepôt,PME Complet,PME/ETI Scalable,Micro PME Test
+Budget Initial,150 €/mois,150 €/mois,25-35 k€/an,5-10 k€ setup,0 € (gratuit)
+Budget Annuel (PME),2-5 k€/an,1.8-3.6 k€/an,35-50 k€/an,8-14 k€/an,0.3-0.5 k€/an
+Setup Initial Estimé,1,000 €,1,500 €,5-8 k€,5-10 k€,0 €
+Total Investissement An 1,3-6 k€,3-5 k€,40-58 k€,13-24 k€,0.3-1 k€
+Contrat Minimum,Mois,Mois,24 mois,12 mois,N/A
+Délai Implémentation,4-6 sem,4-8 sem,8-12 sem,8-16 sem,2-4 sem
+Déploiement Rapide?,OUI,OUI,NON,NON,OUI
+Formation Équipe,2 jours,2-3 jours,3-5 jours,3-5 jours,1-2 jours
+Maintenance,Éditeur,Éditeur,Éditeur,Partner/IT,Équipe IT
+Alertes Retards,OUI (OTIF),OUI,OUI++,OUI,PARTIEL
+Tracking GPS Temps Réel,OUI (9/10),PARTIEL (4/10),OUI (10/10),OUI (8/10),PARTIEL (2/10)
+API Transporteurs,OUI (8/10),LIMITÉ (5/10),EXCELLENT (9/10),EXCELLENT (9/10),POSSIBLE (5/10)
+API Médiafret,POSSIBLE (6/10),FAIBLE (3/10),PROBABLE (8/10),POSSIBLE (7/10),NON (0/10)
+Tableau de Bord KPI,OUI (8/10),OUI (8/10),OUI (10/10),OUI (8/10),OUI (7/10)
+Scoring Décisionnel,PARTIEL (4/10),NON (2/10),OUI (9/10),OUI (9/10),POSSIBLE (7/10)
+Gestion Entrepôt,NON,OUI,OUI,OUI,LIMITÉ
+Gestion Transport,OUI,NON,OUI,PARTIEL,PARTIEL
+Multi-Entrepôt,N/A,OUI (2-3),OUI,OUI (Illimité),LIMITÉ
+Scalabilité,Bonne (100+v),Moyenne (50v),Excellente (500+v),Excellente,Très faible (<10)
+Flexibilité Customisation,Moyenne,Faible,Moyenne,Excellente,Excellente
+Open Source?,Non,Non,Non,OUI (Community),Non
+Vendor Lock-In?,OUI,OUI,OUI,FAIBLE,NON
+Intégration GeSI,Possible (7/10),Possible (5/10),Excellente (9/10),Excellente (9/10),Possible (6/10)
+Sécurité RGPD,OUI,OUI (France),OUI,OUI (Azure),OUI (Microsoft)
+Support Français,OUI,OUI,OUI,PARTNER,OUI (Microsoft)
+Support 24/7?,NON (8-18h),NON (8-18h),24/5,PARTNER,NON
+ROI Transport Estimé,10-12% (18m),N/A,22-28% (18m),20-25% (24m),3-5% (6m)
+ROI Entrepôt Estimé,N/A,15-25% (12m),18-25% (18m),20-30% (24m),2-4% (6m)
+Payback Period,3-4 mois,2-3 mois,10-12 mois,6-8 mois,<1 mois (test)
+Note Globale,8/10,7.5/10,9/10,8/10,6/10
+Recommandé Si,Transport prioritaire + budget limité,WMS seul + données France,Vision complète + ROI max,Extensibilité + long terme,Test urgent ou micro PME
+Risques Principaux,TMS seul = besoin WMS,APIs limitées = coûts dev,Déploiement long,Dépendance partenaire,Pas de temps réel vrai
+Alternative Si Non?,Odoo ou Sinari,Mecalux ou Speed,Odoo ou Business Central,Sinari ou Shiptify,Shiptify

@@ -1,0 +1,199 @@
+═══════════════════════════════════════════════════════════════════════════════════════════════════════
+   TABLEAU SYNTHÈSE - KPI LOGISTIQUES GEDIMAT vs CONCURRENTS SECTEUR DISTRIBUTION MATÉRIAUX 2025
+═══════════════════════════════════════════════════════════════════════════════════════════════════════
+
+PART 1 - DÉLAIS DE LIVRAISON (Jours)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                      GEDIMAT    POINT P    LEROY      CASTORAMA  BRICO      BIGMAT    OBJECTIF
+                                           MERLIN              DÉPÔT               SECTEUR
+───────────────────────────────────────────────────────────────────────────────────────────────────────
+Retrait Magasin       1-2j      2-3j       2-4j       3-5j       3-7j      2-3j      < 3j
+Livraison Standard    3-5j*     4-8j       5-15j      5-15j      8-15j     4-8j      5-10j
+  (* Avantage Gedimat)
+Livraison Express     N/A       24-48h     48-72h     48-72h     48-72h    N/A       24-72h
+Chantier Gros Vol.    2-4j**    2-5j       5-10j      7-15j      10-20j    4-7j      3-10j
+  (* Spécialité Gedimat)
+───────────────────────────────────────────────────────────────────────────────────────────────────────
+
+INTERPRÉTATION :
+  ✓ Gedimat performant retrait standard et gros volumes (spécialité coopérative)
+  ✓ Point P meilleur express et infrastructure 11+ bases
+  ✓ Leroy Merlin ok retrait magasin, faible livraison domicile (e-commerce)
+  ✓ Castorama/Brico Dépôt : model warehouse = délais standards longs
+
+
+PART 2 - TAUX DE SERVICE (% commandes livrées à temps)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                      GEDIMAT    POINT P    LEROY      CASTORAMA  BRICO      BIGMAT    OBJECTIF
+                                           MERLIN              DÉPÔT               SECTEUR
+───────────────────────────────────────────────────────────────────────────────────────────────────────
+Taux Service          89-93%     91-94%     88-91%     86-89%     84-87%    88-91%    > 95%
+Variation 2024        +1%        +1%        -2%        -3%        -1%       +1%       Stable
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+FACTEURS IMPACT 2024 :
+  • Leroy Merlin : -5% CA magasins = surcharge logistique, baisse service qualité
+  • Point P : Restructuration 3 bases = amélioration progressive (target 95%+ 2025)
+  • Castorama/Brico : Warehouse model limites capacité = ralentissement
+  • Gedimat : Système stable, bonne performance négoce
+
+
+PART 3 - TAUX DE RUPTURE DE STOCK (%)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                      GEDIMAT    POINT P    LEROY      CASTORAMA  BRICO      BIGMAT    OBJECTIF
+                                           MERLIN              DÉPÔT               SECTEUR
+───────────────────────────────────────────────────────────────────────────────────────────────────────
+Taux Rupture Stock     5-8%       5-8%       8-12%      10-13%     12-15%    6-9%      < 5%
+Impact Coût            -4% CA     -4% CA     -4% CA     -4% CA     -4% CA    -4% CA    -4% CA
+  par rupture
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+CONTEXTE 2024 : Post-crise 2023 (pénurie bois +300%, acier ruptures). Situation normalisée.
+  • Gedimat : Rotation rapide 2 dépôts = ruptures contrôlées
+  • Leroy Merlin : Surstock sécurité post-crise = immobilisation capital, peu ruptures mais marge baisse
+  • Brico Dépôt : Model discount = marge faible = ruptures acceptées commercialement
+
+
+PART 4 - TAUX DE DISPONIBILITÉ PRODUITS (% références en stock magasin)
+─────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                      GEDIMAT    POINT P    LEROY      CASTORAMA  BRICO      BIGMAT    OBJECTIF
+                                           MERLIN              DÉPÔT               SECTEUR
+───────────────────────────────────────────────────────────────────────────────────────────────────────
+Disponibilité         91-94%     94-96%     91-93%     89-92%     88-91%    91-93%    > 98%
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+NOTE : Aucun acteur major n'atteint 98% uniformément. Variance stock régional vs central = limites.
+
+
+PART 5 - COÛT LOGISTIQUE EN % CHIFFRE AFFAIRES
+─────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                      GEDIMAT    POINT P    LEROY      CASTORAMA  BRICO      BIGMAT    BENCHMARK
+                                           MERLIN              DÉPÔT
+───────────────────────────────────────────────────────────────────────────────────────────────────────
+% CA Logistique Total 10-11%     10-12%     12-14%     13-15%     13-15%    11-12%    Industrie
+  - Transport         6-7%       6-7%       7-9%       8-10%      8-10%     7-8%      6-8%
+  - Entreposage       2-3%       2-3%       3-4%       3-4%       3-4%      2-3%      2-3%
+  - Gestion Stock     1-2%       1-2%       2-3%       2-3%       2-3%      1-2%      1-2%
+  - Retours/Admin.    0,5-1%     0,5-1%     0,5-1%     0,5-1%     0,5-1%    0,5-1%    0,5-1%
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+ANALYSE COMPARATIVE :
+  ✓ GEDIMAT meilleur ratio (10-11%) : 2 dépôts vs 4-15 concurrents = efficacité
+  ✓ Point P compétitif (10-12%) : malgré complexité Saint-Gobain groupe
+  ✗ Leroy Merlin/Castorama/Brico élevés (12-15%) : surcharge e-commerce, infrastructure lourde
+
+CONTEXTE 2024 : Coûts routiers +6,8% secteur = compression marges toutes enseignes
+
+
+PART 6 - MODÈLE LOGISTIQUE INFRASTRUCTURE
+─────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+                      GEDIMAT      POINT P       LEROY MERLIN      CASTORAMA    BRICO DÉPÔT
+───────────────────────────────────────────────────────────────────────────────────────────────
+Nombre Dépôts         2             11+           4-5               5            3
+Localisation          2 axes nat.   Pan-Europe    4 régions + e-com 5 régions    3 régions
+Architecture          Coopératif    Saint-Gobain  ADEO centralisé   Kingfisher   Kingfisher
+Points Vente          ~500          1000+         155               80           65
+Modèle               Adhérents      Agences       Magasins          Magasins     Warehouse
+Flexibilité Produits MOYENNE        HAUTE         BASSE             BASSE        BASSE
+Rotation Stock       RAPIDE        RAPIDE        MOYENNE           FAIBLE       FAIBLE
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────
+
+INTERPRÉTATION :
+  • Gedimat : Model 2 dépôts = optimal efficacité vs complexité (sweet spot)
+  • Point P : Suroptimisé infrastructure pour volume (difficile ROI)
+  • Leroy Merlin : Hybride logistique = compromis coûteux
+  • Castorama/Brico : Spécialisés, limites scalabilité
+
+
+PART 7 - PROGRAMMES FIDÉLISATION B2B
+─────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Acteur          Program            Avantages Clés         Cible              Impact Estimé
+───────────────────────────────────────────────────────────────────────────────────────────────────────
+Gedimat         Adhésion Coop.     Gouvernance partagée,  Artisans locaux    Variable (propre)
+                                   Bénéfices mutualisés
+
+Point P         Génération Art.    9000 cartes, Outils    Artisans RGE       15-20% cross-sell
+                                   num., Formation,
+                                   20% Kiloutou
+
+Leroy Merlin    Leroy&Moi PRO      Remises tiered 3-8%,   Entrepreneurs      10-15% fidél.
+                                   Retours 12 mois,
+                                   Accès 6h+ matins
+
+BigMat          Avantages Pro      3-tier remises,        Indépendants       8-12% fidél.
+                (Coopératif)       Events, Connexions,
+                                   20% Kiloutou
+
+Castorama       C-Casto            Avantages génériques   Tous publics        <5% déploiement
+                (Payant 9,90€/an)
+
+───────────────────────────────────────────────────────────────────────────────────────────────────────
+
+LEADER B2B : Point P (écosystème complet : outils + formation + partenaires)
+BESOIN GEDIMAT : Renforcer offerings numériques (outils devis + formation produits + e-learning)
+
+
+PART 8 - SYNTHÈSE POSITIONNEMENT GEDIMAT
+─────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+FORCES                                    FAIBLESSES
+─────────────────────────────────────────────────────────────────────────────────────────────────────
+✓ Taux service 89-93%                     ✗ Outils numériques B2B basiques
+✓ Délais chantier 2-4j (unique)           ✗ Visibilité stock temps réel limitée
+✓ Coût logistique 10-11% (meilleur)       ✗ Pas d'express <24h
+✓ Efficacité 2 dépôts                     ✗ Programme fidélité moins attractif
+✓ Fidélité artisans (coopératif)          ✗ CA 1,2Md€ vs 9Md€ LM (gap taille)
+
+MENACES                                   OPPORTUNITÉS 2025-2026
+─────────────────────────────────────────────────────────────────────────────────────────────────────
+✗ Point P intégration Saint-Gobain        ✓ Plateforme digitale artisans
+✗ Leroy Merlin re-investissement post-   ✓ Certification délai (48h ruptures)
+  baisse                                  ✓ E-commerce B2B intégré
+✗ Consolidation sectorielle BigMat/      ✓ Partenaires livreurs régionaux 24-48h
+  Gedimat risque                          ✓ Prédiction IA consommation
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+PART 9 - RECOMMANDATIONS STRATÉGIQUES GEDIMAT
+═════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+PRIORITÉ 1 (Q1-Q2 2025) : Digitisation B2B
+  Investissement : 3-5M€
+  Livrables :
+    • Plateforme commandes cycliques (artisans engagement volume = remise transport 5-8%)
+    • Tableau bord prédiction ruptures IA (48-72h anticipation)
+    • Certification "Garantie 48h ruptures" = marketing unique vs concurrence
+  ROI : +2-3% fidélisation = +25-50M€ CA
+
+PRIORITÉ 2 (Q2-Q3 2025) : Optimisation logistique IA
+  Investissement : 2-3M€
+  Livrables :
+    • Auto-routage commandes (dépôt optimal vs risque rupture)
+    • Prédiction consommation produits réguliers (sable, ciment, vis)
+    • Optimisation tournées livraison 2 dépôts
+  ROI : -1-2% coût logistique = 12-20M€ économies
+
+PRIORITÉ 3 (Q3-Q4 2025) : Partenariats régionaux express
+  Investissement : 1M€ partenaires
+  Livrables :
+    • Réseau livreurs locaux 24-48h (petits volumes pour petits artisans)
+    • Offre "Express Proximité" tarif compétitif vs Point P
+    • Intégration tracking GPS
+  ROI : +1-2% CA = 15-30M€
+
+BUDGET TOTAL 2025 : 6-9M€ → ROI 50-100M€ potentiel (5-10% CA)
+
+═════════════════════════════════════════════════════════════════════════════════════════════════════════
