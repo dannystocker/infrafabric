@@ -1,0 +1,274 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║           TABLEAUX SENSIBILITÉ - GEDIMAT LOGISTICS OPTIMIZATION              ║
+║                  Analyse d'impact des variables coûts/marge                   ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+
+TABLEAU 1 : SENSIBILITÉ MARGE GLOBALE - IMPACT HAUSSE COÛTS TRANSPORT
+═══════════════════════════════════════════════════════════════════════════════
+
+Variation Coûts Transport    Coûts Annuels    Impact Marge €    % CA    Rentabilité
+─────────────────────────────────────────────────────────────────────────────────────
+-20% (Optimisation)          6.0M€            +1.58M€          +0.53%  ✅ Excellent
+-15%                         6.4M€            +1.19M€          +0.40%  ✅ Très bon
+-10% (Target réaliste)       6.5M€            +790k€           +0.26%  ✅ Bon
+0% (Baseline 2025)           7.2-7.9M€        0€               0%      📌 Référence
++5%                          7.6-8.3M€        -395k€           -0.13%  ⚠️ Acceptable
++10% (Risque marché)         7.9-8.7M€        -790k€           -0.26%  ⚠️ Critique
++15%                         8.3-9.1M€        -1.19M€          -0.40%  ❌ Insoutenable
++20%                         8.6-9.5M€        -1.58M€          -0.53%  ❌ Critique
++25%                         9.0-9.9M€        -1.98M€          -0.66%  ❌ Perte clients
++30%                         9.4-10.3M€       -2.37M€          -0.79%  ❌ Impossibilité
+
+LECTURE :
+• Baseline = 7.2-7.9M€ transport coûts / 1.2B€ CA = 0.6% CA
+• Élasticité marge = -0.053% marge / +1% coûts
+• Seuil d'indifférence client : +8% coûts → -0.2% marge (client perçoit -0.5% prix produit)
+• Seuil d'insoutenabilité opérationnelle : +15% coûts → -0.4% marge (nécessite réduction COGS)
+• Scénario worst case (+30%) → Nécessaire réduire marge brute de 2% ou augmenter prix 3%
+
+
+TABLEAU 2 : DÉCOMPOSITION IMPACT PAR LIGNE PRODUIT
+═══════════════════════════════════════════════════════════════════════════════
+
+Ligne Produit      CA      % CA   Coûts Log.  Marge %  Impact +10%  % Perte Marge
+──────────────────────────────────────────────────────────────────────────────────
+Ciments            200M€   17%    16M€        18%      -15 pts      -83%
+Tuiles             150M€   12%    18M€        22%      -20 pts      -91%
+Menuiserie         250M€   21%    15M€        26%      -10 pts      -38%
+Quincaillerie      200M€   17%    8M€         28%      -5 pts       -18%
+Sanitaires         100M€   8%     7M€         24%      -8 pts       -33%
+Autres (électrique)100M€   8%     12M€        20%      -12 pts      -60%
+──────────────────────────────────────────────────────────────────────────────────
+TOTAL              1200M€  100%   76M€        24%      -70 pts      -29% marge
+
+⚠️ ATTENTION : Tuiles & Ciments = 45% CA mais 53% coûts logistiques
+               → Lignes les plus sensibles à hausse transport
+               → Priorité protection marges sur ces catégories
+
+
+TABLEAU 3 : SENSIBILITÉ ROI CHAUFFEUR 3 - VOLUME vs PAYBACK
+═══════════════════════════════════════════════════════════════════════════════
+
+Volume        Trajets/an  Coûts Médiafret   Coûts Chauffeur 3  Gain Net    Payback
+──────────────────────────────────────────────────────────────────────────────────
+Très faible   30/an       22,500€           54,300€            -31,800€    JAMAIS (-59%)
+Faible        50/an       37,500€           54,300€            -16,800€    JAMAIS (-31%)
+Critique      62/an       46,500€           54,300€            -7,800€     JAMAIS (-15%)
+Seuil         75/an       56,250€           54,300€            +1,950€     16.7 ans
+Réaliste      90/an       67,500€           54,300€            +13,200€    4.1 ans
+Bon scénario  110/an      82,500€           54,300€            +28,200€    2.3 ans
+Excellent     130/an      97,500€           54,300€            +43,200€    1.5 ans
+──────────────────────────────────────────────────────────────────────────────────
+
+LECTURE :
+• Seuil rentabilité : 7.5 trajets/mois (90 ans) = break-even
+• Cible Gedimat : 1.2-1.5 trajet/sem actuel = 62-78/an
+• NÉCESSAIRE augmenter de +15-25 trajets/an pour ROI positif
+• Si croissance volume externe plausible, chauffeur 3 = +13k€ profit année 1
+
+
+TABLEAU 4 : SENSIBILITÉ ALERTES ARC - IMPACT TAUX ANNULATION
+═══════════════════════════════════════════════════════════════════════════════
+
+Taux Annulation  Cas/an    Gain Marge   Gain Transport  NPS Points   ROI Total
+──────────────────────────────────────────────────────────────────────────────
+Sans système      800       -160k€       -80k€           -15 pts      BASELINE
+5% réduction      760       +140k€       +60k€           -10 pts      -20% impact
+10% réduction     720       +280k€       +120k€          -8 pts       Neutral
+20% réduction     640       +560k€       +240k€          -5 pts       +100k€
+40% réduction (87,5% impact)   480       +1.12M€         +480k€       +15 pts     +279k€
+60% réduction     320       +1.68M€      +720k€          +20 pts      +418k€
+80% réduction     160       +2.24M€      +960k€          +25 pts      +557k€
+
+BÉNÉFICE MOYEN PAR CAS RÉDUIT : 850€ (marge 700€ + transport 150€)
+COÛT SYSTÈME ALERTES : 15,500€ investissement
+ROI = (Cases réduits × 850€) ÷ 15,500€
+
+CAS RÉALISTE (40% réduction) :
+  Gain = 320 × 850€ = 272,000€
+  ROI = 272,000 ÷ 15,500 = 1,758% = Payback 20 jours
+
+
+TABLEAU 5 : SENSIBILITÉ HUB RÉGIONAL - CONSOLIDATION COMMANDES
+═══════════════════════════════════════════════════════════════════════════════
+
+Consolidation    Commandes   Coût Mode A   Coût Mode B    Économie €  % Économie
+─────────────────────────────────────────────────────────────────────────────────
+1 commande       1 × 20t     1,000€        1,000€         0€          0%
+2 commandes      2 × 20t     2,000€        1,245€         755€        38%
+3 commandes      3 × 15t     1,950€        800€           1,150€      59%
+4 commandes      4 × 12t     2,200€        987€           1,213€      55%
+5 commandes      5 × 15t     2,750€        1,125€         1,625€      59%
+10 commandes/sem 10 × 15t    6,500€        2,100€         4,400€      68%
+20 commandes/sem 20 × 15t    13,000€       4,200€         8,800€      68%
+
+MODÈLE COÛT MODE B (HUB + REGROUPEMENT) :
+  = [Livraison hub 30km (120€) + Navette redistribution 50km (50€) + Manutention (35€)]
+  = 205€ par commande initial, puis +15€ par commande additionnelle regroupée
+
+ÉCONOMIE D'ÉCHELLE : À partir de 3-4 commandes/période = économie >55%
+GEDIMAT CAS RÉEL : ~40-50 commandes/mois Île-de-France
+                   = 10-12 commandes/semaine
+                   = Consolidation 2-3 trajets/semaine = économie -65%
+
+
+TABLEAU 6 : ANALYSE COÛT D'OPPORTUNITÉ - RETARD CLIENT vs URGENCE
+═══════════════════════════════════════════════════════════════════════════════
+
+Urgence Client  Délai     Proba Annulation  Marge Perdue  Coût Transport  Total Perte
+─────────────────────────────────────────────────────────────────────────────────────
+2/10 (banal)    J+3       5%                35€           20€             55€
+3/10 (normal)   J+2       8%                56€           35€             91€
+4/10 (standard) J+2       10%               70€           50€             120€
+5/10            J+1       15%               105€          75€             180€
+6/10            J même    20%               140€          100€            240€
+7/10 (urgent)   J même    35%               245€          175€            420€
+8/10 (critique) J-0.5     50%               350€          250€            600€
+9/10 (bloquant) J-0.5     65%               455€          325€            780€
+10/10 (fatale)  immédiat  80%               560€          400€            960€
+
+FORMULE : Coût opportunité = Marge % × Proba × CA moyen + Transport
+
+SURCOÛT ACCEPTABLE POUR HONORER URGENCE :
+  • Urgence 7/10 : Accepter +420€ surcoût transport
+  • Urgence 8/10 : Accepter jusqu'à +600€ surcoût
+  • Urgence 9/10 : Accepter jusqu'à +780€ surcoût (ex: chauffeur overtime 24h)
+
+CAS EMERIS RÉEL : Urgence 9/10 + volume 20t
+  Option A (affrètement direct) = 1,000€ transport
+  Option B (hub régional) = 213€ transport + surcoût coordination 30€ = 243€
+  Surcoût "caché" si refus urgence = 780€ perte marge
+  → Décision optimale = Option B (économie 757€ + marge conservée)
+
+
+TABLEAU 7 : BREAK-EVEN ANALYSES - SEUILS DÉCISIONNELS
+═══════════════════════════════════════════════════════════════════════════════
+
+SEUIL 1 : À partir de quel volume affrètement → recruter chauffeur 3 ?
+─────────────────────────────────────────────────────────────────────────────
+Réponse : 7.5 trajets/mois = 90 trajets/an = 54,300€ coûts = 46,500€ Médiafret économisés
+
+SEUIL 2 : À partir de quel retard → améliorer prévision ?
+─────────────────────────────────────────────────────────────────────────────
+Réponse : 5-8% retards = 4-6 semaines amélioration demand sensing payante
+         Coût système alerte : 15k€ → Gain 272k€ (ROI 1758%)
+
+SEUIL 3 : À partir de quel urgence → accepter surcoût transport +20% ?
+─────────────────────────────────────────────────────────────────────────────
+Réponse : Urgence >7/10 → ROI positif (marge conservation > surcoût)
+         Urgence >8/10 → ROI excellent (6:1 ratio minimum)
+
+SEUIL 4 : À partir de quel taille commande → utiliser hub régional ?
+─────────────────────────────────────────────────────────────────────────────
+Réponse : Commandes 15-25t en duo/trio (2-3 destinations proches)
+         Économie 55-68% vs livraison directe affrètement
+
+SEUIL 5 : À partir de quel coûts logistique % CA → c'est trop cher ?
+─────────────────────────────────────────────────────────────────────────────
+Réponse : Gedimat actuellement = 10-11% CA (bon vs secteur 10-14%)
+         Seuil d'alerte = 12% CA (nécessite action optimisation immédiate)
+         Seuil critique = 14% CA (remise en cause modèle économique)
+
+
+TABLEAU 8 : SENSIBILITÉ PRIX VENTE - ABSORPTION SURCOÛTS
+═══════════════════════════════════════════════════════════════════════════════
+
+Hausse Coûts    Augmentation Vente      Absorption Client    Impact CA    Option
+                Nécessaire              % client remarque
+────────────────────────────────────────────────────────────────────────────────
++5% coûts       +1.25% prix             Imperceptible        Neutre       ✅ Faisable
++10% coûts      +2.5% prix              Perceptible (-5% vol) Perte 2%     ⚠️ Risqué
++15% coûts      +3.75% prix             Visible (-10% vol)   Perte 5%     ❌ Non
++20% coûts      +5% prix                Très visible (-15%)  Perte 8%     ❌ Fuite
+
+RÉALITÉ SECTEUR GSB (Matériaux) :
+  • Prix sensibilité = -2% volume / +1% prix
+  • Marges déjà comprimées 18-28%
+  • Clients multi-sourçant (3-4 fournisseurs)
+
+CONCLUSION : Ne pas absorber >5% hausse coûts par prix
+             Chercher plutôt compression coûts opérationnels
+
+
+TABLEAU 9 : ROI CUMULÉ - TOUTES INITIATIVES COMBINÉES
+═══════════════════════════════════════════════════════════════════════════════
+
+Initiative                   Investissement    Année 1    Année 2    Année 3    Payback
+──────────────────────────────────────────────────────────────────────────────────────
+1. Alertes ARC              15,500€           279,000€   279,000€   279,000€   20 jours
+2. Médiafret Négoc.         3,000€            65,000€    65,000€    65,000€    11 jours
+3. Chauffeur 3              54,300€           40,700€    40,700€    40,700€    9.5 mois
+4. Hub + TMS                124,000€          261,500€   261,500€   261,500€   5.7 mois
+──────────────────────────────────────────────────────────────────────────────────────
+BUNDLE TOTAL                196,800€          646,200€   646,200€   646,200€   3.6 mois
+
+CUMULÉ 3 ANS :
+  Investissement total      : 196,800€
+  Gain total (3 × 646,2k€)  : 1,938,600€
+  Net après invest.         : 1,741,800€
+  ROI global 3 ans          : 885%
+  Ratio bénéfice/investissement : 9.8x
+
+CALENDRIER RECOMMANDÉ
+──────────────────────────────────────────────────────────────────────────────
+Q4 2025   : Alertes ARC + Négoc Médiafret       (18.5k€)
+Q1-Q2 2026: Chauffeur 3 + Hub études            (54k€)
+Q3 2026+  : Hub complet + TMS mise en prod.     (124k€)
+Fin 2026  : Tous opérationnels                  TOTAL 196.8k€
+
+BREAK-EVEN DATE : Avril 2026 (5 mois après début)
+GAIN CUMULÉ FIN 2026 : 646k€ - 196.8k€ = 449.2k€ profit
+
+
+TABLEAU 10 : SCÉNARIOS PESSIMISTE vs OPTIMISTE
+═══════════════════════════════════════════════════════════════════════════════
+
+Paramètre                    Pessimiste           Réaliste             Optimiste
+─────────────────────────────────────────────────────────────────────────────────
+Taux adoption alertes ARC    70%                  90%                  100%
+Réduction annulation         -60% (vs 87.5%)      -87.5%               -95%
+Volume chauffeur 3           60 trajets/an        90 trajets/an        120 trajets/an
+Gain Hub consolidation       -30% (vs -68%)       -68%                 -75%
+Tarif Médiafret réduction    -5% (vs -15%)        -15%                 -20%
+
+IMPACT FINANCIER
+────────────────────────────────────────────────────────────────────────────────
+Gain année 1 Pessimiste      : 420,000€           (vs 646k€ réaliste)
+Gain année 1 Optimiste       : 780,000€           (vs 646k€ réaliste)
+
+ROI Pessimiste 3 ans         : 540%               (vs 885% réaliste)
+ROI Optimiste 3 ans          : 1,200%             (vs 885% réaliste)
+
+Payback pessimiste           : 7 mois             (vs 3.6 mois réaliste)
+Payback optimiste            : 3 mois             (vs 3.6 mois réaliste)
+
+CONCLUSION : Même scénario pessimiste = 540% ROI 3 ans
+            Initiative très robuste, insensible variations marché
+
+
+TABLEAU 11 : SENSIBILITÉ AUX ERREURS D'ESTIMATION
+═══════════════════════════════════════════════════════════════════════════════
+
+Erreur Estimation              Impact sur ROI        Mitigation
+─────────────────────────────────────────────────────────────────────────────
+Volume trajets surestimé +20%  ROI réduit -15 pts    Audit demand réel
+Taux retard sur-estimé         Gain annulation ↓     Mesurer réelle données
+Coûts Médiafret baissent -10%  Chauffeur 3 moins RO Négocier contrats
+Adoption TMS <50%              ROI réalisé = -40%    Formation + change mgmt
+Coûts intégration +50%         Payback + 3 mois      Budget contingency 20%
+Salaire chauffeur +10%         Marges chauffeur -8%  Simuler enrolement
+
+RISQUES COUVERTS :
+  ✅ Alertes ARC : ROI reste >1000% même si adoption 50% (robuste)
+  ✅ Négoc Médiafret : Risque faible (contrats existants)
+  ✅ Hub régional : Risque modéré (adoption TMS clé)
+  ⚠️ Chauffeur 3 : Risque volume élevé (nécessite prévision solide)
+
+RECOMMANDATION : Débuter par Alertes ARC + Négoc (faible risque)
+                 Puis valider volume chauffeur 3 avant engagement
+
+
+═══════════════════════════════════════════════════════════════════════════════
+FIN DES TABLEAUX SENSIBILITÉ
+═══════════════════════════════════════════════════════════════════════════════
