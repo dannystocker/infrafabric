@@ -1,10 +1,10 @@
 # Codex Execution Prompt: Arena P0 Fixes to 95%+
 
-**Mission:** Apply 4 critical fixes to `GEDIMAT_ARENA_REVIEW_COMPLETE.md` based on LLM Arena 8-model consensus review.
+**Mission:** Apply 8 critical fixes to `GEDIMAT_ARENA_REVIEW_COMPLETE.md` based on LLM Arena 8-model consensus review + user requirements.
 
 **Current Score:** 91.9/100 (7 credible models)
 **Target Score:** 95.0/100
-**Estimated Time:** 45 minutes
+**Estimated Time:** 70 minutes (8 tasks)
 **Execution Date:** 2025-11-17
 
 ---
@@ -27,7 +27,59 @@
 
 ---
 
-## Your Mission (7 Tasks)
+## Your Mission (8 Tasks)
+
+### Task 0: Create Professional Cover Page (5 minutes)
+
+**Target Location:** Create new file or insert at beginning of document (before current line 1)
+
+**Instructions:**
+
+Create a professional French business cover page with the following exact layout:
+
+```markdown
+<div style="page-break-after: always;"></div>
+
+# Fidélisation par l'Excellence Logistique Gedimat
+
+<br><br><br><br><br><br>
+
+---
+
+<div style="text-align: right; margin-top: 100px;">
+
+**Préparé par :**
+Angélique Montanarini
+Danny Stocker
+
+**Assisté par :**
+Claude Sonnet 4.5
+ChatGPT 5.1 Thinking
+Gemini 2.5 Pro
+
+**Date :** 2025-11-17
+
+</div>
+
+<div style="page-break-after: always;"></div>
+```
+
+**Implementation Options:**
+
+**Option A (Recommended):** Insert this cover page at the very beginning of `GEDIMAT_ARENA_REVIEW_COMPLETE.md`, before the current title on line 1.
+
+**Option B:** Create separate file `GEDIMAT_COVER_PAGE.md` that can be prepended during DOCX export.
+
+**Visual Layout:**
+- Title centered at top: "Fidélisation par l'Excellence Logistique Gedimat"
+- Large whitespace (6 line breaks)
+- Horizontal rule separator
+- Credits section aligned right, lower portion of page
+- Page break after cover (ensures main content starts fresh page)
+
+**Expected Result:** Professional cover page that establishes document authority and transparency about AI-assisted preparation.
+
+---
 
 ### Task 0A: Update Table of Contents (5 minutes)
 
@@ -397,37 +449,44 @@ Perform careful find-and-replace for the following anglicisms throughout the ENT
 - [ ] Backup the file: `cp GEDIMAT_ARENA_REVIEW_COMPLETE.md GEDIMAT_ARENA_REVIEW_COMPLETE_V3.1_BACKUP.md`
 
 **Execute in order:**
-1. [ ] Task 0A: Update Table of Contents (5 min)
+1. [ ] Task 0: Create professional cover page (5 min)
+   - Insert at very beginning of document (before current line 1)
+   - New title: "Fidélisation par l'Excellence Logistique Gedimat"
+   - Credits section: Angélique Montanarini, Danny Stocker
+   - AI assistance acknowledgment: Claude Sonnet 4.5, ChatGPT 5.1 Thinking, Gemini 2.5 Pro
+   - Add page break after cover page
+
+2. [ ] Task 0A: Update Table of Contents (5 min)
    - Scan document for all section headers
    - Verify TOC completeness against checklist
-   - Add Section 6.6 to TOC (will be created in Task 4)
+   - Add Section 6.6 to TOC (will be created in Task 5)
    - Ensure all subsections listed (5.1-5.5, 6.5, 7.5, 8.5, 9.5, 9.6)
 
-2. [ ] Task 0B: Add Annexes Summary section (5 min)
+3. [ ] Task 0B: Add Annexes Summary section (5 min)
    - Insert after Section 10, before Annexe X
    - Copy the "Annexes Opérationnelles" section from prompt
    - Verify formatting (headers, bullet points, bold text)
 
-3. [ ] Task 0C: Add print formatting (10 min)
+4. [ ] Task 0C: Add print formatting (10 min)
    - Add 14 page break tags before major sections
    - Convert 5-8 formulas to code blocks (clean, no LaTeX)
    - Apply bold formatting to key terms on first mention
 
-4. [ ] Task 1: French language cleanup (20 min)
+5. [ ] Task 1: French language cleanup (20 min)
    - Run find-replace for all 7 anglicism pairs
    - Verify each replacement makes sense in context
    - Check you made ~15-20 replacements total
 
-5. [ ] Task 2: Benchmark enhancements (15 min)
+6. [ ] Task 2: Benchmark enhancements (15 min)
    - Enhance Saint-Gobain section with sources + disclaimer
    - Enhance Leroy Merlin section with sources + disclaimer
    - Enhance Kingfisher section with direct quote + URL
 
-6. [ ] Task 3: Add pilot success criteria (5 min)
+7. [ ] Task 3: Add pilot success criteria (5 min)
    - Insert after Quick Wins section
    - Verify formatting (proper markdown headers)
 
-7. [ ] Task 4: Add legal compliance section (5 min)
+8. [ ] Task 4: Add legal compliance section (5 min)
    - Insert as Section 6.6 (after 6.5 Gouvernance Comportementale)
    - Verify fits naturally in governance discussion
    - Update TOC to include Section 6.6
