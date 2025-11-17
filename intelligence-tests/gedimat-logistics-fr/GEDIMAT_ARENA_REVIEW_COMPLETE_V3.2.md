@@ -1,5 +1,30 @@
+<div style="page-break-after: always;"></div>
+
+# Fidélisation par l'Excellence Logistique Gedimat
+
+<br><br><br><br><br><br>
+
+---
+
+<div style="text-align: right; margin-top: 100px;">
+
+**Préparé par :**
+Angélique Montanarini
+Danny Stocker
+
+**Assisté par :**
+Claude Sonnet 4.5
+ChatGPT 5.1 Thinking
+Gemini 2.5 Pro
+
+**Date :** 2025-11-17
+
+</div>
+
+<div style="page-break-after: always;"></div>
+
 # Gedimat Logistics Optimization: Complete Board Dossier
-**Version:** 3.1 Behavioral Enhanced
+**Version:** 3.2 Final (Cover Page + P0 Fixes)
 **Date:** 2025-11-17
 **Status:** Board-ready, IF.TTT compliant (zero phantom numbers)
 **Reviewer:** LLM Arena Multi-Evaluator Review
@@ -44,7 +69,7 @@
 
 ---
 
-# Dossier Final — Optimisation Logistique Gedimat
+# Fidélisation par l'Excellence Logistique Gedimat
 **Date** : 2025‑11‑17  
 **Portée** : 3 dépôts, enlèvements fournisseurs non livreurs, affrètement externe vs. navette interne
 
@@ -825,7 +850,7 @@ grep -n "### 9.6 Arbitrages Relationnels" GEDIMAT_BEHAVIORAL_ENHANCED_FINAL.md
 
 ## 3. Actionability: [PASS/FAIL]
 **Score:** [0-100]
-**Quick Wins executable:** [X/4]
+**Gains Rapides exécutables:** [X/4]
 **Blocking issues:** [List any "buy expensive software" dependencies]
 **Verdict:** [Angélique can execute in Week 1?]
 
