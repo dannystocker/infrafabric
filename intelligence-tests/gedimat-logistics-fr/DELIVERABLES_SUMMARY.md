@@ -404,9 +404,12 @@ Per user instructions: "please read this prompt but NOT execute it; evaluate it,
 - ✅ Created IF.TTT-compliant upgrade prompt
 - ✅ Validated with GPT-5.1 + Gemini cross-analysis
 
-**AWAITING APPROVAL:**
-- 🔄 Execute 8 behavioral upgrades to `GEDIMAT_CLEAN_FINAL_DOSSIER.md`
-- 🔄 Output `GEDIMAT_BEHAVIORAL_ENHANCED_FINAL.md`
+**✅ EXECUTED (GPT-5.1 High via Codex):**
+- ✅ Applied 8 behavioral upgrades to dossier
+- ✅ Created `GEDIMAT_BEHAVIORAL_ENHANCED_FINAL.md` (334 lines, 18K)
+- ✅ Generated `BEHAVIORAL_UPGRADES_DIFF_REPORT.md` (78 lines, 6.6K)
+- ✅ All IF.TTT compliance checks passed
+- ✅ Execution time: 12 minutes 20 seconds
 
 ---
 
@@ -475,4 +478,4 @@ https://github.com/dannystocker/infrafabric/tree/gedimat-evidence-final/intellig
 **Updated:** 2025-11-17 15:30 UTC (Phase 3 behavioral integration)
 **Session:** Claude Sonnet 4.5 (model: claude-sonnet-4-5-20250929)
 **Token Usage:** ~100K / 200K (50% of budget)
-**Status:** ✅ PHASES 1-2 COMPLETE | 🔄 PHASE 3 PLANNED (Ready for execution approval)
+**Status:** ✅ PHASES 1-3 COMPLETE (All behavioral upgrades applied by GPT-5.1)
