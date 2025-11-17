@@ -328,36 +328,60 @@ Council identified 4 missing elements that could cause board rejection:
 
 ## Recommended Next Steps
 
-### Phase 5: Execute P0 Fixes to Reach 95%+ (45 minutes)
+### Phase 5: Execute P0 Fixes to Reach 95%+ (65 minutes) 🔄 IN PROGRESS
 
 **Current Status:** 91.9/100 average (7 credible Arena models)
-**Target:** 95%+
-**Strategy:** Fix French Language (20 min) + Benchmarks (15 min) + Success Criteria (5 min) + Legal Note (5 min)
+**Target:** 95.0/100
+**Strategy:** Enhanced with print formatting + TOC updates + annexes summary
 
-**Execution Options:**
+**Execution Prompt Ready:** `CODEX_P0_FIXES_ARENA_95_PERCENT.md` (18K, 650+ lines)
 
-1. **Direct Edit by Claude Code (Recommended - fastest)**
-   - Edit `GEDIMAT_ARENA_REVIEW_COMPLETE.md` directly
-   - Apply all P0 fixes in single pass
-   - Commit and push to GitHub
-   - Estimated time: 45 minutes total
+**Updated Scope - 7 Tasks (Enhanced from Original 4):**
 
-2. **Generate Fixpack for Codex/GPT-5.1**
-   - Create detailed line-by-line fix instructions
-   - User executes via Codex CLI
-   - Review and commit results
-   - Estimated time: 1 hour total
+**Print & Structure Requirements (User Feedback):**
+1. **Task 0A: Update TOC (5 min)** - Verify all sections listed, add Section 6.6
+2. **Task 0B: Add Annexes Summary (5 min)** - Overview section introducing 3 operational annexes
+3. **Task 0C: Print Formatting (10 min)**
+   - 14 page breaks (each section starts fresh page for printing)
+   - Clean code blocks for formulas (professional report style, no LaTeX)
+   - Bold formatting for key terms on first mention
 
-3. **Manual Fixes by User**
-   - Provide checklist with exact search-replace strings
-   - User edits in VS Code / text editor
-   - Review and commit
-   - Estimated time: 1.5 hours total
+**Arena Score Improvements (Original P0 Fixes):**
+4. **Task 1: French Language (20 min)** → +5.9 points
+   - Replace 6-7 anglicisms with French equivalents
+   - "Quick Win" → "Gain Rapide", "dashboard" → "tableau de bord", etc.
 
-**After P0 Fixes:**
-- Expected new score: 95.0/100
-- Status: Board presentation ready
-- Final deliverable: `GEDIMAT_ARENA_REVIEW_COMPLETE_V3.2.md`
+5. **Task 2: Benchmark Sources (15 min)** → +5.9 points
+   - Saint-Gobain: Add 3 sources + methodological disclaimer
+   - Leroy Merlin: Add ADEO report citations + disclaimer
+   - Kingfisher: Add direct quote + Annual Report 2023 URL
+
+6. **Task 3: Pilot Success Criteria (5 min)** → +2.6 points
+   - 5 measurable thresholds for 90-day validation
+   - Clear decision framework (≥3/5 criteria at 90% = Phase 2 approved)
+
+7. **Task 4: Legal Compliance (5 min)** → +2.7 points
+   - Section 6.6: RGPD + Code des transports + Franchise clauses
+   - Audit plan pre/post pilot
+
+**Execution Method:** Codex/GPT-5.1 High via CLI (user's WSL environment)
+
+**After P0 Fixes Execution:**
+
+**Export to Word/DOCX (Recommended for Printing):**
+- Convert `GEDIMAT_ARENA_REVIEW_COMPLETE_V3.2.md` to DOCX
+- **Why Word:** Auto-updating TOC with correct page numbers
+- **Process:** Open in Word → References tab → Update Table → Save/Print
+- Page breaks ensure each section starts fresh page
+- Formulas in code blocks render cleanly
+- Bold formatting provides visual hierarchy
+
+**Expected Results:**
+- File: `GEDIMAT_ARENA_REVIEW_COMPLETE_V3.2.md` (then → DOCX)
+- Score: 95.0/100 (from 91.9/100)
+- Status: Board presentation ready, print-ready
+- Pages: ~40-50 pages printed (with page breaks)
+- TOC: Auto-updates in Word with correct page numbers
 
 ### Historical Context (Completed Phases)
 

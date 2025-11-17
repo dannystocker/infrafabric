@@ -27,7 +27,176 @@
 
 ---
 
-## Your Mission (4 Tasks)
+## Your Mission (7 Tasks)
+
+### Task 0A: Update Table of Contents (5 minutes)
+
+**Target Section:** Lines 8-37 (Document Navigation TOC)
+
+**Current Issue:** TOC may be missing some sections or have incorrect anchor links.
+
+**Instructions:**
+
+1. **Scan the entire document** and extract all section headers:
+   - Main sections: `## 1.`, `## 2.`, etc.
+   - Subsections: `### 5.1`, `### 5.2`, etc.
+   - Annexes: `## Annexe X`, `## Annexe Y`, `## Annexe Z`
+
+2. **Verify TOC completeness** - Check that ALL of the following are listed:
+   - Section 1: Résumé Exécutif
+   - Section 2: Contexte & Faits Clés
+   - Section 3: Diagnostic
+   - Section 3.5: Psychologie B2B et Fidélisation
+   - Section 4: Cas Externes
+   - Section 5: Recommandations Détaillées
+     - 5.1 Règle d'affectation dépôt
+     - 5.2 Alertes & SLA
+     - 5.3 Mesure de satisfaction
+     - 5.4 Outil de scoring dépôt
+     - 5.5 Le Geste Relationnel
+   - Section 6: Gouvernance & Responsabilités
+     - 6.5 Gouvernance Comportementale
+   - Section 7: Plan 90 Jours
+     - 7.5 Stress-Test Comportemental
+   - Section 8: Indicateurs & Validation
+     - 8.5 Indicateurs de Récupération
+   - Section 9: Sensibilité (Scénarios)
+     - 9.5 Crédibilité du RSI
+     - 9.6 Arbitrages Relationnels
+   - Section 10: Conformité & Confidentialité
+   - **NEW:** Section 6.6: Conformité Réglementaire et Juridique (will be added in Task 4)
+   - **Annexes:**
+     - Annexe X: Règles de Décision (Playbook)
+     - Annexe Y: Alertes & SLA
+     - Annexe Z: Modèle de Coûts
+
+3. **Update TOC** if any sections are missing or misnumbered
+
+**Expected Result:** Complete, accurate TOC matching actual document structure
+
+---
+
+### Task 0B: Add Annexes Summary Section (5 minutes)
+
+**Target Location:** After Section 10 (Conformité), before the actual annexes begin
+
+**Instructions:**
+
+Insert a new section that introduces the annexes:
+
+```markdown
+
+---
+
+## Annexes Opérationnelles
+
+**Les trois annexes suivantes fournissent les outils opérationnels pour la mise en œuvre du pilote.**
+
+### Vue d'ensemble des annexes
+
+**Annexe X : Règles de Décision (Playbook)**
+- Arbre de décision pour l'affectation dépôt
+- 3 cas de dérogation autorisés (Urgence client, Contrainte capacitaire, Spécialisation technique)
+- Matrice de décision : Volume × Distance × Urgence
+- **Utilité :** Guide quotidien pour la coordinatrice logistique (Angélique)
+
+**Annexe Y : Alertes & SLA**
+- Définition des 5 alertes critiques (ARC/ACK, J-1 enlèvement, Retard détecté, Satisfaction post-livraison, Dérogation proximité)
+- Service Level Agreements : Délais de traitement pour chaque type d'alerte
+- Template emails/SMS pour communication client proactive
+- **Utilité :** Cadre de réactivité opérationnelle
+
+**Annexe Z : Modèle de Coûts**
+- Formule calcul coût par livraison : Affrètement externe vs. Navette interne + Manutention
+- Tableau comparatif avec exemples chiffrés (fournisseur 80 km, 120 km, 200 km)
+- Fichier CSV d'exemple pour import Excel
+- **Utilité :** Justification financière de la règle "proximité d'abord"
+
+**Note importante :** Ces annexes sont des OUTILS OPÉRATIONNELS, pas de la documentation théorique. Elles sont conçues pour être utilisées dès la Semaine 1 du pilote.
+
+---
+```
+
+**Why this matters:** User needs to send document to friend for printing. This summary helps reader understand what's in the annexes without having to flip back and forth.
+
+---
+
+### Task 0C: Add Print Formatting (Page Breaks & Typography) (10 minutes)
+
+**Purpose:** Prepare document for professional printing - each major section starts on new page, formulas are clearly highlighted.
+
+**Instructions:**
+
+1. **Add page breaks before each major section:**
+   Insert `<div style="page-break-before: always;"></div>` BEFORE each `## X.` header (Sections 1-10 and Annexes).
+
+   Example:
+   ```markdown
+   <div style="page-break-before: always;"></div>
+
+   ## 1. Résumé Exécutif
+   ```
+
+   **Locations to add page breaks (11 total):**
+   - Before `## 1. Résumé exécutif`
+   - Before `## 2. Contexte & faits clés`
+   - Before `## 3. Diagnostic`
+   - Before `## 4. Cas externes`
+   - Before `## 5. Recommandations détaillées`
+   - Before `## 6. Gouvernance & responsabilités`
+   - Before `## 7. Plan 90 jours`
+   - Before `## 8. Indicateurs & validation`
+   - Before `## 9. Sensibilité`
+   - Before `## 10. Conformité & confidentialité`
+   - Before `## Annexes Opérationnelles` (new section from Task 0B)
+   - Before `## Annexe X`
+   - Before `## Annexe Y`
+   - Before `## Annexe Z`
+
+2. **Format all formulas with code blocks:**
+   Find all mathematical formulas (RSI calculations, cost models) and ensure they're in clean code blocks.
+
+   **Current format (inline math):**
+   ```markdown
+   \[ \textbf{RSI} = \frac{\text{Baseline}}{\text{Investment}} \times \text{Reduction} \]
+   ```
+
+   **Replace with clean code block:**
+   ```markdown
+   **Formule RSI (Retour sur Investissement) :**
+
+   ```
+   RSI = [Baseline affrètement 30j] / [Investissement temps + outils] × [Réduction scénario %]
+
+   Scénarios :
+   - Conservateur : 8% réduction
+   - Base        : 12% réduction
+   - Optimiste   : 15% réduction
+   ```
+   ```
+
+   **Find and replace for all formulas:**
+   - Section 1: RSI formula
+   - Section 9: Sensitivity analysis formulas
+   - Annexe Z: Cost comparison formulas
+
+3. **Enhance header hierarchy with bold formatting:**
+
+   Ensure all section headers are properly formatted:
+   - `## X.` headers → Add bold to section titles in body text first mention
+   - Example: When Section 1 mentions "Gains Rapides", first occurrence should be **Gains Rapides**
+
+**Why this matters:**
+- Page breaks ensure clean printing (each section starts fresh page)
+- Code blocks make formulas clear and professional (like published reports)
+- Bold formatting creates visual hierarchy for skimming
+
+**Expected additions:**
+- 14 page break HTML tags
+- 5-8 formula code blocks reformatted
+- Bold applied to key terms on first mention
+
+---
 
 ### Task 1: French Language Cleanup (20 minutes) → +5.9 points
 
@@ -224,33 +393,54 @@ Perform careful find-and-replace for the following anglicisms throughout the ENT
 
 **Before you start:**
 - [ ] Read the full `GEDIMAT_ARENA_REVIEW_COMPLETE.md` to understand structure
-- [ ] Locate the 4 target sections (benchmarks, quick wins, governance)
+- [ ] Locate target sections (TOC, benchmarks, quick wins, governance, annexes)
 - [ ] Backup the file: `cp GEDIMAT_ARENA_REVIEW_COMPLETE.md GEDIMAT_ARENA_REVIEW_COMPLETE_V3.1_BACKUP.md`
 
 **Execute in order:**
-1. [ ] Task 1: French language cleanup (20 min)
+1. [ ] Task 0A: Update Table of Contents (5 min)
+   - Scan document for all section headers
+   - Verify TOC completeness against checklist
+   - Add Section 6.6 to TOC (will be created in Task 4)
+   - Ensure all subsections listed (5.1-5.5, 6.5, 7.5, 8.5, 9.5, 9.6)
+
+2. [ ] Task 0B: Add Annexes Summary section (5 min)
+   - Insert after Section 10, before Annexe X
+   - Copy the "Annexes Opérationnelles" section from prompt
+   - Verify formatting (headers, bullet points, bold text)
+
+3. [ ] Task 0C: Add print formatting (10 min)
+   - Add 14 page break tags before major sections
+   - Convert 5-8 formulas to code blocks (clean, no LaTeX)
+   - Apply bold formatting to key terms on first mention
+
+4. [ ] Task 1: French language cleanup (20 min)
    - Run find-replace for all 7 anglicism pairs
    - Verify each replacement makes sense in context
    - Check you made ~15-20 replacements total
 
-2. [ ] Task 2: Benchmark enhancements (15 min)
+5. [ ] Task 2: Benchmark enhancements (15 min)
    - Enhance Saint-Gobain section with sources + disclaimer
    - Enhance Leroy Merlin section with sources + disclaimer
    - Enhance Kingfisher section with direct quote + URL
 
-3. [ ] Task 3: Add pilot success criteria (5 min)
+6. [ ] Task 3: Add pilot success criteria (5 min)
    - Insert after Quick Wins section
    - Verify formatting (proper markdown headers)
 
-4. [ ] Task 4: Add legal compliance section (5 min)
-   - Insert in Section 6 or create Section 6.6
+7. [ ] Task 4: Add legal compliance section (5 min)
+   - Insert as Section 6.6 (after 6.5 Gouvernance Comportementale)
    - Verify fits naturally in governance discussion
+   - Update TOC to include Section 6.6
 
 **After you finish:**
 - [ ] Read the ENTIRE modified document once to check flow
-- [ ] Verify total line count increased by ~30-40 lines (new sections added)
+- [ ] Verify total line count increased by ~80-100 lines (new sections + page breaks + formatting)
 - [ ] Search for remaining anglicisms: `grep -i "quick win\|dashboard\|benchmark" GEDIMAT_ARENA_REVIEW_COMPLETE.md`
 - [ ] If grep returns hits, verify they're in code blocks or proper nouns (acceptable)
+- [ ] Count page breaks added: `grep -c "page-break-before" GEDIMAT_ARENA_REVIEW_COMPLETE_V3.2.md`
+  - Expected: 14 page breaks
+- [ ] Verify formulas in code blocks: `grep -A 3 "Formule RSI" GEDIMAT_ARENA_REVIEW_COMPLETE_V3.2.md`
+  - Should show clean code block format (no LaTeX syntax)
 
 ---
 

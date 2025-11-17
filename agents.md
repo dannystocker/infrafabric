@@ -198,20 +198,40 @@ Scénarios: Conservateur 8%, Base 12%, Haut 15% (cas externes)
 - Time: ~8 hours human oversight, ~6 hours agent work
 - Deliverable: 142-line executive dossier + 6 technical annexes + 7 quality gate reports
 
-#### Phase 4: LLM Arena Multi-Evaluator Review (Next Step)
+#### Phase 5: P0 Fixes for 95%+ Score (2025-11-17 Evening) 🔄 IN PROGRESS
 
-**Deliverables Created:**
-- `CODEX_MERGE_DOSSIER_PROMPT.md` - Merge dossier + annexes into single file
-- `LLM_ARENA_REVIEW_PROMPT.md` - 7-dimension evaluation framework
-- Target: Upload merged dossier to LLM Arena for multi-model review
+**Status:** Codex execution prompt ready, awaiting execution
 
-**After Arena Review:**
+**Updated Deliverable:**
+- `CODEX_P0_FIXES_ARENA_95_PERCENT.md` (18K, 650+ lines) - Comprehensive execution prompt
+- **Updated scope:** 7 tasks (was 4) - added TOC update, annexes summary, print formatting
 
-**Option A: Board Presentation Package**
-- Generate LaTeX PDF from behavioral-enhanced dossier
-- Create 3 diagrams (logistics flow, decision tree, Gantt chart)
-- Compile final: `GEDIMAT_SUPER_DOSSIER_FINAL.pdf`
-- Cost: ~$0.50, 2-3 hours
+**Enhanced Requirements (User Feedback):**
+1. **TOC Completeness:** Verify all sections listed, add Section 6.6 (new legal compliance section)
+2. **Annexes Summary:** Add overview section introducing the 3 annexes (Playbook, Alertes, Coûts)
+3. **Print Formatting:**
+   - 14 page breaks (each section starts fresh page)
+   - Clean code blocks for formulas (no LaTeX, professional report style)
+   - Bold key terms on first mention
+4. **French Language:** 6-7 anglicisms → French equivalents (20 min)
+5. **Benchmarks:** Add Saint-Gobain/Leroy Merlin disclaimers + sources (15 min)
+6. **Pilot Success Criteria:** 5 measurable thresholds for 90-day validation (5 min)
+7. **Legal Compliance:** Section 6.6 RGPD + Code des transports + Franchise (5 min)
+
+**Export Path:** Word/DOCX recommended for auto-updating TOC with page numbers
+
+**Target Output:**
+- `GEDIMAT_ARENA_REVIEW_COMPLETE_V3.2.md` → Convert to DOCX
+- Expected score: 95.0/100 (from current 91.9/100)
+- Status after fixes: Board presentation ready, print-ready
+
+**Next Steps After P0 Fixes:**
+
+**Option A: Board Presentation Package (Print-Ready)**
+- Export V3.2 to Word DOCX
+- Update TOC with auto-page numbers (References → Update Table)
+- Print or PDF export from Word
+- Estimated time: 15 minutes post-Codex execution
 
 **Option B: Pilot Execution (Real-World Test)**
 - Deploy with Angélique (90-day pilot)
