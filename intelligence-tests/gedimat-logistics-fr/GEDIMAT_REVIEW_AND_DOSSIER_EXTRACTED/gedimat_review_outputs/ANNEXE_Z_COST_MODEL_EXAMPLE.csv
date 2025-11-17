@@ -1,0 +1,4 @@
+Scenario,Description,CostFormula,DataRequired
+A,Affrètement double,[Devis_A]+[Devis_B],Distances;Devis
+B,Consolidation+Navette,[Devis_unique]+[Cout_km]*[km],Coût km;Distances
+C,Express,[Devis_express],Devis express
