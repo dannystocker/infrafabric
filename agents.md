@@ -198,34 +198,45 @@ Scénarios: Conservateur 8%, Base 12%, Haut 15% (cas externes)
 - Time: ~8 hours human oversight, ~6 hours agent work
 - Deliverable: 142-line executive dossier + 6 technical annexes + 7 quality gate reports
 
-#### Phase 5: P0 Fixes for 95%+ Score (2025-11-17 Evening) 🔄 IN PROGRESS
+#### Phase 5: P0 Fixes for 95%+ Score (2025-11-17 Evening) ✅ 87.5% COMPLETE
 
-**Status:** Codex execution prompt ready, awaiting execution
+**Status:** Codex GPT-5.1 completed 7/8 tasks (15m 22s), Task 0 (cover page) remaining
 
-**Updated Deliverable:**
-- `CODEX_P0_FIXES_ARENA_95_PERCENT.md` (18K, 650+ lines) - Comprehensive execution prompt
-- **Updated scope:** 7 tasks (was 4) - added TOC update, annexes summary, print formatting
+**Deliverable:**
+- `CODEX_P0_FIXES_ARENA_95_PERCENT.md` (18K, 700+ lines) - 8 tasks execution prompt
+- **Final scope:** 8 tasks (Task 0 added: professional cover page with new title)
 
-**Enhanced Requirements (User Feedback):**
-1. **TOC Completeness:** Verify all sections listed, add Section 6.6 (new legal compliance section)
-2. **Annexes Summary:** Add overview section introducing the 3 annexes (Playbook, Alertes, Coûts)
-3. **Print Formatting:**
-   - 14 page breaks (each section starts fresh page)
-   - Clean code blocks for formulas (no LaTeX, professional report style)
-   - Bold key terms on first mention
-4. **French Language:** 6-7 anglicisms → French equivalents (20 min)
-5. **Benchmarks:** Add Saint-Gobain/Leroy Merlin disclaimers + sources (15 min)
-6. **Pilot Success Criteria:** 5 measurable thresholds for 90-day validation (5 min)
-7. **Legal Compliance:** Section 6.6 RGPD + Code des transports + Franchise (5 min)
+**✅ Completed by Codex (Tasks 0A-0C, 1-4):**
+1. ✅ **Task 0A:** TOC updated - all sections + 6.6 added
+2. ✅ **Task 0B:** Annexes Opérationnelles summary section added
+3. ✅ **Task 0C:** 14 page breaks + formulas to code blocks
+4. ✅ **Task 1:** French language cleanup (38 replacements, anglicisms → French)
+5. ✅ **Task 2:** Benchmarks enhanced (Leroy Merlin, Kingfisher, Saint-Gobain sources + disclaimers)
+6. ✅ **Task 3:** Pilot success criteria added (5 measurable thresholds)
+7. ✅ **Task 4:** Legal compliance Section 6.6 (RGPD, transport code, franchise)
 
-**Export Path:** Word/DOCX recommended for auto-updating TOC with page numbers
+**Quality Checks Passed:**
+- 14 page breaks confirmed (`grep -c "page-break-before"`)
+- ROI → RSI standardized throughout
+- Anglicisms removed (only in code blocks now)
+- Git committed: `56ebcca P0 Fixes Complete: V3.2 ready for 95%+ Arena score`
 
-**Target Output:**
-- `GEDIMAT_ARENA_REVIEW_COMPLETE_V3.2.md` → Convert to DOCX
-- Expected score: 95.0/100 (from current 91.9/100)
-- Status after fixes: Board presentation ready, print-ready
+**❌ Remaining: Task 0 (Cover Page - 10 minutes)**
+1. Add professional cover page at document beginning
+2. New title: "Fidélisation par l'Excellence Logistique Gedimat" (IF.guard + IF.sam consensus synthesis)
+3. Credits: Angélique Montanarini, Danny Stocker
+4. AI assistance acknowledgment: Claude Sonnet 4.5, ChatGPT 5.1 Thinking, Gemini 2.5 Pro
+5. Update internal title (line 46): Still shows old "Optimisation Logistique"
+6. Update version metadata (line 1): Still shows "3.1" → should be "3.2"
 
-**Next Steps After P0 Fixes:**
+**Why Task 0 Missing:** Codex started execution with earlier prompt (before Task 0 added in commit 5388484)
+
+**Current Output:**
+- `GEDIMAT_ARENA_REVIEW_COMPLETE_V3.2.md` (900 lines, 38K) - 87.5% complete
+- `CODEX_P0_FIXES_CHANGE_LOG.md` - Detailed execution log
+- Expected score after Task 0: 95.0/100 (from current 91.9/100)
+
+**Next Steps:**
 
 **Option A: Board Presentation Package (Print-Ready)**
 - Export V3.2 to Word DOCX

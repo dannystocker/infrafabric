@@ -328,45 +328,64 @@ Council identified 4 missing elements that could cause board rejection:
 
 ## Recommended Next Steps
 
-### Phase 5: Execute P0 Fixes to Reach 95%+ (65 minutes) 🔄 IN PROGRESS
+### Phase 5: Execute P0 Fixes to Reach 95%+ (70 minutes) ✅ 87.5% COMPLETE
 
-**Current Status:** 91.9/100 average (7 credible Arena models)
-**Target:** 95.0/100
-**Strategy:** Enhanced with print formatting + TOC updates + annexes summary
+**Current Status:** V3.2 file created, 7/8 tasks complete
+**Execution:** Codex GPT-5.1 (15m 22s actual time)
+**Target:** 95.0/100 (from 91.9/100)
 
-**Execution Prompt Ready:** `CODEX_P0_FIXES_ARENA_95_PERCENT.md` (18K, 650+ lines)
+**Execution Prompt Used:** `CODEX_P0_FIXES_ARENA_95_PERCENT.md` (18K, 700+ lines, 8 tasks)
 
-**Updated Scope - 7 Tasks (Enhanced from Original 4):**
+**✅ Completed Tasks (7/8) - Codex GPT-5.1:**
 
-**Print & Structure Requirements (User Feedback):**
-1. **Task 0A: Update TOC (5 min)** - Verify all sections listed, add Section 6.6
-2. **Task 0B: Add Annexes Summary (5 min)** - Overview section introducing 3 operational annexes
-3. **Task 0C: Print Formatting (10 min)**
-   - 14 page breaks (each section starts fresh page for printing)
-   - Clean code blocks for formulas (professional report style, no LaTeX)
-   - Bold formatting for key terms on first mention
+**Print & Structure Requirements:**
+1. ✅ **Task 0A: Update TOC (5 min)** - All sections + 6.6 added, anchors verified
+2. ✅ **Task 0B: Add Annexes Summary (5 min)** - "Annexes Opérationnelles" section added with X/Y/Z overview
+3. ✅ **Task 0C: Print Formatting (10 min)**
+   - 14 page breaks added (`grep -c "page-break-before"` = 14)
+   - Formulas converted to clean code blocks (RSI, scenarios, cost models)
+   - ROI → RSI standardized throughout
 
-**Arena Score Improvements (Original P0 Fixes):**
-4. **Task 1: French Language (20 min)** → +5.9 points
-   - Replace 6-7 anglicisms with French equivalents
-   - "Quick Win" → "Gain Rapide", "dashboard" → "tableau de bord", etc.
+**Arena Score Improvements:**
+4. ✅ **Task 1: French Language (20 min)** → +5.9 points
+   - 38 replacements completed
+   - Quick Win → Gain Rapide, dashboard → tableau de bord, KPI → ICP, benchmark → référence externe
+   - Anglicisms only remain in code block templates (acceptable)
 
-5. **Task 2: Benchmark Sources (15 min)** → +5.9 points
-   - Saint-Gobain: Add 3 sources + methodological disclaimer
-   - Leroy Merlin: Add ADEO report citations + disclaimer
-   - Kingfisher: Add direct quote + Annual Report 2023 URL
+5. ✅ **Task 2: Benchmark Sources (15 min)** → +5.9 points
+   - Leroy Merlin/ADEO: Added ADEO Annual Report 2021, LSA sources + disclaimer
+   - Kingfisher: Added Annual Report 2023 citation, direct NPS quote
+   - Saint-Gobain: Added Forbes 2019, Capgemini 2020, Logistics Viewpoints 2022 + methodological note
 
-6. **Task 3: Pilot Success Criteria (5 min)** → +2.6 points
-   - 5 measurable thresholds for 90-day validation
-   - Clear decision framework (≥3/5 criteria at 90% = Phase 2 approved)
+6. ✅ **Task 3: Pilot Success Criteria (5 min)** → +2.6 points
+   - 5 measurable thresholds added (costs, errors, satisfaction, confidence, adoption)
+   - Decision rule: ≥3/5 criteria → Phase 2 approved
 
-7. **Task 4: Legal Compliance (5 min)** → +2.7 points
-   - Section 6.6: RGPD + Code des transports + Franchise clauses
-   - Audit plan pre/post pilot
+7. ✅ **Task 4: Legal Compliance (5 min)** → +2.7 points
+   - Section 6.6 added: RGPD, Code des transports, franchise clauses
+   - Pre-pilot (J-15) and post-pilot (J+100) audit plan
 
-**Execution Method:** Codex/GPT-5.1 High via CLI (user's WSL environment)
+**Quality Validation Passed:**
+- Git committed: `56ebcca P0 Fixes Complete: V3.2 ready for 95%+ Arena score`
+- Change log: `CODEX_P0_FIXES_CHANGE_LOG.md` (detailed execution record)
+- Backup: `GEDIMAT_ARENA_REVIEW_COMPLETE_V3.1_BACKUP.md`
 
-**After P0 Fixes Execution:**
+**❌ Remaining: Task 0 (Cover Page - 10 minutes)**
+
+**Why Missing:** Codex started with earlier prompt version (before Task 0 added in commit 5388484)
+
+**Task 0 Requirements:**
+1. Add professional cover page at document beginning (before line 1)
+2. New title: **"Fidélisation par l'Excellence Logistique Gedimat"** (IF.guard synthesis)
+3. Credits section lower-right:
+   - Préparé par: Angélique Montanarini, Danny Stocker
+   - Assisté par: Claude Sonnet 4.5, ChatGPT 5.1 Thinking, Gemini 2.5 Pro
+   - Date: 2025-11-17
+4. Update internal title (line 46): Change "Optimisation Logistique Gedimat" → new title
+5. Update version metadata (line 1): "3.1" → "3.2 Final"
+6. Page break after cover page
+
+**Next Action: IF.optimise Haiku Swarm Deployment**
 
 **Export to Word/DOCX (Recommended for Printing):**
 - Convert `GEDIMAT_ARENA_REVIEW_COMPLETE_V3.2.md` to DOCX
