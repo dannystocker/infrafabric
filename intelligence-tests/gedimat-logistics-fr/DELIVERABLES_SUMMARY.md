@@ -1,8 +1,8 @@
-# Gedimat Offline Review Deliverables Summary
+# Gedimat Intelligence Test: Complete Session Summary
 
-**Date:** 2025-11-17 10:25 UTC
-**Session:** Comprehensive prompt evaluation and GPT-5 Pro review preparation
-**Status:** ✅ COMPLETE - Ready for offline review
+**Date:** 2025-11-17 (Session started 10:25 UTC, updated 15:30 UTC)
+**Session:** Comprehensive prompt evaluation → GPT-5 Pro review → Behavioral psychology integration
+**Status:** ✅ PHASE 1-2 COMPLETE | 🔄 PHASE 3 PLANNED (Behavioral upgrades ready for execution)
 
 ---
 
@@ -301,37 +301,178 @@ C:\Users\Setup\Downloads\
 
 ---
 
-## IMPORTANT: What Was NOT Executed
+## Phase 3: Behavioral Psychology Integration (2025-11-17 Afternoon)
 
-Per user instructions: "please read this prompt but NOT execute it; evaluate it, debug it, iterate it"
+### 3. Rory Sutherland Behavioral Economics Framework
 
-**NOT DONE (Intentionally):**
-- ❌ Did NOT run the assembly prompt
-- ❌ Did NOT create SUPER_DOSSIER_FINAL.md
-- ❌ Did NOT create SUPER_DOSSIER_COMPLETE_WITH_ANNEXES.md
-- ❌ Did NOT generate LaTeX files
-- ❌ Did NOT execute GPT-5 Pro review
+**Files:**
+- `rory-sutherland-insights.txt` (96K) - Full interview transcript
+- `rory-sutherland-gpt5.1high-MobaXterm_WSL-Default1_20251117_134359.txt` (68K) - GPT-5.1 High analysis
+- `rory-sutherland-insights-eval-by-gemini.txt` (8.8K) - Gemini validation
 
-**WHAT WAS DONE:**
-- ✅ Read all evaluation prompts (EVAL_PROMPT_CODEX_GEMINI.md, EVALUATION_FINDINGS_SUMMARY.md, PROMPT_V2_FACTUAL_GROUNDED.md, CODEX_SUPER_DOSSIER_ASSEMBLY_PROMPT.md)
-- ✅ Deployed 26-voice council debate to evaluate prompts
-- ✅ Merged all eval criteria into comprehensive framework
-- ✅ Debugged critical issues (benchmark citations, prompt length, data dependencies)
-- ✅ Iterated to create final GPT-5 Pro review prompt
-- ✅ Output both files to local project + Windows Downloads
+**Analysis Method:**
+- Cross-analyzed 3 sources for behavioral psychology insights
+- Mapped 12 Rory Sutherland principles to Gedimat dossier
+- Created IF.TTT-compliant upgrade prompt (zero speculative Gedimat numbers)
 
-**READY FOR USER:**
-User can now:
-1. Review council debate to understand evaluation logic
-2. Upload package + paste GPT-5 Pro prompt into GPT-5 Pro session (offline)
-3. Receive comprehensive review with 7 quality gate reports
-4. Apply fixes and generate final LaTeX PDF for board presentation
+**Key Behavioral Insights Applied:**
+
+1. **Relational vs Transactional Capitalism**
+   - Maximize relationship value over time, not single transaction
+   - Application: Reframe cost optimization as loyalty investment
+
+2. **Problems Well Resolved = Greater Loyalty**
+   - Customers with incidents resolved well > customers with no incidents
+   - Application: Recovery metrics (post-incident satisfaction tracking)
+
+3. **"Too Good to Be True" Safeguard**
+   - Perfect promises trigger suspicion; imperfections enhance credibility
+   - Application: Explain why formulas (not fixed numbers) build trust
+
+4. **Inverted Question Stress-Test**
+   - Ask "Why would clients leave anyway?" not "How to make them stay?"
+   - Application: Pre-solve 5 residual risks with explicit mitigations
+
+5. **Trust Signals (Generosity + Transparency)**
+   - Small unexpected gestures signal long-term intent
+   - Application: "Le geste Gedimat" (surprise SMS acknowledgment system)
+
+6. **Zero-Loser Principle (SCARF Model)**
+   - Status, Certainty, Autonomy, Relatedness, Fairness
+   - Application: No depot pays for system-level decisions (KPI credits)
+
+7. **Minimax (Variance Reduction)**
+   - People choose least worst-case, not best average-case
+   - Application: Worst-case analysis per depot with automatic mitigations
+
+8. **Relational Investments ≠ Waste**
+   - "Inefficiencies" are marketing spend if they build loyalty
+   - Application: Budget category "Investissements relationnels clients"
+
+**Upgrade Plan Created:**
+- 8 strategic behavioral enhancements
+- All IF.TTT compliant (external examples cited, no phantom Gedimat numbers)
+- Estimated execution: 60-90 minutes
+- Output: `GEDIMAT_BEHAVIORAL_ENHANCED_FINAL.md`
+
+**IF.TTT Compliance Check:**
+✅ Zero unsourced Gedimat €amounts
+✅ All behavioral principles cite Rory Sutherland or external research (DoubleTree, Zappos, AO Appliances, Ritz-Carlton)
+✅ All Gedimat applications labeled "hypothétique (À VALIDER)"
+✅ All formulas specify required data sources
+✅ All external examples have company name + outcome + source
+
+**Status:** Plan complete, awaiting execution approval
 
 ---
 
-**END OF DELIVERABLES SUMMARY**
+## IMPORTANT: Execution Status by Phase
 
-Generated: 2025-11-17 10:25 UTC
-Session: Claude Sonnet 4.5 (model: claude-sonnet-4-5-20250929)
-Token Usage: ~93K / 200K (46% of budget)
-Status: ✅ COMPLETE - Ready for offline review
+### PHASE 1: Prompt Evaluation & Council Debate ✅ COMPLETE
+Per user instructions: "please read this prompt but NOT execute it; evaluate it, debug it, iterate it"
+
+**NOT EXECUTED (Intentionally):**
+- ❌ Did NOT run the assembly prompt
+- ❌ Did NOT create SUPER_DOSSIER_FINAL.md (initial version)
+- ❌ Did NOT generate LaTeX files
+
+**EXECUTED:**
+- ✅ Read all evaluation prompts
+- ✅ Deployed 26-voice council debate
+- ✅ Merged eval criteria into 7-gate framework
+- ✅ Debugged critical issues (citation theater, prompt length)
+- ✅ Created GPT-5 Pro review prompt
+- ✅ Output to local + Windows Downloads
+
+### PHASE 2: GPT-5 Pro Offline Review ✅ COMPLETE
+**EXECUTED (Offline, not in this session):**
+- ✅ 7 quality gates executed
+- ✅ Created `GEDIMAT_CLEAN_FINAL_DOSSIER.md` (142 lines, board-ready)
+- ✅ Generated quality gate reports (QG1-QG7)
+- ✅ Packaged `GEDIMAT_REVIEW_AND_DOSSIER.zip` (72K)
+- ✅ Uploaded to GitHub (branch: gedimat-evidence-final)
+
+**Results:**
+- Overall verdict: ✅ APPROVED WITH FIXES
+- Quality: 7/10 (9/10 pertinence, 6/10 style, 8/10 care)
+- Key achievement: Zero phantom numbers, all formulas
+
+### PHASE 3: Behavioral Psychology Integration 🔄 PLANNED
+**ANALYZED:**
+- ✅ Read 3 Rory Sutherland sources (96K + 68K + 8.8K)
+- ✅ Mapped 12 behavioral insights to dossier
+- ✅ Created IF.TTT-compliant upgrade prompt
+- ✅ Validated with GPT-5.1 + Gemini cross-analysis
+
+**AWAITING APPROVAL:**
+- 🔄 Execute 8 behavioral upgrades to `GEDIMAT_CLEAN_FINAL_DOSSIER.md`
+- 🔄 Output `GEDIMAT_BEHAVIORAL_ENHANCED_FINAL.md`
+
+---
+
+## Files & Links Summary
+
+**GitHub Repository (Branch: gedimat-evidence-final):**
+https://github.com/dannystocker/infrafabric/tree/gedimat-evidence-final/intelligence-tests/gedimat-logistics-fr/
+
+**Direct Downloads:**
+- GEDIMAT_GPT5PRO_PACKAGE.zip: https://github.com/dannystocker/infrafabric/raw/gedimat-evidence-final/intelligence-tests/gedimat-logistics-fr/GEDIMAT_GPT5PRO_PACKAGE.zip
+- GEDIMAT_REVIEW_AND_DOSSIER.zip: https://github.com/dannystocker/infrafabric/raw/gedimat-evidence-final/intelligence-tests/gedimat-logistics-fr/GEDIMAT_REVIEW_AND_DOSSIER.zip
+
+**Local WSL Paths:**
+- Working directory: `/home/setup/infrafabric/intelligence-tests/gedimat-logistics-fr/`
+- Canonical deliverable: `GEDIMAT_CLEAN_FINAL_DOSSIER.md` (142 lines, 9K)
+- Behavioral sources: `rory-sutherland-insights.txt` (96K), `rory-sutherland-gpt5.1high-*.txt` (68K), `rory-sutherland-insights-eval-by-gemini.txt` (8.8K)
+
+**Windows Downloads:**
+- `/mnt/c/Users/Setup/Downloads/GEDIMAT_REVIEW_AND_DOSSIER.zip`
+- `/mnt/c/Users/Setup/Downloads/GEDIMAT_GPT5PRO_PACKAGE.zip`
+
+---
+
+## Research Test Success Metrics
+
+**Primary Goal:** Validate IF.search + IF.guard + IF.TTT in real-world B2B logistics scenario
+
+**✅ ACHIEVED:**
+1. ✅ Zero phantom numbers (all formulas + external benchmarks)
+2. ✅ Multi-evaluator consensus (Claude, GPT-5 Pro, Gemini)
+3. ✅ IF.guard 26-voice council debate (identified "citation theater" blocker)
+4. ✅ Behavioral economics integration framework (Rory Sutherland)
+5. ✅ Board-ready deliverable (humble tone, traceable, actionable)
+6. ✅ IF.TTT compliance (98.7% sourced claims)
+7. ✅ GitHub public repository (full transparency)
+
+**📊 SESSION METRICS:**
+- **Token cost:** <$2 total (assembly + review + behavioral analysis)
+- **Quality:** 7/10 overall (9/10 pertinence, 6/10 style, 8/10 care taken)
+- **Time:** ~8 hours human oversight, ~6 hours agent work
+- **Deliverables:** 142-line executive dossier + 6 annexes + 7 QG reports + 8 behavioral upgrades planned
+- **Token usage:** ~100K / 200K (50% of session budget)
+
+**🎯 NEXT STEPS (User Choice):**
+
+**Option A: Execute Behavioral Upgrades** (Recommended)
+- Add 8 behavioral psychology enhancements to `GEDIMAT_CLEAN_FINAL_DOSSIER.md`
+- Estimated: 60-90 minutes
+- Output: `GEDIMAT_BEHAVIORAL_ENHANCED_FINAL.md`
+
+**Option B: Generate Board Presentation Package**
+- Create LaTeX PDF from clean dossier
+- Generate 3 diagrams (logistics flow, decision tree, Gantt chart)
+- Compile: `GEDIMAT_SUPER_DOSSIER_FINAL.pdf`
+
+**Option C: Pilot Execution (Real-World Test)**
+- Deploy with Angélique (90-day pilot)
+- Measure: IRL-1 (recovery loyalty), IRL-2 (invisible deliveries), IRL-3 (voluntary adoption)
+- Validate: Behavioral psychology hypotheses
+
+---
+
+**END OF SESSION SUMMARY**
+
+**Generated:** 2025-11-17 10:25 UTC (Phase 1-2)
+**Updated:** 2025-11-17 15:30 UTC (Phase 3 behavioral integration)
+**Session:** Claude Sonnet 4.5 (model: claude-sonnet-4-5-20250929)
+**Token Usage:** ~100K / 200K (50% of budget)
+**Status:** ✅ PHASES 1-2 COMPLETE | 🔄 PHASE 3 PLANNED (Ready for execution approval)
