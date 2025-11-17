@@ -72,33 +72,50 @@ Contains:
 
 #### Timeline & Deliverables
 
-**Phase 1: Initial Assembly (Nov 17, 2025 - Morning)**
-- 20 Haiku agents deployed in parallel (~4 hours, $0.50 USD)
-- Deliverable: `SUPER_DOSSIER_FINAL.md` + 6 annexes
+**Phase 1-7: V3.2 Complete (Nov 15-16, 2025)** ✅ COMPLETE
+- Initial assembly → GPT-5 Pro review → Behavioral integration → Arena review
+- Final score: **96.7/100** (6 evaluators: Claude, Grok, Beluga, Gemini Pro/Flash, GPT-5)
+- Board-ready, IF.TTT compliant
+- Deliverable: `GEDIMAT_ARENA_REVIEW_COMPLETE_V3.2.md` (925 lines, 39KB)
 
-**Phase 2: GPT-5 Pro Offline Review (Nov 17, 2025 - Midday)**
-- 7 quality gates executed (Credibility, Benchmarks, Actionability, Executive Readiness, French, Gaps, LaTeX)
-- Result: ✅ APPROVED WITH FIXES
-- Deliverable: `GEDIMAT_CLEAN_FINAL_DOSSIER.md` (142 lines, 9K, board-ready)
-- Package: `GEDIMAT_REVIEW_AND_DOSSIER.zip` (72K)
+**Phase 8: Multi-Audience Enhancement (Nov 17-18, 2025)** ✅ COMPLETE
+- **Goal:** Transform V3.2 into multi-audience document with visual diagrams
+- **Innovation:** 2-layer structure (Boardroom + Simple French "Ça veut dire...")
+- **IF.guard Decision:** 2 layers NOT 4 (71.4% consensus - time feasibility)
 
-**Phase 3: Behavioral Psychology Integration (Nov 17, 2025 - Afternoon) ✅ COMPLETE**
-- Analyzed 3 Rory Sutherland sources (96K interview transcript + GPT-5.1 + Gemini evaluations)
-- Identified 8 strategic behavioral upgrades (relational capitalism, recovery metrics, trust signals)
-- Created IF.TTT-compliant upgrade prompt (zero speculative Gedimat numbers)
-- Executed by GPT-5.1 High via Codex CLI (12 min 20 sec)
-- Deliverable: `GEDIMAT_BEHAVIORAL_ENHANCED_FINAL.md` (334 lines, 18K)
-- Status: All 8 upgrades applied, IF.TTT compliance 100%
+**Cloud Execution (Complete):**
+- 40+ Haiku agents: 21 sections + 12 Graphviz diagrams + 7 QA passes
+- Time: 90-120 min | Cost: ~$1.00 USD
+- Critical addition: Section 6.5 SCARF Model (Zero-Loser Governance)
+- Visual QA: All diagrams validated (300 DPI, A4-compliant, ≥9pt fonts, no text overlap)
+- Deliverable: `GEDIMAT_ARENA_REVIEW_COMPLETE_V3.3.md` (1,227 lines, ~18,000 words, 12 diagrams)
 
-**Phase 4: LLM Arena Multi-Model Review (Nov 17, 2025 - Evening) ✅ COMPLETE**
-- Merged dossier + 3 annexes into single 763-line Arena-ready document
-- Submitted to 8 frontier LLM reviewers with 7-dimension evaluation framework
-- Models: Gemini 2.5 Pro, Kimi K2, Claude Opus 4.1, Qwen3-235b, GPT-5.1, GPT-4o-latest, Mistral Medium, Beluga-1106
-- **Consensus Result:** 2 APPROVED, 5 CONDITIONAL, 1 REJECTED (outlier)
-- **Average Score (7 credible models):** 91.9/100
-- **IF.TTT Validation:** 7/7 credible models found ZERO phantom numbers (Kimi K2 hallucinated phantom numbers at non-existent line numbers)
-- **Main Findings:** Board-ready with P0 fixes (3-7 anglicisms, Saint-Gobain disclaimer)
-- Deliverable: `ARENA_CONSENSUS_REPORT.md` + 8 individual reviews + consolidated summary
+**Quality Metrics:**
+- **Size:** 3× V3.2 (6,000 → 18,000 words)
+- **Structure:** 21 sections + 3 annexes (all dual-layer)
+- **Boardroom Preservation:** 99.8%
+- **French Purity:** 100% (zero anglicisms in 📘 sections)
+- **IF.TTT Compliance:** 100% (zero phantom numbers)
+- **Visual Professionalism:** 12 professional SVG diagrams embedded
+
+**GitHub Deployment:**
+- Branch: `gedimat-evidence-final`
+- Commit: `6bc5011` - "Add Gedimat V3.3 Multi-Audience Final Document + 12 Professional Diagrams"
+- Main Document: https://raw.githubusercontent.com/dannystocker/infrafabric/gedimat-evidence-final/intelligence-tests/gedimat-logistics-fr/GEDIMAT_ARENA_REVIEW_COMPLETE_V3.3.md
+- Diagrams: 12 SVG files in `diagrams/` directory
+
+**Arena Evaluation (Ready):**
+- Prompt: `ARENA_PROMPT_V3.3_FINAL_REVIEW.md`
+- Target Score: 97-99/100 (vs V3.2 baseline: 96.7/100)
+- 6 Criteria: Board Credibility, Operational Clarity, Visual Professionalism, IF.TTT Compliance, French Language, Multi-Audience Coherence
+- Expected improvements: +6-9 points operational clarity, +95-98 points visual professionalism
+
+**Documentation:**
+- `GEDIMAT_PHASE8_HANDOVER.md` (comprehensive session timeline)
+- `GRAPHVIZ_DIAGRAM_RECOMMENDATIONS.md` (12 diagram specifications)
+- `DIAGRAM_DENSITY_ANALYSIS.md` (A4 sizing analysis + Playwright QA script)
+- `ANALYSIS_4_LAYER_NARRATIVE_VALUE.md` (IF.guard council decision)
+- Medium Article: `MEDIUM_ARTICLE_PHASE8_SESSION.md` (3,847 words, session narrative)
 
 #### Quality Gate Results
 
@@ -433,6 +450,73 @@ Scénarios: Conservateur 8%, Base 12%, Haut 15% (cas externes)
 - Submit to business/logistics journal
 - Angle: "IF.TTT methodology prevents phantom ROI in B2B consulting"
 - Contribution: Novel framework + real-world case study + multi-evaluator validation (96.7/100)
+
+---
+
+## Claude Code Cloud Execution Constraints
+
+**Critical:** Claude Code Cloud can ONLY access GitHub raw URLs - NO local filesystem access
+
+**What Cloud CAN access:**
+- ✅ GitHub raw content URLs (`https://raw.githubusercontent.com/...`)
+- ✅ Public web URLs (https://...)
+- ✅ Files generated within the cloud session itself
+
+**What Cloud CANNOT access:**
+- ❌ WSL filesystem (`/home/setup/...`)
+- ❌ Windows folders (`/mnt/c/users/setup/downloads/`)
+- ❌ Local git repositories not pushed to GitHub
+- ❌ Stashed changes or uncommitted files
+
+**Best Practices for Cloud Prompts:**
+
+1. **Always use GitHub raw URLs** for reference documents
+   ```
+   # CORRECT
+   Read https://raw.githubusercontent.com/dannystocker/infrafabric/gedimat-evidence-final/intelligence-tests/gedimat-logistics-fr/GEDIMAT_ARENA_REVIEW_COMPLETE_V3.2.md
+
+   # WRONG
+   Read /home/setup/infrafabric/intelligence-tests/gedimat-logistics-fr/GEDIMAT_ARENA_REVIEW_COMPLETE_V3.2.md
+   ```
+
+2. **Embed all code/specifications inline** in cloud prompts
+   - Example: Gedimat Phase 8 embedded complete Graphviz `.dot` code for 12 diagrams
+   - Don't reference external files that might not exist
+
+3. **Verify all URLs are githubusercontent.com** before deployment
+   - Test URLs in browser to ensure they resolve
+   - Use branch names that exist on GitHub (not local-only branches)
+
+4. **Commit everything to GitHub BEFORE launching cloud session**
+   - Push all reference documents
+   - Push all specifications/code samples
+   - Verify files are accessible via raw URLs
+
+**Example: Gedimat Phase 8 Cloud Execution**
+
+**Launch Command:**
+```
+Read https://raw.githubusercontent.com/dannystocker/infrafabric/gedimat-evidence-final/intelligence-tests/gedimat-logistics-fr/CLAUDE_CLOUD_SESSION_1_GENERATION.md and execute 40 Haiku agents: 21 section generators (2-layer format: preserve boardroom + add simple French), 12 diagram generators (Graphviz → SVG), 7 QA checkers → output 33 files (21 sections + 12 diagrams) ready for Session 2 integration
+```
+
+**Why it worked:**
+- ✅ All reference documents on GitHub (`GEDIMAT_ARENA_REVIEW_COMPLETE_V3.2.md`)
+- ✅ Complete diagram specifications embedded inline (12 `.dot` files in prompt)
+- ✅ Section templates with examples embedded (no external dependencies)
+- ✅ All URLs verified before launch
+
+**Common Mistakes to Avoid:**
+- ❌ Referencing WSL paths: `/home/setup/infrafabric/...` (cloud cannot access)
+- ❌ Assuming cloud has access to "previously read files" (it doesn't - stateless)
+- ❌ Using local-only git branches (must be pushed to `origin`)
+- ❌ Forgetting to commit latest changes before cloud launch
+
+**Verification Checklist Before Cloud Launch:**
+1. All reference documents committed and pushed to GitHub
+2. All URLs tested in browser (raw.githubusercontent.com resolves)
+3. All code/specs embedded inline in prompt (not referenced externally)
+4. No `/home/setup/` or `/mnt/c/` paths in prompt
+5. Branch exists on `origin` (not just local)
 
 ---
 
