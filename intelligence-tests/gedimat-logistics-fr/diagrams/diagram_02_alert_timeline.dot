@@ -1,0 +1,74 @@
+digraph alert_workflow {
+    size="6.5,2.98";
+    dpi=300;
+    rankdir=LR;
+
+    node [shape=box, fontname="Arial", fontsize=9, style=rounded, margin="0.15,0.08"];
+    edge [fontname="Arial", fontsize=9];
+
+    // Timeline nodes
+    T0 [label="T0\nOrder Placed\n(Supplier Notification)", shape=box, style="rounded,filled", fillcolor="#E8F4F8", penwidth=2];
+
+    T48h [label="T+48h\nARC/ACK Deadline", shape=box, style="rounded,filled", fillcolor="#FFF4E6", penwidth=2];
+    T48h_alert [label="ALERT TRIGGER\nARC/ACK Missing?", shape=diamond, style="filled", fillcolor="#FFE6E6"];
+    T48h_no_ack [label="NO ACK Received\n→ Escalation L1", shape=box, style="filled", fillcolor="#FF9999"];
+    T48h_ack [label="ACK Received\n→ Continue", shape=box, style="filled", fillcolor="#99FF99"];
+
+    TJ1 [label="T+J-1 16:00\nPickup Confirmation\nDeadline", shape=box, style="rounded,filled", fillcolor="#FFF4E6", penwidth=2];
+    TJ1_alert [label="ALERT TRIGGER\nConfirmation Missing?", shape=diamond, style="filled", fillcolor="#FFE6E6"];
+    TJ1_no_confirm [label="NO Confirmation\n→ Escalation L2", shape=box, style="filled", fillcolor="#FF9999"];
+    TJ1_confirm [label="Confirmation OK\n→ Continue", shape=box, style="filled", fillcolor="#99FF99"];
+
+    TJ [label="T+J\nDelivery Window\nOpened", shape=box, style="rounded,filled", fillcolor="#FFF4E6", penwidth=2];
+    TJ_alert [label="ALERT TRIGGER\nRisk Detected?", shape=diamond, style="filled", fillcolor="#FFE6E6"];
+    TJ_risk [label="Risk Detected\n→ Escalation L3", shape=box, style="filled", fillcolor="#FF9999"];
+    TJ_ok [label="Delivery On Track\n→ Continue", shape=box, style="filled", fillcolor="#99FF99"];
+
+    Post_delivery [label="Post-Delivery\nSatisfaction Survey\nTriggered", shape=box, style="rounded,filled", fillcolor="#E8F8E8", penwidth=2];
+
+    End [label="Order Lifecycle\nComplete", shape=box, style="rounded,filled", fillcolor="#D0E8D0"];
+
+    // Escalation nodes
+    Escalation_L1 [label="ESCALATION L1\nSupplier Contact\n(24h timeout)", shape=box, style="filled", fillcolor="#FF6666"];
+    Escalation_L2 [label="ESCALATION L2\nLogistics Manager\n(12h timeout)", shape=box, style="filled", fillcolor="#FF6666"];
+    Escalation_L3 [label="ESCALATION L3\nOperations Team\n(Real-time)", shape=box, style="filled", fillcolor="#FF6666"];
+
+    // Main flow
+    T0 -> T48h [label="48 hours", fontcolor="blue"];
+    T48h -> T48h_alert;
+    T48h_alert -> T48h_no_ack [label="Missing"];
+    T48h_alert -> T48h_ack [label="Received"];
+    T48h_no_ack -> Escalation_L1 [style=bold, color="red"];
+    T48h_ack -> TJ1;
+
+    TJ1 -> TJ1_alert [label="Approaching deadline"];
+    TJ1_alert -> TJ1_no_confirm [label="Missing"];
+    TJ1_alert -> TJ1_confirm [label="OK"];
+    TJ1_no_confirm -> Escalation_L2 [style=bold, color="red"];
+    TJ1_confirm -> TJ;
+
+    TJ -> TJ_alert [label="During window"];
+    TJ_alert -> TJ_risk [label="Detected"];
+    TJ_alert -> TJ_ok [label="Clear"];
+    TJ_risk -> Escalation_L3 [style=bold, color="red"];
+    TJ_ok -> Post_delivery;
+
+    Post_delivery -> End [label="48 hours"];
+
+    // Escalation resolutions (dotted back to main flow)
+    Escalation_L1 -> T48h [style=dotted, label="RESOLVED"];
+    Escalation_L2 -> TJ1 [style=dotted, label="RESOLVED"];
+    Escalation_L3 -> TJ [style=dotted, label="RESOLVED"];
+
+    // Legend
+    subgraph cluster_legend {
+        label = "Alert Escalation Levels";
+        style = "filled";
+        fillcolor = "#F5F5F5";
+        fontname = "Arial";
+
+        leg1 [label="L1: Supplier (24h)", shape=box, style="filled", fillcolor="#FF6666"];
+        leg2 [label="L2: Manager (12h)", shape=box, style="filled", fillcolor="#FF6666"];
+        leg3 [label="L3: Operations (RT)", shape=box, style="filled", fillcolor="#FF6666"];
+    }
+}

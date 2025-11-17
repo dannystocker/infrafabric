@@ -1,0 +1,127 @@
+digraph gantt_90days {
+    graph [
+        fontname="Arial",
+        fontsize=10,
+        margin=0.2,
+        rankdir=LR,
+        dpi=300,
+        ratio=fill,
+        size="6.5,7"
+    ];
+
+    node [
+        fontname="Arial",
+        fontsize=9,
+        fontcolor="white",
+        color="none",
+        style="filled"
+    ];
+
+    edge [
+        color="#888888",
+        penwidth=1.5
+    ];
+
+    // Timeline header
+    subgraph cluster_timeline {
+        label="90-Day Pilot Plan - Gantt Timeline";
+        labelloc=top;
+        style=none;
+        rankdir=LR;
+
+        // Week labels (1-12)
+        week_header [label="Weeks", fillcolor="none", fontsize=9, color="none", fontcolor="black"];
+        w1 [label="1", fillcolor="#CCCCCC", shape=box, width=0.4, height=0.3];
+        w2 [label="2", fillcolor="#CCCCCC", shape=box, width=0.4, height=0.3];
+        w3 [label="3", fillcolor="#CCCCCC", shape=box, width=0.4, height=0.3];
+        w4 [label="4", fillcolor="#CCCCCC", shape=box, width=0.4, height=0.3];
+        w5 [label="5", fillcolor="#CCCCCC", shape=box, width=0.4, height=0.3];
+        w6 [label="6", fillcolor="#CCCCCC", shape=box, width=0.4, height=0.3];
+        w7 [label="7", fillcolor="#CCCCCC", shape=box, width=0.4, height=0.3];
+        w8 [label="8", fillcolor="#CCCCCC", shape=box, width=0.4, height=0.3];
+        w9 [label="9", fillcolor="#CCCCCC", shape=box, width=0.4, height=0.3];
+        w10 [label="10", fillcolor="#CCCCCC", shape=box, width=0.4, height=0.3];
+        w11 [label="11", fillcolor="#CCCCCC", shape=box, width=0.4, height=0.3];
+        w12 [label="12", fillcolor="#CCCCCC", shape=box, width=0.4, height=0.3];
+    }
+
+    // PHASE 1: Weeks 1-2 (Setup & Launch)
+    subgraph cluster_phase1 {
+        label="Phase 1: Setup & Launch (Weeks 1-2)";
+        style="filled";
+        fillcolor="#E8F4F8";
+        color="#1E90FF";
+        fontcolor="#1E90FF";
+        fontsize=10;
+        margin=0.1;
+
+        p1_bar1 [label="Alertes & SLA Setup", fillcolor="#1E90FF", width=2.0, height=0.3, shape=box];
+        p1_bar2 [label="Satisfaction Survey Launch", fillcolor="#1E90FF", width=2.0, height=0.3, shape=box];
+        p1_bar3 [label="Proximity Rule Documentation", fillcolor="#1E90FF", width=2.0, height=0.3, shape=box];
+        p1_mile [label="✓ Setup Complete", fillcolor="#FFD700", fontcolor="black", width=1.2, height=0.25, shape=diamond];
+    }
+
+    // PHASE 2: Weeks 3-4 (Tool Development & Testing)
+    subgraph cluster_phase2 {
+        label="Phase 2: Scoring & Testing (Weeks 3-4)";
+        style="filled";
+        fillcolor="#F0F8E8";
+        color="#32CD32";
+        fontcolor="#32CD32";
+        fontsize=10;
+        margin=0.1;
+
+        p2_bar1 [label="Excel Scoring Tool", fillcolor="#32CD32", width=2.0, height=0.3, shape=box];
+        p2_bar2 [label="10-Case Testing", fillcolor="#32CD32", width=2.0, height=0.3, shape=box];
+        p2_bar3 [label="Iterations & Refinement", fillcolor="#32CD32", width=2.0, height=0.3, shape=box];
+        p2_mile [label="✓ Tool Ready", fillcolor="#FFD700", fontcolor="black", width=1.2, height=0.25, shape=diamond];
+    }
+
+    // PHASE 3: Weeks 5-8 (Generalization & Baseline)
+    subgraph cluster_phase3 {
+        label="Phase 3: Generalization & Baseline (Weeks 5-8)";
+        style="filled";
+        fillcolor="#F8F0E8";
+        color="#FF8C00";
+        fontcolor="#FF8C00";
+        fontsize=10;
+        margin=0.1;
+
+        p3_bar1 [label="Generalization", fillcolor="#FF8C00", width=2.0, height=0.3, shape=box];
+        p3_bar2 [label="Exception Review", fillcolor="#FF8C00", width=2.0, height=0.3, shape=box];
+        p3_bar3 [label="Baseline Collection (30 days)", fillcolor="#FF8C00", width=3.2, height=0.3, shape=box];
+        p3_mile [label="✓ Baseline Ready", fillcolor="#FFD700", fontcolor="black", width=1.2, height=0.25, shape=diamond];
+    }
+
+    // PHASE 4: Weeks 9-12 (Synthesis & Decision)
+    subgraph cluster_phase4 {
+        label="Phase 4: Synthesis & Go/No-Go (Weeks 9-12)";
+        style="filled";
+        fillcolor="#F8E8F0";
+        color="#DC143C";
+        fontcolor="#DC143C";
+        fontsize=10;
+        margin=0.1;
+
+        p4_bar1 [label="Pilot Synthesis", fillcolor="#DC143C", width=2.0, height=0.3, shape=box];
+        p4_bar2 [label="RSI Calculation", fillcolor="#DC143C", width=2.0, height=0.3, shape=box];
+        p4_bar3 [label="Go/No-Go Decision", fillcolor="#DC143C", width=2.0, height=0.3, shape=box];
+        p4_mile [label="✓ Decision Milestone", fillcolor="#FFD700", fontcolor="black", width=1.2, height=0.25, shape=diamond];
+    }
+
+    // Phase connections
+    p1_mile -> p2_bar1 [style=invis];
+    p2_mile -> p3_bar1 [style=invis];
+    p3_mile -> p4_bar1 [style=invis];
+
+    // Timeline alignment (invisible edges to ensure proper ordering)
+    week_header -> p1_bar1 [style=invis];
+    w1 -> p1_bar1 [style=invis];
+    w2 -> p1_bar2 [style=invis];
+    w3 -> p2_bar1 [style=invis];
+    w4 -> p2_bar2 [style=invis];
+    w5 -> p3_bar1 [style=invis];
+    w8 -> p3_bar3 [style=invis];
+    w9 -> p4_bar1 [style=invis];
+    w12 -> p4_bar3 [style=invis];
+}

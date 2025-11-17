@@ -1,0 +1,206 @@
+digraph depot_assignment {
+    // Graph attributes for A4 80% width compliance
+    size="6.61,11";
+    dpi=300;
+    rankdir=TB;
+    margin="0.25";
+    pad="0.25";
+
+    // Node and edge styling
+    node [fontname="Arial", fontsize=10, margin="0.2,0.1"];
+    edge [fontname="Arial", fontsize=9];
+
+    // Layout spacing
+    nodesep=0.8;
+    ranksep=1.2;
+
+    // ============================================
+    // START: Input Node
+    // ============================================
+    start [
+        label="Nouvelle commande\nenl\u00e8vement fournisseur",
+        shape=box,
+        style=filled,
+        fillcolor=lightblue,
+        penwidth=2
+    ];
+
+    // ============================================
+    // DECISION 1: Tonnage Check
+    // ============================================
+    check_tonnage [
+        label="Tonnage ≤ 10t ?",
+        shape=diamond,
+        style=filled,
+        fillcolor=lightyellow,
+        penwidth=2
+    ];
+
+    // ============================================
+    // DECISION 1 BRANCHES
+    // ============================================
+    internal_capacity [
+        label="Capacit\u00e9 interne\navailable",
+        shape=box,
+        style=filled,
+        fillcolor=lightgreen,
+        penwidth=1.5
+    ];
+
+    external_freight [
+        label="Recourir \u00e0 affr\u00e9tement\next\u00e9rieur",
+        shape=box,
+        style=filled,
+        fillcolor=lightgreen,
+        penwidth=1.5
+    ];
+
+    // ============================================
+    // DECISION 2: Distance Differential
+    // ============================================
+    check_distance [
+        label="Diff\u00e9rentiel distance\n> 15km ?",
+        shape=diamond,
+        style=filled,
+        fillcolor=lightyellow,
+        penwidth=2
+    ];
+
+    // ============================================
+    // DECISION 2 BRANCHES
+    // ============================================
+    strict_proximity [
+        label="Proximit\u00e9 stricte\napply",
+        shape=box,
+        style=filled,
+        fillcolor=lightgreen,
+        penwidth=1.5
+    ];
+
+    optimize_route [
+        label="Optimiser itin\u00e9raire\nregional",
+        shape=box,
+        style=filled,
+        fillcolor=lightgreen,
+        penwidth=1.5
+    ];
+
+    // ============================================
+    // DECISION 3: Customer Urgency
+    // ============================================
+    check_urgency [
+        label="Flag urgence\nclient actif ?",
+        shape=diamond,
+        style=filled,
+        fillcolor=lightyellow,
+        penwidth=2
+    ];
+
+    // ============================================
+    // DECISION 3 BRANCHES
+    // ============================================
+    fastest_depot_override [
+        label="OVERRIDE:\nD\u00e9p\u00f4t plus rapide",
+        shape=box,
+        style=filled,
+        fillcolor=orange,
+        penwidth=2
+    ];
+
+    continue_proximity [
+        label="Continuer\nlogique proximit\u00e9",
+        shape=box,
+        style=filled,
+        fillcolor=lightgreen,
+        penwidth=1.5
+    ];
+
+    // ============================================
+    // DEROGATION PATHS
+    // ============================================
+    derogation_urgent [
+        label="DEROGATION (i):\nUrgent - Override\nappliqu\u00e9",
+        shape=box,
+        style=filled,
+        fillcolor=orange,
+        penwidth=2
+    ];
+
+    derogation_supplier [
+        label="DEROGATION (ii):\nContrainte fournisseur\nappliqu\u00e9e",
+        shape=box,
+        style=filled,
+        fillcolor=orange,
+        penwidth=2
+    ];
+
+    derogation_cost [
+        label="DEROGATION (iii):\nAnomalie co\u00fbts\nappliqu\u00e9e",
+        shape=box,
+        style=filled,
+        fillcolor=orange,
+        penwidth=2
+    ];
+
+    // ============================================
+    // FINAL ASSIGNMENT
+    // ============================================
+    final_assignment [
+        label="D\u00e9p\u00f4t assign\u00e9\n+ Journalisation obligatoire",
+        shape=box,
+        style=filled,
+        fillcolor=gold,
+        penwidth=2.5
+    ];
+
+    // ============================================
+    // EDGES: Decision Flow
+    // ============================================
+
+    // Start to tonnage decision
+    start -> check_tonnage;
+
+    // Tonnage decision branches
+    check_tonnage -> internal_capacity [label="OUI\n(≤10t)"];
+    check_tonnage -> external_freight [label="NON\n(>10t)"];
+
+    // Both tonnage outcomes lead to distance decision
+    internal_capacity -> check_distance;
+    external_freight -> check_distance;
+
+    // Distance decision branches
+    check_distance -> strict_proximity [label="OUI\n(>15km)"];
+    check_distance -> optimize_route [label="NON\n(≤15km)"];
+
+    // Both distance outcomes lead to urgency decision
+    strict_proximity -> check_urgency;
+    optimize_route -> check_urgency;
+
+    // Urgency decision branches
+    check_urgency -> fastest_depot_override [label="OUI\n(urgence)"];
+    check_urgency -> continue_proximity [label="NON"];
+
+    // Both urgency outcomes can have derogations
+    fastest_depot_override -> derogation_urgent;
+    continue_proximity -> derogation_supplier;
+    derogation_urgent -> derogation_cost;
+    derogation_supplier -> derogation_cost;
+
+    // Final assignment consolidation
+    derogation_cost -> final_assignment;
+
+    // Styling for edges to derogations
+    edge [color=darkorange, penwidth=1.5];
+    fastest_depot_override -> derogation_urgent;
+    continue_proximity -> derogation_supplier;
+
+    // Legend/Notes
+    legend [
+        label="L\u00e9gende:\n• Bleu: Entr\u00e9e\n• Jaune: D\u00e9cision\n• Vert: Chemin valide\n• Orange: D\u00e9rogations\n• Or: D\u00e9p\u00f4t assign\u00e9",
+        shape=note,
+        style=filled,
+        fillcolor=white,
+        fontsize=9,
+        margin="0.1,0.1"
+    ];
+}

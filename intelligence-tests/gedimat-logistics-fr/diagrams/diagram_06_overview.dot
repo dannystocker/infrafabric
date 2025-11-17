@@ -1,0 +1,23 @@
+digraph overview {
+    size="6.61,1.0";
+    dpi=300;
+    rankdir=LR;
+    nodesep=0.2;
+    ranksep=0.2;
+    margin=0.05;
+
+    node [shape=box, fontname="Arial", fontsize=9, style=filled, margin="0.08,0.04", width=1.2];
+    edge [fontname="Arial", fontsize=9, arrowsize=1.0];
+
+    problem [label="PROBLEM\n\nDouble affrètement\nNo alerts\nUnmeasured satisfaction", fillcolor="#FFE6E6", penwidth=1.5];
+
+    solution [label="SOLUTION\n\nProximity rule\nAlert system\nSurvey\nScoring tool", fillcolor="#E6F3FF", penwidth=1.5];
+
+    pilot [label="PILOT\n\n90-day test\n5 success criteria", fillcolor="#FFF3E6", penwidth=1.5];
+
+    roi [label="ROI\n\n8-15% reduction\nscenarios\nFormula-based", fillcolor="#E6FFE6", penwidth=1.5];
+
+    problem -> solution [label="Deploy", fontsize=9, fontcolor="#333333"];
+    solution -> pilot [label="Test", fontsize=9, fontcolor="#333333"];
+    pilot -> roi [label="Measure", fontsize=9, fontcolor="#333333"];
+}

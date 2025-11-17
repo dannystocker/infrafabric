@@ -1,0 +1,88 @@
+digraph raci_matrix {
+    rankdir=LR;
+    size="6.5,8";
+    dpi=300;
+    node [shape=plaintext, fontname="Arial", fontsize=9];
+    margin=0;
+    pad=0.1;
+
+    raci [label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6" BGCOLOR="white">
+            <TR>
+                <TD BGCOLOR="#2C3E50" WIDTH="180"><FONT COLOR="white"><B>Décision</B></FONT></TD>
+                <TD BGCOLOR="#34495E" WIDTH="100"><FONT COLOR="white"><B>Direction</B></FONT></TD>
+                <TD BGCOLOR="#34495E" WIDTH="140"><FONT COLOR="white"><B>Resp. Planification</B></FONT></TD>
+                <TD BGCOLOR="#34495E" WIDTH="80"><FONT COLOR="white"><B>Dépôt 1</B></FONT></TD>
+                <TD BGCOLOR="#34495E" WIDTH="80"><FONT COLOR="white"><B>Dépôt 2</B></FONT></TD>
+                <TD BGCOLOR="#34495E" WIDTH="80"><FONT COLOR="white"><B>Dépôt 3</B></FONT></TD>
+                <TD BGCOLOR="#34495E" WIDTH="100"><FONT COLOR="white"><B>Angélique</B></FONT></TD>
+            </TR>
+            <TR>
+                <TD BGCOLOR="#ECF0F1"><B>Attribution des dépôts</B></TD>
+                <TD BGCOLOR="#E8F8F5" ALIGN="CENTER"><FONT COLOR="#27AE60"><B>A</B></FONT></TD>
+                <TD BGCOLOR="#E8F8F5" ALIGN="CENTER"><FONT COLOR="#C0392B"><B>R</B></FONT></TD>
+                <TD BGCOLOR="#FEF5E7" ALIGN="CENTER"><FONT COLOR="#F39C12"><B>C</B></FONT></TD>
+                <TD BGCOLOR="#FEF5E7" ALIGN="CENTER"><FONT COLOR="#F39C12"><B>C</B></FONT></TD>
+                <TD BGCOLOR="#FEF5E7" ALIGN="CENTER"><FONT COLOR="#F39C12"><B>C</B></FONT></TD>
+                <TD BGCOLOR="#F4ECF7" ALIGN="CENTER"><FONT COLOR="#8E44AD"><B>I</B></FONT></TD>
+            </TR>
+            <TR>
+                <TD BGCOLOR="#ECF0F1"><B>Dérogations aux règles</B></TD>
+                <TD BGCOLOR="#E8F8F5" ALIGN="CENTER"><FONT COLOR="#C0392B"><B>R/A</B></FONT></TD>
+                <TD BGCOLOR="#FEF5E7" ALIGN="CENTER"><FONT COLOR="#F39C12"><B>C</B></FONT></TD>
+                <TD BGCOLOR="#FEF5E7" ALIGN="CENTER"><FONT COLOR="#F39C12"><B>C</B></FONT></TD>
+                <TD BGCOLOR="#FEF5E7" ALIGN="CENTER"><FONT COLOR="#F39C12"><B>C</B></FONT></TD>
+                <TD BGCOLOR="#FEF5E7" ALIGN="CENTER"><FONT COLOR="#F39C12"><B>C</B></FONT></TD>
+                <TD BGCOLOR="#F4ECF7" ALIGN="CENTER"><FONT COLOR="#8E44AD"><B>I</B></FONT></TD>
+            </TR>
+            <TR>
+                <TD BGCOLOR="#ECF0F1"><B>Validation des pilots</B></TD>
+                <TD BGCOLOR="#FEF5E7" ALIGN="CENTER"><FONT COLOR="#F39C12"><B>C</B></FONT></TD>
+                <TD BGCOLOR="#E8F8F5" ALIGN="CENTER"><FONT COLOR="#27AE60"><B>A</B></FONT></TD>
+                <TD BGCOLOR="#FCE4D6" ALIGN="CENTER"><FONT COLOR="#C0392B"><B>R</B></FONT></TD>
+                <TD BGCOLOR="#FCE4D6" ALIGN="CENTER"><FONT COLOR="#C0392B"><B>R</B></FONT></TD>
+                <TD BGCOLOR="#FCE4D6" ALIGN="CENTER"><FONT COLOR="#C0392B"><B>R</B></FONT></TD>
+                <TD BGCOLOR="#F4ECF7" ALIGN="CENTER"><FONT COLOR="#8E44AD"><B>I</B></FONT></TD>
+            </TR>
+            <TR>
+                <TD BGCOLOR="#ECF0F1"><B>Approbation des budgets</B></TD>
+                <TD BGCOLOR="#E8F8F5" ALIGN="CENTER"><FONT COLOR="#C0392B"><B>R/A</B></FONT></TD>
+                <TD BGCOLOR="#FEF5E7" ALIGN="CENTER"><FONT COLOR="#F39C12"><B>C</B></FONT></TD>
+                <TD BGCOLOR="#F4ECF7" ALIGN="CENTER"><FONT COLOR="#8E44AD"><B>I</B></FONT></TD>
+                <TD BGCOLOR="#F4ECF7" ALIGN="CENTER"><FONT COLOR="#8E44AD"><B>I</B></FONT></TD>
+                <TD BGCOLOR="#F4ECF7" ALIGN="CENTER"><FONT COLOR="#8E44AD"><B>I</B></FONT></TD>
+                <TD BGCOLOR="#F4ECF7" ALIGN="CENTER"><FONT COLOR="#8E44AD"><B>I</B></FONT></TD>
+            </TR>
+            <TR>
+                <TD BGCOLOR="#ECF0F1"><B>Changements système</B></TD>
+                <TD BGCOLOR="#E8F8F5" ALIGN="CENTER"><FONT COLOR="#27AE60"><B>A</B></FONT></TD>
+                <TD BGCOLOR="#FCE4D6" ALIGN="CENTER"><FONT COLOR="#C0392B"><B>R</B></FONT></TD>
+                <TD BGCOLOR="#FEF5E7" ALIGN="CENTER"><FONT COLOR="#F39C12"><B>C</B></FONT></TD>
+                <TD BGCOLOR="#FEF5E7" ALIGN="CENTER"><FONT COLOR="#F39C12"><B>C</B></FONT></TD>
+                <TD BGCOLOR="#FEF5E7" ALIGN="CENTER"><FONT COLOR="#F39C12"><B>C</B></FONT></TD>
+                <TD BGCOLOR="#F4ECF7" ALIGN="CENTER"><FONT COLOR="#8E44AD"><B>I</B></FONT></TD>
+            </TR>
+            <TR>
+                <TD BGCOLOR="#ECF0F1"><B>Gestion des exceptions</B></TD>
+                <TD BGCOLOR="#FEF5E7" ALIGN="CENTER"><FONT COLOR="#F39C12"><B>C</B></FONT></TD>
+                <TD BGCOLOR="#E8F8F5" ALIGN="CENTER"><FONT COLOR="#27AE60"><B>A</B></FONT></TD>
+                <TD BGCOLOR="#FCE4D6" ALIGN="CENTER"><FONT COLOR="#C0392B"><B>R</B></FONT></TD>
+                <TD BGCOLOR="#FCE4D6" ALIGN="CENTER"><FONT COLOR="#C0392B"><B>R</B></FONT></TD>
+                <TD BGCOLOR="#FCE4D6" ALIGN="CENTER"><FONT COLOR="#C0392B"><B>R</B></FONT></TD>
+                <TD BGCOLOR="#F4ECF7" ALIGN="CENTER"><FONT COLOR="#8E44AD"><B>I</B></FONT></TD>
+            </TR>
+            <TR>
+                <TD BGCOLOR="#ECF0F1"><B>Satisfaction client</B></TD>
+                <TD BGCOLOR="#E8F8F5" ALIGN="CENTER"><FONT COLOR="#27AE60"><B>A</B></FONT></TD>
+                <TD BGCOLOR="#FEF5E7" ALIGN="CENTER"><FONT COLOR="#F39C12"><B>C</B></FONT></TD>
+                <TD BGCOLOR="#FEF5E7" ALIGN="CENTER"><FONT COLOR="#F39C12"><B>C</B></FONT></TD>
+                <TD BGCOLOR="#FEF5E7" ALIGN="CENTER"><FONT COLOR="#F39C12"><B>C</B></FONT></TD>
+                <TD BGCOLOR="#FEF5E7" ALIGN="CENTER"><FONT COLOR="#F39C12"><B>C</B></FONT></TD>
+                <TD BGCOLOR="#FCE4D6" ALIGN="CENTER"><FONT COLOR="#C0392B"><B>R</B></FONT></TD>
+            </TR>
+            <TR>
+                <TD COLSPAN="7" BGCOLOR="#D5DBDB" ALIGN="CENTER"><FONT SIZE="8"><B>Légende: R=Responsable (Executes) | A=Accountable (Final Authority) | C=Consulted (Input) | I=Informed (Kept Updated)</B></FONT></TD>
+            </TR>
+        </TABLE>
+    >];
+}

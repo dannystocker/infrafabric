@@ -1,0 +1,90 @@
+digraph validation_tree {
+    rankdir=TB;
+    size="6.5,11.1";
+    dpi=300;
+
+    node [fontname="Arial", fontsize=10, style="rounded,filled"];
+    edge [fontname="Arial", fontsize=9];
+
+    /* START NODE */
+    start [label="Gedimat Logistics\nValidation Criteria", shape=ellipse, fillcolor="#E8F4F8", penwidth=2.5, fontweight="bold"];
+
+    /* CRITERIA EVALUATION LAYER */
+    c1 [label="1. Cost Reduction\n≥15% (Médiafret)?", shape=diamond, fillcolor="#FFF4E6", fontsize=9];
+    c2 [label="2. Assignment Error\nRate <5%?", shape=diamond, fillcolor="#FFF4E6", fontsize=9];
+    c3 [label="3. Client Satisfaction\n≥7/10?", shape=diamond, fillcolor="#FFF4E6", fontsize=9];
+    c4 [label="4. Angélique Confidence\n≥7/10?", shape=diamond, fillcolor="#FFF4E6", fontsize=9];
+    c5 [label="5. Navette Adoption\n≥80%?", shape=diamond, fillcolor="#FFF4E6", fontsize=9];
+
+    /* RESULTS LAYER - Pass outcomes */
+    r1_pass [label="✓ PASS\n+1 point", shape=box, fillcolor="#C8E6C9", fontsize=9];
+    r1_fail [label="✗ FAIL\n+0 points", shape=box, fillcolor="#FFCDD2", fontsize=9];
+
+    r2_pass [label="✓ PASS\n+1 point", shape=box, fillcolor="#C8E6C9", fontsize=9];
+    r2_fail [label="✗ FAIL\n+0 points", shape=box, fillcolor="#FFCDD2", fontsize=9];
+
+    r3_pass [label="✓ PASS\n+1 point", shape=box, fillcolor="#C8E6C9", fontsize=9];
+    r3_fail [label="✗ FAIL\n+0 points", shape=box, fillcolor="#FFCDD2", fontsize=9];
+
+    r4_pass [label="✓ PASS\n+1 point", shape=box, fillcolor="#C8E6C9", fontsize=9];
+    r4_fail [label="✗ FAIL\n+0 points", shape=box, fillcolor="#FFCDD2", fontsize=9];
+
+    r5_pass [label="✓ PASS\n+1 point", shape=box, fillcolor="#C8E6C9", fontsize=9];
+    r5_fail [label="✗ FAIL\n+0 points", shape=box, fillcolor="#FFCDD2", fontsize=9];
+
+    /* AGGREGATION NODE */
+    aggregate [label="Aggregate Results\nSum Points: 0-5", shape=box, style="rounded,filled", fillcolor="#E1BEE7", penwidth=2.5, fontweight="bold"];
+
+    /* DECISION NODE */
+    decision [label="≥3 of 5\nCriteria Met?", shape=diamond, fillcolor="#FFE0B2", penwidth=2.5, fontweight="bold", fontsize=11];
+
+    /* OUTCOME NODES */
+    pass_outcome [label="✓ PASS\nPhase 2 Approved", shape=box, style="rounded,filled", fillcolor="#A5D6A7", penwidth=3, fontweight="bold", fontsize=11];
+    fail_outcome [label="✗ FAIL\nAnalyze &\nExtend Pilot", shape=box, style="rounded,filled", fillcolor="#EF9A9A", penwidth=3, fontweight="bold", fontsize=11];
+
+    /* EDGES FROM START TO CRITERIA */
+    start -> c1 [weight=1];
+    start -> c2 [weight=1];
+    start -> c3 [weight=1];
+    start -> c4 [weight=1];
+    start -> c5 [weight=1];
+
+    /* EDGES FROM CRITERIA TO RESULTS */
+    c1 -> r1_pass [label="Yes"];
+    c1 -> r1_fail [label="No"];
+
+    c2 -> r2_pass [label="Yes"];
+    c2 -> r2_fail [label="No"];
+
+    c3 -> r3_pass [label="Yes"];
+    c3 -> r3_fail [label="No"];
+
+    c4 -> r4_pass [label="Yes"];
+    c4 -> r4_fail [label="No"];
+
+    c5 -> r5_pass [label="Yes"];
+    c5 -> r5_fail [label="No"];
+
+    /* EDGES FROM ALL RESULTS TO AGGREGATION */
+    r1_pass -> aggregate;
+    r1_fail -> aggregate;
+    r2_pass -> aggregate;
+    r2_fail -> aggregate;
+    r3_pass -> aggregate;
+    r3_fail -> aggregate;
+    r4_pass -> aggregate;
+    r4_fail -> aggregate;
+    r5_pass -> aggregate;
+    r5_fail -> aggregate;
+
+    /* EDGE FROM AGGREGATION TO DECISION */
+    aggregate -> decision;
+
+    /* EDGES FROM DECISION TO OUTCOMES */
+    decision -> pass_outcome [label="Yes\n(≥3 points)", color="#4CAF50", fontcolor="#2E7D32", penwidth=2];
+    decision -> fail_outcome [label="No\n(<3 points)", color="#F44336", fontcolor="#C62828", penwidth=2];
+
+    /* GRAPH STYLING */
+    bgcolor="#F5F5F5";
+    margin=0.3;
+}
