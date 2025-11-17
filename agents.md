@@ -198,9 +198,9 @@ Scénarios: Conservateur 8%, Base 12%, Haut 15% (cas externes)
 - Time: ~8 hours human oversight, ~6 hours agent work
 - Deliverable: 142-line executive dossier + 6 technical annexes + 7 quality gate reports
 
-#### Phase 5: P0 Fixes for 95%+ Score (2025-11-17 Evening) ✅ 87.5% COMPLETE
+#### Phase 5: P0 Fixes for 95%+ Score (2025-11-17 Evening) ✅ 100% COMPLETE
 
-**Status:** Codex GPT-5.1 completed 7/8 tasks (15m 22s), Task 0 (cover page) remaining
+**Status:** All 8 tasks complete - Codex GPT-5.1 (7/8) + Haiku swarm (1/8)
 
 **Deliverable:**
 - `CODEX_P0_FIXES_ARENA_95_PERCENT.md` (18K, 700+ lines) - 8 tasks execution prompt
@@ -221,20 +221,22 @@ Scénarios: Conservateur 8%, Base 12%, Haut 15% (cas externes)
 - Anglicisms removed (only in code blocks now)
 - Git committed: `56ebcca P0 Fixes Complete: V3.2 ready for 95%+ Arena score`
 
-**❌ Remaining: Task 0 (Cover Page - 10 minutes)**
-1. Add professional cover page at document beginning
-2. New title: "Fidélisation par l'Excellence Logistique Gedimat" (IF.guard + IF.sam consensus synthesis)
-3. Credits: Angélique Montanarini, Danny Stocker
-4. AI assistance acknowledgment: Claude Sonnet 4.5, ChatGPT 5.1 Thinking, Gemini 2.5 Pro
-5. Update internal title (line 46): Still shows old "Optimisation Logistique"
-6. Update version metadata (line 1): Still shows "3.1" → should be "3.2"
+**✅ Task 0 Completed by IF.optimise Haiku Swarm (8 agents, parallel):**
+1. ✅ Haiku-1: Cover page snippet created (24 lines)
+2. ✅ Haiku-2: Version metadata updated → "3.2 Final (Cover Page + P0 Fixes)"
+3. ✅ Haiku-3: Internal title updated → "Fidélisation par l'Excellence Logistique Gedimat"
+4. ✅ Haiku-4: Quality check - 14 page breaks verified
+5. ✅ Haiku-5: Quality check - RSI standardization verified (zero ROI instances)
+6. ✅ Haiku-6: Quality check - Found anglicism blocker ("Quick Wins executable")
+7. ✅ Haiku-7: Fixed anglicism → "Gains Rapides exécutables" (line 853)
+8. ✅ Haiku-8: Cover page integrated at document beginning
 
-**Why Task 0 Missing:** Codex started execution with earlier prompt (before Task 0 added in commit 5388484)
-
-**Current Output:**
-- `GEDIMAT_ARENA_REVIEW_COMPLETE_V3.2.md` (900 lines, 38K) - 87.5% complete
+**Final Output:**
+- `GEDIMAT_ARENA_REVIEW_COMPLETE_V3.2.md` (925 lines, 39K) - **100% COMPLETE**
+- `GEDIMAT_COVER_PAGE_SNIPPET.md` - Reusable cover page template
 - `CODEX_P0_FIXES_CHANGE_LOG.md` - Detailed execution log
-- Expected score after Task 0: 95.0/100 (from current 91.9/100)
+- Git commits: `56ebcca` (Codex 7/8) + `5f2b038` (Haiku swarm Task 0)
+- **Expected Arena score: 95.0/100** (from 91.9/100)
 
 **Next Steps:**
 
