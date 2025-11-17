@@ -1,0 +1,62 @@
+digraph risk_matrix {
+    graph [
+        size="5.9,2.9",
+        rankdir=LR,
+        bgcolor=transparent,
+        margin="0.15,0.15"
+    ];
+    
+    node [
+        shape=plaintext,
+        fontname="Arial",
+        fontsize=9,
+        margin=0
+    ];
+    
+    risk_table [label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" BGCOLOR="white">
+            <TR>
+                <TD BGCOLOR="#E8E8E8" WIDTH="32" ALIGN="center"><B>N°</B></TD>
+                <TD BGCOLOR="#E8E8E8" WIDTH="120"><B>Risque</B></TD>
+                <TD BGCOLOR="#E8E8E8" WIDTH="145"><B>Stratégie d'Atténuation</B></TD>
+                <TD BGCOLOR="#E8E8E8" WIDTH="90"><B>ICP</B></TD>
+                <TD BGCOLOR="#E8E8E8" WIDTH="32" ALIGN="center"><B>Sév.</B></TD>
+            </TR>
+            <TR>
+                <TD ALIGN="center" VALIGN="middle">1</TD>
+                <TD BGCOLOR="#FFF5F5" ALIGN="left" VALIGN="top">Système lent<BR/>commande urgente</TD>
+                <TD BGCOLOR="#FFF5F5" ALIGN="left" VALIGN="top">Flag urgence override<BR/>automatique</TD>
+                <TD BGCOLOR="#FFF5F5" ALIGN="center" VALIGN="middle">&lt;15%</TD>
+                <TD BGCOLOR="#FFA500" ALIGN="center" VALIGN="middle"><B><FONT COLOR="white">M</FONT></B></TD>
+            </TR>
+            <TR>
+                <TD ALIGN="center" VALIGN="middle">2</TD>
+                <TD BGCOLOR="#FFF9F9" ALIGN="left" VALIGN="top">Prix concurrent<BR/>10% inférieur</TD>
+                <TD BGCOLOR="#FFF9F9" ALIGN="left" VALIGN="top">Différenciation<BR/>fiabilité</TD>
+                <TD BGCOLOR="#FFF9F9" ALIGN="center" VALIGN="middle">NPS délai <BR/>&gt; NPS prix</TD>
+                <TD BGCOLOR="#FF6B6B" ALIGN="center" VALIGN="middle"><B><FONT COLOR="white">H</FONT></B></TD>
+            </TR>
+            <TR>
+                <TD ALIGN="center" VALIGN="middle">3</TD>
+                <TD BGCOLOR="#FFF5F5" ALIGN="left" VALIGN="top">Angélique<BR/>quitte/surcharge</TD>
+                <TD BGCOLOR="#FFF5F5" ALIGN="left" VALIGN="top">Documentation<BR/>+ backup formé</TD>
+                <TD BGCOLOR="#FFF5F5" ALIGN="center" VALIGN="middle">&lt;4h<BR/>formation</TD>
+                <TD BGCOLOR="#FFA500" ALIGN="center" VALIGN="middle"><B><FONT COLOR="white">M</FONT></B></TD>
+            </TR>
+            <TR>
+                <TD ALIGN="center" VALIGN="middle">4</TD>
+                <TD BGCOLOR="#FFF9F9" ALIGN="left" VALIGN="top">Dépôt ignore<BR/>recommandation</TD>
+                <TD BGCOLOR="#FFF9F9" ALIGN="left" VALIGN="top">Système = conseil<BR/>pas obligation</TD>
+                <TD BGCOLOR="#FFF9F9" ALIGN="center" VALIGN="middle">≥40%<BR/>adoption</TD>
+                <TD BGCOLOR="#FF6B6B" ALIGN="center" VALIGN="middle"><B><FONT COLOR="white">H</FONT></B></TD>
+            </TR>
+            <TR>
+                <TD ALIGN="center" VALIGN="middle">5</TD>
+                <TD BGCOLOR="#FFF5F5" ALIGN="left" VALIGN="top">Incident mal<BR/>géré</TD>
+                <TD BGCOLOR="#FFF5F5" ALIGN="left" VALIGN="top">Protocole<BR/>escalade</TD>
+                <TD BGCOLOR="#FFF5F5" ALIGN="center" VALIGN="middle">&lt;4h<BR/>résolution</TD>
+                <TD BGCOLOR="#FFA500" ALIGN="center" VALIGN="middle"><B><FONT COLOR="white">M</FONT></B></TD>
+            </TR>
+        </TABLE>
+    >];
+}

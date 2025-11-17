@@ -1,0 +1,58 @@
+graph scarf_model {
+    // Layout and rendering specifications - using neato for circular layout
+    layout=neato;
+    overlap=false;
+    dpi=300;
+
+    // Size specification to meet requirements:
+    // 168mm width ≈ 6.61 inches, force larger layout
+    size="14,8";
+    margin="0.4,0.4";
+    maxiter=1000;
+
+    // Graph attributes with expanded spacing
+    graph [fontname="Arial", bgcolor="white", pad="0.2", nodesep=1.2, sep=1.5];
+    node [shape=box, fontname="Arial", fontsize=9, style="rounded,filled", margin="0.08,0.05"];
+    edge [fontname="Arial", fontsize=8, color="#999999", penwidth=2];
+
+    // Central hub node
+    center [label="Gouvernance\nSCABF\n(David Rock)",
+            width=1.4, height=0.65, fontsize=9, fontweight=bold,
+            fillcolor="#F0F0F0", color="#333333", penwidth=2];
+
+    // Pentagon nodes - 5 neural safety dimensions
+    // Reduced size to fit within constraints
+    status [label="STATUT\n(Status)\n\nPersonne ne\nperd prestige",
+            width=1.5, height=0.85, fontsize=8.5,
+            fillcolor="#FFE4D6", color="#FF6B6B", penwidth=1.5];
+
+    certainty [label="CERTITUDE\n(Certainty)\n\nRègles claires,\npas arbitraire",
+               width=1.5, height=0.85, fontsize=8.5,
+               fillcolor="#D6E4FF", color="#4D94FF", penwidth=1.5];
+
+    autonomy [label="AUTONOMIE\n(Autonomy)\n\nDépôts gardent\ncontrôle final",
+              width=1.5, height=0.85, fontsize=8.5,
+              fillcolor="#D6FFE4", color="#52B788", penwidth=1.5];
+
+    relatedness [label="RELATION\n(Relatedness)\n\nSuccès collectif,\npas compétition",
+                 width=1.5, height=0.85, fontsize=8.5,
+                 fillcolor="#FFFFE4", color="#FFD93D", penwidth=1.5];
+
+    fairness [label="ÉQUITÉ\n(Fairness)\n\nSystème juste,\npas gagnant/perdant",
+              width=1.5, height=0.85, fontsize=8.5,
+              fillcolor="#F0D6FF", color="#B19CD9", penwidth=1.5];
+
+    // Hub edges - colored by dimension
+    center -- status [penwidth=2.5, color="#FF6B6B"];
+    center -- certainty [penwidth=2.5, color="#4D94FF"];
+    center -- autonomy [penwidth=2.5, color="#52B788"];
+    center -- relatedness [penwidth=2.5, color="#FFD93D"];
+    center -- fairness [penwidth=2.5, color="#B19CD9"];
+
+    // Pentagon perimeter for visual structure
+    status -- certainty [color="#CCCCCC", style="dashed", penwidth=1];
+    certainty -- autonomy [color="#CCCCCC", style="dashed", penwidth=1];
+    autonomy -- relatedness [color="#CCCCCC", style="dashed", penwidth=1];
+    relatedness -- fairness [color="#CCCCCC", style="dashed", penwidth=1];
+    fairness -- status [color="#CCCCCC", style="dashed", penwidth=1];
+}

@@ -1,0 +1,49 @@
+digraph problems_tree {
+    size="6.5,4.5";
+    rankdir=TB;
+    node [shape=box, fontname="Arial", fontsize=10, margin="0.15,0.08", style="filled", fillcolor="white", color="black"];
+    edge [color="black", fontsize=9];
+    nodesep=0.8;
+    ranksep=0.8;
+
+    // Root node
+    root [label="Problèmes Logistiques\nGedimat", fillcolor="#E8F4F8", color="#1F77B4", penwidth=2.0];
+
+    // Main problem nodes (Level 1)
+    p1 [label="Double\naffrètement", fillcolor="#FFE6E6"];
+    p2 [label="Alertes SI\ninsuffisantes", fillcolor="#FFE6E6"];
+    p3 [label="Satisfaction\nnon mesurée", fillcolor="#FFE6E6"];
+    p4 [label="Connaissance\nrelationnelle", fillcolor="#FFE6E6"];
+
+    // Causes (Level 2)
+    c1_1 [label="Arbitrages locaux\nnon alignés", fillcolor="#FFF4E6"];
+    c1_2 [label="Critère tonnage\ninadapté", fillcolor="#FFF4E6"];
+
+    c2_1 [label="Pas d'ARC/ACK\ntracking", fillcolor="#FFF4E6"];
+    c2_2 [label="Pas de confirmation\nenlevement", fillcolor="#FFF4E6"];
+
+    c3_1 [label="Pas de sondage\nsystematique", fillcolor="#FFF4E6"];
+    c3_2 [label="Valeur invisible", fillcolor="#FFF4E6"];
+
+    c4_1 [label="Contacts non\nstructures SI", fillcolor="#FFF4E6"];
+    c4_2 [label="Dependance\npersonnes cles", fillcolor="#FFF4E6"];
+
+    // Edges from root to problems
+    root -> p1;
+    root -> p2;
+    root -> p3;
+    root -> p4;
+
+    // Edges from problems to causes
+    p1 -> c1_1;
+    p1 -> c1_2;
+
+    p2 -> c2_1;
+    p2 -> c2_2;
+
+    p3 -> c3_1;
+    p3 -> c3_2;
+
+    p4 -> c4_1;
+    p4 -> c4_2;
+}
