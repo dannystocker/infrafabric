@@ -1,0 +1,27 @@
+{
+  "packet_id": "ifttt-swarm-20251117024226",
+  "created_at": "2025-11-17T02:42:26.247256Z",
+  "items": [
+    {
+      "type": "dossier",
+      "id": "dossier_01",
+      "file": null
+    },
+    {
+      "type": "dossier",
+      "id": "dossier_02",
+      "file": "ttt2_dossier.md"
+    },
+    {
+      "type": "artifact",
+      "id": "html_snapshot",
+      "file": "full-single-page-save-gedimat.htm"
+    },
+    {
+      "type": "artifact",
+      "id": "pdf_snapshot",
+      "file": "FireShot Capture 078 - Claude Code I Claude - gedimat session.pdf"
+    }
+  ],
+  "notes": "Hierarchical swarm packet bundling dossiers and raw artifacts for IF.TTT audit."
+}

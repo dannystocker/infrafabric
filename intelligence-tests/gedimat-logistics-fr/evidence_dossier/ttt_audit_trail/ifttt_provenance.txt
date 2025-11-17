@@ -1,0 +1,5 @@
+IF.TTT Provenance Stub
+Generated: 2025-11-17T02:42:26.248088Z
+Source files: ttt2.txt
+Extractor: assistant
+Checksum: not computed in this stub
