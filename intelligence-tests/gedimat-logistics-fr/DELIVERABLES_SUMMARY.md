@@ -453,22 +453,37 @@ https://github.com/dannystocker/infrafabric/tree/gedimat-evidence-final/intellig
 - **Deliverables:** 142-line executive dossier + 6 annexes + 7 QG reports + 8 behavioral upgrades planned
 - **Token usage:** ~100K / 200K (50% of session budget)
 
-**🎯 NEXT STEPS (User Choice):**
+**🎯 PHASE 4: LLM Arena Multi-Evaluator Review (READY)**
 
-**Option A: Execute Behavioral Upgrades** (Recommended)
-- Add 8 behavioral psychology enhancements to `GEDIMAT_CLEAN_FINAL_DOSSIER.md`
-- Estimated: 60-90 minutes
-- Output: `GEDIMAT_BEHAVIORAL_ENHANCED_FINAL.md`
+**Deliverables Created (2025-11-17 15:15 UTC):**
+- ✅ `CODEX_MERGE_DOSSIER_PROMPT.md` - Merge dossier + 3 annexes into single file
+- ✅ `LLM_ARENA_REVIEW_PROMPT.md` - 7-dimension evaluation framework
+- ✅ `GEDIMAT_PHASE_3_COMPLETION_SUMMARY.md` - Complete session summary
+- ✅ `GEDIMAT_SESSION_ARRIVAL_NARRATIVE_MEDIUM.md` - 3,200-word Medium article
 
-**Option B: Generate Board Presentation Package**
-- Create LaTeX PDF from clean dossier
-- Generate 3 diagrams (logistics flow, decision tree, Gantt chart)
+**Next Immediate Step:**
+1. Run Codex/GPT-5.1 with `CODEX_MERGE_DOSSIER_PROMPT.md` to create `GEDIMAT_ARENA_REVIEW_COMPLETE.md`
+2. Upload merged dossier to GitHub → get raw URL
+3. Paste LLM Arena review prompt with raw URL
+4. Collect multi-model reviews (GPT-4, Claude, Gemini, etc.)
+
+**After Arena Review:**
+
+**Option A: Board Presentation Package**
+- Generate LaTeX PDF from behavioral-enhanced dossier
+- Create 3 diagrams (logistics flow, decision tree, Gantt chart)
 - Compile: `GEDIMAT_SUPER_DOSSIER_FINAL.pdf`
+- Cost: ~$0.50, 2-3 hours
 
-**Option C: Pilot Execution (Real-World Test)**
+**Option B: Pilot Execution (Real-World Test)**
 - Deploy with Angélique (90-day pilot)
-- Measure: IRL-1 (recovery loyalty), IRL-2 (invisible deliveries), IRL-3 (voluntary adoption)
-- Validate: Behavioral psychology hypotheses
+- Measure: IRL-1, IRL-2, IRL-3 behavioral metrics
+- Validate: Rory Sutherland hypotheses in production
+
+**Option C: Academic Publication**
+- Submit to business/logistics journal
+- Angle: IF.TTT methodology prevents phantom ROI
+- Contribution: Novel framework + real-world validation
 
 ---
 
