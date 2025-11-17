@@ -8,9 +8,21 @@
 
 I'm requesting a comprehensive review of a board-ready strategic dossier for Gedimat, a French building materials distributor. This is a real-world B2B logistics optimization project that uses a novel **IF.TTT methodology** (Traceable, Transparent, Trustworthy) to prevent phantom numbers in consulting deliverables.
 
-**Document:** https://raw.githubusercontent.com/dannystocker/infrafabric/gedimat-evidence-final/intelligence-tests/gedimat-logistics-fr/GEDIMAT_ARENA_REVIEW_COMPLETE.md
+**Document URLs:**
+
+**Primary (Complete Merged Document - 763 lines, all-in-one):**
+https://raw.githubusercontent.com/dannystocker/infrafabric/gedimat-evidence-final/intelligence-tests/gedimat-logistics-fr/GEDIMAT_ARENA_REVIEW_COMPLETE.md
+
+**Alternative (Individual Files - for models with context limitations):**
+- Main Dossier (334 lines): https://raw.githubusercontent.com/dannystocker/infrafabric/gedimat-evidence-final/intelligence-tests/gedimat-logistics-fr/GEDIMAT_BEHAVIORAL_ENHANCED_FINAL.md
+- Annexe X (Decision Rules): https://raw.githubusercontent.com/dannystocker/infrafabric/gedimat-evidence-final/intelligence-tests/gedimat-logistics-fr/GEDIMAT_REVIEW_AND_DOSSIER_EXTRACTED/gedimat_review_outputs/ANNEXE_X_DECISION_RULES.md
+- Annexe Y (Alerting & SLA): https://raw.githubusercontent.com/dannystocker/infrafabric/gedimat-evidence-final/intelligence-tests/gedimat-logistics-fr/GEDIMAT_REVIEW_AND_DOSSIER_EXTRACTED/gedimat_review_outputs/ANNEXE_Y_ALERTING_SLA.md
+- Annexe Z (Cost Model): https://raw.githubusercontent.com/dannystocker/infrafabric/gedimat-evidence-final/intelligence-tests/gedimat-logistics-fr/GEDIMAT_REVIEW_AND_DOSSIER_EXTRACTED/gedimat_review_outputs/ANNEXE_Z_COST_MODEL_README.md
+- Annexe Z (CSV Example): https://raw.githubusercontent.com/dannystocker/infrafabric/gedimat-evidence-final/intelligence-tests/gedimat-logistics-fr/GEDIMAT_REVIEW_AND_DOSSIER_EXTRACTED/gedimat_review_outputs/ANNEXE_Z_COST_MODEL_EXAMPLE.csv
 
 **Your task:** Evaluate this dossier as if YOU were the external consultant being asked to validate it before the PDG presents it to the board. Would you stake YOUR professional reputation on this?
+
+**Note:** If the complete merged document exceeds your context window, use the individual files above (main dossier + annexes separately).
 
 ---
 
