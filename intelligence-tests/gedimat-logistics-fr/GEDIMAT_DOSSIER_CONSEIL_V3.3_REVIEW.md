@@ -90,11 +90,32 @@ Danny Stocker
 
 ## 1. Résumé exécutif
 
-**Positionnement stratégique:** Cette recommandation s'inscrit dans une logique de capitalisme relationnel (Rory Sutherland, Vice Chairman Ogilvy UK) : maximiser la valeur de la relation client sur la durée, non la rentabilité d'une seule expédition. Un support prévisible lors des incidents construit une différenciation durable vs. concurrents focalisés sur le prix spot.
+### **1.1 Positionnement Stratégique : Différenciation par la Fiabilité Logistique**
+
+**Contexte concurrentiel.** Le marché français de la distribution de matériaux de construction se structure autour de trois axes de différenciation :
+- **Screwfix** → Prix bas, modèle self-service, support minimal
+- **BigMat** → Réseaux locaux, ancrage régional
+- **Point.P** (Saint-Gobain) → Catalogue large, économies d'échelle
+
+**Opportunité Gedimat.** Construire un avantage durable par la **prévisibilité logistique** et le **support proactif**, positionnant Gedimat comme "le choix des professionnels qui ne veulent pas de surprises."
+
+**Framework stratégique : Capitalisme Relationnel** (Rory Sutherland, Vice Chairman Ogilvy UK)
+
+Cette recommandation s'inscrit dans une logique de **capitalisme relationnel** : maximiser la valeur de la relation client sur la durée, non la rentabilité d'une seule expédition. Un support prévisible lors des incidents construit une **différenciation durable** vs. concurrents focalisés sur le prix spot.
+
+**Principe clé (Service Recovery Paradox) :** Les clients qui expérimentent un incident **résolu professionnellement** deviennent souvent **plus loyaux** que les clients sans incident, car ils ont testé votre engagement sous stress. Cette dynamique permet de justifier un pricing premium (5-8%) basé sur la fiabilité, sans entrer dans une guerre des prix.
+
+### **1.2 Diagnostic Opérationnel**
 
 **Problème.** Les enlèvements chez fournisseurs "non livreurs" génèrent des **coûts d'affrètement élevés** et des **retards** perçus par les clients. Les trois dépôts défendent leurs préférences de livraison, ce qui **multiplie les affrètements** et complexifie la planification. Les alertes SI sont limitées (ARC/ACK fournisseurs, confirmation d'enlèvement transporteur).
 
+**Impact double :**
+- **Coûts internes** : 96-144K€/an en affrètements évitables (estimé)
+- **Coûts invisibles** : Clients qui passent chez Screwfix après 1 retard = perte de marge à vie
+
 **Opportunité.** Standardiser le **choix du dépôt** par **proximité fournisseur** (puis navette interne), instaurer un **système d'alertes simple** (emails/règles) et **mesurer la satisfaction**. L'usage de la navette interne pour redistribuer depuis le dépôt le plus proche réduit l'affrètement externe inutile.
+
+**Transformation visée :** Convertir la logistique d'un **cost center** (minimiser dépenses) en **competitive advantage** (justifier pricing premium).
 
 **Recommandations (3 axes).**
 - **Gains rapides (0–30 jours)** : (i) Activer des **alertes** ARC/ACK et enlèvement J‑1 16h ; (ii) lancer un **sondage satisfaction** (20 clients, 5 questions) ; (iii) appliquer la **règle proximité** et documenter toute dérogation.
@@ -187,7 +208,30 @@ Scénarios possibles : 8 %, 12 %, 15 % (issus de cas externes publiés, non d'es
 
 ### 📘 En termes simples : Résumé Exécutif
 
-**Situation actuelle :**
+**Pourquoi investir dans la logistique ? (Au lieu de juste baisser les prix comme Screwfix)**
+
+**Les concurrents de Gedimat :**
+- **Screwfix** → Prix les plus bas, mais zéro aide si tu as un problème
+- **BigMat** → Réseaux locaux, chacun pour soi
+- **Point.P** → Gros catalogue, mais standardisé (pas de service personnalisé)
+
+**L'opportunité de Gedimat :**
+Devenir **"le choix des pros qui ne veulent pas de surprises"** → Clients paient 5-8% de plus, mais dorment tranquilles.
+
+**Découverte étrange (prouvée par la recherche) :**
+Un client qui a un problème **bien résolu** devient PLUS fidèle qu'un client qui n'a jamais eu de problème. Pourquoi ? Il a testé ton engagement quand c'était stressant.
+
+**Exemple concret :**
+- Chantier bloqué, client appelle Gedimat en panique
+- Gedimat appelle proactivement AVANT que le client panique, trouve solution, livre sous 2h
+- Client raconte ça à tous ses collègues → Bouche-à-oreille, fidélité à vie
+- Vs. Screwfix : prix -8%, mais quand il y a un retard, personne ne répond au téléphone
+
+**Transformation visée :** Logistique n'est plus un "coût à réduire" → C'est un "argument de vente" (fiabilité).
+
+---
+
+**Situation actuelle (problèmes opérationnels) :**
 Gedimat a 3 dépôts de stockage. Quand des clients commandent des matériaux stockés chez des fournisseurs extérieurs, chaque dépôt décide d'où les chercher. Parfois, c'est inefficace : deux dépôts envoient des camions différents pour le même client au lieu de partager un seul transport.
 
 **Quel est le problème ?**
