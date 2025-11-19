@@ -224,30 +224,14 @@ InfraFabric is a research project on AI agent coordination and civilizational re
 - User: dannystocker
 - Repos: infrafabric, infrafabric-core, navidocs
 
-**Local Gitea:**
-- URL: http://localhost:4000/
-- Admin: ggq-admin / Admin_GGQ-2025!
-- User: dannystocker / @@Gitea305$$
+**Local Gitea (reference only):**
+- URL: `http://localhost:4000/`
+- Admin and user credentials are stored in the local security vault (`~/.security/`) and must **never** be committed.
 
-### External Services
+### External Services (reference only)
 
-**OpenRouter API:**
-- Key: `sk-or-v1-...` (REVOKED 2025-11-07, exposed in GitHub)
-- Status: Disabled, see `/home/setup/.security/revoked-keys-whitelist.md`
-
-**DeepSeek API:**
-- Key: `sk-c2b06f3ae3c442de82f4e529bcce71ed`
-
-### StackCP (Hosting)
-
-**SSH Alias:** `stackcp`
-- Host: ssh.gb.stackcp.com
-- User: digital-lab.ca
-- Key: `~/.ssh/icw_stackcp_ed25519`
-
-**Web Roots:**
-- icantwait.ca: `~/public_html/icantwait.ca/`
-- digital-lab.ca: `~/public_html/digital-lab.ca/`
+- OpenRouter API, DeepSeek API, StackCP SSH and hosting details are managed via local environment files and `~/.security/*`.  
+  This repo should only ever contain *pointers* (like this section), not raw keys, passwords, or tokens.
 
 ---
 

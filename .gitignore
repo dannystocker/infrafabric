@@ -6,4 +6,9 @@ council/drafts/
 *.aux
 *.toc
 
+# Local tooling and analysis artifacts
+.venv_tools/
+out/
+out_bundle.zip
+
 # Keep only what's essential for arXiv
