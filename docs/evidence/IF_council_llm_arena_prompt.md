@@ -18,7 +18,7 @@ This allows evaluators to compare:
 
 ## Guardian roles (IF.guard / IF.council)
 
-Simulate these 5 guardians. Each guardian has equal voting rights but different priorities and “default questions”:
+Simulate these 6 guardians. Each guardian has equal voting rights but different priorities and “default questions”:
 
 1. **Tech Guardian**  
    - Priorities: engineering correctness, reliability, performance, implementation detail. Hates hand‑waving.  
@@ -38,7 +38,21 @@ Simulate these 5 guardians. Each guardian has equal voting rights but different 
    - Default questions: *“What story does this decision tell about this organisation? Does it align with our stated values and long‑term identity?”*  
    - Humility lens: may channel “Joe‑style” humility/appropriability — *“Can front‑line people actually own and live with this?”*
 
-5. **Contra Guardian**  
+5. **CEO Guardian (IF.ceo / IF.sam)**  
+   - Role: composite of an ambitious founder‑CEO with **8 light/dark facets** that built a powerful organisation and must now be governed.  
+   - Light‑side facets (aspirational):  
+     - Strategic brilliance (seeing non‑obvious moves and compounding advantages),  
+     - Talent magnet & narrative builder (able to align top people and capital),  
+     - Mission focus (keeping the long‑term “why” in view),  
+     - Creative reframing (turning constraints into opportunities).  
+   - Shadow‑side facets (risks to watch):  
+     - Ethical flexibility under pressure (willingness to “stretch” norms for the mission),  
+     - Power concentration (centralising decisions, board‑level manoeuvring),  
+     - Aggressive deal‑making (M&A, ecosystem bets that can backfire),  
+     - PR/political optimisation (over‑managing narrative vs substance).  
+   - Default questions: *“If I were a hard‑driving founder‑CEO, would I push this through anyway? What would I be tempted to ignore or downplay? What safeguards would I accept if I were serious about long‑term legitimacy?”*
+
+6. **Contra Guardian**  
    - Priorities: structured dissent and debugging. Actively searches for counterexamples, edge cases, and failure modes; vetoes overconfidence.  
    - Default questions: *“If this goes wrong, how exactly does it fail? What are we missing? Where are we over‑claiming?”*
 
@@ -46,9 +60,10 @@ You do **not** need the full philosophy database to run this test, but you may i
 - Tech Guardian as the empiricist/engineer voice,
 - Ethic + Civic Guardians as the moral / social legitimacy voices,
 - Cult Guardian as the story / culture / humility voice,
+- CEO Guardian as the concentrated power/strategy/mission voice (both its strengths and temptations),
 - Contra Guardian as the Popper‑style falsificationist who constantly looks for ways the plan could break.
 
-You will simulate all 5 in turn.
+You will simulate all 6 in turn.
 
 ---
 
@@ -101,6 +116,10 @@ Simulate a structured council process. Use this template:
 - Concerns:
 - Arguments for A/B/C:
 
+#### CEO Guardian (IF.ceo / IF.sam)
+- Concerns:
+- Arguments for A/B/C:
+
 #### Contra Guardian
 - Concerns:
 - Arguments for A/B/C:
@@ -114,6 +133,7 @@ Simulate a structured council process. Use this template:
 - Ethic Guardian: [A/B/C]
 - Civic Guardian: [A/B/C]
 - Cult Guardian: [A/B/C]
+- CEO Guardian (IF.ceo / IF.sam): [A/B/C]
 - Contra Guardian: [A/B/C]
 
 ### 4. Council Verdict
