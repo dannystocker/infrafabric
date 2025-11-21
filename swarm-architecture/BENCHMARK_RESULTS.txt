@@ -1,0 +1,49 @@
+============================================================
+REDIS SWARM ARCHITECTURE BENCHMARK
+============================================================
+
+✅ Connected to Redis (localhost:6379)
+
+Test 1: PING Latency (1000 iterations)
+  Average: 0.071 ms
+  Min:     0.037 ms
+  Max:     0.424 ms
+
+Test 2: SET Latency (1000 iterations)
+  Average: 0.080 ms
+  Min:     0.047 ms
+  Max:     0.881 ms
+
+Test 3: GET Latency (1000 iterations)
+  Average: 0.075 ms
+  Min:     0.038 ms
+  Max:     0.751 ms
+
+Test 4: Large Context Transfer (3.2MB, simulating 800K tokens)
+  Write: 5.44 ms
+  Read:  12.41 ms
+  Total: 17.85 ms
+
+Test 5: Task Queue Operations (1000 iterations)
+  Average: 0.139 ms
+  Min:     0.087 ms
+  Max:     0.714 ms
+
+Cleaning up benchmark keys...
+✅ Cleanup complete
+
+============================================================
+SUMMARY
+============================================================
+PING latency:          0.071 ms
+SET latency:           0.080 ms
+GET latency:           0.075 ms
+Queue ops latency:     0.139 ms
+Large context (800K):  17.85 ms
+
+COMPARISON TO JSONL (2-3 seconds):
+  PING speedup:     35343×
+  Context speedup:  140×
+
+✅ BENCHMARK COMPLETE
+============================================================
