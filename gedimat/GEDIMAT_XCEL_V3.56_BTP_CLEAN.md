@@ -582,7 +582,7 @@ Cela nécessite une chronologie précise et des responsabilités claires. Voici 
 
 ---
 
-**Trois Jalons Critiques (J-1, le jour avant livraison) :**
+**Trois Points de Contrôle Critiques (J-1, le jour avant livraison) :**
 
 ```
 ┌──────────────────────────────────────────────────────────────────────┐

@@ -50,7 +50,7 @@ Gemini 2.5 Pro
 - [6. Gouvernance & Responsabilités](#6-gouvernance--responsabilités)
 - [6.5 Gouvernance Comportementale](#65-gouvernance-comportementale--principe-zéro-perdant)
 - [6.6 Conformité Réglementaire et Juridique](#66-conformité-réglementaire-et-juridique)
-- [7. Plan 90 Jours](#7-plan-90-jours-jalons)
+- [7. Plan 90 Jours](#7-plan-90-jours-étapes-clés)
 - [7.5 Stress-Test Comportemental](#75-stress-test-comportemental--questions-inversées)
 - [8. Indicateurs & Validation](#8-indicateurs--validation-pilote)
 - [8.5 Indicateurs de Récupération](#85-indicateurs-de-récupération-recovery-metrics)
@@ -339,7 +339,7 @@ Révision trimestrielle si dépassement
 
 <div style="page-break-before: always;"></div>
 
-## 7. Plan 90 jours (jalons)
+## 7. Plan 90 jours (étapes clés)
 
 ![Gantt simplifié du pilote 90 jours](https://raw.githubusercontent.com/dannystocker/infrafabric/gedimat-evidence-final/intelligence-tests/gedimat-logistics-fr/diagrams/diagram_04_gantt_90days.svg)
 
