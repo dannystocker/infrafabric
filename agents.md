@@ -238,6 +238,46 @@ InfraFabric is a research project on AI agent coordination and civilizational re
 **With Path A enhancement (2-3 hours):** 95+/100 (add "Qui est Qui?" section)
 **Outstanding:** 5 operational context clarifications (Angelique, buyer, GESI, 15:50/15:30, tonnage)
 
+### French Language Guidelines (All Projects)
+
+**Critical:** The word "jalon" (milestone marker) is outdated training data and rarely used in modern French business contexts. It was corrected across InfraFabric codebase on 2025-11-22.
+
+**Context-Based French Replacements:**
+
+| Context | ❌ Avoid | ✅ Use Instead | Example |
+|---------|----------|---------------|---------|
+| Timeline/phases | "jalons" | "étapes clés" | "Plan 90 jours avec étapes clés" |
+| Project milestones | "jalons du projet" | "jalons majeurs" OR "étapes critiques" | "Les jalons majeurs du déploiement" |
+| Time markers | "jalons temporels" | "points de passage" OR "étapes" | "Les points de passage du pilote" |
+| Operational checkpoints | "jalons opérationnels" | "points de contrôle" OR "étapes opérationnelles" | "Trois points de contrôle critiques (J-1)" |
+| Decision gates | "jalons de décision" | "points de décision" OR "portes de sélection" | "Les points de décision à J+30" |
+
+**Common Professional Equivalents:**
+- **étapes clés** (key stages) - Most common, neutral, professional (DEFAULT)
+- **points de contrôle** (control points) - For quality gates, checkpoints, operational reviews
+- **points de passage** (passage points) - For temporal/sequential markers
+- **jalons majeurs** (major milestones) - Only when "milestone" is explicitly required in formal contexts
+- **phases** (phases) - For broad project segments
+- **délais** (deadlines) - When referring to timing/due dates
+
+**Applies to ALL Projects:**
+- InfraFabric (research papers, dossiers, client documents)
+- NaviDocs (boat documentation platform, French/English bilingual)
+- ICW icantwait.ca (ProcessWire CMS, property management)
+- Digital-Lab (future projects)
+- StackCP deployments (client-facing materials)
+
+**Quality Check:**
+- Before finalizing French documents, search for "jalon" (case-insensitive)
+- Replace based on context using table above
+- Verify replacement reads naturally for French business professionals
+- Default to "étapes clés" when uncertain
+
+**Historical Note:**
+- 2025-11-22: Removed 3 active instances of "jalon" from GEDIMAT case study
+- Files affected: `GEDIMAT_XCEL_V3.56_BTP_CLEAN.md`, `GEDIMAT_ARENA_REVIEW_COMPLETE_V3.2.md`
+- Replacements: "jalons" → "étapes clés" (timeline context), "Jalons Critiques" → "Points de Contrôle Critiques" (operational checkpoints)
+
 ### Next Instance Priorities
 1. Clarify operational context with user
 2. Execute Path A (enhance) or Path B (present as-is)
@@ -1752,6 +1792,144 @@ python3 merge_evaluations.py eval1.yaml eval2.yaml eval3.yaml
 
 ---
 
-**Last Session:** Multi-evaluator assessment complete (3 evaluators, consensus generated)
-**Next Session Options:** Debug P0 gaps / Add Claude evaluation / Citation cleanup
+## IF.WWWWWW Protocol — Structured Inquiry Framework
+
+**Definition:** A systematic 5-W protocol for clarifying context, scope, and decision-making in research, planning, and problem-solving.
+
+**Reframes:** Traditional "Who, What, When, Why" → **Who, Why, What, Where, When** (decision-centric ordering)
+
+### The Five Questions (In Decision Order)
+
+| # | Question | Purpose | Example |
+|---|----------|---------|---------|
+| 1 | **WHO** | Identify stakeholder(s) and decision-maker(s) | "Who needs this solved? Who decides?" |
+| 2 | **WHY** | Uncover motivation, constraint, or problem | "Why is this critical now? What breaks if unsolved?" |
+| 3 | **WHAT** | Define scope, deliverable, or solution | "What exactly needs to be built/changed?" |
+| 4 | **WHERE** | Locate context: system, geography, domain | "Where does this live? Which system/org?" |
+| 5 | **WHEN** | Establish timeline, urgency, dependencies | "When is it needed? What's blocking it?" |
+
+### Why This Order (vs. Traditional WWWWW)
+
+**Traditional order (Who, What, When, Why) assumes:**
+- Requirements are known upfront
+- Timeline is determined
+- Motivation can be explained after defining scope
+
+**IF.WWWWWW order (Who, Why, What, Where, When) assumes:**
+- Motivation drives decisions (start there)
+- Scope follows motivation (avoid scope creep)
+- Context location informs feasibility (Where matters before When)
+
+### Application Contexts
+
+#### 1. **Project Planning** (Instance Planning, Session Scoping)
+
+**Example: GEDIMAT Case Study**
+
+```
+WHO    → Adrien FAVORY (President), Angelique (Supply Chain), XCEL (Coordinator)
+WHY    → Consolidate orders → reduce transport costs €2,960/month
+WHAT   → 3-phase logistics protocol (manual → semi-auto → full API)
+WHERE  → Triangle Logistics: Gisors/Méru/Breuilpont + Médiafret partnership
+WHEN   → 90-day pilot (Week 1-4 manual, Week 5-8 semi-auto, Week 9-12 go/no-go)
+```
+
+#### 2. **Problem Investigation** (Debug, Issue Triage)
+
+**Example: GESI Configuration Gaps**
+
+```
+WHO    → Lunel Négoce tech admin, CEICOM Solutions support
+WHY    → GESI assumed limited; actual capabilities unknown → could affect Phase 1→2 timeline
+WHAT   → Verify GESI export, webhook, Power BI capabilities vs. assumptions
+WHERE  → GESI ERP system (proprietary, Gedimat/Gedibois cooperative)
+WHEN   → Week 1 pilot (before manual Excel setup finalizes)
+```
+
+#### 3. **Decision Gate** (Go/No-Go, Approval)
+
+**Example: Path A vs. Path B Documentation Choice**
+
+```
+WHO    → User (determines direction), Claude (implementation)
+WHY    → Document ready at 88.75/100; Path A enhances to 94-96/100 vs. Path B speeds up
+WHAT   → Choice: Enhance with operational context (2-3h) OR present as-is with verbal backup
+WHERE  → GEDIMAT_XCEL_V3.56_BTP_CLEAN.md + Section 2.1 "Qui est Qui?"
+WHEN   → Decision now; Path A execution Week 1 pre-presentation
+```
+
+#### 4. **Stakeholder Alignment** (Communication, Meeting Prep)
+
+**Example: Sales Pitch to Client**
+
+```
+WHO    → Target: CODIR (board); Decision-maker: Adrien FAVORY
+WHY    → They care about: margin improvement, client retention, operational reliability
+WHAT   → Pitch: WhatsApp Chantier Direct (competitive moat vs. bigger players)
+WHERE  → Presented document: GEDIMAT_XCEL_V3.56_BTP_CLEAN.md
+WHEN   → This week; 90-day pilot commitment needed for Friday sign-off
+```
+
+### IF.WWWWWW as Function Template
+
+```python
+def if_wwwwww(context: dict) -> dict:
+    """
+    Structured inquiry protocol for clarity on research/project scope.
+
+    Args:
+        context: Dict with keys 'situation', 'decision_point', or 'problem'
+
+    Returns:
+        Dict with keys: who, why, what, where, when (filled)
+    """
+    return {
+        'who': "Identify stakeholder(s) and decision-maker(s)",
+        'why': "Uncover motivation, constraint, or problem root",
+        'what': "Define scope, deliverable, or solution boundary",
+        'where': "Locate in system/org/domain context",
+        'when': "Establish timeline, urgency, dependencies"
+    }
+```
+
+### Quality Checklist: IF.WWWWWW Completeness
+
+Before finalizing any research task, decision, or project plan, verify:
+
+- [ ] **WHO is complete?** All stakeholders named; decision-maker identified
+- [ ] **WHY is clear?** Not just "we need to do this" but "why matters now"
+- [ ] **WHAT is bounded?** Scope defined; out-of-scope items flagged
+- [ ] **WHERE is explicit?** System, org, or domain context stated
+- [ ] **WHEN is realistic?** Timeline, urgency, and blocking dependencies documented
+
+**If any field is vague or missing, the scope is insufficiently defined.**
+
+### Integration Request: IF.WWWWWW Into Main InfraFabric
+
+**Proposed Location:** `infrafabric/frameworks/IF-WWWWWW-INQUIRY-PROTOCOL.md`
+
+**Scope:** IF.WWWWWW should be adopted as a standard framework across all InfraFabric projects:
+
+1. **InfraFabric (research papers)** — Use for session planning, problem investigation
+2. **NaviDocs (boat documentation)** — Use for feature scoping, stakeholder alignment
+3. **ICW icantwait.ca** — Use for client requirements, decision gates
+4. **Digital-Lab** — Use for project planning, architecture decisions
+5. **StackCP deployments** — Use for infrastructure scoping, upgrade planning
+
+**Benefits:**
+- Reduces scope creep (Why before What)
+- Improves decision clarity (Who and decision-makers explicit)
+- Enables rapid context transfer (Where and When documented)
+- Facilitates multi-agent coordination (all agents use same framework)
+
+**Implementation:**
+- Add to agents.md (✅ Done)
+- Create dedicated framework doc (`IF-WWWWWW-INQUIRY-PROTOCOL.md`)
+- Add to project templates (session planning, decision gates, requirements gathering)
+- Reference in IF.TTT compliance (traceability requires Who, Why, Where, When)
+
+---
+
+**Last Session:** Multi-evaluator assessment complete (3 evaluators, consensus generated); IF.WWWWWW protocol created
+**Next Session Options:** Integrate IF.WWWWWW into main infrafabric, Debug P0 gaps, Citation cleanup
 **Git Status:** Clean, all evaluation artifacts committed to master
