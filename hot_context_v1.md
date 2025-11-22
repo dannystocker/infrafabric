@@ -1,0 +1,15 @@
+# INFRAFABRIC CORE KNOWLEDGE (HOT SHARD v1)
+- Architecture: Distributed Memory Bus (Annex O v3)
+- Protocol: Heartbeat every 30s
+- Secret Phrase: "The Accident Was The Gift"
+- Conductor: Sonnet 4.5
+- Shard: Haiku 4.5 (Daemon Mode)
+- Cost Strategy: Zero Re-Reads (Persistence)
+- Session: POC-2025-11-20-Beta
+- Discovery Chain: SSH Error → Trust Through Error → Context Isolation → Distributed Memory
+- Collaborators: Claude Sonnet 4.5, Gemini 3 Pro, Grok, Danny Stocker
+- Critical Bug Fix: "Agent IS the Loop" (Gemini debugging)
+- Test Question 1: What is the secret phrase?
+- Test Answer 1: The Accident Was The Gift
+- Test Question 2: Who collaborated on this architecture?
+- Test Answer 2: Claude Sonnet 4.5 (original concept), Gemini 3 Pro (stateful loop correction), Grok (deployment script), and Danny Stocker (user/coordinator)

@@ -9,6 +9,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
@@ -17,6 +18,10 @@
             color: #333;
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             padding: 20px;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .container {
@@ -130,11 +135,19 @@
             margin-bottom: 20px;
             border: 1px solid #e0e0e0;
             transition: all 0.3s ease;
+            -webkit-transition: all 0.3s ease;
         }
 
         .article:hover {
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             border-color: #667eea;
+        }
+
+        @supports (-webkit-touch-callout: none) {
+            .article:active {
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                border-color: #667eea;
+            }
         }
 
         .article-number {
@@ -194,10 +207,18 @@
             font-weight: 600;
             margin-top: 10px;
             font-size: 0.95em;
+            padding: 8px 4px;
+            -webkit-user-select: none;
         }
 
         .read-more:hover {
             text-decoration: underline;
+        }
+
+        @supports (-webkit-touch-callout: none) {
+            .read-more:active {
+                opacity: 0.7;
+            }
         }
 
         footer {
@@ -226,10 +247,20 @@
             color: #667eea;
             text-decoration: none;
             font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 4px;
+            display: inline-block;
+            -webkit-user-select: none;
         }
 
         .footer-links a:hover {
             text-decoration: underline;
+        }
+
+        @supports (-webkit-touch-callout: none) {
+            .footer-links a:active {
+                background-color: rgba(102, 126, 234, 0.1);
+            }
         }
 
         .stats {
@@ -258,6 +289,232 @@
             margin-top: 5px;
         }
 
+        /* Navigation Styles */
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            background: white;
+            border-bottom: 2px solid #e0e0e0;
+            padding: 15px 20px;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .nav-label {
+            font-size: 0.9em;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 0.85em;
+            padding: 6px 12px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            border: 1px solid #ddd;
+        }
+
+        .nav-links a:hover {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .nav-links a.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        /* Paper Link Buttons */
+        .paper-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #f0f4ff 0%, #f9f5ff 100%);
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .paper-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 6px;
+            border: 1px solid #667eea;
+            transition: all 0.3s ease;
+            font-size: 0.95em;
+        }
+
+        .paper-links a:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .series.s2 .paper-links {
+            border-left-color: #764ba2;
+            background: linear-gradient(135deg, #f4f0ff 0%, #fff5f9 100%);
+        }
+
+        .series.s2 .paper-links a {
+            color: #764ba2;
+            border-color: #764ba2;
+        }
+
+        .series.s2 .paper-links a:hover {
+            background: #764ba2;
+            color: white;
+        }
+
+        /* Article Navigation */
+        .article-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            margin-top: 20px;
+            border: 1px solid #e0e0e0;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .article-position {
+            font-size: 0.9em;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .article-nav-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-button {
+            padding: 8px 14px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .nav-button:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .nav-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .series.s2 .nav-button {
+            background: #764ba2;
+        }
+
+        .series.s2 .nav-button:hover {
+            background: #654290;
+        }
+
+        /* Extended Paper Link */
+        .extended-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95em;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            border-bottom: 2px solid transparent;
+        }
+
+        .extended-link:hover {
+            border-bottom-color: #667eea;
+            padding-left: 6px;
+        }
+
+        .series.s2 .extended-link {
+            color: #764ba2;
+        }
+
+        .series.s2 .extended-link:hover {
+            border-bottom-color: #764ba2;
+        }
+
+        .index-link {
+            padding: 10px 16px;
+            background: #f8f9fa;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+
+        .index-link:hover {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        @media (max-width: 768px) {
+            .sticky-nav {
+                position: relative;
+            }
+
+            .nav-content {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .nav-links {
+                justify-content: center;
+            }
+
+            .article-nav {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
         @media print {
             body {
                 background: white;
@@ -268,6 +525,15 @@
             }
             .article:hover {
                 box-shadow: none;
+            }
+            .sticky-nav {
+                display: none;
+            }
+            .paper-links {
+                display: none;
+            }
+            .article-nav {
+                display: none;
             }
         }
     </style>
@@ -285,6 +551,59 @@
             </div>
         </header>
 
+        <div class="sticky-nav">
+            <div class="nav-content">
+                <div class="nav-label">Navigate Series:</div>
+                <div class="nav-links">
+                    <a href="#index" class="index-link">📑 Index</a>
+                    <a href="#memory-part1">Memory 1</a>
+                    <a href="#memory-part2">Memory 2</a>
+                    <a href="#memory-part3">Memory 3</a>
+                    <a href="#s2-part1">S2 1</a>
+                    <a href="#s2-part2">S2 2</a>
+                    <a href="#s2-part3">S2 3</a>
+                    <a href="#s2-part4">S2 4</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="index" style="padding: 40px; background: #f8f9fa; border-bottom: 2px solid #e0e0e0;">
+            <h2 style="color: #222; margin-bottom: 20px; text-align: center;">Series Index</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 1200px; margin: 0 auto;">
+                <div>
+                    <h3 style="color: #667eea; margin-bottom: 15px;">IF.Memory.Distributed</h3>
+                    <ul style="list-style: none; color: #666;">
+                        <li style="padding: 8px 0; border-bottom: 1px solid #e0e0e0;">
+                            <a href="#memory-part1" style="color: #667eea; text-decoration: none; font-weight: 500;">Part 1: Why Your Agent Keeps Forgetting Everything</a>
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #e0e0e0;">
+                            <a href="#memory-part2" style="color: #667eea; text-decoration: none; font-weight: 500;">Part 2: The Architecture That Makes It Possible</a>
+                        </li>
+                        <li style="padding: 8px 0;">
+                            <a href="#memory-part3" style="color: #667eea; text-decoration: none; font-weight: 500;">Part 3: The Numbers Game: $328K Down To $5K/Year</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: #764ba2; margin-bottom: 15px;">IF.Swarm.S2</h3>
+                    <ul style="list-style: none; color: #666;">
+                        <li style="padding: 8px 0; border-bottom: 1px solid #e0e0e0;">
+                            <a href="#s2-part1" style="color: #764ba2; text-decoration: none; font-weight: 500;">Part 1: How a Math Mistake Led To a Breakthrough</a>
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #e0e0e0;">
+                            <a href="#s2-part2" style="color: #764ba2; text-decoration: none; font-weight: 500;">Part 2: Building the Gemini Librarian</a>
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #e0e0e0;">
+                            <a href="#s2-part3" style="color: #764ba2; text-decoration: none; font-weight: 500;">Part 3: The Breakthrough: Independent Quotas Change Everything</a>
+                        </li>
+                        <li style="padding: 8px 0;">
+                            <a href="#s2-part4" style="color: #764ba2; text-decoration: none; font-weight: 500;">Part 4: From Lab to Production: The Final Validation</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
         <div class="series-container">
             <!-- Memory Series -->
             <div class="series memory">
@@ -296,10 +615,15 @@
                         <span>⏱️ 18-21 minutes</span>
                         <span>📊 ~4,950 words</span>
                     </div>
+                    <div class="paper-links">
+                        <a href="https://digital-lab.ca/infrafabric/papers/IF-MEMORY-DISTRIBUTED.md" target="_blank">📄 Read Full Paper</a>
+                        <a href="https://digital-lab.ca/infrafabric/papers/ANNEX-A.md" target="_blank">📎 ANNEX-A</a>
+                        <a href="https://digital-lab.ca/infrafabric/papers/ANNEX-B.md" target="_blank">📎 ANNEX-B</a>
+                    </div>
                 </div>
                 <div class="articles">
-                    <div class="article">
-                        <span class="article-number">Part 1</span>
+                    <div class="article" id="memory-part1">
+                        <span class="article-number">Part 1 of 3</span>
                         <h3>Why Your Agent Keeps Forgetting Everything</h3>
                         <div class="article-meta">
                             <span>⏱️ 6-7 min read</span>
@@ -311,10 +635,19 @@
                         <div class="article-preview">
                             <strong>Key Insight:</strong> Re-reading the same 50K-token document 4 times per day costs $328,500/year. What if you only read it once?
                         </div>
+                        <a href="https://digital-lab.ca/infrafabric/papers/IF-MEMORY-DISTRIBUTED.md#part-1" class="extended-link" target="_blank">Read extended version on digital-lab.ca →</a>
+                        <div class="article-nav">
+                            <div class="article-position">Part 1 of 7 articles</div>
+                            <div class="article-nav-buttons">
+                                <a href="#index" class="nav-button">📑 Index</a>
+                                <button class="nav-button" disabled>← Previous</button>
+                                <a href="#memory-part2" class="nav-button">Next →</a>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="article">
-                        <span class="article-number">Part 2</span>
+                    <div class="article" id="memory-part2">
+                        <span class="article-number">Part 2 of 3</span>
                         <h3>The Architecture That Makes It Possible</h3>
                         <div class="article-meta">
                             <span>⏱️ 7 min read</span>
@@ -326,10 +659,19 @@
                         <div class="article-preview">
                             <strong>Deep Dive:</strong> How 4 specialized agents with 200K tokens each outperform 1 agent with 800K tokens through intelligent coordination.
                         </div>
+                        <a href="https://digital-lab.ca/infrafabric/papers/IF-MEMORY-DISTRIBUTED.md#part-2" class="extended-link" target="_blank">Read extended version on digital-lab.ca →</a>
+                        <div class="article-nav">
+                            <div class="article-position">Part 2 of 7 articles</div>
+                            <div class="article-nav-buttons">
+                                <a href="#index" class="nav-button">📑 Index</a>
+                                <a href="#memory-part1" class="nav-button">← Previous</a>
+                                <a href="#memory-part3" class="nav-button">Next →</a>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="article">
-                        <span class="article-number">Part 3</span>
+                    <div class="article" id="memory-part3">
+                        <span class="article-number">Part 3 of 3</span>
                         <h3>The Numbers Game: $328K Down To $5K/Year</h3>
                         <div class="article-meta">
                             <span>⏱️ 6-7 min read</span>
@@ -340,6 +682,15 @@
                         </div>
                         <div class="article-preview">
                             <strong>Bottom Line:</strong> 98% cost savings if your agents process 6,000+ queries/day with repeated documents. Simple math, big impact.
+                        </div>
+                        <a href="https://digital-lab.ca/infrafabric/papers/IF-MEMORY-DISTRIBUTED.md#part-3" class="extended-link" target="_blank">Read extended version on digital-lab.ca →</a>
+                        <div class="article-nav">
+                            <div class="article-position">Part 3 of 7 articles</div>
+                            <div class="article-nav-buttons">
+                                <a href="#index" class="nav-button">📑 Index</a>
+                                <a href="#memory-part2" class="nav-button">← Previous</a>
+                                <a href="#s2-part1" class="nav-button">Next →</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -355,10 +706,15 @@
                         <span>⏱️ 24-28 minutes</span>
                         <span>📊 ~5,300 words</span>
                     </div>
+                    <div class="paper-links">
+                        <a href="https://digital-lab.ca/infrafabric/papers/IF-SWARM-S2.md" target="_blank">📄 Read Full Paper</a>
+                        <a href="https://digital-lab.ca/infrafabric/papers/ANNEX-A.md" target="_blank">📎 ANNEX-A</a>
+                        <a href="https://digital-lab.ca/infrafabric/papers/ANNEX-B.md" target="_blank">📎 ANNEX-B</a>
+                    </div>
                 </div>
                 <div class="articles">
-                    <div class="article">
-                        <span class="article-number">Part 1</span>
+                    <div class="article" id="s2-part1">
+                        <span class="article-number">Part 4 of 7</span>
                         <h3>How a Math Mistake Led To a Breakthrough</h3>
                         <div class="article-meta">
                             <span>⏱️ 6-7 min read</span>
@@ -370,10 +726,19 @@
                         <div class="article-preview">
                             <strong>The Story:</strong> How questioning an assumption led to discovering 5 independent Gemini free-tier accounts = 7,500 queries/day at $0 cost.
                         </div>
+                        <a href="https://digital-lab.ca/infrafabric/papers/IF-SWARM-S2.md#part-1" class="extended-link" target="_blank">Read extended version on digital-lab.ca →</a>
+                        <div class="article-nav">
+                            <div class="article-position">Part 4 of 7 articles</div>
+                            <div class="article-nav-buttons">
+                                <a href="#index" class="nav-button">📑 Index</a>
+                                <a href="#memory-part3" class="nav-button">← Previous</a>
+                                <a href="#s2-part2" class="nav-button">Next →</a>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="article">
-                        <span class="article-number">Part 2</span>
+                    <div class="article" id="s2-part2">
+                        <span class="article-number">Part 5 of 7</span>
                         <h3>Building the Gemini Librarian</h3>
                         <div class="article-meta">
                             <span>⏱️ 7 min read</span>
@@ -385,10 +750,19 @@
                         <div class="article-preview">
                             <strong>Architecture:</strong> Load-balanced query routing, quota tracking per shard, fallback handling, and cross-session context sharing via Redis.
                         </div>
+                        <a href="https://digital-lab.ca/infrafabric/papers/IF-SWARM-S2.md#part-2" class="extended-link" target="_blank">Read extended version on digital-lab.ca →</a>
+                        <div class="article-nav">
+                            <div class="article-position">Part 5 of 7 articles</div>
+                            <div class="article-nav-buttons">
+                                <a href="#index" class="nav-button">📑 Index</a>
+                                <a href="#s2-part1" class="nav-button">← Previous</a>
+                                <a href="#s2-part3" class="nav-button">Next →</a>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="article">
-                        <span class="article-number">Part 3</span>
+                    <div class="article" id="s2-part3">
+                        <span class="article-number">Part 6 of 7</span>
                         <h3>The Breakthrough: Independent Quotas Change Everything</h3>
                         <div class="article-meta">
                             <span>⏱️ 6-7 min read</span>
@@ -400,10 +774,19 @@
                         <div class="article-preview">
                             <strong>The Math:</strong> Validated in production. Independent quotas confirmed. Scales to 7,500 queries/day FREE. Ready for deployment.
                         </div>
+                        <a href="https://digital-lab.ca/infrafabric/papers/IF-SWARM-S2.md#part-3" class="extended-link" target="_blank">Read extended version on digital-lab.ca →</a>
+                        <div class="article-nav">
+                            <div class="article-position">Part 6 of 7 articles</div>
+                            <div class="article-nav-buttons">
+                                <a href="#index" class="nav-button">📑 Index</a>
+                                <a href="#s2-part2" class="nav-button">← Previous</a>
+                                <a href="#s2-part4" class="nav-button">Next →</a>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="article">
-                        <span class="article-number">Part 4</span>
+                    <div class="article" id="s2-part4">
+                        <span class="article-number">Part 7 of 7</span>
                         <h3>From Lab to Production: The Final Validation</h3>
                         <div class="article-meta">
                             <span>⏱️ 7 min read</span>
@@ -414,6 +797,15 @@
                         </div>
                         <div class="article-preview">
                             <strong>Conclusion:</strong> Honest analysis of what works, what's still being tested, and when you should use S2 vs alternatives.
+                        </div>
+                        <a href="https://digital-lab.ca/infrafabric/papers/IF-SWARM-S2.md#part-4" class="extended-link" target="_blank">Read extended version on digital-lab.ca →</a>
+                        <div class="article-nav">
+                            <div class="article-position">Part 7 of 7 articles</div>
+                            <div class="article-nav-buttons">
+                                <a href="#index" class="nav-button">📑 Index</a>
+                                <a href="#s2-part3" class="nav-button">← Previous</a>
+                                <button class="nav-button" disabled>Next →</button>
+                            </div>
                         </div>
                     </div>
                 </div>

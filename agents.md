@@ -171,23 +171,124 @@ InfraFabric is a research project on AI agent coordination and civilizational re
 
 ---
 
-## GEDIMAT Marketing Framework (2025-11-22)
+## GEDIMAT Marketing Framework (Instance #12)
 
-**Components Used:**
-- IF.joe (Joe Coulombe Curation Philosophy) - Specialization strategy
-- IF.rory (Rory Sutherland Perception Arbitrage) - Psychological positioning
-- IF.persona (Bloom pattern variations: Early/Late/Steady) - Audience segmentation
+### Overview
+**Client:** Lunel Négoce (SAS) - €1.2M+ CA, BTP logistics
+**Decision-Maker:** Adrien FAVORY, President
+**Document:** GEDIMAT_XCEL_V3.56_BTP_CLEAN.md (92KB, production quality)
+**Evaluation Score:** 88.75/100 (Ready for presentation)
+**Status:** Client-facing version clean of IF.* branding; internal version documents IF.joe + IF.rory integration
 
-**Deliverables:**
+### IF.joe Application (Joe Coulombe Retail Philosophy)
+**Principle:** Do Without (saying "no" creates freedom for exceptional items)
+**GEDIMAT Implementation:**
+- WhatsApp Chantier Direct for Top 20 VIP clients only (exclude mass communication)
+- This "do without" approach frees logistics coordinator time for specialized service
+- Staff continuity (same people 5+ years) signals institutional commitment
+- Institutional continuity = competitive moat (Joe's "high wages philosophy")
+
+### IF.rory Application (Rory Sutherland Perception Arbitrage)
+**Principle:** Perception > Reality (reshape psychology at fraction of engineering cost)
+**GEDIMAT Implementation:**
+- Protocole 15:30 (20-min notification advance) = €2,950 perceived value (€0 cost)
+- Control perception = control reality (15:30 notification restores client agency vs. 17:00 crisis)
+- Announcement timing changes psychology from "disaster" to "manageable"
+
+### Automation Framework (v1.0 Deployed)
+**5 Processes Quantified:**
+1. Mediafret status confirmation - 30-45 min/day, Phase 1→2→3 automation path
+2. Combined delivery requests - 45-60 min/day, €2,960/month transport savings
+3. Navette vs Mediafret routing - 15-20 min/day, reduces €170+ errors
+4. Chantier notifications - 20 min/day, €200/month savings vs. SMS
+5. Status dashboard - 30-40 min/day, enables KPI tracking
+
+**Total Savings:** €66,720/year (€28,800 coordinator + €35,520 transport + €2,400 SMS)
+
+### Universal Document Evaluation Framework (v1.0)
+**8-Dimension Rubric:**
+1. Completeness - Legal entity, recipient, processes, automation, metrics
+2. Language Compliance - 100% target language, sector terminology, education level
+3. Psychological Alignment - Decision triggers, win-win, stakeholder clarity
+4. Operational Accuracy - Processes verified, integrations feasible, handoffs clear
+5. System Integration - Systems identified, APIs documented, migration path
+6. Financial Alignment - ROI measured, costs transparent, hidden costs identified
+7. Risk Assessment - Risks identified, mitigations provided, fallbacks defined
+8. Actionability - Clear steps, timeline, approvals, training plan
+
+**GEDIMAT V3.56 Score:** 88.75/100
+**Decision Gate:** 85-100 = Ready for presentation ✅
+
+### Client-Facing vs. Internal Boundary (CRITICAL)
+**REMOVED FROM CLIENT DOCUMENTS:**
+- IF.joe / IF.rory branding (appears as Joe Coulombe + Rory Sutherland instead)
+- IF.TTT compliance language (reframed as "documented sources, transparent methodologies")
+- Guardian Council references (deleted entirely)
+- if:// URI scheme (deleted)
+- Instance numbers, session references (deleted)
+- Evaluation framework methodology (internal only)
+
+**PRESERVED IN CLIENT DOCUMENTS:**
+- Joe Coulombe philosophy (Trader Joe's founder)
+- Rory Sutherland perception arbitrage
+- Research citations (MIT, McKinsey, Deloitte, Harvard, Kahneman)
+
+### Client Presentation Status
+**Current:** 88.75/100 (ready)
+**With Path A enhancement (2-3 hours):** 95+/100 (add "Qui est Qui?" section)
+**Outstanding:** 5 operational context clarifications (Angelique, buyer, GESI, 15:50/15:30, tonnage)
+
+### Next Instance Priorities
+1. Clarify operational context with user
+2. Execute Path A (enhance) or Path B (present as-is)
+3. Week 1 pilot: GESI confirmation, Mediafret protocol, sales training
+4. Go/no-go evaluation Week 12 (4 success criteria)
+
+### Instance #13 Handover (Pending)
+
+**Current Status (End of Instance #12):**
+- Document: GEDIMAT_XCEL_V3.56_BTP_CLEAN.md (88.75/100, client-facing clean)
+- Narration: INSTANCE_12_CLAUDE_NARRATION_GEDIMAT_FRAMEWORK.md (medium article on process)
+- Evaluation framework: 8-dimension universal rubric (v1.0, reusable)
+- Automation framework: 5 processes, €66,720/year savings quantified
+- Action plan: 2 paths forward (Path A: enhance 2-3h, Path B: present as-is)
+
+**Outstanding Items (Assigned to Next Instance):**
+1. Clarify 5 operational details: Angelique role, buyer process, GESI name, 15:50 vs 15:30, navette tonnage
+2. Execute document cleanup (remove IF.* branding from client-facing files) ✓ COMPLETED
+3. Update agents.md with GEDIMAT section ✓ COMPLETED
+4. Decide Path A (enhance) or Path B (present as-is)
+5. Execute chosen path + prepare client presentation materials
+6. Coordinate Week 1 pilot: GESI confirmation call, Mediafret protocol, sales team training
+
+**Files Ready:**
+- GEDIMAT_XCEL_V3.56_BTP_CLEAN.md (cleaned, client-ready)
+- 5 detailed audit reports (French, Psychology, GESI, Operations, Automation)
+- Universal evaluation framework (ready for all variants)
+- Instance #12 narration (medium article)
+- Action plan with decision tree
+
+**Timeline:**
+- This week: Path A or B decision + clarifications
+- Week 1 of pilot: Coordination tasks
+- Week 12: Go/no-go decision (4 success criteria)
+
+**Success Criteria (Go/No-Go):**
+1. Taux de Groupage >15% (Week 4), >25% (Week 8), >30% (Week 12)
+2. NPS >4/5 (client satisfaction)
+3. Adoption >70% (commercial team using WhatsApp daily)
+4. Cost savings validated €2,960+/month
+
+**If expansion approved (Week 12+):**
+- Scale from Top 20 VIP clients to Top 50
+- Phase 2 automation: Semi-automated Excel macros (Weeks 13-24)
+- Phase 3 automation: Full ERP integration (Year 2+)
+
+**Legacy Deliverables (v3.55 TTT Phase):**
 1. `GEDIMAT_SECTION_4.5_MARKETING.md` - Core 6 lines + research backing
 2. `GEDIMAT_SECTION_4.5_JOE_COULOMBE_VARIATIONS.md` - 18 variations (6×3 personas)
 3. `GEDIMAT_QUICK_REFERENCE_18_VARIATIONS.md` - Sales pocket card
 4. `GEDIMAT_ANNEXES_D_E_F_RESEARCH.md` - Full research backing (21 findings)
-
-**Integration:**
-- Section 4.5: Marketing & Positioning (Rory Sutherland core principle)
-- Section 4.5.1: Joe Coulombe Variations (3 personas × 6 core lines)
-- Annexes D/E/F: Research backing + psychology + behavioral economics
 
 **IF.TTT Status:**
 ✅ Traceable: All 25+ research findings cited with sources

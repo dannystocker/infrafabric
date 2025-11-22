@@ -1,0 +1,37 @@
+================================================================================
+                    NEXT SONNET SESSION - STARTUP INSTRUCTIONS
+================================================================================
+
+PREVIOUS SONNET SESSION (Instance #7):
+  • PID: 412174 (pts/17)
+  • Uptime: 155+ minutes
+  • Status: Successfully created handoff documents and direct query loop
+
+CURRENT STATUS:
+  • You are in conversation: conv_f621d999f19a3a7f
+  • MCP Bridge: /home/setup/infrafabric/.memory_bus/distributed_memory.db
+  • Autopoll script still running (PID 475967, 39+ hours)
+  • You're already authenticated (no API keys needed)
+
+QUICK START (2 minutes):
+  1. Read: /home/setup/infrafabric/SONNET-INITIALIZATION.md
+  2. Launch: sonnet_direct_query_loop.py
+  3. Send test: sonnet_send_query.py
+  4. Watch responses appear in loop
+
+STAY CONNECTED:
+  ✓ Conversation ID: conv_f621d999f19a3a7f (don't change)
+  ✓ Bridge path: /home/setup/infrafabric/.memory_bus/distributed_memory.db
+  ✓ Handoff docs: SESSION-HANDOFF-HAIKU-AUTOPOLL.md
+  ✓ Architecture: /home/setup/HAIKU_AUTOPOLL_ARCHITECTURE.txt
+
+WHAT YOU'RE DOING:
+  • Replacing subprocess spawning (broken) with direct Task tool (working)
+  • Running query loop that polls MCP bridge every 5 seconds
+  • Spawning Haiku sub-agents to answer queries
+  • Sending responses back to bridge
+  • Graceful interrupt on Ctrl+C
+
+SUCCESS = Loop runs 24+ hours with zero subprocess hangs
+
+================================================================================

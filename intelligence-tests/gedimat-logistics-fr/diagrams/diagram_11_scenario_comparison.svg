@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1980" height="420" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1980 420">
+  <!-- Metadata -->
+  <defs>
+    <style>
+      .scenario-label { font-family: Arial, sans-serif; font-size: 32px; font-weight: bold; fill: #333333; }
+      .percentage-text { font-family: Arial, sans-serif; font-size: 28px; font-weight: bold; fill: white; text-anchor: middle; }
+      .interpretation-text { font-family: Arial, sans-serif; font-size: 24px; font-weight: 500; fill: white; }
+      .formula-label { font-family: Arial, sans-serif; font-size: 22px; fill: #333333; }
+      .formula-text { font-family: "Courier New", monospace; font-size: 20px; fill: #1a1a1a; }
+      .grid-line { stroke: #cccccc; stroke-width: 1; stroke-dasharray: 3,3; }
+      .bar-border { stroke: #333333; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <!-- White background -->
+  <rect width="1980" height="420" fill="white"/>
+
+  <!-- Title -->
+  <text x="100" y="50" class="scenario-label" font-size="36">Comparaison des Scénarios de Réduction RSI</text>
+
+  <!-- Grid lines for reference (8%, 12%, 15%) -->
+  <line x1="400" y1="80" x2="400" y2="320" class="grid-line"/>
+  <line x1="600" y1="80" x2="600" y2="320" class="grid-line"/>
+  <line x1="800" y1="80" x2="800" y2="320" class="grid-line"/>
+  <line x1="1000" y1="80" x2="1000" y2="320" class="grid-line"/>
+  <line x1="1200" y1="80" x2="1200" y2="320" class="grid-line"/>
+
+  <!-- Grid percentage labels -->
+  <text x="400" y="345" class="formula-label" text-anchor="middle">0%</text>
+  <text x="600" y="345" class="formula-label" text-anchor="middle">4%</text>
+  <text x="800" y="345" class="formula-label" text-anchor="middle">8%</text>
+  <text x="1000" y="345" class="formula-label" text-anchor="middle">12%</text>
+  <text x="1200" y="345" class="formula-label" text-anchor="middle">16%</text>
+
+  <!-- Scenario 1: Conservateur (8%) - Yellow -->
+  <text x="100" y="110" class="scenario-label">Conservateur</text>
+  <rect x="400" y="85" width="400" height="60" fill="#FFD700" class="bar-border" rx="4"/>
+  <text x="580" y="125" class="percentage-text">8%</text>
+  <text x="850" y="115" class="interpretation-text">Cas prudent</text>
+
+  <!-- Scenario 2: Base (12%) - Orange -->
+  <text x="100" y="210" class="scenario-label">Base</text>
+  <rect x="400" y="175" width="600" height="60" fill="#FF9500" class="bar-border" rx="4"/>
+  <text x="680" y="215" class="percentage-text">12%</text>
+  <text x="1050" y="205" class="interpretation-text">Référence externe</text>
+
+  <!-- Scenario 3: Haut (15%) - Green -->
+  <text x="100" y="310" class="scenario-label">Haut</text>
+  <rect x="400" y="275" width="750" height="60" fill="#66BB6A" class="bar-border" rx="4"/>
+  <text x="755" y="315" class="percentage-text">15%</text>
+  <text x="1200" y="305" class="interpretation-text">Cible ambitieuse</text>
+
+  <!-- Formula Box -->
+  <g>
+    <!-- Box background -->
+    <rect x="1350" y="100" width="580" height="240" fill="#F5F5F5" stroke="#999999" stroke-width="2" rx="6"/>
+
+    <!-- Formula title -->
+    <text x="1640" y="135" class="formula-label" text-anchor="middle" font-weight="bold">Formule RSI</text>
+
+    <!-- Formula content -->
+    <text x="1370" y="180" class="formula-text">RSI = [Baseline affrètement 30j]</text>
+    <text x="1400" y="210" class="formula-text">/ [Investissement]</text>
+    <text x="1400" y="240" class="formula-text">× [Réduction %]</text>
+
+    <!-- Legend -->
+    <text x="1370" y="290" class="formula-label" font-size="20">Légende:</text>
+    <rect x="1370" y="300" width="20" height="20" fill="#FFD700" class="bar-border"/>
+    <text x="1410" y="315" class="formula-label" font-size="20">Conservateur (8%)</text>
+
+    <rect x="1370" y="330" width="20" height="20" fill="#FF9500" class="bar-border"/>
+    <text x="1410" y="345" class="formula-label" font-size="20">Base (12%)</text>
+
+    <rect x="1370" y="360" width="20" height="20" fill="#66BB6A" class="bar-border"/>
+    <text x="1410" y="375" class="formula-label" font-size="20">Haut (15%)</text>
+  </g>
+
+  <!-- Reference scale note -->
+  <text x="100" y="390" class="formula-label" font-size="20" fill="#666666">Scale: 100px = 4% réduction | Bars proportional to percentage reduction</text>
+</svg>

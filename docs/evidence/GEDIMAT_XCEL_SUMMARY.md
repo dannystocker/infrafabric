@@ -1,12 +1,14 @@
 # Gedimat XCEL – Xpérience Client & Excellence Logistique
 
-## 1. Synthèse stratégique (PDG)
+![Sceau XCEL](https://raw.githubusercontent.com/dannystocker/infrafabric/yologuard/v3-publish/docs/evidence/Gedimat-XCEL-LOGO.png)
 
-- Objectif : transformer un problème logistique récurrent (affrètements coûteux, retards, incidents clients) en **avantage concurrentiel de fidélisation**.
-- Principe : créer une fonction transversale **XCEL (Xpérience Client & Excellence Logistique)** jouant le rôle de **tour de contrôle** entre Vente, Dépôts et Transport.
-- Périmètre : 3 dépôts, enlèvements fournisseurs non livreurs, arbitrage affrètement externe vs. navettes internes, incidents clients B2B.
-- Approche : démarrer par un **pilote 90 jours** (alertes, règle de proximité, scoring, gestes relationnels) + cadrage d’une fonction XCEL claire, mesurable et documentée.
-- Résultat attendu : moins de chaos pour les équipes, moins de doublons d’affrètement, plus de clients qui restent (et recommandent) après incident bien géré.
+## 1. Contexte et objectifs
+
+- Contexte : affrètements externes coûteux, retards perçus par les clients, gestion des incidents éclatée entre dépôts et commerciaux.
+- Enjeu : transformer ces irritants en **avantage de service** visible pour les artisans (fiabilité, clarté, anticipation), plutôt qu’en simple centre de coûts.
+- Périmètre : 3 dépôts, enlèvements chez fournisseurs non livreurs, arbitrage affrètement externe vs. navettes internes, incidents clients B2B.
+- Approche : démarrer par un **pilote 90 jours** (alertes simples, règle de proximité, scoring, gestes relationnels) pour mesurer les gains réels avant toute généralisation.
+- Résultat attendu : moins de chaos pour les équipes, moins de doublons d’affrètement, plus de clients qui restent après incident bien géré.
 
 > Ce document est un résumé « lisible PDG & équipes » du dossier complet  
 > `GEDIMAT_ARENA_REVIEW_COMPLETE_V3.2.md` (intelligence-tests/gedimat-logistics-fr).
@@ -158,4 +160,3 @@ au moins **3 KPIs sur 5** atteignent ≥ 90 % de leur cible.
 - `Gedimat-XCEL-LOGO.png` – sceau « XCEL – Excellence Logistique ».  
 - Schéma J0→J+1 (swimlane) – ventes / XCEL / dépôts / transport.  
 - Tableau simple « Règle standard vs. dérogations typiques » (3–5 lignes).
-

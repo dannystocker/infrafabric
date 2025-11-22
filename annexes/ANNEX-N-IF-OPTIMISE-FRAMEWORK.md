@@ -464,12 +464,121 @@ InfraFabric provides:
 
 ---
 
+## Critical Context Management Insight: Independent Agent Budgets
+
+**DISCOVERED:** 2025-11-19 (session with user)
+
+### The Token Isolation Principle
+
+**When Sonnet spawns Haiku agents via the Task tool, each agent operates with an INDEPENDENT context budget.**
+
+**What this means:**
+
+**Parent Session (Sonnet):**
+- Has its own 200K token budget
+- Only counts against this budget:
+  - The delegation prompt sent to Haiku (~1-2K tokens)
+  - The summary result returned from Haiku (~1-5K tokens)
+- Does NOT count: The internal work Haiku does (reading files, processing, drafting)
+
+**Each Haiku Agent:**
+- Gets its own separate 200K token context window
+- Can read massive files (50K+ tokens) without affecting parent session
+- Can process extensive data without nibbling parent's budget
+- Returns only a summary to parent
+
+### Real-World Impact Example
+
+**Scenario:** Edit 5 Medium articles (50K+ tokens of content each)
+
+**Option A: Sonnet does it directly**
+- Reads all 5 articles: ~250K tokens (EXCEEDS budget!)
+- Context limit hit, session dies
+
+**Option B: Sonnet spawns 5 Haiku agents in parallel**
+- Each Haiku reads 1 article in their own context
+- Each returns ~3K token summary
+- Cost to Sonnet's budget: 5×(2K prompt + 3K summary) = 25K tokens
+- **Savings: 225K tokens avoided (90% reduction)**
+
+### Why This Matters for IF.optimise
+
+This isn't just about cost ($1 vs $3 per million tokens).
+
+**It's about context survival:**
+
+Without delegation:
+```
+Sonnet reads 250K tokens → CONTEXT LIMIT EXCEEDED → Session dies
+```
+
+With delegation:
+```
+Sonnet delegates → 5 Haiku agents (independent contexts) → Summaries returned
+Sonnet context: 25K used, 175K remaining → Session continues
+```
+
+### Updated Decision Framework
+
+Add to "Use Haiku immediately if" rules:
+
+**Use Haiku swarm immediately if:**
+- Task requires reading/processing large files (>20K tokens each)
+- Multiple large documents need editing/analysis
+- Parent session context is >50% consumed (>100K tokens used)
+- **Context preservation is critical** (session must continue after task)
+
+### Token Accounting Formula (Updated)
+
+**Previous formula (incomplete):**
+```
+Cost_total = N × (input_tokens × price_in + output_tokens × price_out)
+```
+
+**Complete formula (with context isolation):**
+```
+Parent_context_cost = N × (delegation_prompt + summary_return)
+                    = N × (1-2K + 1-5K)
+                    ≈ 3-7K tokens (vs 50K+ if done directly)
+
+Child_context_cost = independent (doesn't affect parent)
+```
+
+**Context Efficiency Ratio:**
+```
+Efficiency = Direct_reading_cost / Delegation_cost
+           = (N × file_size) / (N × summary_size)
+           = file_size / summary_size
+           ≈ 50K / 3K
+           = 16.7× more efficient
+```
+
+### Production Guideline
+
+**IF.optimise context preservation rule:**
+
+```python
+if parent_context_used > 100K:
+    # Delegate ALL heavy reading to Haiku agents
+    # Even for single-file tasks
+    # Reason: Preserve parent session continuity
+
+if task_requires_reading_multiple_large_files:
+    # ALWAYS delegate to Haiku swarm
+    # Reason: Avoid context limit death spiral
+```
+
+**This explains why multi-agent swarms aren't just cheaper - they're often the ONLY way to complete complex tasks without hitting context limits.**
+
+---
+
 ## Future Research Directions
 
 1. **Dynamic Price Optimization** - Real-time API lookup for model price changes
 2. **Quality Prediction Model** - Train classifier: P(Haiku success | task)
 3. **Multi-Model Swarms** - Heterogeneous: 3 Haiku + 1 Sonnet ensemble voting
 4. **Automated Task Decomposition** - Meta-agent (Sonnet) trained to decompose complex tasks into swarm-ready subtasks
+5. **Context Budget Monitoring** - Real-time parent session monitoring with auto-delegation triggers at 50%/75%/90% thresholds
 
 ---
 
