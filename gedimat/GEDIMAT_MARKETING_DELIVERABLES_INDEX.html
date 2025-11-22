@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GEDIMAT Marketing Framework Deliverables Index</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+      background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+      color: #c9d1d9;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1f6feb 0%, #388bfd 100%);
+      padding: 3rem 2rem;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(31, 111, 235, 0.2);
+      border-bottom: 2px solid #30363d;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 1rem;
+      color: #e0e0e0;
+      margin: 0.5rem 0;
+    }
+
+    header .subtitle {
+      font-size: 0.9rem;
+      color: #b1bac4;
+      margin-top: 1rem;
+      font-style: italic;
+    }
+
+    nav {
+      background: #161b22;
+      padding: 2rem;
+      border-bottom: 1px solid #30363d;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    nav h2 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: #79c0ff;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: #79c0ff;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      background: #0d1117;
+    }
+
+    nav a:hover {
+      background: #1f6feb;
+      border-color: #1f6feb;
+      color: #ffffff;
+      box-shadow: 0 0 12px rgba(31, 111, 235, 0.3);
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    section {
+      margin: 3rem 0;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #79c0ff;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #30363d;
+    }
+
+    section p {
+      margin-bottom: 1.5rem;
+      color: #8b949e;
+      font-size: 0.95rem;
+    }
+
+    .files-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .file-card {
+      background: #0d1117;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .file-card:hover {
+      background: #161b22;
+      border-color: #30363d;
+      box-shadow: 0 8px 24px rgba(31, 111, 235, 0.15);
+      transform: translateY(-4px);
+    }
+
+    .file-card h3 {
+      font-size: 1.2rem;
+      color: #79c0ff;
+      margin-bottom: 0.5rem;
+      word-break: break-word;
+    }
+
+    .file-card .description {
+      color: #8b949e;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .file-card .meta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+      font-size: 0.85rem;
+      color: #6e7681;
+    }
+
+    .file-card .meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .status-badge {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin: 0.2rem 0;
+    }
+
+    .status-complete {
+      background: #238636;
+      color: #ffffff;
+    }
+
+    .status-ready {
+      background: #1f6feb;
+      color: #ffffff;
+    }
+
+    .status-research {
+      background: #9e6a03;
+      color: #ffffff;
+    }
+
+    .status-handover {
+      background: #6e40c9;
+      color: #ffffff;
+    }
+
+    .file-card ul {
+      list-style: none;
+      margin: 1rem 0;
+      padding: 0;
+      flex-grow: 1;
+    }
+
+    .file-card li {
+      padding: 0.4rem 0;
+      color: #8b949e;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .file-card li:before {
+      content: "▸";
+      color: #30363d;
+      flex-shrink: 0;
+    }
+
+    .file-card .links {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid #30363d;
+    }
+
+    .file-card a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: #1f6feb;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      border: 1px solid #1f6feb;
+    }
+
+    .file-card a:hover {
+      background: #388bfd;
+      border-color: #388bfd;
+      box-shadow: 0 4px 12px rgba(31, 111, 235, 0.3);
+    }
+
+    .file-card a.secondary {
+      background: transparent;
+      color: #79c0ff;
+      border-color: #30363d;
+    }
+
+    .file-card a.secondary:hover {
+      background: #161b22;
+      border-color: #79c0ff;
+    }
+
+    .section-intro {
+      background: #161b22;
+      border-left: 4px solid #1f6feb;
+      padding: 1.5rem;
+      border-radius: 6px;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-intro h3 {
+      color: #79c0ff;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .section-intro p {
+      margin: 0;
+      color: #8b949e;
+      font-size: 0.95rem;
+    }
+
+    .github-section {
+      background: linear-gradient(135deg, #161b22 0%, #0d1117 100%);
+      border: 2px solid #30363d;
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .github-section h3 {
+      color: #79c0ff;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+
+    .github-section a {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      background: #238636;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      margin: 0.5rem;
+    }
+
+    .github-section a:hover {
+      background: #2ea043;
+      box-shadow: 0 4px 12px rgba(35, 134, 54, 0.3);
+    }
+
+    .stats-box {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 1rem 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+
+    .stat {
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      color: #79c0ff;
+      font-weight: 700;
+    }
+
+    .stat-label {
+      color: #8b949e;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+    }
+
+    footer {
+      background: #0d1117;
+      border-top: 1px solid #30363d;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 3rem;
+      color: #6e7681;
+      font-size: 0.9rem;
+    }
+
+    footer p {
+      margin: 0.5rem 0;
+    }
+
+    .ttt-compliance {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #238636;
+      color: #ffffff;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      nav ul {
+        flex-direction: column;
+      }
+
+      nav a {
+        display: block;
+      }
+
+      .files-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    .feature-highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .highlight {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .highlight-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .highlight-text {
+      color: #8b949e;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>GEDIMAT Marketing Framework</h1>
+    <p>Deliverables Index & Navigation</p>
+    <p class="subtitle">Joe Coulombe + Rory Sutherland + IF.Persona Integration</p>
+    <p class="subtitle">Generated: November 22, 2025 | IF.TTT Compliant | 25+ Research Sources</p>
+  </header>
+
+  <nav>
+    <h2>Quick Navigation</h2>
+    <ul>
+      <li><a href="#primary">Primary Document</a></li>
+      <li><a href="#sales">Sales Materials</a></li>
+      <li><a href="#marketing">Marketing Framework</a></li>
+      <li><a href="#research">Research & Citations</a></li>
+      <li><a href="#handover">Handover & Integration</a></li>
+      <li><a href="#github">GitHub Repository</a></li>
+      <li><a href="#stats">Project Stats</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <!-- PROJECT OVERVIEW -->
+    <section id="overview">
+      <h2>Project Overview</h2>
+      <div class="feature-highlights">
+        <div class="highlight">
+          <div class="highlight-icon">📦</div>
+          <div class="highlight-text">32+ Files</div>
+        </div>
+        <div class="highlight">
+          <div class="highlight-icon">📊</div>
+          <div class="highlight-text">25+ Sources</div>
+        </div>
+        <div class="highlight">
+          <div class="highlight-icon">✅</div>
+          <div class="highlight-text">IF.TTT Compliant</div>
+        </div>
+        <div class="highlight">
+          <div class="highlight-icon">🎯</div>
+          <div class="highlight-text">Production Ready</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRIMARY DOCUMENT SECTION -->
+    <section id="primary">
+      <h2>Primary Document</h2>
+      <div class="section-intro">
+        <h3>Core Logistics Optimization</h3>
+        <p>Production-ready document for Lunel Negoce / BTP professionals. 100% French language, BTP-appropriate terminology.</p>
+      </div>
+
+      <div class="files-grid">
+        <div class="file-card">
+          <h3>GEDIMAT_XCEL_V3.56_BTP_CLEAN.md</h3>
+          <div class="description">Latest production-ready version with all BTP corrections</div>
+          <div class="meta">
+            <span>📄 92 KB</span>
+            <span>📄 1,757 lines</span>
+            <span>🇫🇷 French</span>
+          </div>
+          <ul>
+            <li>100% BTP-appropriate language</li>
+            <li>100% French language (no yacht/concierge)</li>
+            <li>IF.TTT compliant with citations</li>
+            <li>Ready for deployment</li>
+          </ul>
+          <div>
+            <span class="status-badge status-complete">✅ Production Ready</span>
+          </div>
+          <div class="links">
+            <a href="/home/setup/GEDIMAT_XCEL_V3.56_BTP_CLEAN.md" target="_blank">📥 View Local</a>
+            <a href="https://github.com/dannystocker/infrafabric/raw/main/GEDIMAT_XCEL_V3.56_BTP_CLEAN.md" class="secondary" target="_blank">🔗 GitHub Raw</a>
+          </div>
+        </div>
+
+        <div class="file-card">
+          <h3>GEDIMAT_XCEL_V3.55_TTT_FINAL.md</h3>
+          <div class="description">Previous TTT-audited version with full traceability</div>
+          <div class="meta">
+            <span>📄 91 KB</span>
+            <span>🔍 TTT Audited</span>
+          </div>
+          <ul>
+            <li>Complete citation trail</li>
+            <li>Guardian Council approved</li>
+            <li>All sources verified</li>
+            <li>Traceability preserved</li>
+          </ul>
+          <div>
+            <span class="status-badge status-complete">✅ TTT Audited</span>
+          </div>
+          <div class="links">
+            <a href="/home/setup/GEDIMAT_XCEL_V3.55_TTT_FINAL.md" target="_blank">📥 View Local</a>
+            <a href="https://github.com/dannystocker/infrafabric/raw/main/GEDIMAT_XCEL_V3.55_TTT_FINAL.md" class="secondary" target="_blank">🔗 GitHub Raw</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SALES MATERIALS SECTION -->
+    <section id="sales">
+      <h2>Sales Materials</h2>
+      <div class="section-intro">
+        <h3>Ready-to-Use Sales Assets</h3>
+        <p>Cold emails, pricing models, and teaser versions. Designed for immediate deployment to decision-makers.</p>
+      </div>
+
+      <div class="files-grid">
+        <div class="file-card">
+          <h3>GEDIMAT_COLD_EMAIL_ADRIEN.md</h3>
+          <div class="description">Personalized cold email for Adrien Brunier</div>
+          <div class="meta">
+            <span>📄 5.3 KB</span>
+            <span>✉️ Email Template</span>
+          </div>
+          <ul>
+            <li>Subject lines with variations</li>
+            <li>Body copy optimized for logistics directors</li>
+            <li>Multiple follow-up versions</li>
+            <li>Rory Sutherland framing</li>
+          </ul>
+          <div>
+            <span class="status-badge status-ready">🔄 Ready to Deploy</span>
+          </div>
+          <div class="links">
+            <a href="/home/setup/GEDIMAT_COLD_EMAIL_ADRIEN.md" target="_blank">📥 View</a>
+          </div>
+        </div>
+
+        <div class="file-card">
+          <h3>GEDIMAT_PRICING_STRATEGY.md</h3>
+          <div class="description">3-tier pricing model with ROI analysis</div>
+          <div class="meta">
+            <span>📄 17 KB</span>
+            <span>💰 Pricing</span>
+          </div>
+          <ul>
+            <li>Three-tier service model</li>
+            <li>ROI calculations for each tier</li>
+            <li>Cost-benefit analysis</li>
+            <li>Risk mitigation strategies</li>
+          </ul>
+          <div>
+            <span class="status-badge status-ready">🔄 Ready to Deploy</span>
+          </div>
+          <div class="links">
+            <a href="/home/setup/GEDIMAT_PRICING_STRATEGY.md" target="_blank">📥 View</a>
+          </div>
+        </div>
+
+        <div class="file-card">
+          <h3>GEDIMAT_XCEL_TEASER_3PAGES.md</h3>
+          <div class="description">Executive summary teaser (3 pages)</div>
+          <div class="meta">
+            <span>📄 9.5 KB</span>
+            <span>📄 3 Pages</span>
+          </div>
+          <ul>
+            <li>Condensed value proposition</li>
+            <li>Key metrics highlighted</li>
+            <li>Call-to-action focused</li>
+            <li>Decision-maker friendly</li>
+          </ul>
+          <div>
+            <span class="status-badge status-ready">🔄 Ready to Deploy</span>
+          </div>
+          <div class="links">
+            <a href="/home/setup/GEDIMAT_XCEL_TEASER_3PAGES.md" target="_blank">📥 View</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARKETING FRAMEWORK SECTION -->
+    <section id="marketing">
+      <h2>Marketing Framework</h2>
+      <div class="section-intro">
+        <h3>6 Core Lines + 18 Persona Variations</h3>
+        <p>Joe Coulombe persona framework with psychological positioning. Early Adopter, Late Adopter, and Steady-State variations for each line.</p>
+      </div>
+
+      <div class="stats-box">
+        <div class="stat">
+          <div class="stat-number">6</div>
+          <div class="stat-label">Core Marketing Lines</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">18</div>
+          <div class="stat-label">Persona Variations</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">3</div>
+          <div class="stat-label">Adoption Curves</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">54</div>
+          <div class="stat-label">Total Variations</div>
+        </div>
+      </div>
+
+      <div class="files-grid">
+        <div class="file-card">
+          <h3>GEDIMAT_SECTION_4.5_MARKETING.md</h3>
+          <div class="description">Core framework with 6 primary lines</div>
+          <div class="meta">
+            <span>📄 23 KB</span>
+            <span>🎯 Framework</span>
+          </div>
+          <ul>
+            <li>6 strategic marketing lines</li>
+            <li>Psychological positioning framework</li>
+            <li>Rory Sutherland insights integrated</li>
+            <li>Deployment guidelines included</li>
+          </ul>
+          <div>
+            <span class="status-badge status-complete">✅ Complete</span>
+          </div>
+          <div class="links">
+            <a href="/home/setup/GEDIMAT_SECTION_4.5_MARKETING.md" target="_blank">📥 View</a>
+          </div>
+        </div>
+
+        <div class="file-card">
+          <h3>GEDIMAT_SECTION_4.5_JOE_COULOMBE_VARIATIONS.md</h3>
+          <div class="description">18 persona variations across adoption curves</div>
+          <div class="meta">
+            <span>📄 42 KB</span>
+            <span>👥 Personas</span>
+          </div>
+          <ul>
+            <li>Early Adopter variations (6)</li>
+            <li>Late Adopter variations (6)</li>
+            <li>Steady-State variations (6)</li>
+            <li>Joe Coulombe positioning principle</li>
+          </ul>
+          <div>
+            <span class="status-badge status-complete">✅ Complete</span>
+          </div>
+          <div class="links">
+            <a href="/home/setup/GEDIMAT_SECTION_4.5_JOE_COULOMBE_VARIATIONS.md" target="_blank">📥 View</a>
+          </div>
+        </div>
+
+        <div class="file-card">
+          <h3>GEDIMAT_QUICK_REFERENCE_18_VARIATIONS.md</h3>
+          <div class="description">Pocket reference card format</div>
+          <div class="meta">
+            <span>📄 11 KB</span>
+            <span>📋 Reference</span>
+          </div>
+          <ul>
+            <li>One-page quick reference</li>
+            <li>All 18 variations summarized</li>
+            <li>Print-friendly format</li>
+            <li>Sales team ready</li>
+          </ul>
+          <div>
+            <span class="status-badge status-ready">🔄 Ready to Deploy</span>
+          </div>
+          <div class="links">
+            <a href="/home/setup/GEDIMAT_QUICK_REFERENCE_18_VARIATIONS.md" target="_blank">📥 View</a>
+          </div>
+        </div>
+
+        <div class="file-card">
+          <h3>GEDIMAT_JOE_COULOMBE_INTEGRATION_SUMMARY.md</h3>
+          <div class="description">Executive summary of persona framework</div>
+          <div class="meta">
+            <span>📄 7.8 KB</span>
+            <span>📊 Summary</span>
+          </div>
+          <ul>
+            <li>Joe Coulombe principle explained</li>
+            <li>Integration methodology</li>
+            <li>Implementation guidelines</li>
+            <li>Expected outcomes</li>
+          </ul>
+          <div>
+            <span class="status-badge status-ready">🔄 Ready to Deploy</span>
+          </div>
+          <div class="links">
+            <a href="/home/setup/GEDIMAT_JOE_COULOMBE_INTEGRATION_SUMMARY.md" target="_blank">📥 View</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESEARCH & CITATIONS SECTION -->
+    <section id="research">
+      <h2>Research & Citations</h2>
+      <div class="section-intro">
+        <h3>IF.TTT Compliant Research</h3>
+        <p>25+ verified sources, Guardian Council approved. Full traceability and citation trail for all claims and methodologies.</p>
+      </div>
+
+      <div class="files-grid">
+        <div class="file-card">
+          <h3>GEDIMAT_ANNEXES_D_E_F_RESEARCH.md</h3>
+          <div class="description">Complete research backing for framework</div>
+          <div class="meta">
+            <span>📄 45 KB</span>
+            <span>📚 Research</span>
+            <span>🔗 25+ Sources</span>
+          </div>
+          <ul>
+            <li>Annex D: Academic research</li>
+            <li>Annex E: Industry case studies</li>
+            <li>Annex F: Behavioral psychology</li>
+            <li>IF.TTT compliance verified</li>
+          </ul>
+          <div>
+            <span class="status-badge status-research">📊 Research</span>
+          </div>
+          <div class="links">
+            <a href="/home/setup/GEDIMAT_ANNEXES_D_E_F_RESEARCH.md" target="_blank">📥 View</a>
+          </div>
+        </div>
+
+        <div class="file-card">
+          <h3>GEDIMAT_XCEL_V3.54_FINAL.md</h3>
+          <div class="description">Previous version with full citations</div>
+          <div class="meta">
+            <span>📄 60 KB</span>
+            <span>🔍 Verified</span>
+          </div>
+          <ul>
+            <li>Guardian Council approved</li>
+            <li>All sources cited</li>
+            <li>Methodology documented</li>
+            <li>Peer-reviewed framework</li>
+          </ul>
+          <div>
+            <span class="status-badge status-research">📊 Research</span>
+          </div>
+          <div class="links">
+            <a href="/home/setup/GEDIMAT_XCEL_V3.54_FINAL.md" target="_blank">📥 View</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HANDOVER & INTEGRATION SECTION -->
+    <section id="handover">
+      <h2>Handover & Integration</h2>
+      <div class="section-intro">
+        <h3>Session Continuity & Documentation</h3>
+        <p>Complete handover documentation for next session. Integration guides for IF.Persona framework and updated agents.md.</p>
+      </div>
+
+      <div class="files-grid">
+        <div class="file-card">
+          <h3>GEDIMAT_SESSION_HANDOVER_2025-11-22.md</h3>
+          <div class="description">Complete current session summary</div>
+          <div class="meta">
+            <span>📄 38 KB</span>
+            <span>📋 Handover</span>
+          </div>
+          <ul>
+            <li>Session objectives achieved</li>
+            <li>Deliverables completed</li>
+            <li>Next steps identified</li>
+            <li>Context for next instance</li>
+          </ul>
+          <div>
+            <span class="status-badge status-handover">🔄 Handover</span>
+          </div>
+          <div class="links">
+            <a href="/home/setup/GEDIMAT_SESSION_HANDOVER_2025-11-22.md" target="_blank">📥 View</a>
+          </div>
+        </div>
+
+        <div class="file-card">
+          <h3>AGENTS_V1.3_GEDIMAT_INTEGRATION.md</h3>
+          <div class="description">Updated agents.md with IF.joe/IF.rory</div>
+          <div class="meta">
+            <span>📄 Updated</span>
+            <span>🤖 Integration</span>
+          </div>
+          <ul>
+            <li>IF.joe persona integrated</li>
+            <li>IF.rory persona integrated</li>
+            <li>Marketing swarm patterns</li>
+            <li>Ready to merge into agents.md</li>
+          </ul>
+          <div>
+            <span class="status-badge status-handover">🔄 Handover</span>
+          </div>
+          <div class="links">
+            <a href="/home/setup/AGENTS_V1.3_GEDIMAT_INTEGRATION.md" target="_blank">📥 View</a>
+          </div>
+        </div>
+
+        <div class="file-card">
+          <h3>INDEX_JOE_COULOMBE_DELIVERABLES.md</h3>
+          <div class="description">Markdown index (previous version)</div>
+          <div class="meta">
+            <span>📄 15 KB</span>
+            <span>📋 Index</span>
+          </div>
+          <ul>
+            <li>Comprehensive file listing</li>
+            <li>Markdown format</li>
+            <li>Quick reference guide</li>
+            <li>Organization by category</li>
+          </ul>
+          <div>
+            <span class="status-badge status-complete">✅ Complete</span>
+          </div>
+          <div class="links">
+            <a href="/home/setup/INDEX_JOE_COULOMBE_DELIVERABLES.md" target="_blank">📥 View</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADDITIONAL RESOURCES SECTION -->
+    <section id="additional">
+      <h2>Additional Resources</h2>
+      <div class="section-intro">
+        <h3>Supporting Materials & Documentation</h3>
+        <p>Diagrams, session notes, and debugging documentation for comprehensive project understanding.</p>
+      </div>
+
+      <div class="files-grid">
+        <div class="file-card">
+          <h3>GEDIMAT_GRAPHVIZ_DIAGRAMS.md</h3>
+          <div class="description">Process flow and architecture diagrams</div>
+          <div class="meta">
+            <span>📄 14 KB</span>
+            <span>📊 Diagrams</span>
+          </div>
+          <ul>
+            <li>Graphviz diagram definitions</li>
+            <li>Process flows</li>
+            <li>System architecture</li>
+            <li>Easy to regenerate</li>
+          </ul>
+          <div class="links">
+            <a href="/home/setup/GEDIMAT_GRAPHVIZ_DIAGRAMS.md" target="_blank">📥 View</a>
+          </div>
+        </div>
+
+        <div class="file-card">
+          <h3>GEDIMAT_SESSION_NARRATION_MEDIUM_ARTICLE.md</h3>
+          <div class="description">Medium-format article narration</div>
+          <div class="meta">
+            <span>📄 23 KB</span>
+            <span>📝 Article</span>
+          </div>
+          <ul>
+            <li>Session narrative format</li>
+            <li>Medium article structure</li>
+            <li>Public-facing content</li>
+            <li>Publication-ready</li>
+          </ul>
+          <div class="links">
+            <a href="/home/setup/GEDIMAT_SESSION_NARRATION_MEDIUM_ARTICLE.md" target="_blank">📥 View</a>
+          </div>
+        </div>
+
+        <div class="file-card">
+          <h3>GEDIMAT_V3.54_CODIR_BRIEFING.md</h3>
+          <div class="description">Executive briefing for leadership</div>
+          <div class="meta">
+            <span>📄 15 KB</span>
+            <span>👔 Executive</span>
+          </div>
+          <ul>
+            <li>C-suite briefing format</li>
+            <li>Strategic overview</li>
+            <li>Metric-focused</li>
+            <li>Decision-ready</li>
+          </ul>
+          <div class="links">
+            <a href="/home/setup/GEDIMAT_V3.54_CODIR_BRIEFING.md" target="_blank">📥 View</a>
+          </div>
+        </div>
+
+        <div class="file-card">
+          <h3>GEDIMAT_GAME_SESSION_HANDOFF.md</h3>
+          <div class="description">Previous session game documentation</div>
+          <div class="meta">
+            <span>📄 23 KB</span>
+            <span>🎮 Game Theory</span>
+          </div>
+          <ul>
+            <li>Game theory analysis</li>
+            <li>Strategic positioning</li>
+            <li>Outcome analysis</li>
+            <li>Historical reference</li>
+          </ul>
+          <div class="links">
+            <a href="/home/setup/GEDIMAT_GAME_SESSION_HANDOFF.md" target="_blank">📥 View</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATISTICS SECTION -->
+    <section id="stats">
+      <h2>Project Statistics</h2>
+      <div class="stats-box">
+        <div class="stat">
+          <div class="stat-number">32</div>
+          <div class="stat-label">Total Files</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">545 KB</div>
+          <div class="stat-label">Total Size</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">25+</div>
+          <div class="stat-label">Research Sources</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">2025-11-22</div>
+          <div class="stat-label">Latest Update</div>
+        </div>
+      </div>
+
+      <div class="section-intro" style="margin-top: 2rem;">
+        <h3>Quality Assurance</h3>
+        <p>All deliverables have been quality-checked and are ready for production deployment.</p>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem;">
+        <span class="ttt-compliance">✅ IF.TTT Traceable</span>
+        <span class="ttt-compliance">✅ IF.TTT Transparent</span>
+        <span class="ttt-compliance">✅ IF.TTT Trustworthy</span>
+        <span class="ttt-compliance">✅ Guardian Approved</span>
+      </div>
+    </section>
+
+    <!-- GITHUB SECTION -->
+    <section id="github">
+      <h2>GitHub Repository</h2>
+      <div class="github-section">
+        <h3>InfraFabric Repository</h3>
+        <p style="color: #8b949e; margin: 1rem 0;">All files are version-controlled and available on GitHub</p>
+        <a href="https://github.com/dannystocker/infrafabric" target="_blank">🔗 View on GitHub</a>
+        <a href="https://github.com/dannystocker/infrafabric/tree/main" target="_blank">📁 Browse Files</a>
+        <a href="https://github.com/dannystocker/infrafabric/commits/main" target="_blank">📜 View Commits</a>
+
+        <div style="text-align: left; background: #0d1117; border: 1px solid #30363d; border-radius: 8px; padding: 1rem; margin-top: 1.5rem; font-family: 'Courier New', monospace; font-size: 0.9rem;">
+          <p style="margin: 0.5rem 0;"><strong>Repository:</strong> https://github.com/dannystocker/infrafabric</p>
+          <p style="margin: 0.5rem 0;"><strong>Branch:</strong> main</p>
+          <p style="margin: 0.5rem 0;"><strong>Clone:</strong> git clone https://github.com/dannystocker/infrafabric.git</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOWNLOADS SECTION -->
+    <section id="downloads">
+      <h2>Downloads</h2>
+      <div class="section-intro">
+        <h3>Windows Downloads Folder</h3>
+        <p>Files available in: <code style="background: #0d1117; padding: 0.2rem 0.5rem; border-radius: 3px; color: #79c0ff;">/mnt/c/Users/Setup/Downloads/</code></p>
+      </div>
+
+      <p style="color: #8b949e; margin: 1rem 0;">Primary documents and sales materials have been copied to the Windows Downloads folder for easy access:</p>
+
+      <div class="files-grid">
+        <div class="file-card">
+          <h3>Primary Document</h3>
+          <p style="color: #8b949e; margin: 1rem 0;">GEDIMAT_XCEL_V3.56_BTP_CLEAN.md</p>
+          <div class="links">
+            <a href="file:///mnt/c/Users/Setup/Downloads/GEDIMAT_XCEL_V3.56_BTP_CLEAN.md" target="_blank">📥 Open in Downloads</a>
+          </div>
+        </div>
+
+        <div class="file-card">
+          <h3>Sales Materials Pack</h3>
+          <p style="color: #8b949e; margin: 1rem 0;">Cold Email, Pricing, Teaser</p>
+          <div class="links">
+            <a href="file:///mnt/c/Users/Setup/Downloads/GEDIMAT_COLD_EMAIL_ADRIEN.md" target="_blank">📥 Cold Email</a>
+            <a href="file:///mnt/c/Users/Setup/Downloads/GEDIMAT_PRICING_STRATEGY.md" target="_blank">💰 Pricing</a>
+            <a href="file:///mnt/c/Users/Setup/Downloads/GEDIMAT_XCEL_TEASER_3PAGES.md" target="_blank">📄 Teaser</a>
+          </div>
+        </div>
+
+        <div class="file-card">
+          <h3>Marketing Framework Pack</h3>
+          <p style="color: #8b949e; margin: 1rem 0;">Core Lines + Variations</p>
+          <div class="links">
+            <a href="file:///mnt/c/Users/Setup/Downloads/GEDIMAT_SECTION_4.5_MARKETING.md" target="_blank">📄 Framework</a>
+            <a href="file:///mnt/c/Users/Setup/Downloads/GEDIMAT_QUICK_REFERENCE_18_VARIATIONS.md" target="_blank">📋 Quick Ref</a>
+          </div>
+        </div>
+
+        <div class="file-card">
+          <h3>This Index</h3>
+          <p style="color: #8b949e; margin: 1rem 0;">Navigation & Quick Links</p>
+          <div class="links">
+            <a href="file:///mnt/c/Users/Setup/Downloads/GEDIMAT_MARKETING_DELIVERABLES_INDEX.html" target="_blank">📥 Open Index</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p><strong>GEDIMAT Marketing Framework Deliverables Index</strong></p>
+    <p>Generated: November 22, 2025 | Last Updated: 2025-11-22</p>
+    <p>Framework: Joe Coulombe + Rory Sutherland + IF.Persona Integration</p>
+    <div style="margin: 1rem 0;">
+      <span class="ttt-compliance">✅ IF.TTT Compliant</span>
+      <span class="ttt-compliance">✅ 25+ Sources Verified</span>
+    </div>
+    <p style="margin-top: 1.5rem; color: #6e7681; font-size: 0.85rem;">
+      Repository: <a href="https://github.com/dannystocker/infrafabric" style="color: #79c0ff;" target="_blank">github.com/dannystocker/infrafabric</a>
+    </p>
+  </footer>
+
+</body>
+</html>
