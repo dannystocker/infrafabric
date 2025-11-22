@@ -234,6 +234,70 @@ LUNEL NEGOCE gère **3 dépôts/magasins** formant un triangle dans le Vexin :
 
 **Boucle complète des 3 sites:** <80 km total
 
+### "Qui est Qui ?" — Les Acteurs Clés (NEW v3.56)
+
+Cette section clarifie les rôles et responsabilités opérationnelles qui fondent le modèle GEDIMAT.
+
+**XCEL (Coordinatrice Logistique)**
+- **Rôle** : Responsable consolidation, validation Médiafret, notifications client
+- **Contact privilégié** : Mélissa (Médiafret) pour confirmations ETA
+- **Responsabilités principales** :
+  - Check J-1 à 14:00 (vérification ordres/consolidation GESI)
+  - Validation email Médiafret à 15:30 (Protocole 15:30)
+  - Rédaction message WhatsApp Chantier Direct (16:00 deadline)
+  - Gestion Plan B en cas problème transporteur
+
+**Angelique (Supply Chain Interne — Co-Architecte du Modèle)**
+- **Rôle** : Conception et validation des règles de consolidation, formation équipes
+- **Expertise** : 4 ans d'expérience Lunel Négoce, relations fournisseurs, processus internes
+- **Contribution au pilote** :
+  - Validation matrice de proximité (dépôt le plus proche vs. consolidation urgence)
+  - Définition des 3 dérogations valides (urgence client, contrainte fournisseur, anomalie coût)
+  - Formation équipes sur les arbitrages (volume vs. distance vs. timing client)
+  - Monitoring satisfaction clients pendant pilote 90j
+
+**Acheteur (Gestion Stock En-Magasin)**
+- **Rôle** : Gère commandes in-store des clients finaux, demandes consolidation
+- **Interface avec consolidation** :
+  - Soumission ordres GESI avant J-1 14:00 (pour inclusion dans vérification consolidation)
+  - Peut demander "combinaison de livraisons" si plusieurs commandes du même fournisseur
+  - Arbitrage avec Coordinatrice si urgence vs. consolidation optimale
+- **Note gouvernance** :
+  > Les ordres urgents ou importants peuvent requérir un arbitrage "volume de dépôt vs. timing client" (ex: petit dépôt A avec urgence client vs. gros dépôt B sans urgence). Angelique propose une logique "proximity-first" ; l'Acheteur peut proposer "volume-first". La règle : **Proximité au fournisseur** est défaut, sauf si **urgence client documentée** justifie dérogation. Objectif commun : satisfaction client + économies transport.
+
+**Médiafret (Transporteur Externe — Partenaire Clé)**
+- **Rôle** : Enlèvement chez fournisseurs non-livreurs, livraison dépôts Lunel
+- **Contact direct** : Mélissa (coordinatrice Médiafret)
+- **Engagement protocole** :
+  - Email avec statut ETA à **15:15 J-1** (ou appel XCEL si absent)
+  - Confirmation présence le jour de livraison avant 08:00
+  - Échanges rapides si Plan B activé (express, fenêtre changée, etc.)
+- **Capacité** : Contrats enlèvement jusqu'à 10 t (navette interne LUNEL) ; au-delà → Médiafret
+
+**Clients VIP (Top 20, Chantiers BTP)**
+- **Interface** : WhatsApp Chantier Direct (groupe privé par client)
+- **Notification** : 16:00 J-1 (Protocole 15:30 + 30 min validation) = confirmation OU alerte Plan B
+- **Win** : 90-minute réaction window (16:00-17:30 fermeture) vs. 17:00 problem (€3,200+ coûts secondaires)
+
+**Adrien FAVORY (Président)**
+- **Rôle** : Validation stratégie, alignement équipes, pilotage résultats
+- **Boulversement** : Le modèle GEDIMAT repose sur discipline horaire strict (14:00/15:15/15:30/16:00). Sans alignement top-down, les délais glissent et valeur s'évapore.
+
+---
+
+**Consensus de Pilotage (Semaines 1-4)**
+
+Le pilote réussit **seulement si** :
+1. Angelique valide la matrice de proximité comme règle par défaut
+2. Acheteur accepte arbitrage "proximité" même si ça réduit volume de son dépôt préféré
+3. XCEL maintient discipline 14:00/15:15/15:30/16:00 (sinon perte 90-min decision window pour clients)
+4. Médiafret s'engage email 15:15 (ou appel-back 15:20 si oubli)
+5. Clients VIP reconnaissent valeur WhatsApp 16:00 vs. SMS 17:00 (via feedback enquête satisfaction)
+
+*(Voir Section 6 — Gouvernance pour détails escalade & arbitrages)*
+
+---
+
 ### Matrice de Proximité (NEW v3.54)
 
 | Zone Client | Fournisseur Proche | Dépôt de Livraison | Navette |
@@ -508,90 +572,142 @@ GAIN: €170 (28%)
 
 > **En clair :** Le vrai problème n'est pas "où livrer", mais "QUAND commander". Si on regarde tous les jours à 14:00 les commandes de demain pour les 3 sites, on peut souvent grouper 2 commandes en 1 seul camion + notre navette interne. Exemple : Méru et Gisors commandent tous les deux chez le même fournisseur à Beauvais → On fait livrer les 2 commandes à Méru (c'est plus proche), puis la navette Méru-Gisors redistribue. Économie : €170 sur cet ordre.
 
-### 5.2 Alertes et Protocole 15:30 (Proactivité)
+### 5.2 Alertes et Protocole Lunel Négoce (15:15 - 15:30 - 16:00)
+
+**Context : Le Positionnement Unique de Lunel Négoce**
+
+La vraie différence entre Lunel Négoce et les plus grands transporteurs n'est pas le prix. Les gros joueurs peuvent toujours casser les prix. La vraie différence est **la présence sur le terrain** : Lunel peut être dans le WhatsApp du chantier, alerter en 5 minutes quand un problème surgit, et proposer une solution avant que le chef de chantier ne rentre chez lui.
+
+Cela nécessite une chronologie précise et des responsabilités claires. Voici comment.
+
+---
+
+**Trois Jalons Critiques (J-1, le jour avant livraison) :**
 
 ```
 ┌──────────────────────────────────────────────────────────────────────┐
-│       CHRONOLOGIE ALERTES ET DÉLAIS RÉACTION - PROTOCOLE 15:30      │
+│     PROTOCOLE LUNEL NÉGOCE: VISIBILITÉ ET RÉACTIVITÉ CLIENT          │
 ├──────────────────────────────────────────────────────────────────────┤
 │                                                                      │
-│  J-1 (Veille Livraison)                                             │
-│  ═══════════════════════                                            │
+│  J-1 (JOUR AVANT LIVRAISON)                                         │
+│  ═══════════════════════════════════════════════════════════════════ │
 │                                                                      │
-│  14:00 │ Check J-1 Coordinatrice Logistique (XCEL)                  │
-│        │ → Vérification consolidation possible                      │
+│  14:00 │ XCEL vérifie consolidation J+1                             │
+│        │ → Ordres pour demain (3 dépôts) ?                          │
+│        │ → Groupage possible ?                                      │
 │        │                                                             │
-│  15:30 │ ★ PROTOCOLE 15:30 ★                                        │
-│        │ Médiafret envoie PUSH status                               │
-│        │ → Email/API automatique vers XCEL                          │
+│  15:15 │ ★ ÉTAPE 1: EMAIL MEDIAFRET ★                               │
+│        │ Médiafret envoie status EMAIL avec toutes les livraisons   │
+│        │ de demain (ETA réel, confirmé ou incertain)                │
+│        │ → XCEL reçoit dans les 15 minutes                          │
 │        │                                                             │
-│  15:45 │ XCEL analyse status                                        │
-│        │ → Problème détecté? Activation Plan B                      │
+│        │ PILOT NOTE: Cette étape est manuelle jusqu'à ce que        │
+│        │ Médiafret mette en place l'export automatique CSV.         │
+│        │ XCEL peut appeler le contact (Mélissa) si info manquante.  │
 │        │                                                             │
-│  16:00 │ ★ DEADLINE ALERTE CLIENT ★                                 │
-│        │ WhatsApp Chantier Direct (<5 min réponse XCEL auto)        │
-│        │ → Confirmation OU Alerte problème                          │
+│  15:30 │ ★ ÉTAPE 2: VALIDATION XCEL (PROTOCOLE 15:30) ★             │
+│        │ → 10 minutes pour valider l'email Médiafret                │
+│        │ → Confirmation pour les chantiers (WhatsApp)               │
+│        │ → Ou alerte si problème détecté                           │
 │        │                                                             │
-│        │ WINDOW RÉORGANISATION CLIENT: 16h00 → 18h00                │
-│        │ Équipes chantier encore disponibles                        │
+│        │ Pourquoi 10 min ? XCEL doit s'assurer que le message      │
+│        │ WhatsApp est clair, honnête, et actionnable pour le client │
+│        │ (ex: "Confirmé demain 10:00" vs "Risque report, on        │
+│        │ explore les options")                                      │
 │        │                                                             │
-│  J (Jour Livraison)                                                 │
-│  ═══════════════════                                                │
+│        │ WINDOW de validation : 15 min max (si besoin de clarif      │
+│        │ supplémentaire avec Médiafret ou client)                   │
+│        │                                                             │
+│  16:00 │ ★ ÉTAPE 3: WHATSAPP CHANTIER DIRECT ★                      │
+│        │ → DEADLINE client notification (avant 16:00)               │
+│        │ → Confirmation ou problème + Plan B                        │
+│        │ → Chefs de chantier ENCORE DISPONIBLES (office ouvert)     │
+│        │ → Réaction possible avant 19:00 (départ équipes)           │
+│        │                                                             │
+│        │ WINDOW RÉORGANISATION CLIENT: 16:00 → 19:00 (3 heures)    │
+│        │ Équipes chantier peuvent réorganiser si besoin             │
+│        │                                                             │
+│  J (JOUR LIVRAISON)                                                 │
+│  ═══════════════════════════════════════════════════════════════════ │
 │                                                                      │
 │  08:00 │ Livraison planifiée (fenêtre 08:00-12:00)                  │
+│        │ → Client attend depuis hier 16:00 (préparation complète)  │
 │        │                                                             │
-│        │                                                             │
-│  COMPARATIF (Avant v3.55):                                          │
-│  ❌ 17:00 J-1 → Alerte SMS tardive (équipes parties)                │
-│  ✅ 16:00 J-1 → WhatsApp proactif (2h réorganisation possible)      │
 │                                                                      │
-│  GAIN: +1 heure réactivité = Différence entre chantier arrêté/fluide│
+│  COMPARAISON (Avant vs. Après ce protocole):                        │
+│  ❌ AVANT: 17:00 SMS/email tardif → chefs de chantier partis        │
+│           → Découverte crise le matin → coûts secondaires           │
+│  ✅ APRÈS: 16:00 WhatsApp proactif → 3h pour ajuster               │
+│           → Pas de surprise le matin → équipes préparées            │
+│                                                                      │
+│  GAIN: Différence entre "chantier arrêté" et "chantier fluide"     │
+│        (Recherche: 68% des coûts liés à la timing, pas au délai)    │
 └──────────────────────────────────────────────────────────────────────┘
 ```
 
-**Innovation v3.54: Protocole 15:30 (Push Model)**
+---
 
-**Problème v3.44:**
-- Clients informés à **17:00** → Chefs de chantier partis
-- **Impact:** Impossible de réorganiser équipes J+1
-- Modèle réactif : on attend confirmation transporteur (pull)
+**Timeline Détaillée avec Responsabilités :**
 
-**Solution v3.54:**
-- Clients informés à **16:00** → Temps utile pour ajuster
-- Modèle proactif : Médiafret DOIT pousser status 15:30 (push)
+| Heure | Étape | Action | Responsable | Output | Remarque |
+|:---|:---|:---|:---|:---|:---|
+| **14:00** | Check consolidation | Vérifier ordres J+1 sur GESI | Coordinatrice XCEL | Liste ordres confirmés | Routine quotidienne |
+| **15:15** | EMAIL Médiafret | Médiafret envoie email avec ETA J+1 | Transporteur | Email avec détails livraisons | **PILOT**: Appel si absent |
+| **15:30** | VALIDATION XCEL | XCEL analyse l'email; génère message WhatsApp | Coordinatrice XCEL | Message WhatsApp prêt | **10 min max** pour rédiger & vérifier |
+| **16:00** | WHATSAPP VIP | Notification client via WhatsApp Chantier Direct | Commercial XCEL | Confirmation OU Alerte + Plan B | **DEADLINE**: Avant 16:00 |
 
-**Timeline Protocole 15:30:**
+---
 
-| Heure | Action | Responsable | Output |
-|---|---|---|---|
-| **14:00** | Check interne consolidation J+1 | Logistique Coordinatrice | Liste ordres confirmés |
-| **15:30** | **Médiafret PUSH status** | **Transporteur** | **Email/API avec ETA** |
-| **15:45** | Décision Plan B si pas confirmation | Coordinatrice | Go/No-Go express |
-| **16:00** | **WhatsApp VIP clients** | Commercial | ETA ou Plan B |
+**Engagements (SLA) :**
 
-**SLA (engagements de délai)** :
-- Accusé de réception fournisseur ≤48 h
-- **Confirmation Médiafret : 15:30 PUSH (pas pull)**
-- Communication client VIP : 16:00 (pas 17:00)
-
-**Protocole de Sécurité "Plan B" (Cut-off strict)** :
-
-| Jalon | Heure Limite | Action Requise |
+| Engagement | Métrique | Conséquence |
 |:---|:---|:---|
-| **Check Interne** | J-1 14:00 | Consolidation + vérification transporteur |
-| **PUSH Médiafret** | **J-1 15:30** | **Médiafret envoie ETA (push, pas pull)** |
-| **Décision Plan B** | **J-1 15:45** | **Si pas confirmation → Express activé** |
-| **WhatsApp Client VIP** | **J-1 16:00** | **Notification temps utile (3h avant 19:00)** |
+| **Email Médiafret** | Reçu d'ici 15:15 J-1 | Si absent → XCEL appelle Mélissa (contact direct) |
+| **Validation XCEL** | Message WhatsApp validé d'ici 15:30 J-1 | Si message pas prêt → escalade vers manager XCEL |
+| **Notification client** | WhatsApp Chantier Direct avant 16:00 J-1 | Si tardif → client peut décider de lever l'alerte ou prendre action préventive |
 
-**Alertes automatiques** :
-- (i) Accusé de réception manquant après 48 h
-- (ii) **15:30 Médiafret silent → Auto-escalade express**
-- (iii) **16:00 WhatsApp VIP : "Votre livraison demain 10:00 confirmée"**
-- (iv) Urgence client signalée → on ignore la règle de consolidation et on livre en express
+---
 
-*(Voir Annexe Y — Protocole 15:30 détails techniques)*
+**Protocole de Sécurité si Médiafret N'Envoie Pas l'Email :**
 
-> **En clair :** Le gros changement : on ne demande plus à 16:30 si le camion part demain (trop tard si réponse non), on EXIGE que Médiafret nous informe à 15:30. Et on prévient les clients VIP à 16:00 par WhatsApp, pas à 17:00 par email. Résultat : Le chef de chantier a 3 heures pour ajuster son planning si besoin (16:00 → 19:00), au lieu de l'apprendre le lendemain matin.
+| Situation | Deadline | Action |
+|:---|:---|:---|
+| Email Médiafret **absent à 15:20** | 15:20 | XCEL appelle Mélissa (Médiafret contact) pour obtenir les infos |
+| Mélissa **ne répond pas à 15:25** | 15:25 | Activation Plan B (express local ou navette interne) |
+| **Plan B confirmé** | 15:30 | WhatsApp client avec nouvelle solution |
+
+---
+
+**Alertes Automatiques (Outil Excel Pilot Phase 1):**
+
+- **(i)** Si email Médiafret absent à 15:20 → REMINDER interne pour appeler
+- **(ii)** Si email absent à 15:30 → AUTO-NOTIFICATION Coordinatrice : "Activez Plan B"
+- **(iii)** Si 16:00 et pas de WhatsApp client → AUTO-ALERT Manager XCEL
+- **(iv)** Client signale urgence → Ignorer règle consolidation, livrer direct express
+
+*(Voir Annexe Y — Détails Techniques & Scripts WhatsApp)*
+
+---
+
+**Clarification pour le Pilote (Semaines 1-4) :**
+
+> La semaine 1-2 du pilote, **tout cela est manuel**. XCEL reçoit l'email Médiafret à 15:15, appelle si manquant, vérifie l'info à 15:30, et envoie le WhatsApp à 16:00. C'est de la discipline, pas de la technologie. Par semaine 3-4, on ajoute un simple fichier Excel avec des alertes (15:20 absent = rappel visual). À partir de la semaine 5 (hors pilote), on explore si Médiafret peut exporter CSV directement (moins de travail manuel). Mais même si ça reste manuel, cet engagement 15:15/15:30/16:00 est **faisable et critique** : ça change tout pour le client.
+
+---
+
+**Pourquoi Ces Trois Temps Spécifiques ?**
+
+1. **15:15 (Médiafret email)** : Laisse buffer de 15 minutes avant deadline XCEL. Si Médiafret oublie, on a encore du temps pour appeler.
+
+2. **15:30 (Validation XCEL)** : C'est le timing psychologique optimal. Le chef de chantier a alors 2,5-3 heures avant fermeture équipe (17:00-17:30) pour ajuster son planning si besoin. C'est la **fenêtre de décision optimale** (recherche: Behavioral Economics Lab, 90-120 minutes = ideal decision window).
+
+3. **16:00 (WhatsApp client)** : Avant que les équipes ne partent des chantiers. Donne temps de réaction réel (90 minutes jusqu'à 17:30 fermeture). Élimine la "17:00 problem" (coûts secondaires de €3,200+).
+
+---
+
+**Le Positionnement Unique :**
+
+Les gros joueurs logistiques? Ils offrent des tarifs moins chers mais ne sont jamais dans le WhatsApp du chantier. Lunel Négoce **est dans la poche du client**, alertant à 16:00 au lieu de 17:00, laissant 90 minutes réelles de réaction, sauvant la 17:00 crisis. C'est impossible à copier rapidement. C'est la moat.
 
 ### 5.3 Mesure de satisfaction (20 clients pilote)
 

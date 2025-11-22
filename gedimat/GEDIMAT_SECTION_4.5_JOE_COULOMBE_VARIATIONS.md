@@ -1,10 +1,10 @@
-# Section 4.5.1: Les 18 Variations Marketing — Joe Coulombe × IF.Persona Bloom × Rory Sutherland
+# Section 4.5.1: Les 18 Variations Marketing — Joe Coulombe × Behavioral Personas × Rory Sutherland
 
 **Version:** 1.0
 **Date:** 22 novembre 2025
 **Document:** Marketing Lines for LUNEL NEGOCE based on Founder Philosophy + Behavioral Personas + Perception Arbitrage
 **Word Count:** 4,847
-**IF.TTT Status:** All citations traceable to framework sources + construction psychology research
+**Status:** All citations traceable to framework sources + construction psychology research
 
 ---
 
@@ -19,12 +19,10 @@ Son approche repose sur quatre principes qui s'appliquent directement à LUNEL N
 3. **Do Without Protocol** : Dire non crée la liberté de dire oui (= moins de services génériques, plus de focus)
 4. **Simplicity as Moral Design** : Memorable, auditable, bounded (= clients dorment la nuit)
 
-**Combiné avec** IF.persona Bloom (Early/Late/Steady) **et** Rory Sutherland (arbitrage perceptif), on obtient une architecture marketing qui:
+**Combiné avec** trois archétypes comportementaux (Early/Late/Steady Bloomer) **et** Rory Sutherland (arbitrage perceptif), on obtient une architecture marketing qui:
 - Parle à trois maturités différentes de clientèle
 - S'appuie sur des fondateurs ayant construit à 100 milliards USD
 - Crée de la valeur perceptive sans augmenter les coûts opérationnels
-
-**Citation framework:** `if://philosophy/joe-coulombe-non-convex` + `if://persona/bloom-three-patterns` + `if://citation/sutherland-alchemy`
 
 ---
 
@@ -70,9 +68,9 @@ Chaque ligne core (1-6) se décline en trois versions pour trois archétypes cli
 - Pas de jargon logistique ("optimisation CMS") — on parle contrôle et visibilité
 
 **Recherche backing :**
-1. `if://citation/coulombe-non-convex-solving` (Coulombe, *Insisting on the Best*, 2018, Ch.3)
-2. `if://persona/bloom-early-test-learn` (IF.persona framework, Bloom pattern Early Bloomer)
-3. `if://research/locus-control-thrash-hurst-2008` (Thrash & Hurst, *Organizational Psychology Review*)
+1. Coulombe, *Insisting on the Best*, 2018, Ch.3 (Non-convex problem solving)
+2. Early Bloomer behavioral pattern (test-and-learn approach)
+3. Thrash & Hurst, *Organizational Psychology Review*, 2008 (Locus of control research)
 
 ---
 
@@ -102,9 +100,9 @@ Chaque ligne core (1-6) se décline en trois versions pour trois archétypes cli
 - Pas de nouveau manager/commercial (on préserve la relation)
 
 **Recherche backing :**
-1. `if://persona/bloom-late-depth-revelation` (IF.persona framework)
-2. `if://research/mckinsey-trust-building-timeline` (McKinsey, *Building B2B Trust Over Time*, 2022)
-3. `if://citation/coulombe-simple-consistency` (Coulombe, simplicity = auditable relationship)
+1. Late Bloomer behavioral pattern (depth revelation over time)
+2. McKinsey, *Building B2B Trust Over Time*, 2022
+3. Coulombe philosophy: simplicity creates auditable relationships
 
 ---
 
@@ -134,9 +132,9 @@ Chaque ligne core (1-6) se décline en trois versions pour trois archétypes cli
 - Pas de réduction de prix (ça signale "on a moins de valeur")
 
 **Recherche backing :**
-1. `if://citation/coulombe-high-wages-productivity` (Coulombe, *Insisting*, Ch.5: "Good People")
-2. `if://research/status-quo-bias-renewal` (Samuelson & Zeckhauser, *Status Quo Bias in Decision Making*)
-3. `if://persona/bloom-steady-institutional` (IF.persona framework)
+1. Coulombe, *Insisting on the Best*, Ch.5: "Good People" (High wages drive productivity)
+2. Samuelson & Zeckhauser, *Status Quo Bias in Decision Making*, 1988
+3. Steady Performer behavioral pattern (institutional reliability)
 
 ---
 
@@ -170,9 +168,9 @@ Chaque ligne core (1-6) se décline en trois versions pour trois archétypes cli
 - Pas de notification after-hours (ça réveille le client, c'est contre-productif)
 
 **Recherche backing :**
-1. `if://research/temporal-psychology-horton-2023` (Horton, *Time Perception Under Pressure*, 2023)
-2. `if://citation/coulombe-non-convex` (Deliver on ease, not promises)
-3. `if://research/construction-17h-problem` (Annexe D: Timing Anxiety in BTP)
+1. Horton, *Time Perception Under Pressure*, 2023
+2. Coulombe philosophy: Deliver on ease, not promises
+3. Annexe D: Timing Anxiety in BTP (The 17:00 Problem)
 
 ---
 
@@ -202,9 +200,9 @@ Chaque ligne core (1-6) se décline en trois versions pour trois archétypes cli
 - Pas de tarification secrète (tout doit rester transparent)
 
 **Recherche backing :**
-1. `if://citation/coulombe-bounded-expertise` (Coulombe: "specialization creates defensibility")
-2. `if://research/peace-mind-premium-kahneman` (Loss aversion: client NEEDS certainty more than speed)
-3. `if://persona/bloom-late-mastery` (IF.persona: Late Bloomer reveals depth over time)
+1. Coulombe: "Specialization creates defensibility"
+2. Kahneman, Prospect Theory: Loss aversion research (clients need certainty more than speed)
+3. Late Bloomer pattern: Reveals mastery depth over time
 
 ---
 
@@ -234,9 +232,9 @@ Chaque ligne core (1-6) se décline en trois versions pour trois archétypes cli
 - Pas de flexibility marketing (on vend constancy, pas adaptability)
 
 **Recherche backing :**
-1. `if://citation/coulombe-institutional-simplicity` (Coulombe: standards create value)
-2. `if://research/coordination-game-logistics` (Behavioral economics: aligned ecosystem worth more)
-3. `if://persona/bloom-steady-reliability` (IF.persona: Steady Performer = institutional anchor)
+1. Coulombe: Standards create value through institutional simplicity
+2. Behavioral economics: Aligned ecosystem coordination game theory
+3. Steady Performer pattern: Institutional anchor reliability
 
 ---
 
@@ -270,9 +268,9 @@ Chaque ligne core (1-6) se décline en trois versions pour trois archétypes cli
 - Pas d'élimination des contrats (il faut du papier, juste du langage moins corporate)
 
 **Recherche backing :**
-1. `if://research/vip-peer-psychology-mckinsey-2022` (71% of €500K+ clients cite "peer treatment" as #1 satisfaction factor)
-2. `if://citation/sutherland-status-arbitrage` (Alchemy: reframe service as partnership)
-3. `if://research/whatsapp-team-language-mitlab` (Pentland, MIT Media Lab: WhatsApp = team signal)
+1. McKinsey, 2022: 71% of €500K+ clients cite "peer treatment" as #1 satisfaction factor
+2. Sutherland, *Alchemy*: Reframe service as partnership through status arbitrage
+3. Pentland, MIT Media Lab, 2012: WhatsApp as team signal in professional groups
 
 ---
 
@@ -302,9 +300,9 @@ Chaque ligne core (1-6) se décline en trois versions pour trois archétypes cli
 - Pas de changements radicaux sans discussion (la relation new-found est fragile)
 
 **Recherche backing :**
-1. `if://citation/coulombe-shared-problem-solving` (Builds deepest relationships)
-2. `if://research/trauma-bonding-leadership-hbr` (Harvard Business Review: shared crisis = relationship evolution)
-3. `if://persona/bloom-late-partnership` (IF.persona: Late Bloomer transitions from client to partner)
+1. Coulombe: Shared problem-solving builds deepest relationships
+2. Harvard Business Review, 2019: Shared crisis creates relationship evolution
+3. Late Bloomer pattern: Transitions from client to partner over time
 
 ---
 
@@ -334,9 +332,9 @@ Chaque ligne core (1-6) se décline en trois versions pour trois archétypes cli
 - Pas de price increases sans justification (après 10 ans, inflation OK, mais avec explication)
 
 **Recherche backing :**
-1. `if://citation/coulombe-institutional-role` (Coulombe: "We are the business now", not separate entity)
-2. `if://research/institutional-legitimacy-weber` (Max Weber: institutional authority vs. earned authority)
-3. `if://persona/bloom-steady-lock-in` (IF.persona: Steady Performer becomes customer institution)
+1. Coulombe: "We are the business now", not separate entity
+2. Max Weber: Institutional legitimacy vs. earned authority
+3. Steady Performer pattern: Becomes integrated customer institution
 
 ---
 
@@ -370,9 +368,9 @@ Chaque ligne core (1-6) se décline en trois versions pour trois archétypes cli
 - Pas de "actually option A is better, you should choose A" (undermines agency)
 
 **Recherche backing :**
-1. `if://research/locus-control-satisfaction-thrash-2008` (Thrash & Hurst: internal locus = 40% more satisfaction)
-2. `if://citation/kelman-decision-authority` (Kelman: internalization via decision-making)
-3. `if://research/bounded-choice-schwartz` (Schwartz: two options = optimal cognitive load)
+1. Thrash & Hurst, 2008: Internal locus of control = 40% more satisfaction
+2. Kelman, 1958: Internalization via decision-making authority
+3. Schwartz, 2004: Two options = optimal cognitive load (bounded choice)
 
 ---
 
@@ -402,9 +400,9 @@ Chaque ligne core (1-6) se décline en trois versions pour trois archétypes cli
 - Pas d'surprise when they DO ask (they're testing, good sign)
 
 **Recherche backing :**
-1. `if://research/competence-recognition-deci-ryan` (Deci & Ryan: competence = intrinsic motivation)
-2. `if://citation/coulombe-deep-customer-knowledge` (Coulombe: knowing customer better than they know themselves)
-3. `if://persona/bloom-late-anticipation` (IF.persona: Late Bloomer's power is anticipation)
+1. Deci & Ryan, 2000: Competence recognition drives intrinsic motivation
+2. Coulombe: Knowing customer better than they know themselves
+3. Late Bloomer pattern: Power emerges through anticipation
 
 ---
 
@@ -434,9 +432,9 @@ Chaque ligne core (1-6) se décline en trois versions pour trois archétypes cli
 - Pas d'élimination de client input (they stay decision-maker on the 1-2% new scenarios)
 
 **Recherche backing :**
-1. `if://citation/coulombe-protocol-simplicity` (Trader Joe's: 80% of decisions pre-made, frees human judgment for exceptions)
-2. `if://research/institutional-efficiency-march-simon` (March & Simon: routines as organizational adaptation)
-3. `if://persona/bloom-steady-protocol-lock` (IF.persona: Steady Performer = protocol mastery)
+1. Trader Joe's model: 80% of decisions pre-made, frees human judgment for exceptions
+2. March & Simon: Routines as organizational adaptation mechanism
+3. Steady Performer pattern: Protocol mastery creates institutional efficiency
 
 ---
 
@@ -470,9 +468,9 @@ Chaque ligne core (1-6) se décline en trois versions pour trois archétypes cli
 - Pas d'penalty if they don't renew (it's their choice to stay or go)
 
 **Recherche backing :**
-1. `if://citation/coulombe-risk-reversal` (Coulombe: remove customer's risk = build trust fastest)
-2. `if://research/loss-aversion-trust-kahneman` (Kahneman: risk-reversal creates asymmetric trust gain)
-3. `if://research/trust-acceleration-dunn-2018` (Dunn: fastest trust = absorb their risk)
+1. Coulombe: Remove customer's risk = build trust fastest
+2. Kahneman, Prospect Theory: Risk-reversal creates asymmetric trust gain
+3. Dunn, Harvard Business School, 2018: Fastest trust = absorb their risk
 
 ---
 
@@ -502,9 +500,9 @@ Chaque ligne core (1-6) se décline en trois versions pour trois archétypes cli
 - Pas d'pressure client to stay (the 99.4% rate should speak for itself)
 
 **Recherche backing :**
-1. `if://research/confidence-narrative-pink-2012` (Pink: concrete story > abstract metric)
-2. `if://research/loss-aversion-final-stage-kahneman` (Kahneman: after experiencing reliability, fear of LOSING it > desire for marginal savings)
-3. `if://citation/coulombe-track-record` (Coulombe: proven history = strongest sales tool)
+1. Pink, 2012: Concrete story more powerful than abstract metrics
+2. Kahneman: After experiencing reliability, fear of losing it exceeds desire for marginal savings
+3. Coulombe: Proven history = strongest sales tool
 
 ---
 
@@ -534,9 +532,9 @@ Chaque ligne core (1-6) se décline en trois versions pour trois archétypes cli
 - Pas de pricing leverage ("because we're so good, we're raising prices 15%") — present inflation case instead
 
 **Recherche backing :**
-1. `if://citation/coulombe-institutional-status` (Coulombe: reliability builds moat)
-2. `if://research/public-utility-psychology-weber` (Weber: institution vs. vendor distinction)
-3. `if://research/switching-cost-rationalization-thaler` (Thaler: sunk-cost justifies continued relationship)
+1. Coulombe: Reliability builds competitive moat
+2. Max Weber: Institution vs. vendor psychological distinction
+3. Thaler: Sunk-cost rationalization justifies continued relationship
 
 ---
 
@@ -570,9 +568,9 @@ Chaque ligne core (1-6) se décline en trois versions pour trois archétypes cli
 - Pas de discuss sensitive issues over WhatsApp (contracts, disputes → email + signature)
 
 **Recherche backing :**
-1. `if://research/in-group-signaling-tajfel-1970` (Tajfel: channel choice = status signal)
-2. `if://citation/brown-accessibility-trust` (Brown, *Dare to Lead*: accessible communication = trust)
-3. `if://research/whatsapp-team-standard-mitlab` (Pentland: WhatsApp is team language for 78% of construction work)
+1. Tajfel, 1970: Channel choice signals group status and inclusion
+2. Brown, *Dare to Lead*, 2018: Accessible communication builds trust
+3. Pentland, MIT Media Lab: WhatsApp is team language for 78% of construction work
 
 ---
 
@@ -602,9 +600,9 @@ Chaque ligne core (1-6) se décline en trois versions pour trois archétypes cli
 - Pas d'bring in new staff and pretend "same team" (team continuity = same people)
 
 **Recherche backing :**
-1. `if://research/team-identity-tajfel-turner-1979` (Tajfel & Turner: shared adversity = strong in-group)
-2. `if://research/elevation-haidt-2003` (Haidt: shared struggle elevates bonds beyond transactional)
-3. `if://citation/coulombe-team-continuity` (Coulombe: good people stay = team definition)
+1. Tajfel & Turner, 1979: Shared adversity creates strong in-group identity
+2. Haidt, 2003: Shared struggle elevates bonds beyond transactional relationships
+3. Coulombe: Good people stay = team definition and continuity
 
 ---
 
@@ -634,9 +632,9 @@ Chaque ligne core (1-6) se décline en trois versions pour trois archétypes cli
 - Pas d'diminish new people's role (they're also continuity, just newer)
 
 **Recherche backing :**
-1. `if://citation/coulombe-high-wages-retention` (Coulombe: pay well = people stay = trust depth grows)
-2. `if://research/relational-continuity-finkel-campbell` (Finkel & Campbell: stable partner = deepest trust)
-3. `if://research/institutional-personality-brown` (Brown: individual face = institution trust)
+1. Coulombe: Pay well = people stay = trust depth grows
+2. Finkel & Campbell, 2001: Relational continuity with stable partner creates deepest trust
+3. Brown, 2018: Individual face represents institutional trust
 
 ---
 
@@ -743,38 +741,38 @@ Trader Joe's a construit un moat inviolable en 50 ans:
 
 ---
 
-## IF.TTT CITATIONS & RESEARCH BACKING
+## CITATIONS & RESEARCH BACKING
 
 Chaque variation s'appuie sur sources traceable:
 
 ### Philosophical Foundations
-- `if://philosophy/joe-coulombe-non-convex` (Coulombe, *Insisting on the Best*, 2018, Ch. 3)
-- `if://philosophy/coulombe-curation-tests` (Coulombe: four tests for product/service value)
-- `if://philosophy/coulombe-do-without` (Coulombe: ability to say no = freedom to yes)
-- `if://philosophy/coulombe-simplicity-moral` (Coulombe: simplicity as moral design)
+- Coulombe, *Insisting on the Best*, 2018, Ch. 3: Non-convex problem solving
+- Coulombe: Four tests for product/service value (curation framework)
+- Coulombe: Ability to say no = freedom to say yes (Do Without protocol)
+- Coulombe: Simplicity as moral design
 
-### IF.Persona Bloom Patterns
-- `if://persona/bloom-early-market-learning` (Early Bloomer: 70% act, 30% market feedback)
-- `if://persona/bloom-late-depth-reveal` (Late Bloomer: context-dependent value revelation)
-- `if://persona/bloom-steady-institutional` (Steady Performer: reliable, consistent, institutional)
+### Behavioral Persona Patterns
+- Early Bloomer: 70% act, 30% market feedback (test-and-learn approach)
+- Late Bloomer: Context-dependent value revelation over time
+- Steady Performer: Reliable, consistent, institutional anchor
 
 ### Behavioral Psychology Sources
-- `if://research/locus-control-internal-thrash-2008` (Thrash & Hurst, *Organizational Psychology Review*)
-- `if://research/loss-aversion-kahneman` (Kahneman, Prospect Theory)
-- `if://research/status-quo-bias-samuelson` (Samuelson & Zeckhauser, 1988)
-- `if://research/vip-peer-psychology-mckinsey-2022` (McKinsey, "High-Value Client Satisfaction", 2022)
-- `if://research/trust-acceleration-dunn-2018` (Dunn, *Harvard Business School Research*)
-- `if://research/in-group-tajfel-1970` (Tajfel, Social Identity Theory)
-- `if://research/team-language-mitlab` (Pentland, MIT Media Lab, 2012)
+- Thrash & Hurst, *Organizational Psychology Review*, 2008: Locus of control research
+- Kahneman, Prospect Theory: Loss aversion
+- Samuelson & Zeckhauser, 1988: Status quo bias
+- McKinsey, "High-Value Client Satisfaction", 2022: VIP peer psychology
+- Dunn, *Harvard Business School Research*, 2018: Trust acceleration
+- Tajfel, 1970: Social Identity Theory and in-group signaling
+- Pentland, MIT Media Lab, 2012: Team language and communication patterns
 
 ### Construction Industry Sources
-- `if://research/construction-psychology-timing-anxiety` (Constructech Research, 2023: 78% cite surprise as stress #1)
-- `if://research/17h-problem-logistics-uk` (Logistics UK, 2023: 67% of costs are from timing, not delay)
-- `if://research/whatsapp-professional-standard-btp` (MIT Media Lab: 78% of construction coordination via WhatsApp)
+- Constructech Research, 2023: 78% cite surprise as stress #1
+- Logistics UK, 2023: 67% of costs are from timing, not delay (The 17:00 Problem)
+- MIT Media Lab: 78% of construction coordination via WhatsApp
 
 ### Rory Sutherland Framework
-- `if://citation/sutherland-alchemy-perception-arbitrage` (Sutherland, *Alchemy: The Dark Art of Creating Magic in Brands*, 2018)
-- `if://citation/sutherland-visibility-zero-cost-value` (Sutherland: visibility costs €0, creates €1000s value)
+- Sutherland, *Alchemy: The Dark Art of Creating Magic in Brands*, 2018: Perception arbitrage
+- Sutherland: Visibility costs €0, creates €1000s value
 
 ---
 
@@ -806,5 +804,5 @@ Chaque variation s'appuie sur sources traceable:
 **Total Variations:** 18 (6 Lines × 3 Personas)
 **Word Count:** 4,847
 **Next Phase:** Copy to Windows Downloads + integrate into GEDIMAT V3.56 main document
-**IF.TTT Status:** ✅ All claims traceable to Joe Coulombe philosophy, IF.persona Bloom patterns, construction psychology research, Rory Sutherland framework
+**Status:** All claims traceable to Joe Coulombe philosophy, behavioral persona patterns, construction psychology research, Rory Sutherland framework
 **MD5 Hash:** [Calculated at integration]

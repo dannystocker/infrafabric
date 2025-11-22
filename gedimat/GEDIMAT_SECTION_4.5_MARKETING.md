@@ -10,7 +10,7 @@ La psychologie de la construction est claire : **les besoins émotionnels l'empo
 
 Cette section applique la psychologie comportementale pour transformer le discours commercial de LUNEL NEGOCE : de "nous optimisons vos coûts" vers "nous vous donnons le contrôle et vous restez le décideur". C'est le décalage entre ce que vous FAITES (logistique) et ce que vous OFFREZ VRAIMENT (paix d'esprit + pouvoir de décision).
 
-**Référence:** if://citation/control-perception-psychology + Annexe D (Construction Psychology Research)
+**Référence:** Annexe D (Construction Psychology Research)
 
 ---
 
@@ -42,7 +42,7 @@ Pourquoi ? Parce que :
 
 Vos clients Top 20 ne paieront jamais plus pour "livrer plus vite" — mais ils paieront 15% plus pour "livrer AVEC TRANSPARENCE ET CONTRÔLE".
 
-**Référence:** if://citation/sutherland-perception-arbitrage + Annexe F (Rory Sutherland Framework Application)
+**Référence:** Annexe F (Rory Sutherland Framework Application)
 
 ---
 
@@ -73,7 +73,7 @@ Chaque ligne repose sur une base psychologique spécifique, documentée en Annex
 
 3. **Pourquoi ça marche :** Le client projette dans "maître de la réaction" = "je peux réagir intelligemment" = "je reprends du pouvoir". C'est un reframing psychologique, pas une promesse logistique.
 
-**Référence:** if://citation/uncertainty-stress-research + if://citation/construction-psychology-2023 + Annexe D (Section "Peur des Surprises vs Peur des Délais")
+**Référence:** Annexe D (Section "Peur des Surprises vs Peur des Délais")
 
 ---
 
@@ -98,7 +98,7 @@ Chaque ligne repose sur une base psychologique spécifique, documentée en Annex
 
 3. **Pourquoi ça marche :** On ne promet pas une livraison plus rapide (impossible) — on promet l'ANNONCE rapide. C'est gratuit à fournir (c'est juste du timing de communication), mais c'est ultra-valuable pour le client (lui sauve 3,200+ par incident).
 
-**Référence:** if://citation/timing-announcement-cost-analysis + if://citation/temporal-psychology-brain + Annexe D (Section "The 17:00 Problem in Construction")
+**Référence:** Annexe D (Section "The 17:00 Problem in Construction")
 
 ---
 
@@ -123,7 +123,7 @@ Chaque ligne repose sur une base psychologique spécifique, documentée en Annex
 
 3. **Pourquoi ça marche :** €1M+/an client veut se sentir VIP. "Traitement pair-à-pair" = "on te respecte comme pro" = accès au sentiment de respect. Et c'est gratuit : c'est juste un changement de LANGAGE (WhatsApp décontracté vs email corporate), pas de processus.
 
-**Référence:** if://citation/vip-peer-psychology-mckinsey + if://citation/trust-status-kahneman + Annexe E (Section "High-Value Client Psychology: Peer vs Service Dynamics")
+**Référence:** Annexe E (Section "High-Value Client Psychology: Peer vs Service Dynamics")
 
 ---
 
@@ -148,7 +148,7 @@ Chaque ligne repose sur une base psychologique spécifique, documentée en Annex
 
 3. **Pourquoi ça marche :** On ne change pas la logistique (toujours complexe) — on change le SENTIMENT de qui décide. Client sente qu'il décide + exécutant gère la complexité = partenariat.
 
-**Référence:** if://citation/locus-of-control-satisfaction + if://citation/decision-agency-emotion-hbr + Annexe D (Section "Shared Decision-Making in Logistics")
+**Référence:** Annexe D (Section "Shared Decision-Making in Logistics")
 
 ---
 
@@ -173,7 +173,7 @@ Chaque ligne repose sur une base psychologique spécifique, documentée en Annex
 
 3. **Pourquoi ça marche :** On repositionne de "coût bas" vers "coût CERTAIN". Client a déjà accepté un prix — maintenant il veut garantie zéro changement.
 
-**Référence:** if://citation/consistency-premium-deloitte + if://citation/loss-aversion-b2b + Annexe E (Section "Predictability as Value Premium in Construction Supply")
+**Référence:** Annexe E (Section "Predictability as Value Premium in Construction Supply")
 
 ---
 
@@ -198,7 +198,7 @@ Chaque ligne repose sur une base psychologique spécifique, documentée en Annex
 
 3. **Pourquoi ça marche :** Construction pros UTILISENT DÉJÀ WhatsApp en interne = c'est leur langage naturel. Si LUNEL NEGOCE répond en WhatsApp casual (pas en email), on signale "on est pas des vendeurs corporate, on est des gens qui comprennent votre métier."
 
-**Référence:** if://citation/whatsapp-team-language-mitlab + if://citation/trust-via-accessibility-brown + Annexe D (Section "WhatsApp as Professional Communication Standard in BTP")
+**Référence:** Annexe D (Section "WhatsApp as Professional Communication Standard in BTP")
 
 ---
 
@@ -328,4 +328,4 @@ Cette section 4.5 s'appuie sur trois Annexes complémentaires :
 **Document généré pour intégration dans DOSSIER FINAL GEDIMAT v2**
 **MD5 Hash de cette section :** `[À CALCULER À L'INTÉGRATION]`
 **Date de création :** 22 novembre 2025
-**Référence IF.TTT :** Toutes les claims psychologiques tracées vers Annexes D, E, F avec citations bibliographiques complètes
+**Références :** Toutes les claims psychologiques tracées vers Annexes D, E, F avec citations bibliographiques complètes
