@@ -87,7 +87,7 @@ CORRECT: $1,140/year
 
 **Evidence:**
 - Source: `/home/setup/infrafabric/swarm-architecture/API_KEYS.md:24-30`
-  - Quote: "Shard 2: dstocker.ca@gmail.com | AIzaSyDzLJU-9-nEwUsj5wgmYyOzT07uNU4KUEY | 1,500 q/day free tier"
+  - Quote: "Shard 2: dstocker.ca@gmail.com | [API Key in .env] | 1,500 q/day free tier"
 - Validation: `/home/setup/infrafabric/swarm-architecture/INSTANCE10_SWARM_SETUP_COMPLETE.md:123-145`
   - Testing: "Shard 2 tested Nov 21 @ 14:35 UTC | Status: Operational | Remaining: 1,500"
 - Integration: `gemini_librarian.py:line 34-45` (shard_id parameter)

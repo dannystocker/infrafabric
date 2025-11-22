@@ -139,7 +139,7 @@ Nov 22 - INSTANCE #10: COST CORRECTION & VALIDATION
 ```
 Shard 2 Profile:
 ├─ Email: dstocker.ca@gmail.com
-├─ API Key: AIzaSyDzLJU-9-nEwUsj5wgmYyOzT07uNU4KUEY
+├─ API Key: [Stored in .env - See ANNEX-B for citation details]
 ├─ Tier: Free (1,500 queries/day)
 ├─ RPM Limit: 15 requests/minute
 ├─ Status: ✅ Operational (validated Nov 21)
