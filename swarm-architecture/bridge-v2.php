@@ -30,6 +30,16 @@ define('BEARER_TOKEN', '50040d7fbfaa712fccfc5528885ebb9b');
 define('DATA_FILE', __DIR__ . '/redis-data.json');
 define('TAGS_FILE', __DIR__ . '/redis-semantic-tags.json');
 
+// Redis Cloud (Predis) configuration
+define('USE_REDIS_CLOUD', true);
+define('REDIS_CLOUD_CONFIG', [
+    'scheme' => 'tcp',
+    'host' => 'redis-19956.c335.europe-west2-1.gce.cloud.redislabs.com',
+    'port' => 19956,
+    'username' => 'default',
+    'password' => 'zYZUIwk4OVwPwG6fCn2bfaz7uROxmmI8'
+]);
+
 // CORS headers (allow Gemini-3-Pro web access)
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
@@ -54,8 +64,80 @@ function authenticate() {
     }
 }
 
+// Normalize data entries to the expected {id, content, ttl} shape
+function normalize_entries($entries) {
+    return array_map(function($entry) {
+        $id = isset($entry['id']) ? $entry['id'] : ($entry['key'] ?? '');
+        return [
+            'id' => trim($id),
+            'content' => $entry['content'] ?? ($entry['value'] ?? ''),
+            'ttl' => $entry['ttl'] ?? null
+        ];
+    }, $entries);
+}
+
 // Load data files
+function get_redis_client() {
+    if (!USE_REDIS_CLOUD) return null;
+
+    $autoload = __DIR__ . '/predis/autoload.php';
+    if (!file_exists($autoload)) return null;
+
+    require_once $autoload;
+
+    try {
+        return new Predis\Client(REDIS_CLOUD_CONFIG);
+    } catch (Exception $e) {
+        return null;
+    }
+}
+
+function fetch_redis_data($client) {
+    if ($client === null) return null;
+
+    try {
+        $keys = $client->keys('*');
+        $entries = [];
+
+        foreach ($keys as $key) {
+            $value = $client->get($key);
+            $ttl = $client->ttl($key);
+            $entries[] = [
+                'id' => $key,
+                'content' => $value ?? '',
+                'ttl' => $ttl
+            ];
+        }
+
+        return [
+            'batch_size' => count($entries),
+            'data' => $entries,
+            'source' => 'redis-cloud'
+        ];
+    } catch (Exception $e) {
+        return ['error' => 'Redis cloud unavailable', 'detail' => $e->getMessage()];
+    }
+}
+
 function load_data() {
+    // Preferred: Redis Cloud backend via Predis
+    $client = get_redis_client();
+    $redis_data = fetch_redis_data($client);
+    if ($redis_data !== null) {
+        if (isset($redis_data['error'])) {
+            $GLOBALS['redis_cloud_error'] = $redis_data['detail'] ?? 'unavailable';
+        } else {
+            $redis_data['data'] = normalize_entries($redis_data['data']);
+            if (!isset($redis_data['batch_size'])) {
+                $redis_data['batch_size'] = count($redis_data['data']);
+            }
+            if (!isset($redis_data['source'])) {
+                $redis_data['source'] = 'redis-cloud';
+            }
+            return $redis_data;
+        }
+    }
+
     if (!file_exists(DATA_FILE)) {
         return ['error' => 'Data file not found', 'file' => DATA_FILE];
     }
@@ -67,7 +149,29 @@ function load_data() {
         return ['error' => 'Invalid JSON in data file'];
     }
 
-    return $data;
+    // Handle legacy flat array exports ({key, value, ttl}[])
+    if (is_array($data) && isset($data[0]) && isset($data[0]['key'])) {
+        $normalized = normalize_entries($data);
+        return [
+            'batch_size' => count($normalized),
+            'data' => $normalized,
+            'source' => 'file-based'
+        ];
+    }
+
+    // Preferred format: {"data": [{id, content, ttl}], ...}
+    if (isset($data['data']) && is_array($data['data'])) {
+        $data['data'] = normalize_entries($data['data']);
+        if (!isset($data['batch_size'])) {
+            $data['batch_size'] = count($data['data']);
+        }
+        if (!isset($data['source'])) {
+            $data['source'] = 'file-based';
+        }
+        return $data;
+    }
+
+    return ['error' => 'Invalid data format', 'file' => DATA_FILE];
 }
 
 function load_tags() {
@@ -210,6 +314,9 @@ authenticate();
 
 $action = $_GET['action'] ?? 'info';
 $data = load_data();
+if (!isset($data['source'])) {
+    $data['source'] = USE_REDIS_CLOUD ? 'redis-cloud' : 'file-based';
+}
 
 if (isset($data['error'])) {
     http_response_code(500);
@@ -223,7 +330,7 @@ switch ($action) {
         $stats = [
             'status' => 'neural_link_active',
             'version' => '2.0.0',
-            'backend' => 'file-based',
+            'backend' => $data['source'] ?? 'file-based',
             'keys_count' => count($data['data']),
             'semantic_tags_available' => $tags !== null,
             'capabilities' => [
@@ -233,6 +340,10 @@ switch ($action) {
                 'full_text_search' => true
             ]
         ];
+
+        if (isset($GLOBALS['redis_cloud_error'])) {
+            $stats['redis_cloud_error'] = $GLOBALS['redis_cloud_error'];
+        }
 
         if ($tags) {
             $stats['tag_statistics'] = [
@@ -314,7 +425,8 @@ switch ($action) {
         }
 
         $tags = load_tags();
-        $use_semantic = $_GET['semantic'] !== 'false' && $tags !== null;
+        $semantic_flag = $_GET['semantic'] ?? 'true';
+        $use_semantic = $semantic_flag !== 'false' && $tags !== null;
 
         if ($use_semantic) {
             $results = semantic_search($tags, $data, $query);
