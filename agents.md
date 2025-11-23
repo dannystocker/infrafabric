@@ -2797,7 +2797,80 @@ The blocker became a **clarifying catalyst** that revealed the correct long-term
 
 ---
 
+---
+
+## Instance #18: Bridge.php & Memory Exoskeleton Deployment (2025-11-23)
+
+**Mission:** Deploy bridge.php to enable Gemini-3-Pro web access to Redis context via secure HTTPS API.
+
+### 1. Current Progress (Instance #18)
+
+**Completed:**
+✅ PHP Redis extension verified on StackCP (installed + enabled)
+✅ bridge.php deployed to `/digital-lab.ca/infrafabric/bridge.php` (3.2K, secured with Bearer token)
+✅ StackCP environment profiled (AlmaLinux 9.6 x86_64, no build tools, /tmp executable and persistent)
+✅ STACKCP-AGENT-MANUAL.md created (execution protocols for all agents)
+
+**In Progress:**
+🔄 Install Redis binaries to StackCP /tmp (precompiled, x86_64, AlmaLinux compatible)
+
+**Blockers Discovered:**
+- StackCP has NO local Redis (uses Redis Cloud for external service access)
+- StackCP has NO build tools (make, gcc) - must use precompiled binaries only
+- bridge.php cannot connect to user's WSL localhost:6379 (network isolation)
+
+**Solution:**
+Deploy Redis server binaries to `/tmp/redis-server` on StackCP, configure bridge.php to connect to local instance.
+
+### 2. StackCP Architecture
+
+**Key Files:**
+- `STACKCP-AGENT-MANUAL.md` - Execution protocols (binary paths, /tmp vs ~ permissions, MCP bridge)
+- `/tmp/updateclaude` - Claude Code auto-updater
+- `/tmp/node`, `/tmp/npm`, `/tmp/npx` - Node.js v20.18.0 (requires wrapper scripts)
+- `/tmp/python-headless-3.12.6-linux-x86_64/bin/python3` - Python 3.12 with MCP packages
+- `/tmp/meilisearch` - Vector search engine (port 7700)
+- `/tmp/wirecli` - ProcessWire CLI tool
+
+**Directory Constraints:**
+- `/tmp/` - EXECUTABLE + PERSISTENT (use for binaries)
+- `~/` - READABLE + WRITABLE + NON-EXECUTABLE (use for code/data)
+
+**Critical:** All precompiled binaries must be placed in `/tmp/` for execution.
+
+### 3. Memory Exoskeleton Architecture
+
+**Current State:** bridge.php deployed, awaiting Redis on StackCP
+**Target State:** Gemini-3-Pro web access to Redis via `https://digital-lab.ca/infrafabric/bridge.php`
+
+**API Endpoints (once Redis deployed):**
+```bash
+# Info/Health
+curl -H "Authorization: Bearer 50040d7fbfaa712fccfc5528885ebb9b" \
+     "https://digital-lab.ca/infrafabric/bridge.php?action=info"
+
+# Fetch Keys
+curl -H "Authorization: Bearer 50040d7fbfaa712fccfc5528885ebb9b" \
+     "https://digital-lab.ca/infrafabric/bridge.php?action=keys&pattern=instance:16:*"
+
+# Batch Retrieval (for Gemini context injection)
+curl -H "Authorization: Bearer 50040d7fbfaa712fccfc5528885ebb9b" \
+     "https://digital-lab.ca/infrafabric/bridge.php?action=batch&pattern=instance:*"
+```
+
+### 4. Next Steps (Instance #18)
+
+1. Install Redis binaries to StackCP `/tmp/redis-server` (precompiled x86_64)
+2. Start Redis on StackCP localhost:6379
+3. Test bridge.php connectivity to local Redis
+4. Sync your WSL Redis data to StackCP Redis (export → import)
+5. Test Gemini-3-Pro web access via bridge.php
+6. Document successful architecture in Instance #19 handover
+
+---
+
 **Last Session:** Instance #11 (Multi-evaluator assessment, IF.WWWWWW protocol); Instance #12 (Georges partnership infrastructure, Redis continuity validation); Instance #16 (Quantum timeline research, crisis-response framework)
 **Current Session:** Instance #17 (2025-11-23) - Redis proxy blocker discovered, bridge.php solution architected, Memory Exoskeleton strategy documented
-**Next Session:** Instance #18 - Deploy bridge.php, test Gemini web access, begin Phase A vector indexing
-**Git Status:** Clean, Session #17 artifacts committed (handover + starter prompt + narration)
+**Active Session:** Instance #18 (2025-11-23) - bridge.php deployment in progress, StackCP Redis setup underway
+**Next Session:** Instance #19 - Complete Memory Exoskeleton Phase A, vector indexing implementation
+**Git Status:** Updated agents.md with Instance #18 progress, STACKCP-AGENT-MANUAL.md created
