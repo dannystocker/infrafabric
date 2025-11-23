@@ -3,7 +3,7 @@
 **Date:** 2025-11-23
 **Status:** Production Ready
 **Completeness:** 100%
-**Total Documentation:** 3,500+ lines
+**Total Documentation:** 3,940+ lines
 
 ---
 
@@ -111,7 +111,33 @@ All documentation is tested, reviewed, and deployment-ready.
 - Per-agent logging
 - Event replay capability
 
-### 4. Supporting Files Updated
+### 4. CODEX-USAGE-GUIDE.md (440 lines)
+
+**Purpose:** Practical onboarding guide for users of an already-built system
+
+**Contents:**
+- What Memory Exoskeleton IS and why it exists
+- Quick start: 3 easy steps to begin
+- Key files & locations (local, remote, GitHub)
+- Common tasks with curl examples
+- Architecture explanation
+- Phase A completion status
+- Phase B roadmap
+- Redis Cloud details
+- Troubleshooting section
+- Environment variables reference
+- Real-world usage examples
+
+**Key Features:**
+- References local credential file (~/.memory-exoskeleton-creds)
+- Assumes system is production-ready
+- Practical curl commands for all endpoints
+- Links to deeper integration guides
+- Explains difference from other prompts
+
+---
+
+### 5. Supporting Files Updated
 
 #### CODEX-5.1-MAX-SUPERPROMPT.md (460 lines)
 
@@ -131,6 +157,14 @@ All documentation is tested, reviewed, and deployment-ready.
 - Phase A deployment checklist
 - API endpoint examples
 - Deliverable format
+
+#### CREDENTIALS-TEMPLATE.md (150 lines)
+
+**Created for:**
+- Show how to store credentials locally
+- Environment variable setup
+- Security best practices
+- Never-commit credential files
 
 #### bridge-v2.php (468 lines)
 
