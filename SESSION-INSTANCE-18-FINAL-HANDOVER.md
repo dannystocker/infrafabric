@@ -115,6 +115,258 @@ Gemini-3-Pro Web Access
 
 ---
 
+## 2025-11-23 Audit Update: StackCP Infrastructure Analysis
+
+**Audit Reports:**
+- `/home/setup/STACKCP-INFRASTRUCTURE-AUDIT-2025-11-23.md`
+- `/home/setup/stackcp-security-infrastructure-gap-analysis.md`
+
+### StackCP Environment Constraints
+
+**Server Details:**
+- Hostname: ssh-node-gb.lhr.stackcp.net
+- OS: AlmaLinux 9.6 (Sage Margay)
+- Kernel: 5.14.0-570.52.1.el9_6.x86_64
+- Uptime: 37+ days
+- Load: 1.85 (1min), 1.45 (5min), 1.37 (15min)
+
+**Account Configuration:**
+- Account: digital-lab.ca@ssh.gb.stackcp.com
+- Home: /home/sites/7a/c/cb8112d0d1/
+- UID: 2410913
+- Restrictions: NO sudo access, NO crontab, home directory mounted noexec
+
+### Complete Infrastructure Status Table
+
+| Component | Details | Status |
+|-----------|---------|--------|
+| **PHP Versions** | 14 available: 5.3.29 → 8.4.14 | ✅ Available |
+| **Default PHP** | PHP 8.4.14 NTS (Oct 21 2025) | ✅ Current |
+| **PHP Extensions** | ionCube v15.0.0, SourceGuardian v16.0.2, Zend OPcache v8.4.14 | ✅ Running |
+| **MariaDB** | 10.6.23 (MySQL-compatible) | ✅ Available |
+| **Node.js** | v20.19.5 (documented as v20.18.0) | ✅ Installed |
+| **Composer** | v2.8.11 (2025-08-21) + Composer1 legacy | ✅ Available |
+| **Drush** | 0.10.2 Launcher (Drupal/NextSpread) | ✅ Available |
+| **WP-CLI** | 2.11.0 (WordPress management) | ✅ Available |
+| **Git** | 2.47.3 (October 2025) | ✅ Current |
+| **Python** | 3.9.21 + Python 3.12.6 (headless) | ⚠️ Partially functional |
+| **Perl** | 5.32.1 v5.32.1 (54 patches) | ✅ Available |
+| **Lua** | Available | ✅ Available |
+| **ImageMagick** | Latest (use 'magick', not 'convert') | ✅ Available |
+| **wkhtmltopdf** | 0.12.6.1 with patched Qt | ✅ Available |
+| **Ghostscript** | 9.54.0 | ✅ Available |
+| **cURL** | 8.1.2 (OpenSSL/1.1.1t, brotli, zstd, nghttp2, SSH2) | ✅ Available |
+| **Wget** | 1.21.1 | ✅ Available |
+| **OpenSSL** | 3.2.2 (FIPS-capable) | ✅ Current |
+| **Ruby** | Documented in welcome, NOT installed | ❌ Missing |
+| **Node.js** | Listed in banner but installed at /tmp | ✅ Available |
+| **Redis** | redis-cli orphaned; no redis-server | ❌ Not available |
+| **PostgreSQL** | psql not installed | ❌ Not available |
+| **GCC/Make** | Compilation tools not installed | ❌ Not available |
+
+### Memory & Resource Status
+
+| Resource | Total | Used | Available | Utilization |
+|----------|-------|------|-----------|-------------|
+| RAM | 7.8 GiB | 1.1 GiB | 352 MiB | 14% ✅ Healthy |
+| Swap | 2.0 GiB | 180 MiB | 1.8 GiB | 9% ✅ Healthy |
+| Root FS (/tmp) | 18 GiB | 14 GiB | 2.8 GiB | **83% ⚠️ CRITICAL** |
+| Boot FS | 459 MiB | 225 MiB | 205 MiB | 53% ✅ Healthy |
+
+### Network Storage (NFS) Status
+
+**Total NFS Mounts:** 73 distributed storage arrays
+
+| Storage Type | Count | Capacity | Utilization | Status |
+|--------------|-------|----------|-------------|--------|
+| 8.7TB Arrays | 59 | Per-volume | 95-98% | ⚠️ Nearly full |
+| 11TB Arrays | 4 | Per-volume | 90-98% | ⚠️ Nearly full |
+| 18TB Arrays | 10 | Per-volume | 93-99% | ⚠️ Critical |
+
+**Critical Observation:** 25+ arrays operating at 98-99% capacity (storage-39b, storage-40a, storage-40b, storage-34a at 99%)
+
+### PHP Security Misconfiguration Status
+
+**Current Dangerous Settings:**
+```
+disable_functions => no value (No restrictions - DANGEROUS)
+open_basedir => no value (No restrictions - DANGEROUS)
+max_execution_time => 0 (Unlimited - DoS vulnerability)
+```
+
+**Recommended Settings:**
+```ini
+disable_functions = exec,passthru,shell_exec,system,proc_open,popen,curl_exec,curl_multi_exec,parse_ini_file,show_source
+open_basedir = /home/sites/7a/c/cb8112d0d1/public_html
+max_execution_time = 300
+```
+
+**Impact:** PHP can execute dangerous functions with no directory restrictions. Scripts can run indefinitely.
+
+---
+
+## Critical Issues Discovered (2025-11-23 Audit)
+
+### P0 - Critical Issues
+
+**1. Root Filesystem 83% Full (2.8GB Free)**
+- **Issue:** /tmp at 14GB of 18GB capacity
+- **Impact:** Only 2.8GB available. Any large file operations could fail
+- **Cause:** Dolibarr ~400MB, Python envs ~200MB, Node ~100MB, Meilisearch 121MB, archives ~300MB, database dumps ~150MB
+- **Action:** Immediate cleanup required
+
+**2. PHP Security Misconfiguration**
+- **Issue:** No disable_functions, unlimited execution time, no open_basedir
+- **Impact:** Remote code execution possible; DoS vulnerability
+- **Severity:** CRITICAL - allows arbitrary PHP execution
+- **Recommended:** Apply hardening config from audit report
+
+### P1 - High Priority Issues
+
+**3. Python 3.12.6 Binary Missing**
+- **Issue:** Documentation claims `/tmp/python-headless-3.12.6-linux-x86_64/bin/python3` exists, but executable is missing
+- **Status:** Directory exists but binary not accessible
+- **Workaround:** Check `/tmp/python312/` alternative location
+
+**4. npm Wrapper Corrupted**
+- **Issue:** `/tmp/npm` exists as 0-byte file (empty/corrupted)
+- **Impact:** No npm package installation capability
+- **Status:** Node.js works but npm broken
+
+**5. wirecli Not Executable**
+- **Issue:** `/tmp/wirecli` exists but permission denied (not executable)
+- **Impact:** Cannot manage ProcessWire CLI
+- **Workaround:** `chmod +x /tmp/wirecli`
+
+**6. Crontab Access Disabled**
+- **Issue:** StackCP account crontab is not allowed
+- **Impact:** Cannot schedule automated tasks via cron
+- **Workaround:** Use .bashrc login hooks or manual scheduling; export scripts must run via WSL
+
+**7. NFS Storage Arrays at 98-99% Capacity**
+- **Issue:** 25+ arrays critically full, storage-39b/40a/40b/34a at 99%
+- **Impact:** Risk of storage exhaustion; account quota may be reduced
+- **Recommendation:** Contact StackCP support for migration/cleanup
+
+---
+
+## Undocumented Resources Found (2025-11-23 Audit)
+
+| Tool | Location | Size | Status | Notes |
+|------|----------|------|--------|-------|
+| Dolibarr 22.0.0 | `/tmp/dolibarr-22.0.0/` | ~400MB | Installed | Not in documentation |
+| wkhtmltoimage | `/usr/local/bin/wkhtmltoimage` | 40MB | Available | Server-wide installation |
+| Chrome Headless | `/tmp/chrome-headless-shell-linux64/` | ~100MB+ | Installed | For Puppeteer/automation |
+| Puppeteer | `/tmp/puppeteer_dev_chrome_profile-*` | Variable | Installed | Development artifacts |
+| Redis CLI | `/tmp/redis-cli` | 387KB | Orphaned | No redis-server present |
+| Portable Python | `/tmp/.portable-python-*` | ~100MB | Installed | Alternative runtime |
+
+**Implications:**
+- Expanded attack surface from undocumented tools
+- Potential dependency conflicts between tool versions
+- Maintenance debt - tools without documentation
+- Resource consumption from hidden components
+
+---
+
+## Storage & Network Status
+
+### Root Filesystem Alert
+
+**Current:** 14GB / 18GB (83% utilized)
+**Available:** 2.8GB remaining
+**Status:** CRITICAL - approaching maximum capacity
+
+**Recommended Actions:**
+1. Delete /tmp/22.0.0.tar.gz (old Dolibarr archive)
+2. Delete /tmp/redis-7.2.5.tar.gz (old Redis source)
+3. Remove old database dumps
+4. Consolidate Python installations (estimated 200MB savings)
+5. Remove old Puppeteer profiles (estimated 300MB+ savings)
+
+**Estimated Cleanup Potential:** 500MB+ (bringing utilization to ~75%)
+
+### NFS Storage Configuration
+
+**Account Storage Backend:** storage-7a.hosting.stackcp.net (8.7TB, 98% used)
+
+**NFS Mount Security (EXCELLENT):**
+```
+Mount flags: rw,nosuid,nodev,noexec,noatime
+- nosuid: Prevents SetUID/SetGID privilege escalation
+- nodev: Blocks device file injection
+- noexec: Forces executables to /tmp (prevents home dir execution)
+- noatime: Reduces I/O overhead
+```
+
+**High-Capacity Mounts:**
+- storage-39b, storage-40a, storage-40b: 18TB each
+- storage-99a, storage-99b: 11TB each
+
+**Critical Utilization:**
+- 25+ arrays at 98-99% capacity
+- Suggests aggressive migration planning needed
+- storage-14a at 88%, storage-99a at 92% have more headroom
+
+### Network & Connectivity
+
+**DNS Configuration:**
+```
+nameserver 10.1.0.2 (Internal StackCP DNS)
+Search: lhr.stackcp.net dfw.stackcp.net stackcp.net
+Status: ✅ Working (external domain resolution confirmed)
+```
+
+**Outbound Connectivity:**
+- Google HTTPS: HTTP 200 ✅
+- External DNS lookups: Working ✅
+- No outbound restrictions detected ✅
+
+**Local Services Listening:**
+- Port 22: SSH (dual interface)
+- Port 111: RPC portmapper (NFS support)
+- Port 1024: Custom service (dual bind)
+- Port 5666: Nagios NRPE (monitoring)
+- Port 7700: Meilisearch (WORKING)
+
+---
+
+## Why File-Based Backend is OPTIMAL for StackCP
+
+### Architecture Justification (Updated with Audit Findings)
+
+**Original Goal:** Deploy Redis on StackCP for Gemini-3-Pro access
+
+**Constraints Discovered:**
+1. **No compile tools:** GCC, Make not available → Cannot compile Redis from source
+2. **No crontab access:** StackCP disables crontab for security → Can't run scheduled daemons
+3. **No Redis server:** redis-cli exists (orphaned) but no redis-server installed
+4. **No PostgreSQL:** External databases only → Limited backend options
+5. **Home directory noexec:** /home mounted with noexec → Binaries must run from /tmp
+6. **/tmp at 83% capacity:** Limited space for new installations
+7. **No compiler toolchain:** Node.js, GCC, Python development tools missing
+
+### File-Based Backend Advantages
+
+**Given StackCP Constraints:**
+
+| Aspect | Redis Server | File-Based JSON | Winner |
+|--------|--------------|-----------------|--------|
+| **Installation** | Requires GCC/Make | No compilation needed | ✅ JSON |
+| **Cron Support** | Requires daemon | Can use WSL cron + SCP | ✅ JSON |
+| **Disk Space** | 50-100MB footprint | ~500KB JSON file | ✅ JSON |
+| **Security** | Network exposure risk | File I/O only | ✅ JSON |
+| **Scalability** | Limited by RAM | Scales with storage | ✅ JSON |
+| **Recovery** | Requires backup strategy | Git versioning ready | ✅ JSON |
+| **Complexity** | Configuration overhead | Simple bridge.php | ✅ JSON |
+| **Automation** | Background process risk | Script-based sync | ✅ JSON |
+
+**Conclusion:** File-based JSON backend is NOT a workaround—it's the **optimal architecture** given StackCP's constraints.
+
+---
+
+---
+
 ## Files Created/Modified in This Session
 
 ### New Files

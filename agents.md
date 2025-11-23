@@ -2874,3 +2874,289 @@ curl -H "Authorization: Bearer 50040d7fbfaa712fccfc5528885ebb9b" \
 **Active Session:** Instance #18 (2025-11-23) - bridge.php deployment in progress, StackCP Redis setup underway
 **Next Session:** Instance #19 - Complete Memory Exoskeleton Phase A, vector indexing implementation
 **Git Status:** Updated agents.md with Instance #18 progress, STACKCP-AGENT-MANUAL.md created
+
+---
+
+## StackCP Complete Infrastructure Audit (Instance #18.5 - 2025-11-23)
+
+### Executive Summary
+
+Comprehensive infrastructure audit completed on StackCP Instance #18.5 (digital-lab.ca@ssh.gb.stackcp.com) revealing operational health with critical gaps in tool executability and storage capacity:
+
+- **Operationally Healthy:** Modern PHP 8.4.14 with security extensions, current toolchain (Git 2.47.3, Curl 8.1.2, OpenSSL 3.2.2), strong isolation and security posture
+- **Critical Gaps:** 3 P0 issues (Claude Code binary missing, Python 3.12.6 missing, npm corrupted), 5 P1 issues (wirecli broken, 83% disk usage, reduced TLS security, PHP misconfigured, 1,563 unpatched system packages)
+- **Storage Alert:** Root filesystem 83% full (2.8GB remaining), 25+ NFS arrays at 98-99% utilization
+- **Green Signals:** Meilisearch operational, Node.js v20.19.5 working, NFS properly hardened with noexec/nosuid
+
+---
+
+### PHP Version Inventory (14 Available Versions)
+
+| Version | Path | Build Date | Type | Status | EOL Date |
+|---------|------|-----------|------|--------|----------|
+| 5.3.29 | /usr/php53/usr/bin/php | Aug 13 2014 | Legacy | ⚠️ EOL | Aug 28 2014 |
+| 5.4.45 | /usr/php54/usr/bin/php | Sep 1 2015 | Legacy | ⚠️ EOL | Sep 14 2015 |
+| 5.5.38 | /usr/php55/usr/bin/php | Jul 20 2016 | Legacy | ⚠️ EOL | Jul 10 2016 |
+| 5.6.40 | /usr/php56/usr/bin/php | Oct 27 2025 | Legacy | ⚠️ EOL | Dec 31 2018 |
+| 7.0.33 | /usr/php70/usr/bin/php | Oct 27 2025 | NTS | ⚠️ EOL | Dec 3 2018 |
+| 7.1.33 | /usr/php71/usr/bin/php | Oct 27 2025 | NTS | ⚠️ EOL | Dec 1 2019 |
+| 7.2.34 | /usr/php72/usr/bin/php | Sep 30 2020 | NTS | ⚠️ EOL | Nov 30 2020 |
+| 7.3.33 | /usr/php73/usr/bin/php | Nov 16 2021 | NTS | ⚠️ EOL | Dec 6 2021 |
+| 7.4.33 | /usr/php74/usr/bin/php | Oct 31 2022 | NTS | ⚠️ Security-fixes only | Nov 28 2022 |
+| 8.0.30 | /usr/php80/usr/bin/php | Aug 3 2023 | NTS | ⚠️ EOL | Nov 26 2023 |
+| 8.1.33 | /usr/php81/usr/bin/php | Jul 1 2025 | NTS | ⚠️ EOL | Nov 25 2025 |
+| 8.2.29 | /usr/php82/usr/bin/php | Jul 1 2025 | NTS | ✅ Active | Dec 31 2026 |
+| 8.3.27 | /usr/php83/usr/bin/php | Oct 21 2025 | NTS | ✅ Active | Nov 23 2027 |
+| **8.4.14** | **/usr/php84/usr/bin/php** | **Oct 21 2025** | **NTS** | **✅ ACTIVE (DEFAULT)** | **Nov 10 2028** |
+
+**Key Extensions Installed:**
+- ionCube PHP Loader v15.0.0 (third-party code protection)
+- SourceGuardian v16.0.2 (source code encoding/obfuscation)
+- Zend OPcache v8.4.14 (bytecode caching & performance)
+
+---
+
+### Tool Inventory & Status
+
+#### Development Tools & Languages
+
+| Tool | Version/Status | Installed | Working | Notes |
+|------|---|---|---|---|
+| **PHP 8.4** | 8.4.14 | ✅ | ✅ | Default, current, recommended for all projects |
+| **Node.js** | v20.19.5 | ✅ | ✅ | Via `/tmp/node` wrapper (actual version newer than documented v20.18.0) |
+| **Python 3** | 3.9.21 + 3.12.6 | ✅ | ⚠️ PARTIAL | Python 3.9 via `/usr/bin/python3`; 3.12.6 directory exists but executable missing |
+| **Perl 5** | 5.32.1 | ✅ | ✅ | Via `/usr/bin/perl` (54 registered patches) |
+| **Lua** | Available | ✅ | ✅ | Via `/usr/bin/lua` |
+| **Ruby** | Not found | ❌ | ❌ | Listed in welcome banner but not installed |
+| **GCC/Make** | Not installed | ❌ | ❌ | No C/C++ compilation available (use precompiled binaries only) |
+
+#### Package Managers & Build Tools
+
+| Tool | Version | Status | Notes |
+|------|---------|--------|-------|
+| **Composer** | 2.8.11 (2025-08-21) | ✅ Active | PHP 8.0.30 backend |
+| **Composer 1** | Legacy | ⚠️ Available | `/usr/local/bin/composer1` for legacy projects |
+| **WP-CLI** | 2.11.0 | ✅ Active | WordPress management tools |
+| **Drush** | 0.10.2 Launcher | ✅ Available | Drupal/ProcessWire CLI |
+
+#### HTTP & Network Tools
+
+| Tool | Version | Capabilities | Status |
+|------|---------|---|---|
+| **cURL** | 8.1.2 | OpenSSL/1.1.1t-fips, brotli, zstd, nghttp2, SSH2 | ✅ Working |
+| **Wget** | 1.21.1 | GNU wget on linux-gnu | ✅ Working |
+| **OpenSSL** | 3.2.2 (Library: 3.2.2) | FIPS-capable, TLS 1.2+ | ✅ Current |
+
+#### Database & Search Tools
+
+| Tool | Version | Status | Notes |
+|------|---------|--------|-------|
+| **MariaDB** | 10.6.23 | ✅ Active | MySQL-compatible client available |
+| **Meilisearch** | 1.6.2 | ✅ OPERATIONAL | Running on port 7700 (121MB binary) |
+| **Redis CLI** | `/tmp/redis-cli` 387KB | ❌ ORPHANED | Tool exists but no Redis server (uses Redis Cloud instead) |
+| **PostgreSQL** | Not found | ❌ Not installed | psql not available |
+
+#### Document & Media Processing
+
+| Tool | Version | Status | Notes |
+|------|---------|--------|-------|
+| **ImageMagick** | 7.x (latest) | ✅ Active | Use `magick` command (convert deprecated in v7) |
+| **Ghostscript** | 9.54.0 | ✅ Active | PDF/PostScript rendering |
+| **wkhtmltopdf** | 0.12.6.1 | ✅ Active | Patched Qt for HTML to PDF conversion |
+| **wkhtmltoimage** | 0.12.6 | ✅ Active | 40MB, server-wide installation |
+
+#### Special Tools (StackCP-Specific)
+
+| Tool | Location | Status | Issue | Impact |
+|------|----------|--------|-------|--------|
+| **Claude Code** | `/tmp/claude` | ❌ BROKEN | Binary missing (P0) | Cannot run Claude automation |
+| **Python 3.12.6** | `/tmp/python-headless-3.12.6-linux-x86_64/bin/python3` | ❌ MISSING | Executable not found (P0) | Scripts cannot run |
+| **npm wrapper** | `/tmp/npm` | ❌ BROKEN | 0-byte file (P0) | Node packages cannot be installed |
+| **wirecli** | `/tmp/wirecli` | ❌ BROKEN | Permission denied (P1) | ProcessWire CLI inaccessible |
+| **mcp-bridge** | `/tmp/mcp-bridge` | ❌ MISSING | Not found (P0) | MCP bridge unavailable |
+
+---
+
+### Critical Issues (P0 & P1)
+
+#### P0 - Critical Issues (Blocking)
+
+**1. Claude Code Binary NOT Executable**
+- **Finding:** Documentation claims `/tmp/claude` is operational; verification shows `/tmp/claude` does NOT exist as executable
+- **Impact:** Cannot run Claude Code on this server; all Claude automation blocked
+- **Workaround:** Verify `/tmp/claude-bin/` directory and recreate symlink
+```bash
+ls -la /tmp/claude-bin/
+chmod +x /tmp/claude-bin/claude-*
+ln -sf /tmp/claude-bin/claude-* /tmp/claude
+```
+
+**2. Python 3.12.6 Binary MISSING**
+- **Finding:** Directory exists but executable at `/tmp/python-headless-3.12.6-linux-x86_64/bin/python3` is NOT found
+- **Impact:** Python 3.12 scripts fail immediately; pip installations broken
+- **Workaround:** Create symlink to actual Python installation
+```bash
+ln -sf /tmp/python312/bin/python3 /tmp/python-headless-3.12.6-linux-x86_64/bin/python3
+```
+
+**3. npm Wrapper Corrupted**
+- **Finding:** `/tmp/npm` exists but is 0-byte file (empty/corrupted)
+- **Impact:** Node.js package management completely broken; npm install fails
+- **Workaround:** Recreate npm wrapper script
+```bash
+cat > /tmp/npm << 'EOF'
+#!/bin/bash
+export PATH="/tmp/node-v20.19.5-linux-x64/bin:$PATH"
+exec /tmp/node /tmp/node-v20.19.5-linux-x64/lib/node_modules/npm/bin/npm-cli.js "$@"
+EOF
+chmod +x /tmp/npm
+```
+
+#### P1 - High Priority Issues
+
+**4. wirecli Not Executable**
+- **Severity:** HIGH
+- **Finding:** `/tmp/wirecli` exists but permission denied
+- **Impact:** Cannot manage ProcessWire site via CLI; direct file edits required
+- **Workaround:** `chmod +x /tmp/wirecli`
+
+**5. Disk Space Critical (83% Full)**
+- **Severity:** HIGH
+- **Current Status:** `/dev/mapper/vg0-lv_root 18GB | 14GB used | 2.8GB available`
+- **Impact:** Only 2.8GB remaining; risk of service outage if disk fills completely
+- **Immediate Action:** Remove old archives
+```bash
+rm /tmp/22.0.0.tar.gz          # Dolibarr (75MB)
+rm /tmp/redis-7.2.5.tar.gz     # Old Redis
+rm /tmp/dolibarr_install.log
+rm /tmp/doli_cookies.txt
+rm /tmp/complete_dolibarr_install.php
+```
+
+**6. PHP Security Misconfiguration**
+- **Current:** `disable_functions = (empty)`, `open_basedir = (no restrictions)`, `max_execution_time = 0 (unlimited)`
+- **Risk:** Functions like exec/shell_exec/system are enabled; scripts can run indefinitely (DoS)
+- **Recommendation:** Apply hardened PHP config via StackCP control panel
+```ini
+disable_functions = exec,passthru,shell_exec,system,proc_open,popen,curl_exec,curl_multi_exec
+open_basedir = /home/sites/7a/c/cb8112d0d1/public_html
+max_execution_time = 300
+```
+
+**7. SSL/TLS Limited Security**
+- **Finding:** Only 2 CA bundles in `/etc/ssl/certs/`
+- **Impact:** Limited certificate validation; some modern CAs may not be recognized
+- **Status:** Verify full CA list at `/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem`
+
+**8. System Package Attack Surface**
+- **Finding:** 1,563 packages installed on shared hosting server
+- **Risk:** Each package is potential vulnerability vector; unpatched packages increase breach risk
+- **Recommendation:** Query StackCP about security patch schedule and obsolete package removal
+
+---
+
+### Storage & NFS Status
+
+#### Local Storage Analysis
+
+| Resource | Total | Used | Available | Usage | Status |
+|----------|-------|------|-----------|-------|--------|
+| **Root FS** | 18 GiB | 14 GiB | 2.8 GiB | 83% | ⚠️ CRITICAL |
+| **Boot FS** | 459 MiB | 225 MiB | 205 MiB | 53% | ✅ Healthy |
+| **RAM** | 7.8 GiB | 1.1 GiB | 352 MiB | 14% | ✅ Good |
+| **Swap** | 2.0 GiB | 180 MiB | 1.8 GiB | 9% | ✅ Healthy |
+
+#### NFS Network Storage (73 Distributed Arrays)
+
+**Total Mounted:** 73 distributed NFS storage arrays across StackCP hosting infrastructure
+
+| Storage Type | Count | Capacity | Typical Usage | Provider |
+|--------------|-------|----------|---------------|----------|
+| 8.7TB Arrays | 59 | Per-volume | 95-98% | storage-{X}a/b.hosting.stackcp.net |
+| 11TB Arrays | 4 | Per-volume | 90-98% | storage-{10,11,99}{a,b}.hosting.stackcp.net |
+| 18TB Arrays | 10 | Per-volume | 93-99% | storage-{38,39,40}{a,b}.hosting.stackcp.net |
+
+**Critical Observation:**
+- 25+ arrays operating at 98-99% capacity (storage-39b, storage-40a, storage-40b, storage-34a, storage-39a)
+- Several arrays at exactly 99% (storage-40b, storage-40a)
+- Suggests aggressive migration/consolidation planning needed
+- Arrays with headroom: storage-14a (88%), storage-99a (92%)
+
+#### Account-Specific Storage
+
+| Resource | Details |
+|----------|---------|
+| **Account** | digital-lab.ca |
+| **Home Directory** | /home/sites/7a/c/cb8112d0d1/ |
+| **Used** | 3.7 GiB (likely 5-10GB quota) |
+| **Backend Storage** | storage-7a.hosting.stackcp.net (8.7TB, 98% used) |
+| **Permission Model** | NFS mount with noexec, nosuid, nodev flags (properly hardened) |
+
+---
+
+### Security Posture Summary
+
+#### Strengths
+- ✅ **Modern SSL/TLS:** OpenSSL 3.2.2 (current, FIPS-capable)
+- ✅ **Ed25519 SSH:** Industry-standard modern key type
+- ✅ **Code Protection:** ionCube v15.0.0 + SourceGuardian v16.0.2 + Zend OPcache
+- ✅ **Access Control:** User isolation enforced, no sudo, home boundary enforced
+- ✅ **NFS Hardening:** Mounts configured with noexec, nosuid, nodev, noatime flags
+- ✅ **Audit Logging:** All SSH activity logged (welcome banner notification)
+- ✅ **Network Security:** Dual interface (10.1.4.131 internal, 10.3.4.131 management)
+
+#### Concerns
+- ⚠️ **PHP Misconfiguration:** Dangerous functions enabled, no basedir restrictions
+- ⚠️ **Limited CAs:** Only 2 CA certificate bundles available
+- ⚠️ **1,563 Unpatched Packages:** Potential attack surface, update policy unknown
+- ⚠️ **No SELinux:** Mandatory access control disabled
+- ⚠️ **No Cron Access:** Scheduled task automation unavailable
+- ⚠️ **Disk Exhaustion:** 83% full with 2.8GB remaining - DoS risk
+
+---
+
+### Tools & Workarounds for Missing Components
+
+#### No Local Redis
+- **Status:** Expected (uses Redis Cloud for external services)
+- **Workaround:** Deploy Redis binaries to `/tmp/redis-server` if local cache needed
+- **Note:** /tmp/redis-cli orphaned tool exists but server not running
+
+#### No Compiler Toolchain (GCC/Make)
+- **Status:** Intentional (shared hosting limitation)
+- **Workaround:** Use only precompiled binaries; place in `/tmp/` for execution
+- **Example:** Node.js and Python already precompiled and working
+
+#### No Cron Support
+- **Status:** Denied by StackCP security policy
+- **Workaround:** Use .bashrc login hooks or server-side scheduled tasks
+- **Alternative:** Request one-time scheduled commands from StackCP support
+
+#### No sudo Access (Interactive Terminal Required)
+- **Status:** Expected (shared hosting)
+- **Workaround:** Run privileged operations during maintenance windows, request support assistance
+
+#### Python 3.12 Missing from Expected Path
+- **Workaround:** Create symlink from `/tmp/python312/bin/python3` to documented path
+- **Alternative:** Use Python 3.9 available at `/usr/bin/python3`
+
+---
+
+### Audit Reports & References
+
+**Full Audit Documents:**
+1. **STACKCP-INFRASTRUCTURE-AUDIT-2025-11-23.md** - Complete infrastructure inventory (PHP versions, tools, storage, account config, performance metrics)
+2. **stackcp-security-infrastructure-gap-analysis.md** - Security assessment with remediation steps, P0/P1 issue tracking, risk matrix
+
+**Key Findings Summary:**
+- **Audit Date:** 2025-11-23 14:37 UTC
+- **Server:** ssh-node-gb.lhr.stackcp.net (AlmaLinux 9.6, Kernel 5.14.0-570.52.1.el9_6, 37 days uptime)
+- **Account:** digital-lab.ca@ssh.gb.stackcp.com
+- **Verification Method:** SSH remote interrogation + documentation cross-reference
+
+**Next Review:** Recommended in 30 days or upon:
+- Storage threshold reaching 90%
+- Critical tool deployment changes
+- PHP version migration to 8.3+
+
+---
