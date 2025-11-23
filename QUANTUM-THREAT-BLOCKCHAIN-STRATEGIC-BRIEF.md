@@ -2,7 +2,8 @@
 
 **Status:** Strategic Analysis | Positioning Framework
 **Date:** 2025-11-23
-**Threat Timeline:** 2026-2030 (quantum computers arrive) | 2035 (PQC migration deadline)
+**Threat Timeline:** 2026-2027 (aggressive, 60-70%) | 2028-2030 (mainstream, 20-30%) | 2035+ (conservative, 10-20%)
+**Critical Window:** 18-24 months to START migration before CRQC arrives
 **Market Size:** $2.4 trillion Bitcoin at risk + enterprise blockchain infrastructure
 
 ---
@@ -14,11 +15,31 @@
 **What's Happening:**
 Adversaries are collecting encrypted blockchain data **right now** (2025), anticipating they can decrypt it in 5-10 years when quantum computers arrive.
 
-**Timeline Compression:**
-- October 2025: Federal Reserve published research on HNDL attacks to blockchain
-- November 2025: Nvidia quantum partner estimates quantum threat by 2028-2030 (not 2035)
-- Previous estimates: 2030+
-- **New estimates: 2026-2027 possible** (worst-case scenario)
+**Three Scenarios (Based on Latest Research):**
+
+**Scenario A: Aggressive Timeline (2026-2027) — 60-70% PROBABILITY**
+- Foundation: Google Gidney's May 2025 breakthrough showing only 1,000-1,400 logical qubits needed for RSA-2048 (not millions)
+- Supporting Evidence:
+  * IonQ quantum roadmap: CRQC possible by 2028 (advanced timeline)
+  * Industry estimates: 18-36 months from CRQC prototype to production quantum computers
+  * Federal Reserve (Oct 2025): HNDL attacks are active threat NOW
+- Implication: **Migration window is 18-24 months. Organizations must START in Q1 2026.**
+- Risk Assessment: Credible, evidence-based, drives immediate action
+
+**Scenario B: Mainstream Timeline (2028-2030) — 20-30% PROBABILITY**
+- Foundation: NIST, NSA, NCSC official guidance; IBM, IonQ mainstream roadmaps
+- Supporting Evidence:
+  * IBM: Quantum advantage by end 2026, fault-tolerant by 2029
+  * NSA: Q-Day arrival between 2025-2035 (median 2030)
+  * CISA: Plan migration completion by 2035
+- Implication: 5-7 year migration window, start by 2028 at latest
+- Risk Assessment: Conservative, widely accepted, traditional enterprise planning horizon
+
+**Scenario C: Conservative Timeline (2035+) — 10-20% PROBABILITY**
+- Foundation: Earlier academic consensus; assumes slower progress on error correction
+- Supporting Evidence: Historical precedent of underestimated quantum computing timelines
+- Implication: Not suitable for risk-averse planning; outdated view given 2025 breakthroughs
+- Risk Assessment: **Do not plan on this timeline—quantum threat is NOW**
 
 **Data at Risk:**
 - All Bitcoin blockchain data from 2009 to present
@@ -31,16 +52,28 @@ Adversaries are collecting encrypted blockchain data **right now** (2025), antic
 - Ethereum: $1+ trillion
 - Enterprise blockchain systems: Incalculable (supply chain, identity, contracts)
 
-### Why This Matters NOW
+### Why This Matters NOW (And URGENTLY)
 
-The cryptographic threat isn't future—it's **retroactive**:
+The cryptographic threat isn't future—it's **retroactive AND CLOSING IN**:
 1. Attacker captures blockchain data today (publicly available)
 2. Stores it in encrypted form (costs $0)
-3. Waits 3-5 years for quantum computers
-4. Decrypts it all at once
-5. Can read: Private keys, transaction history, hidden addresses, everything
+3. Waits 18-24 months for CRQC to arrive (Scenario A: 2026-2027)
+4. Decrypts all historical Bitcoin, Ethereum, and blockchain data at once
+5. Can read: Private keys, transaction history, hidden addresses, entire ledger history
 
-**This isn't theoretical.** The Federal Reserve is warning about it. NIST has published post-quantum cryptography standards. Companies are starting migrations in 2025.
+**The window is closing:** Under Scenario A (60-70% probability based on 2025 breakthroughs):
+- Organizations have **18-24 months** to start migration before CRQC arrives
+- This means migration planning must start in Q1 2026 or risk being caught unprepared
+- Early movers (starting NOW) gain regulatory credit and insurance advantages
+- Late movers face Q3-Q4 2027 crisis when quantum capability becomes production-ready
+
+**This isn't theoretical.**
+- Federal Reserve (October 2025): Issued HNDL threat alert to banks
+- Google (May 2025): Demonstrated error correction breakthrough (1,000-1,400 qubits needed, not millions)
+- NSA: Declared "Q-Day" possible as early as 2030 (likely earlier)
+- NIST: Published finalized post-quantum cryptography standards (2024)
+- CISA: Mandated federal agencies begin PQC migration by 2025
+- Companies: Major institutions (JPMorgan, TD, others) are migrating in 2025
 
 ---
 
@@ -59,7 +92,11 @@ The cryptographic threat isn't future—it's **retroactive**:
 - Every client connection
 - Every blockchain node
 - Every smart contract architecture
-- **Timeline:** 5+ years for enterprise migration (by 2035)
+
+**Timeline (Scenario-Dependent):**
+- **Scenario A (Aggressive):** Must START migration NOW (Q1 2026) to complete by 2027-2028 before CRQC arrives
+- **Scenario B (Mainstream):** 5-7 year window, start by 2028, complete by 2035
+- **Scenario C (Conservative):** 10+ year window (NOT RECOMMENDED given 2025 breakthroughs)
 
 ### The Real Blocker: Not Technology, Not Crypto
 
@@ -292,19 +329,23 @@ This is exactly the Georgia-Antoine Gary positioning applied to quantum security
 
 ---
 
-## IMMEDIATE NEXT STEPS
+## IMMEDIATE NEXT STEPS (AGGRESSIVE TIMELINE: Q1 2026 ENGAGEMENT)
 
-### Week 1: Research & Validation
-- [ ] Contact CISA, NCSC, Post-Quantum Cryptography Coalition for partnership discussions
-- [ ] Research existing migration attempts (are there any case studies?)
-- [ ] Identify 2-3 Tier 1 or Tier 2 contacts who might be interested in pilot work
+**Critical Context:** Under Scenario A (60-70% probability), organizations must START migration by Q1 2026. This creates an immediate market window for InfraFabric engagement—earliest movers gain competitive advantage.
 
-### Week 2-3: Dossier Development
-- [ ] Create "POST-QUANTUM-CRYPTOGRAPHY-MIGRATION-FRAMEWORK.md" (similar to GEDIMAT model but for quantum)
-- [ ] Develop "QUANTUM-MIGRATION-PILOT-PROTOCOL.md" with 4-phase gates
-- [ ] Draft outreach email to Tier 1 target (financial institution or critical infrastructure)
+### Week 1 (Now): Research & Emergency Engagement Preparation
+- [ ] Contact CISA, NSA, NCSC, Post-Quantum Cryptography Coalition to position as "urgent migration partner"
+- [ ] Identify 3-5 Tier 1 prospects (financial institutions, critical infrastructure) already under regulatory pressure
+- [ ] Research existing migration attempts and case studies (JPMorgan, TD, others starting in 2025)
+- [ ] Prepare "Q1 2026 Engagement Package" emphasizing 18-month migration window
 
-### Month 2: Pilot Engagement
+### Week 2-3: Crisis-Mode Positioning Framework
+- [ ] Create "QUANTUM-THREAT-URGENCY-BRIEF.md" (1-page executive summary, Scenario A emphasis)
+- [ ] Develop "POST-QUANTUM-CRYPTOGRAPHY-MIGRATION-FRAMEWORK.md" (GEDIMAT-style, aggressive timeline)
+- [ ] Create "QUANTUM-MIGRATION-EMERGENCY-PROTOCOL.md" (18-month fast-track pilot)
+- [ ] Draft outreach to Tier 1 target emphasizing "migration must start January 2026"
+
+### Month 2 (December 2025): Immediate Pilot Engagement
 - [ ] Schedule exploratory call with first prospect
 - [ ] Present the credibility framework + ROI model
 - [ ] Propose 14-day quantum migration audit (proof of concept)
