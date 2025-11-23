@@ -1,39 +1,10 @@
-# Exclude all non-research files
-marketing/
-council/drafts/
-*.backup
-*.log
-*.aux
-*.toc
-
-# Local tooling and analysis artifacts
-.venv_tools/
-out/
-out_bundle.zip
-.memory_bus/
-.venv-copilot/
-
-# SECURITY: Credential and API key files (NEVER commit)
-API_KEYS.md
-CREDENTIALS_REFERENCE.md
-cookies.json
+# Credentials and secrets
 .env
 .env.local
-.env.*.local
-*.pem
-*.key
-*.pub
+credentials.json
+secrets.json
+API_KEYS
+PASSWORD*
 
-# Swarm architecture specific
-swarm-architecture/.env
-swarm-architecture/.env.example
-swarm-architecture/API_KEYS.md
-swarm-architecture/API_KEYS.*.md
-
-# Python venv and caches
-__pycache__/
-*.pyc
-.pytest_cache/
-.venv*/
-
-# Keep only what's essential for arXiv
+# Do NOT commit these files with real credentials
+# Only commit sanitized versions

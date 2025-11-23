@@ -44,10 +44,12 @@ ssh -i ~/.ssh/icw_stackcp_ed25519 digital-lab.ca@ssh.gb.stackcp.com "echo 'SSH w
 
 ### 3. Set Environment Variables
 
+⚠️ **IMPORTANT:** Use local `.env` file (not committed to git)
+
 ```bash
 # Create ~/.codex-env or add to ~/.bashrc
-export CODEX_API_KEY="sk-..."  # Your API key if needed
-export MEMORY_EXOSKELETON_TOKEN="50040d7fbfaa712fccfc5528885ebb9b"
+export CODEX_API_KEY="YOUR_CODEX_API_KEY"  # From your settings
+export MEMORY_EXOSKELETON_TOKEN="YOUR_BEARER_TOKEN"  # See credentials file
 export MEMORY_EXOSKELETON_API="https://digital-lab.ca/infrafabric/bridge.php"
 export MEMORY_EXOSKELETON_REDIS_HOST="redis-19956.c335.europe-west2-1.gce.cloud.redislabs.com"
 export MEMORY_EXOSKELETON_REDIS_PORT="19956"
@@ -59,6 +61,8 @@ export STACKCP_KEY="$HOME/.ssh/icw_stackcp_ed25519"
 source ~/.codex-env
 ```
 
+**Note:** Store actual credentials in `~/.codex-env` (add to `.gitignore`)
+
 ---
 
 ## Quick Start
@@ -66,8 +70,8 @@ source ~/.codex-env
 ### Test Connection
 
 ```bash
-# Test bridge.php API
-curl -H "Authorization: Bearer 50040d7fbfaa712fccfc5528885ebb9b" \
+# Test bridge.php API (use token from ~/.codex-env)
+curl -H "Authorization: Bearer $MEMORY_EXOSKELETON_TOKEN" \
   "https://digital-lab.ca/infrafabric/bridge.php?action=info"
 
 # Expected response:
