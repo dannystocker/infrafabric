@@ -89,14 +89,15 @@ Option 3: Local proxy + tunneling
 
 ## Git Reference
 
-**Last commit:** `0356e9f` - "Add Instance #17 handover: Redis proxy blocker + exoskeleton strategy"
+**Latest commit:** `3f7e196` - "Instance #17: Add Redis proxy blocker discovery and Memory Exoskeleton strategy"
 
 **Branch:** yologuard/v3-publish
 
 **Key files in repo:**
-- SESSION-INSTANCE-17-HANDOVER.md (225 lines)
+- SESSION-INSTANCE-17-NARRATION.md (280 lines) - Session arc narrative
+- SESSION-INSTANCE-17-HANDOVER.md (225 lines) - Blockers + 3 solution options
 - SESSION-RESUME.md (1,034 lines - master handover)
-- agents.md (comprehensive project docs)
+- agents.md (comprehensive project docs with Instance #17 section added)
 
 ---
 
