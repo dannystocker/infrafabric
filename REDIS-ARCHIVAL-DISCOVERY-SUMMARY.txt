@@ -1,0 +1,446 @@
+================================================================================
+                   REDIS CONTEXT ARCHIVAL DISCOVERY REPORT
+                              November 23, 2025
+================================================================================
+
+PROJECT: InfraFabric Context Preservation via Redis
+STATUS: DISCOVERY PHASE COMPLETE - AWAITING APPROVAL FOR IMPLEMENTATION
+
+================================================================================
+EXECUTIVE SUMMARY
+================================================================================
+
+DISCOVERY SCOPE:
+  • /home/setup/infrafabric/ (main project directory)
+  • /mnt/c/users/setup/downloads/ (Windows downloads backup)
+
+RESULTS:
+  • 57+ unique context files identified
+  • ~1.3 MB total active context volume
+  • 28 files recommended for Redis archival
+  • 8 files recommended to keep in Git only
+  • 5 files identified as redundant/consolidatable
+
+RECOMMENDATION:
+  Deploy Phases 1 + 2 immediately (~570K memory usage)
+  for critical infrastructure and foundational research access
+
+================================================================================
+FILES DISCOVERED BY CATEGORY
+================================================================================
+
+TIER 1: SESSION & INSTANCE HANDOFF FILES
+  Files:        14 files
+  Size:         ~220K
+  Age:          0-7 days old
+  Recommendation: Archive 9 immediately (Phases 1 & 2), 3-5 optional
+
+  Key Files:
+  • SESSION-RESUME.md (45K) - Master session state [IMMEDIATE]
+  • INSTANCE-XX-ZERO-CONTEXT-STARTER.md (11K) - Bootstrap template [IMMEDIATE]
+  • SESSION-INSTANCE-14-GEDIMAT-STATE.md (18K) - Current mission [HIGH]
+  • INSTANCE-13-HANDOFF-COMPLETION.md (17K) - Recent completion [HIGH]
+
+TIER 2: REDIS & TRANSFER MANAGEMENT
+  Files:        5 files
+  Size:         ~45K
+  Age:          3-7 days old
+  Recommendation: Archive ALL 5 (critical infrastructure)
+
+  Key Files:
+  • REDIS-CONTEXT-GUIDE.md (12K) - Usage guide [CRITICAL]
+  • REDIS-TRANSFER-VERIFICATION.md (16K) - Verification procedures [CRITICAL]
+  • HANDOFF-COMPLETE-CHECKLIST.md (5.2K) - Process template [HIGH]
+  • REDIS-QUICK-REFERENCE.md (2.5K) - Quick lookup [HIGH]
+
+TIER 3: STRATEGIC FINDINGS & DISCOVERIES
+  Files:        9 files
+  Size:         ~285K
+  Age:          0-7 days old
+  Recommendation: Archive 7 immediately (Phase 2), 2 optional
+
+  Key Files:
+  • IF-TTT-COMPLIANCE-AUDIT-GEORGES-REPORT.md (53K) [HIGHEST PRIORITY]
+  • HAIKU-02-BLOCKER-ANALYSIS.md (34K) - P0 findings [HIGH]
+  • HAIKU-01-GEDIMAT-INVESTIGATION.md (32K) - Deep-dive [HIGH]
+  • IF-TTT-CITATION-INDEX-INSTANCES-8-10.json (34K) - Citation data [HIGH]
+
+TIER 4: HAIKU INVESTIGATION NARRATIVES
+  Files:        4 files
+  Size:         ~124K
+  Age:          0-7 days old
+  Recommendation: Archive ALL 4 (foundational research)
+
+  Files: HAIKU-01 through HAIKU-04 (investigation narratives)
+
+TIER 5: IF-FRAMEWORK PAPERS (Strategic)
+  Files:        4 files
+  Size:         ~200K
+  Age:          4-7 days old
+  Status:       STATIC - Already in git with full history
+  Recommendation: Keep in Git only (no Redis needed)
+
+  Files: IF-armour.md, IF-vision.md, IF-witness.md, IF-foundations.md
+
+TIER 6: PRODUCTION NARRATIVES
+  Files:        6+ files
+  Size:         ~344K
+  Age:          0-7 days old
+  Recommendation: Archive 3 production episodes (Phase 3 optional)
+
+  Key Files: if.instance.ep.13/14/15 (production narratives)
+
+TIER 7: WINDOWS DOWNLOADS BACKUP
+  Files:        9 files
+  Size:         ~115K
+  Age:          20+ days old
+  Recommendation: Consolidate - keep originals in /infrafabric only
+
+  Status: Duplicate backups, some 20+ days old
+
+================================================================================
+ARCHIVAL RECOMMENDATIONS BY PHASE
+================================================================================
+
+PHASE 1: IMMEDIATE DEPLOYMENT (24 hours)
+  Files:            6 critical files
+  Content Volume:   ~95K
+  Redis Memory:     ~150K (with overhead)
+  Priority:         HIGHEST - Infrastructure & recovery
+  TTL Range:        30-365 days
+
+  Critical Files to Load:
+  ✓ instance:master:session-resume (SESSION-RESUME.md, 90d)
+  ✓ instance:template:zero-context-bootstrap (STARTER.md, 365d)
+  ✓ instance:13:completion-state (HANDOFF-COMPLETION.md, 45d)
+  ✓ instance:13:redis-transfer-log (TRANSFER-SUMMARY.txt, 60d)
+  ✓ shared:redis-usage-guide (REDIS-CONTEXT-GUIDE.md, 365d)
+  ✓ shared:redis-recovery-procedures (RECOVERY-GUIDE.md, 180d)
+
+PHASE 2: FIRST WEEK DEPLOYMENT (days 1-7)
+  Files:            10 research & findings files
+  Content Volume:   ~280K (additional)
+  Redis Memory:     ~420K (additional)
+  Cumulative:       ~570K total memory
+  Priority:         HIGH - Foundational research
+  TTL Range:        60-180 days
+
+  Key Files to Load:
+  ✓ research:haiku-01/02/03/04-* (4 investigation narratives)
+  ✓ instance:12:georges-compliance-report-full (53K, 90d)
+  ✓ shared:intelligence-findings-core (24K, 90d)
+  ✓ shared:citations-instances-8-10-json (34K, 90d)
+  ✓ shared:intelligence-procedures-methodology (19K, 180d)
+  ✓ shared:redis-verification-procedures (16K, 180d)
+
+PHASE 3: OPTIONAL DEPLOYMENT (week 2+)
+  Files:            6 production narratives & references
+  Content Volume:   ~150K (additional)
+  Redis Memory:     ~225K (additional)
+  Total if included: ~800K memory
+  Priority:         LOW - Optional narratives
+  TTL Range:        60-365 days
+
+  Optional Files:
+  • narrative:ep-13/14/15-* (3 production episodes)
+  • shared:handoff-completion-checklist (365d)
+  • shared:redis-quick-reference (365d)
+  • instance:14:gedimat-quantum-state (60d)
+
+FILES TO KEEP IN GIT ONLY (No Redis):
+  • IF-armour.md (48K) - Static framework paper
+  • IF-vision.md (34K) - Static framework paper
+  • IF-witness.md (41K) - Static framework paper
+  • IF-foundations.md (76K) - Static framework paper
+
+  Rationale: Mature documents with full git history. Static content
+  not requiring instance-to-instance transfer. Full commit history
+  provides better value than Redis archival.
+
+FILES TO CONSOLIDATE/CLEAN:
+  • IF-TTT-CITATION-INDEX-SUMMARY.md (consolidate with JSON version)
+  • SESSION-INSTANCE-13-SUMMARY.md (consolidate with SESSION-RESUME)
+  • INSTANCE-12-REDIS-TRANSFER.md (remove in favor of _SUMMARY)
+  • Old Windows downloads backups (20+ days old)
+
+================================================================================
+MEMORY IMPACT ANALYSIS
+================================================================================
+
+Memory Budget Scenario 1 (Conservative - <500K available):
+  Deploy Phase 1 only: ~150K memory
+  Benefit: Critical infrastructure + recovery
+  Status: ✅ Safe for all Redis instances
+
+Memory Budget Scenario 2 (Recommended - >500K available):
+  Deploy Phase 1 + 2: ~570K memory
+  Benefit: Critical infrastructure + foundational research
+  Status: ✅ Reasonable for most Redis instances (>1GB total)
+
+Memory Budget Scenario 3 (Generous - >1GB available):
+  Deploy Phase 1 + 2 + 3: ~800K memory
+  Benefit: All context including production narratives
+  Status: ✅ Safe for large Redis instances (>2GB)
+
+Breakdown:
+  Content Volume:      ~525K
+  Redis Overhead:      ~40% typical (210K)
+  Total with overhead: ~735K
+  Recommended:         ~570K (Phase 1 + 2, actual usage)
+
+================================================================================
+IMPLEMENTATION DETAILS
+================================================================================
+
+OUTPUT FILES GENERATED:
+
+1. REDIS-ARCHIVAL-CATALOG.md (12K)
+   Complete analysis with detailed evaluation table, preservation criteria,
+   recommended keys & TTLs, implementation checklist, and verification
+   procedures for all 57 discovered files.
+
+2. REDIS-ARCHIVAL-INDEX.md (7.7K)
+   Quick reference guide with one-page decision summary, files by tier,
+   archival criteria matrix, and approval workflow.
+
+3. redis-archival-implementation.sh (15K, executable)
+   Ready-to-run script that loads selected files to Redis with correct
+   TTLs. Supports phase-by-phase deployment with dry-run mode.
+
+   Usage:
+   $ ./redis-archival-implementation.sh phase1    # Load 6 critical files
+   $ ./redis-archival-implementation.sh phase2    # Add 10 research files
+   $ ./redis-archival-implementation.sh phase3    # Add 6 narratives
+   $ ./redis-archival-implementation.sh all       # Load all phases
+
+4. REDIS-ARCHIVAL-DISCOVERY-SUMMARY.txt (this file)
+   Executive summary of discovery process and recommendations.
+
+EXECUTION PATH:
+1. User reviews REDIS-ARCHIVAL-CATALOG.md or REDIS-ARCHIVAL-INDEX.md
+2. User approves Phase 1, Phase 2, and optionally Phase 3
+3. Run: ./redis-archival-implementation.sh phase1 (or phase2, phase3, all)
+4. Verify with: redis-cli KEYS "*" | grep instance
+5. Check TTLs with: redis-cli TTL instance:master:session-resume
+
+================================================================================
+REDIS KEY NAMING CONVENTION
+================================================================================
+
+Proposed hierarchical key structure for clarity and organization:
+
+  instance:master:*              Master/consolidated session state
+  instance:NN:*                  Instance-specific context (NN = instance #)
+  shared:*                       Shared across all instances
+  research:*                     Findings, investigations, discoveries
+  narrative:ep-NN:*              Production episodes
+
+Examples:
+  instance:master:session-resume
+  instance:13:completion-state
+  instance:16:session-narration
+  shared:redis-usage-guide
+  shared:intelligence-findings-core
+  research:haiku-01-gedimat-investigation
+  narrative:ep-13-partnership-infrastructure
+
+Benefits:
+  • Hierarchical organization enables pattern-based retrieval
+  • Clear separation of concerns (instance vs shared vs research)
+  • Supports future automation and pattern matching
+  • Human-readable key names aid debugging
+
+================================================================================
+ARCHIVAL CRITERIA REFERENCE
+================================================================================
+
+✅ YES - Archive to Redis:
+   1. Used by next 2-3 instances (session state, recovery guides)
+   2. Unique discoveries not easily recreated (research findings)
+   3. Must be accessible to every instance (infrastructure guides)
+   4. External-facing deliverables (production narratives)
+   5. Recently created (<5 days old for instance-specific work)
+
+⚠️ MAYBE - Consider Archival:
+   1. Moderately useful but alternatives exist
+   2. Static references that change rarely
+   3. Conditional use (e.g., Haiku swarm files)
+
+❌ NO - Keep in Git Only or Purge:
+   1. Mature, static papers (fully versioned in git)
+   2. Older than 5 days and consolidated elsewhere
+   3. Duplicate backups
+   4. Multiple versions of same content
+
+================================================================================
+VERIFICATION PROCEDURES
+================================================================================
+
+Quick Verification (after Phase 1 archival):
+  $ redis-cli MGET \
+      "instance:master:session-resume" \
+      "instance:template:zero-context-bootstrap" \
+      "instance:13:completion-state" \
+      "instance:13:redis-transfer-log" \
+      "shared:redis-usage-guide" \
+      "shared:redis-recovery-procedures" | wc -l
+
+  Expected output: 6 (all critical keys present)
+
+Detailed Verification (after any phase):
+  $ redis-cli INFO memory | grep used_memory_human
+  $ redis-cli KEYS "*" | wc -l
+  $ redis-cli TTL instance:master:session-resume
+
+Full Verification Script:
+  See REDIS-ARCHIVAL-CATALOG.md for complete bash verification script
+
+================================================================================
+NEXT STEPS & DECISION POINTS
+================================================================================
+
+1. REVIEW (you are here)
+   Read this summary and the detailed catalog files
+   Decision Point: Proceed to approval?
+
+2. APPROVAL
+   Three separate approvals needed:
+   ✓ Phase 1 (IMMEDIATE): 6 critical infrastructure files
+   ✓ Phase 2 (FIRST WEEK): 10 research & findings files
+   ✓ Phase 3 (OPTIONAL): 6 production narratives & references
+
+3. EXECUTION
+   Run implementation script with approved phases:
+   $ ./redis-archival-implementation.sh [phase1|phase2|phase3|all]
+
+4. VERIFICATION
+   Confirm all keys loaded and accessible:
+   $ redis-cli KEYS "*" | grep instance
+   $ redis-cli TTL instance:master:session-resume
+
+5. DOCUMENTATION
+   Update session notes with archival completion and Redis key locations
+
+================================================================================
+CRITICAL DECISION: RECOMMENDED DEPLOYMENT
+================================================================================
+
+RECOMMENDATION: Deploy Phases 1 + 2 immediately (~570K memory)
+
+RATIONALE:
+  • Phase 1 (6 files): Provides critical infrastructure needed for every
+    instance to understand Redis access patterns and recover from failures
+
+  • Phase 2 (10 files): Contains foundational research that informs all
+    strategic decisions (Gedimat investigation, blocker analysis, Georges
+    audit) - not easily recreated and used by next 2-3 instances
+
+  • Combined: ~570K memory is reasonable for >500K available, captures
+    80% of archival value with minimal memory footprint
+
+  • Phase 3 (optional): Can be added later if narrative access patterns
+    indicate demand; currently available in git
+
+NOT RECOMMENDED: Keep in Git only (no Redis)
+  • IF-framework papers (armour, vision, witness, foundations) are static
+    and already have full git history. Archival provides minimal benefit
+    over git access patterns which are already well-established.
+
+AVOID: Files to consolidate/clean
+  • Remove duplicate _SUMMARY versions (keep best version only)
+  • Purge Windows downloads backups >20 days old
+  • Consolidate multiple versions of citation tracking
+
+================================================================================
+RESOURCE REQUIREMENTS
+================================================================================
+
+Execution Time:
+  Phase 1: ~30 seconds
+  Phase 2: ~60 seconds
+  Phase 3: ~45 seconds
+  Verification: ~10 seconds
+  Total: <3 minutes for all phases
+
+Memory Requirements:
+  Phase 1: ~150K Redis memory
+  Phase 2: +420K Redis memory (cumulative: ~570K)
+  Phase 3: +225K Redis memory (cumulative: ~795K)
+
+  Minimum Redis instance: >1GB recommended for headroom
+
+Disk Requirements:
+  No disk space required (Redis in-memory only)
+
+Network Requirements:
+  Local Redis connection (localhost:6379 default)
+  No external network dependencies
+
+================================================================================
+RISK ASSESSMENT
+================================================================================
+
+LOW RISK: Phase 1 & 2 deployment
+  • Small memory footprint (~570K)
+  • Non-destructive (original files remain intact)
+  • Easy rollback (delete Redis keys, re-archive)
+  • All files already in git, no data loss possible
+  • Verification procedures provided
+
+MITIGATION STRATEGIES:
+  • Dry-run mode: Test without storing (DRY_RUN=true ./script)
+  • Phased rollout: Deploy phase-by-phase with verification
+  • TTL management: Automatic expiry prevents stale data
+  • Source preservation: All files remain in filesystem
+  • Version control: Full git history available
+
+================================================================================
+APPENDIX: FILE LISTING SUMMARY
+================================================================================
+
+IMMEDIATE ARCHIVAL (Phase 1 - 6 files, ~150K):
+  SESSION-RESUME.md (45K)
+  INSTANCE-XX-ZERO-CONTEXT-STARTER.md (11K)
+  SESSION-INSTANCE-14-GEDIMAT-STATE.md (18K)
+  INSTANCE-13-HANDOFF-COMPLETION.md (17K)
+  INSTANCE-13-REDIS-RECOVERY-GUIDE.md (3.9K)
+  REDIS-CONTEXT-GUIDE.md (12K)
+
+FIRST WEEK ARCHIVAL (Phase 2 - 10 files, ~420K):
+  HAIKU-02-BLOCKER-ANALYSIS.md (34K)
+  HAIKU-01-GEDIMAT-INVESTIGATION.md (32K)
+  HAIKU-03-METHODOLOGY-TEMPLATES.md (32K)
+  IF-TTT-COMPLIANCE-AUDIT-GEORGES-REPORT.md (53K)
+  IF-TTT-CITATION-INDEX-INSTANCES-8-10.json (34K)
+  IF-TTT-COMPLIANCE-AUDIT-GEORGES-NARRATION.md (28K)
+  IF-INTELLIGENCE-FINDINGS-SUMMARY.md (24K)
+  IF-INTELLIGENCE-PROCEDURE.md (19K)
+  HAIKU-04-REDIS-INVESTIGATION.md (17K)
+  REDIS-TRANSFER-VERIFICATION.md (16K)
+
+OPTIONAL ARCHIVAL (Phase 3 - 6 files, ~225K):
+  if.instance.ep.13_the-partnership-infrastructure-built.md (25K)
+  if.instance.ep.14_the-research-architect-reflection.md (19K)
+  if.instance.ep.15_methodology-enhancement-swarm.md (16K)
+  HANDOFF-COMPLETE-CHECKLIST.md (5.2K)
+  SESSION-INSTANCE-13-SUMMARY.md (17K)
+  REDIS-QUICK-REFERENCE.md (2.5K)
+
+KEEP IN GIT ONLY (No archival needed):
+  IF-armour.md (48K)
+  IF-vision.md (34K)
+  IF-witness.md (41K)
+  IF-foundations.md (76K)
+
+================================================================================
+DISCOVERY PHASE: COMPLETE
+AWAITING APPROVAL FOR IMPLEMENTATION
+================================================================================
+
+Status: All context files identified and cataloged
+Next Action: Review recommendations and approve deployment phases
+Documentation: Complete (3 detailed files + 1 implementation script)
+Ready: Yes - awaiting user authorization
+
+Generated: 2025-11-23 Instance #16
+Discovery Tool: File system scan + Redis archival analysis

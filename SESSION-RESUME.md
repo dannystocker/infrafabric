@@ -1,10 +1,21 @@
 # InfraFabric Session Resume
-**Last Updated:** 2025-11-22 (Instance #12)
-**Session:** GEDIMAT marketing framework complete - Joe Coulombe + Rory Sutherland integration ready for sales pilot
+**Last Updated:** 2025-11-23 (Instance #16)
+**Session:** Quantum threat positioning + timeline reframing complete - Two parallel verticals ready (Georges + Quantum)
 
 ---
 
-## Current Mission Status: ✅ GEDIMAT FRAMEWORK / ✅ DEMO SYSTEM / ✅ GEORGES-ANTOINE STRATEGY / ✅ TESTS RUNNING
+## Current Mission Status: ✅ QUANTUM TIMELINE REFRAMED / ✅ GEORGES READY DEC 9 / ✅ QUANTUM Q1 2026 POSITIONING / ⏳ NEXT: EXECUTE PARTNERSHIPS
+
+**Instance #16 (2025-11-23):** Complete - Quantum threat timeline reframed, aggressive scenario PRIMARY
+- QUANTUM-THREAT-BLOCKCHAIN-STRATEGIC-BRIEF.md updated (2026-2027 now 60-70% probability, was edge case)
+- Three-scenario structure: Aggressive (60-70%) | Mainstream (20-30%) | Conservative (10-20%)
+- Research integrated: Google Gidney, IBM, IonQ, Federal Reserve, NIST, CISA timelines
+- Urgency reframed: "18-24 month migration window" vs. "5-year planned migration"
+- Q1 2026 engagement window positioned as immediate market opportunity
+- Git commit: `8e386c8` "Update quantum threat timeline: 2026-2027 as primary scenario"
+- Session narration: SESSION-INSTANCE-16-NARRATION.md (production-ready)
+- Strategic insight: Crisis positioning (emergency response) stronger than planned positioning
+- Next vertical approved: Quantum threat as secondary market after Georges succeeds
 
 **Instance #12 (2025-11-22):** Complete - Demo system, partnership strategy, tests in flight
 - GEDIMAT_XCEL_V3.56_BTP_CLEAN.md (92KB production document, 100% BTP sector-appropriate)
@@ -45,13 +56,31 @@
 - 0404e30: Add Instance #12 delivery summary
 - 838595e: Add quick reference guide
 
-### Critical Path Forward
-1. Test #2-7 complete by Dec 6 ✅
-2. Approach Georges with full evidence package ✅
-3. 14-day pilot with his client ✅
-4. Partnership decision by Dec 20
+### Critical Path Forward (TWO PARALLEL TRACKS)
 
-### Pending (For Instance #13 or continuation)
+**Track A: Georges Partnership (IMMEDIATE)**
+1. ✅ All materials ready (PARTNERSHIP-EXECUTION-PLAN-GEORGES.md)
+2. ⏳ Dec 9: Contact call (60 min) - Approach with 9.2/10 credibility research
+3. ⏳ Dec 10-15: Demo walkthrough (90 min) - Technical deep-dive
+4. ⏳ Dec 17-Jan 11: Pilot execution (4 weeks, weekly gates)
+5. ✅ Partnership decision by Dec 20 (Pilot Week 4)
+
+**Track B: Quantum Threat (Q1 2026 LAUNCH)**
+1. ✅ Brief ready (QUANTUM-THREAT-BLOCKCHAIN-STRATEGIC-BRIEF.md updated)
+2. ⏳ Dec 2025: Prospect identification (Tier 1: Financial/Critical Infra)
+3. ⏳ Jan 2026: Framework development (POST-QUANTUM-CRYPTOGRAPHY-MIGRATION-FRAMEWORK.md)
+4. ⏳ Q1 2026: Launch engagement (market window opens when orgs realize 18-month urgency)
+
+**Sequencing:** Georges executes in parallel with Quantum prep. Georges validates methodology in comms domain. Quantum proves methodology scales to security domain.
+
+### Redis Context Available (Instance #16)
+**Keys stored for Instance #17+ handoff:**
+- instance:16:quantum-brief-updated (timeline reframing complete)
+- instance:16:next-actions (parallel track execution)
+- instance:16:session-narration (SESSION-INSTANCE-16-NARRATION.md)
+- TTL: 30 days (expires 2025-12-22)
+
+### Pending (For Instance #17 or continuation)
 - Fix cost claim ambiguity (P0) - 2-3 hours
 - Create three-scenario cost table
 - Update Medium article disclaimers

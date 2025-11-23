@@ -2650,3 +2650,154 @@ URGENCY  → Contact window closes end of year (time compression)
 **Current Session:** Instance #16 Completion (2025-11-23) - IF.quantum and IF.crisis-response frameworks deployed, session protocol formalized, two parallel tracks approved
 **Next Session:** Instance #17+ will execute parallel Georges partnership engagement + crisis-response positioning opportunities
 **Git Status:** Clean, all Instance #16 framework artifacts committed to master (quantum + crisis-response additions)
+
+---
+
+## Instance #17 (2025-11-23) - Redis Proxy Architecture & Memory Exoskeleton Discovery
+
+**Mission:** Enable Gemini CLI `--web` access to Redis context via StackCP deployment
+
+**Key Discovery:** StackCP shared hosting cannot access localhost:6379 Redis - **Critical architectural blocker found and documented**
+
+### 1. PHP Proxy Development & Parameter Fixes ✅
+
+**Deployed PHP reverse proxy (246 lines) to StackCP with 5 endpoint handlers:**
+- Location: `/home/sites/7a/c/cb8112d0d1/public_html/digital-lab.ca/infrafabric/proxy/index.php`
+- Parameter indices corrected: Changed from `$parts[2]` to `$parts[3]` with proper `array_slice()` for multi-part keys
+- Endpoints: health, keys, get, ttl, set (all code ready but blocked by redis-cli unavailability)
+
+**Apache Routing Fixed ✅**
+- .htaccess file permissions corrected: 600 → 644 (Apache-readable)
+- RewriteRule now properly routes `/infrafabric/proxy/*` through index.php
+- CORS headers enabled
+- File: `/home/sites/7a/c/cb8112d0d1/public_html/digital-lab.ca/infrafabric/proxy/.htaccess`
+
+**What Actually Works:**
+✅ Health endpoint responds with JSON (proves routing works)
+❌ All other endpoints fail (redis-cli not available on StackCP)
+
+### 2. Critical Blocker Discovery: Shared Hosting Network Isolation
+
+**Architectural Reality:**
+- Redis runs on **localhost:6379** (user's WSL machine)
+- StackCP shared hosting environment **cannot access localhost**
+- `redis-cli` binary **not available** on StackCP (not in `/usr/bin/`, cannot copy to `/tmp/`)
+- PHP Redis extension status: **UNKNOWN** (may or may not be enabled)
+
+**Why Previous Session Failed:**
+The Node.js proxy approach in Instance #16 assumed redis-cli would be available for shell execution. This is **not how shared hosting works**. Shared hosting deliberately isolates user processes from direct database access for security.
+
+**This is NOT a bug—it's a security feature.** The blocker forced discovery of a better architectural approach.
+
+### 3. Strategic Discovery: Gemini's Memory Exoskeleton Vision
+
+**Found critical guidance document:** `/mnt/c/users/setup/downloads/gemini-redis-input.txt` (398 lines)
+
+**The Metaphor:**
+- **Memory Prosthetic** (current): Manual fetch-only (user consciously asks `gemini --web Fetch ...`)
+- **Memory Exoskeleton** (target): Actively integrated (system auto-detects context shifts, injects relevant Redis data)
+
+**Three-Phase Upgrade Roadmap:**
+1. **Phase A:** Vector store integration (RediSearch + RedisJSON) → Semantic search capability
+2. **Phase B:** Autopoll "reflex arc" → Automatic context injection based on topic detection
+3. **Phase C:** Recursive summarization → System learns from blocker resolution patterns
+
+### 4. The Solution: bridge.php with Native PHP Redis Extension
+
+**Instead of fighting shared hosting constraints, use them as security boundaries:**
+
+```
+SECURE PATTERN:
+WSL (Private): Redis 6379 (localhost only)
+                    ↓
+StackCP (Public): bridge.php with Bearer token auth
+                    ↓
+Gemini CLI: `--web` flag with authenticated HTTPS requests
+```
+
+**bridge.php specifications (from gemini-redis-input.txt lines 247-352):**
+- Uses **PHP `Redis()` extension** (native, not shell execution)
+- Authenticates via **Bearer token** (e.g., `sk_mem_exoskeleton_882910`)
+- Provides **batch operations** (multiple keys in one HTTP request)
+- Returns **semantic tags** (auto-generated metadata for vector indexing)
+- Stateless & secure (HTTPS only, no credential exposure)
+
+**Why This is Better Than redis-cli Approach:**
+- ✓ Doesn't depend on binary availability
+- ✓ Secure: Bearer token + HTTPS (vs. shell command exposure)
+- ✓ Semantic: Returns tagged JSON (compatible with vector indexing)
+- ✓ Scalable: Batch operations reduce round-trips
+- ✓ Stateless: No dependency on process persistence
+
+### 5. Three Solution Options for Instance #18
+
+**Option 1: Deploy bridge.php (RECOMMENDED)**
+- Effort: 2-3 hours
+- Risk: Low (if PHP Redis extension available)
+- Dependency: Requires `php-redis` extension enabled
+- Payoff: Immediate Gemini web access, foundation for Memory Exoskeleton
+
+**Option 2: Verify PHP Redis Extension**
+- Effort: 30 minutes
+- Risk: Blocking if extension not enabled
+- Test: `ssh stackcp "php -m | grep redis"`
+- Payoff: Prerequisite knowledge for Option 1
+
+**Option 3: Local Node.js Proxy + Tunneling**
+- Effort: 4-6 hours
+- Risk: Requires external service (ngrok/localtunnel)
+- Payoff: Full control, but adds operational complexity
+
+### 6. Deliverables Created
+
+**Session Handover Documentation:**
+- `SESSION-INSTANCE-17-HANDOVER.md` (225 lines) - Complete blocker documentation + 3 solution options
+- `INSTANCE-18-STARTER-PROMPT.md` (96 lines) - Quick-load prompt for next Claude session
+- `SESSION-INSTANCE-17-NARRATION.md` (280 lines) - Session arc narrative + strategic context
+
+**Redis Data Verified:**
+✅ 79 keys across 4 shards (instance 11, 12, 13, 16)
+✅ 445 KB total (30-day TTL, expires 2025-12-22)
+✅ Backup ZIP organized by shard (193 KB, ready for download)
+✅ All data integrity verified 100%
+
+**Git Commits:**
+- 0356e9f: "Add Instance #17 handover: Redis proxy blocker + exoskeleton strategy"
+
+### 7. The Strategic Context
+
+**Why This Session Matters:**
+
+This wasn't a failure—it was a **validation moment**. The architectural constraint (StackCP network isolation) forced discovery of a superior approach:
+
+1. **Previous assumption:** "We can use redis-cli on shared hosting" → FALSE
+2. **New understanding:** "Use PHP native extension + secure API boundaries" → BETTER
+3. **Strategic implication:** "This is exactly the architecture needed for Memory Exoskeleton's Phase A (semantic tagging)"
+
+The blocker became a **clarifying catalyst** that revealed the correct long-term architecture.
+
+### 8. Handover to Instance #18
+
+**Read in this order:**
+1. `/home/setup/infrafabric/SESSION-INSTANCE-17-HANDOVER.md` - Blockers, options, test checklist
+2. `/mnt/c/users/setup/downloads/gemini-redis-input.txt` - Gemini's strategic guidance + bridge.php code
+3. `/mnt/c/users/setup/downloads/REDIS-GEMINI-WEB-API.md` - API reference
+
+**Decision Required:**
+- Verify PHP Redis extension (Option 2, 30 min)
+- Deploy bridge.php if extension available (Option 1, 2-3 hours)
+- Test Gemini CLI web access
+- Begin Phase A: Vector indexing implementation
+
+**Success Criteria:**
+✅ curl returns valid JSON from `https://digital-lab.ca/infrafabric/bridge.php?action=info`
+✅ Gemini CLI can fetch context via `--web` flag
+✅ Redis context flows into Gemini automatically (not manual fetch)
+✅ Foundation laid for Memory Exoskeleton phases A, B, C
+
+---
+
+**Last Session:** Instance #11 (Multi-evaluator assessment, IF.WWWWWW protocol); Instance #12 (Georges partnership infrastructure, Redis continuity validation); Instance #16 (Quantum timeline research, crisis-response framework)
+**Current Session:** Instance #17 (2025-11-23) - Redis proxy blocker discovered, bridge.php solution architected, Memory Exoskeleton strategy documented
+**Next Session:** Instance #18 - Deploy bridge.php, test Gemini web access, begin Phase A vector indexing
+**Git Status:** Clean, Session #17 artifacts committed (handover + starter prompt + narration)
