@@ -1,10 +1,24 @@
-# Credentials and secrets
+# Credentials and secrets - MANDATORY (Security P0)
 .env
 .env.local
+.env.*
+*.env
 credentials.json
 secrets.json
 API_KEYS
 PASSWORD*
+*API_KEY*
+*api_key*
+*.key
+*.pem
+*.p12
+.credentials/
+secrets/
+
+# Google/Gemini credentials
+GEMINI_API_KEY*
+GOOGLE_API_KEY*
 
 # Do NOT commit these files with real credentials
-# Only commit sanitized versions
+# Only commit .env.example as template
+# See: SECURITY.md for credential management guidelines

@@ -169,11 +169,13 @@ cp .env.example .env
 **Test each shard:**
 ```bash
 # Shard 1 (danny.stocker@gmail.com)
-export GEMINI_API_KEY="AIzaSyDSnIE3eKXoUmeydbUn9wdbwBxWPlJJgn4"
+# SECURITY: API keys stored in .env - never commit to git
+export GEMINI_API_KEY=$(grep GEMINI_API_KEY_SHARD1 .env | cut -d= -f2)
 python gemini_librarian.py --mode query --question "What is the Hybrid Brain pattern?"
 
 # Shard 2 (dstocker.ca@gmail.com)
-export GEMINI_API_KEY="AIzaSyDzLJU-9-nEwUsj5wgmYyOzT07uNU4KUEY"
+# SECURITY: API keys stored in .env - never commit to git
+export GEMINI_API_KEY=$(grep GEMINI_API_KEY_SHARD2 .env | cut -d= -f2)
 python gemini_librarian.py --mode query --question "test"
 
 # Repeat for shards 3-5
