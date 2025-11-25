@@ -1,0 +1,2 @@
+?? out/branches/claude/realtime-parallel-sessions-011CV2o8kLhZZEHUtjFZPazM/git_log.txt
+?? out/branches/claude/realtime-parallel-sessions-011CV2o8kLhZZEHUtjFZPazM/git_status.txt

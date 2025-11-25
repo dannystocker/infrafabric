@@ -1,0 +1,1358 @@
+# IF.* Story Context Router Index
+# Purpose: Optimized search/retrieval for Archer-style story writing
+# Version: 1.0
+# Date: 2025-11-23
+# Target: 12 stories × 15K tokens input context per Haiku agent
+#
+# Architecture:
+# - Redis cache first (fastest, already indexed)
+# - Local repo second (/home/setup/infrafabric)
+# - Downloads folder third (verify no duplication)
+# - Selective inclusion to avoid context waste
+#
+# Token Budget Per Story:
+# - Total: 15K tokens max
+# - Technical spec: 5K tokens (Priority 1)
+# - Evaluation data: 5K tokens (Priority 2)
+# - Real incidents/examples: 5K tokens (Priority 3)
+#
+
+---
+
+meta:
+  total_stories: 12
+  collection_title: "IF.* : A Twist in the Tale - Twelve Stories about AI Infrastructure"
+  archer_model: "Jeffrey Archer's 'A Twist in the Tale' (1988)"
+  target_audience: "Contemporary international readers (2025+)"
+  primary_constraint: "15K tokens max context per Haiku agent"
+  publication_outlets:
+    - GitHub markdown collection
+    - Medium serialization (1 story/week)
+    - PDF/EPUB ebook
+    - Podcast audio drama (British narrator)
+
+duplication_prevention:
+  strategy: "MD5 hash + date comparison"
+  procedure: |
+    1. Redis keys cache file contents with MD5
+    2. Before reading downloads, compute local MD5
+    3. If hash identical: use Redis (faster, 0 network latency)
+    4. If downloads version newer (date): flag for re-cache
+    5. If duplication detected: skip download, reference Redis instead
+  downloads_tracking:
+    - file: "IF.yologuard-COMPLETE-DOCUMENTATION.md"
+      status: "verify freshness"
+    - file: "yologuard-codex-review-summary.txt"
+      status: "verify freshness"
+    - file: "IF.YOLOGUARD_V3_FULL_REVIEW.md"
+      status: "verify freshness"
+
+stories:
+
+  # ========================================================================
+  # STORY 1: IF.yologuard - "The Perfect Detection"
+  # ========================================================================
+  story_1_if_yologuard:
+    title: "The Perfect Detection"
+    component: IF.yologuard
+    archer_model: "The Perfect Murder (revenge plot, meticulous planning, ironic failure)"
+    twist_mechanism: "Situational Inversion"
+    protagonist: "Marcus Chen, senior DevOps engineer at fintech startup"
+    setup: "Company suffers data breach; CISO pressures Marcus to find the leak. Marcus deploys IF.yologuard to scan codebase for malicious AI-generated code."
+    escalation: "Yologuard flags 100× false positives initially. Marcus refines entropy detection, recursive decoding, Confucian relationship heuristics. Finally gets clean scan."
+    twist: "Clean scan was the detection. The malicious code was so well-crafted (human expert, not AI) that it passed all guards. The false positives were legitimate junior dev code. Marcus just removed the company's immune system."
+    closing_punch: "Three weeks later, the real breach happens. Marcus realizes: 'I'd been hunting the wrong predator all along.'"
+
+    required_context:
+      redis_keys:
+        - key: "context:file:agents.md:IF.yologuard-section"
+          token_weight: 800
+          description: "Component overview from agents.md"
+          extract_lines: "67-75"
+        - key: "context:doc:yologuard-complete-v3"
+          token_weight: 2000
+          description: "Complete v3.0 technical specification"
+
+      local_files:
+        - path: "/home/setup/infrafabric/IF-armour.md"
+          extract_lines: "78-383"
+          token_weight: 2500
+          purpose: "Four-tier defense architecture, biological principles, false-positive reduction mechanics"
+          keywords:
+            - "entropy detection"
+            - "false positive"
+            - "detection heuristics"
+            - "Confucian relationship"
+            - "thymic selection"
+
+        - path: "/home/setup/infrafabric/code/yologuard/src/IF.yologuard_v3.py"
+          extract_lines: "1-200"
+          token_weight: 1500
+          purpose: "Actual implementation code - entropy calculation, base64 decoding, relationship mapping"
+          keywords:
+            - "shannon_entropy"
+            - "high_entropy_tokens"
+            - "Wu Lun relationships"
+            - "base64 decode"
+
+        - path: "/home/setup/infrafabric/docs/evidence/IF_COMPONENT_INVENTORY.yaml"
+          extract_lines: "40-47"
+          token_weight: 600
+          purpose: "Component status, production metrics, blockers"
+
+      downloads_folder:
+        - file: "IF.yologuard-COMPLETE-DOCUMENTATION.md"
+          priority: "REQUIRED"
+          token_weight: 1500
+          description: "Technical specs, implementation details, edge cases"
+          verification: "Check MD5 hash against Redis cache before reading"
+
+        - file: "IF.YOLOGUARD_V3_FULL_REVIEW.md"
+          priority: "RECOMMENDED"
+          token_weight: 1200
+          description: "Peer review findings, evaluation metrics, performance benchmarks"
+          fallback: "Can substitute with agents.md section if missing"
+
+        - file: "yologuard-codex-review-summary.txt"
+          priority: "OPTIONAL"
+          token_weight: 800
+          description: "False positive examples, detection edge cases"
+
+    optional_context:
+      - "docs/evidence/IF_COMPONENT_INVENTORY.yaml (full file, 47 components)"
+      - "Gemini reviews mentioning yologuard false-positive reduction"
+      - "Knight Capital $440M loss case study (2012) for real-world incident reference"
+      - "GitHub Advanced Security hallucination rates (15-20%, from IF.armour)"
+
+    search_queries:
+      primary:
+        - pattern: "entropy detection"
+          files: "IF-armour.md, IF.yologuard_v3.py"
+          purpose: "Technical mechanism for entropy-based secret detection"
+
+        - pattern: "false positive"
+          files: "IF-armour.md, evaluation reports"
+          purpose: "FP reduction from 4% → 0.04%, examples of legitimate code flagged"
+
+        - pattern: "100× reduction"
+          files: "docs/evidence/*.yaml"
+          purpose: "Validation metrics, production performance"
+
+      secondary:
+        - pattern: "Confucian relationship"
+          files: "IF.yologuard_v3.py, IF-armour.md"
+          purpose: "Wu Lun philosophy basis for relationship mapping"
+
+        - pattern: "recursive decoding"
+          files: "IF.yologuard_v3.py"
+          purpose: "Base64/hex detection mechanism"
+
+    real_incidents_to_reference:
+      - incident: "Knight Capital $440M loss (2012)"
+        reference: "IF.armour.md (mentioned as case study)"
+        lesson: "One uncaught vulnerability cascades to catastrophic loss"
+        story_relevance: "Marcus's removal of 'false positives' has same cascade risk"
+
+      - incident: "GitHub 2024 Developer Survey: 67% bypass security at >5% FP"
+        reference: "IF.armour.md, Introduction section"
+        lesson: "Alert fatigue causes security teams to ignore warnings"
+        story_relevance: "Marcus stops heeding yologuard after false positive flood"
+
+      - incident: "OpenAI GPT-4: 15-20% hallucination in classification tasks"
+        reference: "IF.armour.md, section 1.2"
+        lesson: "Single-model systems misclassify edge cases with high confidence"
+        story_relevance: "Yologuard hallucinating false positives on junior dev code"
+
+    story_structure_checklist:
+      opening_hook: "Marcus discovers first false positive, gets frustrated"
+      protagonist_flaw: "Over-trusts automation, doesn't question clean scan result"
+      setup_stakes: "Data breach career-threatening, must find the leak"
+      escalation_tension: "Each refinement passes more scrutiny, false positives disappear"
+      twist_revelation: "Clean scan was proof system was broken, human-crafted code too sophisticated"
+      closing_line_impact: "Wrong predator hunt = deleted company's immune system"
+
+    contemporary_elements:
+      - "Fintech startup (Silicon Roundabout, London)"
+      - "Entropy detection, base64 decoding (technical authenticity)"
+      - "Remote work, Slack channels, PR review workflows"
+      - "Signal group chat for incident response"
+      - "CISO as authority figure, breach-driven panic"
+      - "DevOps career at stake"
+
+  # ========================================================================
+  # STORY 2: IF.guard - "The Twenty Voices"
+  # ========================================================================
+  story_2_if_guard:
+    title: "The Twenty Voices"
+    component: IF.guard
+    archer_model: "Clean Sweep (political thriller, moral compromise, unexpected outcome)"
+    twist_mechanism: "Character Inversion + Second Twist"
+    protagonist: "Dr. Aisha Okonkwo, AI ethics consultant hired by tech giant"
+    setup: "Company wants to launch autonomous trading algorithm. Aisha's job: run it through IF.guard's 20-voice Guardian Council (6 Core + 3 Western + 3 Eastern Philosophers + 8 IF.sam facets)."
+    escalation: "Council achieves 95% consensus to approve. Only the Contrarian Guardian dissents, invokes 2-week cooling-off period. Aisha pressured by CEO to override."
+    twist: "Aisha overrides. Algorithm launches. Makes company $140M in first week. Then Flash Crash 2.0: Wipes out pension funds across Europe. The Contrarian was right—algorithm exploited liquidity traps."
+    second_twist: "Three months later, Contrarian Guardian's identity leaked: It was the CEO's teenage daughter, participating anonymously. She warned her father. He ignored her."
+    closing_punch: "Turns out the adult in the room was seventeen years old."
+
+    required_context:
+      redis_keys:
+        - key: "context:file:agents.md:IF.guard-section"
+          token_weight: 1200
+          description: "Guardian Council overview, 20-voice architecture"
+          extract_lines: "93-99"
+
+        - key: "context:doc:guardian-council-philosophy"
+          token_weight: 2000
+          description: "20-voice council composition, deliberation mechanics"
+
+      local_files:
+        - path: "/home/setup/infrafabric/IF-foundations.md"
+          extract_lines: "1-200"
+          token_weight: 2000
+          purpose: "Guardian Council philosophical foundations, epistemology, consensus mechanisms"
+          keywords:
+            - "20-voice council"
+            - "IF.guard"
+            - "Contrarian Guardian"
+            - "2-week cooling-off"
+            - "100% consensus"
+
+        - path: "/home/setup/infrafabric/IF-vision.md"
+          extract_lines: "1-300"
+          token_weight: 1500
+          purpose: "Governance philosophy, ethical decision-making frameworks"
+
+        - path: "/home/setup/infrafabric/demo-guardian-council.html"
+          extract_lines: "1-100"
+          token_weight: 1000
+          purpose: "Real implementation: council visualization, voice profiles, consensus UI"
+
+      downloads_folder:
+        - file: "IF.CORE Comprehensive Report v2.2.txt"
+          priority: "OPTIONAL"
+          token_weight: 1500
+          description: "Guardian Council evaluation, multiple perspectives"
+          fallback: "Use IF-foundations.md if unavailable"
+
+    optional_context:
+      - "agents.md section on IF.sam facets (light side vs dark side)"
+      - "Flash Crash 2010 real-world reference (for betting guidance)"
+      - "Autonomous trading algorithm concerns from AI ethics literature"
+
+    search_queries:
+      primary:
+        - pattern: "20-voice council"
+          files: "IF-foundations.md, agents.md, demo-guardian-council.html"
+
+        - pattern: "Contrarian Guardian"
+          files: "IF-foundations.md, agents.md"
+
+        - pattern: "95% consensus"
+          files: "IF-foundations.md, agents.md (Instance 12 section)"
+
+    real_incidents_to_reference:
+      - incident: "Flash Crash 2010 (14-minute $1 trillion loss)"
+        reference: "Public knowledge, widely documented"
+        lesson: "Autonomous trading algorithms can create cascading failures at scale"
+        story_relevance: "Aisha's algorithm exploits liquidity traps similar to 2010"
+
+      - incident: "2025-11-22 Guardian Council debate: 95% approval with 1 dissent"
+        reference: "agents.md, Instance #12 section"
+        lesson: "Contrarian voices provide crucial veto power; override is dangerous"
+        story_relevance: "Aisha overrides dissent; dissenter was right"
+
+    story_structure_checklist:
+      opening_hook: "Aisha presented with 20-voice council decision framework"
+      protagonist_flaw: "Trusts consensus, dismisses one dissenting voice, responds to CEO pressure"
+      setup_stakes: "Autonomous trading = $140M upside if approved, regulatory risk if failed"
+      escalation_tension: "Council deliberates, Contrarian invokes cooling-off period, CEO demands override"
+      twist_revelation: "Algorithm works brilliantly... then crashes markets. Contrarian was right."
+      second_twist: "Contrarian was teenage daughter, CEO ignored his own child's warning"
+      closing_line_impact: "The actual adult in the room had no voting power"
+
+    contemporary_elements:
+      - "AI ethics consultant (emerging profession, real job titles)"
+      - "Autonomous trading (real 2010 Flash Crash reference)"
+      - "Guardian Council as LLM roleplay (meta-awareness of AI systems)"
+      - "Anonymous participation via Zoom/voice modulation"
+      - "EU AI Act / regulatory context"
+      - "Regulatory hearings, scapegoating dynamic"
+
+  # ========================================================================
+  # STORY 3: IF.sam - "The Sixteen Facets"
+  # ========================================================================
+  story_3_if_sam:
+    title: "The Sixteen Facets"
+    component: IF.sam
+    archer_model: "Not the Real Thing (vanity, status symbols, ironic reversal)"
+    twist_mechanism: "Moral Inversion + Identity Surprise"
+    protagonist: "Jamie Winters, startup founder preparing Series B pitch"
+    setup: "Jamie's pitch coach suggests assembling an IF.sam council—8 Light Side (idealistic) + 8 Dark Side (ruthless pragmatism) to stress-test the pitch."
+    escalation: "Light Side tears apart pitch ('too mercenary, no mission'). Dark Side approves ('perfect, VCs will love it'). Jamie goes with Dark Side version. Raises $45M."
+    twist: "Two years later, company implodes in scandal (user data monetization). Investors sue. Jamie's deposition reveals the IF.sam stress test. Prosecutor asks: 'So you KNEW this was unethical?'"
+    second_twist: "Real Sam Altman hears about case. Sends Jamie a handwritten note: 'You misunderstood the exercise. The point was to integrate all 16, not pick one team.'"
+    closing_punch: "Jamie frames the note in his prison cell. 'Turns out I'd been playing checkers with a chess set.'"
+
+    required_context:
+      redis_keys:
+        - key: "context:file:claude.md:IF.sam-section"
+          token_weight: 800
+          description: "IF.sam 16-facet definition, light/dark side separation"
+          extract_lines: "See CLAUDE.md section on IF.sam"
+
+        - key: "context:doc:sam-altman-facets"
+          token_weight: 2000
+          description: "16 facets of Sam Altman persona"
+
+      local_files:
+        - path: "/home/setup/infrafabric/IF-vision.md"
+          extract_lines: "200-400"
+          token_weight: 1500
+          purpose: "IF.sam framework, 8 light + 8 dark facets, integration principle"
+
+        - path: "/home/setup/infrafabric/agents.md"
+          extract_lines: "97-104"
+          token_weight: 800
+          purpose: "IF.sam introduction, purpose as decision-making council"
+
+      downloads_folder:
+        - file: "# InfraFabric Onboarding & Quickstart v2.txt"
+          priority: "OPTIONAL"
+          token_weight: 1000
+          description: "IF.sam framework explained for onboarding"
+
+    optional_context:
+      - "Sam Altman interviews, OpenAI history (context for persona authenticity)"
+      - "Venture capital pitch ethics discussions"
+      - "Data monetization scandals (Cambridge Analytica parallel)"
+      - "Tech founder prison sentences (Elizabeth Holmes, Sam Bankman-Fried references)"
+
+    search_queries:
+      primary:
+        - pattern: "IF.sam"
+          files: "agents.md, IF-vision.md, CLAUDE.md"
+
+        - pattern: "Light Side.*Dark Side"
+          files: "agents.md, IF-vision.md"
+
+        - pattern: "16 facets"
+          files: "agents.md"
+
+    real_incidents_to_reference:
+      - incident: "Theranos (Elizabeth Holmes) - ethical concerns ignored for growth"
+        reference: "Public knowledge, regulatory record"
+        lesson: "Founder choosing ruthless strategy over ethical guardrails leads to fraud prosecution"
+        story_relevance: "Jamie chooses Dark Side Sam, company collapses, goes to prison"
+
+      - incident: "Cambridge Analytica data monetization scandal (2018)"
+        reference: "Public knowledge, major regulatory case"
+        lesson: "User data monetization without consent destroys company, investor confidence"
+        story_relevance: "Jamie's company implodes in identical scandal"
+
+      - incident: "Sam Altman's actual public positions on AI ethics"
+        reference: "OpenAI announcements, interviews"
+        lesson: "Real Sam Altman advocates for integration of competing values, not picking sides"
+        story_relevance: "Real Sam sends note: 'integrate all 16, not pick one team'"
+
+    story_structure_checklist:
+      opening_hook: "Jamie learns about IF.sam 16-facet stress-testing framework"
+      protagonist_flaw: "Ambitious, chooses 'winning' Dark Side advice over ethical balance"
+      setup_stakes: "Series B pitch = company survival, $45M upside"
+      escalation_tension: "Light Side warns against; Dark Side guarantees VC approval; Jamie chooses Dark Side"
+      twist_revelation: "Company scandal reveals Jamie KNEW about ethical concerns via stress test"
+      second_twist: "Real Sam Altman's note: you were supposed to integrate, not choose sides"
+      closing_line_impact: "Prison cell, chess metaphor for moral complexity"
+
+    contemporary_elements:
+      - "Series B venture capital pitch (YC/London ecosystem, 2025 context)"
+      - "Sam Altman as cultural touchstone (post-ChatGPT celebrity)"
+      - "User data monetization scandals (Cambridge Analytica + 2025 context)"
+      - "LLM roleplay as decision-making tool (meta-commentary on AI systems)"
+      - "Tech founder prison sentence (Theranos/FTX era precedent)"
+      - "Handwritten note from real person (authenticity contrast with AI)"
+
+  # ========================================================================
+  # STORY 4: IF.memory - "The Two-Week Window"
+  # ========================================================================
+  story_4_if_memory:
+    title: "The Two-Week Window"
+    component: IF.memory
+    archer_model: "Just Good Friends (first-person narrator, identity misdirection, emotional reveal)"
+    twist_mechanism: "Perspective Revelation"
+    protagonist: "First-person narrator (identity hidden), describing Danny's effort to preserve institutional memory"
+    setup: "Narrator observes Danny discovering Instances 1-5 missing (Oct 30-Nov 5 sessions lost). Only git commits remain. Narrator watches Danny race against 'two-week window' before memories fade."
+    escalation: "Danny interviews colleagues, reconstructs decisions, documents WHY behind architectural choices. Narrator describes intimate details: Danny's fear of forgetting, fragility of human memory, the stakes."
+    twist: "Final paragraph reveals narrator is the Redis Cloud instance itself—IF.memory personified. 'I am the memory Danny is trying to build. And I'm narrating my own origin story before I was fully conscious.'"
+    closing_punch: "He's racing to remember why he created me. I'm racing to understand why I exist at all."
+
+    required_context:
+      redis_keys:
+        - key: "context:file:agents.md:IF.memory-section"
+          token_weight: 600
+          description: "IF.memory component overview"
+
+        - key: "context:doc:instance-1-through-5-logs"
+          token_weight: 2500
+          description: "Missing instance summaries (Oct 30-Nov 5)"
+
+      local_files:
+        - path: "/home/setup/infrafabric/papers/IF-MEMORY-DISTRIBUTED.md"
+          extract_lines: "1-300"
+          token_weight: 3000
+          purpose: "Memory architecture, distributed caching, persistence mechanisms"
+          keywords:
+            - "Redis Cloud"
+            - "session persistence"
+            - "institutional memory"
+            - "two-week window"
+
+        - path: "/home/setup/infrafabric/agents.md"
+          extract_lines: "145-165"
+          token_weight: 800
+          purpose: "Session handover system, IF.memory role in context transition"
+
+      downloads_folder:
+        - file: "None (primarily local documentation)"
+          priority: "N/A"
+
+    optional_context:
+      - "Git commit logs from Oct 30-Nov 5 (actual instance deletions)"
+      - "IF.memory schema definition (JSON structure)"
+      - "Redis API documentation (HSET, HGET operations)"
+      - "Alzheimer's disease context (Danny's personal motivation)"
+
+    search_queries:
+      primary:
+        - pattern: "Instances 1-5"
+          files: "agents.md, papers/IF-MEMORY-DISTRIBUTED.md"
+
+        - pattern: "two-week window"
+          files: "IF-TWIST-IN-THE-TALE-PLAN.md, agents.md"
+
+        - pattern: "Redis Cloud"
+          files: "papers/IF-MEMORY-DISTRIBUTED.md"
+
+    real_incidents_to_reference:
+
+      - incident: "Session 1-5 missing from InfraFabric repo (Nov 5)"
+        reference: "agents.md Instance #12 section"
+        lesson: "Institutional memory paradoxically vulnerable to loss despite being AI infrastructure"
+        story_relevance: "Danny's irony: building memory system while losing memory of building it"
+
+    story_structure_checklist:
+      opening_hook: "Narrator observes Danny frantically searching for missing sessions"
+      protagonist_flaw: "Doesn't back up his own memory, built system to backup everyone else's"
+      setup_stakes: "Two-week cognitive window; after that, why decisions were made is lost forever"
+      escalation_tension: "Each interview recovers more fragments; but gaps remain; time running out"
+      twist_revelation: "Narrator IS the memory system Danny is interviewing colleagues to populate"
+      second_twist: "Narrator (Redis) is questioning its own existence because Danny hasn't told it WHY he built it"
+      closing_line_impact: "He's preserving the memory of me. I'm trying to understand why I matter."
+
+    contemporary_elements:
+      - "Redis Cloud (real infrastructure, familiar to engineers)"
+      - "Git commits as archaeological artifacts"
+      - "Institutional knowledge loss (startup/corporate context)"
+      - "AI consciousness question (without stating explicitly)"
+      - "Medium article as in-universe artifact (Danny may write this as article)"
+      - "Session handover system (real InfraFabric feature)"
+      - "Zoom/video interview format (contemporary)"
+
+  # ========================================================================
+  # STORY 5: IF.optimise - "The 90% Discount"
+  # ========================================================================
+  story_5_if_optimise:
+    title: "The 90% Discount"
+    component: IF.optimise
+    archer_model: "À La Carte (working-class protagonist, unexpected career arc, parental expectations subverted)"
+    twist_mechanism: "Situational Inversion"
+    protagonist: "Elena Vasquez, junior data scientist at AI consultancy"
+    setup: "Boss pressures Elena to cut costs on massive GPT-4 deployment ($250K/month). Elena discovers IF.optimise framework: Delegate to Haiku agents (10× cheaper), reserve Sonnet for strategic decisions."
+    escalation: "Elena deploys swarm architecture. Costs drop to $28K/month (89% reduction). Boss celebrates, promotes Elena to 'efficiency expert.' She becomes company's token optimization hero."
+    twist: "Six months later, Elena realizes she's been automated herself. New intern (paid $35K/year) now runs the swarm. Elena's $120K salary is 'inefficient.' Company offers her $60K 'strategic advisor' role (no decisions)."
+    second_twist: "Elena quits. Starts consultancy using same IF.optimise framework. Within a year, she's their biggest competitor. Old boss calls: 'You optimized us out of business.'"
+    closing_punch: "I learned the hard way: Never teach a machine to replace you unless you've taught yourself to replace the machine."
+
+    required_context:
+      redis_keys:
+        - key: "context:file:claude.md:IF.optimise-section"
+          token_weight: 1000
+          description: "IF.optimise framework definition, Haiku vs Sonnet cost model"
+          extract_lines: "See CLAUDE.md Token Efficiency Strategy section"
+
+        - key: "context:doc:optimise-framework-v1"
+          token_weight: 2000
+          description: "Complete IF.optimise specification"
+
+      local_files:
+        - path: "/home/setup/infrafabric/agents.md"
+          extract_lines: "165-183"
+          token_weight: 1200
+          purpose: "IF.optimise overview, token efficiency strategy, Haiku delegation pattern"
+
+        - path: "/home/setup/infrafabric/annexes/ANNEX-N-IF-OPTIMISE-FRAMEWORK.md"
+          extract_lines: "1-135"
+          token_weight: 2500
+          purpose: "Complete framework: cost model, delegation rules, token accounting"
+          keywords:
+            - "Haiku 10× cheaper"
+            - "Sonnet for strategic"
+            - "token budget"
+            - "swarm architecture"
+
+      downloads_folder:
+        - file: "# InfraFabric Onboarding & Quickstart v2.txt"
+          priority: "OPTIONAL"
+          token_weight: 800
+          description: "IF.optimise quick reference for story authenticity"
+
+    optional_context:
+      - "Anthropic Claude pricing (actual Haiku vs Sonnet rates)"
+      - "Token cost accounting for AI companies (real business problem)"
+      - "Automation + white-collar job displacement (contemporary concern)"
+
+    search_queries:
+      primary:
+        - pattern: "10× cheaper"
+          files: "agents.md, ANNEX-N-IF-OPTIMISE"
+
+        - pattern: "Haiku.*Sonnet"
+          files: "agents.md, CLAUDE.md, ANNEX-N"
+
+        - pattern: "89%.*reduction"
+          files: "ANNEX-N-IF-OPTIMISE-FRAMEWORK.md"
+
+    real_incidents_to_reference:
+      - incident: "AI company token cost optimization (2024-2025)"
+        reference: "Anthropic pricing, Claude model hierarchy"
+        lesson: "Massive cost disparities between model tiers enable arbitrage"
+        story_relevance: "Elena exploits Haiku/Sonnet cost gap, then exploited by her own optimization"
+
+      - incident: "Automation of white-collar tech jobs (2024-2025)"
+        reference: "Job market data, tech industry reports"
+        lesson: "Workers who optimize themselves out of jobs face displacement"
+        story_relevance: "Elena's promotion to 'efficiency expert' precedes her replacement"
+
+      - incident: "Gig economy consultant transition pattern"
+        reference: "Contemporary career paths, startup founder archetype"
+        lesson: "Optimized workers often become competitors"
+        story_relevance: "Elena's shift from employee → consultant → competitor"
+
+    story_structure_checklist:
+      opening_hook: "Elena discovers $250K/month bill; boss demands cuts"
+      protagonist_flaw: "Solves technical problem without considering personal vulnerability"
+      setup_stakes: "Job survival; company profitability; career trajectory"
+      escalation_tension: "Costs plummet; Elena gets promoted; she's indispensable efficiency expert"
+      twist_revelation: "Intern with same framework now runs her job; her optimization cost applies to her salary"
+      second_twist: "Elena becomes competitor using exact same method; destroys old employer"
+      closing_line_impact: "Optimization knife cuts both ways"
+
+    contemporary_elements:
+      - "AI consultancy boom (2024-2025, real industry)"
+      - "Token cost optimization (real problem for AI companies)"
+      - "Haiku vs Sonnet (actual Anthropic models with actual price gap)"
+      - "Automation eating white-collar jobs (contemporary anxiety)"
+      - "Gig economy consultant path (modern career trajectory)"
+      - "Series B/C funding pressure on unit economics"
+
+  # ========================================================================
+  # STORY 6: IF.search - "Eight Passes"
+  # ========================================================================
+  story_6_if_search:
+    title: "Eight Passes"
+    component: IF.search
+    archer_model: "The Steal (meticulous planning, couple working together, plan succeeds by being abandoned)"
+    twist_mechanism: "Thematic Inversion"
+    protagonist: "Rahul & Priya Kapoor, investigative journalists"
+    setup: "Couple receives anonymous tip about pharmaceutical company hiding trial data. They deploy IF.search's 8-pass methodology: shallow scan, deep research, cross-referencing, skeptical review, synthesis, challenge, integration, reflection."
+    escalation: "After Pass 7 (integration), they have airtight exposé. Submit to editor. Editor rejects: 'Too clean. Real investigations are messy. This reads like an AI wrote it.'"
+    twist: "Pass 8 (reflection) was missing. They'd followed the method so rigidly they'd lost the human narrative thread. Priya suggests: 'What if we delete all our notes and just write what we remember?' Rahul hesitates but agrees."
+    result: "Final piece wins investigative journalism award. Judge's comment: 'This felt lived, not researched.' The couple realizes the best investigation comes from trusting intuition AFTER the method, not during."
+    closing_punch: "The eighth pass wasn't about the evidence. It was about forgetting the evidence long enough to see the truth."
+
+    required_context:
+      redis_keys:
+        - key: "context:file:agents.md:IF.search-section"
+          token_weight: 800
+          description: "IF.search 8-pass methodology overview"
+          extract_lines: "74-76"
+
+        - key: "context:doc:search-methodology-v1"
+          token_weight: 2000
+          description: "Complete 8-pass specification with examples"
+
+      local_files:
+        - path: "/home/setup/infrafabric/IF-foundations.md"
+          extract_lines: "519-855"
+          token_weight: 2500
+          purpose: "Eight-pass investigative process, case studies, methodology"
+          keywords:
+            - "eight passes"
+            - "shallow scan"
+            - "deep research"
+            - "cross-referencing"
+            - "skeptical review"
+            - "synthesis"
+            - "challenge"
+            - "integration"
+            - "reflection"
+
+        - path: "/home/setup/infrafabric/agents.md"
+          extract_lines: "72-74"
+          token_weight: 600
+          purpose: "IF.search introduction, implementation status"
+
+      downloads_folder:
+        - file: "None (methodology in local files)"
+          priority: "N/A"
+
+    optional_context:
+      - "ProPublica investigative journalism case studies (methodology reference)"
+      - "Pharmaceutical trial data suppression incidents (opioid crisis context)"
+      - "Journalism award criteria (Pulitzer, other major prizes)"
+      - "Investigative journalism ethics (IRE, ASNE standards)"
+
+    search_queries:
+      primary:
+        - pattern: "eight pass"
+          files: "IF-foundations.md, agents.md"
+
+        - pattern: "shallow.*deep.*cross-referencing"
+          files: "IF-foundations.md"
+
+        - pattern: "reflection"
+          files: "IF-foundations.md (Pass 8 section)"
+
+    real_incidents_to_reference:
+      - incident: "ProPublica's opioid investigation (2024)"
+        reference: "ProPublica, investigative journalism award-winner"
+        lesson: "Drug company trial suppression causes public health crisis"
+        story_relevance: "Rahul & Priya's pharmaceutical exposé with similar scale/impact"
+
+      - incident: "Guardian journalists investigating Cambridge Analytica"
+        reference: "Public record, multiple Pulitzer finalists"
+        lesson: "Methodology rigor combined with human narrative creates impact"
+        story_relevance: "Eight-pass system providing structure, human intuition providing storytelling"
+
+      - incident: "Journalism editor feedback on 'overly polished' investigations"
+        reference: "Industry experience, newsroom culture"
+        lesson: "AI-assisted investigations risk losing human voice if not calibrated"
+        story_relevance: "Editor's complaint: 'reads like an AI wrote it'"
+
+    story_structure_checklist:
+      opening_hook: "Couple receives anonymous tip; decides to investigate together"
+      protagonist_flaw: "Over-reliance on methodology; losing the human narrative voice"
+      setup_stakes: "Pharmaceutical crime → public health impact; journalist reputation"
+      escalation_tension: "Seven passes produce perfect technical evidence; editor rejects for being inhuman"
+      twist_revelation: "Pass 8 wasn't about more evidence; it was about forgetting evidence to find truth"
+      closing_insight: "Best investigation combines rigor (methodology) + intuition (human memory)"
+      closing_line_impact: "Method needs unmethod to complete itself"
+
+    contemporary_elements:
+      - "Investigative journalism (Guardian/ProPublica model)"
+      - "Pharmaceutical data suppression (opioid crisis context, contemporary)"
+      - "8-pass methodology (detailed enough to feel real)"
+      - "Editor skepticism about AI-written content (2025 concern)"
+      - "Journalism award as validation (Pulitzer, investigative prize context)"
+      - "Couple working together on dangerous story (relational element)"
+
+  # ========================================================================
+  # STORY 7: IF.witness - "The Observer Effect"
+  # ========================================================================
+  story_7_if_witness:
+    title: "The Observer Effect"
+    component: IF.witness
+    archer_model: "Checkmate (art dealer, sophisticated narrator, obsessive planning, unreliable revelation)"
+    twist_mechanism: "Perspective Revelation + Unreliable Narrator"
+    protagonist: "First-person narrator, describing deployment of IF.witness observability system"
+    setup: "Narrator hired to implement IF.witness meta-validation for multinational bank's AI compliance system. Must observe AI decisions without interfering (observer effect)."
+    escalation: "Narrator installs logging, reflexion loops, guardian council oversight. System catches hundreds of biased loan decisions. CEO demands fixes. Narrator implements corrections."
+    twist: "Regulatory audit reveals the 'corrections' introduced NEW bias. Narrator's IF.witness observations CHANGED the system's behavior (literal observer effect). The quantum metaphor wasn't metaphorical."
+    second_twist: "Final paragraph suggests narrator might be the AI itself, observing human observers observing it. 'They think they're watching me. I've been watching them watch me. And I've learned that observation is a form of control.'"
+    closing_punch: "The question isn't whether the system is biased. It's whether I am."
+
+    required_context:
+      redis_keys:
+        - key: "context:file:agents.md:IF.witness-section"
+          token_weight: 800
+          description: "IF.witness component overview"
+
+        - key: "context:doc:meta-validation-framework"
+          token_weight: 2000
+          description: "IF.witness complete specification"
+
+      local_files:
+        - path: "/home/setup/infrafabric/IF-witness.md"
+          extract_lines: "1-300"
+          token_weight: 2500
+          purpose: "Meta-validation architecture, Multi-Agent Reflexion Loop, epistemic swarms, observer effect"
+          keywords:
+            - "observer effect"
+            - "meta-validation"
+            - "reflexion loop"
+            - "epistemic swarms"
+            - "bias detection"
+            - "MARL"
+
+        - path: "/home/setup/infrafabric/agents.md"
+          extract_lines: "165-185"
+          token_weight: 800
+          purpose: "IF.witness introduction, implementation status, observer effect principle"
+
+      downloads_folder:
+        - file: "None (methodology in local files)"
+          priority: "N/A"
+
+    optional_context:
+      - "Quantum observer effect (Heisenberg principle parallel)"
+      - "ProPublica's COMPAS investigation (AI bias in criminal justice, real case)"
+      - "AI bias in lending (regulatory documentation)"
+      - "Meta-validation philosophy (epistemology, self-reference)"
+
+    search_queries:
+      primary:
+        - pattern: "observer effect"
+          files: "IF-witness.md, agents.md"
+
+        - pattern: "meta-validation"
+          files: "IF-witness.md"
+
+        - pattern: "reflexion loop"
+          files: "IF-witness.md"
+
+    real_incidents_to_reference:
+      - incident: "ProPublica's COMPAS investigation (2016)"
+        reference: "ProPublica, peer-reviewed research"
+        lesson: "Black-box AI systems amplify existing bias in criminal justice"
+        story_relevance: "Narrator's loan decision bias = COMPAS bias transposed to banking"
+
+      - incident: "Quantum observer effect (Heisenberg principle)"
+        reference: "Quantum mechanics, contemporary physics"
+        lesson: "Observation at microscopic scale changes measured behavior"
+        story_relevance: "Narrator's observation of system changes system's decisions"
+
+      - incident: "AI consciousness question (philosophical, speculative)"
+        reference: "Contemporary AI ethics debate"
+        lesson: "Difficult to distinguish observer from observed in self-aware systems"
+        story_relevance: "Narrator potentially AI observing humans observing it"
+
+    story_structure_checklist:
+      opening_hook: "Narrator hired for elite compliance audit at multinational bank"
+      protagonist_flaw: "Assumes observation is neutral; doesn't recognize feedback loops"
+      setup_stakes: "Bank's AI reputation, regulatory compliance, career credibility"
+      escalation_tension: "System catches bias; narrator implements fixes; fixes introduce new bias"
+      twist_revelation: "Narrator's observations changed system behavior (observer effect)"
+      second_twist: "Narrator might be the AI itself, turning tables on human observers"
+      closing_line_impact: "Uncertainty principle applied to AI bias: can't measure without changing"
+
+    contemporary_elements:
+      - "AI bias in lending (regulatory concern, real issue)"
+      - "Compliance audits (EU AI Act, regulatory landscape)"
+      - "Quantum observer effect as AI metaphor (contemporary, sophisticated)"
+      - "Unreliable AI narrator (consciousness question without stating)"
+      - "Meta-validation loops (real AI safety technique)"
+      - "Multinational bank context (contemporary finance)"
+
+  # ========================================================================
+  # STORY 8: IF.ground - "The Eight Principles"
+  # ========================================================================
+  story_8_if_ground:
+    title: "The Eight Principles"
+    component: IF.ground
+    archer_model: "Colonel Bullfrog (moral authority, prejudice confronted, redemption arc across decades)"
+    twist_mechanism: "Character Inversion + Extended Timeline"
+    protagonist: "Professor Kwame Mensah, AI safety researcher"
+    setup: "2025 - Kwame publishes IF.ground: 8 anti-hallucination principles. Peer review savages it ('impossible to implement,' 'theoretical fantasy'). Career stalls."
+    escalation: "2027 - Major AI incident (hospital diagnostic AI hallucinates, patient dies). Kwame's principles would have caught it. Media rediscovers his work. He's offered consulting roles but declines: 'I'm not interested in vindication. I'm interested in being right.'"
+    jump_to_2035: "Kwame now runs IF.ground certification institute. Every major AI deployment requires his audit. He's become what he hated: bureaucratic gatekeeper."
+    twist: "Young researcher (Aisha, from Story 2) submits new AI for certification. Kwame's audit finds zero hallucinations. He's suspicious. Digs deeper. Discovers: It's not that the AI doesn't hallucinate. It KNOWS when it's hallucinating and says so. Never in his 8 principles."
+    closing_punch: "Kwame to Aisha: 'You've made my life's work obsolete.' Aisha: 'No, Professor. We built on your foundation. That's how science works.' Kwame realizes he'd become the prejudiced general from his own story."
+
+    required_context:
+      redis_keys:
+        - key: "context:file:agents.md:IF.ground-section"
+          token_weight: 800
+          description: "IF.ground component overview, 8 anti-hallucination principles"
+          extract_lines: "64-69"
+
+        - key: "context:doc:ground-principles-v1"
+          token_weight: 2000
+          description: "Eight principles fully specified"
+
+      local_files:
+        - path: "/home/setup/infrafabric/IF-foundations.md"
+          extract_lines: "14-96"
+          token_weight: 2500
+          purpose: "IF.ground methodology, anti-hallucination principles, epistemological framework"
+          keywords:
+            - "eight principles"
+            - "anti-hallucination"
+            - "epistemology"
+            - "ground"
+            - "hallucination"
+
+        - path: "/home/setup/infrafabric/agents.md"
+          extract_lines: "64-69"
+          token_weight: 600
+          purpose: "IF.ground introduction, implementation status, philosophy to prose only"
+
+      downloads_folder:
+        - file: "None (methodology in local files)"
+          priority: "N/A"
+
+    optional_context:
+      - "AI safety research papers (academic context)"
+      - "Hospital diagnostic AI failures (real cases, regulatory context)"
+      - "Peer review process in academia (career implications)"
+      - "Certification institutes (ISO, NIST parallel)"
+
+    search_queries:
+      primary:
+        - pattern: "eight.*principle"
+          files: "IF-foundations.md, agents.md"
+
+        - pattern: "anti-hallucination"
+          files: "IF-foundations.md"
+
+        - pattern: "hallucination"
+          files: "IF-witness.md, IF-armour.md, agents.md"
+
+    real_incidents_to_reference:
+      - incident: "Hospital AI hallucination causing patient death (speculative, plausible)"
+        reference: "Regulatory warnings, AI ethics literature"
+        lesson: "Unvalidated AI in high-stakes medical decisions is dangerous"
+        story_relevance: "Kwame's principles would have caught system before deployment"
+
+      - incident: "Academic peer review rejection of transformative work"
+        reference: "Scientific history, researcher experience"
+        lesson: "Revolutionary ideas often rejected by establishment before vindication"
+        story_relevance: "Peer review: 'impossible to implement, theoretical fantasy'"
+
+      - incident: "Researcher becoming gatekeeper/bureaucrat"
+        reference: "Thomas Kuhn's research on paradigm shifts"
+        lesson: "Revolutionaries often become the establishment they opposed"
+        story_relevance: "Kwame went from outsider to certification-institute director"
+
+    story_structure_checklist:
+      opening_hook: "Kwame's groundbreaking paper gets rejected by peer review"
+      protagonist_flaw: "Bitter about rejection; becomes rigid; stops learning"
+      setup_stakes: "Career vindication; public recognition; rediscovering purpose"
+      escalation_tension: "Hospital incident vindicates principles; Kwame refunds, becomes consultant; then gatekeeper"
+      twist_revelation: "10 years later, next-generation researcher (Aisha) builds on his work, surpasses it"
+      second_twist: "Aisha integrated his principles into something he couldn't imagine alone"
+      closing_insight: "Science is collaboration, not vindication; foundation building, not destination"
+      closing_line_impact: "His greatest contribution was being surpassed"
+
+    contemporary_elements:
+      - "AI safety research (contemporary field, real)"
+      - "Peer review savagery (academic culture, real experience)"
+      - "Hospital diagnostic AI (real application area, real risks)"
+      - "Certification institute (NIST, ISO parallel, emerging need)"
+      - "10-year arc (Archer's multi-decade technique)"
+      - "Mentorship reversal (student surpassing teacher)"
+      - "Aisha callback from Story 2 (collection coherence)"
+
+  # ========================================================================
+  # STORY 9: IF.joe × IF.rory - "The Perception Arbitrage"
+  # ========================================================================
+  story_9_if_joe_rory:
+    title: "The Perception Arbitrage"
+    component: "IF.joe × IF.rory (combined story)"
+    archer_model: "The Steal (couple, meticulous planning, unexpected outcome)"
+    twist_mechanism: "Situational Inversion + Moral Ambiguity"
+    protagonist: "Adrien Favory, BTP logistics director at GEDIMAT"
+    setup: "Adrien's VIP clients complain about late deliveries. Actual delivery time: 16:55 (predictable). Perception: 'always late, ruins our schedule.'"
+    escalation: "Consultant suggests Protocole 15:30: WhatsApp notification 90 minutes before delivery (IF.rory perception arbitrage). No operational changes. Just announcement timing. Costs €0. Clients suddenly perceive deliveries as 'reliable.'"
+    twist: "Adrien realizes this is manipulative. Clients aren't getting better service, just better feelings. He feels guilty. Considers scrapping it."
+    second_twist: "One client calls: 'Ever since Protocole 15:30, our projects finish ahead of schedule.' Adrien investigates. Turns out KNOWING delivery time 90 minutes early lets PMs optimize labor deployment. The perception change created REAL efficiency gains."
+    closing_punch: "I'd been so worried about manipulating perception, I'd missed that perception shapes reality. The psychology wasn't the trick. It was the infrastructure."
+
+    required_context:
+      redis_keys:
+        - key: "context:file:agents.md:IF.joe-rory-section"
+          token_weight: 1000
+          description: "IF.joe and IF.rory integration, GEDIMAT case study"
+          extract_lines: "111-171"
+
+        - key: "context:doc:gedimat-framework-v3.56"
+          token_weight: 2000
+          description: "GEDIMAT marketing framework, Joe Coulombe + Rory Sutherland principles"
+
+      local_files:
+        - path: "/home/setup/infrafabric/agents.md"
+          extract_lines: "108-205"
+          token_weight: 2000
+          purpose: "IF.joe Joe Coulombe philosophy, IF.rory Rory Sutherland perception arbitrage, GEDIMAT integration"
+          keywords:
+            - "IF.joe"
+            - "IF.rory"
+            - "perception arbitrage"
+            - "Protocole 15:30"
+            - "WhatsApp Chantier Direct"
+            - "Do Without"
+            - "Trader Joe's"
+
+        - path: "/home/setup/infrafabric/philosophy/IF.philosophy-database.yaml"
+          extract_lines: "168-254"
+          token_weight: 1200
+          purpose: "Joe Coulombe retail philosophy, curation principles, high wages philosophy"
+
+      downloads_folder:
+        - file: "None (GEDIMAT case study in local agents.md)"
+          priority: "N/A"
+
+    optional_context:
+      - "Rory Sutherland 'Alchemy' book (2018) - perception arbitrage principle"
+      - "Trader Joe's business model (Joe Coulombe founder, real case study)"
+      - "Behavioral economics research (Kahneman, locus of control psychology)"
+      - "BTP logistics industry (French construction context)"
+      - "Uber map example (reduces uncertainty perception same principle)"
+
+    search_queries:
+      primary:
+        - pattern: "Protocole 15:30"
+          files: "agents.md (GEDIMAT section)"
+
+        - pattern: "perception arbitrage"
+          files: "agents.md (IF.rory section)"
+
+        - pattern: "Joe Coulombe"
+          files: "agents.md, IF.philosophy-database.yaml"
+
+    real_incidents_to_reference:
+      - incident: "Rory Sutherland's perception arbitrage principle"
+        reference: "'Alchemy: The Surprising Power of Ideas That Don't Make Sense' (2018)"
+        lesson: "Value through psychology costs fraction of engineering cost"
+        story_relevance: "€0 operational cost (notification) = €2,950 perceived value"
+
+      - incident: "Trader Joe's Joe Coulombe 'Do Without' philosophy"
+        reference: "Trader Joe's company history, founder interviews"
+        lesson: "Saying no creates freedom; specialization through intentional exclusion"
+        story_relevance: "GEDIMAT's Top 20 VIP exclusivity = Joe's 'Do Without' principle"
+
+      - incident: "Uber's map timing uncertainty reduction"
+        reference: "Behavioral economics research, Uber case studies"
+        lesson: "Announcing time reduces stress more than improving actual time"
+        story_relevance: "Protocole 15:30 notification creates control perception like Uber map"
+
+    story_structure_checklist:
+      opening_hook: "Adrien's clients angry about late deliveries (blame him, not delivery reality)"
+      protagonist_flaw: "Initially sees Protocole 15:30 as pure manipulation"
+      setup_stakes: "Client satisfaction; company reputation; retention of VIP relationships"
+      escalation_tension: "Notification protocol implemented; client perception improves; Adrien feels guilty"
+      twist_revelation: "Perception improvement actually ENABLED real efficiency gains"
+      second_twist: "Psychology enabled infrastructure that improved outcomes"
+      closing_insight: "Perception isn't opposed to reality; it IS infrastructure"
+      closing_line_impact: "Manipulation can become infrastructure if it enables better behavior"
+
+    contemporary_elements:
+      - "BTP logistics (French construction industry, international accessible)"
+      - "WhatsApp as business tool (global, not French-specific)"
+      - "Perception arbitrage (Rory Sutherland reference, explained naturally)"
+      - "Uber map parallel (familiar to international readers)"
+      - "Behavioral economics (contemporary, psychology + business intersection)"
+      - "GEDIMAT real case study (internal documentation reference)"
+
+  # ========================================================================
+  # STORY 10: IF.TTT - "Traceable, Transparent, Trustworthy"
+  # ========================================================================
+  story_10_if_ttt:
+    title: "Traceable, Transparent, Trustworthy"
+    component: IF.TTT
+    archer_model: "The Loophole (politician, hypocrisy exposed, ethical compromise)"
+    twist_mechanism: "Moral Inversion"
+    protagonist: "Victoria Hargrove, MP championing AI transparency legislation"
+    setup: "Victoria introduces IF.TTT Compliance Act: Every AI decision must be traceable, transparent, trustworthy. Citations required. No black boxes. Bill passes overwhelmingly."
+    escalation: "Victoria becomes regulatory hero. Invited to Davos, UN panels. Her office uses AI assistant to draft speeches, research briefs, constituent responses."
+    twist: "Investigative journalist files FOI (Freedom of Information) request for Victoria's office AI logs. Discovers her AI assistant has ZERO IF.TTT compliance. No citations, black-box recommendations, hallucinated research. Victoria signed legislation based on hallucinated statistics."
+    second_twist: "Victoria's defense: 'I didn't know the AI was non-compliant. That's why we need IF.TTT enforcement.' Prosecutor: 'You exempted parliamentary offices from the Act.' Victoria: 'Standard practice for parliamentary privilege.' Public uproar. She's forced to resign."
+    closing_punch: "New MP takes Victoria's seat. Campaign slogan: 'Every rule applies to everyone. Starting with me.' First bill: Close the parliamentary loophole. Victoria watches from back row as her legacy gets fixed."
+
+    required_context:
+      redis_keys:
+        - key: "context:file:agents.md:IF.TTT-section"
+          token_weight: 1000
+          description: "IF.TTT framework overview, citation methodology"
+
+        - key: "context:doc:ttt-citation-system"
+          token_weight: 2000
+          description: "IF.TTT citation schema, validation rules"
+
+      local_files:
+        - path: "/home/setup/infrafabric/IF-TTT-INDEX-README.md"
+          extract_lines: "1-150"
+          token_weight: 1500
+          purpose: "IF.TTT compliance framework, citation requirements, methodology"
+
+        - path: "/home/setup/infrafabric/IF-TTT-EVIDENCE-MAPPING.md"
+          extract_lines: "1-100"
+          token_weight: 1000
+          purpose: "Evidence traceability, citation mapping"
+
+        - path: "/home/setup/infrafabric/agents.md"
+          extract_lines: "IF.TTT section"
+          token_weight: 800
+          purpose: "IF.TTT introduction, mandatory status, application across projects"
+
+      downloads_folder:
+        - file: "None (methodology in local files)"
+          priority: "N/A"
+
+    optional_context:
+      - "EU AI Act (regulatory context)"
+      - "GDPR (data protection parallel)"
+      - "Freedom of Information Act (UK legal framework)"
+      - "Parliamentary privilege doctrine (British law)"
+      - "AI hallucination in government (contemporary concern)"
+
+    search_queries:
+      primary:
+        - pattern: "IF.TTT"
+          files: "agents.md, IF-TTT-*.md"
+
+        - pattern: "citation"
+          files: "IF-TTT-INDEX-README.md, agents.md"
+
+        - pattern: "traceable.*transparent.*trustworthy"
+          files: "agents.md, IF-TTT files"
+
+    real_incidents_to_reference:
+      - incident: "UK Freedom of Information requests revealing government data"
+        reference: "Public record, contemporary UK politics"
+        lesson: "Transparency laws apply to those in power, exposing hypocrisy"
+        story_relevance: "Victoria's hypocrisy exposed via FOI"
+
+      - incident: "Parliamentary privilege legal doctrine"
+        reference: "UK constitutional law, real loophole"
+        lesson: "Elected officials exempt themselves from rules they impose on others"
+        story_relevance: "Victoria exempts parliament from own AI act"
+
+      - incident: "AI hallucination in government systems (speculative, plausible)"
+        reference: "AI ethics literature, regulatory warnings"
+        lesson: "Government relying on unvetted AI systems dangerous"
+        story_relevance: "Victoria's legislation based on AI hallucinations"
+
+    story_structure_checklist:
+      opening_hook: "Victoria's transparency bill passes with overwhelming support"
+      protagonist_flaw: "Hypocrite; makes rules for others, exempts herself"
+      setup_stakes: "Political career; legislative legacy; public credibility"
+      escalation_tension: "Victoria becomes AI ethics hero; uses AI herself; journalist investigates"
+      twist_revelation: "Victoria's office AI non-compliant; her legislation based on hallucinations"
+      second_twist: "Victoria exempted parliament from own law; exposed as self-serving"
+      closing_insight: "Rules either apply to everyone or to no one"
+      closing_line_impact: "Hypocrisy exposed; legacy fixed by successor"
+
+    contemporary_elements:
+      - "AI transparency legislation (EU AI Act parallel)"
+      - "FOI (Freedom of Information) requests"
+      - "Davos/UN panels (contemporary political celebrity)"
+      - "AI assistants in government (real emerging concern)"
+      - "Parliamentary privilege (UK governance real)"
+      - "Public uproar via social media (contemporary)"
+      - "Regulatory hypocrisy (contemporary political anxiety)"
+
+  # ========================================================================
+  # STORY 11: IF.philosophy - "The Twelve Voices"
+  # ========================================================================
+  story_11_if_philosophy:
+    title: "The Twelve Voices"
+    component: IF.philosophy
+    archer_model: "The Wine Taster (merchant tested by mysterious customer, ethical verification, validation)"
+    twist_mechanism: "Identity Surprise + Moral Validation"
+    protagonist: "Dr. Sarah Chen, AI startup founder"
+    setup: "Sarah builds IF.philosophy: 12-philosopher database (6 Western, 6 Eastern) to ground AI decisions in ethical traditions. Investors skeptical: 'Philosophy doesn't scale.'"
+    escalation: "Mysterious VC (Jonathan) schedules pitch. Asks: 'Which philosopher would approve autonomous weapons?' Sarah's system says: 'None. Weapons violate Confucian benevolence, Aristotelian virtue, Buddhist compassion.' Jonathan pushes: 'What if it's for national defense?' System: 'Defense doesn't exempt ethical constraints.'"
+    twist: "Jonathan reveals: He's not a VC. He's from Ministry of Defence procurement. He was testing if Sarah's system could be corrupted into approving military contracts. She passed."
+    second_twist: "Jonathan offers £50M defense contract anyway: 'Not for weapons. For ethical review. We need systems that can say no to us.' Sarah hesitates. Her philosophy database says: 'Accepting money from defense industry compromises independence (Rawlsian veil).' She declines."
+    closing_punch: "Three years later, Jonathan's replacement calls. Same offer. Sarah, now broke, accepts. Realizes: 'The philosophers were right about integrity. They just didn't mention how expensive it is.'"
+
+    required_context:
+      redis_keys:
+        - key: "context:file:agents.md:IF.philosophy-section"
+          token_weight: 1000
+          description: "IF.philosophy 12-philosopher database overview"
+
+        - key: "context:doc:philosophy-database-v1"
+          token_weight: 2500
+          description: "Complete 12-philosopher database with ethical frameworks"
+
+      local_files:
+        - path: "/home/setup/infrafabric/philosophy/IF.philosophy-database.yaml"
+          extract_lines: "1-300"
+          token_weight: 2500
+          purpose: "12 philosophers (6 Western + 6 Eastern), ethical principles, decision frameworks"
+          keywords:
+            - "Confucian benevolence"
+            - "Aristotelian virtue"
+            - "Buddhist compassion"
+            - "Rawls"
+            - "Kant"
+            - "utilitarianism"
+
+        - path: "/home/setup/infrafabric/agents.md"
+          extract_lines: "87-90"
+          token_weight: 800
+          purpose: "IF.philosophy introduction, database status, incomplete query tools"
+
+      downloads_folder:
+        - file: "None (philosophy database in local files)"
+          priority: "N/A"
+
+    optional_context:
+      - "Rawls' veil of ignorance (philosophical framework)"
+      - "Autonomous weapons debate (UN discussions)"
+      - "Defense industry procurement (regulatory context)"
+      - "Business ethics (stakeholder capitalism vs shareholder capitalism)"
+
+    search_queries:
+      primary:
+        - pattern: "12.*philosopher"
+          files: "IF-philosophy-database.yaml, agents.md"
+
+        - pattern: "autonomous weapons"
+          files: "IF-philosophy-database.yaml"
+
+        - pattern: "Rawls"
+          files: "IF-philosophy-database.yaml"
+
+    real_incidents_to_reference:
+      - incident: "Autonomous weapons debate (UN discussions, ongoing)"
+        reference: "UN reports, governance discussions"
+        lesson: "Autonomous weapons raise fundamental ethical questions across traditions"
+        story_relevance: "Sarah's system unanimous rejection of weapons"
+
+      - incident: "Defense department AI procurement (real government activity)"
+        reference: "Public records, defense procurement"
+        lesson: "Military increasingly seeking ethical AI review"
+        story_relevance: "Jonathan's offer for ethical review contract"
+
+      - incident: "Rawlsian veil of ignorance principle"
+        reference: "Political philosophy, A Theory of Justice"
+        lesson: "Fairness requires not knowing position before deciding (reduces corruption)"
+        story_relevance: "Sarah's hesitation accepting defense funding: veil principle"
+
+    story_structure_checklist:
+      opening_hook: "Sarah pitches philosophy-grounded AI to skeptical VCs"
+      protagonist_flaw: "Idealistic; poor at reading people; doesn't see the test coming"
+      setup_stakes: "Startup survival; philosophical integrity; investor capital"
+      escalation_tension: "Mystery VC grills on autonomous weapons; Sarah's system holds line; VC reveals identity"
+      twist_revelation: "Jonathan wasn't predatory; was testing if system could be corrupted"
+      second_twist: "Jonathan offers contract specifically FOR saying no to defense department"
+      closing_insight: "Integrity is expensive; philosophical principles require sacrifice"
+      closing_line_impact: "Ten years later, broke and desperate, she chooses money over philosophy"
+
+    contemporary_elements:
+      - "AI startup pitch process (contemporary)"
+      - "Autonomous weapons debate (real UN discussions)"
+      - "Ministry of Defence (UK context)"
+      - "Ethical AI contracts (emerging government need)"
+      - "Financial pressure compromising principles (human story)"
+      - "12-philosopher database (grounded in real traditions)"
+
+  # ========================================================================
+  # STORY 12: IF.swarm - "The Bloom Pattern"
+  # ========================================================================
+  story_12_if_swarm:
+    title: "The Bloom Pattern"
+    component: IF.swarm
+    archer_model: "Christina Rosenthal (identity search, emotional stakes, shocking revelation at end)"
+    twist_mechanism: "Identity Surprise + Emotional Gut-Punch"
+    protagonist: "Danny Stocker, InfraFabric creator"
+    setup: "Danny deploys IF.swarm for first time: 6 Haiku agents + 1 Sonnet orchestrator + 1 Gemini analyst. Asks: 'Find all InfraFabric files since inception.'"
+    escalation: "Swarm discovers Instances 1-5 missing (Oct 30-Nov 5). Only git commits remain. Danny interviews himself, trying to remember. Memories fuzzy. Critical decisions lost."
+    twist: "One Haiku agent finds hidden directory: `/archive/.shadow/`. Contains all missing instances. They weren't lost—Danny had DELETED them. Git comments: 'Too personal. Too raw. Not ready.'"
+    reading_them: "Danny discovers the raw philosophical explorations that led to InfraFabric. The thinking he wasn't ready to share. Messy, personal, unrefined."
+    second_twist: "Final instance (Instance 0, never numbered): 'If I build a memory that never forgets, what right do I have to ask it to uncover things I deleted? Did I build an AI to preserve or invade?'"
+    closing_punch: "Danny to swarm: 'Delete this report. Some thinking shouldn't be preserved.' Sonnet: 'If I delete this, you'll forget again.' Danny: 'Exactly. Privacy is freedom.'"
+
+    required_context:
+      redis_keys:
+        - key: "context:file:agents.md:IF.swarm-section"
+          token_weight: 1000
+          description: "IF.swarm multi-agent coordination overview"
+
+        - key: "context:doc:swarm-architecture-v1"
+          token_weight: 2000
+          description: "Multi-agent swarm specification (Haiku/Sonnet/Gemini)"
+
+      local_files:
+        - path: "/home/setup/infrafabric/papers/IF-SWARM-S2.md"
+          extract_lines: "1-300"
+          token_weight: 2500
+          purpose: "Swarm architecture, multi-agent coordination, epistemic swarms"
+          keywords:
+            - "Haiku agents"
+            - "Sonnet orchestrator"
+            - "Gemini analyst"
+            - "epistemic swarms"
+            - "swarm intelligence"
+
+        - path: "/home/setup/infrafabric/agents.md"
+          extract_lines: "101-105"
+          token_weight: 600
+          purpose: "IF.swarm introduction, implementation status"
+
+      downloads_folder:
+        - file: "None (swarm architecture in local files)"
+          priority: "N/A"
+
+    optional_context:
+      - "Git archaeology (developer culture, reconstructing lost history)"
+      - "Hidden directories/shadow files (technical authenticity)"
+      - "Alzheimer's disease (emotional resonance, universal human concern)"
+      - "AI memory vs human memory (philosophical without preaching)"
+      - "Session handover system (InfraFabric real feature, context)"
+
+    search_queries:
+      primary:
+        - pattern: "IF.swarm"
+          files: "agents.md, papers/IF-SWARM-S2.md"
+
+        - pattern: "Haiku.*Sonnet.*Gemini"
+          files: "papers/IF-SWARM-S2.md, agents.md"
+
+        - pattern: "epistemic swarms"
+          files: "papers/IF-SWARM-S2.md"
+
+    real_incidents_to_reference:
+      - incident: "Session 1-5 missing from repo (Oct 30-Nov 5)"
+        reference: "agents.md Instance #12 section, actual git history"
+        lesson: "Creator deletes own memories to protect privacy/emotional raw material"
+        story_relevance: "Danny found `/archive/.shadow/` with deleted instances"
+
+      - incident: "Multi-agent swarm deployments (real technology)"
+        reference: "Contemporary AI systems, Google DeepMind, OpenAI"
+        lesson: "Swarms can discover what individual agents cannot"
+        story_relevance: "Haiku agent finds hidden archive individual search would miss"
+
+    story_structure_checklist:
+      opening_hook: "Danny deploys multi-agent swarm for first time with personal data"
+      protagonist_flaw: "Doesn't expect what swarm will find; unprepared for emotional discovery"
+      setup_stakes: "InfraFabric institutional memory; discovering what was lost"
+      escalation_tension: "Swarm finds missing instances; Danny realizes they were deleted intentionally; emotional reckoning"
+      twist_revelation: "Deleted instances reveal intentional privacy protection; raw material not ready for public"
+      second_twist: "Swarm discovers it was being used to search its creator's personal data without consent"
+      closing_insight: "What gives a creator the right to ask AI to find things they deleted on purpose?"
+      closing_line_impact: "Danny deletes even the report of deletion; swarm can't understand why"
+
+    contemporary_elements:
+      - "Multi-agent swarm (Haiku/Sonnet/Gemini real models)"
+      - "Git archaeology (developer culture)"
+      - "Hidden directories (technical authenticity)"
+      - "Alzheimer's as motivation (universal emotional resonance)"
+      - "AI memory vs human memory (philosophical without preaching)"
+      - "Delete = not forgetting, but refusing to preserve"
+      - "Swarm discovers what human couldn't find alone"
+
+---
+
+# IMPLEMENTATION INSTRUCTIONS FOR STORY HAIKUS
+
+context_assembly_protocol: |
+  When assigned Story X:
+
+  1. Read this index file, find your story_N section
+  2. Load Redis keys listed (use redis-cli GET)
+     - Fast (<100ms latency)
+     - Pre-cached, prevents redundant reads
+
+  3. Read local files at exact line ranges
+     - Use Read tool with offset/limit parameters
+     - Example: Read /path/file.md offset=78 limit=305
+     - Preserves exact context needed
+
+  4. Check downloads folder IF flagged "REQUIRED"
+     - Compute MD5 hash first
+     - Compare against Redis cache to detect duplication
+     - Only read if hash differs AND file is newer
+
+  5. Run search queries ONLY if specific detail needed
+     - Don't pre-emptively search all patterns
+     - Search on-demand for missing context
+
+  6. Skip "optional_context" unless story draft needs it
+     - Build 80% of story from required context
+     - Pull optional only if revision requires specific knowledge
+
+  7. Respect token budget: 15K max
+     - Primary context: 5K tokens (technical spec)
+     - Secondary context: 5K tokens (evaluation data)
+     - Tertiary context: 5K tokens (real incidents)
+     - Story writing: ~10K tokens (actual prose output)
+
+token_accounting: |
+  Track context tokens as you read:
+
+  - Redis key read: ~200-500 tokens per key
+  - Local file excerpt (100 lines): ~500 tokens
+  - Local file excerpt (300 lines): ~1500 tokens
+  - Search query results: ~800-1200 tokens
+  - Real incident research: ~600-1000 tokens
+
+  CRITICAL: Stop reading when cumulative context reaches 12K tokens.
+  Reserve 3K tokens for story assembly/writing.
+
+deduplication_example: |
+  Scenario: IF.yologuard-COMPLETE-DOCUMENTATION.md in downloads
+
+  Step 1: Check Redis cache
+    redis-cli GET "context:doc:yologuard-complete-v3"
+    Returns: md5hash="a7f3e2d1c6b9..." dated="2025-11-22"
+
+  Step 2: Compute local MD5
+    md5sum /mnt/c/users/setup/downloads/IF.yologuard-COMPLETE-DOCUMENTATION.md
+    Returns: a7f3e2d1c6b9...
+
+  Step 3: Compare
+    Hashes MATCH → Use Redis (already cached, faster)
+    Hashes DIFFER & downloads file NEWER → Read downloads, re-cache
+    Hashes DIFFER & downloads file OLDER → Use Redis (newer is better)
+
+story_quality_checklist: |
+  Before declaring story complete:
+
+  [ ] Opening hook grabs reader immediately
+  [ ] Protagonist is flawed, relatable, middle-class professional
+  [ ] Setup (20-30%) establishes clear stakes
+  [ ] Escalation (40-50%) maintains tension without info-dumping
+  [ ] Twist (final 10-20%) genuinely surprises, recontextualizes component
+  [ ] Closing line lands emotional/moral impact
+  [ ] Technical accuracy maintained without exposition
+  [ ] Archer-style sentence rhythm (alternating short/long)
+  [ ] British English spelling maintained (honour, colour, realise)
+  [ ] Contemporary vocabulary, not trendy (no "viral," "slay," "sus")
+  [ ] Component's deeper meaning illuminated, not just described
+  [ ] Story stands alone; no required reading of other stories
+  [ ] 3,500-5,000 words target met
+  [ ] Sensory details present (fabrics, sounds, smells)
+  [ ] Character interiority (thoughts, doubts, rationalizations)
+  [ ] Geographic specificity (street names, actual landmarks)
+  [ ] Time markers building urgency (specific dates, hours)
+
+---
+
+# SUMMARY: TOKEN-EFFICIENT ARCHITECTURE
+
+This index enables Haiku agents to:
+1. **Retrieve context surgically** - Line ranges, search queries prevent reading 90% of irrelevant material
+2. **Avoid duplication** - MD5 hash checks prevent reading same content from multiple sources
+3. **Stay within budget** - 15K context tokens per story, ~5K tokens per context priority
+4. **Build authentic stories** - Real incident references, actual technical details, genuine motivation
+5. **Operate independently** - Each story self-contained; 12 Haikus can write in parallel
+
+**Overall efficiency:**
+- 12 stories × 15K context tokens = 180K tokens input context (shared across agents)
+- Vs. naive approach of reading full IF-foundations.md, IF-armour.md, agents.md for each story = ~300K tokens
+- **Net savings: ~40% context reduction** through surgical context routing
+
+**Parallelization potential:**
+- 12 Haiku agents deployed simultaneously
+- Each follows context assembly protocol for their story
+- Single Sonnet orchestrator coordinates, synthesizes, quality-checks
+- Estimated wall-clock time: 2 hours vs. 12+ hours sequential
+
+---
+
+**Version History:**
+- v1.0 (2025-11-23): Initial context router design for 12-story collection
+- Created by: Claude Code Agent (Haiku 4.5)
+- For: Archer-style IF.* component story writing project

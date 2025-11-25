@@ -1,0 +1,9 @@
+digraph IFGraph {
+  rankdir=LR;
+  "test_if_guard_policy_approval_success" -> "if_guard_policy.approve_external_call" [label="1"];
+  "test_if_guard_policy_rejection_unregistered_expert" -> "if_guard_policy.approve_external_call" [label="1"];
+  "test_if_guard_policy_rejection_specialization_mismatch" -> "if_guard_policy.approve_external_call" [label="1"];
+  "test_if_guard_policy_alignment_hazard" -> "if_guard_policy.approve_external_call" [label="1"];
+  "test_if_witness_logging_event_fields" -> "if_witness_logger.log_sip_event" [label="2"];
+  "check_policy" -> "if_headers.get" [label="2"];
+}

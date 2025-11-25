@@ -1,0 +1,2 @@
+?? out/branches/master/git_log.txt
+?? out/branches/master/git_status.txt

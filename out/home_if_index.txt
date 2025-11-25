@@ -1,0 +1,223 @@
+CODE_NONSECRET|/home/setup/.local/lib/python3.12/site-packages/telegram/_inline/inlinequeryresultcachedgif.py|IF mention
+CODE_NONSECRET|/home/setup/.local/lib/python3.12/site-packages/telegram/_inline/inlinequeryresultcachedmpeg4gif.py|IF mention
+CODE_NONSECRET|/home/setup/.local/lib/python3.12/site-packages/telegram/_inline/inlinequeryresultgif.py|IF mention
+CODE_NONSECRET|/home/setup/.local/lib/python3.12/site-packages/telegram/_inline/inlinequeryresultmpeg4gif.py|IF mention
+CODE_NONSECRET|/home/setup/digital-lab.ca/infrafabric/yologuard/REPRODUCIBILITY_COMPLETE/IF.yologuard_v3.py|IF.yologuard v3 detector
+CODE_NONSECRET|/home/setup/digital-lab.ca/infrafabric/yologuard/src/IF.yologuard.py|IF yologuard asset
+CODE_NONSECRET|/home/setup/infrafabric/code/yologuard/src/IF.yologuard_v3.py|IF.yologuard v3 detector
+CODE_NONSECRET|/home/setup/infrafabric/code/yologuard/versions/IF.yologuard_v3.py|IF.yologuard v3 detector
+CODE_NONSECRET|/home/setup/work/mcp-multiagent-bridge/IF.search.py|IF search asset
+CODE_NONSECRET|/home/setup/work/mcp-multiagent-bridge/IF.yologuard_v2.py|IF yologuard asset
+CODE_NONSECRET|/home/setup/work/mcp-multiagent-bridge/IF.yologuard_v3.py|IF.yologuard v3 detector
+CODE_NONSECRET|/home/setup/work/mcp-multiagent-bridge/YOLOGUARD_V3_API_REFERENCE.py|Yologuard artifact
+SAFE_DOC|/home/setup/.local/share/heroku/client/10.13.2-82c0564/oclif.manifest.json|IF mention
+SAFE_DOC|/home/setup/.local/share/heroku/client/10.15.0-4bb523c/oclif.manifest.json|IF mention
+SAFE_DOC|/home/setup/Downloads/IF-yologuard-external-audit-2025-11-06.md|Yologuard artifact
+SAFE_DOC|/home/setup/IF.MOVIE-PRODUCTION-PLAN.md|IF mention
+SAFE_DOC|/home/setup/IF_TIMELINE_YOLOGUARD_PROGRESSION.json|Yologuard artifact
+SAFE_DOC|/home/setup/IF_YOLOGUARD_GAP_ANALYSIS_REPORT.md|Yologuard artifact
+SAFE_DOC|/home/setup/INFRAFABRIC-COMPLETE-DOSSIER-v8-CORRECTED.md|InfraFabric complete dossier
+SAFE_DOC|/home/setup/INFRAFABRIC-COMPLETE-SOURCE-INDEX.md|InfraFabric complete dossier
+SAFE_DOC|/home/setup/INFRAFABRIC-DOSSIER-FINAL-CITATIONS-v10.md|InfraFabric artifact
+SAFE_DOC|/home/setup/INFRAFABRIC-DOSSIER-FINAL-CITATIONS-v11.md|InfraFabric artifact
+SAFE_DOC|/home/setup/INFRAFABRIC-DOSSIER-FINAL-CITATIONS-v9.md|InfraFabric artifact
+SAFE_DOC|/home/setup/digital-lab.ca/infrafabric/docs/IF.yologuard-bridge.md|IF yologuard asset
+SAFE_DOC|/home/setup/digital-lab.ca/infrafabric/docs/IF.yologuard/IF-yologuard-philosophy_v1.md|IF yologuard asset
+SAFE_DOC|/home/setup/digital-lab.ca/infrafabric/yologuard/ACADEMIC_PACKAGE/IF_YOLOGUARD_V3_PAPER.md|Yologuard artifact
+SAFE_DOC|/home/setup/digital-lab.ca/infrafabric/yologuard/IF.YOLOGUARD_V3_FULL_REVIEW.md|IF yologuard asset
+SAFE_DOC|/home/setup/ggq-crm/suitecrm/vendor/smarty/smarty/docs/designers/language-builtin-functions/language-function-if.md|IF mention
+SAFE_DOC|/home/setup/infrafabric-annexes-v7.01.md|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric-briefing-v0.1.md|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric-clean/IF-armour.md|IF armour doc
+SAFE_DOC|/home/setup/infrafabric-clean/IF-foundations.md|IF foundations doc
+SAFE_DOC|/home/setup/infrafabric-clean/IF-vision.md|IF vision doc
+SAFE_DOC|/home/setup/infrafabric-clean/IF-witness.md|IF witness doc
+SAFE_DOC|/home/setup/infrafabric-clean/INFRAFABRIC-COMPLETE-DOSSIER-v11.md|InfraFabric complete dossier
+SAFE_DOC|/home/setup/infrafabric-clean/annexes/infrafabric-IF-annexes.md|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric-clean/docs/evidence/INFRAFABRIC_COMPREHENSIVE_EVALUATION_PROMPT.md|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric-clean/docs/evidence/INFRAFABRIC_CONSENSUS_REPORT.md|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric-clean/docs/evidence/INFRAFABRIC_EVAL_GPT-5.1-CODEX-CLI_20251115T133400Z.yaml|InfraFabric evaluation asset
+SAFE_DOC|/home/setup/infrafabric-clean/docs/evidence/INFRAFABRIC_EVAL_GPT-5.1-CODEX-CLI_20251115T145456Z.yaml|InfraFabric evaluation asset
+SAFE_DOC|/home/setup/infrafabric-clean/docs/evidence/INFRAFABRIC_EVAL_PASTE_PROMPT.txt|InfraFabric evaluation asset
+SAFE_DOC|/home/setup/infrafabric-clean/docs/evidence/INFRAFABRIC_EVAL_REPORT.md|InfraFabric evaluation asset
+SAFE_DOC|/home/setup/infrafabric-clean/docs/evidence/INFRAFABRIC_SINGLE_EVAL.yaml|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric-clean/docs/evidence/infrafabric_eval_Gemini_20251115_103000.yaml|InfraFabric evaluation asset
+SAFE_DOC|/home/setup/infrafabric-clean/docs/evidence/infrafabric_file_inventory.csv|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric-clean/docs/evidence/infrafabric_metrics.json|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric-clean/docs/evidence/infrafabric_url_manifest.csv|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric-clean/papers/IF-armour.tex|IF armour doc
+SAFE_DOC|/home/setup/infrafabric-clean/papers/IF-foundations.tex|IF foundations doc
+SAFE_DOC|/home/setup/infrafabric-clean/papers/IF-vision.tex|IF vision doc
+SAFE_DOC|/home/setup/infrafabric-clean/papers/IF-witness.tex|IF witness doc
+SAFE_DOC|/home/setup/infrafabric-clean/philosophy/IF.philosophy-database.md|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric-clean/philosophy/IF.philosophy-database.yaml|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric-clean/philosophy/IF.philosophy-queries.md|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric-clean/philosophy/IF.philosophy-table.md|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric-complete-v7.01.md|InfraFabric complete dossier
+SAFE_DOC|/home/setup/infrafabric-core/IF-armour.md|IF armour doc
+SAFE_DOC|/home/setup/infrafabric-core/IF-foundations.md|IF foundations doc
+SAFE_DOC|/home/setup/infrafabric-core/IF-vision.md|IF vision doc
+SAFE_DOC|/home/setup/infrafabric-core/IF-witness.md|IF witness doc
+SAFE_DOC|/home/setup/infrafabric-core/INFRAFABRIC-COMPLETE-DOSSIER-v11.md|InfraFabric complete dossier
+SAFE_DOC|/home/setup/infrafabric-core/annexes/infrafabric-IF-annexes.md|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric-core/papers/IF-armour.tex|IF armour doc
+SAFE_DOC|/home/setup/infrafabric-core/papers/IF-foundations.tex|IF foundations doc
+SAFE_DOC|/home/setup/infrafabric-core/papers/IF-vision.tex|IF vision doc
+SAFE_DOC|/home/setup/infrafabric-core/papers/IF-witness.tex|IF witness doc
+SAFE_DOC|/home/setup/infrafabric-core/philosophy/IF.philosophy-database.md|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric-core/philosophy/IF.philosophy-database.yaml|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric-core/philosophy/IF.philosophy-queries.md|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric-core/philosophy/IF.philosophy-table.md|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric-council-debates-manifest.json|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric-scan/IF-armour.md|IF armour doc
+SAFE_DOC|/home/setup/infrafabric-scan/IF-foundations.md|IF foundations doc
+SAFE_DOC|/home/setup/infrafabric-scan/IF-vision.md|IF vision doc
+SAFE_DOC|/home/setup/infrafabric-scan/IF-witness.md|IF witness doc
+SAFE_DOC|/home/setup/infrafabric-scan/INFRAFABRIC-COMPLETE-DOSSIER-v11.md|InfraFabric complete dossier
+SAFE_DOC|/home/setup/infrafabric-scan/annexes/infrafabric-IF-annexes.md|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric-scan/docs/evidence/INFRAFABRIC_COMPREHENSIVE_EVALUATION_PROMPT.md|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric-scan/docs/evidence/INFRAFABRIC_CONSENSUS_REPORT.md|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric-scan/docs/evidence/INFRAFABRIC_EVAL_GPT-5.1-CODEX-CLI_20251115T133400Z.yaml|InfraFabric evaluation asset
+SAFE_DOC|/home/setup/infrafabric-scan/docs/evidence/INFRAFABRIC_EVAL_GPT-5.1-CODEX-CLI_20251115T145456Z.yaml|InfraFabric evaluation asset
+SAFE_DOC|/home/setup/infrafabric-scan/docs/evidence/INFRAFABRIC_EVAL_PASTE_PROMPT.txt|InfraFabric evaluation asset
+SAFE_DOC|/home/setup/infrafabric-scan/docs/evidence/INFRAFABRIC_EVAL_REPORT.md|InfraFabric evaluation asset
+SAFE_DOC|/home/setup/infrafabric-scan/docs/evidence/INFRAFABRIC_SINGLE_EVAL.yaml|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric-scan/docs/evidence/infrafabric_eval_Gemini_20251115_103000.yaml|InfraFabric evaluation asset
+SAFE_DOC|/home/setup/infrafabric-scan/docs/evidence/infrafabric_file_inventory.csv|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric-scan/docs/evidence/infrafabric_metrics.json|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric-scan/docs/evidence/infrafabric_url_manifest.csv|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric-scan/papers/IF-armour.tex|IF armour doc
+SAFE_DOC|/home/setup/infrafabric-scan/papers/IF-foundations.tex|IF foundations doc
+SAFE_DOC|/home/setup/infrafabric-scan/papers/IF-vision.tex|IF vision doc
+SAFE_DOC|/home/setup/infrafabric-scan/papers/IF-witness.tex|IF witness doc
+SAFE_DOC|/home/setup/infrafabric-scan/philosophy/IF.philosophy-database.md|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric-scan/philosophy/IF.philosophy-database.yaml|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric-scan/philosophy/IF.philosophy-queries.md|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric-scan/philosophy/IF.philosophy-table.md|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric-v5-bias-research-manifest.json|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric/IF-armour.md|IF armour doc
+SAFE_DOC|/home/setup/infrafabric/IF-foundations.md|IF foundations doc
+SAFE_DOC|/home/setup/infrafabric/IF-vision.md|IF vision doc
+SAFE_DOC|/home/setup/infrafabric/IF-witness.md|IF witness doc
+SAFE_DOC|/home/setup/infrafabric/INFRAFABRIC-COMPLETE-DOSSIER-v11.md|InfraFabric complete dossier
+SAFE_DOC|/home/setup/infrafabric/annexes/infrafabric-IF-annexes.md|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric/docs/evidence/INFRAFABRIC_COMPREHENSIVE_EVALUATION_PROMPT.md|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric/docs/evidence/INFRAFABRIC_CONSENSUS_REPORT.md|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric/docs/evidence/INFRAFABRIC_EVAL_GPT-5.1-CODEX-CLI_20251115T133400Z.yaml|InfraFabric evaluation asset
+SAFE_DOC|/home/setup/infrafabric/docs/evidence/INFRAFABRIC_EVAL_GPT-5.1-CODEX-CLI_20251115T145456Z.yaml|InfraFabric evaluation asset
+SAFE_DOC|/home/setup/infrafabric/docs/evidence/INFRAFABRIC_EVAL_PASTE_PROMPT.txt|InfraFabric evaluation asset
+SAFE_DOC|/home/setup/infrafabric/docs/evidence/INFRAFABRIC_EVAL_REPORT.md|InfraFabric evaluation asset
+SAFE_DOC|/home/setup/infrafabric/docs/evidence/INFRAFABRIC_SINGLE_EVAL.yaml|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric/docs/evidence/infrafabric_eval_Gemini_20251115_103000.yaml|InfraFabric evaluation asset
+SAFE_DOC|/home/setup/infrafabric/docs/evidence/infrafabric_file_inventory.csv|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric/docs/evidence/infrafabric_metrics.json|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric/docs/evidence/infrafabric_url_manifest.csv|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric/out/backups/infrafabric_snapshot_20251119T104827Z.tgz|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric/out/branches/claude/cli-witness-optimise-011CV2nzozFeHipmhetrw5nk/yologuard_refs.txt|Yologuard artifact
+SAFE_DOC|/home/setup/infrafabric/out/branches/claude/cloud-providers-011CV2nnsyHT4by1am1ZrkkA/yologuard_refs.txt|Yologuard artifact
+SAFE_DOC|/home/setup/infrafabric/out/branches/claude/coordination-011CV2nnsyHT4by1am1ZrkkA/yologuard_refs.txt|Yologuard artifact
+SAFE_DOC|/home/setup/infrafabric/out/branches/claude/debug-session-freezing-011CV2mM1FVCwsC8GoBR2aQy/yologuard_refs.txt|Yologuard artifact
+SAFE_DOC|/home/setup/infrafabric/out/branches/claude/gedimat-cloud-infrastructure-01D9cjQKY1Bu6sccAvi5Unn9/yologuard_refs.txt|Yologuard artifact
+SAFE_DOC|/home/setup/infrafabric/out/branches/claude/gedimat-logistics-optimization-018FV2Sa5LnT4vDUTq5ipvaX/yologuard_refs.txt|Yologuard artifact
+SAFE_DOC|/home/setup/infrafabric/out/branches/claude/gedimat-v3-3-deployment-01Pr63R6o2UqQGmxA2VtF12B/yologuard_refs.txt|Yologuard artifact
+SAFE_DOC|/home/setup/infrafabric/out/branches/claude/h323-guardian-council-011CV2ntGfBNNQYpqiJxaS8B/yologuard_refs.txt|Yologuard artifact
+SAFE_DOC|/home/setup/infrafabric/out/branches/claude/if-bus-sip-adapters-011CV2yyTqo7mStA7KhuUszV/yologuard_refs.txt|Yologuard artifact
+SAFE_DOC|/home/setup/infrafabric/out/branches/claude/incomplete-request-011CV24ywdDeCx4vv5gH6e5R/yologuard_refs.txt|Yologuard artifact
+SAFE_DOC|/home/setup/infrafabric/out/branches/claude/ndi-witness-streaming-011CV2niqJBK5CYADJMRLNGs/yologuard_refs.txt|Yologuard artifact
+SAFE_DOC|/home/setup/infrafabric/out/branches/claude/payment-billing-011CV2nnsyHT4by1am1ZrkkA/yologuard_refs.txt|Yologuard artifact
+SAFE_DOC|/home/setup/infrafabric/out/branches/claude/realtime-parallel-sessions-011CV2o8kLhZZEHUtjFZPazM/yologuard_refs.txt|Yologuard artifact
+SAFE_DOC|/home/setup/infrafabric/out/branches/claude/review-cloud-handover-docs-011CUyURbbbYv3twL6dH4r3v/yologuard_refs.txt|Yologuard artifact
+SAFE_DOC|/home/setup/infrafabric/out/branches/claude/sip-communication-011CV2nnsyHT4by1am1ZrkkA/yologuard_refs.txt|Yologuard artifact
+SAFE_DOC|/home/setup/infrafabric/out/branches/claude/sip-escalate-integration-011CV2nwLukS7EtnB5iZUUe7/yologuard_refs.txt|Yologuard artifact
+SAFE_DOC|/home/setup/infrafabric/out/branches/claude/webrtc-agent-mesh-011CV2nnsyHT4by1am1ZrkkA/yologuard_refs.txt|Yologuard artifact
+SAFE_DOC|/home/setup/infrafabric/out/branches/claude/webrtc-final-push-011CV2nnsyHT4by1am1ZrkkA/yologuard_refs.txt|Yologuard artifact
+SAFE_DOC|/home/setup/infrafabric/out/branches/claude/webrtc-phase2-3-011CV2nnsyHT4by1am1ZrkkA/yologuard_refs.txt|Yologuard artifact
+SAFE_DOC|/home/setup/infrafabric/out/branches/evaluation-system/yologuard_refs.txt|Yologuard artifact
+SAFE_DOC|/home/setup/infrafabric/out/branches/gedimat-evidence-final/yologuard_refs.txt|Yologuard artifact
+SAFE_DOC|/home/setup/infrafabric/out/branches/gedimat-v3-deploy/yologuard_refs.txt|Yologuard artifact
+SAFE_DOC|/home/setup/infrafabric/out/branches/master/yologuard_refs.txt|Yologuard artifact
+SAFE_DOC|/home/setup/infrafabric/out/branches/swarm/w2-a6-checklist/yologuard_refs.txt|Yologuard artifact
+SAFE_DOC|/home/setup/infrafabric/out/branches/swarm/w2-a6-ci-workflow/yologuard_refs.txt|Yologuard artifact
+SAFE_DOC|/home/setup/infrafabric/out/branches/swarm/w2-citation-schemas/yologuard_refs.txt|Yologuard artifact
+SAFE_DOC|/home/setup/infrafabric/out/branches/swarm/w2-philosophy-map/yologuard_refs.txt|Yologuard artifact
+SAFE_DOC|/home/setup/infrafabric/out/branches/test-ci-validation/yologuard_refs.txt|Yologuard artifact
+SAFE_DOC|/home/setup/infrafabric/out/gemini3_bundle/secrets_yologuard_risk_mini.md.txt|Yologuard artifact
+SAFE_DOC|/home/setup/infrafabric/out/infrafabric_snapshot_20251119T105000Z.tgz|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric/out/secrets_yologuard_risk_mini.md|Yologuard artifact
+SAFE_DOC|/home/setup/infrafabric/papers/IF-armour.tex|IF armour doc
+SAFE_DOC|/home/setup/infrafabric/papers/IF-foundations.tex|IF foundations doc
+SAFE_DOC|/home/setup/infrafabric/papers/IF-vision.tex|IF vision doc
+SAFE_DOC|/home/setup/infrafabric/papers/IF-witness.tex|IF witness doc
+SAFE_DOC|/home/setup/infrafabric/philosophy/IF.philosophy-database.md|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric/philosophy/IF.philosophy-database.yaml|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric/philosophy/IF.philosophy-queries.md|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric/philosophy/IF.philosophy-table.md|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric_report.md|InfraFabric artifact
+SAFE_DOC|/home/setup/infrafabric_snapshot_20251119T104920Z.tgz|InfraFabric artifact
+SAFE_DOC|/home/setup/itpolicy_press_article_infrafabric.md|InfraFabric artifact
+SAFE_DOC|/home/setup/medium_article_infrafabric.md|InfraFabric artifact
+SAFE_DOC|/home/setup/navidocs/INFRAFABRIC_COMPREHENSIVE_EVALUATION_PROMPT.md|InfraFabric artifact
+SAFE_DOC|/home/setup/navidocs/INFRAFABRIC_EVAL_PASTE_PROMPT.txt|InfraFabric evaluation asset
+SAFE_DOC|/home/setup/navidocs/INFRAFABRIC_INTEGRATION_PLAN.md|InfraFabric artifact
+SAFE_DOC|/home/setup/work/job-hunt/INFRAFABRIC-RESEARCH-INDEX.md|InfraFabric artifact
+SAFE_DOC|/home/setup/work/job-hunt/LINKEDIN-INFRAFABRIC-POSITIONING.md|InfraFabric artifact
+SAFE_DOC|/home/setup/work/job-hunt/NEUROGENESIS-INFRAFABRIC-PARALLELS.md|InfraFabric artifact
+SAFE_DOC|/home/setup/work/job-hunt/NVIDIA-INFRAFABRIC-INTEGRATION.md|InfraFabric artifact
+SAFE_DOC|/home/setup/work/job-hunt/POLICE-CHASE-INFRAFABRIC-PARALLELS.md|InfraFabric artifact
+SAFE_DOC|/home/setup/work/mcp-multiagent-bridge/IF-yologuard-v3-synthesis-report.md|Yologuard artifact
+SAFE_DOC|/home/setup/work/mcp-multiagent-bridge/IF.YOLOGUARD_V3_VALIDATION_COMPLETE.md|IF yologuard asset
+SAFE_DOC|/home/setup/work/mcp-multiagent-bridge/IF.yologuard-v3-INDEX.md|IF yologuard asset
+SAFE_DOC|/home/setup/work/mcp-multiagent-bridge/IF_ARMOUR_BACKWARDS_ANALYSIS.md|InfraFabric hit
+SECRET_RISK|/home/setup/.claude/SESSION_HANDOFF_2025-11-09_EPIC_INFRAFABRIC.md|InfraFabric artifact
+SECRET_RISK|/home/setup/.github/workflows/yologuard-ci.yml|Yologuard artifact
+UNKNOWN|/home/setup/IF.swarm.png|IF swarm asset
+UNKNOWN|/home/setup/IF.swarm.png:Zone.Identifier|IF swarm asset
+UNKNOWN|/home/setup/INFRAFABRIC-DOSSIER-PUBLICATION-PACKAGE-v10.zip|InfraFabric artifact
+UNKNOWN|/home/setup/INFRAFABRIC-DOSSIER-PUBLICATION-PACKAGE.zip|InfraFabric artifact
+UNKNOWN|/home/setup/android-sdk/platforms/android-34/data/res/drawable/ic_audio_ring_notif.xml|IF mention
+UNKNOWN|/home/setup/digital-lab.ca/infrafabric/yologuard/IF.yologuard_v3_REPRODUCIBILITY_COMPLETE.tar.gz|IF yologuard asset
+UNKNOWN|/home/setup/digital-lab.ca/infrafabric/yologuard/IF.yologuard_v3_REPRODUCIBILITY_PACKAGE.tar.gz|IF yologuard asset
+UNKNOWN|/home/setup/digital-lab.ca/infrafabric/yologuard/IF_YOLOGUARD_V3_ACADEMIC_PACKAGE.tar.gz|Yologuard artifact
+UNKNOWN|/home/setup/ggq-crm/suitecrm/Zend/Gdata/Exif.php|IF mention
+UNKNOWN|/home/setup/ggq-crm/suitecrm/vendor/nesbot/carbon/src/Carbon/Lang/hif.php|IF mention
+UNKNOWN|/home/setup/ggq-crm/suitecrm/vendor/nesbot/carbon/src/Carbon/Lang/tt_RU@iqtelif.php|IF mention
+UNKNOWN|/home/setup/ggq-crm/suitecrm/vendor/smarty/smarty/libs/sysplugins/smarty_internal_compile_if.php|IF mention
+UNKNOWN|/home/setup/ggq-crm/suitecrm/vendor/tecnickcom/tcpdf/fonts/dejavuserif.ctg.z|IF mention
+UNKNOWN|/home/setup/ggq-crm/suitecrm/vendor/tecnickcom/tcpdf/fonts/dejavuserif.php|IF mention
+UNKNOWN|/home/setup/ggq-crm/suitecrm/vendor/tecnickcom/tcpdf/fonts/dejavuserif.z|IF mention
+UNKNOWN|/home/setup/ggq-crm/suitecrm/vendor/tecnickcom/tcpdf/fonts/freeserif.ctg.z|IF mention
+UNKNOWN|/home/setup/ggq-crm/suitecrm/vendor/tecnickcom/tcpdf/fonts/freeserif.php|IF mention
+UNKNOWN|/home/setup/ggq-crm/suitecrm/vendor/tecnickcom/tcpdf/fonts/freeserif.z|IF mention
+UNKNOWN|/home/setup/ggq-crm/suitecrm/vendor/zf1/zend-gdata/library/Zend/Gdata/Exif.php|IF mention
+UNKNOWN|/home/setup/google-cloud-sdk/platform/gsutil/third_party/chardet/tests/IBM855/aif.ru.health.xml|IF mention
+UNKNOWN|/home/setup/google-cloud-sdk/platform/gsutil/third_party/chardet/tests/IBM866/aif.ru.health.xml|IF mention
+UNKNOWN|/home/setup/google-cloud-sdk/platform/gsutil/third_party/chardet/tests/KOI8-R/aif.ru.health.xml|IF mention
+UNKNOWN|/home/setup/google-cloud-sdk/platform/gsutil/third_party/chardet/tests/MacCyrillic/aif.ru.health.xml|IF mention
+UNKNOWN|/home/setup/google-cloud-sdk/platform/gsutil/third_party/chardet/tests/iso-8859-5-russian/aif.ru.health.xml|IF mention
+UNKNOWN|/home/setup/google-cloud-sdk/platform/gsutil/third_party/chardet/tests/windows-1251-russian/aif.ru.health.xml|IF mention
+UNKNOWN|/home/setup/infrafabric-2025-11-13-0223.zip|InfraFabric artifact
+UNKNOWN|/home/setup/infrafabric-2025-11-13-0223.zip:Zone.Identifier|InfraFabric artifact
+UNKNOWN|/home/setup/infrafabric-adaptive-system.zip|InfraFabric artifact
+UNKNOWN|/home/setup/infrafabric-clean/papers/IF-armour-arxiv-submission.tar.gz|IF armour doc
+UNKNOWN|/home/setup/infrafabric-clean/papers/IF-foundations-arxiv-submission.tar.gz|IF foundations doc
+UNKNOWN|/home/setup/infrafabric-clean/papers/IF-vision-arxiv-submission.tar.gz|IF vision doc
+UNKNOWN|/home/setup/infrafabric-clean/papers/IF-witness-arxiv-submission.tar.gz|IF witness doc
+UNKNOWN|/home/setup/infrafabric-core/papers/IF-armour-arxiv-submission.tar.gz|IF armour doc
+UNKNOWN|/home/setup/infrafabric-core/papers/IF-foundations-arxiv-submission.tar.gz|IF foundations doc
+UNKNOWN|/home/setup/infrafabric-core/papers/IF-vision-arxiv-submission.tar.gz|IF vision doc
+UNKNOWN|/home/setup/infrafabric-core/papers/IF-witness-arxiv-submission.tar.gz|IF witness doc
+UNKNOWN|/home/setup/infrafabric-docs-viewer.php|InfraFabric artifact
+UNKNOWN|/home/setup/infrafabric-outreach-campaign.zip|InfraFabric artifact
+UNKNOWN|/home/setup/infrafabric-scan/papers/IF-armour-arxiv-submission.tar.gz|IF armour doc
+UNKNOWN|/home/setup/infrafabric-scan/papers/IF-foundations-arxiv-submission.tar.gz|IF foundations doc
+UNKNOWN|/home/setup/infrafabric-scan/papers/IF-vision-arxiv-submission.tar.gz|IF vision doc
+UNKNOWN|/home/setup/infrafabric-scan/papers/IF-witness-arxiv-submission.tar.gz|IF witness doc
+UNKNOWN|/home/setup/infrafabric/papers/IF-armour-arxiv-submission.tar.gz|IF armour doc
+UNKNOWN|/home/setup/infrafabric/papers/IF-foundations-arxiv-submission.tar.gz|IF foundations doc
+UNKNOWN|/home/setup/infrafabric/papers/IF-vision-arxiv-submission.tar.gz|IF vision doc
+UNKNOWN|/home/setup/infrafabric/papers/IF-witness-arxiv-submission.tar.gz|IF witness doc
+UNKNOWN|/home/setup/lilian1/venv/lib/python3.12/site-packages/PIL/_avif.cpython-312-x86_64-linux-gnu.so|IF mention
+UNKNOWN|/home/setup/lilian1/venv/lib/python3.12/site-packages/PIL/_avif.pyi|IF mention
+UNKNOWN|/home/setup/schemdraw-env/lib/python3.12/site-packages/PIL/_avif.cpython-312-x86_64-linux-gnu.so|IF mention
+UNKNOWN|/home/setup/schemdraw-env/lib/python3.12/site-packages/PIL/_avif.pyi|IF mention
+UNKNOWN|/home/setup/schemdraw-env/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSerif.ttf|IF mention

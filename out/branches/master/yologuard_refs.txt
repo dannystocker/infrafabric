@@ -1,0 +1,7 @@
+/home/setup/infrafabric/CONSOLIDATION_EXECUTIVE_SUMMARY.md:99:├─ Yologuard versions:             5.00 MB  (consolidate v1→v3)
+/home/setup/infrafabric/FILE_SCAN_windows_downloads.json:363:      "path": "/mnt/c/users/setup/downloads/drive-download-20251107T144530Z-1-001/Evaluate Project_ Yologuard Documentation And Code",
+/home/setup/infrafabric/FILE_SCAN_windows_downloads.json:365:      "filename": "Evaluate Project_ Yologuard Documentation And Code"
+/home/setup/infrafabric/SCAN_SUMMARY_2025-11-15.txt:91:   - Evaluate Project_ Yologuard Documentation And Code
+/home/setup/infrafabric/integration_merge_plan.json:245:        "Evaluate Project_ Yologuard Documentation And Code",
+/home/setup/infrafabric/CONSOLIDATION_FILE_LIST.json:147:    "path": "/mnt/c/users/setup/downloads/drive-download-20251107T144530Z-1-001/Evaluate Project_ Yologuard Documentation And Code",
+/home/setup/infrafabric/CONSOLIDATION_FILE_LIST.json:151:    "name": "Evaluate Project_ Yologuard Documentation And Code",

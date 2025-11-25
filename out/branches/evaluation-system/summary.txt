@@ -1,0 +1,10 @@
+Branch: evaluation-system
+IF function names cataloged: 0
+IF definitions recorded: 0
+Call edges observed: 0
+IF mention tokens: 170
+Mention graph edges: 3441
+Yologuard references: 62
+Secrets candidate files: 391
+Manifest entries: 736
+Fallback tokens captured: 0

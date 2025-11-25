@@ -1,0 +1,28 @@
+infra:
+  guardians:
+    - IF-armour.md
+    - IF-foundations.md
+  cycles:
+    - IF-vision.md
+  ingestion:
+    evaluations:
+      - INFRAFABRIC_EVAL_GPT-5.1-CODEX-CLI_20251115T145456Z.yaml
+      - INFRAFABRIC_COMPREHENSIVE_EVALUATION_PROMPT.md
+  orchestrations:
+    - IF-witness.md
+    - IF-search-notes.md
+  records:
+    - API_INTEGRATION_SUMMARY.txt
+    - INTEGRATION_REPORT.md
+docs:
+  annexes:
+    - annexes/ANNEX-N-IF-OPTIMISE-FRAMEWORK.md
+    - annexes/ANNEX-O-PRECURSOR-CONVERSATION.md
+    - annexes/ANNEX-P-GPT5-REFLEXION-CYCLE.md
+  evidence:
+    - INFRAFABRIC_STORY.md
+    - INFRAFABRIC-COMPLETE-DOSSIER-v11.md
+tools:
+  automation:
+    - scripts/update_links.py
+    - scripts/bulk_move_and_update.sh

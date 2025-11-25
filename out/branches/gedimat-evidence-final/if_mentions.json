@@ -1,0 +1,564 @@
+{
+  "root": "/home/setup/infrafabric",
+  "files_scanned": 188,
+  "tokens": {
+    "if_lesson": {
+      "count": 11,
+      "files": {
+        "philosophy/IF.philosophy-add.yaml": [
+          41
+        ],
+        "IF.guard/IF.guard.members/rory-sutherland/GPT5_EXTRACTION_PROMPT.md": [
+          74
+        ],
+        "IF.guard/IF.guard.members/rory-sutherland/GPT5_EXTRACTION_PROMPT.txt": [
+          74
+        ],
+        "IF.guard/IF.guard.members/joe-coulombe/joe-coulombe-depth-enhancement.yaml": [
+          135,
+          144,
+          153,
+          162,
+          171,
+          180,
+          189,
+          198
+        ]
+      }
+    },
+    "if_guard_relevance": {
+      "count": 10,
+      "files": {
+        "philosophy/IF.philosophy-add.yaml": [
+          48
+        ],
+        "IF.guard/IF.guard.members/rory-sutherland/GPT5_EXTRACTION_PROMPT.md": [
+          94
+        ],
+        "IF.guard/IF.guard.members/rory-sutherland/GPT5_EXTRACTION_PROMPT.txt": [
+          94
+        ],
+        "IF.guard/IF.guard.members/joe-coulombe/joe-coulombe-depth-enhancement.yaml": [
+          205,
+          212,
+          219,
+          226,
+          233,
+          240,
+          247
+        ]
+      }
+    },
+    "if_guard_application": {
+      "count": 11,
+      "files": {
+        "philosophy/IF.philosophy-add.yaml": [
+          56,
+          101
+        ],
+        "IF.guard/IF.guard.members/rory-sutherland/GPT5_EXTRACTION_PROMPT.md": [
+          115,
+          240
+        ],
+        "IF.guard/IF.guard.members/rory-sutherland/GPT5_EXTRACTION_PROMPT.txt": [
+          115,
+          240
+        ],
+        "IF.guard/IF.guard.members/joe-coulombe/joe-coulombe-depth-enhancement.yaml": [
+          255,
+          261,
+          267,
+          273,
+          347
+        ]
+      }
+    },
+    "if_ttt_alignment": {
+      "count": 7,
+      "files": {
+        "philosophy/IF.philosophy-add.yaml": [
+          63
+        ],
+        "philosophy/v1.2/IF.philosophy-database-v1.2-rory-sutherland.yaml": [
+          133
+        ],
+        "IF.guard/IF.guard.members/rory-sutherland/GPT5_EXTRACTION_PROMPT.md": [
+          135
+        ],
+        "IF.guard/IF.guard.members/rory-sutherland/GPT5_EXTRACTION_PROMPT.txt": [
+          135
+        ],
+        "IF.guard/IF.guard.members/joe-coulombe/joe-coulombe-depth-enhancement.yaml": [
+          280,
+          287,
+          294
+        ]
+      }
+    },
+    "if_component_mapping": {
+      "count": 4,
+      "files": {
+        "philosophy/IF.philosophy-add.yaml": [
+          72
+        ],
+        "IF.guard/IF.guard.members/rory-sutherland/GPT5_EXTRACTION_PROMPT.md": [
+          158
+        ],
+        "IF.guard/IF.guard.members/rory-sutherland/GPT5_EXTRACTION_PROMPT.txt": [
+          158
+        ],
+        "IF.guard/IF.guard.members/joe-coulombe/joe-coulombe-depth-enhancement.yaml": [
+          318
+        ]
+      }
+    },
+    "if_guard_use_case": {
+      "count": 4,
+      "files": {
+        "philosophy/IF.philosophy-add.yaml": [
+          79
+        ],
+        "IF.guard/IF.guard.members/rory-sutherland/GPT5_EXTRACTION_PROMPT.md": [
+          178
+        ],
+        "IF.guard/IF.guard.members/rory-sutherland/GPT5_EXTRACTION_PROMPT.txt": [
+          178
+        ],
+        "IF.guard/IF.guard.members/joe-coulombe/joe-coulombe-depth-enhancement.yaml": [
+          325
+        ]
+      }
+    },
+    "if_guard_decision_protocol": {
+      "count": 4,
+      "files": {
+        "philosophy/IF.philosophy-add.yaml": [
+          88
+        ],
+        "IF.guard/IF.guard.members/rory-sutherland/GPT5_EXTRACTION_PROMPT.md": [
+          202
+        ],
+        "IF.guard/IF.guard.members/rory-sutherland/GPT5_EXTRACTION_PROMPT.txt": [
+          202
+        ],
+        "IF.guard/IF.guard.members/joe-coulombe/joe-coulombe-depth-enhancement.yaml": [
+          334
+        ]
+      }
+    },
+    "if_guard_veto_trigger": {
+      "count": 4,
+      "files": {
+        "philosophy/IF.philosophy-add.yaml": [
+          95
+        ],
+        "IF.guard/IF.guard.members/rory-sutherland/GPT5_EXTRACTION_PROMPT.md": [
+          222
+        ],
+        "IF.guard/IF.guard.members/rory-sutherland/GPT5_EXTRACTION_PROMPT.txt": [
+          222
+        ],
+        "IF.guard/IF.guard.members/joe-coulombe/joe-coulombe-depth-enhancement.yaml": [
+          341
+        ]
+      }
+    },
+    "if_components": {
+      "count": 1,
+      "files": {
+        "philosophy/v1.2/IF.philosophy-database-v1.2-rory-sutherland.yaml": [
+          49
+        ]
+      }
+    },
+    "if_principles": {
+      "count": 1,
+      "files": {
+        "philosophy/v1.2/IF.philosophy-database-v1.2-rory-sutherland.yaml": [
+          54
+        ]
+      }
+    },
+    "if_mapping": {
+      "count": 4,
+      "files": {
+        "philosophy/v1.2/IF.philosophy-database-v1.2-rory-sutherland.yaml": [
+          74,
+          87,
+          101,
+          115
+        ]
+      }
+    },
+    "if_translation": {
+      "count": 2,
+      "files": {
+        "philosophy/v1.2/IF.philosophy-database-v1.2-rory-sutherland.yaml": [
+          93,
+          108
+        ]
+      }
+    },
+    "if_sam_facets": {
+      "count": 1,
+      "files": {
+        "philosophy/v1.2/IF.philosophy-database-v1.2-rory-sutherland.yaml": [
+          249
+        ]
+      }
+    },
+    "if_ttt_audit.md": {
+      "count": 16,
+      "files": {
+        "out/branches/gedimat-evidence-final/manifest/file_manifest.txt": [
+          204
+        ],
+        "intelligence-tests/gedimat-logistics-fr/evidence_dossier/v3_deployment/V3_GITHUB_DEPLOYMENT_PACKAGE.md": [
+          69,
+          1221
+        ],
+        "intelligence-tests/gedimat-logistics-fr/evidence_dossier/v3_deployment/README.md": [
+          51
+        ],
+        "intelligence-tests/gedimat-logistics-fr/evidence_dossier/v3_deployment/EVAL_PROMPT_CODEX_GEMINI.md": [
+          57
+        ],
+        "intelligence-tests/gedimat-logistics-fr/evidence_dossier/v3_deployment/V3_DESIGN_SUMMARY.md": [
+          74
+        ],
+        "intelligence-tests/gedimat-logistics-fr/evidence_dossier/v3_deployment/session-output/if_ttt_audit.md": [
+          50,
+          199
+        ],
+        "intelligence-tests/gedimat-logistics-fr/evidence_dossier/v3_deployment/audit/QUICK_REFERENCE_UNSOURCED_CLAIMS.md": [
+          10,
+          11,
+          12,
+          17
+        ],
+        "intelligence-tests/gedimat-logistics-fr/evidence_dossier/v3_deployment/audit/AUDIT_SUMMARY_CRITICAL_FINDINGS.md": [
+          11
+        ],
+        "intelligence-tests/gedimat-logistics-fr/evidence_dossier/v3_deployment/audit/AUDIT_UNSOURCED_NUMBERS.md": [
+          24,
+          105
+        ],
+        "intelligence-tests/gedimat-logistics-fr/evidence_dossier/v3_deployment/audit/README_AUDIT.md": [
+          90
+        ]
+      }
+    },
+    "if_ttt_compliance": {
+      "count": 1,
+      "files": {
+        "intelligence-tests/gedimat-logistics-fr/ARENA_PROMPT_V3.3_FINAL_REVIEW.md": [
+          161
+        ]
+      }
+    },
+    "if.optimise": {
+      "count": 4,
+      "files": {
+        "intelligence-tests/gedimat-logistics-fr/evidence_dossier/CONTEXTE_ANGELIQUE.txt": [
+          27,
+          27
+        ],
+        "intelligence-tests/gedimat-logistics-fr/evidence_dossier/v3_deployment/CONTEXTE_ANGELIQUE.txt": [
+          2,
+          2
+        ]
+      }
+    },
+    "if.search.": {
+      "count": 2,
+      "files": {
+        "intelligence-tests/gedimat-logistics-fr/evidence_dossier/CONTEXTE_ANGELIQUE.txt": [
+          27
+        ],
+        "intelligence-tests/gedimat-logistics-fr/evidence_dossier/v3_deployment/CONTEXTE_ANGELIQUE.txt": [
+          2
+        ]
+      }
+    },
+    "if.swarm": {
+      "count": 4,
+      "files": {
+        "intelligence-tests/gedimat-logistics-fr/evidence_dossier/CONTEXTE_ANGELIQUE.txt": [
+          27,
+          997
+        ],
+        "intelligence-tests/gedimat-logistics-fr/evidence_dossier/v3_deployment/CONTEXTE_ANGELIQUE.txt": [
+          2,
+          972
+        ]
+      }
+    },
+    "if.guard": {
+      "count": 4,
+      "files": {
+        "intelligence-tests/gedimat-logistics-fr/evidence_dossier/CONTEXTE_ANGELIQUE.txt": [
+          27,
+          27
+        ],
+        "intelligence-tests/gedimat-logistics-fr/evidence_dossier/v3_deployment/CONTEXTE_ANGELIQUE.txt": [
+          2,
+          2
+        ]
+      }
+    },
+    "if.sam": {
+      "count": 2,
+      "files": {
+        "intelligence-tests/gedimat-logistics-fr/evidence_dossier/CONTEXTE_ANGELIQUE.txt": [
+          27
+        ],
+        "intelligence-tests/gedimat-logistics-fr/evidence_dossier/v3_deployment/CONTEXTE_ANGELIQUE.txt": [
+          2
+        ]
+      }
+    },
+    "if.ceo": {
+      "count": 4,
+      "files": {
+        "intelligence-tests/gedimat-logistics-fr/evidence_dossier/CONTEXTE_ANGELIQUE.txt": [
+          27,
+          27
+        ],
+        "intelligence-tests/gedimat-logistics-fr/evidence_dossier/v3_deployment/CONTEXTE_ANGELIQUE.txt": [
+          2,
+          2
+        ]
+      }
+    },
+    "if.ttt": {
+      "count": 2,
+      "files": {
+        "intelligence-tests/gedimat-logistics-fr/evidence_dossier/CONTEXTE_ANGELIQUE.txt": [
+          27
+        ],
+        "intelligence-tests/gedimat-logistics-fr/evidence_dossier/v3_deployment/CONTEXTE_ANGELIQUE.txt": [
+          2
+        ]
+      }
+    },
+    "if.search": {
+      "count": 2,
+      "files": {
+        "intelligence-tests/gedimat-logistics-fr/evidence_dossier/CONTEXTE_ANGELIQUE.txt": [
+          997
+        ],
+        "intelligence-tests/gedimat-logistics-fr/evidence_dossier/v3_deployment/CONTEXTE_ANGELIQUE.txt": [
+          972
+        ]
+      }
+    },
+    "if-then": {
+      "count": 1,
+      "files": {
+        "intelligence-tests/gedimat-logistics-fr/evidence_dossier/PASS3_AGENT1_HYPOTHESIS_VALIDATION.md": [
+          1380
+        ]
+      }
+    },
+    "if_ttt_package.zip": {
+      "count": 1,
+      "files": {
+        "intelligence-tests/gedimat-logistics-fr/evidence_dossier/v3_deployment/session-output/if_ttt_audit.md": [
+          193
+        ]
+      }
+    }
+  },
+  "cooccurrence": {
+    "if_guard_use_case": {
+      "if_guard_relevance": 4,
+      "if_component_mapping": 4,
+      "if_guard_veto_trigger": 4,
+      "if_ttt_alignment": 4,
+      "if_guard_application": 4,
+      "if_guard_decision_protocol": 4,
+      "if_lesson": 4
+    },
+    "if_guard_relevance": {
+      "if_guard_use_case": 4,
+      "if_component_mapping": 4,
+      "if_guard_veto_trigger": 4,
+      "if_ttt_alignment": 4,
+      "if_guard_application": 4,
+      "if_guard_decision_protocol": 4,
+      "if_lesson": 4
+    },
+    "if_component_mapping": {
+      "if_guard_use_case": 4,
+      "if_guard_relevance": 4,
+      "if_guard_veto_trigger": 4,
+      "if_ttt_alignment": 4,
+      "if_guard_application": 4,
+      "if_guard_decision_protocol": 4,
+      "if_lesson": 4
+    },
+    "if_guard_veto_trigger": {
+      "if_guard_use_case": 4,
+      "if_guard_relevance": 4,
+      "if_component_mapping": 4,
+      "if_ttt_alignment": 4,
+      "if_guard_application": 4,
+      "if_guard_decision_protocol": 4,
+      "if_lesson": 4
+    },
+    "if_ttt_alignment": {
+      "if_guard_use_case": 4,
+      "if_guard_relevance": 4,
+      "if_component_mapping": 4,
+      "if_guard_veto_trigger": 4,
+      "if_guard_application": 4,
+      "if_guard_decision_protocol": 4,
+      "if_lesson": 4,
+      "if_components": 1,
+      "if_mapping": 1,
+      "if_principles": 1,
+      "if_sam_facets": 1,
+      "if_translation": 1
+    },
+    "if_guard_application": {
+      "if_guard_use_case": 4,
+      "if_guard_relevance": 4,
+      "if_component_mapping": 4,
+      "if_guard_veto_trigger": 4,
+      "if_ttt_alignment": 4,
+      "if_guard_decision_protocol": 4,
+      "if_lesson": 4
+    },
+    "if_guard_decision_protocol": {
+      "if_guard_use_case": 4,
+      "if_guard_relevance": 4,
+      "if_component_mapping": 4,
+      "if_guard_veto_trigger": 4,
+      "if_ttt_alignment": 4,
+      "if_guard_application": 4,
+      "if_lesson": 4
+    },
+    "if_lesson": {
+      "if_guard_use_case": 4,
+      "if_guard_relevance": 4,
+      "if_component_mapping": 4,
+      "if_guard_veto_trigger": 4,
+      "if_ttt_alignment": 4,
+      "if_guard_application": 4,
+      "if_guard_decision_protocol": 4
+    },
+    "if_components": {
+      "if_mapping": 1,
+      "if_ttt_alignment": 1,
+      "if_principles": 1,
+      "if_sam_facets": 1,
+      "if_translation": 1
+    },
+    "if_mapping": {
+      "if_components": 1,
+      "if_ttt_alignment": 1,
+      "if_principles": 1,
+      "if_sam_facets": 1,
+      "if_translation": 1
+    },
+    "if_principles": {
+      "if_components": 1,
+      "if_mapping": 1,
+      "if_ttt_alignment": 1,
+      "if_sam_facets": 1,
+      "if_translation": 1
+    },
+    "if_sam_facets": {
+      "if_components": 1,
+      "if_mapping": 1,
+      "if_ttt_alignment": 1,
+      "if_principles": 1,
+      "if_translation": 1
+    },
+    "if_translation": {
+      "if_components": 1,
+      "if_mapping": 1,
+      "if_ttt_alignment": 1,
+      "if_principles": 1,
+      "if_sam_facets": 1
+    },
+    "if.optimise": {
+      "if.swarm": 2,
+      "if.guard": 2,
+      "if.ttt": 2,
+      "if.search.": 2,
+      "if.ceo": 2,
+      "if.sam": 2,
+      "if.search": 2
+    },
+    "if.swarm": {
+      "if.optimise": 2,
+      "if.guard": 2,
+      "if.ttt": 2,
+      "if.search.": 2,
+      "if.ceo": 2,
+      "if.sam": 2,
+      "if.search": 2
+    },
+    "if.guard": {
+      "if.optimise": 2,
+      "if.swarm": 2,
+      "if.ttt": 2,
+      "if.search.": 2,
+      "if.ceo": 2,
+      "if.sam": 2,
+      "if.search": 2
+    },
+    "if.ttt": {
+      "if.optimise": 2,
+      "if.swarm": 2,
+      "if.guard": 2,
+      "if.search.": 2,
+      "if.ceo": 2,
+      "if.sam": 2,
+      "if.search": 2
+    },
+    "if.search.": {
+      "if.optimise": 2,
+      "if.swarm": 2,
+      "if.guard": 2,
+      "if.ttt": 2,
+      "if.ceo": 2,
+      "if.sam": 2,
+      "if.search": 2
+    },
+    "if.ceo": {
+      "if.optimise": 2,
+      "if.swarm": 2,
+      "if.guard": 2,
+      "if.ttt": 2,
+      "if.search.": 2,
+      "if.sam": 2,
+      "if.search": 2
+    },
+    "if.sam": {
+      "if.optimise": 2,
+      "if.swarm": 2,
+      "if.guard": 2,
+      "if.ttt": 2,
+      "if.search.": 2,
+      "if.ceo": 2,
+      "if.search": 2
+    },
+    "if.search": {
+      "if.optimise": 2,
+      "if.swarm": 2,
+      "if.guard": 2,
+      "if.ttt": 2,
+      "if.search.": 2,
+      "if.ceo": 2,
+      "if.sam": 2
+    },
+    "if_ttt_package.zip": {
+      "if_ttt_audit.md": 1
+    },
+    "if_ttt_audit.md": {
+      "if_ttt_package.zip": 1
+    }
+  }
+}

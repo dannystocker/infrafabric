@@ -1,0 +1,10 @@
+Branch: claude/sip-escalate-integration-011CV2nwLukS7EtnB5iZUUe7
+IF function names cataloged: 11
+IF definitions recorded: 2
+Call edges observed: 6
+IF mention tokens: 209
+Mention graph edges: 3675
+Yologuard references: 62
+Secrets candidate files: 395
+Manifest entries: 769
+Fallback tokens captured: 0

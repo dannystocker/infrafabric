@@ -1,0 +1,2 @@
+?? out/branches/swarm/w2-a6-ci-workflow/git_log.txt
+?? out/branches/swarm/w2-a6-ci-workflow/git_status.txt

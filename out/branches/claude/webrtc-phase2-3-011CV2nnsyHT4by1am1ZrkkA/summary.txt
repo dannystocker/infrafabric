@@ -1,0 +1,10 @@
+Branch: claude/webrtc-phase2-3-011CV2nnsyHT4by1am1ZrkkA
+IF function names cataloged: 0
+IF definitions recorded: 0
+Call edges observed: 0
+IF mention tokens: 200
+Mention graph edges: 3576
+Yologuard references: 62
+Secrets candidate files: 407
+Manifest entries: 805
+Fallback tokens captured: 0

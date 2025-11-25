@@ -1,0 +1,2 @@
+?? out/branches/swarm/w2-philosophy-map/git_log.txt
+?? out/branches/swarm/w2-philosophy-map/git_status.txt

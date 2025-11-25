@@ -1,0 +1,327 @@
+CODE_NONSECRET|/mnt/c/users/setup/Downloads/gpt5 - yologuard_improvements.py|Yologuard artifact
+CODE_NONSECRET|/mnt/c/users/setup/Downloads/infrafabric/IF-ARMOUR-SWARM-MULTIPLIER-ANALYSIS.py|IF armour doc
+CODE_NONSECRET|/mnt/c/users/setup/Downloads/infrafabric_cmp_simulation.py|InfraFabric artifact
+CODE_NONSECRET|/mnt/c/users/setup/Downloads/yologuard-codex-review/code/v3/IF.yologuard_v3.py|IF.yologuard v3 detector
+CODE_NONSECRET|/mnt/c/users/setup/Downloads/yologuard-codex-test-package/yologuard_v2.py|Yologuard artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/# IF.CORE Comprehensive Report v2.2.txt|IF mention
+SAFE_DOC|/mnt/c/users/setup/Downloads/# InfraFabric Onboarding & Quickstart v2.txt|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/# Welcome to InfraFabric! 🎉 Agent onboarding.txt|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/Annex N IF.persona.txt|IF mention
+SAFE_DOC|/mnt/c/users/setup/Downloads/CORRECTED_TIMELINE_IF_YOLOGUARD.md|Yologuard artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF-ARMOUR-EXTERNAL-REVIEW-PROMPT.txt|IF armour doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF-armour-FINAL-Nov15.md|IF armour doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF-armour-Nov15.md|IF armour doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF-armour.md|IF armour doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF-docs-files/infrafabric-full-context.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF-foundations-FINAL-Nov15.md|IF foundations doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF-foundations-Nov15.md|IF foundations doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF-foundations.md|IF foundations doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF-vision (1).md|IF vision doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF-vision-FINAL-Nov15.md|IF vision doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF-vision-UPDATED.md|IF vision doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF-vision.md|IF vision doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF-vision.tex.txt|IF vision doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF-witness-FINAL-Nov15.md|IF witness doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF-witness-UPDATED.md|IF witness doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF-witness.md|IF witness doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF-yologuard-COMPLETE-SUMMARY-2025-11-06.md|Yologuard artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF-yologuard-FINDINGS-AND-FIXES-2025-11-06.md|Yologuard artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF-yologuard-external-audit-2025-11-06 (1).md|Yologuard artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF-yologuard-external-audit-2025-11-06.md|Yologuard artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF-yologuard-v2-VALIDATION-SUCCESS-2025-11-06 (1).md|Yologuard artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF-yologuard-v2-VALIDATION-SUCCESS-2025-11-06.md|Yologuard artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF.YOLOGUARD_V3_FULL_REVIEW.md|IF yologuard asset
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF.guard-POC-system-prompt.md|IF guard asset
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF.persona-database.json|IF mention
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF.persona.joe.json|IF mention
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF.persona.joe.yaml|IF mention
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF.philosophy-appendix.md|IF philosophy artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF.philosophy-database-v1.1-joe-coulombe.yaml|IF philosophy artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF.philosophy-database.md|IF philosophy artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF.philosophy-database.yaml|IF philosophy artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF.philosophy-queries.md|IF philosophy artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF.philosophy-table.md|IF philosophy artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF.philosophy.joe.yaml|IF philosophy artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF.yologuard-COMPLETE-DOCUMENTATION.md|IF yologuard asset
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF.yologuard-COMPLETE-DOCUMENTATION.md (1).txt|IF yologuard asset
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF.yologuard-COMPLETE-DOCUMENTATION.md (2).txt|IF yologuard asset
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF.yologuard-COMPLETE-DOCUMENTATION.md.txt|IF yologuard asset
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF.yologuard-THE-COMPLETE-JOURNEY.md|IF yologuard asset
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF.yologuard-bridge-FINAL.md|IF yologuard asset
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF.yologuard-bridge-UPDATED.md|IF yologuard asset
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF.yologuard-bridge.md|IF yologuard asset
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF_WITNESS_YOLOGUARD_INTEGRATION.md|Yologuard artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/IF_YOLOGUARD_V3_ACADEMIC_PACKAGE/ACADEMIC_PACKAGE/IF_YOLOGUARD_V3_PAPER.md|Yologuard artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/INFRAFABRIC-ARTWORK-BRIEF.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/INFRAFABRIC-ASSEMBLY-TRANSCRIPT.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/INFRAFABRIC-CMP-VALIDATION.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/INFRAFABRIC-COMPLETE-DOSSIER-v8.md.txt|InfraFabric complete dossier
+SAFE_DOC|/mnt/c/users/setup/Downloads/INFRAFABRIC-COMPLETE-SESSION-CAPTURE.md|InfraFabric complete dossier
+SAFE_DOC|/mnt/c/users/setup/Downloads/INFRAFABRIC-CURRENT-STATE-SYNTHESIS.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/INFRAFABRIC-DOSSIER-PUBLICATION-PACKAGE-v10/INFRAFABRIC-COMPLETE-SOURCE-INDEX.md|InfraFabric complete dossier
+SAFE_DOC|/mnt/c/users/setup/Downloads/INFRAFABRIC-DOSSIER-PUBLICATION-PACKAGE-v10/INFRAFABRIC-DOSSIER-FINAL-CITATIONS-v10.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/INFRAFABRIC-DOSSIER-PUBLICATION-PACKAGE/INFRAFABRIC-COMPLETE-SOURCE-INDEX.md|InfraFabric complete dossier
+SAFE_DOC|/mnt/c/users/setup/Downloads/INFRAFABRIC-DOSSIER-PUBLICATION-PACKAGE/INFRAFABRIC-DOSSIER-FINAL-CITATIONS-v9.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/INFRAFABRIC-NARRATIVE-STORY.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/INFRAFABRIC-RESEARCH-INDEX.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/INFRAFABRIC-SESSION-INTEGRATION-ANALYSIS.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/INFRAFABRIC_COMPLETE_PACKAGE_Nov15.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/INFRAFABRIC_COMPREHENSIVE_EVALUATION_PROMPT.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/INFRAFABRIC_EVAL_PASTE_PROMPT.txt|InfraFabric evaluation asset
+SAFE_DOC|/mnt/c/users/setup/Downloads/InfraFabric autid and talent dev 1909.json|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/InfraFabric autid and talent dev.json|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/InfraFabric-convo-curated/0c939ea3__InfraFabric prospect outreach letter_436f9d86.json|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/InfraFabric-convo-curated/a925a8ba__InfraFabric overview_69016630.json|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/InfraFabric.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/LINKEDIN-INFRAFABRIC-POSITIONING.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/LLMARENA-YOLOGUARD-PROMPT.md|Yologuard artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/NVIDIA-INFRAFABRIC-INTEGRATION.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/RCF-ASP-INFRAFABRIC-INTEGRATION-ANALYSIS.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/SELF-WRITING-INFRAFABRIC.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/WORK-PLAN-INFRAFABRIC-DOCUMENTATION-COMPLETE.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/YOLOGUARD-DATA-VERIFICATION.md|Yologuard artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/YOLOGUARD-EVOLUTION-DIAGRAM.md|Yologuard artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/YOLOGUARD-SECRET-REDACTION-FIX-SUMMARY.md|Yologuard artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/YOLOGUARD-V1-V2-V3-COMPARISON.md|Yologuard artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/YOLOGUARD_V3_QUICK_REPORT.md|Yologuard artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/claude-701-infrafabric-evaluation.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/conversations_2025-11-07_1762527935456/InfraFabric overview_69016630.json|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/conversations_2025-11-07_1762527935456/InfraFabric prospect outreach letter_436f9d86.json|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/# IF.CORE Comprehensive Report v2.2(1).txt|IF mention
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/# IF.CORE Comprehensive Report v2.2.txt|IF mention
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/.exclude/Annex N IF.persona.txt|IF mention
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/IF-armour.tex.txt|IF armour doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/IF-foundations.tex.txt|IF foundations doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/IF-vision.tex.txt|IF vision doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/IF-witness.tex.txt|IF witness doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/IF-yologuard-external-audit-2025-11-06.md|Yologuard artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/IF-yologuard-v2-VALIDATION-SUCCESS-2025-11-06.md|Yologuard artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/IF.philosophy-database.yaml.txt|IF philosophy artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/IF.yologuard-COMPLETE-DOCUMENTATION.md (2).txt|IF yologuard asset
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/IF.yologuard-COMPLETE-DOCUMENTATION.md.txt|IF yologuard asset
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/IF.yologuard-bridge(1).md|IF yologuard asset
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/IF.yologuard-bridge-UPDATED.md|IF yologuard asset
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/IF.yologuard-bridge.md|IF yologuard asset
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/IF_YOLOGUARD_V3_PAPER.md|Yologuard artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/YOLOGUARD-SECRET-REDACTION-FIX-SUMMARY.md|Yologuard artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/infrafabric-annexes-v7.01(1).md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/infrafabric-annexes-v7.01(10).md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/infrafabric-annexes-v7.01(2).md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/infrafabric-annexes-v7.01(3).md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/infrafabric-annexes-v7.01(4).md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/infrafabric-annexes-v7.01(5).md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/infrafabric-annexes-v7.01(6).md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/infrafabric-annexes-v7.01(7).md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/infrafabric-annexes-v7.01(8).md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/infrafabric-annexes-v7.01(9).md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/infrafabric-annexes-v7.01.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/infrafabric-briefing-v0.1(1).md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/infrafabric-briefing-v0.1(2).md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/infrafabric-briefing-v0.1(3).md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/infrafabric-briefing-v0.1(4).md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/infrafabric-briefing-v0.1(5).md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/infrafabric-briefing-v0.1(6).md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/infrafabric-briefing-v0.1.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/infrafabric-complete-briefing-v4.md|InfraFabric complete dossier
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/infrafabric-complete-briefing-v5.md|InfraFabric complete dossier
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/infrafabric-complete-v7.01(1).md|InfraFabric complete dossier
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/infrafabric-complete-v7.01(10).md|InfraFabric complete dossier
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/infrafabric-complete-v7.01(11).md|InfraFabric complete dossier
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/infrafabric-complete-v7.01(2).md|InfraFabric complete dossier
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/infrafabric-complete-v7.01(3).md|InfraFabric complete dossier
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/infrafabric-complete-v7.01(4).md|InfraFabric complete dossier
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/infrafabric-complete-v7.01(5).md|InfraFabric complete dossier
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/infrafabric-complete-v7.01(6).md|InfraFabric complete dossier
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/infrafabric-complete-v7.01(7).md|InfraFabric complete dossier
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/infrafabric-complete-v7.01(8).md|InfraFabric complete dossier
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/infrafabric-complete-v7.01(9).md|InfraFabric complete dossier
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/infrafabric-complete-v7.01.md|InfraFabric complete dossier
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/infrafabric-complete-v7.md|InfraFabric complete dossier
+SAFE_DOC|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/yologuard_v1_complete.md|Yologuard artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric-701/infrafabric/infrafabric-annexes-v7.01.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric-701/infrafabric/infrafabric-briefing-v0.1.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric-701/infrafabric/infrafabric-complete-v7.01.md|InfraFabric complete dossier
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric-briefing-complete-8pages.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric-complete-v7.01.md|InfraFabric complete dossier
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric-complete-v7.md|InfraFabric complete dossier
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric-core-clean/IF-armour.md|IF armour doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric-core-clean/IF-foundations.md|IF foundations doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric-core-clean/IF-vision.md|IF vision doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric-core-clean/IF-witness.md|IF witness doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric-core-clean/annexes/infrafabric-IF-annexes.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric-core-clean/papers/IF-armour.tex|IF armour doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric-core-clean/papers/IF-foundations.tex|IF foundations doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric-core-clean/papers/IF-vision.tex|IF vision doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric-core-clean/papers/IF-witness.tex|IF witness doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric-core-clean/philosophy/IF.philosophy-database.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric-core-clean/philosophy/IF.philosophy-database.yaml|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric-core-clean/philosophy/IF.philosophy-queries.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric-core-clean/philosophy/IF.philosophy-table.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric-overnight-documentation/INFRAFABRIC-COMPLETE-DOCUMENTATION.md|InfraFabric complete dossier
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric-reorg-MobaXterm_WSL-Default1_20251119_041203.txt|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric-supreme-court-debate.json|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric-supreme-court-debate.txt|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/IF-ARMOUR-ACADEMIC-CITATIONS.md|IF armour doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/IF-ARMOUR-ADAPTIVE-SECURITY.md|IF armour doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/IF-ARMOUR-ETHICAL-SAFEGUARDS.md|IF armour doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/IF-ARMOUR-HONEYPOT-CANARIES.md|IF armour doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/IF-ARMOUR-INDUSTRY-COMPARISON.md|IF armour doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/IF-ARMOUR-INTERNAL-AFFAIRS.md|IF armour doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/IF-ARMOUR-INVESTIGATIVE-AGENTS.md|IF armour doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/IF-ARMOUR-PHILOSOPHICAL-ANALOGIES.md|IF armour doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/IF-ARMOUR-QUANTUM-READINESS.md|IF armour doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/IF-ARMOUR-SANDBOX-SECURITY.md|IF armour doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/IF-ARMOUR-SWARM-INTELLIGENCE.md|IF armour doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/IF-ARMOUR-WARRANT-CANARIES.md|IF armour doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/IF.philosophy-database.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/IF.philosophy-database.yaml|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/IF.philosophy-queries.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/IF.philosophy-table.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/InfraFabric-Blueprint.log|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/InfraFabric-Blueprint.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/InfraFabric-Blueprint.pdf|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/InfraFabric-Blueprint.tex|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/arxiv-submission/InfraFabric-Blueprint.tex|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/components/IF.memory.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/components/IF.optimise.md|IF optimise asset
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/docs/IF.yologuard-bridge.md|IF yologuard asset
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/docs/NEUROGENESIS-INFRAFABRIC-PARALLELS.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/docs/NVIDIA-INFRAFABRIC-INTEGRATION.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/docs/POLICE-CHASE-INFRAFABRIC-PARALLELS.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/infrafabric-IF-annexes.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/infrafabric-complete-v7.01.md|InfraFabric complete dossier
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/infrafabric-complete-v7.03.md|InfraFabric complete dossier
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/infrafabric-complete-v7.md|InfraFabric complete dossier
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/marketing/INFRAFABRIC-MANIFESTO-PAGES-0-3.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/marketing/briefing/infrafabric-complete-briefing-v4.md|InfraFabric complete dossier
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/marketing/briefing/infrafabric-complete-briefing-v5.md|InfraFabric complete dossier
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/marketing/briefing/infrafabric-complete-briefing-v7.md|InfraFabric complete dossier
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/marketing/research/epic-as-infrafabric-owner.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/marketing/yologuard_v1_complete.md|Yologuard artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/papers/IF-armour-arxiv-submission/IF-armour.tex.txt|IF armour doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/papers/IF-armour.log|IF armour doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/papers/IF-armour.md|IF armour doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/papers/IF-armour.pdf|IF armour doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/papers/IF-armour.tex|IF armour doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/papers/IF-foundations-arxiv-submission/IF.philosophy-database.yaml.txt|IF foundations doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/papers/IF-foundations-arxiv-submission/papers/IF-foundations.tex.txt|IF foundations doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/papers/IF-foundations.log|IF foundations doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/papers/IF-foundations.md|IF foundations doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/papers/IF-foundations.pdf|IF foundations doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/papers/IF-foundations.tex|IF foundations doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/papers/IF-vision-arxiv-submission/IF-vision.tex.txt|IF vision doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/papers/IF-vision.log|IF vision doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/papers/IF-vision.md|IF vision doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/papers/IF-vision.pdf|IF vision doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/papers/IF-vision.tex|IF vision doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/papers/IF-witness-arxiv-submission/IF-witness.tex.txt|IF witness doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/papers/IF-witness.log|IF witness doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/papers/IF-witness.md|IF witness doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/papers/IF-witness.pdf|IF witness doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric/papers/IF-witness.tex|IF witness doc
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric_comprehensive_analysis_prompt.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/infrafabric_rescan_update_2025-11-09.md|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/patch-IF.philosophy-database.yaml|IF philosophy artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/yologuard-codex-review-FILELIST.txt|Yologuard artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/yologuard-codex-review-summary.txt|Yologuard artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/yologuard-codex-review/docs/papers/IF_YOLOGUARD_V3_PAPER.md|Yologuard artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/yologuard-codex-review/docs/reviews/IF.YOLOGUARD_V3_FULL_REVIEW.md|IF yologuard asset
+SAFE_DOC|/mnt/c/users/setup/Downloads/yologuard-codex-review/docs/timelines/CORRECTED_TIMELINE_IF_YOLOGUARD.md|Yologuard artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/yologuard-codex-review/docs/timelines/IF_WITNESS_YOLOGUARD_INTEGRATION.md|Yologuard artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/yologuard_v1_complete-FINAL.md|Yologuard artifact
+SAFE_DOC|/mnt/c/users/setup/Downloads/yologuard_v1_complete.md|Yologuard artifact
+SAFE_DOC|/mnt/c/users/setup/OneDrive/CDPSF Graphics PSD/Documents/# InfraFabric Onboarding & Quickstart v2.txt|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/OneDrive/CDPSF Graphics PSD/Documents/FireShot Capture 002 - Editing Claude_ How I Orchestrated 8 Swarms of Agents to Build InfraFabric – Medium - [medium.com].pdf|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/OneDrive/CDPSF Graphics PSD/Documents/FireShot Capture 005 - Claude_ How I Orchestrated 8 Swarms of Agents to Build InfraFabric I by Danny Stocker I Nov, 2025 I Medium - [medium.com].pdf|InfraFabric artifact
+SAFE_DOC|/mnt/c/users/setup/OneDrive/CDPSF Graphics PSD/Documents/FireShot Capture 077 - Claude_ How I Orchestrated 8 Swarms of Agents to Build InfraFabric I by Danny Stocker I Nov, 2025 I Medium - [medium.com].pdf|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/ChatGPT5_IF.yologuard_v3_reproducibility_run_artifacts.zip|IF yologuard asset
+UNKNOWN|/mnt/c/users/setup/Downloads/Demande urgente, document referral Notre Dame _ Hôpital Général Juif.eml|IF mention
+UNKNOWN|/mnt/c/users/setup/Downloads/IF-armour-handoff-2025-11-08.zip|IF armour doc
+UNKNOWN|/mnt/c/users/setup/Downloads/IF-docs-files/infrafabric-package.zip|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/IF.swarm.png|IF swarm asset
+UNKNOWN|/mnt/c/users/setup/Downloads/IF.yologuard_v3_REPRODUCIBILITY_COMPLETE.tar.gz|IF yologuard asset
+UNKNOWN|/mnt/c/users/setup/Downloads/IF.yologuard_v3_REPRODUCIBILITY_PACKAGE.tar.gz|IF yologuard asset
+UNKNOWN|/mnt/c/users/setup/Downloads/IF_YOLOGUARD_V3_ACADEMIC_PACKAGE.tar.gz|Yologuard artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/INFRAFABRIC-DOSSIER-PUBLICATION-PACKAGE-v10.zip|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/INFRAFABRIC-DOSSIER-PUBLICATION-PACKAGE.zip|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/INFRAFABRIC_EVALUATION_REPORT.html|InfraFabric evaluation asset
+UNKNOWN|/mnt/c/users/setup/Downloads/InfraFabric-Strategic-Briefing-20251029_131810.zip|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/InfraFabric_FixPack_2025-11-11_r3.zip|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/InfraFabric_FixPack_2025-11-11_r4_gapfill.zip|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/InfraFabric_FixPack_2025-11-11_r5_philosophers_liveviz (1).zip|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/InfraFabric_FixPack_2025-11-11_r5_philosophers_liveviz.zip|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/InfraFabric_V3.2_Complete_Bundle_2025-11-09.zip|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/RBC Mobile/assets/pdfjs/web/standard_fonts/FoxitSerif.pfb|IF mention
+UNKNOWN|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/Evaluate Project_ Yologuard Documentation And Code|Yologuard artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/IF.guard Panel Reviews Bias Research|IF guard asset
+UNKNOWN|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/IF.yologuard-bridge_ Secure AI Coordination|IF yologuard asset
+UNKNOWN|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/InfraFabric Documentation Evolution_|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/InfraFabric_ AI, Quantum, Biology Nexus_|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/InfraFabric_ Four Cycles of Coordination|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/Integrating InfraFabric Reports and Annexes|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/drive-download-20251107T144530Z-1-001/No _IF.ceo_ Mentioned|IF mention
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric-2025-11-13-0223.zip|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric-701.zip|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric-adaptive-system.zip|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric-complete-package-20251031.zip|InfraFabric complete dossier
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric-complete-v7.03.mdt|InfraFabric complete dossier
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric-contact-discovery-results.zip|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric-core-clean/papers/IF-armour-arxiv-submission.tar.gz|IF armour doc
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric-core-clean/papers/IF-foundations-arxiv-submission.tar.gz|IF foundations doc
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric-core-clean/papers/IF-vision-arxiv-submission.tar.gz|IF vision doc
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric-core-clean/papers/IF-witness-arxiv-submission.tar.gz|IF witness doc
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric-core-master.zip|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric-git-backup-20251111-0116.tar.gz|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric-latex-submissions.zip|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric-master-2025-11-11.zip|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric-master-2025-11-15-1411.zip|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric-multi-perspective-evaluation-20251101.zip|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric-outreach-campaign.zip|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric-phase01-calibration.zip|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric-phase01-final.zip|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric-poc-dossier.zip|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric-poc-evaluation-package-FINAL.zip|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric-poc-evaluation-package-UPDATED.zip|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric-poc-evaluation-package.zip|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric-qwen-integration.zip|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric-recursive-learning-complete.zip|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric-v11-complete-edition.zip|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric/InfraFabric-Blueprint.aux|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric/InfraFabric-Blueprint.toc|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric/infrafabric-annexes-v7.01.md.backup|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric/papers/IF-armour-arxiv-submission.tar.gz|IF armour doc
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric/papers/IF-armour.aux|IF armour doc
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric/papers/IF-foundations-arxiv-submission.tar.gz|IF foundations doc
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric/papers/IF-foundations.aux|IF foundations doc
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric/papers/IF-vision-arxiv-submission.tar.gz|IF vision doc
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric/papers/IF-vision.aux|IF vision doc
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric/papers/IF-witness-arxiv-submission.tar.gz|IF witness doc
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric/papers/IF-witness.aux|IF witness doc
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric_eval_bundle (1).zip|InfraFabric evaluation asset
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric_eval_bundle.zip|InfraFabric evaluation asset
+UNKNOWN|/mnt/c/users/setup/Downloads/infrafabric_medium_hero.png|InfraFabric artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/yologuard-codex-review.zip|Yologuard artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/yologuard-codex-test-package.tar|Yologuard artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/yologuard-codex-test-package.tar.gz|Yologuard artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/yologuard-codex-test-package.zip|Yologuard artifact
+UNKNOWN|/mnt/c/users/setup/Downloads/yologuard-codex-test-package/__pycache__/yologuard_v2.cpython-312.pyc|Yologuard artifact
+UNKNOWN|/mnt/c/users/setup/OneDrive/CDPSF Graphics PSD/Documents/MOBILedit Forensic Express/Apple iPhone X (2024-06-24 06h56m33s)/html_files/phone/applications0/com.einnovation.temu/backup/Library/Application Support/com.einnovation.temu/Components/com.baogong.web/commimg-us.kwcdn.com/upload_commimg/temu/73bb4751-93cd-4869-85f4-513f8e3626d0.gif.slim.gif|IF mention
+UNKNOWN|/mnt/c/users/setup/OneDrive/CDPSF Graphics PSD/Documents/MOBILedit Forensic Express/Apple iPhone X (2024-06-24 06h56m33s)/html_files/phone/applications0/com.facebook.Messenger/backup/Library/Sounds/bird_notif.aac|IF mention
+UNKNOWN|/mnt/c/users/setup/OneDrive/CDPSF Graphics PSD/Documents/MOBILedit Forensic Express/Apple iPhone X (2024-06-24 06h56m33s)/html_files/phone/applications0/com.facebook.Messenger/backup/Library/Sounds/blip_notif.aac|IF mention
+UNKNOWN|/mnt/c/users/setup/OneDrive/CDPSF Graphics PSD/Documents/MOBILedit Forensic Express/Apple iPhone X (2024-06-24 06h56m33s)/html_files/phone/applications0/com.facebook.Messenger/backup/Library/Sounds/gem_notif.aac|IF mention
+UNKNOWN|/mnt/c/users/setup/OneDrive/CDPSF Graphics PSD/Documents/MOBILedit Forensic Express/Apple iPhone X (2024-06-24 06h56m33s)/html_files/phone/applications0/com.facebook.Messenger/backup/Library/Sounds/mentionsNotif.wav|IF mention
+UNKNOWN|/mnt/c/users/setup/OneDrive/CDPSF Graphics PSD/Documents/MOBILedit Forensic Express/Apple iPhone X (2024-06-24 06h56m33s)/html_files/phone/applications0/com.facebook.Messenger/backup/Library/Sounds/percolate_notif.aac|IF mention
+UNKNOWN|/mnt/c/users/setup/OneDrive/CDPSF Graphics PSD/Documents/MOBILedit Forensic Express/Apple iPhone X (2024-06-24 06h56m33s)/html_files/phone/applications0/com.facebook.Messenger/backup/Library/Sounds/pop_ding_notif.aac|IF mention
+UNKNOWN|/mnt/c/users/setup/OneDrive/CDPSF Graphics PSD/Documents/MOBILedit Forensic Express/Apple iPhone X (2024-06-24 06h56m33s)/html_files/phone/applications0/com.facebook.Messenger/backup/Library/Sounds/pop_swing_notif.aac|IF mention
+UNKNOWN|/mnt/c/users/setup/OneDrive/CDPSF Graphics PSD/Documents/MOBILedit Forensic Express/Apple iPhone X (2024-06-24 06h56m33s)/html_files/phone/applications0/com.facebook.Messenger/backup/Library/Sounds/whirl_notif.aac|IF mention
+UNKNOWN|/mnt/c/users/setup/OneDrive/CDPSF Graphics PSD/Documents/MOBILedit Forensic Express/Apple iPhone X (2024-06-24 06h56m33s)/pdf_files/phone/applications0/com.einnovation.temu/backup/Library/Application Support/com.einnovation.temu/Components/com.baogong.web/commimg-us.kwcdn.com/upload_commimg/temu/73bb4751-93cd-4869-85f4-513f8e3626d0.gif.slim.gif|IF mention
+UNKNOWN|/mnt/c/users/setup/OneDrive/CDPSF Graphics PSD/Documents/MOBILedit Forensic Express/Apple iPhone X (2024-06-24 06h56m33s)/pdf_files/phone/applications0/com.facebook.Messenger/backup/Library/Sounds/bird_notif.aac|IF mention
+UNKNOWN|/mnt/c/users/setup/OneDrive/CDPSF Graphics PSD/Documents/MOBILedit Forensic Express/Apple iPhone X (2024-06-24 06h56m33s)/pdf_files/phone/applications0/com.facebook.Messenger/backup/Library/Sounds/blip_notif.aac|IF mention
+UNKNOWN|/mnt/c/users/setup/OneDrive/CDPSF Graphics PSD/Documents/MOBILedit Forensic Express/Apple iPhone X (2024-06-24 06h56m33s)/pdf_files/phone/applications0/com.facebook.Messenger/backup/Library/Sounds/gem_notif.aac|IF mention
+UNKNOWN|/mnt/c/users/setup/OneDrive/CDPSF Graphics PSD/Documents/MOBILedit Forensic Express/Apple iPhone X (2024-06-24 06h56m33s)/pdf_files/phone/applications0/com.facebook.Messenger/backup/Library/Sounds/mentionsNotif.wav|IF mention
+UNKNOWN|/mnt/c/users/setup/OneDrive/CDPSF Graphics PSD/Documents/MOBILedit Forensic Express/Apple iPhone X (2024-06-24 06h56m33s)/pdf_files/phone/applications0/com.facebook.Messenger/backup/Library/Sounds/percolate_notif.aac|IF mention
+UNKNOWN|/mnt/c/users/setup/OneDrive/CDPSF Graphics PSD/Documents/MOBILedit Forensic Express/Apple iPhone X (2024-06-24 06h56m33s)/pdf_files/phone/applications0/com.facebook.Messenger/backup/Library/Sounds/pop_ding_notif.aac|IF mention
+UNKNOWN|/mnt/c/users/setup/OneDrive/CDPSF Graphics PSD/Documents/MOBILedit Forensic Express/Apple iPhone X (2024-06-24 06h56m33s)/pdf_files/phone/applications0/com.facebook.Messenger/backup/Library/Sounds/pop_swing_notif.aac|IF mention
+UNKNOWN|/mnt/c/users/setup/OneDrive/CDPSF Graphics PSD/Documents/MOBILedit Forensic Express/Apple iPhone X (2024-06-24 06h56m33s)/pdf_files/phone/applications0/com.facebook.Messenger/backup/Library/Sounds/whirl_notif.aac|IF mention
+UNKNOWN|/mnt/c/users/setup/work/handwritor/handwritor_env/lib/python3.12/site-packages/PIL/_avif.cpython-312-x86_64-linux-gnu.so|IF mention
+UNKNOWN|/mnt/c/users/setup/work/handwritor/handwritor_env/lib/python3.12/site-packages/PIL/_avif.pyi|IF mention

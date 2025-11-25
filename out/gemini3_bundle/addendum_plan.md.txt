@@ -1,0 +1,5 @@
+# Addendum to InfraFabric reconstruction plan
+1. **Lost artifacts sweep**: Verified `/tmp` and `/home/setup` for "lost" references (including `lost+found`); nothing new surfaced, so no orphaned files need recovery before reorg.
+2. **Claude session indexing**: Harvested `.claude/analysis/last15days_sessions_summary.json` (6 sessions, highest mention tokens `mcp`, `creds`, `yologuard`), plus the `conversations_index.*` inventory, to annotate the canonical spec with real user engagement.
+3. **Index-first reorg approach**: All additional metadata (branch scans, Claude logs, lost-file index) is now under `out/` so the reorganized tree can reference these indexes when planning final placement of guardian/cycle docs and logs.
+4. **Next reorganize checkpoint**: When relocating files per `out/moves.csv`, include the .claude inventory and aggregated metadata in the `infra/auxiliary` subtree so nothing disappears; the `clean_spec.md` and `proposed_tree.*` should cite `out/claude_session_addendum.md` as a source of truth for messaging cycles.

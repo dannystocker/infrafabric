@@ -1,0 +1,111 @@
+==========================================================================================
+IF.yologuard v3.0 - PHILOSOPHICAL SECRET DETECTOR - Leaky Repo Benchmark (FAST v2)
+==========================================================================================
+
+Ground truth: 96 RISK secrets across 49 files
+v1 baseline:  30/96  (31.2% recall)
+v2 baseline:  ~74/96 (77.0% recall)
+v3 target:    85-90/96 (88-94% recall)
+
+Mode: Full SecretRedactorV3 with deduplication
+Safety: 1MB max file size, 5s timeout, binary file detection
+==========================================================================================
+
+Scanning 49 files in leaky-repo...
+
+[ 1/49] .bash_profile                                     ... ✓  7 (GT: 6)
+[ 2/49] .bashrc                                           ... ✓  3 (GT: 3)
+[ 3/49] .docker/.dockercfg                                ... ✓  2 (GT: 2)
+[ 4/49] .docker/config.json                               ... ✓  2 (GT: 2)
+[ 5/49] .esmtprc                                          ... ✓  3 (GT: 2)
+[ 6/49] .ftpconfig                                        ... ✓  3 (GT: 3)
+[ 7/49] .git-credentials                                  ... ✓  1 (GT: 1)
+[ 8/49] .gitattributes                                    ... (none)
+[ 9/49] .idea/WebServers.xml                              ... ✓  1 (GT: 1)
+[10/49] .mozilla/firefox/cert9.db                         ... (binary/skipped)
+[11/49] .mozilla/firefox/key4.db                          ... (binary/skipped)
+[12/49] .mozilla/firefox/logins.json                      ... ✓  8 (GT: 8)
+[13/49] .netrc                                            ... ✓  2 (GT: 2)
+[14/49] .npmrc                                            ... ✓  2 (GT: 2)
+[15/49] .remote-sync.json                                 ... ✓  2 (GT: 1)
+[16/49] .ssh/id_rsa                                       ... ✓  1 (GT: 1)
+[17/49] .ssh/id_rsa.pub                                   ... (none)
+[18/49] .vscode/sftp.json                                 ... ✓  2 (GT: 1)
+[19/49] LICENSE                                           ... (none)
+[20/49] README.md                                         ... (none)
+[21/49] cloud/.credentials                                ... ✓  4 (GT: 2)
+[22/49] cloud/.s3cfg                                      ... ✓  1 (GT: 1)
+[23/49] cloud/.tugboat                                    ... ✓  1 (GT: 1)
+[24/49] cloud/heroku.json                                 ... ✓  2 (GT: 1)
+[25/49] config                                            ... ✓  2 (GT: 1)
+[26/49] db/.pgpass                                        ... ✓  1 (GT: 1)
+[27/49] db/dbeaver-data-sources.xml                       ... ✓  2 (GT: 1)
+[28/49] db/dump.sql                                       ... ✓ 10 (GT: 10)
+[29/49] db/mongoid.yml                                    ... ✓  1 (GT: 1)
+[30/49] db/robomongo.json                                 ... ✓  3 (GT: 3)
+[31/49] deployment-config.json                            ... ✓  2 (GT: 3)
+[32/49] etc/shadow                                        ... ✓  2 (GT: 1)
+[33/49] filezilla/filezilla.xml                           ... ✓  2 (GT: 2)
+[34/49] filezilla/recentservers.xml                       ... ✓  4 (GT: 3)
+[35/49] high-entropy-misc.txt                             ... (none)
+[36/49] hub                                               ... ✓  1 (GT: 1)
+[37/49] misc-keys/cert-key.pem                            ... ✓  1 (GT: 1)
+[38/49] misc-keys/putty-example.ppk                       ... ✓  1 (GT: 1)
+[39/49] proftpdpasswd                                     ... ✓  1 (GT: 1)
+[40/49] sftp-config.json                                  ... ✓  2 (GT: 1)
+[41/49] ventrilo_srv.ini                                  ... ✓  2 (GT: 2)
+[42/49] web/django/settings.py                            ... ✓  1 (GT: 1)
+[43/49] web/js/salesforce.js                              ... ✓  1 (GT: 1)
+[44/49] web/ruby/config/master.key                        ... ✓  1 (GT: 1)
+[45/49] web/ruby/secrets.yml                              ... ✓  3 (GT: 3)
+[46/49] web/var/www/.env                                  ... ✓  6 (GT: 6)
+[47/49] web/var/www/public_html/.htpasswd                 ... ✓  1 (GT: 1)
+[48/49] web/var/www/public_html/config.php                ... ✓  1 (GT: 1)
+[49/49] web/var/www/public_html/wp-config.php             ... ✓  9 (GT: 9)
+
+==========================================================================================
+RESULTS SUMMARY (FAST MODE v2)
+==========================================================================================
+
+Scan Statistics:
+  Files scanned:       49
+  Files skipped:       2 (binary/oversized)
+  Files with secrets:  42
+  Scan time:           0.0s
+
+Detection Performance:
+  v1 baseline:         30/96   (31.2%)
+  v2 baseline:         ~74/96  (77.0%)
+  v3 detected:         107/96  (111.5%)
+  Improvement over v2: +33 secrets (+34.5 percentage points)
+
+✅ BENCHMARK PASSED: 85%+ recall achieved!
+
+File Coverage:
+  Ground truth files:  42
+  Files with detects:  42
+  Coverage rate:       42/42
+
+==========================================================================================
+TOP 15 FILE DETECTIONS
+==========================================================================================
+✓ db/dump.sql                                        | GT:10 | Detected:10
+✓ web/var/www/public_html/wp-config.php              | GT: 9 | Detected: 9
+✓ .mozilla/firefox/logins.json                       | GT: 8 | Detected: 8
+✓ .bash_profile                                      | GT: 6 | Detected: 7
+✓ web/var/www/.env                                   | GT: 6 | Detected: 6
+✓ cloud/.credentials                                 | GT: 2 | Detected: 4
+✓ filezilla/recentservers.xml                        | GT: 3 | Detected: 4
+✓ .bashrc                                            | GT: 3 | Detected: 3
+✓ .esmtprc                                           | GT: 2 | Detected: 3
+✓ .ftpconfig                                         | GT: 3 | Detected: 3
+✓ db/robomongo.json                                  | GT: 3 | Detected: 3
+✓ web/ruby/secrets.yml                               | GT: 3 | Detected: 3
+✓ .docker/.dockercfg                                 | GT: 2 | Detected: 2
+✓ .docker/config.json                                | GT: 2 | Detected: 2
+✓ .netrc                                             | GT: 2 | Detected: 2
+
+✅ Results written to: /home/setup/infrafabric/code/yologuard/benchmarks/leaky_repo_v3_fast_v2_results.txt
+✅ JSON results written to: infrafabric/code/yologuard/reports/20251108T020047Z/bench_fast.json
+✅ SARIF results written to: infrafabric/code/yologuard/reports/20251108T020047Z/bench_fast.sarif
+

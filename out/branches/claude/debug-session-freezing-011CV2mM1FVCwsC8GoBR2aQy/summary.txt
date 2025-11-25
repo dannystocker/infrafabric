@@ -1,0 +1,10 @@
+Branch: claude/debug-session-freezing-011CV2mM1FVCwsC8GoBR2aQy
+IF function names cataloged: 0
+IF definitions recorded: 0
+Call edges observed: 0
+IF mention tokens: 217
+Mention graph edges: 3615
+Yologuard references: 62
+Secrets candidate files: 452
+Manifest entries: 884
+Fallback tokens captured: 0

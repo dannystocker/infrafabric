@@ -1,0 +1,2 @@
+?? out/branches/claude/cli-witness-optimise-011CV2nzozFeHipmhetrw5nk/git_log.txt
+?? out/branches/claude/cli-witness-optimise-011CV2nzozFeHipmhetrw5nk/git_status.txt

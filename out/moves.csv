@@ -1,0 +1,6 @@
+old_path,new_path
+IF-foundations.md,infra/guardians/IF-foundations.md
+IF-vision.md,infra/cycles/IF-vision.md
+IF-armour.md,infra/guardians/IF-armour.md
+docs/evidence/INFRAFABRIC_EVAL_GPT-5.1-CODEX-CLI_20251115T145456Z.yaml,infra/ingestion/evaluations/INFRAFABRIC_EVAL_GPT-5.1-CODEX-CLI_20251115T145456Z.yaml
+docs/evidence/INFRAFABRIC_COMPREHENSIVE_EVALUATION_PROMPT.md,infra/ingestion/evaluations/INFRAFABRIC_COMPREHENSIVE_EVALUATION_PROMPT.md

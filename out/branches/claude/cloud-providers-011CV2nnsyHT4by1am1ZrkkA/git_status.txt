@@ -1,0 +1,2 @@
+?? out/branches/claude/cloud-providers-011CV2nnsyHT4by1am1ZrkkA/git_log.txt
+?? out/branches/claude/cloud-providers-011CV2nnsyHT4by1am1ZrkkA/git_status.txt

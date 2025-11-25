@@ -1,0 +1,2 @@
+?? out/branches/claude/debug-session-freezing-011CV2mM1FVCwsC8GoBR2aQy/git_log.txt
+?? out/branches/claude/debug-session-freezing-011CV2mM1FVCwsC8GoBR2aQy/git_status.txt

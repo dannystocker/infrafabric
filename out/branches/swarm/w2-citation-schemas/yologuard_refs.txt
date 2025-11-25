@@ -1,0 +1,29 @@
+/home/setup/infrafabric/CONTRIBUTING.md:14:## First Run (Yologuard demo)
+/home/setup/infrafabric/EXTERNAL_REVIEW_PROMPT_IF_FULL.md:11:- Yologuard main README (raw): https://raw.githubusercontent.com/dannystocker/infrafabric/master/code/yologuard/README.md
+/home/setup/infrafabric/EXTERNAL_REVIEW_PROMPT_IF_FULL.md:12:- Yologuard detector (CLI, raw): https://raw.githubusercontent.com/dannystocker/infrafabric/master/code/yologuard/src/IF.yologuard_v3.py
+/home/setup/infrafabric/IF_CONNECTIVITY_ARCHITECTURE.md:293:service YologuardService {
+/home/setup/infrafabric/IF_CONNECTIVITY_ARCHITECTURE.md:328:class YologuardServicer(ifarmour_pb2_grpc.YologuardServiceServicer):
+/home/setup/infrafabric/IF_CONNECTIVITY_ARCHITECTURE.md:340:    ifarmour_pb2_grpc.add_YologuardServiceServicer_to_server(
+/home/setup/infrafabric/IF_CONNECTIVITY_ARCHITECTURE.md:341:        YologuardServicer(), server
+/home/setup/infrafabric/IF_CONNECTIVITY_ARCHITECTURE.md:354:        self.stub = ifarmour_pb2_grpc.YologuardServiceStub(channel)
+/home/setup/infrafabric/EXTERNAL_REVIEW_ARENA_BUNDLE.md:140:Yologuard CLI Help (excerpt)
+/home/setup/infrafabric/CALL_FOR_EXTERNAL_REVIEW.md:22:- Yologuard update (raw): https://raw.githubusercontent.com/dannystocker/infrafabric/master/code/yologuard/EXTERNAL_REVIEW_UPDATE.md
+/home/setup/infrafabric/CALL_FOR_EXTERNAL_REVIEW.md:23:- Yologuard external results (raw): https://raw.githubusercontent.com/dannystocker/infrafabric/master/code/yologuard/EXTERNAL_REVIEW_RESULTS.md
+/home/setup/infrafabric/CALL_FOR_EXTERNAL_REVIEW.md:24:- Yologuard guardian handoff (raw): https://raw.githubusercontent.com/dannystocker/infrafabric/master/code/yologuard/integration/GUARDIAN_HANDOFF_v3.1_IEF.md
+/home/setup/infrafabric/code/yologuard/GPT5_REQUIREMENTS.md:807:- [ ] gRPC services: YologuardService, HoneypotService, LearnerService
+/home/setup/infrafabric/EXTERNAL_REVIEW_ARENA_PROMPT.md:13:- Yologuard README (raw): https://raw.githubusercontent.com/dannystocker/infrafabric/master/code/yologuard/README.md
+/home/setup/infrafabric/EXTERNAL_REVIEW_ARENA_PROMPT.md:14:- Yologuard CLI (detector, raw): https://raw.githubusercontent.com/dannystocker/infrafabric/master/code/yologuard/src/IF.yologuard_v3.py
+/home/setup/infrafabric/EXTERNAL_REVIEW_ARENA_SUPERBUNDLE.md:684:- Yologuard update (raw): https://raw.githubusercontent.com/dannystocker/infrafabric/master/code/yologuard/EXTERNAL_REVIEW_UPDATE.md
+/home/setup/infrafabric/EXTERNAL_REVIEW_ARENA_SUPERBUNDLE.md:685:- Yologuard external results (raw): https://raw.githubusercontent.com/dannystocker/infrafabric/master/code/yologuard/EXTERNAL_REVIEW_RESULTS.md
+/home/setup/infrafabric/EXTERNAL_REVIEW_ARENA_SUPERBUNDLE.md:686:- Yologuard guardian handoff (raw): https://raw.githubusercontent.com/dannystocker/infrafabric/master/code/yologuard/integration/GUARDIAN_HANDOFF_v3.1_IEF.md
+/home/setup/infrafabric/EXTERNAL_REVIEW_ARENA_SUPERBUNDLE.md:1630:Yologuard CLI Help (excerpt)
+/home/setup/infrafabric/EXTERNAL_REVIEW_ARENA_SUPERBUNDLE.md:1692:- Yologuard README (raw): https://raw.githubusercontent.com/dannystocker/infrafabric/master/code/yologuard/README.md
+/home/setup/infrafabric/EXTERNAL_REVIEW_ARENA_SUPERBUNDLE.md:1693:- Yologuard CLI (detector, raw): https://raw.githubusercontent.com/dannystocker/infrafabric/master/code/yologuard/src/IF.yologuard_v3.py
+/home/setup/infrafabric/EXTERNAL_REVIEW_ARENA_SUPERBUNDLE.md:2736:- Yologuard main README (raw): https://raw.githubusercontent.com/dannystocker/infrafabric/master/code/yologuard/README.md
+/home/setup/infrafabric/EXTERNAL_REVIEW_ARENA_SUPERBUNDLE.md:2737:- Yologuard detector (CLI, raw): https://raw.githubusercontent.com/dannystocker/infrafabric/master/code/yologuard/src/IF.yologuard_v3.py
+/home/setup/infrafabric/EXTERNAL_REVIEW_ARENA_SUPERBUNDLE.md:3589:service YologuardService {
+/home/setup/infrafabric/EXTERNAL_REVIEW_ARENA_SUPERBUNDLE.md:3624:class YologuardServicer(ifarmour_pb2_grpc.YologuardServiceServicer):
+/home/setup/infrafabric/EXTERNAL_REVIEW_ARENA_SUPERBUNDLE.md:3636:    ifarmour_pb2_grpc.add_YologuardServiceServicer_to_server(
+/home/setup/infrafabric/EXTERNAL_REVIEW_ARENA_SUPERBUNDLE.md:3637:        YologuardServicer(), server
+/home/setup/infrafabric/EXTERNAL_REVIEW_ARENA_SUPERBUNDLE.md:3650:        self.stub = ifarmour_pb2_grpc.YologuardServiceStub(channel)
+/home/setup/infrafabric/EXTERNAL_REVIEW_ARENA_SUPERBUNDLE.md:19772:- [ ] gRPC services: YologuardService, HoneypotService, LearnerService

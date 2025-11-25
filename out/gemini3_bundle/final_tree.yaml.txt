@@ -1,0 +1,86 @@
+infra:
+  guardians:
+    manifest:
+      - papers/IF-armour.md
+      - papers/IF-foundations.md
+      - agents.md
+    annexes:
+      - docs/annexes/infrafabric-IF-annexes.md
+      - docs/annexes/ANNEX-N-IF-OPTIMISE-FRAMEWORK.md
+      - docs/annexes/ANNEX-O-PRECURSOR-CONVERSATION.md
+      - docs/annexes/ANNEX-P-GPT5-REFLEXION-CYCLE.md
+      - docs/annexes/ENGINEERING-BACKLOG-GPT5-IMPROVEMENTS.md
+      - docs/annexes/COMPLETE-SOURCE-INDEX.md
+  cycles:
+    vision:
+      - papers/IF-vision.md
+      - papers/IF-momentum.md
+    foundations:
+      - papers/IF-foundations.md
+  ingestion:
+    evaluations:
+      - docs/evidence/INFRAFABRIC_EVAL_GPT-5.1-CODEX-CLI_20251115T145456Z.yaml
+      - docs/evidence/GEMINI-TO-SYNTHESIS-SAGA.md
+      - docs/evidence/gemini-logs/evaluations/Evaluate Project_ Yologuard Documentation And Code
+      - docs/evidence/gemini-logs/TTT-COMPLIANCE.md
+    prompts:
+      - docs/evidence/INFRAFABRIC_COMPREHENSIVE_EVALUATION_PROMPT.md
+      - CLOUD-COMMS-TASK-PROMPT.md
+      - EXTERNAL_REVIEW_PROMPT_IF_FULL.md
+      - EXTERNAL_REVIEW_ARENA_PROMPT.md
+      - EXTERNAL_REVIEW_ARENA_BUNDLE.md
+      - EXTERNAL_REVIEW_ARENA_SUPERBUNDLE.md
+      - CALL_FOR_EXTERNAL_REVIEW.md
+    operations:
+      - CLOUD-TRANSITION-PLAN.md
+      - SESSION-HANDOVER-TO-CLOUD.md
+      - SESSION-RESUME.md
+      - SESSION_HANDOFF_2025-11-08_IF-ARMOUR.md
+  orchestrations:
+    witness:
+      - papers/IF-witness.md
+      - IF_CONNECTIVITY_ARCHITECTURE.md
+      - SESSION-HANDOVER-TO-CLOUD.md
+      - SESSION-RESUME.md
+    swarm:
+      - docs/evidence/gemini-logs/evaluations/Evaluate Project_ Yologuard Documentation And Code
+      - docs/evidence/gemini-logs/TTT-COMPLIANCE.md
+    search:
+      - docs/evidence/GEMINI-TO-SYNTHESIS-SAGA.md
+      - CLOUD-COMMS-TASK-PROMPT.md
+  meta:
+    reports:
+      - out/aggregate_report.md
+      - out/clean_spec.md
+      - out/if_relationship_map.json
+      - out/if_relationship_map.dot
+      - out/migration_instructions.md
+      - out/proposed_tree.md
+      - out/proposed_tree.yaml
+    indices:
+      - out/summary.txt
+      - out/todos_priority.md
+      - out/lost_files_index.txt
+    addenda:
+      - out/claude_session_addendum.md
+      - out/addendum_plan.md
+  tools:
+    automation:
+      - scripts/update_links.py
+      - scripts/bulk_move_and_update.sh
+    yologuard:
+      - code/yologuard/GPT5_REQUIREMENTS.md
+  meta-security:
+    - SECURITY.md
+docs:
+  annexes:
+    - docs/annexes/infrafabric-IF-annexes.md
+    - docs/annexes/ANNEX-N-IF-OPTIMISE-FRAMEWORK.md
+    - docs/annexes/ANNEX-O-PRECURSOR-CONVERSATION.md
+    - docs/annexes/ANNEX-P-GPT5-REFLEXION-CYCLE.md
+  evidence:
+    - docs/evidence/INFRAFABRIC_COMPREHENSIVE_EVALUATION_PROMPT.md
+    - docs/evidence/INFRAFABRIC_EVAL_GPT-5.1-CODEX-CLI_20251115T145456Z.yaml
+    - docs/evidence/GEMINI-TO-SYNTHESIS-SAGA.md
+    - docs/evidence/gemini-logs/evaluations/Evaluate Project_ Yologuard Documentation And Code
+    - docs/evidence/gemini-logs/TTT-COMPLIANCE.md

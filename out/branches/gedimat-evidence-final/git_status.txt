@@ -1,0 +1,2 @@
+?? out/branches/gedimat-evidence-final/git_log.txt
+?? out/branches/gedimat-evidence-final/git_status.txt

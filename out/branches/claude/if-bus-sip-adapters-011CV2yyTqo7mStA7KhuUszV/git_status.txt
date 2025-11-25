@@ -1,0 +1,2 @@
+?? out/branches/claude/if-bus-sip-adapters-011CV2yyTqo7mStA7KhuUszV/git_log.txt
+?? out/branches/claude/if-bus-sip-adapters-011CV2yyTqo7mStA7KhuUszV/git_status.txt

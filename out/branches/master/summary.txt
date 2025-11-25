@@ -1,0 +1,10 @@
+Branch: master
+IF function names cataloged: 0
+IF definitions recorded: 0
+Call edges observed: 0
+IF mention tokens: 62
+Mention graph edges: 493
+Yologuard references: 7
+Secrets candidate files: 141
+Manifest entries: 1490
+Fallback tokens captured: 0

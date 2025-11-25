@@ -1,0 +1,7 @@
+old_path,new_path
+philosophy/IF.philosophy-database.md,docs/philosophy/IF.philosophy-database.md
+philosophy/IF.philosophy-database.yaml,docs/philosophy/IF.philosophy-database.yaml
+philosophy/IF.philosophy-queries.md,docs/philosophy/IF.philosophy-queries.md
+philosophy/IF.philosophy-table.md,docs/philosophy/IF.philosophy-table.md
+docs/meta/IF_COMPONENT_STATUS.md,infra/meta/IF_COMPONENT_STATUS.md
+docs/meta/INFRA_REORG_PLAN.md,infra/meta/INFRA_REORG_PLAN.md

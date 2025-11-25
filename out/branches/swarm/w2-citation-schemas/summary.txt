@@ -1,0 +1,10 @@
+Branch: swarm/w2-citation-schemas
+IF function names cataloged: 0
+IF definitions recorded: 0
+Call edges observed: 0
+IF mention tokens: 75
+Mention graph edges: 2705
+Yologuard references: 29
+Secrets candidate files: 230
+Manifest entries: 524
+Fallback tokens captured: 0

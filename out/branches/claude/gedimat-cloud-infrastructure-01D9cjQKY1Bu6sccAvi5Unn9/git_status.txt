@@ -1,0 +1,2 @@
+?? out/branches/claude/gedimat-cloud-infrastructure-01D9cjQKY1Bu6sccAvi5Unn9/git_log.txt
+?? out/branches/claude/gedimat-cloud-infrastructure-01D9cjQKY1Bu6sccAvi5Unn9/git_status.txt

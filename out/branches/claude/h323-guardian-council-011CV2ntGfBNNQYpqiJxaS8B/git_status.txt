@@ -1,0 +1,2 @@
+?? out/branches/claude/h323-guardian-council-011CV2ntGfBNNQYpqiJxaS8B/git_log.txt
+?? out/branches/claude/h323-guardian-council-011CV2ntGfBNNQYpqiJxaS8B/git_status.txt

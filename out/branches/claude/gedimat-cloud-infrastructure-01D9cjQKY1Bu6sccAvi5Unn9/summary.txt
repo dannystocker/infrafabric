@@ -1,0 +1,10 @@
+Branch: claude/gedimat-cloud-infrastructure-01D9cjQKY1Bu6sccAvi5Unn9
+IF function names cataloged: 0
+IF definitions recorded: 0
+Call edges observed: 0
+IF mention tokens: 49
+Mention graph edges: 481
+Yologuard references: 0
+Secrets candidate files: 83
+Manifest entries: 123
+Fallback tokens captured: 0

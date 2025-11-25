@@ -1,0 +1,1631 @@
+{
+  "root": "/home/setup/infrafabric",
+  "files_scanned": 52,
+  "tokens": {
+    "if_components": {
+      "count": 50,
+      "files": {
+        "IF-foundations.md": [
+          1444
+        ],
+        "README.md": [
+          350
+        ],
+        "philosophy/IF.philosophy-database.md": [
+          12,
+          25,
+          38,
+          51,
+          65,
+          78,
+          92,
+          106,
+          119,
+          134,
+          147,
+          160,
+          168,
+          839
+        ],
+        "philosophy/IF.philosophy-database.yaml": [
+          12,
+          25,
+          38,
+          51,
+          65,
+          78,
+          92,
+          106,
+          119,
+          134,
+          147,
+          160,
+          173,
+          256,
+          928
+        ],
+        "philosophy/IF.philosophy-queries.md": [
+          70,
+          70,
+          96,
+          163,
+          192,
+          285,
+          360,
+          360,
+          477,
+          506,
+          727,
+          824
+        ],
+        "docs/evidence/merge_evaluations.py": [
+          125
+        ],
+        "docs/evidence/INFRAFABRIC_SINGLE_EVAL.yaml": [
+          37
+        ],
+        "docs/evidence/INFRAFABRIC_EVAL_GPT-5.1-CODEX-CLI_20251115T133400Z.yaml": [
+          22,
+          42
+        ],
+        "docs/evidence/INFRAFABRIC_EVAL_PASTE_PROMPT.txt": [
+          138
+        ],
+        "docs/evidence/INFRAFABRIC_COMPREHENSIVE_EVALUATION_PROMPT.md": [
+          289
+        ],
+        "docs/evidence/INFRAFABRIC_EVAL_GPT-5.1-CODEX-CLI_20251115T145456Z.yaml": [
+          38
+        ]
+      }
+    },
+    "if_principles": {
+      "count": 26,
+      "files": {
+        "IF-foundations.md": [
+          1445
+        ],
+        "philosophy/IF.philosophy-database.md": [
+          13,
+          26,
+          39,
+          52,
+          66,
+          79,
+          93,
+          107,
+          120,
+          135,
+          148,
+          161
+        ],
+        "philosophy/IF.philosophy-database.yaml": [
+          13,
+          26,
+          39,
+          52,
+          66,
+          79,
+          93,
+          107,
+          120,
+          135,
+          148,
+          161,
+          174
+        ]
+      }
+    },
+    "if...": {
+      "count": 3,
+      "files": {
+        "INFRAFABRIC-COMPLETE-DOSSIER-v11.md": [
+          1362
+        ],
+        "annexes/ANNEX-O-PRECURSOR-CONVERSATION.md": [
+          166
+        ],
+        "annexes/infrafabric-IF-annexes.md": [
+          3763
+        ]
+      }
+    },
+    "if_search_evaluation.md": {
+      "count": 1,
+      "files": {
+        "annexes/infrafabric-IF-annexes.md": [
+          3038
+        ]
+      }
+    },
+    "if_guard_review.md": {
+      "count": 1,
+      "files": {
+        "annexes/infrafabric-IF-annexes.md": [
+          3039
+        ]
+      }
+    },
+    "if_chase": {
+      "count": 2,
+      "files": {
+        "philosophy/IF.philosophy-database.md": [
+          169
+        ],
+        "philosophy/IF.philosophy-database.yaml": [
+          257
+        ]
+      }
+    },
+    "if_ground": {
+      "count": 2,
+      "files": {
+        "philosophy/IF.philosophy-database.md": [
+          190
+        ],
+        "philosophy/IF.philosophy-database.yaml": [
+          278
+        ]
+      }
+    },
+    "if_search": {
+      "count": 2,
+      "files": {
+        "philosophy/IF.philosophy-database.md": [
+          205
+        ],
+        "philosophy/IF.philosophy-database.yaml": [
+          293
+        ]
+      }
+    },
+    "if_persona": {
+      "count": 2,
+      "files": {
+        "philosophy/IF.philosophy-database.md": [
+          228
+        ],
+        "philosophy/IF.philosophy-database.yaml": [
+          316
+        ]
+      }
+    },
+    "if_reflect": {
+      "count": 2,
+      "files": {
+        "philosophy/IF.philosophy-database.md": [
+          251
+        ],
+        "philosophy/IF.philosophy-database.yaml": [
+          339
+        ]
+      }
+    },
+    "if_garp": {
+      "count": 2,
+      "files": {
+        "philosophy/IF.philosophy-database.md": [
+          267
+        ],
+        "philosophy/IF.philosophy-database.yaml": [
+          355
+        ]
+      }
+    },
+    "if_quiet": {
+      "count": 2,
+      "files": {
+        "philosophy/IF.philosophy-database.md": [
+          288
+        ],
+        "philosophy/IF.philosophy-database.yaml": [
+          376
+        ]
+      }
+    },
+    "if_optimise": {
+      "count": 2,
+      "files": {
+        "philosophy/IF.philosophy-database.md": [
+          304
+        ],
+        "philosophy/IF.philosophy-database.yaml": [
+          392
+        ]
+      }
+    },
+    "if_memory": {
+      "count": 2,
+      "files": {
+        "philosophy/IF.philosophy-database.md": [
+          320
+        ],
+        "philosophy/IF.philosophy-database.yaml": [
+          408
+        ]
+      }
+    },
+    "if_vesicle": {
+      "count": 2,
+      "files": {
+        "philosophy/IF.philosophy-database.md": [
+          334
+        ],
+        "philosophy/IF.philosophy-database.yaml": [
+          422
+        ]
+      }
+    },
+    "if_federate": {
+      "count": 2,
+      "files": {
+        "philosophy/IF.philosophy-database.md": [
+          351
+        ],
+        "philosophy/IF.philosophy-database.yaml": [
+          439
+        ]
+      }
+    },
+    "if_arbitrate": {
+      "count": 2,
+      "files": {
+        "philosophy/IF.philosophy-database.md": [
+          367
+        ],
+        "philosophy/IF.philosophy-database.yaml": [
+          455
+        ]
+      }
+    },
+    "if_guardian": {
+      "count": 2,
+      "files": {
+        "philosophy/IF.philosophy-database.md": [
+          385
+        ],
+        "philosophy/IF.philosophy-database.yaml": [
+          473
+        ]
+      }
+    },
+    "if_constitution": {
+      "count": 2,
+      "files": {
+        "philosophy/IF.philosophy-database.md": [
+          404
+        ],
+        "philosophy/IF.philosophy-database.yaml": [
+          492
+        ]
+      }
+    },
+    "if_collapse": {
+      "count": 2,
+      "files": {
+        "philosophy/IF.philosophy-database.md": [
+          419
+        ],
+        "philosophy/IF.philosophy-database.yaml": [
+          507
+        ]
+      }
+    },
+    "if_resource": {
+      "count": 2,
+      "files": {
+        "philosophy/IF.philosophy-database.md": [
+          437
+        ],
+        "philosophy/IF.philosophy-database.yaml": [
+          525
+        ]
+      }
+    },
+    "if_simplify": {
+      "count": 2,
+      "files": {
+        "philosophy/IF.philosophy-database.md": [
+          452
+        ],
+        "philosophy/IF.philosophy-database.yaml": [
+          540
+        ]
+      }
+    },
+    "if_router": {
+      "count": 2,
+      "files": {
+        "philosophy/IF.philosophy-database.md": [
+          469
+        ],
+        "philosophy/IF.philosophy-database.yaml": [
+          557
+        ]
+      }
+    },
+    "if_trace": {
+      "count": 2,
+      "files": {
+        "philosophy/IF.philosophy-database.md": [
+          484
+        ],
+        "philosophy/IF.philosophy-database.yaml": [
+          572
+        ]
+      }
+    },
+    "if_core": {
+      "count": 2,
+      "files": {
+        "philosophy/IF.philosophy-database.md": [
+          501
+        ],
+        "philosophy/IF.philosophy-database.yaml": [
+          589
+        ]
+      }
+    },
+    "if_armour": {
+      "count": 2,
+      "files": {
+        "philosophy/IF.philosophy-database.md": [
+          516
+        ],
+        "philosophy/IF.philosophy-database.yaml": [
+          604
+        ]
+      }
+    },
+    "if_witness": {
+      "count": 2,
+      "files": {
+        "philosophy/IF.philosophy-database.md": [
+          551
+        ],
+        "philosophy/IF.philosophy-database.yaml": [
+          639
+        ]
+      }
+    },
+    "if_forge": {
+      "count": 2,
+      "files": {
+        "philosophy/IF.philosophy-database.md": [
+          585
+        ],
+        "philosophy/IF.philosophy-database.yaml": [
+          673
+        ]
+      }
+    },
+    "if_swarm": {
+      "count": 2,
+      "files": {
+        "philosophy/IF.philosophy-database.md": [
+          600
+        ],
+        "philosophy/IF.philosophy-database.yaml": [
+          688
+        ]
+      }
+    },
+    "if_sam_facets": {
+      "count": 4,
+      "files": {
+        "philosophy/IF.philosophy-database.md": [
+          763,
+          836
+        ],
+        "philosophy/IF.philosophy-database.yaml": [
+          851,
+          925
+        ]
+      }
+    },
+    "if_mapping": {
+      "count": 1,
+      "files": {
+        "philosophy/IF.philosophy-database.yaml": [
+          180
+        ]
+      }
+    },
+    "if_translation": {
+      "count": 1,
+      "files": {
+        "philosophy/IF.philosophy-database.yaml": [
+          193
+        ]
+      }
+    },
+    "if_ttt_alignment": {
+      "count": 1,
+      "files": {
+        "philosophy/IF.philosophy-database.yaml": [
+          236
+        ]
+      }
+    },
+    "if_components.category": {
+      "count": 1,
+      "files": {
+        "philosophy/IF.philosophy-queries.md": [
+          358
+        ]
+      }
+    },
+    "if_guardian_council": {
+      "count": 1,
+      "files": {
+        "philosophy/IF.philosophy-queries.md": [
+          586
+        ]
+      }
+    },
+    "if_persona_bloom_patterns": {
+      "count": 1,
+      "files": {
+        "philosophy/IF.philosophy-queries.md": [
+          650
+        ]
+      }
+    },
+    "if_yologuard_validation": {
+      "count": 1,
+      "files": {
+        "philosophy/IF.philosophy-queries.md": [
+          677
+        ]
+      }
+    },
+    "if_ground_principles": {
+      "count": 1,
+      "files": {
+        "philosophy/IF.philosophy-queries.md": [
+          798
+        ]
+      }
+    },
+    "if-components": {
+      "count": 1,
+      "files": {
+        "philosophy/IF.philosophy-table.md": [
+          12
+        ]
+      }
+    },
+    "if_component_inventory": {
+      "count": 1,
+      "files": {
+        "docs/evidence/infrafabric_eval_Gemini_20251115_103000.yaml": [
+          34
+        ]
+      }
+    },
+    "if.optimise": {
+      "count": 2,
+      "files": {
+        "intelligence-tests/gedimat-logistics-fr/CONTEXTE_ANGELIQUE.txt": [
+          2,
+          2
+        ]
+      }
+    },
+    "if.search.": {
+      "count": 1,
+      "files": {
+        "intelligence-tests/gedimat-logistics-fr/CONTEXTE_ANGELIQUE.txt": [
+          2
+        ]
+      }
+    },
+    "if.swarm": {
+      "count": 2,
+      "files": {
+        "intelligence-tests/gedimat-logistics-fr/CONTEXTE_ANGELIQUE.txt": [
+          2,
+          972
+        ]
+      }
+    },
+    "if.guard": {
+      "count": 2,
+      "files": {
+        "intelligence-tests/gedimat-logistics-fr/CONTEXTE_ANGELIQUE.txt": [
+          2,
+          2
+        ]
+      }
+    },
+    "if.sam": {
+      "count": 1,
+      "files": {
+        "intelligence-tests/gedimat-logistics-fr/CONTEXTE_ANGELIQUE.txt": [
+          2
+        ]
+      }
+    },
+    "if.ceo": {
+      "count": 2,
+      "files": {
+        "intelligence-tests/gedimat-logistics-fr/CONTEXTE_ANGELIQUE.txt": [
+          2,
+          2
+        ]
+      }
+    },
+    "if.ttt": {
+      "count": 1,
+      "files": {
+        "intelligence-tests/gedimat-logistics-fr/CONTEXTE_ANGELIQUE.txt": [
+          2
+        ]
+      }
+    },
+    "if.search": {
+      "count": 1,
+      "files": {
+        "intelligence-tests/gedimat-logistics-fr/CONTEXTE_ANGELIQUE.txt": [
+          972
+        ]
+      }
+    }
+  },
+  "cooccurrence": {
+    "if_components": {
+      "if_principles": 3,
+      "if_ground": 2,
+      "if_persona": 2,
+      "if_search": 2,
+      "if_guardian": 2,
+      "if_core": 2,
+      "if_swarm": 2,
+      "if_quiet": 2,
+      "if_armour": 2,
+      "if_memory": 2,
+      "if_garp": 2,
+      "if_router": 2,
+      "if_reflect": 2,
+      "if_chase": 2,
+      "if_federate": 2,
+      "if_simplify": 2,
+      "if_witness": 2,
+      "if_trace": 2,
+      "if_optimise": 2,
+      "if_constitution": 2,
+      "if_vesicle": 2,
+      "if_resource": 2,
+      "if_sam_facets": 2,
+      "if_forge": 2,
+      "if_collapse": 2,
+      "if_arbitrate": 2,
+      "if_translation": 1,
+      "if_ttt_alignment": 1,
+      "if_mapping": 1,
+      "if_persona_bloom_patterns": 1,
+      "if_yologuard_validation": 1,
+      "if_ground_principles": 1,
+      "if_components.category": 1,
+      "if_guardian_council": 1
+    },
+    "if_principles": {
+      "if_components": 3,
+      "if_ground": 2,
+      "if_persona": 2,
+      "if_search": 2,
+      "if_guardian": 2,
+      "if_core": 2,
+      "if_swarm": 2,
+      "if_quiet": 2,
+      "if_armour": 2,
+      "if_memory": 2,
+      "if_garp": 2,
+      "if_router": 2,
+      "if_reflect": 2,
+      "if_chase": 2,
+      "if_federate": 2,
+      "if_simplify": 2,
+      "if_witness": 2,
+      "if_trace": 2,
+      "if_optimise": 2,
+      "if_constitution": 2,
+      "if_vesicle": 2,
+      "if_resource": 2,
+      "if_sam_facets": 2,
+      "if_forge": 2,
+      "if_collapse": 2,
+      "if_arbitrate": 2,
+      "if_translation": 1,
+      "if_ttt_alignment": 1,
+      "if_mapping": 1
+    },
+    "if_guard_review.md": {
+      "if_search_evaluation.md": 1,
+      "if...": 1
+    },
+    "if_search_evaluation.md": {
+      "if_guard_review.md": 1,
+      "if...": 1
+    },
+    "if...": {
+      "if_guard_review.md": 1,
+      "if_search_evaluation.md": 1
+    },
+    "if_ground": {
+      "if_persona": 2,
+      "if_search": 2,
+      "if_guardian": 2,
+      "if_core": 2,
+      "if_swarm": 2,
+      "if_quiet": 2,
+      "if_armour": 2,
+      "if_memory": 2,
+      "if_principles": 2,
+      "if_garp": 2,
+      "if_router": 2,
+      "if_reflect": 2,
+      "if_chase": 2,
+      "if_federate": 2,
+      "if_components": 2,
+      "if_simplify": 2,
+      "if_witness": 2,
+      "if_trace": 2,
+      "if_optimise": 2,
+      "if_constitution": 2,
+      "if_vesicle": 2,
+      "if_resource": 2,
+      "if_sam_facets": 2,
+      "if_forge": 2,
+      "if_collapse": 2,
+      "if_arbitrate": 2,
+      "if_translation": 1,
+      "if_ttt_alignment": 1,
+      "if_mapping": 1
+    },
+    "if_persona": {
+      "if_ground": 2,
+      "if_search": 2,
+      "if_guardian": 2,
+      "if_core": 2,
+      "if_swarm": 2,
+      "if_quiet": 2,
+      "if_armour": 2,
+      "if_memory": 2,
+      "if_principles": 2,
+      "if_garp": 2,
+      "if_router": 2,
+      "if_reflect": 2,
+      "if_chase": 2,
+      "if_federate": 2,
+      "if_components": 2,
+      "if_simplify": 2,
+      "if_witness": 2,
+      "if_trace": 2,
+      "if_optimise": 2,
+      "if_constitution": 2,
+      "if_vesicle": 2,
+      "if_resource": 2,
+      "if_sam_facets": 2,
+      "if_forge": 2,
+      "if_collapse": 2,
+      "if_arbitrate": 2,
+      "if_translation": 1,
+      "if_ttt_alignment": 1,
+      "if_mapping": 1
+    },
+    "if_search": {
+      "if_ground": 2,
+      "if_persona": 2,
+      "if_guardian": 2,
+      "if_core": 2,
+      "if_swarm": 2,
+      "if_quiet": 2,
+      "if_armour": 2,
+      "if_memory": 2,
+      "if_principles": 2,
+      "if_garp": 2,
+      "if_router": 2,
+      "if_reflect": 2,
+      "if_chase": 2,
+      "if_federate": 2,
+      "if_components": 2,
+      "if_simplify": 2,
+      "if_witness": 2,
+      "if_trace": 2,
+      "if_optimise": 2,
+      "if_constitution": 2,
+      "if_vesicle": 2,
+      "if_resource": 2,
+      "if_sam_facets": 2,
+      "if_forge": 2,
+      "if_collapse": 2,
+      "if_arbitrate": 2,
+      "if_translation": 1,
+      "if_ttt_alignment": 1,
+      "if_mapping": 1
+    },
+    "if_guardian": {
+      "if_ground": 2,
+      "if_persona": 2,
+      "if_search": 2,
+      "if_core": 2,
+      "if_swarm": 2,
+      "if_quiet": 2,
+      "if_armour": 2,
+      "if_memory": 2,
+      "if_principles": 2,
+      "if_garp": 2,
+      "if_router": 2,
+      "if_reflect": 2,
+      "if_chase": 2,
+      "if_federate": 2,
+      "if_components": 2,
+      "if_simplify": 2,
+      "if_witness": 2,
+      "if_trace": 2,
+      "if_optimise": 2,
+      "if_constitution": 2,
+      "if_vesicle": 2,
+      "if_resource": 2,
+      "if_sam_facets": 2,
+      "if_forge": 2,
+      "if_collapse": 2,
+      "if_arbitrate": 2,
+      "if_translation": 1,
+      "if_ttt_alignment": 1,
+      "if_mapping": 1
+    },
+    "if_core": {
+      "if_ground": 2,
+      "if_persona": 2,
+      "if_search": 2,
+      "if_guardian": 2,
+      "if_swarm": 2,
+      "if_quiet": 2,
+      "if_armour": 2,
+      "if_memory": 2,
+      "if_principles": 2,
+      "if_garp": 2,
+      "if_router": 2,
+      "if_reflect": 2,
+      "if_chase": 2,
+      "if_federate": 2,
+      "if_components": 2,
+      "if_simplify": 2,
+      "if_witness": 2,
+      "if_trace": 2,
+      "if_optimise": 2,
+      "if_constitution": 2,
+      "if_vesicle": 2,
+      "if_resource": 2,
+      "if_sam_facets": 2,
+      "if_forge": 2,
+      "if_collapse": 2,
+      "if_arbitrate": 2,
+      "if_translation": 1,
+      "if_ttt_alignment": 1,
+      "if_mapping": 1
+    },
+    "if_swarm": {
+      "if_ground": 2,
+      "if_persona": 2,
+      "if_search": 2,
+      "if_guardian": 2,
+      "if_core": 2,
+      "if_quiet": 2,
+      "if_armour": 2,
+      "if_memory": 2,
+      "if_principles": 2,
+      "if_garp": 2,
+      "if_router": 2,
+      "if_reflect": 2,
+      "if_chase": 2,
+      "if_federate": 2,
+      "if_components": 2,
+      "if_simplify": 2,
+      "if_witness": 2,
+      "if_trace": 2,
+      "if_optimise": 2,
+      "if_constitution": 2,
+      "if_vesicle": 2,
+      "if_resource": 2,
+      "if_sam_facets": 2,
+      "if_forge": 2,
+      "if_collapse": 2,
+      "if_arbitrate": 2,
+      "if_translation": 1,
+      "if_ttt_alignment": 1,
+      "if_mapping": 1
+    },
+    "if_quiet": {
+      "if_ground": 2,
+      "if_persona": 2,
+      "if_search": 2,
+      "if_guardian": 2,
+      "if_core": 2,
+      "if_swarm": 2,
+      "if_armour": 2,
+      "if_memory": 2,
+      "if_principles": 2,
+      "if_garp": 2,
+      "if_router": 2,
+      "if_reflect": 2,
+      "if_chase": 2,
+      "if_federate": 2,
+      "if_components": 2,
+      "if_simplify": 2,
+      "if_witness": 2,
+      "if_trace": 2,
+      "if_optimise": 2,
+      "if_constitution": 2,
+      "if_vesicle": 2,
+      "if_resource": 2,
+      "if_sam_facets": 2,
+      "if_forge": 2,
+      "if_collapse": 2,
+      "if_arbitrate": 2,
+      "if_translation": 1,
+      "if_ttt_alignment": 1,
+      "if_mapping": 1
+    },
+    "if_armour": {
+      "if_ground": 2,
+      "if_persona": 2,
+      "if_search": 2,
+      "if_guardian": 2,
+      "if_core": 2,
+      "if_swarm": 2,
+      "if_quiet": 2,
+      "if_memory": 2,
+      "if_principles": 2,
+      "if_garp": 2,
+      "if_router": 2,
+      "if_reflect": 2,
+      "if_chase": 2,
+      "if_federate": 2,
+      "if_components": 2,
+      "if_simplify": 2,
+      "if_witness": 2,
+      "if_trace": 2,
+      "if_optimise": 2,
+      "if_constitution": 2,
+      "if_vesicle": 2,
+      "if_resource": 2,
+      "if_sam_facets": 2,
+      "if_forge": 2,
+      "if_collapse": 2,
+      "if_arbitrate": 2,
+      "if_translation": 1,
+      "if_ttt_alignment": 1,
+      "if_mapping": 1
+    },
+    "if_memory": {
+      "if_ground": 2,
+      "if_persona": 2,
+      "if_search": 2,
+      "if_guardian": 2,
+      "if_core": 2,
+      "if_swarm": 2,
+      "if_quiet": 2,
+      "if_armour": 2,
+      "if_principles": 2,
+      "if_garp": 2,
+      "if_router": 2,
+      "if_reflect": 2,
+      "if_chase": 2,
+      "if_federate": 2,
+      "if_components": 2,
+      "if_simplify": 2,
+      "if_witness": 2,
+      "if_trace": 2,
+      "if_optimise": 2,
+      "if_constitution": 2,
+      "if_vesicle": 2,
+      "if_resource": 2,
+      "if_sam_facets": 2,
+      "if_forge": 2,
+      "if_collapse": 2,
+      "if_arbitrate": 2,
+      "if_translation": 1,
+      "if_ttt_alignment": 1,
+      "if_mapping": 1
+    },
+    "if_garp": {
+      "if_ground": 2,
+      "if_persona": 2,
+      "if_search": 2,
+      "if_guardian": 2,
+      "if_core": 2,
+      "if_swarm": 2,
+      "if_quiet": 2,
+      "if_armour": 2,
+      "if_memory": 2,
+      "if_principles": 2,
+      "if_router": 2,
+      "if_reflect": 2,
+      "if_chase": 2,
+      "if_federate": 2,
+      "if_components": 2,
+      "if_simplify": 2,
+      "if_witness": 2,
+      "if_trace": 2,
+      "if_optimise": 2,
+      "if_constitution": 2,
+      "if_vesicle": 2,
+      "if_resource": 2,
+      "if_sam_facets": 2,
+      "if_forge": 2,
+      "if_collapse": 2,
+      "if_arbitrate": 2,
+      "if_translation": 1,
+      "if_ttt_alignment": 1,
+      "if_mapping": 1
+    },
+    "if_router": {
+      "if_ground": 2,
+      "if_persona": 2,
+      "if_search": 2,
+      "if_guardian": 2,
+      "if_core": 2,
+      "if_swarm": 2,
+      "if_quiet": 2,
+      "if_armour": 2,
+      "if_memory": 2,
+      "if_principles": 2,
+      "if_garp": 2,
+      "if_reflect": 2,
+      "if_chase": 2,
+      "if_federate": 2,
+      "if_components": 2,
+      "if_simplify": 2,
+      "if_witness": 2,
+      "if_trace": 2,
+      "if_optimise": 2,
+      "if_constitution": 2,
+      "if_vesicle": 2,
+      "if_resource": 2,
+      "if_sam_facets": 2,
+      "if_forge": 2,
+      "if_collapse": 2,
+      "if_arbitrate": 2,
+      "if_translation": 1,
+      "if_ttt_alignment": 1,
+      "if_mapping": 1
+    },
+    "if_reflect": {
+      "if_ground": 2,
+      "if_persona": 2,
+      "if_search": 2,
+      "if_guardian": 2,
+      "if_core": 2,
+      "if_swarm": 2,
+      "if_quiet": 2,
+      "if_armour": 2,
+      "if_memory": 2,
+      "if_principles": 2,
+      "if_garp": 2,
+      "if_router": 2,
+      "if_chase": 2,
+      "if_federate": 2,
+      "if_components": 2,
+      "if_simplify": 2,
+      "if_witness": 2,
+      "if_trace": 2,
+      "if_optimise": 2,
+      "if_constitution": 2,
+      "if_vesicle": 2,
+      "if_resource": 2,
+      "if_sam_facets": 2,
+      "if_forge": 2,
+      "if_collapse": 2,
+      "if_arbitrate": 2,
+      "if_translation": 1,
+      "if_ttt_alignment": 1,
+      "if_mapping": 1
+    },
+    "if_chase": {
+      "if_ground": 2,
+      "if_persona": 2,
+      "if_search": 2,
+      "if_guardian": 2,
+      "if_core": 2,
+      "if_swarm": 2,
+      "if_quiet": 2,
+      "if_armour": 2,
+      "if_memory": 2,
+      "if_principles": 2,
+      "if_garp": 2,
+      "if_router": 2,
+      "if_reflect": 2,
+      "if_federate": 2,
+      "if_components": 2,
+      "if_simplify": 2,
+      "if_witness": 2,
+      "if_trace": 2,
+      "if_optimise": 2,
+      "if_constitution": 2,
+      "if_vesicle": 2,
+      "if_resource": 2,
+      "if_sam_facets": 2,
+      "if_forge": 2,
+      "if_collapse": 2,
+      "if_arbitrate": 2,
+      "if_translation": 1,
+      "if_ttt_alignment": 1,
+      "if_mapping": 1
+    },
+    "if_federate": {
+      "if_ground": 2,
+      "if_persona": 2,
+      "if_search": 2,
+      "if_guardian": 2,
+      "if_core": 2,
+      "if_swarm": 2,
+      "if_quiet": 2,
+      "if_armour": 2,
+      "if_memory": 2,
+      "if_principles": 2,
+      "if_garp": 2,
+      "if_router": 2,
+      "if_reflect": 2,
+      "if_chase": 2,
+      "if_components": 2,
+      "if_simplify": 2,
+      "if_witness": 2,
+      "if_trace": 2,
+      "if_optimise": 2,
+      "if_constitution": 2,
+      "if_vesicle": 2,
+      "if_resource": 2,
+      "if_sam_facets": 2,
+      "if_forge": 2,
+      "if_collapse": 2,
+      "if_arbitrate": 2,
+      "if_translation": 1,
+      "if_ttt_alignment": 1,
+      "if_mapping": 1
+    },
+    "if_simplify": {
+      "if_ground": 2,
+      "if_persona": 2,
+      "if_search": 2,
+      "if_guardian": 2,
+      "if_core": 2,
+      "if_swarm": 2,
+      "if_quiet": 2,
+      "if_armour": 2,
+      "if_memory": 2,
+      "if_principles": 2,
+      "if_garp": 2,
+      "if_router": 2,
+      "if_reflect": 2,
+      "if_chase": 2,
+      "if_federate": 2,
+      "if_components": 2,
+      "if_witness": 2,
+      "if_trace": 2,
+      "if_optimise": 2,
+      "if_constitution": 2,
+      "if_vesicle": 2,
+      "if_resource": 2,
+      "if_sam_facets": 2,
+      "if_forge": 2,
+      "if_collapse": 2,
+      "if_arbitrate": 2,
+      "if_translation": 1,
+      "if_ttt_alignment": 1,
+      "if_mapping": 1
+    },
+    "if_witness": {
+      "if_ground": 2,
+      "if_persona": 2,
+      "if_search": 2,
+      "if_guardian": 2,
+      "if_core": 2,
+      "if_swarm": 2,
+      "if_quiet": 2,
+      "if_armour": 2,
+      "if_memory": 2,
+      "if_principles": 2,
+      "if_garp": 2,
+      "if_router": 2,
+      "if_reflect": 2,
+      "if_chase": 2,
+      "if_federate": 2,
+      "if_components": 2,
+      "if_simplify": 2,
+      "if_trace": 2,
+      "if_optimise": 2,
+      "if_constitution": 2,
+      "if_vesicle": 2,
+      "if_resource": 2,
+      "if_sam_facets": 2,
+      "if_forge": 2,
+      "if_collapse": 2,
+      "if_arbitrate": 2,
+      "if_translation": 1,
+      "if_ttt_alignment": 1,
+      "if_mapping": 1
+    },
+    "if_trace": {
+      "if_ground": 2,
+      "if_persona": 2,
+      "if_search": 2,
+      "if_guardian": 2,
+      "if_core": 2,
+      "if_swarm": 2,
+      "if_quiet": 2,
+      "if_armour": 2,
+      "if_memory": 2,
+      "if_principles": 2,
+      "if_garp": 2,
+      "if_router": 2,
+      "if_reflect": 2,
+      "if_chase": 2,
+      "if_federate": 2,
+      "if_components": 2,
+      "if_simplify": 2,
+      "if_witness": 2,
+      "if_optimise": 2,
+      "if_constitution": 2,
+      "if_vesicle": 2,
+      "if_resource": 2,
+      "if_sam_facets": 2,
+      "if_forge": 2,
+      "if_collapse": 2,
+      "if_arbitrate": 2,
+      "if_translation": 1,
+      "if_ttt_alignment": 1,
+      "if_mapping": 1
+    },
+    "if_optimise": {
+      "if_ground": 2,
+      "if_persona": 2,
+      "if_search": 2,
+      "if_guardian": 2,
+      "if_core": 2,
+      "if_swarm": 2,
+      "if_quiet": 2,
+      "if_armour": 2,
+      "if_memory": 2,
+      "if_principles": 2,
+      "if_garp": 2,
+      "if_router": 2,
+      "if_reflect": 2,
+      "if_chase": 2,
+      "if_federate": 2,
+      "if_components": 2,
+      "if_simplify": 2,
+      "if_witness": 2,
+      "if_trace": 2,
+      "if_constitution": 2,
+      "if_vesicle": 2,
+      "if_resource": 2,
+      "if_sam_facets": 2,
+      "if_forge": 2,
+      "if_collapse": 2,
+      "if_arbitrate": 2,
+      "if_translation": 1,
+      "if_ttt_alignment": 1,
+      "if_mapping": 1
+    },
+    "if_constitution": {
+      "if_ground": 2,
+      "if_persona": 2,
+      "if_search": 2,
+      "if_guardian": 2,
+      "if_core": 2,
+      "if_swarm": 2,
+      "if_quiet": 2,
+      "if_armour": 2,
+      "if_memory": 2,
+      "if_principles": 2,
+      "if_garp": 2,
+      "if_router": 2,
+      "if_reflect": 2,
+      "if_chase": 2,
+      "if_federate": 2,
+      "if_components": 2,
+      "if_simplify": 2,
+      "if_witness": 2,
+      "if_trace": 2,
+      "if_optimise": 2,
+      "if_vesicle": 2,
+      "if_resource": 2,
+      "if_sam_facets": 2,
+      "if_forge": 2,
+      "if_collapse": 2,
+      "if_arbitrate": 2,
+      "if_translation": 1,
+      "if_ttt_alignment": 1,
+      "if_mapping": 1
+    },
+    "if_vesicle": {
+      "if_ground": 2,
+      "if_persona": 2,
+      "if_search": 2,
+      "if_guardian": 2,
+      "if_core": 2,
+      "if_swarm": 2,
+      "if_quiet": 2,
+      "if_armour": 2,
+      "if_memory": 2,
+      "if_principles": 2,
+      "if_garp": 2,
+      "if_router": 2,
+      "if_reflect": 2,
+      "if_chase": 2,
+      "if_federate": 2,
+      "if_components": 2,
+      "if_simplify": 2,
+      "if_witness": 2,
+      "if_trace": 2,
+      "if_optimise": 2,
+      "if_constitution": 2,
+      "if_resource": 2,
+      "if_sam_facets": 2,
+      "if_forge": 2,
+      "if_collapse": 2,
+      "if_arbitrate": 2,
+      "if_translation": 1,
+      "if_ttt_alignment": 1,
+      "if_mapping": 1
+    },
+    "if_resource": {
+      "if_ground": 2,
+      "if_persona": 2,
+      "if_search": 2,
+      "if_guardian": 2,
+      "if_core": 2,
+      "if_swarm": 2,
+      "if_quiet": 2,
+      "if_armour": 2,
+      "if_memory": 2,
+      "if_principles": 2,
+      "if_garp": 2,
+      "if_router": 2,
+      "if_reflect": 2,
+      "if_chase": 2,
+      "if_federate": 2,
+      "if_components": 2,
+      "if_simplify": 2,
+      "if_witness": 2,
+      "if_trace": 2,
+      "if_optimise": 2,
+      "if_constitution": 2,
+      "if_vesicle": 2,
+      "if_sam_facets": 2,
+      "if_forge": 2,
+      "if_collapse": 2,
+      "if_arbitrate": 2,
+      "if_translation": 1,
+      "if_ttt_alignment": 1,
+      "if_mapping": 1
+    },
+    "if_sam_facets": {
+      "if_ground": 2,
+      "if_persona": 2,
+      "if_search": 2,
+      "if_guardian": 2,
+      "if_core": 2,
+      "if_swarm": 2,
+      "if_quiet": 2,
+      "if_armour": 2,
+      "if_memory": 2,
+      "if_principles": 2,
+      "if_garp": 2,
+      "if_router": 2,
+      "if_reflect": 2,
+      "if_chase": 2,
+      "if_federate": 2,
+      "if_components": 2,
+      "if_simplify": 2,
+      "if_witness": 2,
+      "if_trace": 2,
+      "if_optimise": 2,
+      "if_constitution": 2,
+      "if_vesicle": 2,
+      "if_resource": 2,
+      "if_forge": 2,
+      "if_collapse": 2,
+      "if_arbitrate": 2,
+      "if_translation": 1,
+      "if_ttt_alignment": 1,
+      "if_mapping": 1
+    },
+    "if_forge": {
+      "if_ground": 2,
+      "if_persona": 2,
+      "if_search": 2,
+      "if_guardian": 2,
+      "if_core": 2,
+      "if_swarm": 2,
+      "if_quiet": 2,
+      "if_armour": 2,
+      "if_memory": 2,
+      "if_principles": 2,
+      "if_garp": 2,
+      "if_router": 2,
+      "if_reflect": 2,
+      "if_chase": 2,
+      "if_federate": 2,
+      "if_components": 2,
+      "if_simplify": 2,
+      "if_witness": 2,
+      "if_trace": 2,
+      "if_optimise": 2,
+      "if_constitution": 2,
+      "if_vesicle": 2,
+      "if_resource": 2,
+      "if_sam_facets": 2,
+      "if_collapse": 2,
+      "if_arbitrate": 2,
+      "if_translation": 1,
+      "if_ttt_alignment": 1,
+      "if_mapping": 1
+    },
+    "if_collapse": {
+      "if_ground": 2,
+      "if_persona": 2,
+      "if_search": 2,
+      "if_guardian": 2,
+      "if_core": 2,
+      "if_swarm": 2,
+      "if_quiet": 2,
+      "if_armour": 2,
+      "if_memory": 2,
+      "if_principles": 2,
+      "if_garp": 2,
+      "if_router": 2,
+      "if_reflect": 2,
+      "if_chase": 2,
+      "if_federate": 2,
+      "if_components": 2,
+      "if_simplify": 2,
+      "if_witness": 2,
+      "if_trace": 2,
+      "if_optimise": 2,
+      "if_constitution": 2,
+      "if_vesicle": 2,
+      "if_resource": 2,
+      "if_sam_facets": 2,
+      "if_forge": 2,
+      "if_arbitrate": 2,
+      "if_translation": 1,
+      "if_ttt_alignment": 1,
+      "if_mapping": 1
+    },
+    "if_arbitrate": {
+      "if_ground": 2,
+      "if_persona": 2,
+      "if_search": 2,
+      "if_guardian": 2,
+      "if_core": 2,
+      "if_swarm": 2,
+      "if_quiet": 2,
+      "if_armour": 2,
+      "if_memory": 2,
+      "if_principles": 2,
+      "if_garp": 2,
+      "if_router": 2,
+      "if_reflect": 2,
+      "if_chase": 2,
+      "if_federate": 2,
+      "if_components": 2,
+      "if_simplify": 2,
+      "if_witness": 2,
+      "if_trace": 2,
+      "if_optimise": 2,
+      "if_constitution": 2,
+      "if_vesicle": 2,
+      "if_resource": 2,
+      "if_sam_facets": 2,
+      "if_forge": 2,
+      "if_collapse": 2,
+      "if_translation": 1,
+      "if_ttt_alignment": 1,
+      "if_mapping": 1
+    },
+    "if_translation": {
+      "if_ground": 1,
+      "if_persona": 1,
+      "if_search": 1,
+      "if_guardian": 1,
+      "if_core": 1,
+      "if_swarm": 1,
+      "if_quiet": 1,
+      "if_armour": 1,
+      "if_memory": 1,
+      "if_principles": 1,
+      "if_garp": 1,
+      "if_router": 1,
+      "if_reflect": 1,
+      "if_chase": 1,
+      "if_federate": 1,
+      "if_components": 1,
+      "if_simplify": 1,
+      "if_witness": 1,
+      "if_ttt_alignment": 1,
+      "if_trace": 1,
+      "if_optimise": 1,
+      "if_constitution": 1,
+      "if_vesicle": 1,
+      "if_resource": 1,
+      "if_sam_facets": 1,
+      "if_forge": 1,
+      "if_collapse": 1,
+      "if_arbitrate": 1,
+      "if_mapping": 1
+    },
+    "if_ttt_alignment": {
+      "if_ground": 1,
+      "if_persona": 1,
+      "if_search": 1,
+      "if_guardian": 1,
+      "if_core": 1,
+      "if_swarm": 1,
+      "if_quiet": 1,
+      "if_armour": 1,
+      "if_memory": 1,
+      "if_principles": 1,
+      "if_garp": 1,
+      "if_router": 1,
+      "if_reflect": 1,
+      "if_chase": 1,
+      "if_translation": 1,
+      "if_federate": 1,
+      "if_components": 1,
+      "if_simplify": 1,
+      "if_witness": 1,
+      "if_trace": 1,
+      "if_optimise": 1,
+      "if_constitution": 1,
+      "if_vesicle": 1,
+      "if_resource": 1,
+      "if_sam_facets": 1,
+      "if_forge": 1,
+      "if_collapse": 1,
+      "if_arbitrate": 1,
+      "if_mapping": 1
+    },
+    "if_mapping": {
+      "if_ground": 1,
+      "if_persona": 1,
+      "if_search": 1,
+      "if_guardian": 1,
+      "if_core": 1,
+      "if_swarm": 1,
+      "if_quiet": 1,
+      "if_armour": 1,
+      "if_memory": 1,
+      "if_principles": 1,
+      "if_garp": 1,
+      "if_router": 1,
+      "if_reflect": 1,
+      "if_chase": 1,
+      "if_translation": 1,
+      "if_federate": 1,
+      "if_components": 1,
+      "if_simplify": 1,
+      "if_witness": 1,
+      "if_ttt_alignment": 1,
+      "if_trace": 1,
+      "if_optimise": 1,
+      "if_constitution": 1,
+      "if_vesicle": 1,
+      "if_resource": 1,
+      "if_sam_facets": 1,
+      "if_forge": 1,
+      "if_collapse": 1,
+      "if_arbitrate": 1
+    },
+    "if_persona_bloom_patterns": {
+      "if_yologuard_validation": 1,
+      "if_ground_principles": 1,
+      "if_components": 1,
+      "if_components.category": 1,
+      "if_guardian_council": 1
+    },
+    "if_yologuard_validation": {
+      "if_persona_bloom_patterns": 1,
+      "if_ground_principles": 1,
+      "if_components": 1,
+      "if_components.category": 1,
+      "if_guardian_council": 1
+    },
+    "if_ground_principles": {
+      "if_persona_bloom_patterns": 1,
+      "if_yologuard_validation": 1,
+      "if_components": 1,
+      "if_components.category": 1,
+      "if_guardian_council": 1
+    },
+    "if_components.category": {
+      "if_persona_bloom_patterns": 1,
+      "if_yologuard_validation": 1,
+      "if_ground_principles": 1,
+      "if_components": 1,
+      "if_guardian_council": 1
+    },
+    "if_guardian_council": {
+      "if_persona_bloom_patterns": 1,
+      "if_yologuard_validation": 1,
+      "if_ground_principles": 1,
+      "if_components": 1,
+      "if_components.category": 1
+    },
+    "if.search": {
+      "if.ceo": 1,
+      "if.search.": 1,
+      "if.swarm": 1,
+      "if.guard": 1,
+      "if.ttt": 1,
+      "if.optimise": 1,
+      "if.sam": 1
+    },
+    "if.ceo": {
+      "if.search": 1,
+      "if.search.": 1,
+      "if.swarm": 1,
+      "if.guard": 1,
+      "if.ttt": 1,
+      "if.optimise": 1,
+      "if.sam": 1
+    },
+    "if.search.": {
+      "if.search": 1,
+      "if.ceo": 1,
+      "if.swarm": 1,
+      "if.guard": 1,
+      "if.ttt": 1,
+      "if.optimise": 1,
+      "if.sam": 1
+    },
+    "if.swarm": {
+      "if.search": 1,
+      "if.ceo": 1,
+      "if.search.": 1,
+      "if.guard": 1,
+      "if.ttt": 1,
+      "if.optimise": 1,
+      "if.sam": 1
+    },
+    "if.guard": {
+      "if.search": 1,
+      "if.ceo": 1,
+      "if.search.": 1,
+      "if.swarm": 1,
+      "if.ttt": 1,
+      "if.optimise": 1,
+      "if.sam": 1
+    },
+    "if.ttt": {
+      "if.search": 1,
+      "if.ceo": 1,
+      "if.search.": 1,
+      "if.swarm": 1,
+      "if.guard": 1,
+      "if.optimise": 1,
+      "if.sam": 1
+    },
+    "if.optimise": {
+      "if.search": 1,
+      "if.ceo": 1,
+      "if.search.": 1,
+      "if.swarm": 1,
+      "if.guard": 1,
+      "if.ttt": 1,
+      "if.sam": 1
+    },
+    "if.sam": {
+      "if.search": 1,
+      "if.ceo": 1,
+      "if.search.": 1,
+      "if.swarm": 1,
+      "if.guard": 1,
+      "if.ttt": 1,
+      "if.optimise": 1
+    }
+  }
+}

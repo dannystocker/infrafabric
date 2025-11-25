@@ -1,0 +1,10 @@
+Branch: claude/gedimat-logistics-optimization-018FV2Sa5LnT4vDUTq5ipvaX
+IF function names cataloged: 0
+IF definitions recorded: 0
+Call edges observed: 0
+IF mention tokens: 49
+Mention graph edges: 481
+Yologuard references: 0
+Secrets candidate files: 73
+Manifest entries: 153
+Fallback tokens captured: 0

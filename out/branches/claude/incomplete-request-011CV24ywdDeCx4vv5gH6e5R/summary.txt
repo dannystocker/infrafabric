@@ -1,0 +1,10 @@
+Branch: claude/incomplete-request-011CV24ywdDeCx4vv5gH6e5R
+IF function names cataloged: 0
+IF definitions recorded: 0
+Call edges observed: 0
+IF mention tokens: 181
+Mention graph edges: 3543
+Yologuard references: 62
+Secrets candidate files: 383
+Manifest entries: 734
+Fallback tokens captured: 0

@@ -1,0 +1,2 @@
+?? out/branches/gedimat-v3-deploy/git_log.txt
+?? out/branches/gedimat-v3-deploy/git_status.txt

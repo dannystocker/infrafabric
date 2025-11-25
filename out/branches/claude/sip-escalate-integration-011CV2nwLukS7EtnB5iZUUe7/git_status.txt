@@ -1,0 +1,2 @@
+?? out/branches/claude/sip-escalate-integration-011CV2nwLukS7EtnB5iZUUe7/git_log.txt
+?? out/branches/claude/sip-escalate-integration-011CV2nwLukS7EtnB5iZUUe7/git_status.txt

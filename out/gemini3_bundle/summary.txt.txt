@@ -1,0 +1,10 @@
+InfraFabric branch-wide reconnaissance completed: every branch now has per-branch’ IF metadata under `out/branches`, supplemented by the aggregated relationship map, the clean spec, and the restructure guidance files in `out/`. Scanner scripts and tooling live in `~/infrafabric/scripts`, while automation resources remain in `~/infrafabric-tools`.
+
+- Recorded per-branch metadata (logs, manifest, scans, yologuard/secrets) under `out/branches/*`.
+- Generated `aggregate_report.md` with coverage, contradictions, and canonical branch guidance.
+- Produced `if_relationship_map.json/.dot` for the unified call graph.
+- Authored `clean_spec.md` capturing guardians, cycles, ingestion, and orchestration families.
+- Drafted restructure assets (`proposed_tree.*`, `moves.csv`, `migration_instructions.md`).
+- Created high-leverage tooling: `scan_if_*`, `update_links.py`, `bulk_move_and_update.sh` in `scripts/` plus `run_branch_scans.sh` in `infrafabric-tools`.
+- Added `todos_priority.md` to capture blocking/high-value/optional follow-ups.
+- Documented migration checklist and kept `summary.txt` as a quick reference for downstream owners.

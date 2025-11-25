@@ -1,0 +1,19 @@
+total 380
+drwxr-xr-x   9 setup setup 12288 Nov 19 00:10 .
+drwxr-x--- 117 setup setup 16384 Nov 19 00:05 ..
+drwxr-xr-x   8 setup setup  4096 Nov 19 00:10 .git
+-rw-r--r--   1 setup setup   127 Nov 19 00:10 .gitignore
+-rw-r--r--   1 setup setup 48481 Nov 19 00:10 IF-armour.md
+-rw-r--r--   1 setup setup 77405 Nov 19 00:10 IF-foundations.md
+-rw-r--r--   1 setup setup 34354 Nov 19 00:10 IF-vision.md
+-rw-r--r--   1 setup setup 41205 Nov 19 00:10 IF-witness.md
+-rw-r--r--   1 setup setup 73243 Nov 19 00:10 INFRAFABRIC-COMPLETE-DOSSIER-v11.md
+-rw-r--r--   1 setup setup 23374 Nov 19 00:10 README.md
+-rw-r--r--   1 setup setup  5565 Nov 19 00:10 SESSION-RESUME.md
+-rw-r--r--   1 setup setup  9964 Nov 19 00:10 agents.md
+drwxr-xr-x   2 setup setup  4096 Nov 19 00:10 annexes
+drwxr-xr-x   3 setup setup  4096 Nov 19 00:10 docs
+drwxr-xr-x   3 setup setup  4096 Nov 19 00:10 intelligence-tests
+drwxr-xr-x   3 setup setup  4096 Nov 19 00:10 out
+drwxr-xr-x   2 setup setup  4096 Nov 19 00:10 papers
+drwxr-xr-x   2 setup setup  4096 Nov 19 00:10 philosophy

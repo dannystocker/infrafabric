@@ -1,0 +1,10 @@
+Branch: claude/h323-guardian-council-011CV2ntGfBNNQYpqiJxaS8B
+IF function names cataloged: 0
+IF definitions recorded: 0
+Call edges observed: 0
+IF mention tokens: 195
+Mention graph edges: 3724
+Yologuard references: 62
+Secrets candidate files: 431
+Manifest entries: 792
+Fallback tokens captured: 0

@@ -1,0 +1,10 @@
+Branch: gedimat-evidence-final
+IF function names cataloged: 0
+IF definitions recorded: 0
+Call edges observed: 0
+IF mention tokens: 25
+Mention graph edges: 72
+Yologuard references: 0
+Secrets candidate files: 114
+Manifest entries: 206
+Fallback tokens captured: 0

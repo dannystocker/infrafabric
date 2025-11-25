@@ -1,0 +1,10 @@
+Branch: claude/if-bus-sip-adapters-011CV2yyTqo7mStA7KhuUszV
+IF function names cataloged: 0
+IF definitions recorded: 0
+Call edges observed: 0
+IF mention tokens: 163
+Mention graph edges: 3389
+Yologuard references: 62
+Secrets candidate files: 405
+Manifest entries: 764
+Fallback tokens captured: 0

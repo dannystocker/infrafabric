@@ -1,0 +1,10 @@
+Branch: claude/webrtc-agent-mesh-011CV2nnsyHT4by1am1ZrkkA
+IF function names cataloged: 0
+IF definitions recorded: 0
+Call edges observed: 0
+IF mention tokens: 160
+Mention graph edges: 3386
+Yologuard references: 62
+Secrets candidate files: 366
+Manifest entries: 718
+Fallback tokens captured: 0

@@ -1,0 +1,10 @@
+Branch: claude/realtime-parallel-sessions-011CV2o8kLhZZEHUtjFZPazM
+IF function names cataloged: 0
+IF definitions recorded: 0
+Call edges observed: 0
+IF mention tokens: 194
+Mention graph edges: 3534
+Yologuard references: 62
+Secrets candidate files: 413
+Manifest entries: 782
+Fallback tokens captured: 0

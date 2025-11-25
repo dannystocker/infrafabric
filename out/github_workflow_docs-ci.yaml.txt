@@ -1,0 +1,36 @@
+name: Docs CI
+on:
+  push:
+    paths:
+      - 'docs/**'
+      - 'annexes/**'
+      - 'infra/meta/**'
+      - 'out/**'
+  pull_request:
+    paths:
+      - 'docs/**'
+      - 'annexes/**'
+      - 'infra/meta/**'
+
+jobs:
+  markdown-link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install markdown-link-check
+        run: |
+          npm install -g markdown-link-check
+      - name: Run link check
+        run: |
+          markdown-link-check docs/**/*.md annexes/**/*.md infra/meta/**/*.md
+
+  yaml-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install yamllint
+        run: |
+          python -m pip install yamllint
+      - name: Validate philosophy/evidence YAML
+        run: |
+          yamllint docs/evidence/*.yaml philosophy/*.yaml

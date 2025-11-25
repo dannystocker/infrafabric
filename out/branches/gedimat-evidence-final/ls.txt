@@ -1,0 +1,12 @@
+total 168
+drwxr-xr-x   8 setup setup 12288 Nov 19 00:11 .
+drwxr-x--- 117 setup setup 16384 Nov 19 00:05 ..
+drwxr-xr-x   8 setup setup  4096 Nov 19 00:11 .git
+-rw-r--r--   1 setup setup 33142 Nov 19 00:11 GEDIMAT_PHASE8_HANDOVER.md
+-rw-r--r--   1 setup setup 22485 Nov 19 00:11 GEDIMAT_PHASE8_HANDOVER_SESSION_20251118.md
+drwxr-xr-x   3 setup setup  4096 Nov 19 00:11 IF.guard
+-rw-r--r--   1 setup setup 57288 Nov 19 00:11 agents.md
+drwxr-xr-x   4 setup setup  4096 Nov 19 00:11 docs
+drwxr-xr-x   3 setup setup  4096 Nov 19 00:11 intelligence-tests
+drwxr-xr-x   3 setup setup  4096 Nov 19 00:11 out
+drwxr-xr-x   3 setup setup  4096 Nov 19 00:11 philosophy

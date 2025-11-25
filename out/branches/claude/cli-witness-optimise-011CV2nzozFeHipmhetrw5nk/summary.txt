@@ -1,0 +1,10 @@
+Branch: claude/cli-witness-optimise-011CV2nzozFeHipmhetrw5nk
+IF function names cataloged: 0
+IF definitions recorded: 0
+Call edges observed: 0
+IF mention tokens: 200
+Mention graph edges: 3604
+Yologuard references: 62
+Secrets candidate files: 445
+Manifest entries: 846
+Fallback tokens captured: 0

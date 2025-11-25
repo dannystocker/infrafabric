@@ -1,0 +1,33 @@
+old_path,new_path
+papers/IF-armour.md,infra/guardians/IF-armour.md
+papers/IF-foundations.md,infra/guardians/IF-foundations.md
+papers/IF-vision.md,infra/cycles/vision/IF-vision.md
+papers/IF-momentum.md,infra/cycles/vision/IF-momentum.md
+papers/IF-witness.md,infra/orchestrations/witness/IF-witness.md
+annexes/infrafabric-IF-annexes.md,docs/annexes/infrafabric-IF-annexes.md
+annexes/ANNEX-N-IF-OPTIMISE-FRAMEWORK.md,docs/annexes/ANNEX-N-IF-OPTIMISE-FRAMEWORK.md
+annexes/ANNEX-O-PRECURSOR-CONVERSATION.md,docs/annexes/ANNEX-O-PRECURSOR-CONVERSATION.md
+annexes/ANNEX-P-GPT5-REFLEXION-CYCLE.md,docs/annexes/ANNEX-P-GPT5-REFLEXION-CYCLE.md
+annexes/ENGINEERING-BACKLOG-GPT5-IMPROVEMENTS.md,docs/annexes/ENGINEERING-BACKLOG-GPT5-IMPROVEMENTS.md
+annexes/COMPLETE-SOURCE-INDEX.md,docs/annexes/COMPLETE-SOURCE-INDEX.md
+docs/evidence/INFRAFABRIC_EVAL_GPT-5.1-CODEX-CLI_20251115T145456Z.yaml,infra/ingestion/evaluations/INFRAFABRIC_EVAL_GPT-5.1-CODEX-CLI_20251115T145456Z.yaml
+docs/evidence/INFRAFABRIC_COMPREHENSIVE_EVALUATION_PROMPT.md,infra/ingestion/prompts/INFRAFABRIC_COMPREHENSIVE_EVALUATION_PROMPT.md
+docs/evidence/GEMINI-TO-SYNTHESIS-SAGA.md,infra/ingestion/evaluations/GEMINI-TO-SYNTHESIS-SAGA.md
+docs/evidence/gemini-logs/evaluations/Evaluate Project_ Yologuard Documentation And Code,infra/ingestion/evaluations/gemini-logs/Evaluate Project_ Yologuard Documentation And Code.md
+docs/evidence/gemini-logs/evaluations/Extraordinary Body Of Work_,infra/ingestion/evaluations/gemini-logs/Extraordinary Body Of Work_.md
+docs/evidence/gemini-logs/TTT-COMPLIANCE.md,infra/ingestion/evaluations/gemini-logs/TTT-COMPLIANCE.md
+CLOUD-COMMS-TASK-PROMPT.md,infra/ingestion/prompts/CLOUD-COMMS-TASK-PROMPT.md
+CLOUD-TRANSITION-PLAN.md,infra/ingestion/operations/CLOUD-TRANSITION-PLAN.md
+SESSION-HANDOVER-TO-CLOUD.md,infra/ingestion/operations/SESSION-HANDOVER-TO-CLOUD.md
+SESSION-RESUME.md,infra/ingestion/operations/SESSION-RESUME.md
+SESSION_HANDOFF_2025-11-08_IF-ARMOUR.md,infra/ingestion/operations/SESSION_HANDOFF_2025-11-08_IF-ARMOUR.md
+IF_CONNECTIVITY_ARCHITECTURE.md,infra/orchestrations/witness/IF_CONNECTIVITY_ARCHITECTURE.md
+EXTERNAL_REVIEW_PROMPT_IF_FULL.md,infra/ingestion/prompts/EXTERNAL_REVIEW_PROMPT_IF_FULL.md
+EXTERNAL_REVIEW_ARENA_PROMPT.md,infra/ingestion/prompts/EXTERNAL_REVIEW_ARENA_PROMPT.md
+EXTERNAL_REVIEW_ARENA_BUNDLE.md,infra/ingestion/prompts/EXTERNAL_REVIEW_ARENA_BUNDLE.md
+EXTERNAL_REVIEW_ARENA_SUPERBUNDLE.md,infra/ingestion/prompts/EXTERNAL_REVIEW_ARENA_SUPERBUNDLE.md
+CALL_FOR_EXTERNAL_REVIEW.md,infra/ingestion/prompts/CALL_FOR_EXTERNAL_REVIEW.md
+CONTRIBUTING.md,infra/meta/CONTRIBUTING.md
+agents.md,infra/meta/agents.md
+SECURITY.md,infra/meta/security/SECURITY.md
+code/yologuard/GPT5_REQUIREMENTS.md,infra/tools/yologuard/GPT5_REQUIREMENTS.md

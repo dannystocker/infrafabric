@@ -1,0 +1,4 @@
+Lost-file search log (per user request):
+- Scanned `/tmp` up to depth 3 for directories or files containing "lost" or "lost+found"; no matches were present, and systemd-private and snap-private paths remain inaccessible to this user.
+- Scanned `/home/setup` up to depth 2 for the same keywords; the tree contains no "lost"-prefixed items.
+Result: nothing to reclaim under the requested roots, but the scan ensures we know where no dangling artifacts remain.

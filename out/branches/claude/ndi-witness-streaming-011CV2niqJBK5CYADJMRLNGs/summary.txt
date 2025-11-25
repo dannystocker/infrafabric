@@ -1,0 +1,10 @@
+Branch: claude/ndi-witness-streaming-011CV2niqJBK5CYADJMRLNGs
+IF function names cataloged: 0
+IF definitions recorded: 0
+Call edges observed: 0
+IF mention tokens: 207
+Mention graph edges: 3736
+Yologuard references: 61
+Secrets candidate files: 390
+Manifest entries: 769
+Fallback tokens captured: 0

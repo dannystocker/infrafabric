@@ -1,0 +1,2 @@
+?? out/branches/claude/gedimat-logistics-optimization-018FV2Sa5LnT4vDUTq5ipvaX/git_log.txt
+?? out/branches/claude/gedimat-logistics-optimization-018FV2Sa5LnT4vDUTq5ipvaX/git_status.txt

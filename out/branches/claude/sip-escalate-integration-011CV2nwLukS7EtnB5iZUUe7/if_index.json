@@ -1,0 +1,113 @@
+{
+  "root": "/home/setup/infrafabric",
+  "files_scanned": 118,
+  "functions": {
+    "if_guard_policy": {
+      "definitions": [
+        {
+          "file": "tests/test_sip_escalate.py",
+          "line": 61
+        }
+      ],
+      "calls": {},
+      "called_by": {}
+    },
+    "if_witness_logger": {
+      "definitions": [
+        {
+          "file": "tests/test_sip_escalate.py",
+          "line": 69
+        }
+      ],
+      "calls": {},
+      "called_by": {}
+    },
+    "test_if_guard_policy_approval_success": {
+      "definitions": [],
+      "calls": {
+        "if_guard_policy.approve_external_call": 1
+      },
+      "called_by": {}
+    },
+    "if_guard_policy.approve_external_call": {
+      "definitions": [],
+      "calls": {},
+      "called_by": {
+        "test_if_guard_policy_approval_success": 1,
+        "test_if_guard_policy_rejection_unregistered_expert": 1,
+        "test_if_guard_policy_rejection_specialization_mismatch": 1,
+        "test_if_guard_policy_alignment_hazard": 1
+      }
+    },
+    "test_if_guard_policy_rejection_unregistered_expert": {
+      "definitions": [],
+      "calls": {
+        "if_guard_policy.approve_external_call": 1
+      },
+      "called_by": {}
+    },
+    "test_if_guard_policy_rejection_specialization_mismatch": {
+      "definitions": [],
+      "calls": {
+        "if_guard_policy.approve_external_call": 1
+      },
+      "called_by": {}
+    },
+    "test_if_guard_policy_alignment_hazard": {
+      "definitions": [],
+      "calls": {
+        "if_guard_policy.approve_external_call": 1
+      },
+      "called_by": {}
+    },
+    "test_if_witness_logging_event_fields": {
+      "definitions": [],
+      "calls": {
+        "if_witness_logger.log_sip_event": 2
+      },
+      "called_by": {}
+    },
+    "if_witness_logger.log_sip_event": {
+      "definitions": [],
+      "calls": {},
+      "called_by": {
+        "test_if_witness_logging_event_fields": 2
+      }
+    },
+    "check_policy": {
+      "definitions": [],
+      "calls": {
+        "if_headers.get": 2
+      },
+      "called_by": {}
+    },
+    "if_headers.get": {
+      "definitions": [],
+      "calls": {},
+      "called_by": {
+        "check_policy": 2
+      }
+    }
+  },
+  "attributes": {},
+  "call_graph": {
+    "test_if_guard_policy_approval_success": {
+      "if_guard_policy.approve_external_call": 1
+    },
+    "test_if_guard_policy_rejection_unregistered_expert": {
+      "if_guard_policy.approve_external_call": 1
+    },
+    "test_if_guard_policy_rejection_specialization_mismatch": {
+      "if_guard_policy.approve_external_call": 1
+    },
+    "test_if_guard_policy_alignment_hazard": {
+      "if_guard_policy.approve_external_call": 1
+    },
+    "test_if_witness_logging_event_fields": {
+      "if_witness_logger.log_sip_event": 2
+    },
+    "check_policy": {
+      "if_headers.get": 2
+    }
+  }
+}

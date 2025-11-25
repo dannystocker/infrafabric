@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "a1-monitor": {
+      "command": "node",
+      "args": ["/home/setup/ggq-deployment/mcp-a1-monitor.js"],
+      "disabled": false,
+      "alwaysAllow": ["get_status", "check_capacity", "get_logs", "get_hunter_status"]
+    }
+  }
+}

@@ -1,0 +1,10 @@
+Branch: claude/review-cloud-handover-docs-011CUyURbbbYv3twL6dH4r3v
+IF function names cataloged: 0
+IF definitions recorded: 0
+Call edges observed: 0
+IF mention tokens: 154
+Mention graph edges: 3331
+Yologuard references: 72
+Secrets candidate files: 366
+Manifest entries: 698
+Fallback tokens captured: 0

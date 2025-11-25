@@ -1,0 +1,10 @@
+Branch: claude/cloud-providers-011CV2nnsyHT4by1am1ZrkkA
+IF function names cataloged: 0
+IF definitions recorded: 0
+Call edges observed: 0
+IF mention tokens: 258
+Mention graph edges: 3906
+Yologuard references: 62
+Secrets candidate files: 459
+Manifest entries: 886
+Fallback tokens captured: 0

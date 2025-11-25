@@ -1,0 +1,10 @@
+Branch: gedimat-v3-deploy
+IF function names cataloged: 0
+IF definitions recorded: 0
+Call edges observed: 0
+IF mention tokens: 12
+Mention graph edges: 29
+Yologuard references: 0
+Secrets candidate files: 23
+Manifest entries: 44
+Fallback tokens captured: 0

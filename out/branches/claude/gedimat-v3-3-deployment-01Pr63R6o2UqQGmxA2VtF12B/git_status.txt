@@ -1,0 +1,2 @@
+?? out/branches/claude/gedimat-v3-3-deployment-01Pr63R6o2UqQGmxA2VtF12B/git_log.txt
+?? out/branches/claude/gedimat-v3-3-deployment-01Pr63R6o2UqQGmxA2VtF12B/git_status.txt

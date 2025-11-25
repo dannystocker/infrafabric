@@ -1,0 +1,219 @@
+{
+  "root": "/home/setup/infrafabric",
+  "files_scanned": 45,
+  "tokens": {
+    "if_components": {
+      "count": 1,
+      "files": {
+        "README.md": [
+          350
+        ]
+      }
+    },
+    "if-guard": {
+      "count": 1,
+      "files": {
+        "SESSION-RESUME.md": [
+          128
+        ]
+      }
+    },
+    "if_ttt_audit.md": {
+      "count": 16,
+      "files": {
+        "out/branches/gedimat-v3-deploy/manifest/file_manifest.txt": [
+          44
+        ],
+        "intelligence-tests/gedimat-logistics-fr/V3_GITHUB_DEPLOYMENT_PACKAGE.md": [
+          69,
+          1221
+        ],
+        "intelligence-tests/gedimat-logistics-fr/README.md": [
+          51
+        ],
+        "intelligence-tests/gedimat-logistics-fr/EVAL_PROMPT_CODEX_GEMINI.md": [
+          57
+        ],
+        "intelligence-tests/gedimat-logistics-fr/V3_DESIGN_SUMMARY.md": [
+          74
+        ],
+        "intelligence-tests/gedimat-logistics-fr/session-output/if_ttt_audit.md": [
+          50,
+          199
+        ],
+        "intelligence-tests/gedimat-logistics-fr/audit/QUICK_REFERENCE_UNSOURCED_CLAIMS.md": [
+          10,
+          11,
+          12,
+          17
+        ],
+        "intelligence-tests/gedimat-logistics-fr/audit/AUDIT_SUMMARY_CRITICAL_FINDINGS.md": [
+          11
+        ],
+        "intelligence-tests/gedimat-logistics-fr/audit/AUDIT_UNSOURCED_NUMBERS.md": [
+          24,
+          105
+        ],
+        "intelligence-tests/gedimat-logistics-fr/audit/README_AUDIT.md": [
+          90
+        ]
+      }
+    },
+    "if.optimise": {
+      "count": 2,
+      "files": {
+        "intelligence-tests/gedimat-logistics-fr/CONTEXTE_ANGELIQUE.txt": [
+          2,
+          2
+        ]
+      }
+    },
+    "if.search.": {
+      "count": 1,
+      "files": {
+        "intelligence-tests/gedimat-logistics-fr/CONTEXTE_ANGELIQUE.txt": [
+          2
+        ]
+      }
+    },
+    "if.swarm": {
+      "count": 2,
+      "files": {
+        "intelligence-tests/gedimat-logistics-fr/CONTEXTE_ANGELIQUE.txt": [
+          2,
+          972
+        ]
+      }
+    },
+    "if.guard": {
+      "count": 2,
+      "files": {
+        "intelligence-tests/gedimat-logistics-fr/CONTEXTE_ANGELIQUE.txt": [
+          2,
+          2
+        ]
+      }
+    },
+    "if.sam": {
+      "count": 1,
+      "files": {
+        "intelligence-tests/gedimat-logistics-fr/CONTEXTE_ANGELIQUE.txt": [
+          2
+        ]
+      }
+    },
+    "if.ceo": {
+      "count": 2,
+      "files": {
+        "intelligence-tests/gedimat-logistics-fr/CONTEXTE_ANGELIQUE.txt": [
+          2,
+          2
+        ]
+      }
+    },
+    "if.ttt": {
+      "count": 1,
+      "files": {
+        "intelligence-tests/gedimat-logistics-fr/CONTEXTE_ANGELIQUE.txt": [
+          2
+        ]
+      }
+    },
+    "if.search": {
+      "count": 1,
+      "files": {
+        "intelligence-tests/gedimat-logistics-fr/CONTEXTE_ANGELIQUE.txt": [
+          972
+        ]
+      }
+    },
+    "if_ttt_package.zip": {
+      "count": 1,
+      "files": {
+        "intelligence-tests/gedimat-logistics-fr/session-output/if_ttt_audit.md": [
+          193
+        ]
+      }
+    }
+  },
+  "cooccurrence": {
+    "if.swarm": {
+      "if.search.": 1,
+      "if.ceo": 1,
+      "if.sam": 1,
+      "if.ttt": 1,
+      "if.guard": 1,
+      "if.optimise": 1,
+      "if.search": 1
+    },
+    "if.search.": {
+      "if.swarm": 1,
+      "if.ceo": 1,
+      "if.sam": 1,
+      "if.ttt": 1,
+      "if.guard": 1,
+      "if.optimise": 1,
+      "if.search": 1
+    },
+    "if.ceo": {
+      "if.swarm": 1,
+      "if.search.": 1,
+      "if.sam": 1,
+      "if.ttt": 1,
+      "if.guard": 1,
+      "if.optimise": 1,
+      "if.search": 1
+    },
+    "if.sam": {
+      "if.swarm": 1,
+      "if.search.": 1,
+      "if.ceo": 1,
+      "if.ttt": 1,
+      "if.guard": 1,
+      "if.optimise": 1,
+      "if.search": 1
+    },
+    "if.ttt": {
+      "if.swarm": 1,
+      "if.search.": 1,
+      "if.ceo": 1,
+      "if.sam": 1,
+      "if.guard": 1,
+      "if.optimise": 1,
+      "if.search": 1
+    },
+    "if.guard": {
+      "if.swarm": 1,
+      "if.search.": 1,
+      "if.ceo": 1,
+      "if.sam": 1,
+      "if.ttt": 1,
+      "if.optimise": 1,
+      "if.search": 1
+    },
+    "if.optimise": {
+      "if.swarm": 1,
+      "if.search.": 1,
+      "if.ceo": 1,
+      "if.sam": 1,
+      "if.ttt": 1,
+      "if.guard": 1,
+      "if.search": 1
+    },
+    "if.search": {
+      "if.swarm": 1,
+      "if.search.": 1,
+      "if.ceo": 1,
+      "if.sam": 1,
+      "if.ttt": 1,
+      "if.guard": 1,
+      "if.optimise": 1
+    },
+    "if_ttt_audit.md": {
+      "if_ttt_package.zip": 1
+    },
+    "if_ttt_package.zip": {
+      "if_ttt_audit.md": 1
+    }
+  }
+}

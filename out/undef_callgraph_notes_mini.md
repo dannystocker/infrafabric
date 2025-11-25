@@ -1,0 +1,19 @@
+# UNDEF:: Call Graph Notes (Mini)
+Although `out/if_relationship_map.json` does not feature literal `UNDEF::` nodes, the mention maps do expose a long tail of ambiguous tokens. The list below captures the top mention-only nodes (from `claude/sip-escalate-integration-011CV2nwLukS7EtnB5iZUUe7` and similar scans) that still need human mapping before a clean call graph can be built.
+
+| Ambiguous token | Best-effort hypothesis | Recommendation |
+| --- | --- | --- |
+| `if-` | Generic prefix left by the tokenizer, probably pointing to any `if_*` family (`if_guard_policy`, `if_witness_logger`, etc.) written without a suffix. | Treat it as a scanning artifact: teach the parser to capture the trailing text or ignore the bare prefix so it does not spawn phantom nodes. |
+| `if.` | Dot-qualified `IF.*` references (e.g., `IF.optimise`, `IF.swarm`) that the scanner did not reduce to an actual symbol. | Map frequently mentioned `IF.*` modules to concrete callable names (e.g., `IF.optimise` → `if_optimise`) or flag them as intentionally dynamic orchestrations. |
+| `if...` | Ellipsis in the logs when an `IF` mention was truncated mid-token, probably due to tail-cutting in telemetry. | Mark as scanning noise and/or extend the tokenizer window so the missing suffix can be captured; otherwise document it as an unresolved placeholder. |
+| `if-show` | Likely referencing the `IF.show`/`IF.message` visualization layer rather than a function. | Associate this node with the `IF.message`/`if_show` delivery pipeline and treat it as a metadata-only mention. |
+| `if.log.meta` | The logging metadata stream that surfaces telemetry for each guardian. | Tie it back to the logging instrumentation (e.g., `if_witness_logger.log_meta`) or treat it as an `IF.search` precondition; keep it flagged until an actual handler surface is identified. |
+| `if.log.user` | The user-visible log stream (mirrors `if.log.meta`). | Similar treatment: map to the `if_witness_logger` instrumentation or document as a logging-only channel that never materializes in `function_presence`. |
+| `if_trace_stub` | The stubbed trace helper that the scanners reference when they build call graphs. | Map to the supporting `if_trace_stub.py` module in `scripts/` and document that it is not executable logic but a scaffold for instrumentation. |
+| `if.trace` | Another instrumentation mesh reference; probably the same as `if_trace_stub`. | Document it as a logging/topic aggregator and, if the reorg uncovers a real `if_trace` handler, point to that function when writing the final tree. |
+| `if-armour` | Guardian doc/manifest name (e.g., `IF-armour.md`). | Treat as documentation, not a call target; include it in the `infra/guardians/` relocation plan so it is easy to cross-reference with the call graph. |
+| `if-yologuard` | Yologuard mention that does not pin down an `if_*` handler. | Map to the Yologuard detector package (e.g., `code/yologuard/*.py`) and flag it as instrumentation-focused rather than part of the canonical `function_presence`. |
+| `if_swarm` | High-level orchestration package (probably `IF.swarm`). | Keep the node as a proxy for swarm orchestrations in the mention graph until a concrete `if_swarm_*` function emerges; treat it as “documented dynamic.” |
+| `if_search` / `if.search` | Search orchestration mentions without a suffix. | Document this as the `IF.search` family and connect it to eventual `if_search_*` implementations; if nothing exists, treat it as a call-graph gap that needs downstream code. |
+
+**Recommendation:** When setting up the new `infra/` tree, keep a mapping table that ties each ambiguous mention above to either a concrete `if_*` function or a note that the mention is dynamic/metadata-only. Add a follow-up scanner pass once `claude/sip-escalate-integration-011CV2nwLukS7EtnB5iZUUe7` merges so that these tokens can either resolve or be explicitly documented as unsupported.
