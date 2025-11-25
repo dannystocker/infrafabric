@@ -6,4 +6,41 @@ council/drafts/
 *.aux
 *.toc
 
+# SECURITY: Environment and secrets (NEVER commit these)
+.env
+.env.*
+*.env
+.env.local
+.env.*.local
+*.secret
+*.secrets
+**/secrets/
+credentials.json
+service-account*.json
+*-credentials.json
+*.pem
+*.key
+*.p12
+
+# API keys and tokens
+.api_keys
+api_keys.txt
+tokens.json
+
+# Virtual environments (don't commit 21MB binaries)
+.venv/
+.venv_tools/
+venv/
+env/
+__pycache__/
+*.pyc
+
+# IDE and OS
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
 # Keep only what's essential for arXiv
