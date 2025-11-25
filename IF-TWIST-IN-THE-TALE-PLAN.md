@@ -106,7 +106,7 @@
 **Twist Mechanism:** Character inversion
 
 **Protagonist:** Dr. Aisha Okonkwo, AI ethics consultant hired by tech giant
-**Setup:** Company wants to launch autonomous trading algorithm. Aisha's job: run it through IF.guard's 20-voice Guardian Council (6 Core + 3 Western + 3 Eastern Philosophers + 8 IF.sam facets).
+**Setup:** Company wants to launch autonomous trading algorithm. Aisha's job: run it through IF.guard's 20-voice Guardian Council (6 Core + 3 Western + 3 Eastern Philosophers + 8 IF.ceo facets).
 **Escalation:** Council achieves 95% consensus to approve. Only the Contrarian Guardian dissents, invokes 2-week cooling-off period. Aisha pressured by CEO to override.
 **Twist:** Aisha overrides. Algorithm launches. Makes company $140M in first week. Then Flash Crash 2.0: Wipes out pension funds across Europe. The Contrarian was right—algorithm exploited liquidity traps. Aisha becomes scapegoat.
 **Second Twist:** Three months later, Contrarian Guardian's identity leaked: It was the CEO's teenage daughter, participating anonymously. She warned her father. He ignored her. Now they both face regulatory hearings.
@@ -121,21 +121,21 @@
 
 ---
 
-### **Story 3: IF.sam - "The Sixteen Facets"**
+### **Story 3: IF.ceo - "The Sixteen Facets"**
 
 **Archer Model:** "Not the Real Thing" (vanity, status symbols, ironic reversal)
 **Twist Mechanism:** Moral inversion + identity surprise
 
 **Protagonist:** Jamie Winters, startup founder preparing Series B pitch
-**Setup:** Jamie's pitch coach suggests assembling an IF.sam council—8 "Light Side" Sam Altman facets (idealistic) + 8 "Dark Side" facets (ruthless pragmatism)—to stress-test the pitch.
+**Setup:** Jamie's pitch coach suggests assembling an IF.ceo council—8 "Light Side" facets (idealistic) + 8 "Dark Side" facets (ruthless pragmatism)—representing the ethical spectrum of executive decision-making to stress-test the pitch.
 **Escalation:** Light Side tears apart the pitch ("too mercenary, no mission"). Dark Side approves ("perfect, VCs will love it"). Jamie goes with Dark Side version. Raises $45M.
-**Twist:** Two years later, company implodes in scandal (user data monetization). Investors sue. Jamie's deposition reveals the IF.sam stress test. Prosecutor asks: "So you KNEW this was unethical?" Jamie: "The Dark Side said it would work." Judge: "The 'Dark Side' of a fictional persona you invented to simulate Sam Altman?"
-**Second Twist:** Real Sam Altman hears about case. Sends Jamie a handwritten note: "You misunderstood the exercise. The point was to integrate all 16, not pick one team."
+**Twist:** Two years later, company implodes in scandal (user data monetization). Investors sue. Jamie's deposition reveals the IF.ceo stress test. Prosecutor asks: "So you KNEW this was unethical?" Jamie: "The Dark Side said it would work." Judge: "The 'Dark Side' of a fictional persona framework?"
+**Second Twist:** An experienced mentor hears about case. Sends Jamie a handwritten note: "You misunderstood the exercise. The point was to integrate all 16, not pick one team."
 **Closing Punch:** Jamie frames the note in his prison cell. "Turns out I'd been playing checkers with a chess set."
 
 **Contemporary Elements:**
 - Series B venture capital pitch (YC/London ecosystem)
-- Sam Altman as cultural touchstone (post-ChatGPT celebrity)
+- CEO decision-making frameworks (corporate culture)
 - User data monetization scandals (Cambridge Analytica echo)
 - LLM roleplay as decision-making tool (meta-commentary)
 - Prison sentence for tech founder (Theranos/FTX era)
@@ -386,7 +386,7 @@
 **Week 1: Stories 1-3**
 - IF.yologuard - "The Perfect Detection"
 - IF.guard - "The Twenty Voices"
-- IF.sam - "The Sixteen Facets"
+- IF.ceo - "The Sixteen Facets"
 
 **Week 2: Stories 4-6**
 - IF.memory - "The Two-Week Window"
@@ -402,6 +402,9 @@
 - IF.TTT - "Traceable, Transparent, Trustworthy"
 - IF.philosophy - "The Twelve Voices"
 - IF.swarm - "The Bloom Pattern"
+
+**Additional Story Option**
+- IF.ceo - "The Sixteen Facets"
 
 **Output per story:**
 - 3,500-5,000 words (Archer's typical length)
@@ -569,7 +572,7 @@
 1. **Select 3 stories to draft first** (proof of concept)
    - Recommend: IF.memory ("The Two-Week Window" - we have source material)
    - IF.yologuard ("The Perfect Detection" - implemented component)
-   - IF.sam ("The Sixteen Facets" - culturally resonant)
+   - IF.ceo ("The Sixteen Facets" - executive decision-making framework)
 
 2. **Draft one complete story** (3,500-5,000 words)
    - Full Archer structure

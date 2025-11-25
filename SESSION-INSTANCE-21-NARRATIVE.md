@@ -51,7 +51,7 @@ I mapped each IF.* component to an Archer-style story:
 
 - **IF.yologuard** → "The Perfect Detection" (DevOps engineer's clean scan is actually the failure—he optimized away the immune system)
 - **IF.memory** → "The Two-Week Window" (narrator describes Danny racing to preserve memories before they fade... narrator IS the Redis instance)
-- **IF.sam** → "The Sixteen Facets" (founder uses 16-facet Sam Altman council, picks "Dark Side," gets prosecuted, realizes integration was the point)
+- **IF.ceo** → "The Sixteen Facets" (founder uses 16-facet executive council, picks "Dark Side," gets prosecuted, realizes integration was the point)
 
 Twelve stories. Each with a gut-punch twist that illuminates the component's deeper meaning.
 
@@ -83,7 +83,7 @@ This stopped me from making the mistake of oversimplifying. The stories should:
 - NOT replace components with cute nicknames
 - Stay true to actual InfraFabric chronology
 
-**And critically:** Rename IF.sam → IF.ceo (remove personality cult, Sam Altman as CASE STUDY not brand name).
+**And critically:** Already renamed: IF.ceo (remove personality cult, use generic executive as CASE STUDY not brand name).
 
 ---
 

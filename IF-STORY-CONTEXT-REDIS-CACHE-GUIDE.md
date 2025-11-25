@@ -103,15 +103,15 @@ redis-cli SET "context:file:demo-guardian-council.html:council-viz" \
   EX 86400
 ```
 
-#### Story 3: IF.sam
+#### Story 3: IF.ceo
 ```bash
-# agents.md IF.sam definition
-redis-cli SET "context:file:agents.md:IF.sam-facets" \
-  "$(sed -n '97,104p' /home/setup/infrafabric/agents.md)" \
+# agents.md IF.ceo definition
+redis-cli SET "context:file:agents.md:IF.ceo-facets" \
+  "$(sed -n '95,105p' /home/setup/infrafabric/agents.md)" \
   EX 86400
 
 # IF-vision.md 8 light + 8 dark facets
-redis-cli SET "context:file:IF-vision.md:sam-integration" \
+redis-cli SET "context:file:IF-vision.md:ceo-integration" \
   "$(sed -n '200,400p' /home/setup/infrafabric/IF-vision.md)" \
   EX 86400
 ```
@@ -418,8 +418,8 @@ redis-cli SET "context:file:IF-armour.md:fp-reduction" "$(sed -n '78,383p' /home
 # Story 2: IF.guard
 redis-cli SET "context:file:IF-foundations.md:guardian-council" "$(sed -n '1,200p' /home/setup/infrafabric/IF-foundations.md)" EX 86400
 
-# Story 3: IF.sam
-redis-cli SET "context:file:agents.md:IF.sam-facets" "$(sed -n '97,104p' /home/setup/infrafabric/agents.md)" EX 86400
+# Story 3: IF.ceo
+redis-cli SET "context:file:agents.md:IF.ceo-facets" "$(sed -n '95,105p' /home/setup/infrafabric/agents.md)" EX 86400
 
 # Story 4: IF.memory
 redis-cli SET "context:file:agents.md:IF.memory-handover" "$(sed -n '145,165p' /home/setup/infrafabric/agents.md)" EX 86400

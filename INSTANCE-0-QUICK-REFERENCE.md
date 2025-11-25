@@ -24,7 +24,7 @@
 
 ### 2. WHY GUARDIAN COUNCIL
 **What:** Single-AI decisions mirror human cognitive bias; need pluralism
-**How:** 20-voice council (6 core + 4 specialist + 8 IF.sam facets)
+**How:** 20-voice council (6 core + 4 specialist + 8 IF.ceo facets)
 **Validation:** Achieved 100% consensus on Dossier 07 (civilizational collapse patterns)
 
 ### 3. WHY DISTRIBUTED MEMORY

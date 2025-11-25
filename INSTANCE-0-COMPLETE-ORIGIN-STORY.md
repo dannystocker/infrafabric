@@ -209,7 +209,7 @@ From IF-vision.md and the origin conversation:
 **The Guardian Council Architecture:**
 - **6 Core Guardians** (Technical, Civic, Ethical, Cultural, Contrarian, Meta)
 - **4 Specialist Guardians** (Security, Accessibility, Economic, Legal)
-- **8 IF.sam Facets** (Sam Altman's ethical spectrum: 8 light-side idealistic + 8 dark-side pragmatic/ruthless)
+- **8 IF.ceo Facets** (executive ethical spectrum: 8 light-side idealistic + 8 dark-side pragmatic/ruthless)
 - **Total:** 20-voice council with weighted voting, veto rights, cooling-off periods
 
 **Why This Model Works:**

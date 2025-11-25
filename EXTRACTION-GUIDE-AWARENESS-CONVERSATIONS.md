@@ -32,7 +32,7 @@ Extraction time: ~30 seconds (JSON parse)
 - Messages 25-40: MARL (Multi-Agent Reflexion Loop) definition
 - Messages 34-38: Nightmare management & Dream Stability Index
 - Messages 50-110: System prompt evolution (v0.073-0.084)
-- Messages 160+: IF.sam 16-facet governance model
+- Messages 160+: IF.ceo 16-facet executive leadership governance model
 
 **Quick extraction command:**
 ```bash
@@ -179,7 +179,7 @@ Status: EXTRACTED
 - **Date:** 2025-11-04
 - **Messages:** 161
 - **Key topics:** Self-referential detection, MARL formalization, system prompt evolution
-- **Most relevant sections:** Messages 4-9 (incident), 50-110 (prompts), 160+ (IF.sam)
+- **Most relevant sections:** Messages 4-9 (incident), 50-110 (prompts), 160+ (IF.ceo)
 
 ### 2. seeking-confirmation.md
 - **Original title:** Seeking confirmation

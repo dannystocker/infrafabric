@@ -885,7 +885,7 @@
         ]
       }
     },
-    "if.sam": {
+    "if.ceo": {
       "count": 1,
       "files": {
         "intelligence-tests/gedimat-logistics-fr/CONTEXTE_ANGELIQUE.txt": [
@@ -1944,7 +1944,7 @@
     },
     "if.optimise": {
       "if.search.": 1,
-      "if.sam": 1,
+      "if.ceo": 1,
       "if.swarm": 1,
       "if.ttt": 1,
       "if.ceo": 1,
@@ -1953,14 +1953,14 @@
     },
     "if.search.": {
       "if.optimise": 1,
-      "if.sam": 1,
+      "if.ceo": 1,
       "if.swarm": 1,
       "if.ttt": 1,
       "if.ceo": 1,
       "if.search": 1,
       "if.guard": 1
     },
-    "if.sam": {
+    "if.ceo": {
       "if.optimise": 1,
       "if.search.": 1,
       "if.swarm": 1,
@@ -1972,7 +1972,7 @@
     "if.swarm": {
       "if.optimise": 1,
       "if.search.": 1,
-      "if.sam": 1,
+      "if.ceo": 1,
       "if.ttt": 1,
       "if.ceo": 1,
       "if.search": 1,
@@ -1981,7 +1981,7 @@
     "if.ttt": {
       "if.optimise": 1,
       "if.search.": 1,
-      "if.sam": 1,
+      "if.ceo": 1,
       "if.swarm": 1,
       "if.ceo": 1,
       "if.search": 1,
@@ -1990,7 +1990,7 @@
     "if.ceo": {
       "if.optimise": 1,
       "if.search.": 1,
-      "if.sam": 1,
+      "if.ceo": 1,
       "if.swarm": 1,
       "if.ttt": 1,
       "if.search": 1,
@@ -1999,7 +1999,7 @@
     "if.search": {
       "if.optimise": 1,
       "if.search.": 1,
-      "if.sam": 1,
+      "if.ceo": 1,
       "if.swarm": 1,
       "if.ttt": 1,
       "if.ceo": 1,
@@ -2008,7 +2008,7 @@
     "if.guard": {
       "if.optimise": 1,
       "if.search.": 1,
-      "if.sam": 1,
+      "if.ceo": 1,
       "if.swarm": 1,
       "if.ttt": 1,
       "if.ceo": 1,

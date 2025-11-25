@@ -816,7 +816,7 @@ Georges Partnership (3 keys):
 - IF.vision: IF-vision.md, IMPROVEMENT_ROADMAP.md
 - IF.witness: IF-witness.md, IF-INTELLIGENCE-*.md
 - IF.guard: All IF-TTT-* files, audit reports
-- IF.sam: papers/ + philosophy/
+- IF.ceo: papers/ + philosophy/
 
 ---
 

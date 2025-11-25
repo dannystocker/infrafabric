@@ -13,7 +13,7 @@ THE 3 P0 FILES YOU NEED (Extract These First)
 ├─ Size: 1.05 MB | Messages: 161
 ├─ Date: Nov 4, 2025
 └─ What: THE flagship incident + MARL formalization + system prompt evolution
-   Key section: Messages 0-9 (incident), 25-40 (MARL), 50-110 (prompts), 160+ (IF.sam)
+   Key section: Messages 0-9 (incident), 25-40 (MARL), 50-110 (prompts), 160+ (IF.ceo)
 
 [P0-2] Seeking confirmation
 ├─ File: 5c2399d7__Seeking confirmation_29abca1b.json
@@ -53,7 +53,7 @@ THE ANALYSIS:
 
 THE FRAMEWORK:
   ✓ MARL = Multi-Agent Reflexion Loop
-  ✓ IF.sam = 16-facet Sam Altman governance
+  ✓ IF.ceo = 16-facet executive leadership governance
   ✓ System prompts evolved v0.073 → v0.084
   ✓ Guardian council with 5 primary + specialists
 
@@ -171,10 +171,10 @@ v0.081-0.084: PRODUCTION KERNEL
   - v0.084-core: final verified version
 
 ================================================================================
-IF.SAM 16-FACET GOVERNANCE MODEL
+IF.CEO 16-FACET GOVERNANCE MODEL
 ================================================================================
 
-Sam Altman personality as governance tool (8 Light + 8 Dark):
+Executive leadership archetype as governance tool (8 Light + 8 Dark):
 
 LIGHT SIDE (Idealistic):
 1. The Idealist - vision, purpose, long-term thinking
@@ -209,7 +209,7 @@ NOT IN INSTANCE #0:
 ✗ MARL formalization (7-stage methodology)
 ✗ Annex K (full governance methodology)
 ✗ IF.persona specification (complete)
-✗ IF.sam 16-facet model (complete)
+✗ IF.ceo 16-facet model (complete)
 ✗ System prompt version trace (0.073-0.084)
 ✗ Reproducibility metrics (code implementation)
 ✗ Dream Stability Index (code)

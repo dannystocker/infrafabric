@@ -69,7 +69,7 @@ def extract_agents(content: str) -> List[str]:
         'haiku': r'\b(haiku|haiku worker)\b',
         'gemini': r'\b(gemini|gemini flash|gemini pro)\b',
         'guardian_council': r'\b(guardian council|guardians)\b',
-        'if.sam': r'\b(if\.sam|sam altman)\b',
+        'if.ceo': r'\b(if\.ceo|executive decision)\b',
     }
 
     content_lower = content.lower()

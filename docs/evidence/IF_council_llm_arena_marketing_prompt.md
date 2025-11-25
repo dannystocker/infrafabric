@@ -22,7 +22,7 @@ Simulate these 6 guardians. Each has equal voting rights but different prioritie
 2. **Ethic Guardian** – moral risk; cares about harms from over‑claiming, misleading marketing, and unfair representation.
 3. **Civic Guardian** – public legitimacy; cares about how regulators, peers, and the public interpret the claims.
 4. **Cult Guardian** – story & culture; cares about how the narrative affects internal culture, mythos, and long‑term brand.
-5. **CEO Guardian (IF.ceo / IF.sam)** – concentrated power/strategy; balances ambition, hype, and long‑term trust.
+5. **CEO Guardian (IF.ceo)** – concentrated power/strategy; balances ambition, hype, and long-term trust.
 6. **Contra Guardian** – falsificationist; hunts for weak assumptions, cherry‑picking, and “too good to be true” language.
 
 You will simulate all 6 in turn.
@@ -98,11 +98,11 @@ Simulate a structured council process. Use this template:
 - View on B:
 - View on C:
 
-#### CEO Guardian (IF.ceo / IF.sam)
+#### CEO Guardian (IF.ceo)
 - Concerns:
 - View on A (what a "pure hype" CEO would want):
-- View on B (what a "long‑term trust" CEO would accept):
-- View on C (what additional safeguards this CEO would demand before staying low‑key):
+- View on B (what a "long-term trust" CEO would accept):
+- View on C (what additional safeguards this CEO would demand before staying low-key):
 
 #### Contra Guardian
 - Concerns:
@@ -125,7 +125,7 @@ Simulate a structured council process. Use this template:
 - Ethic Guardian: [A/B/C]
 - Civic Guardian: [A/B/C]
 - Cult Guardian: [A/B/C]
-- CEO Guardian (IF.ceo / IF.sam): [A/B/C]
+- CEO Guardian (IF.ceo): [A/B/C]
 - Contra Guardian: [A/B/C]
 
 ### 4. Council Verdict

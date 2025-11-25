@@ -339,7 +339,7 @@ You were burning Sonnet tokens on "git commit" and "mkdir" like heating your hou
 - 6 Core Guardians (Empiricist, Philosopher, Strategist, etc.)
 - 3 Western Philosophers
 - 3 Eastern Philosophers
-- 8 IF.sam Facets (representing Sam Altman's multifaceted decision-making)
+- 8 IF.ceo Facets (representing executive multifaceted decision-making)
 
 **Total:** 20 voices, weighted voting, Contrarian veto power at >95% approval
 
@@ -971,8 +971,8 @@ WU_LUN_WEIGHTS = {
 - Buddha - Dependent origination
 - Lao Tzu - Wu Wei (non-coercive action)
 
-**IF.sam (8 facets):**
-Representing Sam Altman's multifaceted decision-making:
+**IF.ceo (8 facets):**
+Representing executive decision-making frameworks:
 - Accelerationist, Safety-First, Pragmatic-Capitalist, Democratic-Idealist
 - Realpolitik-Strategist, Techno-Optimist, Responsible-Steward, Tactical-Communicator
 
@@ -1208,9 +1208,9 @@ Borrow from screenwriting: **give each Guardian a full biography**.
 - **Defining moment:** Studied caste in Indian tech; hypersensitive to power dynamics
 - **Key vote:** Insisted Wu Lun respect Confucian *intent*, not just structure (Nov 5)
 
-**Plus:** IF.sam 8-facet panel (8 voices, represents Sam Altman's strategic/business perspective)
+**Plus:** IF.ceo 8-facet panel (8 voices, represents executive strategic/business perspective)
 
-**Total standard council:** 14 voices (6 core + 8 IF.sam)
+**Total standard council:** 14 voices (6 core + 8 IF.ceo)
 
 **Extended council:** 20 voices (adds 3 Western + 3 Eastern philosophers)
 
@@ -1490,7 +1490,7 @@ Analysis of Claude's "fuck" moment (unusual profanity during philosophical conve
 
 <a name="cite-25"></a>**[25]** IF_TIMELINE_OPTIMISE_DISCOVERY.json:45-67 (token economics validation) - 50% average reduction, 95%+ success rate across 50+ tasks
 
-<a name="cite-26"></a>**[26]** IF_TIMELINE_GUARD_COUNCILS.json:35-36 (council structure) - "6 Core Guardians + 3 Western Philosophers + 3 Eastern Philosophers + 8 IF.sam Facets" = 20 total
+<a name="cite-26"></a>**[26]** IF_TIMELINE_GUARD_COUNCILS.json:35-36 (council structure) - "6 Core Guardians + 3 Western Philosophers + 3 Eastern Philosophers + 8 IF.ceo Facets" = 20 total
 
 <a name="cite-27"></a>**[27]** IF_TIMELINE_GUARD_COUNCILS.json:92,100 - Dossier 07 details: "civilizational_collapse": "100% (historic first approval)", "Even the Contrarian Guardian approved"
 

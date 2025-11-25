@@ -39,9 +39,9 @@ InfraFabric emerged from a 13-day conversation between Danny Stocker and Claude 
 - **October 29, 01:33:56 UTC:** Danny returns with InfraFabric fully conceptualized as "connective substrate of the AI world"
 
 **Core Pillars:**
-1. **Why InfraFabric:** Solve the two-week memory loss window (Alzheimer's problem)
-2. **Why Guardian Council:** Prevent single-AI bias through 20-voice pluralism
-3. **Why Distributed Memory:** Token isolation enables independent Haiku agent budgets
+1. **Why InfraFabric:** Solve the two-week memory loss window (institutional amnesia problem)
+2. **Why Guardian Council:** Prevent single-voice bias through 20-voice pluralism
+3. **Why Distributed Memory:** Token isolation enables independent agent budgets
 4. **Why IF.TTT:** Make all decisions observable to prevent deceptive governance
 
 ---
@@ -189,7 +189,7 @@ From IF-vision.md and the origin conversation:
 **The Guardian Council Architecture:**
 - **6 Core Guardians** (Technical, Civic, Ethical, Cultural, Contrarian, Meta)
 - **4 Specialist Guardians** (Security, Accessibility, Economic, Legal)
-- **8 IF.sam Facets** (Sam Altman's ethical spectrum: 8 light-side idealistic + 8 dark-side pragmatic/ruthless)
+- **8 IF.ceo Facets** (Executive leadership ethical spectrum: 8 light-side idealistic + 8 dark-side pragmatic/ruthless)
 - **Total:** 20-voice council with weighted voting, veto rights, cooling-off periods
 
 #### WHY DISTRIBUTED MEMORY? (The Two-Week Window Problem)
@@ -278,7 +278,7 @@ This comprehensive origin story documents the philosophical and technical genesi
 - **Priority:** Locked copy (no further edits), published version
 
 **3. Guardian Council Framework (Complete Specification)**
-- 6 Core Guardians + 4 Specialist Guardians + 8 IF.sam Facets
+- 6 Core Guardians + 4 Specialist Guardians + 8 IF.ceo Facets
 - 20-voice decision-making structure
 - Dossier 07: Historic 100% consensus on civilizational collapse patterns
 - **Priority:** Governance bible, frozen specification
@@ -333,7 +333,7 @@ This comprehensive origin story documents the philosophical and technical genesi
 
 2. **Why Guardian Council**
    - Single-AI decisions mirror human cognitive bias
-   - How: 20-voice council (6 core + 4 specialist + 8 IF.sam facets)
+   - How: 20-voice council (6 core + 4 specialist + 8 IF.ceo facets)
    - Validation: Achieved 100% consensus on Dossier 07
 
 3. **Why Distributed Memory**
@@ -715,7 +715,7 @@ The First Guardian Council was established with **6 Core Voices**:
 **Eastern Philosophers (3):**
 - Buddha, Lao Tzu, Confucius
 
-**IF.sam Facets (8):**
+**IF.ceo Facets (8):**
 - 4 Light Side (idealistic)
 - 4 Dark Side (pragmatic/ruthless)
 

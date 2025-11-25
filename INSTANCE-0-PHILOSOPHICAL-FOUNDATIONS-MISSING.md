@@ -217,11 +217,13 @@ architectural level—guaranteed to prevent groupthink.
 **Composition:**
 1. **6 Core Guardians** (Technical, Civic, Ethical, Cultural, Contrarian, Meta)
 2. **4 Specialist Guardians** (Security, Accessibility, Economic, Legal)
-3. **8 IF.sam Facets** (Sam Altman's ethical spectrum)
+3. **8 IF.ceo Facets** (Executive leadership ethical spectrum)
 4. **12 Western/Eastern Philosophers** (From IF.philosophy database)
 
 **Why This Structure Matters:**
 The Council design reflects the consciousness model derived from the Alzheimer's discussion: **consciousness emerges from coordinated multi-perspective evaluation, not single unified control**.
+
+**Note:** References to specific individuals have been replaced with generic executive/leadership archetypes.
 
 ---
 

@@ -243,7 +243,7 @@ Quick lookup table for all 12 stories:
 |-------|-----------|-----------------|-------------------|--------------|
 | 1 | IF.yologuard | IF-armour.md (78-383) | agents.md (67-75) | 15K |
 | 2 | IF.guard | IF-foundations.md (1-200) | agents.md (93-99) | 15K |
-| 3 | IF.sam | IF-vision.md (200-400) | agents.md (97-104) | 15K |
+| 3 | IF.ceo | IF-vision.md (200-400) | agents.md (95-105) | 15K |
 | 4 | IF.memory | IF-MEMORY-DISTRIBUTED.md (1-300) | agents.md (145-165) | 15K |
 | 5 | IF.optimise | ANNEX-N (1-135) | CLAUDE.md IF.optimise | 15K |
 | 6 | IF.search | IF-foundations.md (519-855) | agents.md (72-74) | 15K |

@@ -63,7 +63,7 @@ Infrastructure:
 | if.philosophy | ✅ Complete | `philosophy/IF.philosophy-database.yaml` | 12 philosophers, 89 KB database |
 | if.guard (Guardian Council) | 🟡 Conceptual | agents.md references, papers | No execution framework |
 | if.ceo (Decision authority) | 🟡 Designed | CLAUDE.md, audit docs | Embedded in council voting logic |
-| if.sam (Sam Altman 16-facet) | 🟡 Designed | CLAUDE.md lines 47-62 | Ethical spectrum mapping, no exec |
+| if.ceo (CEO 16-facet) | 🟡 Designed | Documentation | Ethical spectrum mapping, no exec |
 
 **Finding:** Philosophy layer complete but governance execution (if.guard actual voting/decision system) missing.
 

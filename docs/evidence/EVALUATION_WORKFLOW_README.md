@@ -111,7 +111,7 @@ The `merge_evaluations.py` script:
 
 ### PARTIAL
 
-**IF.sam** (3/3 evaluators agree - 100% consensus)
+**IF.ceo** (3/3 evaluators agree - 100% consensus)
 - Evaluators: Codex, Gemini, Claude
 
 **IF.optimize** (2/3 evaluators agree - 67% consensus)

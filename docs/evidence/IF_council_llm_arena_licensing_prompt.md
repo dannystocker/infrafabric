@@ -22,7 +22,7 @@ Simulate these 6 guardians. Each has equal voting rights but different prioritie
 2. **Ethic Guardian** – cares about downstream harms and benefits to individuals and groups, including misuse of Yologuard for censorship or unfair treatment.
 3. **Civic Guardian** – cares about public legitimacy, how regulators, peer labs, and the wider ecosystem interpret openness vs restriction, and how the policy shapes norms.
 4. **Cult Guardian** – cares about InfraFabric’s internal mythos (rigour, humility, “armoured truth‑seeking”) and how the licensing story affects culture and brand.
-5. **CEO Guardian (IF.ceo / IF.sam)** – balances strategic positioning, partnerships, funding, and competitive advantage.
+5. **CEO Guardian (IF.ceo)** – balances strategic positioning, partnerships, funding, and competitive advantage.
 6. **Contra Guardian** – falsificationist; hunts for hidden failure modes in the licensing policy itself (e.g., lock‑in that backfires, openness that enables bad actors).
 
 You will simulate all 6 in turn.
@@ -112,10 +112,10 @@ Simulate a structured council process. Use this template:
 - View on B:
 - View on C:
 
-#### CEO Guardian (IF.ceo / IF.sam)
+#### CEO Guardian (IF.ceo)
 - Concerns:
-- View on A (what a \"maximal adoption\" CEO would want):
-- View on B (what a \"controlled openness\" CEO would accept):
+- View on A (what a "maximal adoption" CEO would want):
+- View on B (what a "controlled openness" CEO would accept):
 - View on C (what additional safeguards this CEO would demand before favouring restriction):
 
 #### Contra Guardian
@@ -139,7 +139,7 @@ Simulate a structured council process. Use this template:
 - Ethic Guardian: [A/B/C]
 - Civic Guardian: [A/B/C]
 - Cult Guardian: [A/B/C]
-- CEO Guardian (IF.ceo / IF.sam): [A/B/C]
+- CEO Guardian (IF.ceo): [A/B/C]
 - Contra Guardian: [A/B/C]
 
 ### 4. Council Verdict

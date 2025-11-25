@@ -122,7 +122,7 @@
 **IF.swarm** (1/3 evaluators agree - 33% consensus)
 - Evaluators: GPT-5.1
 
-**IF.sam** (1/3 evaluators agree - 33% consensus)
+**IF.ceo** (1/3 evaluators agree - 33% consensus)
 - Evaluators: GPT-5.1
 
 

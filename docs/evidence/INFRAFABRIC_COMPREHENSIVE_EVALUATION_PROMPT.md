@@ -154,7 +154,7 @@ Create a **standalone prompt** for a future debugging session that includes:
 [...]
 
 ### 🟡 Partially Implemented / Needs Work
-- IF.sam: [what exists, what's missing, blockers]
+- IF.ceo: [what exists, what's missing, blockers]
 [...]
 
 ### ❌ Not Yet Built (Priority Order)
@@ -300,8 +300,8 @@ technical_implementation:
         issues: ["Validation incomplete", "No batch processing"]
 
     partial:
-      - name: "IF.sam"
-        design_file: "docs/IF-sam-specification.md"
+      - name: "IF.ceo"
+        design_file: "docs/IF-ceo-specification.md"
         implementation_file: null
         blockers: ["Requires OpenAI API integration", "No test framework"]
         priority: "P1"
@@ -323,7 +323,7 @@ technical_implementation:
       status: "external"
       risk: "low"
     - name: "OpenRouter API"
-      used_by: ["IF.sam", "IF.council"]
+      used_by: ["IF.ceo", "IF.council"]
       status: "external"
       risk: "medium - API key exposed in docs"
 
@@ -430,7 +430,7 @@ gaps_and_issues:
       files: ["/home/setup/.claude/CLAUDE.md"]
 
   p1_high_priority:
-    - issue: "IF.sam has design but no implementation"
+    - issue: "IF.ceo has design but no implementation"
       impact: "Core feature missing"
       effort: "1-2 weeks"
       files: ["agents.md"]
@@ -476,7 +476,7 @@ next_steps:
     - action: "Create EVALUATION_PROGRESS.md for session tracking"
       effort: "30 minutes"
   short_term:
-    - action: "Implement IF.sam (75% designed, 0% built)"
+    - action: "Implement IF.ceo (75% designed, 0% built)"
       effort: "1-2 weeks"
     - action: "Add integration tests for IF.guard + IF.citate"
       effort: "3-5 days"

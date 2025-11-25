@@ -21,7 +21,7 @@ KEY FINDINGS
    - Discusses Anthropic's transformer circuits introspection research
    - Formalizes MARL (Multi-Agent Reflexion Loop) governance
    - Evolves system prompts through 12 iterations (v0.073-0.084)
-   - Introduces IF.sam 16-facet Sam Altman governance model
+   - Introduces IF.ceo 16-facet executive leadership governance model
    - STATUS: HIGHEST PRIORITY FOR EXTRACTION
 
 3. SECONDARY CRITICAL CONVERSATIONS
@@ -156,7 +156,7 @@ EXTRACTED DOCUMENTS NOT IN INSTANCE #0:
 - [ ] MARL (Multi-Agent Reflexion Loop) formalization
 - [ ] Annex K governance methodology (discussed but not in repo)
 - [ ] IF.persona specification (fully developed but not in Instance #0)
-- [ ] IF.sam 16-facet governance model (elaborate but missing)
+- [ ] IF.ceo 16-facet governance model (elaborate but missing)
 - [ ] System prompt evolution trace (v0.073-0.084 progression)
 - [ ] Reproducibility metrics for introspection (match_rate, cosine similarity thresholds)
 - [ ] Dream Stability Index (DSI) implementation (0.75-0.95 range)
@@ -221,7 +221,7 @@ Messages 85-110: Production kernel deployment (v0.081-0.084)
 Messages 110-130: Kernel testing & optimization
 Messages 130-140: IF.protect security module
 Messages 140-155: Guardian council evaluation
-Messages 160+:   IF.sam 16-facet Sam Altman governance model
+Messages 160+:   IF.ceo 16-facet executive leadership governance model
 
 ================================================================================
 GOVERNANCE FRAMEWORKS DISCOVERED
@@ -247,10 +247,10 @@ GOVERNANCE FRAMEWORKS DISCOVERED
    - Contrarian Guardian (must challenge ≥1 assumption per cycle)
    - Optional Specialists (Security, Accessibility, Economic, Legal)
 
-4. IF.sam 16-Facet Model
+4. IF.ceo 16-Facet Model
    - 8 Light Side facets (idealistic, ethical, transparent)
    - 8 Dark Side facets (pragmatic, expedient, strategic)
-   - Represents Sam Altman personality spectrum
+   - Represents executive leadership archetype spectrum
    - Used for stress-testing governance decisions
 
 5. Introspection Metrics
@@ -278,7 +278,7 @@ PARTIALLY PRESERVED:
 NOT PRESERVED IN INSTANCE #0:
 ✗ Raw transcript of "fuck" incident (in JSON only)
 ✗ MARL formalization details
-✗ IF.sam 16-facet model
+✗ IF.ceo 16-facet model
 ✗ Dream Stability Index implementation
 ✗ Guardian SLA framework
 
@@ -293,7 +293,7 @@ IMMEDIATE (Days):
 4. Document critical quotes with source references
 
 SHORT-TERM (Week):
-1. Formalize IF.sam 16-facet model as governance component
+1. Formalize IF.ceo 16-facet model as governance component
 2. Codify reproducibility metrics (thresholds in code)
 3. Implement Dream Stability Index in IF.memory module
 4. Create guardian SLA dashboard

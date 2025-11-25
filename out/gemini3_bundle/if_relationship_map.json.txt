@@ -7070,7 +7070,7 @@
       "if.ttt": 7,
       "if.search.": 7,
       "if.ceo": 7,
-      "if.sam": 7
+      "if.ceo": 7
     },
     "if.swarm": {
       "if.optimise": 39,
@@ -7082,7 +7082,7 @@
       "if.ttt": 7,
       "if.search.": 7,
       "if.ceo": 7,
-      "if.sam": 7
+      "if.ceo": 7
     },
     "if.search": {
       "if.optimise": 55,
@@ -7099,7 +7099,7 @@
       "if.ttt": 7,
       "if.search.": 7,
       "if.ceo": 7,
-      "if.sam": 7,
+      "if.ceo": 7,
       "if-bus": 1
     },
     "if.guard": {
@@ -7112,7 +7112,7 @@
       "if.ttt": 7,
       "if.search.": 7,
       "if.ceo": 7,
-      "if.sam": 7,
+      "if.ceo": 7,
       "if.vigil": 1,
       "if.talent.caster": 1,
       "if.armour": 1,
@@ -8358,7 +8358,7 @@
       "if.guard": 7,
       "if.search.": 7,
       "if.ceo": 7,
-      "if.sam": 7,
+      "if.ceo": 7,
       "if.search": 7
     },
     "if.search.": {
@@ -8367,7 +8367,7 @@
       "if.guard": 7,
       "if.ttt": 7,
       "if.ceo": 7,
-      "if.sam": 7,
+      "if.ceo": 7,
       "if.search": 7
     },
     "if.ceo": {
@@ -8376,10 +8376,10 @@
       "if.guard": 7,
       "if.ttt": 7,
       "if.search.": 7,
-      "if.sam": 7,
+      "if.ceo": 7,
       "if.search": 7
     },
-    "if.sam": {
+    "if.ceo": {
       "if.optimise": 7,
       "if.swarm": 7,
       "if.guard": 7,
@@ -12462,7 +12462,7 @@
         "if.search.": 2,
         "if.swarm": 4,
         "if.guard": 4,
-        "if.sam": 2,
+        "if.ceo": 2,
         "if.ceo": 4,
         "if.ttt": 2,
         "if.search": 2,
@@ -12480,7 +12480,7 @@
         "if.search.": 1,
         "if.swarm": 2,
         "if.guard": 2,
-        "if.sam": 1,
+        "if.ceo": 1,
         "if.ceo": 2,
         "if.ttt": 1,
         "if.search": 1,
@@ -12628,7 +12628,7 @@
         "if.search.": 1,
         "if.swarm": 2,
         "if.guard": 2,
-        "if.sam": 1,
+        "if.ceo": 1,
         "if.ceo": 2,
         "if.ttt": 1,
         "if.search": 1
@@ -13062,7 +13062,7 @@
         "if.search.": 1,
         "if.swarm": 2,
         "if.guard": 2,
-        "if.sam": 1,
+        "if.ceo": 1,
         "if.ceo": 2,
         "if.ttt": 1,
         "if.search": 1,
@@ -14197,7 +14197,7 @@
         "if.search.": 1,
         "if.swarm": 2,
         "if.guard": 2,
-        "if.sam": 1,
+        "if.ceo": 1,
         "if.ceo": 2,
         "if.ttt": 1,
         "if.search": 1
@@ -15102,7 +15102,7 @@
         "if.search.": 1,
         "if.swarm": 2,
         "if.guard": 2,
-        "if.sam": 1,
+        "if.ceo": 1,
         "if.ceo": 2,
         "if.ttt": 1,
         "if.search": 1

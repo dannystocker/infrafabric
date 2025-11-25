@@ -188,7 +188,7 @@ stories:
     archer_model: "Clean Sweep (political thriller, moral compromise, unexpected outcome)"
     twist_mechanism: "Character Inversion + Second Twist"
     protagonist: "Dr. Aisha Okonkwo, AI ethics consultant hired by tech giant"
-    setup: "Company wants to launch autonomous trading algorithm. Aisha's job: run it through IF.guard's 20-voice Guardian Council (6 Core + 3 Western + 3 Eastern Philosophers + 8 IF.sam facets)."
+    setup: "Company wants to launch autonomous trading algorithm. Aisha's job: run it through IF.guard's 20-voice Guardian Council (6 Core + 3 Western + 3 Eastern Philosophers + 8 IF.ceo facets)."
     escalation: "Council achieves 95% consensus to approve. Only the Contrarian Guardian dissents, invokes 2-week cooling-off period. Aisha pressured by CEO to override."
     twist: "Aisha overrides. Algorithm launches. Makes company $140M in first week. Then Flash Crash 2.0: Wipes out pension funds across Europe. The Contrarian was right—algorithm exploited liquidity traps."
     second_twist: "Three months later, Contrarian Guardian's identity leaked: It was the CEO's teenage daughter, participating anonymously. She warned her father. He ignored her."
@@ -235,8 +235,8 @@ stories:
           fallback: "Use IF-foundations.md if unavailable"
 
     optional_context:
-      - "agents.md section on IF.sam facets (light side vs dark side)"
-      - "Flash Crash 2010 real-world reference (for betting guidance)"
+      - "agents.md section on IF.ceo facets (light side vs dark side)"
+      - "Flash Crash 2010 real-world reference (for market impact analysis)"
       - "Autonomous trading algorithm concerns from AI ethics literature"
 
     search_queries:
@@ -279,58 +279,58 @@ stories:
       - "Regulatory hearings, scapegoating dynamic"
 
   # ========================================================================
-  # STORY 3: IF.sam - "The Sixteen Facets"
+  # STORY 3: IF.ceo - "The Sixteen Facets"
   # ========================================================================
-  story_3_if_sam:
+  story_3_if_ceo:
     title: "The Sixteen Facets"
-    component: IF.sam
+    component: IF.ceo
     archer_model: "Not the Real Thing (vanity, status symbols, ironic reversal)"
     twist_mechanism: "Moral Inversion + Identity Surprise"
     protagonist: "Jamie Winters, startup founder preparing Series B pitch"
-    setup: "Jamie's pitch coach suggests assembling an IF.sam council—8 Light Side (idealistic) + 8 Dark Side (ruthless pragmatism) to stress-test the pitch."
+    setup: "Jamie's pitch coach suggests assembling an IF.ceo council—8 Light Side (idealistic) + 8 Dark Side (ruthless pragmatism)—representing the ethical spectrum of executive decision-making."
     escalation: "Light Side tears apart pitch ('too mercenary, no mission'). Dark Side approves ('perfect, VCs will love it'). Jamie goes with Dark Side version. Raises $45M."
-    twist: "Two years later, company implodes in scandal (user data monetization). Investors sue. Jamie's deposition reveals the IF.sam stress test. Prosecutor asks: 'So you KNEW this was unethical?'"
-    second_twist: "Real Sam Altman hears about case. Sends Jamie a handwritten note: 'You misunderstood the exercise. The point was to integrate all 16, not pick one team.'"
+    twist: "Two years later, company implodes in scandal (user data monetization). Investors sue. Jamie's deposition reveals the IF.ceo stress test. Prosecutor asks: 'So you KNEW this was unethical?'"
+    second_twist: "An experienced mentor hears about case. Sends Jamie a handwritten note: 'You misunderstood the exercise. The point was to integrate all 16, not pick one team.'"
     closing_punch: "Jamie frames the note in his prison cell. 'Turns out I'd been playing checkers with a chess set.'"
 
     required_context:
       redis_keys:
-        - key: "context:file:claude.md:IF.sam-section"
+        - key: "context:file:agents.md:IF.ceo-section"
           token_weight: 800
-          description: "IF.sam 16-facet definition, light/dark side separation"
-          extract_lines: "See CLAUDE.md section on IF.sam"
+          description: "IF.ceo 16-facet definition, light/dark side separation"
+          extract_lines: "See agents.md section on IF.ceo"
 
-        - key: "context:doc:sam-altman-facets"
+        - key: "context:doc:ceo-executive-facets"
           token_weight: 2000
-          description: "16 facets of Sam Altman persona"
+          description: "16 facets of CEO/executive persona"
 
       local_files:
         - path: "/home/setup/infrafabric/IF-vision.md"
           extract_lines: "200-400"
           token_weight: 1500
-          purpose: "IF.sam framework, 8 light + 8 dark facets, integration principle"
+          purpose: "IF.ceo framework, 8 light + 8 dark facets, integration principle"
 
         - path: "/home/setup/infrafabric/agents.md"
-          extract_lines: "97-104"
+          extract_lines: "95-105"
           token_weight: 800
-          purpose: "IF.sam introduction, purpose as decision-making council"
+          purpose: "IF.ceo introduction, purpose as decision-making council"
 
       downloads_folder:
         - file: "# InfraFabric Onboarding & Quickstart v2.txt"
           priority: "OPTIONAL"
           token_weight: 1000
-          description: "IF.sam framework explained for onboarding"
+          description: "IF.ceo framework explained for onboarding"
 
     optional_context:
-      - "Sam Altman interviews, OpenAI history (context for persona authenticity)"
+      - "Executive biographies, corporate history (context for persona authenticity)"
       - "Venture capital pitch ethics discussions"
       - "Data monetization scandals (Cambridge Analytica parallel)"
       - "Tech founder prison sentences (Elizabeth Holmes, Sam Bankman-Fried references)"
 
     search_queries:
       primary:
-        - pattern: "IF.sam"
-          files: "agents.md, IF-vision.md, CLAUDE.md"
+        - pattern: "IF.ceo"
+          files: "agents.md, IF-vision.md"
 
         - pattern: "Light Side.*Dark Side"
           files: "agents.md, IF-vision.md"
@@ -349,27 +349,27 @@ stories:
         lesson: "User data monetization without consent destroys company, investor confidence"
         story_relevance: "Jamie's company implodes in identical scandal"
 
-      - incident: "Sam Altman's actual public positions on AI ethics"
-        reference: "OpenAI announcements, interviews"
-        lesson: "Real Sam Altman advocates for integration of competing values, not picking sides"
-        story_relevance: "Real Sam sends note: 'integrate all 16, not pick one team'"
+      - incident: "Executive thought leaders on ethical integration"
+        reference: "Business ethics literature, case studies"
+        lesson: "Experienced executives advocate for integration of competing values, not picking sides"
+        story_relevance: "Mentor sends note: 'integrate all 16, not pick one team'"
 
     story_structure_checklist:
-      opening_hook: "Jamie learns about IF.sam 16-facet stress-testing framework"
+      opening_hook: "Jamie learns about IF.ceo 16-facet stress-testing framework"
       protagonist_flaw: "Ambitious, chooses 'winning' Dark Side advice over ethical balance"
       setup_stakes: "Series B pitch = company survival, $45M upside"
       escalation_tension: "Light Side warns against; Dark Side guarantees VC approval; Jamie chooses Dark Side"
       twist_revelation: "Company scandal reveals Jamie KNEW about ethical concerns via stress test"
-      second_twist: "Real Sam Altman's note: you were supposed to integrate, not choose sides"
+      second_twist: "Experienced mentor's note: you were supposed to integrate, not choose sides"
       closing_line_impact: "Prison cell, chess metaphor for moral complexity"
 
     contemporary_elements:
       - "Series B venture capital pitch (YC/London ecosystem, 2025 context)"
-      - "Sam Altman as cultural touchstone (post-ChatGPT celebrity)"
+      - "CEO/executive as cultural touchstone (business leadership)"
       - "User data monetization scandals (Cambridge Analytica + 2025 context)"
       - "LLM roleplay as decision-making tool (meta-commentary on AI systems)"
       - "Tech founder prison sentence (Theranos/FTX era precedent)"
-      - "Handwritten note from real person (authenticity contrast with AI)"
+      - "Handwritten note from mentor (authenticity contrast with AI)"
 
   # ========================================================================
   # STORY 4: IF.memory - "The Two-Week Window"

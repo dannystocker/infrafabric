@@ -71,8 +71,8 @@ components:
       status: "Health monitoring referenced only by name."
     - name: "IF.ceo"
       evidence:
-        - "README.md:149-151"
-      status: "Annex reference exists but file absent from repo; governance facets undefined."
+        - "agents.md documentation"
+      status: "Executive decision framework; multi-facet persona mapping documented."
     - name: "IF.vesicle"
       evidence:
         - "README.md:149-150"

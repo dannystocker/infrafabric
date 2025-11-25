@@ -47,7 +47,7 @@ variance: 0.25 (low variance = high agreement)
 ```
 IF.guard: ✅ Implemented (3/3 agree, 73% complete)
 IF.citate: ✅ Implemented (3/3 agree, 58% complete)
-IF.sam: 🟡 Partial (3/3 agree - has design, no code)
+IF.ceo: 🟡 Partial (3/3 agree - has design, no code)
 IF.swarm: ❌ Vaporware (2/3 agree - mentioned but no spec)
 ```
 
@@ -55,7 +55,7 @@ IF.swarm: ❌ Vaporware (2/3 agree - mentioned but no spec)
 ```
 P0: API keys exposed (3/3 evaluators - 100% consensus) - 1 hour fix
 P0: No authentication (3/3 evaluators - 100% consensus) - 3-5 days
-P1: IF.sam not implemented (3/3 evaluators - 100% consensus) - 1-2 weeks
+P1: IF.ceo not implemented (3/3 evaluators - 100% consensus) - 1-2 weeks
 ```
 
 ### 4. Buyer Persona Fit
@@ -159,7 +159,7 @@ Based on consensus evaluation from Codex, Gemini, and Claude (2025-11-14):
 2. No authentication system (3-5 days)
 
 **IF.* Components to implement:**
-1. IF.sam (design exists, no code - 1-2 weeks)
+1. IF.ceo (design exists, no code - 1-2 weeks)
 2. [...]
 
 Please implement fixes in priority order, starting with P0s.

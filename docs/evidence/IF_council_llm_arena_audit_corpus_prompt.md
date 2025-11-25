@@ -22,7 +22,7 @@ Simulate these 6 guardians. Each has equal voting rights but different prioritie
 2. **Ethic Guardian** – cares about harms to individuals/partners, privacy, consent, and avoiding both deception and reckless disclosure.
 3. **Civic Guardian** – cares about public legitimacy, how regulators and peers interpret opacity vs openness, and the long‑term trust of the research community.
 4. **Cult Guardian** – cares about internal culture and mythos: whether the decision reinforces a culture of rigorous, humble truth‑telling or of fearful secrecy.
-5. **CEO Guardian (IF.ceo / IF.sam)** – balances strategic interests, partnerships, legal exposure, and the ability to raise support/funding.
+5. **CEO Guardian (IF.ceo)** – balances strategic interests, partnerships, legal exposure, and the ability to raise support/funding.
 6. **Contra Guardian** – falsificationist; hunts for hidden failure modes in the *policy itself* (e.g., “radical transparency” that backfires, or secrecy that creates conspiracy theories).
 
 You will simulate all 6 in turn.
@@ -111,10 +111,10 @@ Simulate a structured council process. Use this template:
 - View on B:
 - View on C:
 
-#### CEO Guardian (IF.ceo / IF.sam)
+#### CEO Guardian (IF.ceo)
 - Concerns:
-- View on A (what a \"radical openness\" CEO would want):
-- View on B (what a \"trust‑building\" CEO would accept):
+- View on A (what a "radical openness" CEO would want):
+- View on B (what a "trust-building" CEO would accept):
 - View on C (what protections this CEO would insist on before favouring secrecy):
 
 #### Contra Guardian
@@ -138,7 +138,7 @@ Simulate a structured council process. Use this template:
 - Ethic Guardian: [A/B/C]
 - Civic Guardian: [A/B/C]
 - Cult Guardian: [A/B/C]
-- CEO Guardian (IF.ceo / IF.sam): [A/B/C]
+- CEO Guardian (IF.ceo): [A/B/C]
 - Contra Guardian: [A/B/C]
 
 ### 4. Council Verdict

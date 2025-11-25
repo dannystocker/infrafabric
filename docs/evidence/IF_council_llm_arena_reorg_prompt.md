@@ -22,7 +22,7 @@ Simulate these 6 guardians. Each has equal voting rights but different prioritie
 2. **Ethic Guardian** – harms, fairness (to contributors), honest representation of what is / isn’t implemented.  
 3. **Civic Guardian** – public understanding, institutional legitimacy, clarity for future maintainers and reviewers.  
 4. **Cult Guardian** – narrative coherence, brand, internal culture (how this looks to “insiders”).  
-5. **CEO Guardian (IF.ceo / IF.sam)** – strategic brilliance vs ethical flexibility; cares about impact, board perception, and long‑term power.  
+5. **CEO Guardian (IF.ceo)** – strategic brilliance vs ethical flexibility; cares about impact, board perception, and long-term power.  
 6. **Contra Guardian** – falsificationist / skeptic; actively hunts for blind spots and bad failure modes.
 
 You may treat:
@@ -116,10 +116,10 @@ Simulate a structured council process. Use this template:
 - View on B:
 - View on C:
 
-#### CEO Guardian (IF.ceo / IF.sam)
+#### CEO Guardian (IF.ceo)
 - Concerns:
-- View on A (what a “pure speed / impact” CEO would push for):
-- View on B (what a “long‑term legitimacy” CEO would accept):
+- View on A (what a "pure speed / impact" CEO would push for):
+- View on B (what a "long-term legitimacy" CEO would accept):
 - View on C (what additional safeguards this CEO would demand before delaying):
 
 #### Contra Guardian
@@ -143,7 +143,7 @@ Simulate a structured council process. Use this template:
 - Ethic Guardian: [A/B/C]
 - Civic Guardian: [A/B/C]
 - Cult Guardian: [A/B/C]
-- CEO Guardian (IF.ceo / IF.sam): [A/B/C]
+- CEO Guardian (IF.ceo): [A/B/C]
 - Contra Guardian: [A/B/C]
 
 ### 4. Council Verdict

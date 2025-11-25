@@ -133,7 +133,7 @@ IF-vision.md represents Danny's complete vision after deep collaboration with Cl
 The complete specification of the 20-voice decision-making structure:
 - **6 Core Guardians** (Technical, Civic, Ethical, Cultural, Contrarian, Meta)
 - **4 Specialist Guardians** (Security, Accessibility, Economic, Legal)
-- **8 IF.sam Facets** (Sam Altman ethical spectrum)
+- **8 IF.ceo Facets** (executive ethical spectrum)
 - **Decision matrices** (context-adaptive weighting)
 - **Voting rules** (>95% approval → cooling-off, veto mechanisms)
 

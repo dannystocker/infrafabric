@@ -79,8 +79,8 @@ technical_implementation:
       - name: "IF.swarm"
         description: "Multi-agent coordination fabric mentioned in Dossier and papers but without a concrete specification or code in this repo."
         reason: "Appears only in conceptual text; no API, schema, or prototype present."
-      - name: "IF.sam"
-        description: "Scenario-aware mediator referenced in design text but without an implementation or machine-readable spec."
+      - name: "IF.ceo"
+        description: "Executive decision framework referenced in design text but without an implementation or machine-readable spec."
         reason: "Only appears as a named concept; not backed by code here."
   dependencies:
     - name: "PyYAML"

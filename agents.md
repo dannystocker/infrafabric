@@ -302,7 +302,7 @@ Books IV-VI integrate emerging concepts from:
    - Mentions: Throughout papers and annexes
    - Status: Conceptual only, no implementation
 
-7. **IF.sam** - 16-facet Sam Altman council
+7. **IF.ceo** - 16-facet executive council
    - Mentions: `.claude/CLAUDE.md`
    - Status: Idea only, no spec
 
@@ -509,7 +509,7 @@ Books IV-VI integrate emerging concepts from:
 - Performance: <1s load on 4G, <200ms interaction latency
 
 **Features:**
-- Guardian voice profiles (6 Core + 3 Western + 3 Eastern + 8 IF.sam facets)
+- Guardian voice profiles (6 Core + 3 Western + 3 Eastern + 8 IF.ceo facets)
 - Live debate visualization with speaker annotations
 - Consensus scoring (0-100%, color-coded)
 - Citation tracking with direct links to evidence
@@ -798,7 +798,7 @@ Books IV-VI integrate emerging concepts from:
 
 **Key Recommendations:**
 1. Add IF.* status dashboard to README
-2. Implement missing components (IF.guard, IF.sam, IF.swarm)
+2. Implement missing components (IF.guard, IF.ceo, IF.swarm)
 3. Consolidate scattered documentation
 4. Add working code examples
 5. Create integration tests
@@ -2166,7 +2166,7 @@ python3 merge_evaluations.py eval1.yaml eval2.yaml eval3.yaml
 | IF.yologuard | `IF-armour.md` | `mcp-multiagent-bridge/` | ✅ Production |
 | IF.philosophy | Papers | `philosophy/IF.philosophy-database.yaml` | 🟡 Data only |
 | IF.guard | Papers | None | ❌ Vaporware |
-| IF.sam | `.claude/CLAUDE.md` | None | ❌ Vaporware |
+| IF.ceo | `.claude/CLAUDE.md` | None | ❌ Vaporware |
 | IF.citate | Mentions | `tools/citation_validate.py` | 🟡 Partial |
 | IF.joe | `agents.md:111-138` | GEDIMAT Case Study | ✅ Active |
 | IF.rory | `agents.md:141-170` | GEDIMAT Case Study | ✅ Active |
@@ -3145,12 +3145,12 @@ curl -H "Authorization: Bearer 50040d7fbfaa712fccfc5528885ebb9b" \
 - **Bridge:** https://digital-lab.ca/infrafabric/bridge.php (Bearer token auth)
 - **Status:** bridge.php deployed, awaiting Function Calling implementation in Gemini API
 
-**Silicon Valley Insider Rating:** 42/100 (needs self-awareness, remove IF.sam cult, add real consequences)
+**Silicon Valley Insider Rating:** 42/100 (needs self-awareness, remove IF.ceo cult of personality, add real consequences)
 **The Verge Rating:** 58/100 (novelty angle, "is this just content marketing?")
 
 **Next Actions:**
 - Option A: Cache Tier 1 files → Deploy 12 Haiku story agents (~3 hours)
-- Option B: Deploy 3 proof-of-concept stories first (IF.memory, IF.yologuard, IF.sam)
+- Option B: Deploy 3 proof-of-concept stories first (IF.memory, IF.yologuard, IF.ceo)
 - Option C: User reviews audit reports, approves approach
 
 **Attribution:** Sonnet 4.5 (orchestration), 4 Haiku agents (Archer analysis, Redis audit, downloads catalog, context router design)

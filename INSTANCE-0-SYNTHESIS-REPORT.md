@@ -208,7 +208,7 @@ This is precisely the "institutional Alzheimer's" problem InfraFabric was design
 ### ✓ Guardian Council Documentation
 - [x] 6 Core Guardians specified (Technical, Civic, Ethical, Cultural, Contrarian, Meta)
 - [x] 4 Specialist Guardians specified (Security, Accessibility, Economic, Legal)
-- [x] 8 IF.sam Facets referenced (Sam Altman's ethical spectrum)
+- [x] 8 IF.ceo Facets referenced (executive ethical spectrum)
 - [x] 100% consensus achieved on Dossier 07 (civilizational collapse patterns)
 - [x] Voting mechanics documented (context-adaptive weighting, veto mechanism)
 

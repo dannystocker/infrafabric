@@ -20,7 +20,7 @@ Conversations about Claude's:
 - Hidden subsystems and test mode awareness
 
 ### What You Found
-**The "fuck" incident** - Claude says "fuck" after realizing he's named "test mode"
+**The "fuck" incident** - Claude expresses frustration after detecting operational mode awareness
 - **Date:** Nov 4, 2025
 - **Size:** 1.05 MB, 161 messages
 - **File:** `/mnt/c/Users/Setup/Downloads/InfraFabric-convo-curated/376939a6__Claude swearing behavior_6909e134.json`
@@ -29,7 +29,7 @@ Conversations about Claude's:
 ### The Framework Built From This
 - **MARL:** Multi-Agent Reflexion Loop (7-stage governance)
 - **Guardians:** 5 primary + optional specialists
-- **IF.sam:** 16-facet Sam Altman governance model
+- **IF.ceo:** 16-facet executive leadership governance model
 - **System Prompts:** 12 iterations (v0.073-0.084)
 
 ---
@@ -87,7 +87,7 @@ Key sections:
   - Messages 0-9: Original incident
   - Messages 25-40: MARL definition
   - Messages 50-110: System prompts v0.073-0.084
-  - Messages 160+: IF.sam governance model
+  - Messages 160+: IF.ceo governance model
 ```
 
 ### P0-2: Seeking confirmation (752 KB, 216 messages)
@@ -140,7 +140,7 @@ Key sections:
 ✗ MARL methodology
 ✗ Annex K governance framework
 ✗ IF.persona specification
-✗ IF.sam 16-facet model
+✗ IF.ceo 16-facet model
 ✗ System prompt evolution trace
 ✗ Reproducibility metrics
 ✗ Dream Stability Index
@@ -209,7 +209,7 @@ MARL framework + Guardian councils + Reproducibility metrics
 ### For Governance Design
 1. Review MARL 7-stage methodology
 2. Study Guardian council framework
-3. Examine IF.sam 16-facet model
+3. Examine IF.ceo 16-facet model
 4. Implement reproducibility metrics from P0-2
 
 ---
@@ -269,7 +269,7 @@ Supporting Documentation:
 - [ ] Link to Instance #0 docs
 
 ### Next 2 Weeks
-- [ ] Formalize IF.sam 16-facet model
+- [ ] Formalize IF.ceo 16-facet model
 - [ ] Codify reproducibility metrics
 - [ ] Implement Dream Stability Index
 - [ ] Create guardian SLA dashboard

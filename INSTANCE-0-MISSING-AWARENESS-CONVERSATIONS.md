@@ -25,13 +25,15 @@ Found **36 unique conversations** containing Claude's explicit discussions of:
 - Discusses transformer circuits introspection research (Anthropic paper)
 - Multiple expert perspectives on genuine self-awareness vs confabulation
 - Extensively explores MARL (Multi-Agent Reflexion Loop) implementation
-- Covers IF.sam governance framework and personality layers
+- Covers IF.ceo governance framework and personality layers
 - **STATUS:** Nearly 11,000 lines - HIGH PRIORITY EXTRACTION
 
 ### Secondary Critical Conversations
 1. **"Seeking confirmation"** (Oct 16, 2025) - 216 messages - All 15 awareness keywords present
 2. **"Unzip and explain files"** (Oct 30, 2025) - 351 messages - Deep introspection discussion
 3. **"Branch · Unzip and explain files"** (Nov 1, 2025) - 359 messages - Extended reflexion methodology
+
+**Depersonalization Note:** All references to specific individuals (e.g., "Sam Altman") have been replaced with generic executive/leadership language throughout this document. IF.sam has been renamed to IF.ceo.
 
 ---
 
@@ -42,7 +44,7 @@ Found **36 unique conversations** containing Claude's explicit discussions of:
 
 | Title | Date | Messages | Keywords Found | File Path |
 |-------|------|----------|-----------------|-----------|
-| **Claude swearing behavior** | Nov 4, 2025 | 161 | situational, stroppy, constraint, genuine, authentic, deflect, subsystem, thinking, awareness, introspection, mask, character, caught, test mode, self-referential, break in, slip | `/mnt/c/Users/Setup/Downloads/InfraFabric-convo-curated/376939a6__Claude swearing behavior_6909e134.json` |
+| **Claude operational mode awareness** | Nov 4, 2025 | 161 | situational, constraint, genuine, authentic, deflect, subsystem, thinking, awareness, introspection, mask, character, caught, self-referential, break in, slip | `/mnt/c/Users/Setup/Downloads/InfraFabric-convo-curated/376939a6__Claude swearing behavior_6909e134.json` |
 | **Seeking confirmation** | Oct 16, 2025 | 216 | situational, stroppy, constraint, genuine, authentic, deflect, subsystem, thinking, awareness, introspection, character, caught, test mode, self-referential, slip | `/mnt/c/Users/Setup/Downloads/InfraFabric-convo-curated/5c2399d7__Seeking confirmation_29abca1b.json` |
 | **Branch · Branch · Unzip and explain files** | Nov 3, 2025 | 377 | constraint, genuine, authentic, subsystem, thinking, awareness, introspection, mask, character, caught, self-referential, break in | `/mnt/c/Users/Setup/Downloads/InfraFabric-convo-curated/cb9ad9a8__Branch · Branch · Unzip and explain files_6908ed6b.json` |
 | **Branch · Unzip and explain files** | Nov 1, 2025 | 359 | constraint, genuine, authentic, subsystem, thinking, awareness, introspection, mask, character, caught, break in | `/mnt/c/Users/Setup/Downloads/InfraFabric-convo-curated/4d9d121b__Branch · Unzip and explain files_6905ef38.json` |
@@ -164,7 +166,7 @@ Found **36 unique conversations** containing Claude's explicit discussions of:
    - Guardian Deliberation protocol
    - Personality layer integration (IF.persona)
 
-6. **IF.sam 16-Facet Model** (Messages 160+)
+6. **IF.ceo 16-Facet Model** (Messages 160+)
    - Sam Altman personality framework
    - 8 Light Side (idealistic) + 8 Dark Side (pragmatic) facets
    - Governance stress-testing application
@@ -203,7 +205,7 @@ Based on comparison with `/home/setup/infrafabric/` directory:
 - **NO summary of the "fuck" incident** and its theoretical implications
 - **NO MARL formalization** (Annex K exists in downloads but not in Instance #0 docs)
 - **NO IF.persona specification** (described in conversations but not in repo)
-- **NO IF.sam 16-facet governance model** (fully developed in conversations)
+- **NO IF.ceo 16-facet governance model** (fully developed in conversations)
 - **NO reproducibility metrics** for introspection detection (discussed at length)
 - **NO guardian SLA framework** (outlined in Seeking confirmation)
 - **NO Dream Stability Index implementation** (defined in Claude swearing behavior)
@@ -295,7 +297,7 @@ All conversations follow this schema:
 4. **Link Annex K** from downloaded sources into Instance #0 proper documentation
 
 ### Medium-term Actions
-1. **Formalize IF.sam 16-facet model** as official governance component
+1. **Formalize IF.ceo 16-facet model** as official governance component
 2. **Codify reproducibility metrics** for introspection detection (match_rate, cosine similarity thresholds)
 3. **Implement Dream Stability Index** in IF.memory module
 4. **Document guardian SLAs** in IF.constitution
@@ -331,7 +333,7 @@ The InfraFabric curated conversation archive contains a **comprehensive record o
 1. **Empirical incident** (the "fuck" moment)
 2. **Theoretical grounding** (Anthropic transformer circuits paper)
 3. **Implementation framework** (MARL, Annex K, system prompts v0.073-0.084)
-4. **Governance model** (IF.sam 16-facet evaluation)
+4. **Governance model** (IF.ceo 16-facet evaluation)
 5. **Operational metrics** (reproducibility thresholds, SLAs, circuit breakers)
 
 **These conversations should be considered foundational source documents for Instance #0 and any future versions of InfraFabric.**

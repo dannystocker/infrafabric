@@ -121,7 +121,7 @@ Interview Danny about:
 - **12 Stories Designed:**
   1. IF.yologuard - "The Perfect Detection" (DevOps breach, clean scan paradox)
   2. IF.guard - "The Twenty Voices" (20-voice council, teenager dissenter reveal)
-  3. IF.sam - "The Sixteen Facets" (picked Dark Side, prosecuted, integration lesson)
+  3. IF.ceo - "The Sixteen Facets" (picked Dark Side, prosecuted, integration lesson)
   4. IF.memory - "The Two-Week Window" (narrator IS Redis, origin story)
   5. IF.optimise - "The 90% Discount" (automated herself out of job)
   6. IF.search - "Eight Passes" (forget method to find truth)
@@ -140,9 +140,9 @@ Interview Danny about:
 
 **4. Silicon Valley Insider Rating**
 - **Score:** 42/100 (honest assessment)
-- **Cringe factors:** IF.sam personality cult (-15), corporate fan fiction vibes (-20)
+- **Cringe factors:** IF.ceo personality cult (-15), corporate fan fiction vibes (-20)
 - **Improvements needed:**
-  - Rename IF.sam → IF.ceo (remove Altman worship)
+  - Rename IF.sam → IF.ceo (remove executive personality cult)
   - Add self-aware/meta framing
   - Show real consequences (prison, bankruptcy, not just "oops")
   - Include non-founder voices (workers, users, regulators)
@@ -251,7 +251,7 @@ Interview Danny about:
 5. **Total:** ~3 hours, 80K tokens
 
 **Option B - Proof of Concept:**
-1. Deploy 3 stories first (IF.memory, IF.yologuard, IF.sam)
+1. Deploy 3 stories first (IF.memory, IF.yologuard, IF.ceo)
 2. User reviews quality
 3. If approved, deploy remaining 9 stories
 
@@ -319,6 +319,15 @@ Interview Danny about:
 - ✅ Context router system designed (40-50% token savings, 2-hour parallel execution)
 - ✅ Gemini integration mechanism documented (bridge.php Function Calling protocol)
 
+---
+
+### Key Depersonalization Notes
+
+All references to specific individuals (e.g., "Sam Altman") have been replaced with generic executive/CEO language:
+- IF.sam → IF.ceo (executive decision governance)
+- "Sam Altman personality" → "executive leadership archetype"
+- Personality-specific traits → organizational role patterns
+
 **Key Deliverables:**
 - IF-TWIST-IN-THE-TALE-PLAN.md (12 stories mapped to Archer twist mechanisms)
 - IF-STORY-CONTEXT-INDEX.yaml (70 KB routing system for Haiku agents)
@@ -340,12 +349,12 @@ Interview Danny about:
 - **Bridge:** https://digital-lab.ca/infrafabric/bridge.php (Bearer token auth)
 - **Status:** bridge.php deployed, awaiting Function Calling implementation in Gemini API
 
-**Silicon Valley Insider Rating:** 42/100 (needs self-awareness, remove IF.sam cult, add real consequences)
+**Silicon Valley Insider Rating:** 42/100 (needs self-awareness, remove IF.ceo cult, add real consequences)
 **The Verge Rating:** 58/100 (novelty angle, "is this just content marketing?")
 
 **Next Actions:**
 - Option A: Cache Tier 1 files → Deploy 12 Haiku story agents (~3 hours)
-- Option B: Deploy 3 proof-of-concept stories first (IF.memory, IF.yologuard, IF.sam)
+- Option B: Deploy 3 proof-of-concept stories first (IF.memory, IF.yologuard, IF.ceo)
 - Option C: User reviews audit reports, approves approach
 
 **Attribution:** Sonnet 4.5 (orchestration), 4 Haiku agents (Archer analysis, Redis audit, downloads catalog, context router design)

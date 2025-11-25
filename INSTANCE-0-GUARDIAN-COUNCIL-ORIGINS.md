@@ -93,35 +93,35 @@ The IF.philosophy-database.yaml (v1.0) extended the Council from 6 voices to **2
 2. Lao Tzu (c. 6th century BCE) - Daoism, Humility
 3. Confucius (551-479 BCE) - Practical Benefit, Social Harmony
 
-**IF.sam Facets (8):**
+**IF.ceo Facets (8):**
 
-The Council integrated **8 ethical facets of Sam Altman's character spectrum:**
+The Council integrated **8 ethical facets of the executive character spectrum:**
 
 **Light Side (Idealistic):**
-1. IF.sam Light 1: Idealistic Altruism - "Open research democratizes AI knowledge"
-2. IF.sam Light 2: Ethical AI Advancement - "Build safe coordination to prevent catastrophic failures"
-3. IF.sam Light 3: Inclusive Coordination - "Enable substrate diversity to prevent AI monoculture"
-4. IF.sam Light 4: Transparent Governance - "IF.guard 20-voice council with public deliberation"
+1. IF.ceo Light 1: Idealistic Altruism - "Open research democratizes AI knowledge"
+2. IF.ceo Light 2: Ethical AI Advancement - "Build safe coordination to prevent catastrophic failures"
+3. IF.ceo Light 3: Inclusive Coordination - "Enable substrate diversity to prevent AI monoculture"
+4. IF.ceo Light 4: Transparent Governance - "IF.guard 20-voice council with public deliberation"
 
 **Dark Side (Pragmatic/Ruthless):**
-5. IF.sam Dark 1: Ruthless Pragmatism - "MARL reduces dependency on large teams—strategic hiring advantage"
-6. IF.sam Dark 2: Strategic Ambiguity - "87-90% token reduction creates cost moat vs competitors"
-7. IF.sam Dark 3: Velocity Weaponization - "6.9× velocity improvement outpaces competition"
-8. IF.sam Dark 4: Information Asymmetry - "Warrant canaries protect while maintaining compliance—legal judo"
+5. IF.ceo Dark 1: Ruthless Pragmatism - "MARL reduces dependency on large teams—strategic hiring advantage"
+6. IF.ceo Dark 2: Strategic Ambiguity - "87-90% token reduction creates cost moat vs competitors"
+7. IF.ceo Dark 3: Velocity Weaponization - "6.9× velocity improvement outpaces competition"
+8. IF.ceo Dark 4: Information Asymmetry - "Warrant canaries protect while maintaining compliance—legal judo"
 
 **Synthesis:**
 > "Dual motivations create resilience—benefits align across ethical frameworks. System serves both idealistic (open research) and pragmatic (competitive advantage) goals simultaneously."
 
-### Why Sam Altman?
-Sam Altman embodies the **paradox of AI leadership**: profound commitment to safety + ruthless competitive advantage. The IF.sam facets operationalize this tension:
+### Why This Executive Framework?
+This framework embodies the **paradox of organizational leadership**: profound commitment to safety + ruthless competitive advantage. The IF.ceo facets operationalize this tension:
 - His idealism prevents exploitation (Light side)
 - His pragmatism enables scale and sustainability (Dark side)
 - Neither dominates; both are heard
 
-### When Did IF.sam Integration Happen?
+### When Did IF.ceo Integration Happen?
 **Evidence indicates: Between October 31 - November 6, 2025**
 
-The Guardian Council Charter (10/31) mentions a 6-voice core. By November 6, the IF.philosophy-database.yaml includes the full 8-facet IF.sam model. This suggests IF.sam was integrated during the "rapid expansion week" of early November.
+The Guardian Council Charter (10/31) mentions a 6-voice core. By November 6, the IF.philosophy-database.yaml includes the full 8-facet IF.ceo model. This suggests IF.ceo was integrated during the "rapid expansion week" of early November.
 
 ---
 
@@ -254,8 +254,8 @@ Phase Recognition → Council Deliberation → Weighted Synthesis → Output
 - **Philosophical mapping** of all IF components
 - **Cross-tradition synthesis** validated by production use cases
 
-### Phase 3: Sam Altman Integration (November 6, 2025)
-- **8 IF.sam facets** added (Light + Dark sides)
+### Phase 3: Executive Framework Integration (November 6, 2025)
+- **8 IF.ceo facets** added (Light + Dark sides)
 - **Ethical paradox operationalized**: idealism + pragmatism both heard
 - **IF.guard-POC** system prompt published (5-voice version evolved to 20-voice)
 - **Council Architecture** formalized with context-adaptive weighting
@@ -298,11 +298,11 @@ Phase Recognition → Council Deliberation → Weighted Synthesis → Output
 **Eastern Philosophers (3):**
 - Buddha, Lao Tzu, Confucius
 
-**IF.sam Facets (8):**
+**IF.ceo Facets (8):**
 - 4 Light (idealistic)
 - 4 Dark (pragmatic)
 
-**Total: 20 Voices (or 21 including Joe Coulombe as of Nov 14)**
+**Total: 20 Voices (or 21 including Joe Coulombe retail philosophy as of Nov 14)**
 
 ### Context-Adaptive Weighting
 
@@ -416,10 +416,10 @@ Every philosophical claim is backed by **measurable outcomes**:
 ### Q3: What was the first decision they voted on?
 **Answer:** Persona Agents debate (October 31, 2025) - Conditional Approval with 8 mandatory safeguards.
 
-### Q4: How did IF.sam (Sam Altman's 8 facets) get integrated?
+### Q4: How did IF.ceo (executive framework) get integrated?
 **Answer:**
 - **Timing:** Between October 31 - November 6, 2025
-- **Rationale:** Sam Altman embodies the paradox of AI leadership—idealistic safety advocate + ruthless competitive strategist
+- **Rationale:** Executive leadership embodies the paradox of organizational tension—idealistic vision advocate + ruthless competitive strategist
 - **Implementation:** 4 Light Side facets (idealism) + 4 Dark Side facets (pragmatism) operationalize both perspectives as equal Council voices
 - **Result:** Neither idealism nor pragmatism dominates; system gains resilience from ethical tension
 

@@ -232,7 +232,7 @@ IF's philosophical foundation repeatedly emphasizes:
 - Collective enforcement mechanisms
 - Multiple independent stores (immutable, queryable logs)
 
-This directly relates to the later **IF.sam framework** and **Council decision protocols** documented in agents.md.
+This directly relates to the later **IF.ceo framework** and **Council decision protocols** documented in agents.md.
 
 ### Finding 5: Alzheimer's Memory Metaphor
 **Status:** CONFIRMED (7 direct mentions)
