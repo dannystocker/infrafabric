@@ -1,0 +1,166 @@
+{
+  "davinci_resolve_studio_api": {
+    "metadata": {
+      "product": "DaVinci Resolve Studio (post-production version only)",
+      "api_versions": ["19.1+", "20.2.2 (latest documented)"],
+      "last_updated": "2025-10-07"
+    },
+    "scripting_languages": {
+      "supported_languages": [
+        {
+          "name": "Python",
+          "versions": ["2.7 (64-bit legacy)", "3.6+"],
+          "recommended": "Python 3.6+"
+        },
+        {
+          "name": "Lua",
+          "versions": ["5.1"],
+          "status": "legacy support"
+        }
+      ]
+    },
+    "api_object_hierarchy": {
+      "root_object": "Resolve - obtained via scriptapp('Resolve')",
+      "primary_methods": [
+        "GetProjectManager()",
+        "GetMediaStorage()",
+        "GetFusionCompByID(int)",
+        "OpenPage(string pageName)",
+        "GetCurrentPage()"
+      ]
+    },
+    "core_classes": {
+      "ProjectManager": {
+        "description": "Project creation, loading, and folder operations",
+        "key_methods": [
+          "CreateProject(string projectName)",
+          "LoadProject(string projectPath)",
+          "GetProjectList()",
+          "CreateFolder(string folderName)",
+          "DeleteProject(string projectName)",
+          "SaveProject()"
+        ]
+      },
+      "Project": {
+        "description": "Timeline and rendering control at project level",
+        "key_methods": [
+          "GetMediaPool()",
+          "GetTimeline(int index)",
+          "GetCurrentTimeline()",
+          "GetTimelineCount()",
+          "CreateTimeline(string timelineName)",
+          "DeleteTimeline(Timeline timeline)",
+          "SetTimeline(Timeline timeline)",
+          "GetRenderJobList()",
+          "GetRenderPresetList()",
+          "StartRendering(int jobIndex)",
+          "StartRenderingAll()",
+          "StopRendering()",
+          "IsRenderingInProgress()",
+          "QueueRender(Timeline timeline, string renderPresetName)"
+        ]
+      },
+      "MediaPool": {
+        "description": "Clip and folder management, timeline creation",
+        "key_methods": [
+          "GetRootFolder()",
+          "CreateFolder(string folderName)",
+          "ImportMedia(string|[string] paths)",
+          "CreateTimeline(string timelineName)",
+          "AppendToTimeline([MediaPoolItem] items)",
+          "GetSelectedItems()",
+          "DeleteClips([MediaPoolItem] items)"
+        ]
+      },
+      "Timeline": {
+        "description": "Sequence container with tracks and timing",
+        "key_methods": [
+          "GetTrackCount(string trackType)",
+          "AddTrack(string trackType, string trackSubType)",
+          "DeleteTrack(string trackType, int index)",
+          "GetItemListInTrack(string trackType, int trackIndex)",
+          "AddItem(MediaPoolItem clip, int trackIndex, float timelinePos)",
+          "GetName() / SetName(string name)",
+          "GetDuration()",
+          "GetStartFrame()",
+          "SetZoom(float zoomLevel)",
+          "CreateCompoundClip([TimelineItem] items, string clipName)"
+        ]
+      },
+      "TimelineItem": {
+        "description": "Individual clip instance on timeline with effects and properties",
+        "key_methods": [
+          "SetProperty(string propertyKey, string propertyValue)",
+          "GetProperty(string propertyKey)",
+          "GetStart() / GetEnd() / GetDuration()",
+          "SetStart(int startFrame) / SetEnd(int endFrame)",
+          "GetLeftOffset() / GetRightOffset()",
+          "SetLeftOffset(int frames) / SetRightOffset(int frames)",
+          "GetFusionCompCount()",
+          "GetFusionCompByIndex(int index)",
+          "AddFusionComp()",
+          "SetFusionCompColor(int fusionCompIndex, string colorValue)",
+          "SetLUT(int nodeIndex, string lutPath)",
+          "SetCDL(int nodeIndex, slope_r, slope_g, slope_b, offset_r, offset_g, offset_b, power_r, power_g, power_b, saturation)"
+        ]
+      }
+    },
+    "timeline_project_manipulation": {
+      "project_operations": [
+        "CreateProject(projectName)",
+        "LoadProject(projectPath)",
+        "SaveProject()",
+        "CreateTimeline(timelineName)",
+        "SetTimeline(timelineObject)"
+      ],
+      "timeline_track_operations": [
+        "AddTrack(trackType, trackSubType)",
+        "DeleteTrack(trackType, trackIndex)",
+        "GetTrackItems(trackType, trackIndex)"
+      ],
+      "clip_timeline_operations": [
+        "AppendToTimeline(clipList)",
+        "AddItem(mediaPoolItem, trackIndex, framePosition)",
+        "SetStart/SetEnd(frameNumber)",
+        "SetLeftOffset/SetRightOffset(framesToTrim)",
+        "CreateCompoundClip(itemList, compName)"
+      ]
+    },
+    "clip_effect_parameter_control": {
+      "clip_properties": [
+        "Proxy Generated",
+        "ProxyMediaState",
+        "In / Out / Duration",
+        "Timecode, Format, FPS, Resolution"
+      ],
+      "color_grading_parameters": {
+        "lut_application": "SetLUT(nodeIndex, lutFilePath) - 1-based indexing",
+        "cdl_application": "SetCDL(nodeIndex, slope_r/g/b, offset_r/g/b, power_r/g/b, saturation)",
+        "grade_import_export": ["ImportGradesFromFile(filePath)", "ExportGradesToFile(filePath, format)"]
+      }
+    },
+    "export_delivery_automation": {
+      "render_job_management": [
+        "QueueRender(timeline, renderPresetName)",
+        "GetRenderJobList()",
+        "GetRenderPresetList()",
+        "StartRendering(jobIndex)",
+        "StartRenderingAll()",
+        "StopRendering()",
+        "IsRenderingInProgress()"
+      ]
+    },
+    "known_limitations_and_constraints": [
+      "Speed/direction changes not modifiable via API",
+      "Transcription access not available",
+      "UIManager removed in v19.1+",
+      "Limited effect parameter API access",
+      "No native event/callback system (polling required)",
+      "Cannot reorder clips on timeline"
+    ],
+    "metadata": {
+      "compilation_date": "2025-11-26",
+      "information_confidence": "High"
+    }
+  }
+}

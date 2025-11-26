@@ -1,0 +1,72 @@
+{
+  "namespace": "mcr:hardware:hyperdeck",
+  "description": "HyperDeck Playout/Ingest Redis Schema for IF.MCR Master Control",
+  "version": "1.0",
+  "generated": "2025-11-26",
+
+  "device_registry": {
+    "key_pattern": "mcr:hardware:hyperdeck:{device_id}",
+    "type": "Hash",
+    "fields": {
+      "model": "Device model (Studio, Extreme, etc)",
+      "protocol": "hyperdeck_ethernet_v1.0",
+      "port": "9993",
+      "ip_address": "Device IP address",
+      "authentication": "none"
+    }
+  },
+
+  "transport_state": {
+    "key_pattern": "mcr:hyperdeck:{device_id}:transport",
+    "type": "Hash",
+    "ttl": "10 seconds (volatile transport state)",
+    "fields": {
+      "status": "play|record|stop|standby",
+      "speed": "Playback speed (100=normal, 200=2x, etc)",
+      "timecode": "Current timecode HH:MM:SS:FF",
+      "current_clip": "Active clip index",
+      "loop_enabled": "true|false"
+    }
+  },
+
+  "timeline_clips": {
+    "key_pattern": "mcr:hyperdeck:{device_id}:timeline:clips",
+    "type": "JSON or Set",
+    "description": "Complete timeline with clip metadata"
+  },
+
+  "slot_information": {
+    "key_pattern": "mcr:hyperdeck:{device_id}:slots",
+    "type": "Hash",
+    "description": "Storage slot configuration and capacity"
+  },
+
+  "configuration_state": {
+    "key_pattern": "mcr:hyperdeck:{device_id}:config",
+    "type": "Hash",
+    "fields": {
+      "video_input": "Video input type",
+      "audio_input": "Audio input configuration",
+      "file_format": "Recording format",
+      "timecode_input": "TC input source",
+      "remote_enabled": "Remote control status"
+    }
+  },
+
+  "command_queue": {
+    "key_pattern": "mcr:hyperdeck:{device_id}:commands:queue",
+    "type": "List (FIFO)",
+    "description": "Pending transport and configuration commands"
+  },
+
+  "connection_state": {
+    "key_pattern": "mcr:hyperdeck:{device_id}:connection",
+    "type": "Hash",
+    "ttl": "30 seconds",
+    "fields": {
+      "status": "connected|disconnected|error",
+      "last_heartbeat": "Timestamp",
+      "watchdog_active": "Keepalive status"
+    }
+  }
+}

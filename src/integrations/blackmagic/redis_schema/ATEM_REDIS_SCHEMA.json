@@ -1,0 +1,138 @@
+{
+  "namespace": "mcr:hardware:atem",
+  "description": "ATEM Switchers Redis Schema for IF.MCR Master Control",
+  "version": "1.0",
+  "generated": "2025-11-26",
+
+  "device_registry": {
+    "key_pattern": "mcr:hardware:atem:{model_slug}",
+    "type": "Hash",
+    "fields": {
+      "model": "Device model name (constellation_8k, production_studio, mini_extreme)",
+      "protocol": "Primary control protocol (udp_9910)",
+      "port_control": "9910",
+      "port_telnet_ethernet": "9993",
+      "port_config": "9977",
+      "port_ftp": "21",
+      "port_rs422": "RS-422 serial",
+      "authentication": "none",
+      "max_inputs": "Maximum input count",
+      "max_outputs": "Maximum output count"
+    },
+    "example": {
+      "key": "mcr:hardware:atem:constellation_8k",
+      "fields": {
+        "model": "ATEM Constellation 8K",
+        "protocol": "udp_9910",
+        "authentication": "none",
+        "max_inputs": "40",
+        "max_outputs": "24"
+      }
+    }
+  },
+
+  "command_library": {
+    "key_pattern": "mcr:protocol:atem:{command_category}:{command_name}",
+    "type": "String or Hash",
+    "categories": {
+      "switching": ["PrgI (program input)", "PrvI (preview input)"],
+      "transitions": ["TrSS (transition style)", "FtbS (fade to black)"],
+      "audio": ["AMLv (audio monitoring level)", "AMIP (audio input preference)"],
+      "status": ["InPr (input preference)"]
+    },
+    "example_keys": [
+      {
+        "key": "mcr:protocol:atem:switching:PrgI",
+        "value": "Set program output source | UDP command PrgI with 4-byte data, channel number in bytes 2-3"
+      },
+      {
+        "key": "mcr:protocol:atem:switching:PrvI",
+        "value": "Set preview/monitor source | UDP command PrvI with variable data bytes"
+      },
+      {
+        "key": "mcr:protocol:atem:transitions:FtbS",
+        "value": "Control fade-to-black | UDP command FtbS for FTB control"
+      }
+    ]
+  },
+
+  "capability_tags": {
+    "key_pattern": "mcr:tag:atem:{capability}",
+    "type": "Set",
+    "examples": {
+      "mcr:tag:atem:video_switching": ["constellation_8k", "production_studio", "mini_extreme"],
+      "mcr:tag:atem:rs422_gvg100": ["constellation_8k", "production_studio"],
+      "mcr:tag:atem:videohub_port_9990": ["constellation_8k (fw8.6.2+)", "mini_extreme"],
+      "mcr:tag:atem:ftp_storage": ["mini_pro", "mini_pro_iso"]
+    }
+  },
+
+  "device_state": {
+    "key_pattern": "mcr:atem:{device_id}:state",
+    "type": "Hash",
+    "ttl": "No expiration (persistent)",
+    "fields": {
+      "program_input": "Current program source index",
+      "preview_input": "Current preview source index",
+      "transition_pending": "Pending transition flag",
+      "fade_to_black_active": "FTB status (true/false)",
+      "last_update": "Timestamp of last state change"
+    }
+  },
+
+  "connection_state": {
+    "key_pattern": "mcr:atem:{device_id}:connection",
+    "type": "Hash",
+    "ttl": "30 seconds (represents volatile connection state)",
+    "fields": {
+      "status": "connected|disconnected|error",
+      "ip_address": "Device IP address",
+      "session_id": "Current UDP session ID",
+      "last_heartbeat": "Timestamp of last heartbeat",
+      "client_count": "Number of active connections"
+    }
+  },
+
+  "input_output_mapping": {
+    "key_pattern": "mcr:atem:{device_id}:inputs",
+    "type": "Hash",
+    "description": "Input port labels and metadata",
+    "fields": {
+      "{index}:label": "Input port label (e.g., 0:label = Camera 1)",
+      "{index}:type": "Input connection type (SDI, HDMI, None)"
+    }
+  },
+
+  "security_metadata": {
+    "key_pattern": "mcr:atem:{device_id}:security",
+    "type": "Hash",
+    "fields": {
+      "authentication_enabled": "false (CRITICAL: No auth)",
+      "network_isolation": "Requires private/trusted network",
+      "firewall_rule": "Port 9910 UDP restricted to trusted IPs",
+      "security_notes": "NO AUTHENTICATION. Use network-level access controls."
+    }
+  },
+
+  "command_queue": {
+    "key_pattern": "mcr:atem:{device_id}:commands:queue",
+    "type": "List (FIFO)",
+    "description": "Pending commands awaiting transmission",
+    "example_entries": [
+      "{\"command\": \"PrgI\", \"channel\": 3, \"timestamp\": 1732612345}",
+      "{\"command\": \"FtbS\", \"status\": \"active\", \"timestamp\": 1732612346}"
+    ]
+  },
+
+  "metrics_and_monitoring": {
+    "key_pattern": "mcr:atem:{device_id}:metrics",
+    "type": "Hash",
+    "fields": {
+      "commands_sent": "Total commands transmitted",
+      "commands_failed": "Failed command count",
+      "uptime_seconds": "Device uptime in seconds",
+      "heartbeats_missed": "Missed heartbeat count",
+      "last_error": "Last error message and timestamp"
+    }
+  }
+}

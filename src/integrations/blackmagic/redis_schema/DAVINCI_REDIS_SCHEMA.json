@@ -1,0 +1,151 @@
+{
+  "namespace": "mcr:software:davinci",
+  "description": "DaVinci Resolve Studio Redis Schema for IF.MCR Automation",
+  "version": "1.0",
+  "generated": "2025-11-26",
+
+  "project_registry": {
+    "key_pattern": "mcr:davinci:projects",
+    "type": "Set",
+    "description": "List of accessible DaVinci Resolve projects",
+    "example_entries": ["MyProject", "ClientA_Final", "ArchiveProject"]
+  },
+
+  "project_state": {
+    "key_pattern": "mcr:davinci:{project_name}:info",
+    "type": "Hash",
+    "fields": {
+      "project_name": "Project identifier",
+      "project_path": "Full filesystem path",
+      "frame_rate": "Project frame rate (29.97, 30, 25, 24)",
+      "resolution_width": "Horizontal resolution",
+      "resolution_height": "Vertical resolution",
+      "timeline_count": "Number of timelines in project"
+    }
+  },
+
+  "timeline_management": {
+    "key_pattern": "mcr:davinci:{project_name}:timelines",
+    "type": "Set",
+    "description": "List of timelines within project",
+    "example_entries": ["MainEdit", "ColorGrade", "DeliveryVersion"]
+  },
+
+  "timeline_details": {
+    "key_pattern": "mcr:davinci:{project_name}:timeline:{timeline_name}:info",
+    "type": "Hash",
+    "fields": {
+      "timeline_name": "Timeline identifier",
+      "duration_frames": "Total timeline length in frames",
+      "track_count_video": "Number of video tracks",
+      "track_count_audio": "Number of audio tracks",
+      "start_frame": "Timeline start position",
+      "frame_rate": "Timeline frame rate"
+    }
+  },
+
+  "clip_timeline": {
+    "key_pattern": "mcr:davinci:{project_name}:timeline:{timeline_name}:clips",
+    "type": "JSON or Stream",
+    "description": "Clips on timeline with position and duration",
+    "example": {
+      "clips": [
+        {"index": 0, "name": "intro.mov", "track": 0, "start": 0, "duration": 120, "in_offset": 0, "out_offset": 0},
+        {"index": 1, "name": "main.mov", "track": 0, "start": 120, "duration": 3600}
+      ]
+    }
+  },
+
+  "color_grading_state": {
+    "key_pattern": "mcr:davinci:{project_name}:timeline:{timeline_name}:grades:{clip_index}",
+    "type": "Hash",
+    "description": "LUT and CDL color grade data per clip",
+    "fields": {
+      "lut_applied": "Path to applied LUT file",
+      "cdl_slope_r": "Red channel slope",
+      "cdl_slope_g": "Green channel slope",
+      "cdl_slope_b": "Blue channel slope",
+      "cdl_offset_r": "Red channel offset",
+      "cdl_offset_g": "Green channel offset",
+      "cdl_offset_b": "Blue channel offset",
+      "cdl_power_r": "Red channel power/gamma",
+      "cdl_power_g": "Green channel power/gamma",
+      "cdl_power_b": "Blue channel power/gamma",
+      "cdl_saturation": "Overall saturation"
+    }
+  },
+
+  "media_pool_inventory": {
+    "key_pattern": "mcr:davinci:{project_name}:media_pool",
+    "type": "Set",
+    "description": "Imported media clips available in project",
+    "example_entries": [
+      "/data/footage/camera_001.mov",
+      "/data/footage/interview_002.mov"
+    ]
+  },
+
+  "render_queue": {
+    "key_pattern": "mcr:davinci:{project_name}:render:queue",
+    "type": "List (FIFO)",
+    "description": "Queued render jobs",
+    "example_entries": [
+      "{\"timeline\": \"MainEdit\", \"preset\": \"YouTube\", \"priority\": 1}",
+      "{\"timeline\": \"MainEdit\", \"preset\": \"ProRes\", \"priority\": 2}"
+    ]
+  },
+
+  "render_status": {
+    "key_pattern": "mcr:davinci:{project_name}:render:status",
+    "type": "Hash",
+    "ttl": "60 seconds (volatile render state)",
+    "fields": {
+      "rendering_active": "true|false",
+      "current_job_index": "Index of job being rendered",
+      "current_job_progress": "Percentage complete (0-100)",
+      "total_jobs": "Total queued jobs",
+      "estimated_completion": "Estimated time remaining"
+    }
+  },
+
+  "render_presets": {
+    "key_pattern": "mcr:davinci:{project_name}:presets",
+    "type": "Set",
+    "description": "Available render preset names",
+    "example_entries": ["YouTube", "ProRes", "Client_Final", "Archive"]
+  },
+
+  "automation_jobs": {
+    "key_pattern": "mcr:davinci:{project_name}:jobs:automation",
+    "type": "List or Stream",
+    "description": "Automation job queue with Python/Lua scripts",
+    "example_entries": [
+      "{\"script\": \"grade_all_clips.py\", \"args\": {\"lut\": \"lut_file.cube\"}, \"status\": \"pending\"}",
+      "{\"script\": \"batch_export.py\", \"args\": {\"preset\": \"YouTube\"}, \"status\": \"in_progress\"}"
+    ]
+  },
+
+  "connection_state": {
+    "key_pattern": "mcr:davinci:app:connection",
+    "type": "Hash",
+    "ttl": "30 seconds",
+    "fields": {
+      "status": "running|stopped|error",
+      "process_id": "DaVinci Resolve process ID",
+      "headless_mode": "true|false",
+      "last_heartbeat": "Timestamp"
+    }
+  },
+
+  "metrics": {
+    "key_pattern": "mcr:davinci:{project_name}:metrics",
+    "type": "Hash",
+    "fields": {
+      "clips_imported": "Total media items imported",
+      "timelines_created": "Total timelines in project",
+      "renders_completed": "Total completed renders",
+      "renders_failed": "Failed render count",
+      "total_render_time": "Cumulative render duration in seconds"
+    }
+  }
+}

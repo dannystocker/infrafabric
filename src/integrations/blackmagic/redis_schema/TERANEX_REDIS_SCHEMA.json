@@ -1,0 +1,124 @@
+{
+  "namespace": "mcr:hardware:teranex",
+  "description": "Teranex Standards Converters Redis Schema for IF.MCR Master Control",
+  "version": "1.0",
+  "generated": "2025-11-26",
+
+  "device_registry": {
+    "key_pattern": "mcr:hardware:teranex:{device_id}",
+    "type": "Hash",
+    "fields": {
+      "model": "Device model (2D Processor, 3D Processor, Express, AV, Mini)",
+      "protocol": "teranex_tcp_v1.0",
+      "port_control": "9800",
+      "port_setup": "9996",
+      "ip_address": "Device IP address",
+      "conversions_available": "Total conversion paths (1089 standard)"
+    }
+  },
+
+  "input_status": {
+    "key_pattern": "mcr:teranex:{device_id}:input",
+    "type": "Hash",
+    "ttl": "5 seconds (volatile input state)",
+    "fields": {
+      "signal_presence": "true|false",
+      "video_mode": "Detected input format (e.g., 1080p60)",
+      "video_source": "SDI|HDMI|Analog",
+      "timecode_status": "locked|unlocked",
+      "pixel_format": "YUV|RGB"
+    }
+  },
+
+  "output_status": {
+    "key_pattern": "mcr:teranex:{device_id}:output",
+    "type": "Hash",
+    "fields": {
+      "video_mode": "Current output format (e.g., 720p50)",
+      "aspect_ratio": "4:3|16:9|custom",
+      "conversion_active": "true|false",
+      "conversion_type": "up|down|cross"
+    }
+  },
+
+  "conversion_matrix": {
+    "key_pattern": "mcr:teranex:{device_id}:conversions:available",
+    "type": "Set",
+    "description": "List of valid input->output conversion paths",
+    "example_entries": [
+      "525i_to_720p60",
+      "1080i_to_1080p60",
+      "720p50_to_1080p25"
+    ]
+  },
+
+  "proc_amp_controls": {
+    "key_pattern": "mcr:teranex:{device_id}:proc_amp",
+    "type": "Hash",
+    "fields": {
+      "gain": "Gain adjustment value",
+      "black_level": "Black level (setup) value",
+      "saturation": "Color saturation level",
+      "hue": "Hue adjustment",
+      "sharpness": "Sharpness enhancement level",
+      "r_component": "Red channel adjustment",
+      "b_component": "Blue channel adjustment"
+    }
+  },
+
+  "preset_storage": {
+    "key_pattern": "mcr:teranex:{device_id}:presets",
+    "type": "Hash",
+    "description": "Stored conversion and processing presets (1-6 slots)",
+    "fields": {
+      "preset_1:name": "Custom preset name",
+      "preset_1:config": "JSON-encoded preset configuration",
+      "preset_2:name": "Another preset",
+      "preset_2:config": "Configuration data"
+    }
+  },
+
+  "configuration_state": {
+    "key_pattern": "mcr:teranex:{device_id}:config",
+    "type": "Hash",
+    "fields": {
+      "latency_mode": "low|clean_switch",
+      "cadence_removal": "enabled|disabled",
+      "cadence_insertion": "enabled|disabled",
+      "ptp_enabled": "true|false",
+      "active_preset": "Currently loaded preset number"
+    }
+  },
+
+  "command_queue": {
+    "key_pattern": "mcr:teranex:{device_id}:commands:queue",
+    "type": "List (FIFO)",
+    "description": "Pending video format and control commands",
+    "example_entries": [
+      "{\"command\": \"SET VIDEO OUTPUT MODE\", \"mode\": \"1080p60\"}",
+      "{\"command\": \"SET TEST PATTERN\", \"pattern\": \"bars\"}"
+    ]
+  },
+
+  "connection_state": {
+    "key_pattern": "mcr:teranex:{device_id}:connection",
+    "type": "Hash",
+    "ttl": "30 seconds",
+    "fields": {
+      "status": "connected|disconnected|error",
+      "mdns_advertised": "Advertised via mDNS",
+      "last_discovery": "Timestamp of last mDNS discovery"
+    }
+  },
+
+  "metrics": {
+    "key_pattern": "mcr:teranex:{device_id}:metrics",
+    "type": "Hash",
+    "fields": {
+      "conversion_requests": "Total conversion requests",
+      "conversion_successful": "Successful conversions",
+      "conversion_failed": "Failed conversions",
+      "uptime_seconds": "Device uptime"
+    }
+  }
+}

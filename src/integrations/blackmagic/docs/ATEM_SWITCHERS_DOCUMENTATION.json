@@ -1,0 +1,124 @@
+{
+  "mission": "Blackmagic ATEM Switchers Infrastructure Documentation",
+  "generated": "2025-11-26",
+  "targets": [
+    "ATEM Constellation",
+    "ATEM Production Studio",
+    "ATEM Mini Extreme"
+  ],
+  "official_resources": {
+    "blackmagic_developer_portal": {
+      "url": "https://www.blackmagicdesign.com/developer",
+      "sdk_page": "https://www.blackmagicdesign.com/developer/products/atem/sdk-and-software",
+      "latest_sdk_version": "10.1.1",
+      "last_updated": "October 30, 2025"
+    }
+  },
+  "protocol_specifications": {
+    "primary_udp_control": {
+      "protocol": "UDP (reverse-engineered)",
+      "port": 9910,
+      "authentication": "NONE - No authentication required",
+      "security_note": "CRITICAL: Open without authentication. Use private trusted networks only",
+      "packet_structure": {
+        "send_packet": {
+          "flags": 1,
+          "packet_length": 2,
+          "session_id": 2,
+          "echo_data": 1,
+          "packet_id": 2,
+          "command_data": "variable"
+        }
+      },
+      "heartbeat": "Constant heartbeat required with packet iterator"
+    },
+    "atem_ethernet_protocol": {
+      "protocol": "ATEM Ethernet Protocol",
+      "port": 9993,
+      "access_method": "Telnet/TCP",
+      "authentication": "NONE"
+    },
+    "configuration_protocol": {
+      "protocol": "ATEM Configuration Protocol",
+      "port": 9977,
+      "access_method": "Telnet/TCP",
+      "authentication": "NONE"
+    },
+    "rs422_serial_protocol": {
+      "protocol": "GVG100 Editor Protocol (Serial)",
+      "interface": "RS-422",
+      "baud_rate": 38400,
+      "parity": "Odd"
+    }
+  },
+  "command_examples": {
+    "udp_protocol_commands": {
+      "program_input_change": {
+        "command": "PrgI",
+        "description": "Set program output source"
+      },
+      "preview_input_change": {
+        "command": "PrvI",
+        "description": "Set preview/monitor source"
+      },
+      "transition_style": {
+        "command": "TrSS",
+        "description": "Manage transition effects between sources"
+      },
+      "fade_to_black": {
+        "command": "FtbS",
+        "description": "Control fade-to-black functionality"
+      }
+    },
+    "input_mapping_reference": {
+      "0": "Black",
+      "1-6": "Cameras 1-6",
+      "1000": "Color Bars"
+    }
+  },
+  "network_specifications": {
+    "ports_summary": {
+      "9910": "UDP (primary control)",
+      "9990": "Videohub Routing (Mini/Constellation 8K only)",
+      "9993": "ATEM Ethernet (streaming/recording control)",
+      "9977": "Configuration",
+      "21": "FTP (Pro/Pro ISO models)"
+    }
+  },
+  "authentication": {
+    "status": "NO AUTHENTICATION REQUIRED",
+    "critical_security_note": "All protocols operate without authentication",
+    "recommendations": [
+      "ONLY use on private, trusted networks",
+      "Isolate switcher on dedicated VLAN",
+      "Monitor network access",
+      "Use firewall rules to restrict access by IP",
+      "Never expose to untrusted networks"
+    ]
+  },
+  "models_and_features": {
+    "atem_constellation": {
+      "model": "ATEM Constellation 8K",
+      "rs422_support": true,
+      "videohub_routing_port_9990": "Yes (firmware 8.6.2+)"
+    },
+    "atem_production_studio": {
+      "model": "ATEM Production Studio",
+      "rs422_support": true
+    },
+    "atem_mini_extreme": {
+      "model": "ATEM Mini Extreme",
+      "ftp_support": "Pro and Pro ISO models only"
+    }
+  },
+  "reverse_engineering_sources": {
+    "openswitcher": "https://docs.openswitcher.org/",
+    "node_atem": "https://github.com/miyukki/node-atem",
+    "bitfocus_companion": "https://github.com/bitfocus/companion-module-bmd-atem"
+  },
+  "metadata": {
+    "compilation_date": "2025-11-26",
+    "information_confidence": "High",
+    "protocol_status": "Reverse-engineered"
+  }
+}

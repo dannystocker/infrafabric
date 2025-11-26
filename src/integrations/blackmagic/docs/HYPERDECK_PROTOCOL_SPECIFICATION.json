@@ -1,0 +1,1107 @@
+{
+  "metadata": {
+    "title": "Blackmagic HyperDeck Ethernet Protocol - Technical Specification",
+    "protocol_version": "2.11+",
+    "last_updated": "2024-12-23",
+    "standards_compliance": "RFC-compliant text protocol over TCP",
+    "supported_devices": [
+      "HyperDeck Studio",
+      "HyperDeck Studio Mini",
+      "HyperDeck Studio Pro",
+      "HyperDeck Extreme",
+      "HyperDeck Extreme 12G",
+      "HyperDeck Shuttle"
+    ],
+    "documentation_sources": [
+      "https://documents.blackmagicdesign.com/DeveloperManuals/HyperDeckEthernetProtocol.pdf",
+      "https://www.blackmagicdesign.com/developer/products/hyperdeck/sdk-and-software",
+      "https://usermanual.com/support/blackmagicdesign/web-manual/hyperdeck-disk-recorders/developer-information"
+    ]
+  },
+  "control_protocol": {
+    "type": "TCP/Telnet Text Protocol",
+    "transport_layer": "TCP",
+    "port": 9993,
+    "protocol_style": "Line-oriented text protocol",
+    "line_terminator_server": "ASCII CR LF (\\r\\n)",
+    "line_terminator_client": "LF (\\n) or CR LF (\\r\\n)",
+    "concurrent_connections": 1,
+    "connection_note": "Only one client may connect simultaneously; other connections are rejected"
+  },
+  "connection_initialization": {
+    "sequence": [
+      {
+        "step": 1,
+        "action": "Client initiates TCP connection",
+        "target": "192.168.x.x:9993",
+        "description": "Establish TCP socket connection to HyperDeck device"
+      },
+      {
+        "step": 2,
+        "action": "Server responds with connection info",
+        "response_code": "500",
+        "response_format": "500 connection info:\\nprotocol version: X.X\\nmodel: {model_name}\\nunique id: {unique_id}",
+        "example": "500 connection info:\nprotocol version: 2.11\nmodel: HyperDeck Extreme\nunique id: ABC123DEF456"
+      },
+      {
+        "step": 3,
+        "action": "Client can query device capabilities",
+        "command": "device info",
+        "purpose": "Get device model, protocol version, unique ID, slot count, firmware"
+      },
+      {
+        "step": 4,
+        "action": "Client optionally sets watchdog",
+        "command": "watchdog: period: {seconds}",
+        "purpose": "Enable keepalive monitoring; client must send command within period or connection will close"
+      }
+    ]
+  },
+  "command_syntax": {
+    "formats": [
+      {
+        "format_name": "Single-line with parameters",
+        "pattern": "{Command}: {Parameter}: {Value} {Parameter}: {Value}...\\n",
+        "example": "play: speed: 200 loop: true",
+        "use_case": "Short, efficient commands"
+      },
+      {
+        "format_name": "Multi-line format",
+        "pattern": "{Command}:\\n{Parameter}: {Value}\\n{Parameter}: {Value}\\n\\n",
+        "example": "play:\nspeed: 200\nloop: true\n",
+        "use_case": "Complex commands with many parameters"
+      }
+    ],
+    "parameter_rules": {
+      "separator": "colon (:)",
+      "parameter_terminator": "colon after parameter name",
+      "value_format": "string, integer, boolean, or timecode",
+      "boolean_values": ["true", "false"],
+      "timecode_format": "HH:MM:SS:FF (hours:minutes:seconds:frames)"
+    }
+  },
+  "transport_control": {
+    "playback": [
+      {
+        "command": "play",
+        "description": "Start playback from current position",
+        "parameters": [],
+        "response_code": 200,
+        "response_example": "200 ok",
+        "redis_key": "hyperdeck:{device_id}:transport:play"
+      },
+      {
+        "command": "play",
+        "description": "Start playback with speed control",
+        "parameters": [
+          {
+            "name": "speed",
+            "type": "integer",
+            "range": "-5000 to 5000",
+            "unit": "percentage",
+            "default": "100",
+            "note": "Negative values = reverse playback"
+          },
+          {
+            "name": "loop",
+            "type": "boolean",
+            "default": "false"
+          },
+          {
+            "name": "single clip",
+            "type": "boolean",
+            "default": "false"
+          }
+        ],
+        "response_code": 200,
+        "example_command": "play: speed: 200 loop: true",
+        "redis_key": "hyperdeck:{device_id}:transport:play:speed"
+      }
+    ],
+    "record": [
+      {
+        "command": "record",
+        "description": "Begin recording",
+        "parameters": [],
+        "response_code": 200,
+        "example_command": "record"
+      },
+      {
+        "command": "record",
+        "description": "Begin recording with options",
+        "parameters": [
+          {
+            "name": "name",
+            "type": "string",
+            "description": "Clip name for recording"
+          },
+          {
+            "name": "spill",
+            "type": "boolean",
+            "description": "Spill to alternate storage slot"
+          },
+          {
+            "name": "slot id",
+            "type": "integer",
+            "description": "Target slot ID for spill recording"
+          }
+        ],
+        "response_code": 200,
+        "example_command": "record: name: MyClip spill: true slot id: 2"
+      }
+    ],
+    "stop": [
+      {
+        "command": "stop",
+        "description": "Stop playback or recording",
+        "parameters": [],
+        "response_code": 200,
+        "example_command": "stop"
+      }
+    ]
+  },
+  "navigation_control": {
+    "goto_clip": [
+      {
+        "command": "goto",
+        "description": "Navigate to specific clip by ID",
+        "parameters": [
+          {
+            "name": "clip id",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "response_code": 200,
+        "example_command": "goto: clip id: 5",
+        "redis_key": "hyperdeck:{device_id}:transport:clip"
+      }
+    ],
+    "goto_timecode": [
+      {
+        "command": "goto",
+        "description": "Jump to specific timecode",
+        "parameters": [
+          {
+            "name": "timecode",
+            "type": "string",
+            "format": "HH:MM:SS:FF",
+            "required": true
+          }
+        ],
+        "response_code": 200,
+        "example_command": "goto: timecode: 00:05:30:15"
+      }
+    ],
+    "next_clip": [
+      {
+        "command": "next",
+        "description": "Advance to next clip",
+        "parameters": [],
+        "response_code": 200,
+        "example_command": "next"
+      }
+    ],
+    "previous_clip": [
+      {
+        "command": "previous",
+        "description": "Go to previous clip",
+        "parameters": [],
+        "response_code": 200,
+        "example_command": "previous"
+      }
+    ]
+  },
+  "clip_timeline_management": {
+    "clips_count": [
+      {
+        "command": "clips count",
+        "description": "Query number of clips on active timeline",
+        "parameters": [],
+        "response_code": 208,
+        "response_format": "208 clips count:\ncount: {integer}",
+        "example_response": "208 clips count:\ncount: 12",
+        "redis_key": "hyperdeck:{device_id}:timeline:clip_count"
+      }
+    ],
+    "clips_get_v1": [
+      {
+        "command": "clips get",
+        "description": "Retrieve all timeline clip information (version 1 - deprecated)",
+        "parameters": [],
+        "response_code": 206,
+        "response_format": "206 clips:\n{clip_id} {timecode} {duration} {name}",
+        "note": "Legacy format - use version 2 or 3 for new implementations"
+      }
+    ],
+    "clips_get_v2": [
+      {
+        "command": "clips get",
+        "description": "Retrieve all timeline clip information (version 2 - recommended)",
+        "parameters": [
+          {
+            "name": "version",
+            "type": "integer",
+            "value": 2
+          }
+        ],
+        "response_code": 206,
+        "response_format": "206 clips:\n{clip_id} {start_timecode} {duration} {in_timecode} {name}",
+        "response_fields": {
+          "clip_id": "Unique clip identifier",
+          "start_timecode": "Timecode at which clip starts on timeline",
+          "duration": "Total duration of clip",
+          "in_timecode": "In point within clip",
+          "name": "Clip name (last field, allows embedded spaces)"
+        },
+        "example_response": "206 clips:\n0 00:00:00:00 00:10:00:00 00:00:00:00 Opening Scene\n1 00:10:00:00 00:05:30:15 00:00:00:00 Transition",
+        "redis_key": "hyperdeck:{device_id}:timeline:clips"
+      }
+    ],
+    "clips_get_v3": [
+      {
+        "command": "clips get",
+        "description": "Retrieve timeline clips with recursive directory structure (version 3)",
+        "parameters": [
+          {
+            "name": "version",
+            "type": "integer",
+            "value": 3
+          }
+        ],
+        "response_code": 206,
+        "response_format": "206 clips:\n{clip_id} {start_timecode} {duration} {in_timecode} {path}",
+        "response_fields": {
+          "clip_id": "Unique clip identifier",
+          "start_timecode": "Timecode at which clip starts on timeline",
+          "duration": "Total duration of clip",
+          "in_timecode": "In point within clip",
+          "path": "Full path with directories (e.g., Folder1/Subfolder/ClipName)"
+        },
+        "note": "For models supporting recursive timelines only"
+      }
+    ],
+    "clips_add": [
+      {
+        "command": "clips add",
+        "description": "Append new clip to timeline",
+        "parameters": [
+          {
+            "name": "name",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "response_code": 200,
+        "example_command": "clips add: name: NewClip"
+      }
+    ],
+    "clips_remove": [
+      {
+        "command": "clips remove",
+        "description": "Delete clip from timeline",
+        "parameters": [
+          {
+            "name": "clip id",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "response_code": 200,
+        "example_command": "clips remove: clip id: 5"
+      }
+    ],
+    "playrange_set": [
+      {
+        "command": "playrange set",
+        "description": "Define clip range for playback",
+        "parameters": [
+          {
+            "name": "clip id",
+            "type": "integer",
+            "description": "Starting clip ID"
+          },
+          {
+            "name": "count",
+            "type": "integer",
+            "description": "Number of consecutive clips to play"
+          }
+        ],
+        "response_code": 200,
+        "example_command": "playrange set: clip id: 5 count: 7",
+        "description_expanded": "Sets playback range from clip 5 through clip 11 (7 clips total)"
+      }
+    ]
+  },
+  "status_and_information": {
+    "device_info": [
+      {
+        "command": "device info",
+        "description": "Query device capabilities and identification",
+        "parameters": [],
+        "response_code": 205,
+        "response_format": "205 device info:\nprotocol version: {version}\nmodel: {model}\nunique id: {id}\nslot count: {count}\nsoftware version: {version}",
+        "response_fields": {
+          "protocol version": "Supported HyperDeck protocol version",
+          "model": "Device model name",
+          "unique id": "Unique device identifier for configuration tracking",
+          "slot count": "Number of storage slots available",
+          "software version": "Firmware/software version"
+        },
+        "example_response": "205 device info:\nprotocol version: 2.11\nmodel: HyperDeck Extreme\nunique id: ABC123DEF456GHI789\nslot count: 2\nsoftware version: 8.5.2",
+        "redis_key": "hyperdeck:{device_id}:device_info"
+      }
+    ],
+    "transport_info": [
+      {
+        "command": "transport info",
+        "description": "Query current transport state and playback position",
+        "parameters": [],
+        "response_code": 208,
+        "response_format": "208 transport info:\nstatus: {status}\nspeed: {percentage}\nslot id: {id}\nclip id: {id}\ntimecode: {timecode}\ncache filling: {boolean}",
+        "response_fields": {
+          "status": "Current transport state (play, record, stopped, forward, backward, jog, shuttle)",
+          "speed": "Playback speed in percentage (-5000 to 5000)",
+          "slot id": "Currently active storage slot",
+          "clip id": "Currently playing/recording clip",
+          "timecode": "Current playback timecode (within timeline)",
+          "cache filling": "Buffer/cache filling status"
+        },
+        "example_response": "208 transport info:\nstatus: play\nspeed: 100\nslot id: 1\nclip id: 0\ntimecode: 00:01:23:15\ncache filling: false",
+        "redis_key": "hyperdeck:{device_id}:transport:status",
+        "async_notification": {
+          "code": 508,
+          "description": "Server sends this asynchronously when transport state changes (if notify enabled)"
+        }
+      }
+    ],
+    "slot_info": [
+      {
+        "command": "slot info",
+        "description": "Query information about specific storage slot",
+        "parameters": [
+          {
+            "name": "slot id",
+            "type": "integer",
+            "required": true
+          }
+        ],
+        "response_code": 207,
+        "response_format": "207 slot info:\nslot id: {id}\nstatus: {status}\nvolume name: {name}\nrecording time: {timecode}\nvideo format: {format}\nblocked: {boolean}",
+        "response_fields": {
+          "slot id": "Storage slot identifier",
+          "status": "Slot status (empty, mounting, mounted, ejecting, error)",
+          "volume name": "Name of storage media/volume",
+          "recording time": "Available recording time remaining",
+          "video format": "Native video format of media",
+          "blocked": "Whether slot is write-protected"
+        },
+        "example_response": "207 slot info:\nslot id: 1\nstatus: mounted\nvolume name: SSD_001\nrecording time: 02:30:45:00\nvideo format: 1080i59.94\nblocked: false",
+        "redis_key": "hyperdeck:{device_id}:slot:{slot_id}:info"
+      }
+    ],
+    "display_timecode": [
+      {
+        "command": "display timecode",
+        "description": "Query the timecode shown on device front panel",
+        "note": "Different from 'timecode' which is within current timeline",
+        "response_code": 209
+      }
+    ]
+  },
+  "configuration_control": {
+    "video_input": [
+      {
+        "command": "configuration",
+        "description": "Set video input source",
+        "parameters": [
+          {
+            "name": "video input",
+            "type": "string",
+            "values": ["SDI", "HDMI", "component"],
+            "required": true
+          }
+        ],
+        "response_code": 200,
+        "example_command": "configuration: video input: SDI"
+      }
+    ],
+    "audio_input": [
+      {
+        "command": "configuration",
+        "description": "Set audio input source",
+        "parameters": [
+          {
+            "name": "audio input",
+            "type": "string",
+            "values": ["embedded", "XLR", "RCA"],
+            "required": true
+          }
+        ],
+        "response_code": 200,
+        "example_command": "configuration: audio input: XLR"
+      }
+    ],
+    "file_format": [
+      {
+        "command": "configuration",
+        "description": "Change recording file format",
+        "parameters": [
+          {
+            "name": "file format",
+            "type": "string",
+            "values": [
+              "H.264",
+              "H.265",
+              "ProRes HQ",
+              "ProRes Standard",
+              "ProRes LT",
+              "ProRes Proxy",
+              "DNxHD",
+              "DNxHR"
+            ],
+            "note": "DNxHD/DNxHR only on models with 4K support"
+          }
+        ],
+        "response_code": 200
+      }
+    ],
+    "timecode_input": [
+      {
+        "command": "configuration",
+        "description": "Set timecode source/synchronization",
+        "parameters": [
+          {
+            "name": "timecode input",
+            "type": "string",
+            "values": ["external", "embedded", "preset", "clip"],
+            "required": true
+          }
+        ],
+        "response_code": 200,
+        "example_command": "configuration: timecode input: external",
+        "note": "External = from SDI/HDMI video; Embedded = from video stream; Preset = manual setting; Clip = from timeline clip"
+      }
+    ],
+    "timecode_preset": [
+      {
+        "command": "configuration",
+        "description": "Set preset timecode value",
+        "parameters": [
+          {
+            "name": "timecode preset",
+            "type": "string",
+            "format": "HH:MM:SS:FF"
+          }
+        ],
+        "response_code": 200,
+        "example_command": "configuration: timecode preset: 01:00:00:00"
+      }
+    ],
+    "composite_output": [
+      {
+        "command": "configuration",
+        "description": "Enable/disable composite video output",
+        "parameters": [
+          {
+            "name": "composite output",
+            "type": "boolean"
+          }
+        ],
+        "response_code": 200
+      }
+    ]
+  },
+  "timecode_synchronization": {
+    "overview": "All HyperDeck Studio models have built-in reference and timecode generators for synchronization",
+    "sync_methods": [
+      {
+        "method": "Loop Through Timecode",
+        "description": "Connect timecode output from first deck to input of next deck in stack",
+        "result": "All decks in stack maintain identical timecode across clips"
+      },
+      {
+        "method": "External Reference",
+        "description": "Set timecode input to 'external' and connect to external timecode generator",
+        "result": "All decks synchronized to external reference"
+      },
+      {
+        "method": "Video Re-sync",
+        "description": "Enable input re-sync; HyperDeck analyzes video and corrects frame drift",
+        "mechanism": "Repeats or removes frames as needed to match reference",
+        "result": "Consistent timecode across clips even with imperfect input",
+        "redis_key": "hyperdeck:{device_id}:timecode:resync_enabled"
+      }
+    ],
+    "timecode_query": [
+      {
+        "command": "timecode",
+        "description": "Query current timecode information",
+        "response_includes": [
+          "Timecode within current timeline",
+          "Display timecode (front panel)",
+          "Timecode source"
+        ]
+      }
+    ]
+  },
+  "remote_control_management": {
+    "remote_enable": [
+      {
+        "command": "remote",
+        "description": "Query or modify remote control status",
+        "parameters": [
+          {
+            "name": "enable",
+            "type": "boolean",
+            "description": "Enable/disable remote control access"
+          },
+          {
+            "name": "override",
+            "type": "boolean",
+            "description": "Override current remote state"
+          }
+        ],
+        "response_code": 200,
+        "example_command": "remote: enable: true"
+      }
+    ],
+    "watchdog": [
+      {
+        "command": "watchdog",
+        "description": "Enable keepalive monitoring; server disconnects client on inactivity",
+        "parameters": [
+          {
+            "name": "period",
+            "type": "integer",
+            "unit": "seconds",
+            "required": true,
+            "note": "Client must send command within this period; 0 or negative disables monitoring"
+          }
+        ],
+        "response_code": 200,
+        "example_command": "watchdog: period: 30",
+        "behavior": {
+          "timeout_action": "Server closes connection",
+          "client_responsibility": "Send at least one command every {period} seconds",
+          "suggested_keepalive": "Send 'transport info' or 'device info' periodically"
+        },
+        "redis_key": "hyperdeck:{device_id}:watchdog:period"
+      }
+    ]
+  },
+  "notifications_subscriptions": {
+    "notify_transport": [
+      {
+        "command": "notify",
+        "description": "Subscribe to transport state change notifications",
+        "parameters": [
+          {
+            "name": "transport",
+            "type": "boolean"
+          }
+        ],
+        "response_code": 200,
+        "example_command": "notify: transport: true",
+        "async_message_code": 508,
+        "async_format": "508 transport info:\\n(same format as 208 transport info response)"
+      }
+    ],
+    "notify_slot": [
+      {
+        "command": "notify",
+        "description": "Subscribe to slot status change notifications",
+        "parameters": [
+          {
+            "name": "slot",
+            "type": "boolean"
+          }
+        ],
+        "response_code": 200,
+        "async_message_code": 507
+      }
+    ],
+    "notify_configuration": [
+      {
+        "command": "notify",
+        "description": "Subscribe to configuration change notifications",
+        "parameters": [
+          {
+            "name": "configuration",
+            "type": "boolean"
+          }
+        ],
+        "response_code": 200,
+        "async_message_code": 509
+      }
+    ],
+    "notify_clips": [
+      {
+        "command": "notify",
+        "description": "Subscribe to clip timeline change notifications",
+        "parameters": [
+          {
+            "name": "clips",
+            "type": "boolean"
+          }
+        ],
+        "response_code": 200,
+        "async_message_code": 506
+      }
+    ]
+  },
+  "response_codes": {
+    "success_range": {
+      "code_range": "200-299",
+      "description": "Successful command execution",
+      "codes": [
+        {
+          "code": 200,
+          "description": "Simple acknowledgment - command accepted",
+          "format": "200 ok"
+        },
+        {
+          "code": 201,
+          "description": "Asynchronous message acknowledgment",
+          "format": "201 ok"
+        },
+        {
+          "code": 205,
+          "description": "Device info response",
+          "format": "205 device info:"
+        },
+        {
+          "code": 206,
+          "description": "Clip list response",
+          "format": "206 clips:"
+        },
+        {
+          "code": 207,
+          "description": "Slot info response",
+          "format": "207 slot info:"
+        },
+        {
+          "code": 208,
+          "description": "Transport info or clips count response",
+          "format": "208 transport info: or 208 clips count:"
+        },
+        {
+          "code": 209,
+          "description": "Display timecode response",
+          "format": "209 display timecode:"
+        }
+      ]
+    },
+    "asynchronous_message_range": {
+      "code_range": "500-599",
+      "description": "Server-initiated notifications (sent anytime)",
+      "codes": [
+        {
+          "code": 500,
+          "description": "Connection info (sent on connect)",
+          "format": "500 connection info:"
+        },
+        {
+          "code": 501,
+          "description": "Notify device info change",
+          "format": "501 device info:"
+        },
+        {
+          "code": 502,
+          "description": "Notify remote control enabled/disabled",
+          "format": "502 remote:"
+        },
+        {
+          "code": 503,
+          "description": "Notify recording time changed",
+          "format": "503 recording time:"
+        },
+        {
+          "code": 504,
+          "description": "Notify cache filling status",
+          "format": "504 cache filling:"
+        },
+        {
+          "code": 505,
+          "description": "Notify device disconnected properly",
+          "format": "505 ok"
+        },
+        {
+          "code": 506,
+          "description": "Notify clips change",
+          "format": "506 clips:"
+        },
+        {
+          "code": 507,
+          "description": "Notify slot info change",
+          "format": "507 slot info:"
+        },
+        {
+          "code": 508,
+          "description": "Notify transport info change",
+          "format": "508 transport info:"
+        },
+        {
+          "code": 509,
+          "description": "Notify configuration change",
+          "format": "509 configuration:"
+        }
+      ]
+    },
+    "error_range": {
+      "code_range": "100-199",
+      "description": "Failure/error responses",
+      "codes": [
+        {
+          "code": 100,
+          "name": "Syntax error",
+          "description": "Malformed command - invalid syntax",
+          "format": "100 syntax error"
+        },
+        {
+          "code": 101,
+          "name": "Unsupported parameter",
+          "description": "Parameter not supported on this device/firmware",
+          "format": "101 unsupported parameter"
+        },
+        {
+          "code": 102,
+          "name": "Invalid value",
+          "description": "Parameter value out of range or invalid",
+          "format": "102 invalid value"
+        },
+        {
+          "code": 103,
+          "name": "Unsupported",
+          "description": "Feature/command not supported on this model",
+          "format": "103 unsupported"
+        },
+        {
+          "code": 104,
+          "name": "Disk full",
+          "description": "Storage media is full; cannot record",
+          "format": "104 disk full"
+        },
+        {
+          "code": 105,
+          "name": "No disk",
+          "description": "No storage media present",
+          "format": "105 no disk"
+        },
+        {
+          "code": 106,
+          "name": "Disk error",
+          "description": "Hardware error with storage media",
+          "format": "106 disk error"
+        },
+        {
+          "code": 107,
+          "name": "Timeline empty",
+          "description": "No clips on timeline for requested operation",
+          "format": "107 timeline empty"
+        },
+        {
+          "code": 108,
+          "name": "Internal error",
+          "description": "Device internal error; operation failed",
+          "format": "108 internal error"
+        },
+        {
+          "code": 109,
+          "name": "Out of range",
+          "description": "Clip ID or parameter value out of valid range",
+          "format": "109 out of range"
+        },
+        {
+          "code": 110,
+          "name": "No input",
+          "description": "No video/audio input signal detected",
+          "format": "110 no input"
+        },
+        {
+          "code": 111,
+          "name": "Remote control disabled",
+          "description": "Remote control access is disabled; local only",
+          "format": "111 remote control disabled"
+        },
+        {
+          "code": 120,
+          "name": "Connection rejected",
+          "description": "Connection rejected (another client connected or connection refused)",
+          "format": "120 connection rejected"
+        }
+      ]
+    }
+  },
+  "error_handling_protocol": {
+    "error_detection": {
+      "method": "Response code inspection",
+      "success_indicator": "Response code 200-299",
+      "failure_indicator": "Response code 100-199"
+    },
+    "disconnection_protocol": {
+      "graceful_disconnect": {
+        "method": 1: "Client closes TCP socket normally",
+        "response": "Server may send 505 disconnect message"
+      },
+      "forced_disconnection": {
+        "cause": "Watchdog timeout or connection error",
+        "behavior": "Server closes connection without notice",
+        "recovery": "Client must re-initiate connection"
+      },
+      "multiple_connection_attempt": {
+        "result": "Second client receives 120 Connection rejected",
+        "resolution": "First client must disconnect first"
+      }
+    },
+    "error_recovery_suggestions": [
+      "On syntax error (100): Verify command format and parameter names",
+      "On unsupported parameter (101): Check device model and firmware version",
+      "On invalid value (102): Validate parameter ranges (e.g., speed -5000 to 5000, timecode format)",
+      "On disk full (104): Eject current slot and insert fresh media",
+      "On no input (110): Verify video/audio source connection",
+      "On remote disabled (111): Enable remote control on device panel or via configuration",
+      "Implement exponential backoff for connection retries",
+      "Set watchdog period to 30-60 seconds for stable long-running connections"
+    ]
+  },
+  "advanced_features": {
+    "commands_query": [
+      {
+        "command": "commands",
+        "description": "Query device supported commands in XML format",
+        "purpose": "Allows software to adapt to specific firmware capabilities",
+        "response_format": "XML document describing supported features",
+        "note": "Useful for compatibility across firmware versions"
+      }
+    ],
+    "combination_commands": [
+      {
+        "pattern": "Multiple parameters in single command",
+        "example_1": "play: speed: 200 loop: true single clip: true",
+        "example_2": "configuration: video input: SDI audio input: XLR",
+        "benefit": "Efficient atomic operations, reduces round-trips"
+      }
+    ],
+    "format_support": {
+      "standard_definition": ["NTSC", "PAL"],
+      "high_definition": ["720p", "1080i", "1080p"],
+      "4k_models": ["4K DCI", "4K UHD"],
+      "recording_codecs": [
+        "H.264",
+        "H.265",
+        "ProRes (HQ/Standard/LT/Proxy)",
+        "DNxHD",
+        "DNxHR"
+      ]
+    }
+  },
+  "rest_api_alternative": {
+    "note": "Modern HyperDeck models (Studio, Extreme) also support REST API for HTTP-based control",
+    "base_path": "/control/api/v1",
+    "protocol": "HTTP/HTTPS",
+    "websocket_support": true,
+    "websocket_endpoint": "/control/api/v1/event/websocket",
+    "key_endpoints": [
+      {
+        "path": "/transports/0",
+        "method": "GET",
+        "description": "Query transport status"
+      },
+      {
+        "path": "/clips",
+        "method": "GET",
+        "description": "Retrieve clip list"
+      },
+      {
+        "path": "/transports/0/play",
+        "method": "PUT",
+        "description": "Control playback"
+      }
+    ],
+    "advantages": [
+      "HTTP standard methods (GET, PUT, DELETE, POST)",
+      "JSON request/response format",
+      "Firewall-friendly (port 80/443)",
+      "WebSocket support for real-time notifications",
+      "Easier integration with web-based control systems"
+    ],
+    "note_for_automation": "Both protocols are equally valid; choose based on your infrastructure (legacy systems may prefer Telnet/TCP, modern systems prefer REST)"
+  },
+  "redis_automation_schema": {
+    "namespace": "hyperdeck",
+    "key_structure": "hyperdeck:{device_id}:{category}:{property}",
+    "categories": [
+      {
+        "category": "device_info",
+        "keys": [
+          "hyperdeck:{device_id}:device_info:model",
+          "hyperdeck:{device_id}:device_info:protocol_version",
+          "hyperdeck:{device_id}:device_info:unique_id",
+          "hyperdeck:{device_id}:device_info:slot_count"
+        ]
+      },
+      {
+        "category": "transport",
+        "keys": [
+          "hyperdeck:{device_id}:transport:status",
+          "hyperdeck:{device_id}:transport:speed",
+          "hyperdeck:{device_id}:transport:clip_id",
+          "hyperdeck:{device_id}:transport:timecode",
+          "hyperdeck:{device_id}:transport:slot_id"
+        ]
+      },
+      {
+        "category": "timeline",
+        "keys": [
+          "hyperdeck:{device_id}:timeline:clip_count",
+          "hyperdeck:{device_id}:timeline:clips",
+          "hyperdeck:{device_id}:timeline:playrange_start",
+          "hyperdeck:{device_id}:timeline:playrange_count"
+        ]
+      },
+      {
+        "category": "slot",
+        "keys": [
+          "hyperdeck:{device_id}:slot:{slot_id}:status",
+          "hyperdeck:{device_id}:slot:{slot_id}:volume_name",
+          "hyperdeck:{device_id}:slot:{slot_id}:recording_time",
+          "hyperdeck:{device_id}:slot:{slot_id}:video_format",
+          "hyperdeck:{device_id}:slot:{slot_id}:blocked"
+        ]
+      },
+      {
+        "category": "configuration",
+        "keys": [
+          "hyperdeck:{device_id}:config:video_input",
+          "hyperdeck:{device_id}:config:audio_input",
+          "hyperdeck:{device_id}:config:file_format",
+          "hyperdeck:{device_id}:config:timecode_input",
+          "hyperdeck:{device_id}:config:timecode_preset"
+        ]
+      },
+      {
+        "category": "control",
+        "keys": [
+          "hyperdeck:{device_id}:control:watchdog_period",
+          "hyperdeck:{device_id}:control:remote_enabled",
+          "hyperdeck:{device_id}:control:notify_transport",
+          "hyperdeck:{device_id}:control:notify_slot",
+          "hyperdeck:{device_id}:control:notify_clips",
+          "hyperdeck:{device_id}:control:notify_config"
+        ]
+      }
+    ],
+    "command_queue_pattern": "hyperdeck:{device_id}:commands:queue",
+    "status_hash": "hyperdeck:{device_id}:status",
+    "ttl_recommendations": {
+      "device_info": 3600,
+      "transport_state": 10,
+      "slot_info": 60,
+      "timeline_clips": 300,
+      "configuration": 1800
+    }
+  },
+  "implementation_checklist": [
+    "Establish TCP connection to port 9993",
+    "Parse 500 connection info response",
+    "Implement command queue for ordered execution",
+    "Set watchdog period for keepalive (recommended 30-60 seconds)",
+    "Implement response code handler (100-599 range)",
+    "Parse multiline responses with blank line terminator",
+    "Handle asynchronous messages (500-599) at any time",
+    "Implement notification subscriptions for real-time updates",
+    "Map all device responses to Redis keys",
+    "Implement exponential backoff for connection retries",
+    "Log all errors for debugging",
+    "Support both playback and recording modes",
+    "Handle slot changes and media ejection scenarios",
+    "Implement clip list refresh on changes",
+    "Support timecode synchronization queries"
+  ],
+  "troubleshooting": {
+    "connection_refused": {
+      "cause": "Device not on network or port 9993 not accessible",
+      "solution": "Verify IP address, network connectivity, firewall rules"
+    },
+    "connection_rejected_120": {
+      "cause": "Another client already connected (only 1 concurrent connection allowed)",
+      "solution": "Disconnect other client first or wait for timeout"
+    },
+    "syntax_error_100": {
+      "cause": "Malformed command syntax",
+      "solution": "Verify command format matches specification exactly"
+    },
+    "unsupported_parameter_101": {
+      "cause": "Parameter not available on this device/firmware",
+      "solution": "Check device model and firmware version; use 'device info' command"
+    },
+    "timecode_sync_issues": {
+      "solutions": [
+        "Verify timecode input source (external/embedded/preset)",
+        "Check timecode generator connection",
+        "Enable frame resync if experiencing drift",
+        "Use loop-through timecode between decks"
+      ]
+    },
+    "recording_fails": {
+      "possible_causes": [
+        "Disk full (104)",
+        "No disk inserted (105)",
+        "Slot blocked (check slot info)",
+        "No video input signal (110)"
+      ],
+      "diagnostics": "Query 'slot info' and 'transport info' for detailed status"
+    }
+  },
+  "references": {
+    "official_documentation": [
+      {
+        "title": "HyperDeck Ethernet Protocol Manual",
+        "url": "https://documents.blackmagicdesign.com/DeveloperManuals/HyperDeckEthernetProtocol.pdf",
+        "updated": "2024-12-23"
+      },
+      {
+        "title": "HyperDeck REST API Manual",
+        "url": "https://documents.blackmagicdesign.com/DeveloperManuals/RESTAPIForHyperDeck.pdf",
+        "updated": "2024-12-23"
+      },
+      {
+        "title": "Blackmagic Design Developer Portal",
+        "url": "https://www.blackmagicdesign.com/developer/products/hyperdeck/sdk-and-software"
+      }
+    ],
+    "github_implementations": [
+      {
+        "name": "LA1TV/Hyperdeck-JS-Lib",
+        "language": "JavaScript",
+        "url": "https://github.com/LA1TV/Hyperdeck-JS-Lib",
+        "description": "JavaScript library with command definitions and response parsing"
+      },
+      {
+        "name": "zmoostik/node-hyperdeck",
+        "language": "Node.js",
+        "url": "https://github.com/zmoostik/node-hyperdeck",
+        "description": "Node.js client library with callback-based command handling"
+      },
+      {
+        "name": "jmew24/blackmagic-hyperdeck-ui",
+        "language": "Python",
+        "url": "https://github.com/jmew24/blackmagic-hyperdeck-ui",
+        "description": "Python web UI for HyperDeck control (aiohttp + WebSocket)"
+      },
+      {
+        "name": "mochouinard/python-hyperdeck-server",
+        "language": "Python",
+        "url": "https://github.com/mochouinard/python-hyperdeck-server",
+        "description": "Python HyperDeck server emulator with web interface"
+      },
+      {
+        "name": "Sofie-Automation/sofie-hyperdeck-connection",
+        "language": "TypeScript",
+        "url": "https://github.com/nrkno/sofie-hyperdeck-connection",
+        "description": "Professional broadcast automation HyperDeck connector"
+      }
+    ]
+  }
+}

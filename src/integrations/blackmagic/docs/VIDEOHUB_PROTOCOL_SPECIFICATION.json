@@ -1,0 +1,144 @@
+{
+  "protocol_metadata": {
+    "protocol_name": "Blackmagic Videohub Ethernet Protocol",
+    "current_version": "2.3",
+    "devices_supported": [
+      "Blackmagic Videohub (12x12, 20x20, 40x40, 80x80, 10x10 12G models)",
+      "Smart Videohub",
+      "Videohub Clean Switch",
+      "Videohub Master Control"
+    ]
+  },
+  "connection_specification": {
+    "protocol_type": "TCP/IP Text-based",
+    "port": 9990,
+    "line_termination": "CRLF (\\r\\n)",
+    "block_termination": "Blank line (\\r\\n\\r\\n)",
+    "timeout_recommended": 15,
+    "idle_ping_interval": 5
+  },
+  "protocol_blocks": {
+    "block_structure": {
+      "format": "HEADER:\\nfield1 value1\\nfield2 value2\\n...\\n(blank line)",
+      "termination": "Blank line required"
+    },
+    "initial_handshake": {
+      "PROTOCOL PREAMBLE": {
+        "purpose": "Initial device identification and protocol version",
+        "fields": {
+          "Version": "Protocol version (e.g., 2.3)"
+        }
+      }
+    },
+    "device_information": {
+      "VIDEOHUB DEVICE": {
+        "purpose": "Device capabilities and port counts",
+        "fields": {
+          "Device preset": "Device configuration preset name",
+          "Model name": "Device model identifier",
+          "Video inputs": "Number of video input ports",
+          "Video outputs": "Number of video output ports"
+        }
+      }
+    },
+    "labeling_blocks": {
+      "INPUT LABELS": {
+        "purpose": "Display and set names for input ports",
+        "format": "port_number label_text"
+      },
+      "OUTPUT LABELS": {
+        "purpose": "Display and set names for output ports",
+        "format": "port_number label_text"
+      }
+    },
+    "routing_blocks": {
+      "VIDEO OUTPUT ROUTING": {
+        "purpose": "Control video signal routing from inputs to outputs",
+        "format": "port_number input_number_or_zero_if_disconnected",
+        "example": "0 2\\n1 3"
+      }
+    },
+    "lock_status_blocks": {
+      "OUTPUT LOCK STATES": {
+        "purpose": "Display and control locking status of output ports",
+        "format": "port_number lock_status",
+        "lock_status_codes": {
+          "O": "Owned by current client (locked from same IP)",
+          "L": "Locked by different client",
+          "U": "Unlocked"
+        }
+      }
+    }
+  },
+  "command_syntax": {
+    "routing_commands": {
+      "VIDEO_OUTPUT_ROUTING": {
+        "syntax": "VIDEO OUTPUT ROUTING:\\noutput_port_index input_port_index\\n(blank line)",
+        "example": "VIDEO OUTPUT ROUTING:\\n8 3\\n\\n"
+      },
+      "INPUT_LABELS": {
+        "syntax": "INPUT LABELS:\\nport_index label_text\\n(blank line)",
+        "example": "INPUT LABELS:\\n0 Camera 1\\n1 Camera 2\\n\\n"
+      }
+    }
+  },
+  "response_format": {
+    "acknowledgement": {
+      "success": "ACK",
+      "failure": "NAK"
+    },
+    "status_update_format": {
+      "trigger": "Sent automatically when device state changes",
+      "content": "One or more complete blocks identical to initial dump"
+    }
+  },
+  "error_handling": {
+    "error_codes": {
+      "NAK": {
+        "meaning": "Negative acknowledgement - request not understood",
+        "causes": [
+          "Malformed command syntax",
+          "Invalid port numbers",
+          "Unsupported command"
+        ]
+      }
+    }
+  },
+  "input_output_specifications": {
+    "videohub_models": {
+      "mini": {"video_inputs": 6, "video_outputs": 6},
+      "10x10_12g": {"video_inputs": 10, "video_outputs": 10},
+      "12x12": {"video_inputs": 12, "video_outputs": 12},
+      "20x20_12g": {"video_inputs": 20, "video_outputs": 20},
+      "40x40_12g": {"video_inputs": 40, "video_outputs": 40},
+      "80x80_12g": {"video_inputs": 80, "video_outputs": 80}
+    },
+    "port_indexing": {
+      "system": "Zero-based (0 to N-1)",
+      "user_display": "One-based (1 to N)"
+    }
+  },
+  "protocol_capabilities": {
+    "multi_client_support": "Multiple clients can connect simultaneously",
+    "lock_mechanism": "Ports can be locked by client to prevent other clients from modifying",
+    "state_synchronization": "Complete device state sent on connection, incremental updates after"
+  },
+  "implementation_references": {
+    "open_source_implementations": [
+      {
+        "project": "videohubctrl",
+        "language": "C",
+        "repository": "https://github.com/gfto/videohubctrl"
+      },
+      {
+        "project": "videohub (Node.js API)",
+        "language": "JavaScript/Node.js",
+        "repository": "https://github.com/TJkrusinski/videohub"
+      }
+    ]
+  },
+  "metadata": {
+    "compilation_date": "2025-11-26",
+    "information_confidence": "High"
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "namespace": "mcr:hardware:videohub",
+  "description": "Videohub Routing Redis Schema for IF.MCR Master Control",
+  "version": "1.0",
+  "generated": "2025-11-26",
+
+  "device_registry": {
+    "key_pattern": "mcr:hardware:videohub:{model_slug}",
+    "type": "Hash",
+    "fields": {
+      "model": "Device model name (12x12, 20x20_12g, 40x40_12g, 80x80_12g)",
+      "protocol": "videohub_ethernet_v2.3",
+      "port": "9990",
+      "video_inputs": "Number of video input ports",
+      "video_outputs": "Number of video output ports",
+      "monitoring_outputs": "Number of monitoring output ports",
+      "authentication": "none"
+    },
+    "example": {
+      "key": "mcr:hardware:videohub:20x20_12g",
+      "fields": {
+        "model": "Videohub 20x20 12G",
+        "protocol": "videohub_ethernet_v2.3",
+        "video_inputs": "20",
+        "video_outputs": "20"
+      }
+    }
+  },
+
+  "routing_state": {
+    "key_pattern": "mcr:videohub:{device_id}:routing:outputs",
+    "type": "Hash",
+    "description": "Current routing configuration - output_index -> input_index",
+    "example": {
+      "0": "0",
+      "1": "3",
+      "2": "2",
+      "3": "5"
+    }
+  },
+
+  "port_labels": {
+    "key_pattern_inputs": "mcr:videohub:{device_id}:labels:inputs",
+    "key_pattern_outputs": "mcr:videohub:{device_id}:labels:outputs",
+    "type": "Hash",
+    "description": "Port naming convention for UI display",
+    "example_inputs": {
+      "0": "Camera 1",
+      "1": "Camera 2",
+      "2": "Black",
+      "3": "Color Bars"
+    },
+    "example_outputs": {
+      "0": "Monitor Out",
+      "1": "Program",
+      "2": "Preview",
+      "3": "Backup"
+    }
+  },
+
+  "lock_states": {
+    "key_pattern": "mcr:videohub:{device_id}:locks:outputs",
+    "type": "Hash",
+    "ttl": "10 seconds (volatile, represents active locks)",
+    "lock_status_codes": {
+      "O": "Owned by current client",
+      "L": "Locked by different client",
+      "U": "Unlocked"
+    },
+    "example": {
+      "0": "O",
+      "1": "U",
+      "2": "L",
+      "3": "O"
+    }
+  },
+
+  "connection_state": {
+    "key_pattern": "mcr:videohub:{device_id}:connection",
+    "type": "Hash",
+    "ttl": "30 seconds",
+    "fields": {
+      "status": "connected|disconnected|error",
+      "ip_address": "Device IP address",
+      "last_update": "Timestamp of last status from device",
+      "client_count": "Number of active client connections"
+    }
+  },
+
+  "command_queue": {
+    "key_pattern": "mcr:videohub:{device_id}:commands:queue",
+    "type": "List (FIFO)",
+    "description": "Pending routing and configuration commands",
+    "example_entries": [
+      "{\"command\": \"VIDEO OUTPUT ROUTING\", \"output\": 3, \"input\": 5}",
+      "{\"command\": \"OUTPUT LABELS\", \"port\": 0, \"label\": \"New Label\"}"
+    ]
+  },
+
+  "event_stream": {
+    "key_pattern": "mcr:videohub:{device_id}:events",
+    "type": "Stream (XREAD)",
+    "description": "Real-time stream of routing changes and status updates",
+    "event_examples": [
+      "{\"type\": \"routing_change\", \"output\": 3, \"old_input\": 2, \"new_input\": 5}",
+      "{\"type\": \"lock_state_change\", \"output\": 1, \"state\": \"O\"}"
+    ]
+  },
+
+  "metrics": {
+    "key_pattern": "mcr:videohub:{device_id}:metrics",
+    "type": "Hash",
+    "fields": {
+      "routing_changes": "Total routing changes executed",
+      "commands_sent": "Total commands transmitted",
+      "commands_failed": "Failed command count",
+      "uptime_seconds": "Device uptime",
+      "last_error": "Last error message"
+    }
+  }
+}

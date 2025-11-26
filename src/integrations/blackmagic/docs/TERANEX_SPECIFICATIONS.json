@@ -1,0 +1,90 @@
+{
+  "system": "Blackmagic Design Teranex Standards Converters",
+  "documentation_date": "2025-11-26",
+  "scope": "Signal Processing Infrastructure - Control Protocol & Specifications",
+  "product_models": {
+    "processor_series": [
+      {
+        "model": "Teranex 2D Processor",
+        "description": "Single channel, 4:2:2 quality standards converter",
+        "key_features": ["Up/Down/Cross-conversions", "SD/HD/2K formats"]
+      },
+      {
+        "model": "Teranex 3D Processor",
+        "description": "Dual channel stereoscopic video processor",
+        "key_features": ["3D format conversion", "2D to 3D conversion"]
+      },
+      {
+        "model": "Teranex Express",
+        "description": "Streamlined broadcast converter, SDI only",
+        "key_features": ["1089 conversions", "12G-SDI support"]
+      },
+      {
+        "model": "Teranex AV",
+        "description": "Full-featured standards converter with audio embedding",
+        "key_features": ["1089 conversions", "12G-SDI and HDMI 2.0a"]
+      }
+    ]
+  },
+  "control_interface": {
+    "primary_protocol": "TCP/IP over Ethernet",
+    "tcp_port_setup": 9996,
+    "tcp_port_control": 9800,
+    "protocol_type": "Text-based command protocol",
+    "network_discovery": "mDNS (multicast DNS) on UDP port 5353"
+  },
+  "protocol_specification": {
+    "connection_handshake": [
+      "Connect to TCP port 9800",
+      "Receive PROTOCOL PREAMBLE",
+      "Response format: PROTOCOL PREAMBLE: Version: 1.0"
+    ],
+    "command_format": {
+      "get_operations": "GET [PARAMETER]",
+      "set_operations": "SET [PARAMETER] [VALUE]"
+    }
+  },
+  "video_standards_and_conversions": {
+    "total_conversions": 1089,
+    "conversion_types": [
+      "Up-conversion (SD → HD, HD → UHD)",
+      "Down-conversion (UHD → HD, HD → SD)",
+      "Cross-conversion (different standards at same resolution)"
+    ],
+    "supported_formats": {
+      "sd": ["525i NTSC (29.97 fps)", "625i PAL (25 fps)"],
+      "hd": ["720p (23.98-60 fps)", "1080i (25-30 fps)", "1080p (23.98-60 fps)"],
+      "uhd": ["2160p 23.98-60 (4K)", "DCI 2K/4K"]
+    }
+  },
+  "sdi_standards_compliance": [
+    "SMPTE 259M (SDI)",
+    "SMPTE 292M (HD-SDI)",
+    "SMPTE 424M (3G-SDI)",
+    "SMPTE 425M (6G-SDI)",
+    "SMPTE 2081-1 (12G-SDI)",
+    "SMPTE 2082 (Single/Dual-link 12G-SDI)"
+  ],
+  "network_specifications": {
+    "ethernet_interface": "1G Ethernet (standard models)",
+    "ip_video_model": "1G control + optional 10G optical SFP",
+    "default_network_config": "DHCP",
+    "ptp_support": {
+      "enabled": true,
+      "requirement": "Managed switches with PTP and E2E enabled"
+    }
+  },
+  "implementation_reference": {
+    "open_source_tools": [
+      {
+        "name": "teranex-ctl",
+        "language": "Rust",
+        "repository": "https://github.com/gdesmott/teranex-ctl"
+      }
+    ]
+  },
+  "metadata": {
+    "compilation_date": "2025-11-26",
+    "information_confidence": "High"
+  }
+}
