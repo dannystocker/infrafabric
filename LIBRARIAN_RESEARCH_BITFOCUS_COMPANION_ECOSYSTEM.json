@@ -1,0 +1,1798 @@
+{
+  "research_metadata": {
+    "research_id": "AGENT-4-7-LIBRARIANS",
+    "title": "Bitfocus Companion Ecosystem Research",
+    "date": "2025-11-26",
+    "scope": "Module registry, top-tier MCR modules, device catalog, and API structure",
+    "total_modules_ecosystem": "700+"
+  },
+
+  "module_registry_structure": {
+    "repository": {
+      "name": "companion-bundled-modules",
+      "url": "https://github.com/bitfocus/companion-bundled-modules",
+      "description": "Modules included in Companion 3.0 builds",
+      "total_commits": 2438,
+      "license": "MIT",
+      "language_distribution": {
+        "javascript": "84.1%",
+        "html": "15.5%",
+        "css": "0.4%"
+      }
+    },
+    "naming_convention": {
+      "pattern": "{manufacturer}-{product}",
+      "examples": [
+        "bmd-atem (Blackmagic ATEM)",
+        "behringer-x32 (Behringer X32)",
+        "generic-http (Generic HTTP)",
+        "allenheath-sq (Allen & Heath SQ)",
+        "obs-studio (OBS Studio)",
+        "studiocoast-vmix (vMix)",
+        "ptzoptics-visca (PTZOptics VISCA)"
+      ],
+      "hyphenated_format": true,
+      "lowercase_only": true
+    },
+    "category_taxonomy": {
+      "audio_sound": {
+        "description": "Audio mixers, processors, and DSP systems",
+        "manufacturers": [
+          "Allen & Heath (AHM, dLive, ilive, QU, SQ)",
+          "Behringer (X32/M32, XAir)",
+          "Biamp (Audia, Tesira)",
+          "BSS (Soundweb London)",
+          "Audac (MTX48/88)",
+          "Audinate (Dante)",
+          "Audio Technica",
+          "Calrec (CSCP)",
+          "Cedar (DNS8D noise suppressor)"
+        ],
+        "tier1_devices": ["Allen & Heath SQ/dLive", "Behringer X32/M32", "Yamaha CL/QL/TF"]
+      },
+      "video_switching": {
+        "description": "Video switchers and vision mixers",
+        "manufacturers": [
+          "Blackmagic Design (ATEM)",
+          "Analogway (Midra, LivePremier, Aquilon)",
+          "Barco (EventMaster)",
+          "Sony (ELC)",
+          "vMix",
+          "Boinx (mimoLive)",
+          "NewTek (TriCaster)",
+          "Ross Video (Carbonite)"
+        ],
+        "tier1_devices": ["Blackmagic ATEM", "Ross Carbonite", "Analogway LivePremier", "NewTek TriCaster"]
+      },
+      "ptz_cameras": {
+        "description": "Pan-Tilt-Zoom camera control systems",
+        "manufacturers": [
+          "PTZOptics",
+          "Sony (VISCA)",
+          "Panasonic",
+          "Canon (CR-N, CR-X series)",
+          "BirdDog",
+          "Axis",
+          "Aver"
+        ],
+        "protocol": "VISCA over TCP/IP",
+        "tier1_devices": ["PTZOptics (G2/G3)", "Sony VISCA", "Panasonic PTZ", "Canon CR-N/X"]
+      },
+      "recording_playout": {
+        "description": "Recording and playout systems",
+        "manufacturers": [
+          "Blackmagic Design (HyperDeck, WebPresenter)",
+          "AJA (Ki Pro)",
+          "Grass Valley",
+          "CasparCG",
+          "Resolume",
+          "Axel Technology (XPlayout, YouPlay)"
+        ],
+        "tier1_devices": ["Blackmagic HyperDeck", "AJA Ki Pro", "CasparCG"]
+      },
+      "lighting_control": {
+        "description": "Stage and broadcast lighting systems",
+        "manufacturers": [
+          "Avolites (Titan)",
+          "ChamSys (MagicQ)",
+          "ETC",
+          "MA Lighting",
+          "Chauvet",
+          "Elgato (Key Light, Ring Light)"
+        ],
+        "tier1_devices": ["Elgato Key Light", "Avolites Titan", "ChamSys MagicQ"]
+      },
+      "streaming_encoding": {
+        "description": "Streaming and encoding platforms",
+        "manufacturers": [
+          "AWS Elemental (Live, MediaLive)",
+          "Blackmagic (WebPresenter)",
+          "Teradek",
+          "vMix",
+          "OBS Studio"
+        ],
+        "tier1_devices": ["OBS Studio", "vMix", "AWS Elemental"]
+      },
+      "matrix_routing": {
+        "description": "Video and signal routing systems",
+        "manufacturers": [
+          "Barco",
+          "Blackmagic (Videohub)",
+          "AJA (Kumo)",
+          "Aten",
+          "Evertz"
+        ],
+        "tier1_devices": ["Blackmagic Videohub", "AJA Kumo"]
+      },
+      "generic_protocols": {
+        "description": "Generic communication protocols",
+        "types": [
+          "ArtNet",
+          "MIDI",
+          "MQTT",
+          "OSC",
+          "SNMP",
+          "DMX",
+          "WebSocket",
+          "SSH",
+          "HTTP",
+          "PJLink"
+        ]
+      }
+    },
+    "module_metadata_requirements": {
+      "package_json": {
+        "name": "Module identifier",
+        "version": "Semantic version",
+        "description": "Module description",
+        "author": "Author information",
+        "license": "License type (typically MIT)",
+        "main": "Entry point (typically index.js)",
+        "scripts": "Build and dev scripts",
+        "dependencies": {
+          "@companion-module/base": "~1.0.0 or higher"
+        },
+        "engines": {
+          "node": ">=18.0.0"
+        }
+      },
+      "required_files": [
+        "index.js (or index.ts)",
+        "package.json",
+        "HELP.md",
+        "LICENSE"
+      ]
+    }
+  },
+
+  "top_tier_modules_deep_dive": {
+    "zoom-osc-iso": {
+      "module_id": "zoom-osc-iso",
+      "repository": "https://github.com/bitfocus/companion-module-zoom-osc-iso",
+      "manufacturer": "Liminal Entertainment (ZoomOSC)",
+      "device": "Zoom Meeting Control via OSC",
+      "protocol": "OSC (Open Sound Control)",
+      "broadcast_tier": "tier-1",
+      "use_case": "Remote meeting control, hybrid production, webinar management",
+      "actions": {
+        "participant_selection": [
+          "Select from Gallery (max 49 participants)",
+          "Select from Participants (static list)",
+          "Single vs Multi-Selection modes",
+          "Select by 'Me' macro keyword"
+        ],
+        "meeting_management": [
+          "Mute/Unmute audio",
+          "Enable/Disable video",
+          "Pin/Unpin participants",
+          "Add/Remove spotlight",
+          "Raise/Lower hand",
+          "Change video device",
+          "Change audio device"
+        ],
+        "zoom_iso_routing": [
+          "Route users to specific outputs",
+          "Configure output properties",
+          "Control engine state",
+          "Manage audio channel assignments"
+        ],
+        "meeting_control": [
+          "Join meeting (ID, password, display name)",
+          "Leave meeting",
+          "End meeting",
+          "Update Actions/Feedbacks/Presets with current data"
+        ]
+      },
+      "feedbacks": {
+        "participant_status": [
+          "Video on/off indicator",
+          "Audio muted/unmuted status",
+          "Hand raised status",
+          "Multi-state feedback with icons"
+        ],
+        "meeting_status": [
+          "Call status number (0=Not in meeting, 1=Joining/In meeting, 3=Connected, 4=Disconnected, 7=Ended, 8=Audio Ready)"
+        ],
+        "dynamic_display": [
+          "Automatic participant name display",
+          "Real-time status color changes",
+          "Status icons (on/off states)"
+        ]
+      },
+      "variables": [
+        "callStatusNumber (meeting state)",
+        "Participant names",
+        "Video/audio device names",
+        "Gallery view positions"
+      ],
+      "command_examples": [
+        "Select participant from gallery position 1-49",
+        "Mute all participants except speaker",
+        "Route participant to ISO output 1",
+        "Toggle video for selected participants"
+      ],
+      "estimated_action_count": 35
+    },
+    "studiocoast-vmix": {
+      "module_id": "studiocoast-vmix",
+      "repository": "https://github.com/bitfocus/companion-module-studiocoast-vmix",
+      "manufacturer": "StudioCoast",
+      "device": "vMix Live Production Software",
+      "protocol": "REST API + TCP",
+      "broadcast_tier": "tier-1",
+      "use_case": "Live streaming, multi-camera switching, broadcast production",
+      "actions": {
+        "input_controls": [
+          "Input switching and selection",
+          "Input GO action",
+          "Cut, fade, transition between inputs",
+          "Preview/Program assignment"
+        ],
+        "audio_management": [
+          "Set Bus Volume",
+          "Set Headphones Volume",
+          "Individual input audio control",
+          "Audio routing and mixing"
+        ],
+        "transitions": [
+          "Auto/Stinger Transition (8 stingers supported)",
+          "Set Auto Transition Effect (including AlphaFade)",
+          "Custom transition duration",
+          "T-bar control"
+        ],
+        "overlays": [
+          "Overlay Functions (8 overlays)",
+          "Multiple mix support",
+          "Overlay visibility control"
+        ],
+        "title_graphics": [
+          "Begin Animation Page (variable animation selection)",
+          "Set title Image",
+          "Title visibility controls",
+          "Dynamic text updates"
+        ],
+        "replay": [
+          "Play Events by ID",
+          "Quad View toggle/on/off",
+          "Set/Append Event Text",
+          "Clear Event Text",
+          "Instant replay controls"
+        ],
+        "recording_streaming": [
+          "Start/Stop recording",
+          "Start/Stop streaming",
+          "Multi-destination streaming"
+        ],
+        "custom_commands": [
+          "Custom vMix API commands",
+          "Syntax: 'CommandName Value=parameter&Value2=parameter2'",
+          "Direct API access"
+        ]
+      },
+      "feedbacks": {
+        "tally_states": [
+          "Program tally indicator",
+          "Preview tally indicator",
+          "Input active status"
+        ],
+        "status_monitoring": [
+          "Recording status",
+          "Streaming status",
+          "Audio levels",
+          "Layer routing status",
+          "Replay mode indicators"
+        ]
+      },
+      "variables": [
+        "Input names",
+        "Current program/preview",
+        "Recording status",
+        "Streaming status",
+        "Audio bus volumes",
+        "Title text content"
+      ],
+      "command_examples": [
+        "Cut to Input 1",
+        "Fade to Input 2 over 1000ms",
+        "SetVolume Value=1&Volume=75",
+          "OverlayInput1In",
+        "StartRecording",
+        "TitleBeginAnimation Input=1&Value=PageIn"
+      ],
+      "polling_config": {
+        "default_interval": "250ms",
+        "legacy_interval": "100ms (pre-1.2.6)",
+        "data_source": "vMix REST API",
+        "http_api_support": true
+      },
+      "estimated_action_count": 120
+    },
+    "obs-studio": {
+      "module_id": "obs-studio",
+      "repository": "https://github.com/bitfocus/companion-module-obs-studio",
+      "manufacturer": "OBS Project",
+      "device": "OBS Studio",
+      "protocol": "WebSocket (obs-websocket v5.0+)",
+      "broadcast_tier": "tier-1",
+      "use_case": "Streaming, recording, scene switching for live broadcasts",
+      "requirements": {
+        "obs_version": "28 or later (includes obs-websocket by default)",
+        "websocket_port": "4455 (default)",
+        "authentication": "Password required",
+        "network": "Same network as Companion"
+      },
+      "actions": {
+        "recording_streaming": [
+          "Toggle/Start/Stop recording",
+          "Pause/Resume recording",
+          "Split recording file",
+          "Create chapter marker",
+          "Toggle/Start/Stop streaming",
+          "Set stream settings",
+          "Send captions to stream",
+          "Control replay buffer",
+          "Manage virtual camera output"
+        ],
+        "switching_transitions": [
+          "Switch program/preview scenes",
+          "Smart scene switching",
+          "Trigger transition",
+          "Set transition type",
+          "Set transition duration",
+          "Quick transition execution"
+        ],
+        "source_controls": [
+          "Control source visibility",
+          "Manage source filters",
+          "Adjust transforms (position, scale, rotation)",
+          "Mute/Unmute audio sources",
+          "Set volume levels",
+          "Audio monitoring controls",
+          "Audio sync offset",
+          "Audio balance adjustment",
+          "Modify text content (Text/GDI+)",
+          "Refresh browser sources",
+          "Control media playback (play/pause/restart)",
+          "Update file paths for media sources"
+        ],
+        "general_controls": [
+          "Toggle studio mode",
+          "Open projectors (fullscreen/windowed)",
+          "Change profiles",
+          "Change scene collections",
+          "Trigger hotkeys by name",
+          "Trigger hotkeys by ID"
+        ],
+        "advanced": [
+          "Custom commands (JSON request data)",
+          "Custom vendor requests",
+          "Raw WebSocket commands"
+        ]
+      },
+      "feedbacks": {
+        "status_monitoring": [
+          "Streaming active/inactive",
+          "Recording active/inactive",
+          "Scene transition state",
+          "Source visibility state",
+          "Audio mute status",
+          "Media playback status",
+          "Active profile/collection",
+          "Studio mode enabled/disabled",
+          "Available disk space",
+          "Stream congestion indicator"
+        ]
+      },
+      "variables": [
+        "Recording timecode",
+        "Recording file information",
+        "Streaming metrics (uptime, bitrate, dropped frames)",
+        "Current scene name",
+        "Preview scene name (studio mode)",
+        "Transition type and duration",
+        "Media playback status and duration",
+        "Source volume levels",
+        "Source mute states",
+        "Audio monitoring mode",
+        "FPS, CPU usage, memory usage",
+        "Output resolution and framerate",
+        "custom_command_response",
+        "custom_command_type",
+        "custom_command_request"
+      ],
+      "command_examples": [
+        "StartRecord",
+        "SetCurrentProgramScene {sceneName: 'Scene 1'}",
+        "SetInputMute {inputName: 'Microphone', inputMuted: true}",
+        "SetInputVolume {inputName: 'Music', inputVolumeMul: 0.5}",
+        "SetSourceFilterEnabled {sourceName: 'Camera', filterName: 'Chroma Key', filterEnabled: true}",
+        "TriggerHotkeyByName {hotkeyName: 'ReplayBuffer.Save'}",
+        "Custom: {requestType: 'GetStats', requestData: {}}"
+      ],
+      "estimated_action_count": 85
+    },
+    "generic-pjlink": {
+      "module_id": "generic-pjlink",
+      "repository": "https://github.com/bitfocus/companion-module-generic-pjlink",
+      "manufacturer": "JBMIA (Protocol Standard)",
+      "device": "PJLink-compatible Projectors",
+      "protocol": "PJLink Class 1 & 2",
+      "broadcast_tier": "tier-2",
+      "use_case": "Projector control in broadcast monitoring, screening rooms, presentation",
+      "pjlink_versions": {
+        "class_1": "2009 specification",
+        "class_2": "2016 specification"
+      },
+      "actions": {
+        "power_control": [
+          "POWR 0 (Power Off)",
+          "POWR 1 (Power On)",
+          "Query power status"
+        ],
+        "input_selection": [
+          "Select RGB input",
+          "Select HDMI input",
+          "Select video input",
+          "Query available inputs"
+        ],
+        "projector_status": [
+          "Query lamp hours",
+          "Query error status",
+          "Query projector info",
+          "Query input list"
+        ],
+        "advanced_class2": [
+          "Input resolution query",
+          "Recommended resolution query",
+          "Filter usage time",
+          "Lamp replacement model number",
+          "Screen freeze control",
+          "Serial number query"
+        ]
+      },
+      "feedbacks": {
+        "status_indicators": [
+          "Power on/off state",
+          "Warming up indicator",
+          "Cooling down indicator",
+          "Input source active",
+          "Lamp warning",
+          "Error status"
+        ]
+      },
+      "variables": [
+        "Power state",
+        "Current input",
+        "Lamp hours",
+        "Error codes",
+        "Projector model"
+      ],
+      "command_examples": [
+        "%1POWR 1\\r (Power On)",
+        "%1POWR 0\\r (Power Off)",
+        "%1INPT ?\\r (Query current input)",
+        "%1INPT 11\\r (Select RGB input 1)",
+        "%1INPT 31\\r (Select HDMI input 1)",
+        "%1LAMP ?\\r (Query lamp hours)"
+      ],
+      "security": {
+        "authentication": "Random number control ticket",
+        "password_support": true,
+        "connection_reset": "Per-connection ticket generation"
+      },
+      "estimated_action_count": 15
+    },
+    "elgato-keylight": {
+      "module_id": "elgato-keylight",
+      "repository": "https://github.com/bitfocus/companion-module-elgato-keylight",
+      "manufacturer": "Elgato",
+      "device": "Key Light & Ring Light family",
+      "protocol": "REST API (HTTP)",
+      "broadcast_tier": "tier-3",
+      "use_case": "Studio lighting control, talent lighting, interview setups",
+      "network": {
+        "port": 9123,
+        "protocol": "REST over HTTP",
+        "cross_vlan": "Supported if port 9123 allowed",
+        "recommendation": "Static IP via DHCP reservation"
+      },
+      "actions": {
+        "power_control": [
+          "Turn light on",
+          "Turn light off",
+          "Toggle power state"
+        ],
+        "brightness": [
+          "Set brightness level (0-100%)",
+          "Increase brightness",
+          "Decrease brightness"
+        ],
+        "color_temperature": [
+          "Set color temperature (2900K - 7000K)",
+          "Warmer adjustment",
+          "Cooler adjustment",
+          "Temperature range: 143 (7000K) to 344 (2900K)"
+        ]
+      },
+      "feedbacks": {
+        "status_indicators": [
+          "Power on/off state",
+          "Current brightness level",
+          "Current color temperature",
+          "Connection status"
+        ]
+      },
+      "variables": [
+        "Power state (on/off)",
+        "Brightness percentage",
+        "Color temperature (Kelvin)",
+        "Device name"
+      ],
+      "command_examples": [
+        "PUT /elgato/lights - {lights: [{on: 1}]}",
+        "PUT /elgato/lights - {lights: [{brightness: 50}]}",
+        "PUT /elgato/lights - {lights: [{temperature: 200}]} (approximately 4500K)"
+      ],
+      "tested_compatibility": [
+        "Key Light (Firmware 1.0.3/200, 1.0.3/218)",
+        "Key Light Air (Firmware 1.0.3/195, 1.0.3/200)",
+        "Ring Light"
+      ],
+      "estimated_action_count": 8
+    },
+    "bmd-atem": {
+      "module_id": "bmd-atem",
+      "repository": "https://github.com/bitfocus/companion-module-bmd-atem",
+      "manufacturer": "Blackmagic Design",
+      "device": "ATEM Switchers (all models)",
+      "protocol": "Blackmagic ATEM Protocol (TCP)",
+      "broadcast_tier": "tier-1",
+      "use_case": "Live production switching, broadcast, multi-camera events",
+      "requirements": {
+        "firmware": "7.5.2 or later recommended",
+        "connection": "Network only (USB NOT supported)",
+        "network": "Must be same IP range as Companion"
+      },
+      "actions": {
+        "switching_operations": [
+          "Set program input",
+          "Set preview input",
+          "Execute cut transition",
+          "Execute auto transition",
+          "Execute fade to black",
+          "T-bar position control",
+          "Transition style selection",
+          "Transition rate adjustment"
+        ],
+        "audio_control": [
+          "Fairlight fader gain adjustment",
+          "Audio routing configuration",
+          "Master gain control",
+          "Monitor gain control",
+          "Audio peak reset",
+          "Headphone level management",
+          "Solo controls",
+          "Mute controls",
+          "Audio mixing (AFV, On, Off)"
+        ],
+        "macros_automation": [
+          "Execute macro by index",
+          "Run macro by name",
+          "Macro looping control",
+          "Save startup state",
+          "Clear startup state"
+        ],
+        "media_recording": [
+          "Media player source selection (supports variables)",
+          "Still frame capture",
+          "Still frame deletion",
+          "Recording start/stop",
+          "Recording filename configuration (supports variables)",
+          "ISO recording enable/disable",
+          "Streaming controls"
+        ],
+        "camera_control": [
+          "Camera iris adjustment",
+          "Exposure control",
+          "Zoom control (continuous)",
+          "Camera recording actions",
+          "Color correction"
+        ],
+        "keying_dve": [
+          "Upstream keyer on/off",
+          "Downstream keyer on/off",
+          "USK type switching",
+          "USK mask adjustment",
+          "DSK rate control",
+          "DSK premultiplied key",
+          "DSK mask parameters",
+          "DVE keyframe configuration",
+          "SuperSource art source",
+          "SuperSource box placement"
+        ],
+        "multiviewer_display": [
+          "Multiviewer layout configuration",
+          "Input labeling (short/long text)",
+          "Multiviewer window assignment",
+          "Display clock offset",
+          "Display clock configuration"
+        ],
+        "auxiliary_outputs": [
+          "Aux output routing",
+          "Aux source selection"
+        ]
+      },
+      "feedbacks": {
+        "tally_indicators": [
+          "Program tally (red)",
+          "Preview tally (green)",
+          "Input tally states"
+        ],
+        "status_monitoring": [
+          "Recording status",
+          "Streaming status",
+          "Fade to black active",
+          "Transition in progress",
+          "Macro running status",
+          "USK/DSK on-air status",
+          "Audio levels",
+          "Media player status"
+        ]
+      },
+      "variables": [
+        "Program input",
+        "Preview input",
+        "Transition style",
+        "Transition rate",
+        "Recording status",
+        "Streaming status",
+        "Media player sources",
+        "Input labels",
+        "Audio levels",
+        "Macro names and status",
+        "Display clock values",
+        "Model name",
+        "Firmware version"
+      },
+      "command_examples": [
+        "Set Program Input to Camera 1",
+        "Set Preview Input to Camera 2",
+        "Execute Auto Transition",
+        "Set Fairlight Fader 1 Gain to -12dB",
+        "Run Macro 'Opening Sequence'",
+        "Set Media Player 1 to Still 1",
+        "Set USK 1 On Air",
+        "Route Camera 3 to Aux 1"
+      ],
+      "supported_models": [
+        "ATEM Mini",
+        "ATEM Mini Pro",
+        "ATEM Mini Pro ISO",
+        "ATEM Mini Extreme",
+        "ATEM Television Studio HD",
+        "ATEM 1 M/E Production Studio 4K",
+        "ATEM 2 M/E Production Studio 4K",
+        "ATEM 4 M/E Broadcast Studio 4K",
+        "ATEM Constellation 8K"
+      ],
+      "estimated_action_count": 150
+    },
+    "ptzoptics-visca": {
+      "module_id": "ptzoptics-visca",
+      "repository": "https://github.com/bitfocus/companion-module-ptzoptics-visca",
+      "manufacturer": "PTZOptics",
+      "device": "PTZ Cameras (G2/G3 series primarily)",
+      "protocol": "VISCA over TCP/IP",
+      "broadcast_tier": "tier-1",
+      "use_case": "PTZ camera control for broadcast, houses of worship, education",
+      "actions": {
+        "ptz_movement": [
+          "Pan left/right",
+          "Tilt up/down",
+          "Pan/Tilt combined movement",
+          "Pan/Tilt home position",
+          "Pan/Tilt stop",
+          "Pan/Tilt speed control (variable)",
+          "Zoom in/out",
+          "Zoom speed control",
+          "Zoom direct position",
+          "Zoom stop"
+        ],
+        "focus_control": [
+          "Auto focus on/off",
+          "Manual focus near",
+          "Manual focus far",
+          "Focus speed control",
+          "One-push auto focus",
+          "Focus lock",
+          "Touch auto focus (if supported)"
+        ],
+        "exposure": [
+          "Auto exposure on/off",
+          "Manual iris adjustment",
+          "Gain control",
+          "Shutter speed",
+          "Backlight compensation",
+          "Wide dynamic range (WDR)",
+          "Exposure compensation level"
+        ],
+        "white_balance": [
+          "Auto white balance",
+          "Indoor mode",
+          "Outdoor mode",
+          "One-push white balance",
+          "Manual white balance",
+          "Color temperature mode"
+        ],
+        "presets": [
+          "Recall preset (1-255)",
+          "Save preset position",
+          "Clear preset",
+          "Preset speed control"
+        ],
+        "image_settings": [
+          "Picture flip (mirror)",
+          "Picture reverse (flip)",
+          "Noise reduction level",
+          "Digital zoom enable/disable",
+          "Image stabilization"
+        ],
+        "advanced": [
+          "Custom VISCA commands",
+          "Camera power on/off",
+          "Reset to defaults",
+          "Query camera status"
+        ]
+      },
+      "feedbacks": {
+        "status_indicators": [
+          "Current preset active",
+          "Auto focus enabled/disabled",
+          "Camera moving indicator",
+          "Zoom position",
+          "Connection status"
+        ]
+      },
+      "variables": [
+        "Current preset number",
+        "Pan position",
+        "Tilt position",
+        "Zoom position",
+        "Focus mode",
+        "Exposure mode",
+        "White balance mode",
+        "Camera model"
+      ],
+      "command_examples": [
+        "81 01 06 02 VV WW 0P 0P 0P 0P 0T 0T 0T 0T FF (Pan/Tilt Position)",
+        "81 01 04 07 02 FF (Zoom Tele - zoom in)",
+        "81 01 04 07 03 FF (Zoom Wide - zoom out)",
+        "81 01 04 38 02 FF (Auto Focus On)",
+        "81 01 04 3F 02 pp FF (Recall Preset pp)",
+        "81 01 04 47 VV WW 0Y 0Y 0Y 0Y FF (Pan/Tilt Speed)"
+      ],
+      "supported_cameras": [
+        "PTZOptics 12X (G2/G3)",
+        "PTZOptics 20X (G2/G3)",
+        "PTZOptics 30X (G2/G3)",
+        "PTZOptics Move 4K",
+        "Compatible with most VISCA cameras"
+      ],
+      "network_requirements": {
+        "protocol": "TCP/IP",
+        "port": "5678 (default VISCA port)",
+        "latency": "Low latency network recommended for smooth PTZ"
+      },
+      "estimated_action_count": 60
+    }
+  },
+
+  "device_catalog_top_50_mcr": {
+    "metadata": {
+      "total_devices": 50,
+      "focus": "Master Control Room (MCR) broadcast applications",
+      "tier_definitions": {
+        "tier_1": "Essential, commonly used in professional MCR environments",
+        "tier_2": "Important for specific workflows, professional quality",
+        "tier_3": "Useful for specialized applications or smaller setups"
+      }
+    },
+    "devices": [
+      {
+        "rank": 1,
+        "manufacturer": "Blackmagic Design",
+        "model": "ATEM Switchers",
+        "module_id": "bmd-atem",
+        "category": "Video Switching",
+        "protocol": "ATEM TCP",
+        "action_count": 150,
+        "broadcast_tier": "tier-1",
+        "use_cases": ["Live switching", "Multi-camera production", "Broadcast playout"]
+      },
+      {
+        "rank": 2,
+        "manufacturer": "StudioCoast",
+        "model": "vMix",
+        "module_id": "studiocoast-vmix",
+        "category": "Video Production Software",
+        "protocol": "REST API + TCP",
+        "action_count": 120,
+        "broadcast_tier": "tier-1",
+        "use_cases": ["Live streaming", "Virtual production", "Recording"]
+      },
+      {
+        "rank": 3,
+        "manufacturer": "OBS Project",
+        "model": "OBS Studio",
+        "module_id": "obs-studio",
+        "category": "Streaming Software",
+        "protocol": "WebSocket",
+        "action_count": 85,
+        "broadcast_tier": "tier-1",
+        "use_cases": ["Streaming", "Recording", "Scene management"]
+      },
+      {
+        "rank": 4,
+        "manufacturer": "Blackmagic Design",
+        "model": "HyperDeck",
+        "module_id": "bmd-hyperdeck",
+        "category": "Recording/Playout",
+        "protocol": "TCP",
+        "action_count": 40,
+        "broadcast_tier": "tier-1",
+        "use_cases": ["Broadcast recording", "Playout", "ISO recording"]
+      },
+      {
+        "rank": 5,
+        "manufacturer": "PTZOptics",
+        "model": "PTZ Cameras (VISCA)",
+        "module_id": "ptzoptics-visca",
+        "category": "PTZ Camera",
+        "protocol": "VISCA/TCP",
+        "action_count": 60,
+        "broadcast_tier": "tier-1",
+        "use_cases": ["Camera control", "Preset recall", "Remote production"]
+      },
+      {
+        "rank": 6,
+        "manufacturer": "NewTek",
+        "model": "TriCaster",
+        "module_id": "newtek-tricaster",
+        "category": "Video Switcher",
+        "protocol": "TCP LivePanel",
+        "action_count": 75,
+        "broadcast_tier": "tier-1",
+        "use_cases": ["Live production", "Streaming", "Multi-camera switching"]
+      },
+      {
+        "rank": 7,
+        "manufacturer": "Ross Video",
+        "model": "Carbonite",
+        "module_id": "rossvideo-carbonite",
+        "category": "Video Switcher",
+        "protocol": "RossTalk",
+        "action_count": 90,
+        "broadcast_tier": "tier-1",
+        "use_cases": ["Broadcast switching", "Live events", "Studio production"]
+      },
+      {
+        "rank": 8,
+        "manufacturer": "Blackmagic Design",
+        "model": "VideoHub",
+        "module_id": "bmd-videohub",
+        "category": "Video Router",
+        "protocol": "TCP",
+        "action_count": 30,
+        "broadcast_tier": "tier-1",
+        "use_cases": ["Signal routing", "Matrix switching", "Source distribution"]
+      },
+      {
+        "rank": 9,
+        "manufacturer": "Behringer",
+        "model": "X32/M32",
+        "module_id": "behringer-x32",
+        "category": "Audio Mixer",
+        "protocol": "OSC",
+        "action_count": 100,
+        "broadcast_tier": "tier-1",
+        "use_cases": ["Audio mixing", "Live sound", "Broadcast audio"]
+      },
+      {
+        "rank": 10,
+        "manufacturer": "Allen & Heath",
+        "model": "SQ Series",
+        "module_id": "allenheath-sq",
+        "category": "Audio Mixer",
+        "protocol": "TCP/MIDI",
+        "action_count": 85,
+        "broadcast_tier": "tier-1",
+        "use_cases": ["Audio mixing", "Studio mixing", "Live broadcast"]
+      },
+      {
+        "rank": 11,
+        "manufacturer": "Liminal Entertainment",
+        "model": "ZoomOSC ISO",
+        "module_id": "zoom-osc-iso",
+        "category": "Video Conferencing Control",
+        "protocol": "OSC",
+        "action_count": 35,
+        "broadcast_tier": "tier-1",
+        "use_cases": ["Hybrid events", "Remote production", "Webinar control"]
+      },
+      {
+        "rank": 12,
+        "manufacturer": "CasparCG",
+        "model": "Server",
+        "module_id": "casparcg",
+        "category": "Graphics/Playout",
+        "protocol": "AMCP",
+        "action_count": 65,
+        "broadcast_tier": "tier-1",
+        "use_cases": ["Graphics playout", "Lower thirds", "Broadcast graphics"]
+      },
+      {
+        "rank": 13,
+        "manufacturer": "Analogway",
+        "model": "LivePremier",
+        "module_id": "analogway-livepremier",
+        "category": "Video Switcher/Processor",
+        "protocol": "TCP/AWJ",
+        "action_count": 110,
+        "broadcast_tier": "tier-1",
+        "use_cases": ["Large events", "Multi-screen", "Complex switching"]
+      },
+      {
+        "rank": 14,
+        "manufacturer": "Sony",
+        "model": "VISCA PTZ Cameras",
+        "module_id": "sony-visca",
+        "category": "PTZ Camera",
+        "protocol": "VISCA/TCP",
+        "action_count": 65,
+        "broadcast_tier": "tier-1",
+        "use_cases": ["Broadcast cameras", "Studio automation", "Remote control"]
+      },
+      {
+        "rank": 15,
+        "manufacturer": "Panasonic",
+        "model": "PTZ Cameras",
+        "module_id": "panasonic-ptz",
+        "category": "PTZ Camera",
+        "protocol": "HTTP/CGI",
+        "action_count": 55,
+        "broadcast_tier": "tier-1",
+        "use_cases": ["Studio cameras", "Remote production", "Broadcast"]
+      },
+      {
+        "rank": 16,
+        "manufacturer": "Generic",
+        "model": "PJLink Projectors",
+        "module_id": "generic-pjlink",
+        "category": "Display/Projector",
+        "protocol": "PJLink",
+        "action_count": 15,
+        "broadcast_tier": "tier-2",
+        "use_cases": ["Monitoring displays", "Screening rooms", "Video walls"]
+      },
+      {
+        "rank": 17,
+        "manufacturer": "Elgato",
+        "model": "Key Light",
+        "module_id": "elgato-keylight",
+        "category": "Lighting",
+        "protocol": "REST/HTTP",
+        "action_count": 8,
+        "broadcast_tier": "tier-3",
+        "use_cases": ["Studio lighting", "Talent lighting", "Set lighting"]
+      },
+      {
+        "rank": 18,
+        "manufacturer": "AJA",
+        "model": "Ki Pro",
+        "module_id": "aja-kipro",
+        "category": "Recording",
+        "protocol": "HTTP",
+        "action_count": 35,
+        "broadcast_tier": "tier-1",
+        "use_cases": ["Broadcast recording", "File-based workflows", "ISO recording"]
+      },
+      {
+        "rank": 19,
+        "manufacturer": "AJA",
+        "model": "Kumo Router",
+        "module_id": "aja-kumo",
+        "category": "Video Router",
+        "protocol": "TCP",
+        "action_count": 25,
+        "broadcast_tier": "tier-1",
+        "use_cases": ["Signal routing", "Matrix switching", "Broadcast infrastructure"]
+      },
+      {
+        "rank": 20,
+        "manufacturer": "Yamaha",
+        "model": "CL/QL Series",
+        "module_id": "yamaha-ql",
+        "category": "Audio Mixer",
+        "protocol": "OSC",
+        "action_count": 95,
+        "broadcast_tier": "tier-1",
+        "use_cases": ["Broadcast audio", "Live mixing", "Studio production"]
+      },
+      {
+        "rank": 21,
+        "manufacturer": "Barco",
+        "model": "EventMaster",
+        "module_id": "barco-eventmaster",
+        "category": "Event Processor",
+        "protocol": "TCP/REST",
+        "action_count": 80,
+        "broadcast_tier": "tier-1",
+        "use_cases": ["Large events", "Multi-screen", "Video wall control"]
+      },
+      {
+        "rank": 22,
+        "manufacturer": "Resolume",
+        "model": "Arena/Avenue",
+        "module_id": "resolume-arena",
+        "category": "VJ Software",
+        "protocol": "OSC",
+        "action_count": 70,
+        "broadcast_tier": "tier-2",
+        "use_cases": ["Live visuals", "Content playback", "VJ performances"]
+      },
+      {
+        "rank": 23,
+        "manufacturer": "Dante",
+        "model": "Audio Network",
+        "module_id": "audinate-dante",
+        "category": "Audio Networking",
+        "protocol": "TCP/UDP",
+        "action_count": 45,
+        "broadcast_tier": "tier-1",
+        "use_cases": ["Audio routing", "Network audio", "Broadcast audio distribution"]
+      },
+      {
+        "rank": 24,
+        "manufacturer": "Avolites",
+        "model": "Titan",
+        "module_id": "avolites-titan",
+        "category": "Lighting Console",
+        "protocol": "TCP",
+        "action_count": 60,
+        "broadcast_tier": "tier-2",
+        "use_cases": ["Studio lighting", "Concert lighting", "Broadcast lighting"]
+      },
+      {
+        "rank": 25,
+        "manufacturer": "ChamSys",
+        "model": "MagicQ",
+        "module_id": "chamsys-magicq-udp",
+        "category": "Lighting Console",
+        "protocol": "UDP",
+        "action_count": 55,
+        "broadcast_tier": "tier-2",
+        "use_cases": ["Stage lighting", "Studio lighting", "Event lighting"]
+      },
+      {
+        "rank": 26,
+        "manufacturer": "Biamp",
+        "model": "Tesira",
+        "module_id": "biamp-tesira",
+        "category": "Audio DSP",
+        "protocol": "TCP",
+        "action_count": 50,
+        "broadcast_tier": "tier-2",
+        "use_cases": ["Audio processing", "Room audio", "Broadcast audio"]
+      },
+      {
+        "rank": 27,
+        "manufacturer": "Canon",
+        "model": "CR-N Series PTZ",
+        "module_id": "canon-ptz",
+        "category": "PTZ Camera",
+        "protocol": "HTTP/CGI",
+        "action_count": 50,
+        "broadcast_tier": "tier-1",
+        "use_cases": ["Studio cameras", "Remote production", "4K production"]
+      },
+      {
+        "rank": 28,
+        "manufacturer": "BirdDog",
+        "model": "PTZ Cameras",
+        "module_id": "birddog-ptz",
+        "category": "PTZ Camera",
+        "protocol": "VISCA/HTTP",
+        "action_count": 55,
+        "broadcast_tier": "tier-1",
+        "use_cases": ["NDI production", "IP workflow", "Remote cameras"]
+      },
+      {
+        "rank": 29,
+        "manufacturer": "Roland",
+        "model": "V-Series Switchers",
+        "module_id": "roland-v60hd",
+        "category": "Video Switcher",
+        "protocol": "TCP",
+        "action_count": 45,
+        "broadcast_tier": "tier-2",
+        "use_cases": ["Live events", "Portable production", "Small studio"]
+      },
+      {
+        "rank": 30,
+        "manufacturer": "Grass Valley",
+        "model": "AMPP",
+        "module_id": "grassvalley-ampp",
+        "category": "Cloud Production",
+        "protocol": "REST API",
+        "action_count": 75,
+        "broadcast_tier": "tier-1",
+        "use_cases": ["Cloud production", "Remote workflows", "Scalable broadcast"]
+      },
+      {
+        "rank": 31,
+        "manufacturer": "Teradek",
+        "model": "Prism",
+        "module_id": "teradek-prism",
+        "category": "Encoder",
+        "protocol": "REST API",
+        "action_count": 30,
+        "broadcast_tier": "tier-2",
+        "use_cases": ["Live streaming", "Video delivery", "Mobile production"]
+      },
+      {
+        "rank": 32,
+        "manufacturer": "AWS",
+        "model": "Elemental MediaLive",
+        "module_id": "aws-elemental-medialive",
+        "category": "Cloud Encoder",
+        "protocol": "REST API",
+        "action_count": 40,
+        "broadcast_tier": "tier-1",
+        "use_cases": ["Cloud encoding", "OTT delivery", "Broadcast workflows"]
+      },
+      {
+        "rank": 33,
+        "manufacturer": "Extron",
+        "model": "Matrix Switchers",
+        "module_id": "extron-smp",
+        "category": "AV Switcher",
+        "protocol": "TCP/SIS",
+        "action_count": 35,
+        "broadcast_tier": "tier-2",
+        "use_cases": ["AV routing", "Control rooms", "Signal distribution"]
+      },
+      {
+        "rank": 34,
+        "manufacturer": "Audac",
+        "model": "MTX Series",
+        "module_id": "audac-mtx",
+        "category": "Audio Matrix",
+        "protocol": "TCP",
+        "action_count": 40,
+        "broadcast_tier": "tier-2",
+        "use_cases": ["Audio routing", "Zone audio", "PA systems"]
+      },
+      {
+        "rank": 35,
+        "manufacturer": "Shure",
+        "model": "Wireless Systems",
+        "module_id": "shure-wireless",
+        "category": "Wireless Audio",
+        "protocol": "TCP/REST",
+        "action_count": 30,
+        "broadcast_tier": "tier-2",
+        "use_cases": ["Wireless mics", "IEM systems", "RF coordination"]
+      },
+      {
+        "rank": 36,
+        "manufacturer": "Cisco",
+        "model": "Webex",
+        "module_id": "cisco-webex",
+        "category": "Video Conferencing",
+        "protocol": "REST API",
+        "action_count": 25,
+        "broadcast_tier": "tier-2",
+        "use_cases": ["Hybrid production", "Remote participants", "Webinars"]
+      },
+      {
+        "rank": 37,
+        "manufacturer": "Microsoft",
+        "model": "Teams",
+        "module_id": "microsoft-teams",
+        "category": "Video Conferencing",
+        "protocol": "REST API",
+        "action_count": 20,
+        "broadcast_tier": "tier-2",
+        "use_cases": ["Corporate streaming", "Hybrid events", "Remote production"]
+      },
+      {
+        "rank": 38,
+        "manufacturer": "Barco",
+        "model": "Folsom Processors",
+        "module_id": "barco-folsom",
+        "category": "Video Processor",
+        "protocol": "TCP",
+        "action_count": 65,
+        "broadcast_tier": "tier-1",
+        "use_cases": ["Video walls", "Multi-window", "Image processing"]
+      },
+      {
+        "rank": 39,
+        "manufacturer": "Christie",
+        "model": "Pandoras Box",
+        "module_id": "christie-pandorasbox",
+        "category": "Media Server",
+        "protocol": "TCP/OSC",
+        "action_count": 80,
+        "broadcast_tier": "tier-2",
+        "use_cases": ["Content playback", "Video mapping", "Large events"]
+      },
+      {
+        "rank": 40,
+        "manufacturer": "Disguise",
+        "model": "Media Servers",
+        "module_id": "disguise-gx",
+        "category": "Media Server",
+        "protocol": "TCP/OSC",
+        "action_count": 90,
+        "broadcast_tier": "tier-1",
+        "use_cases": ["Virtual production", "LED walls", "Broadcast graphics"]
+      },
+      {
+        "rank": 41,
+        "manufacturer": "Riedel",
+        "model": "Artist/Bolero",
+        "module_id": "riedel-artist",
+        "category": "Intercom",
+        "protocol": "TCP",
+        "action_count": 45,
+        "broadcast_tier": "tier-1",
+        "use_cases": ["Production comms", "Broadcast intercom", "Event coordination"]
+      },
+      {
+        "rank": 42,
+        "manufacturer": "TSL",
+        "model": "UMD Tallies",
+        "module_id": "tsl-umd",
+        "category": "Tally System",
+        "protocol": "TCP/UDP",
+        "action_count": 20,
+        "broadcast_tier": "tier-1",
+        "use_cases": ["Tally distribution", "Camera tally", "MCR tally"]
+      },
+      {
+        "rank": 43,
+        "manufacturer": "Blackmagic Design",
+        "model": "Smart Videohub",
+        "module_id": "bmd-smartvideohub",
+        "category": "Video Router",
+        "protocol": "TCP",
+        "action_count": 30,
+        "broadcast_tier": "tier-1",
+        "use_cases": ["12G routing", "4K routing", "Broadcast routing"]
+      },
+      {
+        "rank": 44,
+        "manufacturer": "Magewell",
+        "model": "Ultra Stream",
+        "module_id": "magewell-ultrastream",
+        "category": "Encoder",
+        "protocol": "REST API",
+        "action_count": 25,
+        "broadcast_tier": "tier-2",
+        "use_cases": ["HDMI encoding", "NDI conversion", "Streaming"]
+      },
+      {
+        "rank": 45,
+        "manufacturer": "Haivision",
+        "model": "Makito X",
+        "module_id": "haivision-makitox",
+        "category": "Encoder",
+        "protocol": "REST API",
+        "action_count": 35,
+        "broadcast_tier": "tier-1",
+        "use_cases": ["Broadcast encoding", "Contribution", "Distribution"]
+      },
+      {
+        "rank": 46,
+        "manufacturer": "Singular.live",
+        "model": "Graphics Platform",
+        "module_id": "singularlive",
+        "category": "Graphics",
+        "protocol": "REST API",
+        "action_count": 40,
+        "broadcast_tier": "tier-2",
+        "use_cases": ["Live graphics", "Data-driven graphics", "Cloud graphics"]
+      },
+      {
+        "rank": 47,
+        "manufacturer": "vMix",
+        "model": "Call",
+        "module_id": "vmix-call",
+        "category": "Video Conferencing",
+        "protocol": "TCP/REST",
+        "action_count": 30,
+        "broadcast_tier": "tier-2",
+        "use_cases": ["Remote guests", "Call-in production", "Hybrid events"]
+      },
+      {
+        "rank": 48,
+        "manufacturer": "Epiphan",
+        "model": "Pearl",
+        "module_id": "epiphan-pearl",
+        "category": "Encoder/Recorder",
+        "protocol": "REST API",
+        "action_count": 35,
+        "broadcast_tier": "tier-2",
+        "use_cases": ["Multi-source recording", "Streaming", "Lecture capture"]
+      },
+      {
+        "rank": 49,
+        "manufacturer": "Matrox",
+        "model": "Monarch",
+        "module_id": "matrox-monarch",
+        "category": "Encoder",
+        "protocol": "REST API",
+        "action_count": 25,
+        "broadcast_tier": "tier-2",
+        "use_cases": ["Dual streaming", "Recording", "Event production"]
+      },
+      {
+        "rank": 50,
+        "manufacturer": "Generic",
+        "model": "NDI Sources",
+        "module_id": "ndi-control",
+        "category": "IP Video Protocol",
+        "protocol": "NDI",
+        "action_count": 30,
+        "broadcast_tier": "tier-1",
+        "use_cases": ["IP workflows", "NDI routing", "Network video"]
+      }
+    ]
+  },
+
+  "module_base_class_api": {
+    "package": {
+      "name": "@companion-module/base",
+      "npm_url": "https://www.npmjs.com/package/@companion-module/base",
+      "documentation": "https://bitfocus.github.io/companion-module-base/",
+      "github": "https://github.com/bitfocus/companion-module-base",
+      "weekly_downloads": 552,
+      "description": "Base class and framework for writing modules for Companion 3.0+"
+    },
+    "base_class": {
+      "name": "InstanceBase<TConfig, TSecrets>",
+      "type": "Abstract Class",
+      "generics": {
+        "TConfig": "Module configuration interface",
+        "TSecrets": "Sensitive configuration data (passwords, tokens)"
+      },
+      "properties": {
+        "id": {
+          "type": "string",
+          "readonly": true,
+          "description": "Unique identifier for the module instance"
+        },
+        "label": {
+          "type": "string",
+          "access": "getter",
+          "description": "User-chosen name for the instance"
+        },
+        "instanceOptions": {
+          "type": "InstanceOptions",
+          "access": "getter/setter",
+          "description": "Configuration options for the instance"
+        }
+      },
+      "abstract_methods": {
+        "init": {
+          "signature": "async init(config: TConfig): Promise<void>",
+          "description": "Main initialization function called once the module is OK to start",
+          "required": true,
+          "lifecycle": "startup"
+        },
+        "destroy": {
+          "signature": "async destroy(): Promise<void>",
+          "description": "Clean up the instance before it is destroyed",
+          "required": true,
+          "lifecycle": "shutdown"
+        },
+        "configUpdated": {
+          "signature": "async configUpdated(config: TConfig): Promise<void>",
+          "description": "Called when configuration changes",
+          "required": true,
+          "lifecycle": "configuration"
+        },
+        "getConfigFields": {
+          "signature": "getConfigFields(): SomeCompanionConfigField[]",
+          "description": "Creates the configuration fields for web config UI",
+          "required": true,
+          "lifecycle": "configuration"
+        }
+      },
+      "definition_methods": {
+        "setActionDefinitions": {
+          "signature": "setActionDefinitions(actions: CompanionActionDefinitions): void",
+          "description": "Register available actions that users can assign to buttons",
+          "interface": "CompanionActionDefinitions",
+          "usage": "Called during init() or when actions need updating"
+        },
+        "setFeedbackDefinitions": {
+          "signature": "setFeedbackDefinitions(feedbacks: CompanionFeedbackDefinitions): void",
+          "description": "Register feedback types that provide state to buttons",
+          "interface": "CompanionFeedbackDefinitions",
+          "usage": "Called during init() or when feedbacks need updating"
+        },
+        "setPresetDefinitions": {
+          "signature": "setPresetDefinitions(presets: CompanionPresetDefinitions): void",
+          "description": "Register preset button configurations for quick setup",
+          "interface": "CompanionPresetDefinitions",
+          "usage": "Called during init() or when presets need updating"
+        },
+        "setVariableDefinitions": {
+          "signature": "setVariableDefinitions(variables: CompanionVariableDefinition[]): void",
+          "description": "Register variable definitions that expose device state",
+          "interface": "CompanionVariableDefinition[]",
+          "usage": "Called during init() or when variables need updating"
+        }
+      },
+      "subscription_methods": {
+        "subscribeActions": {
+          "signature": "subscribeActions(actions: Record<string, CompanionActionInfo>): void",
+          "description": "Enable subscriptions for currently placed actions",
+          "usage": "Track which actions are in use"
+        },
+        "unsubscribeActions": {
+          "signature": "unsubscribeActions(actions: string[]): void",
+          "description": "Clean up subscriptions when actions are removed",
+          "usage": "Release resources for removed actions"
+        },
+        "subscribeFeedbacks": {
+          "signature": "subscribeFeedbacks(feedbacks: Record<string, CompanionFeedbackInfo>): void",
+          "description": "Enable subscriptions for currently placed feedbacks",
+          "usage": "Track which feedbacks are in use"
+        },
+        "unsubscribeFeedbacks": {
+          "signature": "unsubscribeFeedbacks(feedbacks: string[]): void",
+          "description": "Clean up subscriptions when feedbacks are removed",
+          "usage": "Release resources for removed feedbacks"
+        }
+      },
+      "feedback_update_methods": {
+        "checkFeedbacks": {
+          "signature": "checkFeedbacks(...feedbackTypes: string[]): void",
+          "description": "Request re-evaluation of specified feedback types",
+          "usage": "Called when device state changes to update button appearance"
+        },
+        "checkFeedbacksById": {
+          "signature": "checkFeedbacksById(...feedbackIds: string[]): void",
+          "description": "Request re-evaluation of specific feedback instances by ID",
+          "usage": "More targeted feedback updates"
+        }
+      },
+      "variable_methods": {
+        "setVariableValues": {
+          "signature": "setVariableValues(values: CompanionVariableValues): void",
+          "description": "Update variable states that modules expose",
+          "usage": "Called when device state changes to update variable values"
+        },
+        "getVariableValue": {
+          "signature": "getVariableValue(variableId: string): CompanionVariableValue | undefined",
+          "description": "Retrieve current value of a specific variable",
+          "usage": "Access variable state within module logic"
+        },
+        "parseVariablesInString": {
+          "signature": "async parseVariablesInString(text: string): Promise<string>",
+          "description": "Replace variable references in strings with their values",
+          "usage": "Process user input containing variable references like $(instance:variable)"
+        }
+      },
+      "status_methods": {
+        "updateStatus": {
+          "signature": "updateStatus(status: InstanceStatus, message?: string): void",
+          "description": "Communicate instance health and connection status",
+          "statuses": [
+            "Ok - Instance functioning normally",
+            "Warning - Non-critical issue",
+            "Error - Critical issue, not functional",
+            "Connecting - Attempting to connect",
+            "Disconnected - Not connected"
+          ],
+          "usage": "Update Companion UI to reflect module state"
+        }
+      },
+      "utility_methods": {
+        "log": {
+          "signature": "log(level: LogLevel, message: string): void",
+          "description": "Write to Companion logs with severity levels",
+          "levels": ["debug", "info", "warn", "error"],
+          "usage": "Debugging and error reporting"
+        },
+        "oscSend": {
+          "signature": "oscSend(host: string, port: number, path: string, args: OSCArgument[]): void",
+          "description": "Transmit OSC messages to external systems",
+          "usage": "Send OSC commands from module actions"
+        },
+        "saveConfig": {
+          "signature": "saveConfig(config: TConfig): void",
+          "description": "Persist configuration changes made programmatically",
+          "usage": "Update config from module logic (e.g., auto-discovery)"
+        },
+        "createSharedUdpSocket": {
+          "signature": "createSharedUdpSocket(options: UDPSocketOptions): UDPSocket",
+          "description": "Enable multi-instance UDP port sharing",
+          "usage": "Multiple instances can share the same UDP port"
+        }
+      },
+      "recording_methods": {
+        "recordAction": {
+          "signature": "recordAction(action: CompanionActionInfo, uniquenessId?: string): boolean",
+          "description": "Add actions to recording sessions",
+          "usage": "Enable learning/recording of device commands"
+        }
+      }
+    },
+    "action_interface": {
+      "name": "CompanionActionDefinition",
+      "description": "Defines an action that can be triggered by users",
+      "properties": {
+        "name": "Human-readable action name",
+        "description": "Optional description shown in UI",
+        "options": "Array of SomeCompanionInputField defining user inputs",
+        "callback": "async (action: CompanionActionEvent) => Promise<void> - Execution handler",
+        "learn": "Optional learning function for recording device commands",
+        "subscribe": "Optional function called when action is placed on a button",
+        "unsubscribe": "Optional function called when action is removed"
+      },
+      "callback_signature": "async callback(action: CompanionActionEvent): Promise<void>",
+      "action_event_properties": {
+        "actionId": "ID of the action being executed",
+        "options": "User-configured option values",
+        "surfaceId": "ID of surface triggering the action (if applicable)"
+      }
+    },
+    "feedback_interface": {
+      "name": "CompanionBooleanFeedbackDefinition",
+      "description": "Defines feedback that changes button appearance based on state",
+      "properties": {
+        "type": "'boolean' - Feedback evaluates to true/false",
+        "name": "Human-readable feedback name",
+        "description": "Optional description shown in UI",
+        "options": "Array of SomeCompanionInputField defining user inputs",
+        "defaultStyle": "Default button styling when feedback is true (colors, text, PNG)",
+        "callback": "(feedback: CompanionFeedbackInfo) => boolean | Promise<boolean> - State evaluation",
+        "learn": "Optional learning function",
+        "subscribe": "Optional function called when feedback is placed",
+        "unsubscribe": "Optional function called when feedback is removed"
+      },
+      "callback_signature": "callback(feedback: CompanionFeedbackInfo): boolean | Promise<boolean>",
+      "feedback_info_properties": {
+        "feedbackId": "ID of the feedback",
+        "options": "User-configured option values",
+        "type": "Feedback type identifier"
+      },
+      "default_style_properties": {
+        "bgcolor": "Background color (RGB integer)",
+        "color": "Foreground color (RGB integer)",
+        "text": "Button text",
+        "png64": "Base64-encoded PNG image",
+        "alignment": "Text alignment",
+        "size": "Text size",
+        "show_topbar": "Show button topbar"
+      }
+    },
+    "preset_interface": {
+      "name": "CompanionButtonPresetDefinition",
+      "description": "Pre-configured button with actions, feedbacks, and styling",
+      "properties": {
+        "type": "'button'",
+        "category": "Category for organization in preset browser",
+        "name": "Preset name",
+        "style": "Button styling (text, colors, PNG, alignment, size)",
+        "feedbacks": "Array of feedback configurations",
+        "steps": "Array of button press steps, each containing actions",
+        "options": "Additional preset options"
+      },
+      "usage": "Provide users with ready-to-use button configurations"
+    },
+    "variable_interface": {
+      "name": "CompanionVariableDefinition",
+      "description": "Defines a variable that exposes device state",
+      "properties": {
+        "variableId": "Unique variable identifier",
+        "name": "Human-readable variable name"
+      },
+      "usage": "Users reference variables as $(instance:variableId) in button text, actions, etc."
+    },
+    "command_invocation_patterns": {
+      "action_execution": {
+        "flow": [
+          "1. User presses button or trigger fires",
+          "2. Companion calls action.callback(actionEvent)",
+          "3. Module processes action.options and executes device command",
+          "4. Module may update variables, feedbacks, or status based on result"
+        ],
+        "example": "User presses button -> callback receives {actionId: 'cut', options: {input: 1}} -> Module sends command to switcher -> Updates program variable and triggers feedback re-evaluation"
+      },
+      "feedback_evaluation": {
+        "flow": [
+          "1. Module registers feedback with callback function",
+          "2. When device state changes, module calls checkFeedbacks(feedbackType)",
+          "3. Companion re-evaluates all active instances of that feedback type",
+          "4. Callback returns true/false, Companion applies defaultStyle if true",
+          "5. Button appearance updates in real-time"
+        ],
+        "example": "Switcher program changes to Input 1 -> Module receives state -> Calls checkFeedbacks('programTally') -> All programTally feedbacks re-evaluate -> Buttons for Input 1 turn red"
+      },
+      "variable_updates": {
+        "flow": [
+          "1. Module defines variables via setVariableDefinitions()",
+          "2. When device state changes, module calls setVariableValues({variable: value})",
+          "3. Companion updates variable store",
+          "4. Any buttons/actions referencing $(instance:variable) automatically update",
+          "5. Users can use variables in button text, action parameters, etc."
+        ],
+        "example": "Current scene changes to 'Studio A' -> Module calls setVariableValues({current_scene: 'Studio A'}) -> Button with text '$(obs:current_scene)' updates to 'Studio A'"
+      },
+      "subscription_pattern": {
+        "flow": [
+          "1. User adds action/feedback to button",
+          "2. Companion calls module.subscribeActions() or subscribeFeedbacks()",
+          "3. Module tracks active subscriptions (e.g., start polling for specific state)",
+          "4. User removes action/feedback",
+          "5. Companion calls unsubscribeActions() or unsubscribeFeedbacks()",
+          "6. Module cleans up resources (e.g., stop unnecessary polling)"
+        ],
+        "example": "User adds 'Audio Level' feedback -> Module starts monitoring audio levels for that channel -> User removes feedback -> Module stops monitoring to save resources"
+      }
+    },
+    "lifecycle_hooks": {
+      "startup_sequence": [
+        "1. Companion instantiates module class",
+        "2. Calls getConfigFields() to build config UI",
+        "3. User configures instance (IP, credentials, etc.)",
+        "4. Calls init(config) with user configuration",
+        "5. Module connects to device, sets up definitions",
+        "6. Module calls updateStatus() to indicate connection state",
+        "7. Module ready for action execution"
+      ],
+      "config_change_sequence": [
+        "1. User modifies configuration in UI",
+        "2. Companion calls configUpdated(newConfig)",
+        "3. Module tears down old connections (if needed)",
+        "4. Module establishes new connections with updated config",
+        "5. Module updates status and may re-register definitions"
+      ],
+      "shutdown_sequence": [
+        "1. Companion calls destroy()",
+        "2. Module closes connections, cleans up timers/intervals",
+        "3. Module releases resources",
+        "4. Instance removed from Companion"
+      ]
+    },
+    "development_templates": {
+      "javascript": "https://github.com/bitfocus/companion-module-template-js",
+      "typescript": "https://github.com/bitfocus/companion-module-template-ts"
+    },
+    "tools_package": {
+      "name": "@companion-module/tools",
+      "npm_url": "https://www.npmjs.com/package/@companion-module/tools",
+      "description": "Tooling for developing and verifying Companion modules",
+      "includes": [
+        "ESLint configuration",
+        "Build tools",
+        "Testing utilities",
+        "Module validation"
+      ]
+    }
+  },
+
+  "research_sources": [
+    "https://github.com/bitfocus/companion-module-base",
+    "https://github.com/bitfocus/companion-bundled-modules",
+    "https://bitfocus.io/connections",
+    "https://bitfocus.github.io/companion-module-base/",
+    "https://www.npmjs.com/package/@companion-module/base",
+    "https://github.com/bitfocus/companion-module-zoom-osc-iso",
+    "https://github.com/bitfocus/companion-module-studiocoast-vmix",
+    "https://github.com/bitfocus/companion-module-obs-studio",
+    "https://github.com/bitfocus/companion-module-generic-pjlink",
+    "https://github.com/bitfocus/companion-module-elgato-keylight",
+    "https://github.com/bitfocus/companion-module-bmd-atem",
+    "https://github.com/bitfocus/companion-module-ptzoptics-visca",
+    "https://github.com/bitfocus/companion",
+    "https://pjlink.jbmia.or.jp/english/",
+    "https://deepwiki.com/bitfocus/companion/8-module-development"
+  ],
+
+  "key_findings": {
+    "ecosystem_scale": "700+ hardware and software integrations across professional broadcast and AV",
+    "module_architecture": "Independent child processes with well-defined API through @companion-module/base",
+    "versioning": "Companion 3.0+ with modules as independent plugins, updatable separately from core",
+    "protocol_diversity": "TCP, UDP, WebSocket, REST, OSC, VISCA, MIDI, DMX, PJLink, custom proprietary protocols",
+    "primary_use_cases": [
+      "Live broadcast production",
+      "Master Control Room (MCR) automation",
+      "Multi-camera switching",
+      "Audio mixing and routing",
+      "PTZ camera control",
+      "Graphics and playout",
+      "Streaming and encoding",
+      "Lighting control",
+      "Video routing and distribution",
+      "Remote/hybrid production workflows"
+    ],
+    "tier1_mcr_essentials": [
+      "Blackmagic ATEM (video switching)",
+      "vMix (software production)",
+      "OBS Studio (streaming)",
+      "HyperDeck (recording)",
+      "PTZ Cameras (VISCA)",
+      "VideoHub (routing)",
+      "Audio mixers (X32, SQ, Yamaha)",
+      "CasparCG (graphics)",
+      "Dante (audio networking)",
+      "ZoomOSC (hybrid production)"
+    ],
+    "development_ecosystem": {
+      "language": "JavaScript/TypeScript",
+      "node_version": "18.0.0+",
+      "package_manager": "npm",
+      "templates": "Available for JS and TS",
+      "documentation": "Comprehensive API docs and wiki",
+      "license": "MIT (typical for modules)",
+      "community": "Active development, 700+ modules maintained"
+    }
+  },
+
+  "recommendations_for_infrafabric": {
+    "integration_priority": [
+      "Focus on tier-1 modules for initial Haiku agent prototypes",
+      "Implement companion-module-base interface patterns in agent command structure",
+      "Leverage action/feedback/variable paradigm for device control abstraction",
+      "Study subscription patterns for efficient resource management in multi-agent systems"
+    ],
+    "architectural_insights": [
+      "InstanceBase lifecycle (init/configUpdated/destroy) maps well to agent lifecycle management",
+      "Action definitions could inform Haiku protocol command schemas",
+      "Feedback mechanisms provide model for real-time state synchronization",
+      "Variable system demonstrates effective device state exposure pattern",
+      "Preset system shows value of pre-configured workflows for complex operations"
+    ],
+    "protocol_coverage": [
+      "ATEM protocol (Blackmagic) - Tier 1 priority",
+      "VISCA (PTZ cameras) - Tier 1 priority",
+      "WebSocket (OBS, vMix) - Tier 1 priority",
+      "OSC (Zoom, audio mixers) - Tier 1 priority",
+      "REST APIs (cloud services, modern devices) - Tier 1 priority",
+      "PJLink (projectors) - Tier 2 priority",
+      "Generic HTTP/TCP - Universal fallback"
+    ],
+    "mcr_device_catalog_usage": [
+      "Use top 50 catalog as reference for Series 3+ protocol development",
+      "Prioritize protocols with 50+ actions for comprehensive control coverage",
+      "Consider multi-device workflows (switcher + cameras + audio + graphics)",
+      "Identify common patterns across similar device categories"
+    ]
+  }
+}
