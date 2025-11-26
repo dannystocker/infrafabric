@@ -5,6 +5,7 @@ This directory contains documentation for all API integrations.
 ## Quick Links
 
 - [API Roadmap](API_ROADMAP.md) - Master integration plan
+- [Bitfocus Companion](companion/) - Control surface automation (NEW)
 - [WebRTC](webrtc/) - Real-time communication
 - [SIP](sip/) - Voice/video escalation
 - [vMix](vmix/) - Live production
@@ -18,6 +19,12 @@ This directory contains documentation for all API integrations.
 | Redis Cloud | ACTIVE | `core/transport/vesicle.py` |
 | DeepSeek | ACTIVE | Fallback in librarian |
 | GitHub | ACTIVE | CI/CD workflows |
+
+## Researched & Documented
+
+| API | Status | Documentation |
+|-----|--------|---------------|
+| Bitfocus Companion v3.0+ | RESEARCHED | [companion/](companion/) - HTTP, TCP/UDP, Satellite API |
 
 ## Planned
 

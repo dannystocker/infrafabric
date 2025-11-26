@@ -29,7 +29,25 @@
 
 ---
 
-### 2. AI/ML APIs
+### 2. Control Surface APIs
+
+#### Companion MCR Bridge
+- **Status:** ARCHITECTURE COMPLETE
+- **Protocol:** IF.mcr.companion
+- **Purpose:** Intent-based control of physical/virtual button surfaces (StreamDeck, X-Touch, etc.)
+- **Implementation:** `src/infrafabric/integrations/companion/`
+- **Documentation:** `docs/api/integrations/COMPANION_MCR_BRIDGE_ARCHITECTURE.md`
+- **Priority:** P1 (Q1 2026)
+- **Features:**
+  - Redis-based protocol routing
+  - Multi-protocol support (HTTP/REST, OSC, TCP/UDP)
+  - Semantic intent mapping
+  - Macro sequencing
+  - State tracking and retry logic
+
+---
+
+### 3. AI/ML APIs
 
 | API | Status | Implementation |
 |-----|--------|----------------|
@@ -39,7 +57,7 @@
 
 ---
 
-### 3. Infrastructure APIs
+### 4. Infrastructure APIs
 
 | API | Status | Purpose |
 |-----|--------|---------|
@@ -55,6 +73,7 @@
 |-----|----------|---------|--------|
 | Gemini | P0 | DONE | ACTIVE |
 | Redis | P0 | DONE | ACTIVE |
+| Companion MCR | P1 | Q1 2026 | ARCHITECTURE COMPLETE |
 | WebRTC | P1 | Q1 2026 | PLANNED |
 | SIP | P2 | Q2 2026 | PLANNED |
 | vMix | P3 | Future | ROADMAP |
