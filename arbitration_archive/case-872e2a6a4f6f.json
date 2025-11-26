@@ -1,0 +1,23 @@
+{
+  "case_ref": "case-872e2a6a4f6f",
+  "subject": "Should we consolidate duplicate documents in the archive?",
+  "proposer": "IF.guardian-core-01",
+  "status": "READY_FOR_RESOLUTION",
+  "votes": [
+    {
+      "vote_id": "vote-60b31b9a88f6",
+      "case_ref": "case-872e2a6a4f6f",
+      "agent_id": "IF.guardian-core-01",
+      "position": "YES",
+      "weight": 1.5,
+      "rationale": "Documents are duplicative and waste storage",
+      "timestamp": "2025-11-26T03:55:21.611331"
+    }
+  ],
+  "veto_record": null,
+  "final_decision": null,
+  "decision_rationale": "",
+  "created_at": "2025-11-26T03:55:21.611025",
+  "resolved_at": null,
+  "notes": "Documents dossier-01.md and dossier-07.md are 92% similar"
+}

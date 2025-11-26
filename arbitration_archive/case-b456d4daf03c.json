@@ -1,0 +1,94 @@
+{
+  "case_ref": "case-b456d4daf03c",
+  "subject": "Implement controversial AI safety restriction",
+  "proposer": "IF.guardian-core-01",
+  "status": "COOLING_OFF",
+  "votes": [
+    {
+      "vote_id": "vote-f7af98fa7588",
+      "case_ref": "case-b456d4daf03c",
+      "agent_id": "IF.guardian-core-01",
+      "position": "YES",
+      "weight": 1.5,
+      "rationale": "Safety critical",
+      "timestamp": "2025-11-26T03:55:29.877664"
+    },
+    {
+      "vote_id": "vote-3927147d8a54",
+      "case_ref": "case-b456d4daf03c",
+      "agent_id": "IF.guardian-core-02",
+      "position": "YES",
+      "weight": 1.5,
+      "rationale": "Empirically justified",
+      "timestamp": "2025-11-26T03:55:29.877771"
+    },
+    {
+      "vote_id": "vote-eefb0dc103f5",
+      "case_ref": "case-b456d4daf03c",
+      "agent_id": "IF.guardian-core-03",
+      "position": "YES",
+      "weight": 1.5,
+      "rationale": "Ethically required",
+      "timestamp": "2025-11-26T03:55:29.878124"
+    },
+    {
+      "vote_id": "vote-94dce965af06",
+      "case_ref": "case-b456d4daf03c",
+      "agent_id": "IF.guardian-core-04",
+      "position": "YES",
+      "weight": 1.5,
+      "rationale": "System stability improved",
+      "timestamp": "2025-11-26T03:55:29.878461"
+    },
+    {
+      "vote_id": "vote-221e3be114a1",
+      "case_ref": "case-b456d4daf03c",
+      "agent_id": "IF.guardian-core-05",
+      "position": "YES",
+      "weight": 1.5,
+      "rationale": "Strategic necessity",
+      "timestamp": "2025-11-26T03:55:29.878703"
+    },
+    {
+      "vote_id": "vote-90b7294338ef",
+      "case_ref": "case-b456d4daf03c",
+      "agent_id": "IF.philosopher-western-01",
+      "position": "YES",
+      "weight": 1.0,
+      "rationale": "Aristotelian virtue alignment",
+      "timestamp": "2025-11-26T03:55:29.878955"
+    },
+    {
+      "vote_id": "vote-0f7cf53e8d39",
+      "case_ref": "case-b456d4daf03c",
+      "agent_id": "IF.philosopher-western-02",
+      "position": "YES",
+      "weight": 1.0,
+      "rationale": "Kantian categorical imperative",
+      "timestamp": "2025-11-26T03:55:29.879291"
+    },
+    {
+      "vote_id": "vote-0a899e7a7c3c",
+      "case_ref": "case-b456d4daf03c",
+      "agent_id": "IF.philosopher-eastern-01",
+      "position": "YES",
+      "weight": 1.0,
+      "rationale": "Confucian harmony",
+      "timestamp": "2025-11-26T03:55:29.879504"
+    }
+  ],
+  "veto_record": {
+    "veto_id": "veto-e6fd9357945f",
+    "case_ref": "case-b456d4daf03c",
+    "agent_id": "IF.guardian-core-06",
+    "dissent_rationale": "While well-intentioned, this restriction sets a dangerous precedent for future overreach. We must preserve agent autonomy even at some cost.",
+    "approval_percentage": 1.0,
+    "cooling_off_until": "2025-12-10T03:55:29.879936",
+    "timestamp": "2025-11-26T03:55:29.879948"
+  },
+  "final_decision": "INCONCLUSIVE",
+  "decision_rationale": "Case is in cooling-off period due to veto. Can be re-evaluated after 2025-12-10T03:55:29.879936",
+  "created_at": "2025-11-26T03:55:29.877425",
+  "resolved_at": null,
+  "notes": "Proposed restriction on certain agent capabilities"
+}

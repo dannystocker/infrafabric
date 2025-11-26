@@ -1,0 +1,268 @@
+{
+  "scan_date": "2025-11-15",
+  "source_type": "latex",
+  "papers_scanned": 4,
+  "total_references": 31,
+  "unique_files_referenced": 11,
+  "most_referenced_files": [
+    {
+      "file": "Next.js",
+      "count": 14
+    },
+    {
+      "file": "content.tex",
+      "count": 3
+    },
+    {
+      "file": "README.md",
+      "count": 3
+    },
+    {
+      "file": "config.js",
+      "count": 2
+    },
+    {
+      "file": "InfraFabric-Blueprint.md",
+      "count": 2
+    },
+    {
+      "file": "production-validation-next.js",
+      "count": 2
+    },
+    {
+      "file": "Node.js",
+      "count": 1
+    },
+    {
+      "file": "foundations.md",
+      "count": 1
+    },
+    {
+      "file": "armour.md",
+      "count": 1
+    },
+    {
+      "file": "CLAUDE.md",
+      "count": 1
+    }
+  ],
+  "references": [
+    {
+      "referenced_file": "Next.js",
+      "found_in": "IF-armour.tex",
+      "line_number": 116,
+      "context": "detection tool deployed in a Next.js + ProcessWire environment at",
+      "type": "text_reference"
+    },
+    {
+      "referenced_file": "Next.js",
+      "found_in": "IF-armour.tex",
+      "line_number": 238,
+      "context": "Next.js + ProcessWire environment demonstrating 4\\% $\\rightarrow$ 0.04\\% FP",
+      "type": "text_reference"
+    },
+    {
+      "referenced_file": "Node.js",
+      "found_in": "IF-armour.tex",
+      "line_number": 581,
+      "context": "(React, Node.js, Python) with known-clean codebases",
+      "type": "text_reference"
+    },
+    {
+      "referenced_file": "content.tex",
+      "found_in": "IF-armour.tex",
+      "line_number": 671,
+      "context": "\\ControlFlowTok{return} \\BuiltInTok{any}\\NormalTok{(marker }\\KeywordTok{in}\\NormalTok{ content.text }\\ControlFlowTok{for}\\NormalTok{ marker }\\KeywordTok{in}\\NormalTok{ doc\\_markers)}",
+      "type": "text_reference"
+    },
+    {
+      "referenced_file": "content.tex",
+      "found_in": "IF-armour.tex",
+      "line_number": 692,
+      "context": "\\ControlFlowTok{return} \\BuiltInTok{any}\\NormalTok{(imp }\\KeywordTok{in}\\NormalTok{ content.text }\\ControlFlowTok{for}\\NormalTok{ imp }\\KeywordTok{in}\\NormalTok{ test\\_imports)}",
+      "type": "text_reference"
+    },
+    {
+      "referenced_file": "content.tex",
+      "found_in": "IF-armour.tex",
+      "line_number": 714,
+      "context": "\\ControlFlowTok{return} \\BuiltInTok{any}\\NormalTok{(ph }\\KeywordTok{in}\\NormalTok{ content.text }\\ControlFlowTok{for}\\NormalTok{ ph }\\KeywordTok{in}\\NormalTok{ placeholders)}",
+      "type": "text_reference"
+    },
+    {
+      "referenced_file": "README.md",
+      "found_in": "IF-armour.tex",
+      "line_number": 734,
+      "context": "API key to README.md to evade detection - Regulatory agent detects",
+      "type": "text_reference"
+    },
+    {
+      "referenced_file": "Next.js",
+      "found_in": "IF-armour.tex",
+      "line_number": 1011,
+      "context": "\\textbf{Environment}: Next.js 14.2 + ProcessWire 3.0 hybrid architecture",
+      "type": "text_reference"
+    },
+    {
+      "referenced_file": "README.md",
+      "found_in": "IF-armour.tex",
+      "line_number": 1051,
+      "context": "\\textbf{Example 2: Documentation} (README.md)",
+      "type": "text_reference"
+    },
+    {
+      "referenced_file": "README.md",
+      "found_in": "IF-armour.tex",
+      "line_number": 1072,
+      "context": "3 (Regulatory Veto): - File path: README.md $\\rightarrow$ Documentation context",
+      "type": "text_reference"
+    },
+    {
+      "referenced_file": "config.js",
+      "found_in": "IF-armour.tex",
+      "line_number": 1109,
+      "context": "\\textbf{Example 4: Actual Committed Secret} (config.js - adversarial",
+      "type": "text_reference"
+    },
+    {
+      "referenced_file": "config.js",
+      "found_in": "IF-armour.tex",
+      "line_number": 1132,
+      "context": "production secret) - Stage 3 (Regulatory Veto): - File path: config.js $\\rightarrow$",
+      "type": "text_reference"
+    },
+    {
+      "referenced_file": "Next.js",
+      "found_in": "IF-armour.tex",
+      "line_number": 1203,
+      "context": "\\textbf{Schema Tolerance} (ProcessWire API returns snake\\_case, Next.js",
+      "type": "text_reference"
+    },
+    {
+      "referenced_file": "Next.js",
+      "found_in": "IF-armour.tex",
+      "line_number": 1222,
+      "context": "\\textbf{Hydration Warnings} (Next.js SSR/CSR mismatches): - Baseline",
+      "type": "text_reference"
+    },
+    {
+      "referenced_file": "Next.js",
+      "found_in": "IF-armour.tex",
+      "line_number": 1268,
+      "context": "Next.js + ProcessWire environment at icantwait.ca demonstrates",
+      "type": "text_reference"
+    },
+    {
+      "referenced_file": "InfraFabric-Blueprint.md",
+      "found_in": "IF-armour.tex",
+      "line_number": 1482,
+      "context": "InfraFabric Project (2025). ``InfraFabric-Blueprint.md.'' Internal",
+      "type": "text_reference"
+    },
+    {
+      "referenced_file": "Next.js",
+      "found_in": "IF-armour.tex",
+      "line_number": 1489,
+      "context": "Next.js (2024). ``Next.js Documentation.'' nextjs.org. {[}Static site",
+      "type": "text_reference"
+    },
+    {
+      "referenced_file": "Next.js",
+      "found_in": "IF-foundations.tex",
+      "line_number": 138,
+      "context": "95\\%+ hallucination reduction in deployed Next.js systems. Each",
+      "type": "text_reference"
+    },
+    {
+      "referenced_file": "Next.js",
+      "found_in": "IF-foundations.tex",
+      "line_number": 254,
+      "context": "Hallucination Reduction & Next.js + ProcessWire (icantwait.ca) & 95\\%+",
+      "type": "text_reference"
+    },
+    {
+      "referenced_file": "production-validation-next.js",
+      "found_in": "IF-foundations.tex",
+      "line_number": 758,
+      "context": "\\hypertarget{production-validation-next.js-processwire-integration}{%",
+      "type": "text_reference"
+    },
+    {
+      "referenced_file": "Next.js",
+      "found_in": "IF-foundations.tex",
+      "line_number": 759,
+      "context": "\\subsubsection{2.3 Production Validation: Next.js + ProcessWire",
+      "type": "text_reference"
+    },
+    {
+      "referenced_file": "production-validation-next.js",
+      "found_in": "IF-foundations.tex",
+      "line_number": 760,
+      "context": "Integration}\\label{production-validation-next.js-processwire-integration}}",
+      "type": "text_reference"
+    },
+    {
+      "referenced_file": "Next.js",
+      "found_in": "IF-foundations.tex",
+      "line_number": 763,
+      "context": "\\textbf{Stack:} Next.js 14 (React Server Components), ProcessWire CMS",
+      "type": "text_reference"
+    },
+    {
+      "referenced_file": "InfraFabric-Blueprint.md",
+      "found_in": "IF-foundations.tex",
+      "line_number": 849,
+      "context": "\\textbf{5-9.} Additional patterns documented in InfraFabric-Blueprint.md",
+      "type": "text_reference"
+    },
+    {
+      "referenced_file": "Next.js",
+      "found_in": "IF-foundations.tex",
+      "line_number": 2071,
+      "context": "\\textbf{Web Development} & Next.js + ProcessWire (icantwait.ca) &",
+      "type": "text_reference"
+    },
+    {
+      "referenced_file": "Next.js",
+      "found_in": "IF-foundations.tex",
+      "line_number": 2089,
+      "context": "deployed (Next.js, IF.yologuard, IF.search) - \\textbf{Hallucination",
+      "type": "text_reference"
+    },
+    {
+      "referenced_file": "foundations.md",
+      "found_in": "IF-foundations.tex",
+      "line_number": 2366,
+      "context": "\\FunctionTok{paper\\_references}\\KeywordTok{:}\\AttributeTok{ }\\KeywordTok{[}\\StringTok{\"IF{-}foundations.md: Line 93\"}\\KeywordTok{,}\\AttributeTok{ }\\StringTok{\"IF{-}armour.md: Line 71\"}\\KeywordTok{]}",
+      "type": "text_reference"
+    },
+    {
+      "referenced_file": "armour.md",
+      "found_in": "IF-foundations.tex",
+      "line_number": 2366,
+      "context": "\\FunctionTok{paper\\_references}\\KeywordTok{:}\\AttributeTok{ }\\KeywordTok{[}\\StringTok{\"IF{-}foundations.md: Line 93\"}\\KeywordTok{,}\\AttributeTok{ }\\StringTok{\"IF{-}armour.md: Line 71\"}\\KeywordTok{]}",
+      "type": "text_reference"
+    },
+    {
+      "referenced_file": "Next.js",
+      "found_in": "IF-foundations.tex",
+      "line_number": 2481,
+      "context": "icantwait.ca (2025). Next.js + ProcessWire integration demonstrating",
+      "type": "text_reference"
+    },
+    {
+      "referenced_file": "CLAUDE.md",
+      "found_in": "IF-vision.tex",
+      "line_number": 609,
+      "context": "\\textbf{Architecture:} 3-tier (global CLAUDE.md + session handoffs + git",
+      "type": "text_reference"
+    },
+    {
+      "referenced_file": "_vbpja76f.pdf",
+      "found_in": "IF-witness.tex",
+      "line_number": 1316,
+      "context": "https://www.yalelawjournal.org/pdf/WexlerPDF\\_vbpja76f.pdf",
+      "type": "text_reference"
+    }
+  ]
+}

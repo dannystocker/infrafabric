@@ -33,7 +33,7 @@ import redis
 import uuid
 import argparse
 from datetime import datetime
-from typing import Dict, List, Optional
+from typing import Any, Dict, List
 from dataclasses import dataclass, asdict
 
 try:
@@ -95,7 +95,7 @@ class GeminiLibrarian:
         self.model = genai.GenerativeModel(model_name)
 
         # Redis connection
-        self.redis = redis.Redis(
+        self.redis: Any = redis.Redis(
             host=redis_host,
             port=redis_port,
             decode_responses=True
@@ -154,12 +154,13 @@ class GeminiLibrarian:
                 if finding_json:
                     finding = json.loads(finding_json)
             elif key_type == 'hash':
-                # Load hash fields
                 finding = self.redis.hgetall(key)
                 # Convert byte keys/values to strings if needed
                 if finding and isinstance(list(finding.keys())[0], bytes):
-                    finding = {k.decode('utf-8'): v.decode('utf-8') if isinstance(v, bytes) else v
-                              for k, v in finding.items()}
+                    finding = {
+                        k.decode('utf-8'): v.decode('utf-8') if isinstance(v, bytes) else v
+                        for k, v in finding.items()
+                    }
 
             if finding:
                 # Estimate tokens (rough: 1 token ≈ 4 chars)
@@ -326,8 +327,8 @@ Sources: [finding_id1, finding_id2, ...]
 
         except KeyboardInterrupt:
             print("\n\n👋 Gemini Librarian shutting down...")
-            print(f"   Processed queries during this session")
-            print("   Context retained: {len(self.current_context)} findings")
+            print("   Processed queries during this session")
+            print(f"   Context retained: {len(self.current_context)} findings")
 
 
     def run_single_query(self, question: str, requester: str = "cli") -> ArchiveFinding:

@@ -1,0 +1,614 @@
+{
+  "analysis_metadata": {
+    "date": "2025-11-15",
+    "analyst": "Haiku Agent",
+    "analysis_type": "FixPack Archive Inventory and Consolidation Gap Analysis"
+  },
+  "archives": {
+    "r3": {
+      "metadata": {
+        "archive_name": "InfraFabric_FixPack_2025-11-11_r3.zip",
+        "created": "2025-11-11T08:21:00Z",
+        "size_bytes": 10240,
+        "file_count": 16,
+        "purpose": "Baseline v4-epic foundation files",
+        "status": "BASELINE"
+      },
+      "files": [
+        {
+          "name": "README_FOR_CLAUDE.md",
+          "hash": "fcd72ca2fb2b57068ddf409cac707f8159df3b140ec2e3ae2559b03b953bdfaf",
+          "type": "markdown",
+          "purpose": "Archive documentation and integration instructions"
+        },
+        {
+          "name": "EVIDENCE_TABLE.template.csv",
+          "hash": "01021e442ab011d6e05dc93c9e341aa1243d4e1b4eebcde73c9599fd9926fb26",
+          "type": "csv",
+          "purpose": "Evidence tracking template for evaluation"
+        },
+        {
+          "name": "SCHEMAS/if.persona.schema.yaml",
+          "hash": "7d777f2cb8ab8d4dcdb0e2572b92c36270fd84f50da95d2713b665acb4dc15e8",
+          "type": "yaml",
+          "purpose": "JSON Schema definition for persona structures",
+          "integration_status": "MISSING_FROM_CONSOLIDATION"
+        },
+        {
+          "name": "SCHEMAS/if.philosophy.schema.yaml",
+          "hash": "543f41d58a3b2956a598b5169c9fae622d532a09cf5ded5883599733bb596532",
+          "type": "yaml",
+          "purpose": "JSON Schema definition for philosophy structures",
+          "integration_status": "MISSING_FROM_CONSOLIDATION"
+        },
+        {
+          "name": "FINAL.IF.philosophy-database.yaml",
+          "hash": "9bddaba026945936cc3a433153cd571e76d66a651406c9f56dc81c5e851bd218",
+          "type": "yaml",
+          "purpose": "Complete philosophy database for v4-epic",
+          "integration_status": "VERSION_MISMATCH",
+          "consolidated_hash": "c022e9dce3a5460ffe2502cc5a67fc78609b590685c928d930475431aa2e8373",
+          "notes": "Consolidated version is NEWER (different hash)"
+        },
+        {
+          "name": "claude-integrate-joe-and-v4-epic.md",
+          "hash": "8f515570b42a5cf575f8c3eebae51fd0aec73fcd8c75acbed24b737aedb98a3e",
+          "type": "markdown",
+          "purpose": "Integration instructions for Joe Coulombe persona and v4-epic runbook",
+          "integration_status": "MISSING_FROM_CONSOLIDATION",
+          "critical": true,
+          "lost_in_r4": true,
+          "notes": "CRITICAL - Removed in r4_gapfill, never reintegrated"
+        },
+        {
+          "name": "FIX.guard-constitution.yaml",
+          "hash": "7581a7494cdf6c8d7eae02d81e61ecd793463a03664aa35b04cd0413b5e0b8ee",
+          "type": "yaml",
+          "purpose": "Constitutional rules for IF.guard council system",
+          "integration_status": "PARTIAL"
+        },
+        {
+          "name": "FINAL.IF.persona-registry.yaml",
+          "hash": "94c5c3fd119a1458dc35fe65b460abc0598f25ed464970c7cad6b9afe700e290",
+          "type": "yaml",
+          "purpose": "Registry of all personas (IF.sam facets, philosophers, etc)",
+          "integration_status": "VERSION_MISMATCH",
+          "notes": "Consolidated version differs (needs reconciliation)"
+        },
+        {
+          "name": "ifctl.py",
+          "hash": "5cb029ea2ef22badb18309028a3ecd0a67ca9ffbb29287e9a972ea4699ee5cc4",
+          "type": "python",
+          "purpose": "Control utility for IF.* system operations",
+          "integration_status": "VERSION_MISMATCH",
+          "notes": "Consolidated version differs (needs verification)"
+        },
+        {
+          "name": "FIX.component-canonicalization.yaml",
+          "hash": "e450344f18e0fea4b6c6d8432f207f92eb2e34d5815d28f633a4486bf989a0ce",
+          "type": "yaml",
+          "purpose": "Component naming and canonicalization rules",
+          "integration_status": "MISSING_FROM_CONSOLIDATION"
+        },
+        {
+          "name": "CLAUDE_PROMPT_integrate_joe_and_run_V4.md",
+          "hash": "8f515570b42a5cf575f8c3eebae51fd0aec73fcd8c75acbed24b737aedb98a3e",
+          "type": "markdown",
+          "purpose": "Master prompt for v4-epic integration with Joe Coulombe persona",
+          "integration_status": "MISSING_FROM_CONSOLIDATION",
+          "critical": true,
+          "lost_in_r4": true,
+          "notes": "CRITICAL - Lost in r4_gapfill, never restored"
+        },
+        {
+          "name": "CHECKLISTS/IF.search-checklist.md",
+          "hash": "21f62a653092e67c823926c1fadbc0756caeae1ca5afd331041d36ad11d0e9c4",
+          "type": "markdown",
+          "purpose": "Validation checklist for IF.search system component",
+          "integration_status": "MISSING_FROM_CONSOLIDATION",
+          "lost_in_r4": true,
+          "notes": "Lost in r4_gapfill, critical validation procedures"
+        },
+        {
+          "name": "CHECKLISTS/IF.guard-checklist.md",
+          "hash": "b77c5c107b3cd8983e665ba80420eba42926628736d599d98e14d0adb169ba0c",
+          "type": "markdown",
+          "purpose": "Validation checklist for IF.guard council system",
+          "integration_status": "MISSING_FROM_CONSOLIDATION",
+          "lost_in_r4": true,
+          "notes": "Lost in r4_gapfill, critical validation procedures"
+        },
+        {
+          "name": "SWARM.config.v4-epic.yaml",
+          "hash": "45c0cab3c0c8a93b290664eca2e1049e7fffbf1309ac4ae11488b7ba414f20a0",
+          "type": "yaml",
+          "purpose": "Swarm configuration for v4-epic multi-agent system",
+          "integration_status": "PARTIAL"
+        },
+        {
+          "name": "PATCH-IF.philosophy-database.additions.yaml",
+          "hash": "c4aa60d9329d961f78dc8df1a02d7b3405141422b7b317e46e5ebbea73e2b061",
+          "type": "yaml",
+          "purpose": "Patch file containing philosophy database additions",
+          "integration_status": "MISSING_FROM_CONSOLIDATION"
+        },
+        {
+          "name": "RUNBOOK.V4-Epic.r2.md",
+          "hash": "b26f22974609a1895687d81608db6c7050ffd67d3a6b6555937ca9a179f88175",
+          "type": "markdown",
+          "purpose": "Operational runbook for v4-epic system deployment and execution",
+          "integration_status": "MISSING_FROM_CONSOLIDATION",
+          "critical": true,
+          "lost_in_r4": true,
+          "notes": "CRITICAL - Removed in r4_gapfill, operational procedures lost"
+        }
+      ],
+      "summary": {
+        "total_files": 16,
+        "file_types": {
+          "yaml": 8,
+          "markdown": 4,
+          "python": 1,
+          "csv": 1,
+          "other": 2
+        },
+        "critical_files_lost_later": 4,
+        "files_missing_from_consolidation": 10
+      }
+    },
+    "r4_gapfill": {
+      "metadata": {
+        "archive_name": "InfraFabric_FixPack_2025-11-11_r4_gapfill.zip",
+        "created": "2025-11-11T08:43:00Z",
+        "size_bytes": 22528,
+        "file_count": 13,
+        "purpose": "Gap remediation - attempts to fix consolidation issues",
+        "status": "GAPFILL_INCOMPLETE",
+        "notes": "Removed documentation from r3 without clear resolution"
+      },
+      "files": [
+        {
+          "name": "README_FOR_CLAUDE.md",
+          "hash": "1e4c21785e8cf0d53af62de37243214cd21c1c4480bac7037c4c4e253a3330bb",
+          "type": "markdown",
+          "status": "UPDATED",
+          "vs_r3": "DIFFERENT_HASH",
+          "notes": "Updated from r3"
+        },
+        {
+          "name": "EVIDENCE_TABLE.template.csv",
+          "hash": "01021e442ab011d6e05dc93c9e341aa1243d4e1b4eebcde73c9599fd9926fb26",
+          "type": "csv",
+          "status": "UNCHANGED",
+          "vs_r3": "SAME_HASH"
+        },
+        {
+          "name": "SCHEMAS/if.persona.schema.yaml",
+          "hash": "7d777f2cb8ab8d4dcdb0e2572b92c36270fd84f50da95d2713b665acb4dc15e8",
+          "type": "yaml",
+          "status": "UNCHANGED",
+          "vs_r3": "SAME_HASH",
+          "integration_status": "MISSING_FROM_CONSOLIDATION"
+        },
+        {
+          "name": "SCHEMAS/if.philosophy.schema.yaml",
+          "hash": "543f41d58a3b2956a598b5169c9fae622d532a09cf5ded5883599733bb596532",
+          "type": "yaml",
+          "status": "UNCHANGED",
+          "vs_r3": "SAME_HASH",
+          "integration_status": "MISSING_FROM_CONSOLIDATION"
+        },
+        {
+          "name": "FINAL.IF.philosophy-database.yaml",
+          "hash": "adb547c427071b786940a21a5335998a62424047da63a3e4ef84e3a4c759aa21",
+          "type": "yaml",
+          "status": "UPDATED",
+          "vs_r3": "DIFFERENT_HASH",
+          "notes": "Philosophy database updated in r4"
+        },
+        {
+          "name": "docs/PHILOSOPHY-CODE-EXAMPLES.md",
+          "hash": "8198126077787b46f6474d9185a2f6f9d925123f495b59f522a4971756d711e9",
+          "type": "markdown",
+          "status": "NEW_IN_R4",
+          "purpose": "Code examples for philosophy system integration",
+          "integration_status": "MISSING_FROM_CONSOLIDATION"
+        },
+        {
+          "name": "claude-integrate-joe-and-v4-epic.md",
+          "hash": "fc2cba65347bf2142a75f76af4ddcc4ceecc204e16bce5c0c5ef5f0b7bfeddb1",
+          "type": "markdown",
+          "status": "UPDATED",
+          "vs_r3": "DIFFERENT_HASH"
+        },
+        {
+          "name": "FIX.guard-constitution.yaml",
+          "hash": "7581a7494cdf6c8d7eae02d81e61ecd793463a03664aa35b04cd0413b5e0b8ee",
+          "type": "yaml",
+          "status": "UNCHANGED",
+          "vs_r3": "SAME_HASH"
+        },
+        {
+          "name": "FINAL.IF.persona-registry.yaml",
+          "hash": "66603f68e5f087eef20d5c1a10c3051c6fa9a3480aad4afd5179644c2efa2cc7",
+          "type": "yaml",
+          "status": "UPDATED",
+          "vs_r3": "DIFFERENT_HASH",
+          "notes": "Persona registry updated in r4"
+        },
+        {
+          "name": "ifctl.py",
+          "hash": "d2602e9f9cfa880da1835b16e4eca8befec014782146a22354d86f03add8cb66",
+          "type": "python",
+          "status": "UPDATED",
+          "vs_r3": "DIFFERENT_HASH"
+        },
+        {
+          "name": "FIX.component-canonicalization.yaml",
+          "hash": "c1c65203dac0ce93694396e5a333cf75ddb42ce7f3ae1426f324a49ed29da8af",
+          "type": "yaml",
+          "status": "UPDATED",
+          "vs_r3": "DIFFERENT_HASH"
+        },
+        {
+          "name": "SWARM.config.v4-epic.yaml",
+          "hash": "8fb67c354932f36e75712c5f9170d15adf6cbec2212ec9a1847d4105a7bc6dd9",
+          "type": "yaml",
+          "status": "UPDATED",
+          "vs_r3": "DIFFERENT_HASH"
+        },
+        {
+          "name": "PATCH-IF.philosophy-database.additions.yaml",
+          "hash": "188d055918999f11d79d3eaf2619fe565011e40e15ed42703d42f84a8f121467",
+          "type": "yaml",
+          "status": "UPDATED",
+          "vs_r3": "DIFFERENT_HASH"
+        }
+      ],
+      "changes_from_r3": {
+        "removed_files": [
+          {
+            "name": "CLAUDE_PROMPT_integrate_joe_and_run_V4.md",
+            "status": "LOST",
+            "criticality": "CRITICAL",
+            "notes": "Integration instructions removed, never replaced"
+          },
+          {
+            "name": "CHECKLISTS/IF.search-checklist.md",
+            "status": "LOST",
+            "criticality": "HIGH",
+            "notes": "Validation procedures removed, never replaced"
+          },
+          {
+            "name": "CHECKLISTS/IF.guard-checklist.md",
+            "status": "LOST",
+            "criticality": "HIGH",
+            "notes": "Validation procedures removed, never replaced"
+          },
+          {
+            "name": "RUNBOOK.V4-Epic.r2.md",
+            "status": "LOST",
+            "criticality": "CRITICAL",
+            "notes": "Operational runbook removed, never replaced"
+          }
+        ],
+        "added_files": [
+          {
+            "name": "docs/PHILOSOPHY-CODE-EXAMPLES.md",
+            "status": "NEW",
+            "purpose": "Philosophy integration examples"
+          }
+        ],
+        "updated_files": 8
+      },
+      "summary": {
+        "total_files": 13,
+        "file_types": {
+          "yaml": 8,
+          "markdown": 3,
+          "python": 1,
+          "csv": 1
+        },
+        "files_lost": 4,
+        "files_added": 1,
+        "files_updated": 8,
+        "net_change": -3,
+        "assessment": "Gapfill BACKTRACKED - lost critical documentation"
+      }
+    },
+    "r5_philosophers": {
+      "metadata": {
+        "archive_name": "InfraFabric_FixPack_2025-11-11_r5_philosophers_liveviz.zip",
+        "created": "2025-11-11T13:16:00Z",
+        "size_bytes": 8908,
+        "file_count": 13,
+        "purpose": "NEW visualization and live metrics system for philosophers",
+        "status": "ENTIRELY_NEW_SYSTEM",
+        "integration_status": "NOT_INTEGRATED"
+      },
+      "files": [
+        {
+          "name": "docs/PHILOSOPHER-COVERAGE.md",
+          "hash": "ecb87097e0dbeecdb1f534e6981c935ee4b55034f92275f36924a1d7f2b45f4c",
+          "type": "markdown",
+          "category": "documentation",
+          "purpose": "Track philosopher coverage and participation",
+          "integration_status": "MISSING_FROM_CONSOLIDATION"
+        },
+        {
+          "name": "docs/philosophy-browser.html",
+          "hash": "95bd0a0712177beb59fb8cd6efd815dca4acfe898333f33f1d592c75ffed55c9",
+          "type": "html",
+          "category": "visualization",
+          "purpose": "Interactive HTML browser for philosophy system exploration",
+          "integration_status": "MISSING_FROM_CONSOLIDATION"
+        },
+        {
+          "name": "docs/LIVE-SOURCES.md",
+          "hash": "ed1ba30008dc19aa21ae26d74def2f965ae3f51988070790ab660776def3d300",
+          "type": "markdown",
+          "category": "documentation",
+          "purpose": "Documentation of live API sources and real-time data feeds",
+          "integration_status": "MISSING_FROM_CONSOLIDATION"
+        },
+        {
+          "name": "docs/diagrams/if-guard-council.mmd",
+          "hash": "f2e549e02baf4a11e7028a3b592a91390c5fec68874f639c0b99f8f752efa24e",
+          "type": "mermaid",
+          "category": "diagrams",
+          "purpose": "Mermaid diagram of IF.guard council structure",
+          "integration_status": "MISSING_FROM_CONSOLIDATION"
+        },
+        {
+          "name": "docs/diagrams/philosophy-map.mmd",
+          "hash": "88eda99571814d8a065b63d38bde43147709eac6ee68ee14879f468cc782ce2e",
+          "type": "mermaid",
+          "category": "diagrams",
+          "purpose": "Mermaid diagram mapping philosopher relationships and schools",
+          "integration_status": "MISSING_FROM_CONSOLIDATION"
+        },
+        {
+          "name": "docs/diagrams/if-search-8-pass.mmd",
+          "hash": "2ce8c7816e8476031772b050cff0b4ae27efbfdf4aa7129fc9fafbd003dc7dcd",
+          "type": "mermaid",
+          "category": "diagrams",
+          "purpose": "Mermaid diagram of IF.search 8-pass algorithm visualization",
+          "integration_status": "MISSING_FROM_CONSOLIDATION"
+        },
+        {
+          "name": "docs/PHILOSOPHY-CODE-EXAMPLES.v2.md",
+          "hash": "a23368b45732bc152574b499f99ff93c9fa6820567017f6865395835876d5c20",
+          "type": "markdown",
+          "category": "documentation",
+          "purpose": "Updated code examples (version 2 vs r4 v1)",
+          "integration_status": "MISSING_FROM_CONSOLIDATION",
+          "notes": "R4 has v1, R5 has v2 (supersedes r4 version)"
+        },
+        {
+          "name": "docs/ERRATA.md",
+          "hash": "c38e05c78c3892312b77cbbca4f185826f017b8cb160a0bfe18bbfd9591d1b16",
+          "type": "markdown",
+          "category": "documentation",
+          "purpose": "Known issues, corrections, and errata for philosophy system",
+          "integration_status": "MISSING_FROM_CONSOLIDATION"
+        },
+        {
+          "name": "config/live_sources.yaml",
+          "hash": "50330fe083740e5dc3375c11caf558febc193aee85b72f4522e3e91014c20ae6",
+          "type": "yaml",
+          "category": "configuration",
+          "purpose": "Configuration for live API sources and data feeds",
+          "integration_status": "MISSING_FROM_CONSOLIDATION"
+        },
+        {
+          "name": "tools/recalc_metrics.py",
+          "hash": "6e14ac40039a06b9af25538017909a1110bad1fef92889e24ddddac6bc4a9b2a",
+          "type": "python",
+          "category": "tools",
+          "purpose": "Automated metrics recalculation for philosopher coverage",
+          "integration_status": "MISSING_FROM_CONSOLIDATION"
+        },
+        {
+          "name": "tools/live_apis.ts",
+          "hash": "23db0f25710561d613af661770ffd132fec5afe3388207bad0c518510cef7fcf",
+          "type": "typescript",
+          "category": "tools",
+          "purpose": "API integration library for live data sources",
+          "integration_status": "MISSING_FROM_CONSOLIDATION"
+        },
+        {
+          "name": "build/philosophy.json",
+          "hash": "57cf054a39c507924beb5f30ecdb6bad52c2a16c76d64b5acaa48be8409c2af8",
+          "type": "json",
+          "category": "generated",
+          "purpose": "Generated philosophy system database (built artifact)",
+          "integration_status": "MISSING_FROM_CONSOLIDATION",
+          "notes": "May be auto-generated by CI/CD pipeline"
+        },
+        {
+          "name": ".github/workflows/ifctl-metrics.yml",
+          "hash": "b7f3b186fd71ae72c588ff8167e52ed52af71c1d3dbf382eb62ab1adf26fc565",
+          "type": "yaml",
+          "category": "ci_cd",
+          "purpose": "GitHub Actions workflow for automated metrics calculation",
+          "integration_status": "MISSING_FROM_CONSOLIDATION"
+        }
+      ],
+      "summary": {
+        "total_files": 13,
+        "file_types": {
+          "markdown": 5,
+          "mermaid_diagrams": 3,
+          "yaml": 1,
+          "json": 1,
+          "python": 1,
+          "typescript": 1,
+          "html": 1
+        },
+        "categories": {
+          "documentation": 5,
+          "diagrams": 3,
+          "configuration": 1,
+          "tools": 2,
+          "generated": 1,
+          "ci_cd": 1
+        },
+        "files_in_consolidation": 0,
+        "assessment": "ENTIRE NEW SYSTEM - 100% missing from consolidation"
+      }
+    }
+  },
+  "consolidation_analysis": {
+    "total_fixpack_files": 42,
+    "unique_files": 39,
+    "files_in_consolidation": 5,
+    "files_missing_from_consolidation": 34,
+    "version_mismatches": 4,
+    "coverage_percentage": 11.9,
+    "critical_findings": [
+      {
+        "issue": "R3 Documentation Lost in R4",
+        "severity": "CRITICAL",
+        "files_affected": 4,
+        "files": [
+          "CLAUDE_PROMPT_integrate_joe_and_run_V4.md",
+          "RUNBOOK.V4-Epic.r2.md",
+          "CHECKLISTS/IF.search-checklist.md",
+          "CHECKLISTS/IF.guard-checklist.md"
+        ],
+        "impact": "Critical integration and operational instructions lost"
+      },
+      {
+        "issue": "R5 Philosopher System Never Integrated",
+        "severity": "HIGH",
+        "files_affected": 13,
+        "systems_affected": [
+          "Live philosopher tracking",
+          "Automated metrics pipeline",
+          "Interactive visualization",
+          "CI/CD integration"
+        ],
+        "impact": "Modern visualization and metrics systems not deployed"
+      },
+      {
+        "issue": "Schema Files Never Integrated",
+        "severity": "MEDIUM",
+        "files_affected": 2,
+        "files": [
+          "SCHEMAS/if.persona.schema.yaml",
+          "SCHEMAS/if.philosophy.schema.yaml"
+        ],
+        "impact": "No formal schema validation, type safety lost"
+      },
+      {
+        "issue": "Version Mismatches Unresolved",
+        "severity": "MEDIUM",
+        "files_affected": 4,
+        "files": [
+          "FINAL.IF.philosophy-database.yaml",
+          "FINAL.IF.persona-registry.yaml",
+          "ifctl.py",
+          "FIX.component-canonicalization.yaml"
+        ],
+        "impact": "Unclear which versions are authoritative"
+      }
+    ]
+  },
+  "recommendations": {
+    "high_priority": [
+      {
+        "action": "Restore Lost Documentation",
+        "files": [
+          "SCHEMAS/if.persona.schema.yaml",
+          "SCHEMAS/if.philosophy.schema.yaml",
+          "CLAUDE_PROMPT_integrate_joe_and_run_V4.md",
+          "RUNBOOK.V4-Epic.r2.md",
+          "CHECKLISTS/IF.search-checklist.md",
+          "CHECKLISTS/IF.guard-checklist.md",
+          "docs/PHILOSOPHY-CODE-EXAMPLES.md"
+        ],
+        "source": "r3 (schemas), r3 (docs), r4 (PHILOSOPHY-CODE-EXAMPLES)",
+        "priority": "CRITICAL",
+        "estimated_effort": "1 hour"
+      }
+    ],
+    "medium_priority": [
+      {
+        "action": "Integrate R5 Philosopher System",
+        "files": "All 13 files from r5_philosophers",
+        "systems": [
+          "Live source tracking",
+          "Automated metrics",
+          "Interactive visualization",
+          "CI/CD pipeline"
+        ],
+        "source": "r5_philosophers",
+        "priority": "HIGH",
+        "estimated_effort": "2 hours"
+      },
+      {
+        "action": "Resolve Version Mismatches",
+        "files": [
+          "FINAL.IF.philosophy-database.yaml",
+          "FINAL.IF.persona-registry.yaml",
+          "ifctl.py",
+          "FIX.component-canonicalization.yaml"
+        ],
+        "priority": "MEDIUM",
+        "estimated_effort": "30 minutes"
+      }
+    ]
+  },
+  "consolidation_verdict": {
+    "overall_assessment": "PARTIAL FAILURE",
+    "consolidation_success": false,
+    "percentage_successful": 11.9,
+    "root_causes": [
+      "Narrow focus on philosophy/persona YAML files only",
+      "Ignored operational documentation (runbooks, prompts, checklists)",
+      "Missed schema definitions entirely",
+      "No tracking of r4_gapfill as correction/update to r3",
+      "Did not account for r5_philosophers as new system",
+      "Created unresolved version mismatches"
+    ],
+    "immediate_actions_required": true,
+    "action_plan": [
+      {
+        "phase": 1,
+        "name": "Restore Lost Documentation",
+        "duration": "1 hour",
+        "steps": [
+          "Extract schemas from r3",
+          "Extract documentation from r3",
+          "Add PHILOSOPHY-CODE-EXAMPLES.md from r4",
+          "Commit changes"
+        ]
+      },
+      {
+        "phase": 2,
+        "name": "Integrate R5 Philosopher System",
+        "duration": "2 hours",
+        "steps": [
+          "Extract all r5 files",
+          "Test live_sources.yaml",
+          "Validate Python metrics tool",
+          "Test HTML visualization",
+          "Configure CI/CD workflow",
+          "Commit changes"
+        ]
+      },
+      {
+        "phase": 3,
+        "name": "Verify Version Reconciliation",
+        "duration": "30 minutes",
+        "steps": [
+          "Compare philosophy database versions",
+          "Compare persona registry versions",
+          "Compare ifctl.py versions",
+          "Document findings",
+          "Resolve if necessary"
+        ]
+      }
+    ]
+  }
+}

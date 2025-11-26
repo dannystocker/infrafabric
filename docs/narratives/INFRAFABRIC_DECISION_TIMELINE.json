@@ -1,0 +1,235 @@
+{
+  "project": "InfraFabric",
+  "description": "Machine-readable timeline of major decisions, incidents, and constitutional moments",
+  "generated": "2025-11-26T00:00:00Z",
+  "timeline": [
+    {
+      "id": "DEC-2025-1107-001",
+      "date": "2025-11-07",
+      "datetime": "2025-11-07T00:00:00Z",
+      "case_ref": "IF.YoloGuard/2025-11-07/API-EXPOSURE",
+      "incident_id": "SEC-2025-1107-001",
+      "subject": "OpenRouter API Key Exposure Detected",
+      "category": "Security/Vulnerability",
+      "severity": "CRITICAL",
+      "description": "IF.YoloGuard v3.0 detected exposure of primary OpenRouter API key through GitHub repositories",
+      "affected_resource": "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",
+      "discovery_method": "Automated security monitoring",
+      "outcome": "API key marked for revocation; security audit initiated",
+      "participants": ["IF.YoloGuard"],
+      "dependencies": [],
+      "git_reference": null,
+      "documentation": "/home/setup/.security/revoked-keys-whitelist.md",
+      "status": "RESOLVED",
+      "remediation_date": "2025-11-08"
+    },
+    {
+      "id": "DEC-2025-1108-001",
+      "date": "2025-11-08",
+      "datetime": "2025-11-08T00:00:00Z",
+      "case_ref": "IF.Guard/2025-11-08/INCIDENT-RESPONSE",
+      "incident_id": "SEC-2025-1108-001",
+      "subject": "Security Incident Response & Key Revocation Activated",
+      "category": "Security/Incident-Response",
+      "severity": "CRITICAL",
+      "description": "Formal security incident response following OpenRouter API key exposure; IF.Guard activated for threat assessment",
+      "response_actions": [
+        "OpenRouter key revoked and disabled",
+        "System audit for credential exposure",
+        "IF.TTT protocol activation",
+        "Enhanced security monitoring"
+      ],
+      "new_credentials_established": [
+        "DeepSeek API (sk-c2b06f3ae3c442de82f4e529bcce71ed)",
+        "Gitea credentials (dannystocker / @@Gitea305$$)",
+        "Admin credentials (ggq-admin / Admin_GGQ-2025!)"
+      ],
+      "outcome": "Security posture strengthened; IF.Guard operational",
+      "participants": ["IF.Guard", "IF.YoloGuard"],
+      "dependencies": ["DEC-2025-1107-001"],
+      "git_reference": null,
+      "documentation": "/home/setup/.security/revoked-keys-whitelist.md",
+      "status": "RESOLVED",
+      "completion_date": "2025-11-08"
+    },
+    {
+      "id": "DEC-2025-1110-001",
+      "date": "2025-11-10",
+      "datetime": "2025-11-10T12:00:00Z",
+      "case_ref": "IF.Architect/2025-11-10/HANDOVER-SYSTEM",
+      "decision_id": "ARCH-2025-1110-001",
+      "subject": "Session Handover System Deployed (3-Tier Architecture)",
+      "category": "Architecture/Infrastructure",
+      "severity": "HIGH",
+      "description": "Deployment of comprehensive session handover system preventing context exhaustion through 3-tier architecture",
+      "components_deployed": [
+        "Tier 1: SESSION-RESUME.md (<2K tokens)",
+        "Tier 2: COMPONENT-INDEX.md (<5K tokens)",
+        "Tier 3: Deep Archives (Haiku-delegate only)"
+      ],
+      "architecture": {
+        "tier_1": "Current mission, git state, blockers, immediate next action",
+        "tier_2": "91 IF.* component catalog with MD5 hashes",
+        "tier_3": "Research papers (6,078 lines), evidence (102+ docs), historical records"
+      },
+      "mandatory_files": [
+        "SESSION-ONBOARDING.md",
+        "SESSION-RESUME-TEMPLATE.md",
+        "agents.md",
+        "COMPONENT-INDEX.md",
+        "IF-URI-SCHEME.md",
+        "SWARM-COMMUNICATION-SECURITY.md"
+      ],
+      "if_ttt_compliance": true,
+      "outcome": "Session coherence guaranteed across context boundaries; IF.TTT framework operational",
+      "participants": ["IF.Architect", "Sonnet-4.5"],
+      "dependencies": [],
+      "git_reference": "c6c24f0",
+      "git_message": "Add session handover system with IF.TTT traceability framework",
+      "documentation": "/home/setup/infrafabric/SESSION-ONBOARDING.md",
+      "status": "ACTIVE",
+      "deployment_date": "2025-11-10"
+    },
+    {
+      "id": "DEC-2025-1125-001",
+      "date": "2025-11-25",
+      "datetime": "2025-11-25T00:00:00Z",
+      "case_ref": "IF.Librarian/2025-11-25/ARCHAEOLOGY",
+      "research_id": "RES-2025-1125-001",
+      "subject": "Series 2 Genesis - Archaeology Recovery of Librarian/YoloGuard",
+      "category": "Research/Historical",
+      "severity": "MEDIUM",
+      "description": "Archaeological recovery operation of Librarian/YoloGuard foundational documentation and component genealogy",
+      "recovery_scope": [
+        "Librarian component original specifications",
+        "YoloGuard evolution to strategic communications council",
+        "20-voice extended council formation",
+        "Dossier 07: 100% consensus on civilizational collapse patterns",
+        "Document consolidation framework (82.87% approval, pending execution)"
+      ],
+      "key_discoveries": [
+        "IF.sam: 16 multifaceted dimensions of Sam Altman's ethical spectrum",
+        "IF.Guard: 20-voice extended council with stress-testing capability",
+        "Document consolidation: 82.87% approval, deferred pending user authorization"
+      ],
+      "outcome": "Complete genealogy mapped; Series 2 foundational knowledge base established",
+      "participants": ["IF.Librarian", "IF.Guard"],
+      "dependencies": [],
+      "git_reference": null,
+      "documentation": "/home/setup/infrafabric/agents.md",
+      "status": "IN_PROGRESS",
+      "completion_target": "2025-11-26"
+    },
+    {
+      "id": "DEC-2025-1126-001",
+      "date": "2025-11-26",
+      "datetime": "2025-11-26T00:00:00Z",
+      "case_ref": "GUARDIAN-COUNCIL/2025-11-26/CONSTITUTIONAL-CONVENTION",
+      "decision_id": "CONST-2025-1126-001",
+      "subject": "Constitutional Convention - Genesis Structure Ratified (5-0 Unanimous)",
+      "category": "Governance/Constitutional",
+      "severity": "CRITICAL",
+      "description": "Constitutional Convention formally ratifying Genesis Structure of InfraFabric with unanimous 5-0 Guardian Council vote",
+      "components_ratified": [
+        "IF.TTT (Traceable, Transparent, Trustworthy) - MANDATORY",
+        "IF.Guard - Strategic communications council (20-voice)",
+        "IF.sam - 16-faceted Sam Altman persona system",
+        "IF.citate - Automatic citation generation (MANDATORY)",
+        "IF.optimise - Token efficiency optimization (DEFAULT-ON)",
+        "IF.yologuard - Real-time security monitoring"
+      ],
+      "governance_protocols": [
+        "Council Decision Framework: 100% consensus requires empirical validation + testable predictions + mathematical isomorphism",
+        "Contrarian Guardian can veto >95% approval with 2-week cooling-off period",
+        "Preserve git history and dissent when consolidating documents"
+      ],
+      "token_efficiency_strategy": {
+        "haiku_delegation": "Mechanical tasks (file updates, installations, data transformations, git operations)",
+        "sonnet_usage": "Complex reasoning, architecture decisions, council deliberations",
+        "parallelization": "Multiple Haiku agents for independent tasks",
+        "cost_optimization": "Haiku is 10x cheaper than Sonnet - use aggressively",
+        "if_optimise_indicator": ["Active", "Sonnet mode", "Multi-Haiku", "Disabled"]
+      },
+      "ci_cd_traceability": {
+        "if_citate_mandatory": true,
+        "source_linking": "file:line, git commit, external citations",
+        "citation_status": ["unverified", "verified", "disputed", "revoked"],
+        "validation_pipeline": "python tools/citation_validate.py"
+      },
+      "document_consolidation_status": {
+        "approval_level": "82.87%",
+        "status": "PENDING_USER_AUTHORIZATION",
+        "when_approved_includes": [
+          "Merger of related documentation",
+          "Preservation of complete git history",
+          "Comprehensive dissent documentation",
+          "Cross-linking to narrative timeline"
+        ]
+      },
+      "project_architecture": [
+        "InfraFabric-Core: Research papers (6,078 lines)",
+        "InfraFabric: Marketing/YoloGuard (strategic communications)",
+        "NaviDocs: Boat documentation platform (MVP 65% complete, 5 cloud sessions ready)"
+      ],
+      "museum_structure": {
+        "docs_narratives": "Chronology and decision timeline",
+        "docs_archive": "Historical documents and research",
+        "docs_debates": "Guardian Council deliberations",
+        "docs_evidence": "Citation and validation records"
+      },
+      "outcome": "InfraFabric constitutional framework formalized and ratified; project ready for Series 2 expansion",
+      "participants": [
+        "Guardian Council (5 voting members)",
+        "IF.Guard",
+        "IF.sam",
+        "IF.Librarian",
+        "IF.TTT"
+      ],
+      "vote_tally": {
+        "total_votes": 5,
+        "unanimous": true,
+        "for": 5,
+        "against": 0,
+        "abstain": 0
+      },
+      "dependencies": [
+        "DEC-2025-1110-001",
+        "DEC-2025-1125-001"
+      ],
+      "git_reference": null,
+      "documentation": "/home/setup/infrafabric/docs/narratives/INFRAFABRIC_CHRONOLOGY_SUMMARY.md",
+      "status": "ACTIVE",
+      "ratification_date": "2025-11-26",
+      "next_review": "2025-12-26"
+    }
+  ],
+  "statistics": {
+    "total_decisions": 5,
+    "by_category": {
+      "Security": 2,
+      "Architecture": 1,
+      "Research": 1,
+      "Governance": 1
+    },
+    "by_status": {
+      "RESOLVED": 2,
+      "ACTIVE": 2,
+      "IN_PROGRESS": 1
+    },
+    "critical_severity_count": 3,
+    "pending_user_actions": [
+      {
+        "id": "DEC-2025-1126-001",
+        "action": "Document Consolidation Authorization",
+        "status": "PENDING",
+        "approval_level": "82.87%"
+      }
+    ]
+  },
+  "queries": {
+    "example_critical_decisions": "Filter by severity=CRITICAL",
+    "example_pending_actions": "Filter by status=PENDING or in pending_user_actions",
+    "example_by_date": "Sort by date descending",
+    "example_dependencies": "Follow dependencies field to trace decision genealogy"
+  }
+}

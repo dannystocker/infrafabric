@@ -7,7 +7,7 @@ Compares and merges YAML evaluations from Codex, Gemini, and Claude
 import yaml
 import sys
 from pathlib import Path
-from typing import Dict, List, Any
+from typing import Dict, List
 from collections import defaultdict
 
 def load_evaluation(filepath: Path) -> Dict:
@@ -230,7 +230,7 @@ def generate_consensus_report(evals: List[Dict]) -> str:
         report.append(f"### {metric}")
         report.append(f"- **Average:** {data['average']}/10")
         report.append(f"- **Variance:** {data['variance']}")
-        report.append(f"- **Individual scores:**")
+        report.append("- **Individual scores:**")
         for v in data['values']:
             report.append(f"  - {v['evaluator']}: {v['value']}")
         if data['outliers']:
@@ -279,7 +279,7 @@ def generate_consensus_report(evals: List[Dict]) -> str:
     # Citation Verification Consensus
     report.append("\n## Citation & Documentation Quality (Consensus)\n")
 
-    report.append(f"\n### Overall Citation Stats\n")
+    report.append("\n### Overall Citation Stats\n")
     avg_papers = citations['papers']['total'] / len(evals) if evals else 0
     total_cits = citations['citations']['total']
     total_verified = citations['citations']['verified']

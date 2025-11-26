@@ -1,0 +1,1 @@
+{"case_ref":"ICW-PANEL-2025-002","date":"2025-09-27","subject":"ICW Web Design Spacing & Layout","participants":["Emma Tremblay (UX Lead)","Alex Thompson (Frontend/CSS)","Priya Desai (Accessibility)"],"outcome":"CONSENSUS","key_decisions":["8px grid system","24px base unit","64px section spacing"],"file":"council-archive/2025/Q4/ICW-WEB-DESIGN-PANEL-2025-09-27.md"}

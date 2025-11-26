@@ -32,7 +32,7 @@ def shannon_entropy(data: bytes) -> float:
     """Compute Shannon entropy (bits per byte) for detecting encoded secrets."""
     if not data:
         return 0.0
-    freq = {}
+    freq: dict[int,int] = {}
     for b in data:
         freq[b] = freq.get(b, 0) + 1
     entropy = 0.0
@@ -115,7 +115,7 @@ def extract_values_from_json(text: str) -> List[str]:
                 values.append(obj)
 
         walk(data)
-    except:
+    except Exception:
         pass
 
     return values
@@ -137,7 +137,7 @@ def extract_values_from_xml(text: str) -> List[str]:
                 if any(kw in attr_name.lower() for kw in ['pass', 'secret', 'token', 'auth', 'encoding']):
                     if attr_value and len(attr_value) > 3:
                         values.append(attr_value)
-    except:
+    except Exception:
         pass
 
     return values
@@ -466,7 +466,7 @@ class SecretRedactorV3:
                         decoded_text = decoded_b64.decode('utf-8', errors='ignore')
                         if decoded_text:
                             results.extend(self.scan_with_patterns(decoded_text))
-                    except:
+                    except Exception:
                         pass
 
             # Try hex decode
@@ -476,7 +476,7 @@ class SecretRedactorV3:
                     decoded_text = decoded_hex.decode('utf-8', errors='ignore')
                     if decoded_text:
                         results.extend(self.scan_with_patterns(decoded_text))
-                except:
+                except Exception:
                     pass
 
         # Try JSON extraction
@@ -493,6 +493,10 @@ class SecretRedactorV3:
 
     def redact(self, text: str) -> str:
         """Redact secrets from text using v3 enhanced detection."""
+        if text is None:
+            return None
+        if text == "":
+            return ""
         matches = self.predecode_and_rescan(text)
 
         redacted = text
@@ -505,7 +509,7 @@ class SecretRedactorV3:
         """Scan a file and return all detected secrets with metadata."""
         try:
             content = file_path.read_text(encoding='utf-8', errors='ignore')
-        except:
+        except Exception:
             return []
 
         matches = self.predecode_and_rescan(content)

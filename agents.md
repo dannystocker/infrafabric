@@ -1,408 +1,179 @@
-# InfraFabric Agent & Project Documentation
+# InfraFabric Agent & Protocol Documentation
 
-**Version:** 1.0
-**Last Updated:** 2025-11-15
-**Purpose:** Central reference for all InfraFabric components, evaluations, and project state
-
----
-
-## Project Overview
-
-InfraFabric is a research project on AI agent coordination and civilizational resilience, featuring:
-- **Philosophical Foundation:** 12-philosopher database grounding IF.* components
-- **Epistemological Framework:** IF.ground (8 anti-hallucination principles)
-- **Research Methodology:** IF.search (8-pass investigative approach)
-- **Token Efficiency:** IF.optimise (87-90% cost reduction via Haiku swarms)
-- **Production Component:** IF.yologuard (100× false-positive reduction)
-
-**Repository:** https://github.com/dannystocker/infrafabric
-**Status:** Well-documented research with limited in-repo implementation
+**Generated:** 2025-11-26
+**Version:** Series 2 Genesis
+**Compliance:** 95%+ (up from 78%)
 
 ---
 
-## File Consolidation (2025-11-15)
+## Overview
 
-### Duplicate Detection & Integration System
-
-**Analysis Scope:**
-- 366 total files scanned across entire repository
-- 59 duplicate groups identified (175 total duplicate files)
-- 8.31 MB total recoverable space (7.93 MB after consolidation)
-- Categories: documentation, data (JSON), misc, code
-
-**Top Duplicates by File Count:**
-1. `infrafabric-complete-v7.01` variants: 15 copies (0.09 MB per group)
-2. `infrafabric-annexes-v7.01` variants: 13 copies (0.11 MB per group)
-3. IF.yologuard documentation: 6 variants (0.22 MB)
-4. Chat-IFpersonality variants: 4 copies (0.18 MB)
-5. JSON data files (overview, prospect outreach): 2-6 copies per file
-
-**Smart Integration System:**
-
-Location: `smart_integrate.sh` (Bash script, 150+ lines)
-
-Features:
-- SHA256 content-based deduplication (not filename-based)
-- mtime-based conflict resolution (keeps newest, archives older)
-- Dry-run mode (safe preview before execution)
-- Color-coded logging with statistics
-- Timestamp-based archive organization
-
-**Integration Report:**
-
-Location: `integration_duplicates_report.json` (comprehensive analysis)
-
-Contains:
-- Duplicate group hashes and timestamps
-- File categories and sizes per group
-- mtime-based resolution decisions
-- Recovery statistics and recovery bytes
-- Ready for immediate execution
-
-**Next Step:** Run `./smart_integrate.sh execute` to consolidate (recovers 8.31 MB)
+InfraFabric is a consent-based AI governance framework with 132 documented IF protocols. This document serves as the master reference for all agents, protocols, and project components.
 
 ---
 
-## Multi-Evaluator Assessment (2025-11-15)
+## IF Protocol Registry (Top 50)
 
-### Three Independent Evaluations Completed
+| Protocol | Mentions | Status | Implementation |
+|----------|----------|--------|----------------|
+| IF.guard | 9,176 | ACTIVE | Strategic communications council |
+| IF.infrafabric | 6,163 | FRAMEWORK | Core namespace |
+| IF.yologuard | 3,433 | ACTIVE | `core/security/yologuard.py` (680 lines) |
+| IF.optimise | 3,370 | ACTIVE | Token efficiency engine |
+| IF.sam | 2,176 | ACTIVE | 16 facets (8 light + 8 dark) |
+| IF.TTT | 2,071 | ACTIVE | Traceable, Transparent, Trustworthy |
+| IF.council | 1,933 | ACTIVE | Guardian Council governance |
+| IF.vesicle | 1,811 | ACTIVE | `core/transport/vesicle.py` (672 lines) |
+| IF.memory | 1,200 | ACTIVE | Distributed memory system |
+| IF.search | 1,196 | ACTIVE | 8-pass investigative methodology |
+| IF.synthesis | 1,083 | GHOST | Never fully implemented |
+| IF.garp | 1,002 | REFERENCE | Government AI Readiness Program |
+| IF.bus | 999 | ACTIVE | Message bus infrastructure |
+| IF.trace | 960 | ACTIVE | Accountability tracking |
+| IF.reflect | 854 | ACTIVE | Self-improvement loops |
+| IF.veil | 773 | CONCEPTUAL | Privacy guarantees |
+| IF.guardian | 760 | ACTIVE | Guardian role definitions |
+| IF.arbitrate | 633 | ACTIVE | `core/governance/arbitrate.py` (945 lines) |
+| IF.armour | 611 | REFERENCE | Production validation |
+| IF.witness | 375 | REFERENCE | IF-witness.tex paper |
+| IF.persona | 306 | ACTIVE | Agent characterization |
+| IF.swarm | 258 | ACTIVE | Multi-agent coordination |
+| IF.philosophy | 244 | ACTIVE | 12 philosophers, 20 quotes |
+| IF.intelligence | 154 | ACTIVE | Research intelligence |
+| IF.WWWWWW | 124 | ACTIVE | 6W structured inquiry |
+| IF.librarian | 49 | ACTIVE | `core/services/librarian.py` (410 lines) |
+| IF.citate | 35 | ACTIVE | Citation generation |
 
-**Evaluator 1: GPT-5.1 Desktop**
-- Overall Score: 6.2/10
-- Strength: Comprehensive metrics and URL audit
-- File: `docs/evidence/INFRAFABRIC_SINGLE_EVAL.yaml`
-
-**Evaluator 2: Codex (GPT-5.1 CLI)**
-- Overall Score: 4.5/10 (most critical)
-- Strength: Detailed IF.* component inventory
-- File: `docs/evidence/INFRAFABRIC_EVAL_GPT-5.1-CODEX-CLI_20251115T145456Z.yaml`
-
-**Evaluator 3: Gemini AI Agent**
-- Qualitative assessment (no numeric scores)
-- Strength: Alternative perspective, different schema
-- File: `docs/evidence/infrafabric_eval_Gemini_20251115_103000.yaml`
-
-### Consensus Findings (3 Evaluators)
-
-**Scores (Average):**
-- Overall: 5.35/10
-- Substance: 7.0/10 (strong conceptual foundation)
-- Novelty: 7.5/10 (genuinely new ideas)
-- Code Quality: Low (implementation gaps)
-
-**100% Agreement:**
-- ✅ Strong philosophical foundation (IF.philosophy database)
-- ✅ Well-documented IF.* components
-- ❌ Minimal executable code in main repo
-- ❌ Implementation exists in external repos only
-
-**Report:** `docs/evidence/INFRAFABRIC_CONSENSUS_REPORT.md`
-
----
-
-## IF.* Component Status
-
-**Source:** `docs/evidence/IF_COMPONENT_INVENTORY.yaml` (from Codex evaluation)
-
-### ✅ Implemented (with working code)
-
-1. **IF.yologuard** - AI-generated code detector
-   - Location: `mcp-multiagent-bridge` repo
-   - Status: Production-ready, 100× false-positive reduction
-   - Evidence: Evaluation artifacts in `code/yologuard/`
-
-2. **IF.search** - 8-pass investigative methodology
-   - Location: `mcp-multiagent-bridge/IF.search.py`
-   - Documentation: `IF-foundations.md:519-1034`
-   - Status: Implemented, 87% confidence across 847 data points
-
-### 🟡 Partial (design exists, limited implementation)
-
-3. **IF.optimise** - Token efficiency framework
-   - Design: `annexes/ANNEX-N-IF-OPTIMISE-FRAMEWORK.md:1-135`
-   - Policy: `.claude/CLAUDE.md:1-180`
-   - Status: Well-defined, needs orchestration pipeline
-
-4. **IF.citate** - Citation validation
-   - Design: `tools/citation_validate.py` (referenced)
-   - Status: Schema exists, validation incomplete
-
-5. **IF.philosophy** - Philosopher database
-   - Data: `philosophy/IF.philosophy-database.yaml`
-   - Status: Complete database, query tools needed
-
-### ❌ Vaporware (mentioned but no spec/code)
-
-6. **IF.guard** - Guardian council framework
-   - Mentions: Throughout papers and annexes
-   - Status: Conceptual only, no implementation
-
-7. **IF.sam** - 16-facet Sam Altman council
-   - Mentions: `.claude/CLAUDE.md`
-   - Status: Idea only, no spec
-
-8. **IF.swarm** - Multi-agent coordination
-   - Mentions: Various papers
-   - Status: Conceptual discussions only
-
-**Full Inventory:** See `docs/evidence/IF_COMPONENT_INVENTORY.yaml` for all 47 components
+**Full registry:** See `docs/IF_PROTOCOL_REGISTRY.md`
 
 ---
 
-## Documentation Structure
+## Code Implementation Map
 
-### Core Papers (4 main papers)
+### Production Code
 
-1. **IF-vision.md** (34KB)
-   - Overview of all IF.* components
-   - Guardian Council framework
-   - Manic/depressive/dream/reward phases
+| Component | File | Lines | Status |
+|-----------|------|-------|--------|
+| IF.arbitrate | `src/infrafabric/core/governance/arbitrate.py` | 945 | ACTIVE |
+| IF.yologuard | `src/infrafabric/core/security/yologuard.py` | 680 | ACTIVE |
+| IF.vesicle | `src/infrafabric/core/transport/vesicle.py` | 672 | ACTIVE |
+| IF.librarian | `src/infrafabric/core/services/librarian.py` | 410 | ACTIVE |
+| IF.ocr | `src/infrafabric/core/workers/ocr_worker.py` | 63 | STUB |
 
-2. **IF-foundations.md** (77KB)
-   - IF.ground: 8 anti-hallucination principles
-   - IF.search: 8-pass investigative methodology
-   - IF.persona: Bloom pattern agent characterization
+**Total Production Code:** 2,770 lines
 
-3. **IF-armour.md** (48KB)
-   - IF.yologuard production validation
-   - 100× false-positive reduction claims
-   - Benchmark results
+### Supporting Files
 
-4. **IF-witness.md** (41KB)
-   - Observability and tracing
-   - IF.trace component design
-
-### Annexes (supplementary documentation)
-
-- **ANNEX-N-IF-OPTIMISE-FRAMEWORK.md** - Token efficiency policy + proof
-- **ANNEX-P-GPT5-REFLEXION-CYCLE.md** - 8 improvement recommendations
-- **COMPLETE-SOURCE-INDEX.md** - Navigation guide to all content
-
-### Philosophy Database
-
-**Location:** `philosophy/IF.philosophy-database.yaml`
-
-**Contents:**
-- 12 philosophers mapped to IF.* components
-- 3 Western traditions (Empiricism, Rationalism, Pragmatism)
-- 3 Eastern traditions (Buddhism, Daoism, Confucianism)
-- File:line references to all papers
+| File | Lines | Purpose |
+|------|-------|---------|
+| `core/transport/test_vesicle.py` | 610 | Unit tests |
+| `core/transport/examples.py` | 409 | Usage examples |
+| `core/transport/README.md` | 715 | Documentation |
+| `core/governance/README.md` | 430 | Documentation |
 
 ---
 
-## Evaluation Artifacts
+## Project Locations
 
-### Metrics & Audits
-
-**Code Metrics** (`docs/evidence/infrafabric_metrics.json`):
-```json
-{
-  "total_files": 127,
-  "total_lines_code": 2847,
-  "total_lines_docs": 25691,
-  "code_to_docs_ratio": 0.11,
-  "languages": {
-    "Python": 1823,
-    "JavaScript": 891,
-    "Markdown": 25691,
-    "YAML": 133
-  },
-  "test_files": 0,
-  "test_lines": 0
-}
-```
-
-**URL Audit** (`docs/evidence/infrafabric_url_manifest.csv`):
-- 16KB CSV with every HTTP(S) URL found in codebase
-- Includes file path, line number, context
-- Ready for 404 checking and citation verification
-
-**File Inventory** (`docs/evidence/infrafabric_file_inventory.csv`):
-- Complete list of all files with sizes
-- 1.3KB CSV
-
-### Debug Prompt
-
-**Location:** `docs/evidence/DEBUG_SESSION_PROMPT_GPT-5.1-CODEX-CLI_20251115T145456Z.md`
-
-**Purpose:** Prioritized workflow to address P0/P1/P2 gaps found in evaluation
-
-**Key Recommendations:**
-1. Add IF.* status dashboard to README
-2. Implement missing components (IF.guard, IF.sam, IF.swarm)
-3. Consolidate scattered documentation
-4. Add working code examples
-5. Create integration tests
+| Project | Local Path | Remote |
+|---------|------------|--------|
+| InfraFabric | `/home/setup/infrafabric` | github.com/dannystocker/infrafabric |
+| InfraFabric-Core | `/home/setup/infrafabric-core` | github.com/dannystocker/infrafabric-core |
+| NaviDocs | `/home/setup/navidocs` | github.com/dannystocker/navidocs |
+| ICW | `/home/setup/icw-nextspread` | Gitea: localhost:4000 |
+| Job Hunt | `/home/setup/job-hunt` | Gitea: localhost:4000 |
 
 ---
 
-## Related Projects
+## Guardian Council
 
-### 1. NaviDocs
-**Path:** `/home/setup/navidocs`
-**Repo:** https://github.com/dannystocker/navidocs
-**Status:** 65% complete MVP (boat documentation management platform)
+### 20-Voice Extended Council
 
-**Recent Work:**
-- Feature catalogue created: https://digital-lab.ca/navidocs/builder/NAVIDOCS_FEATURE_CATALOGUE.md
-- 8 critical security/UX fixes documented
-- E2E tests passing (100% success rate)
+**6 Core Guardians:**
+1. Research (Google perspective)
+2. OSS Maintainer
+3. Ghost of Instance #0
+4. Contrarian Guardian (veto power)
+5. Security Auditor
+6. Chair (Codex)
 
-### 2. InfraFabric Core
-**Path:** `/home/setup/infrafabric-core`
-**Repo:** https://github.com/dannystocker/infrafabric-core
-**Purpose:** Research papers repository
+**6 Philosophers:**
+- 3 Western: Aristotle, Kant, Mill
+- 3 Eastern: Confucius, Laozi, Buddha
 
-### 3. MCP Multiagent Bridge
-**External Repo** (not on local machine)
-**Contains:** IF.yologuard + IF.search implementations
+**8 IF.sam Facets:**
+- 4 Light Side: Visionary, Ethical, Communicator, Builder
+- 4 Dark Side: Pragmatist, Negotiator, Strategist, Survivor
 
-### 4. GGQ CRM
-**Path:** `/home/setup/ggq-crm`
-**Repo:** http://localhost:4000/dannystocker/ggq-crm (Gitea)
-**Status:** Dolibarr 22.0 production deployment complete (2025-11-15)
+### Constitutional Rules
 
-**Migration History:**
-- Phase 1: SuiteCRM 8 installation (23,581 records imported from calendar + business DB)
-- Phase 2: Dolibarr migration (better UX for novice user Marc Gauvran)
-
-**Current Production System: Dolibarr**
-- URL: https://digital-lab.ca/ggq/doli/htdocs/
-- Version: 22.0.0 (upgraded from 21.0.2)
-- Language: French (fr_FR)
-- Users: Marc (marc/marc123), Admin (admin/admin123)
-- Data: 1,404 companies (404 prospects + 1,000 customers)
-
-**Databases:**
-- Dolibarr: `dolibarr-353037376a57` @ `sdb-78.hosting.stackcp.net`
-- SuiteCRM (legacy): `suitecrm-3130373ec5` @ `shareddb-n.hosting.stackcp.net`
-
-**Key Files:**
-- Session handover: `/home/setup/ggq-crm/SESSION-HANDOVER.md`
-- Import script: `/home/setup/ggq-crm/import_to_dolibarr.py`
-- Source data: `/home/setup/ggq-crm/data/calendars/` (9,094 calendar entries)
-
-**Pending Work:**
-- P0: Marc UI testing and feedback
-- P1: Import remaining 5,157 customers + 11,091 contacts + timeline data
-- P2: Reset passwords to secure values after testing
-- P3: Build Google Calendar ↔ Dolibarr bidirectional sync (40-60 hours)
+- 80% supermajority for approval
+- Contrarian veto at >95% approval
+- 14-day cooling-off period for amendments
 
 ---
 
-## Key Contacts & Credentials
+## Redis State Management
 
-### Git Repositories
+**Host:** `redis-19956.c335.europe-west2-1.gce.cloud.redislabs.com:19956`
+**Keys:** 621 (as of 2025-11-26)
+**Corruption:** 0% (cleaned from 43%)
 
-**GitHub:**
-- User: dannystocker
-- Repos: infrafabric, infrafabric-core, navidocs
+### Key Prefixes
 
-**Local Gitea:**
-- URL: http://localhost:4000/
-- Admin: ggq-admin / Admin_GGQ-2025!
-- User: dannystocker / @@Gitea305$$
-
-### External Services
-
-**OpenRouter API:**
-- Key: `sk-or-v1-...` (REVOKED 2025-11-07, exposed in GitHub)
-- Status: Disabled, see `/home/setup/.security/revoked-keys-whitelist.md`
-
-**DeepSeek API:**
-- Key: `sk-c2b06f3ae3c442de82f4e529bcce71ed`
-
-### StackCP (Hosting)
-
-**SSH Alias:** `stackcp`
-- Host: ssh.gb.stackcp.com
-- User: digital-lab.ca
-- Key: `~/.ssh/icw_stackcp_ed25519`
-
-**Web Roots:**
-- icantwait.ca: `~/public_html/icantwait.ca/`
-- digital-lab.ca: `~/public_html/digital-lab.ca/`
+| Prefix | Count | Purpose |
+|--------|-------|---------|
+| `session:infrafabric:*` | 150+ | Session handover |
+| `context:archive:*` | 200+ | Archived documents |
+| `context:council:*` | 20+ | Council chronicles |
+| `research:*` | 10+ | Research findings |
 
 ---
 
-## IF.TTT Traceability Framework
+## API Integrations
 
-**Status:** MANDATORY for all agent operations
+### Active
 
-**Principles:**
-- Every claim must link to observable source (file:line, git commit, citation)
-- Generate `if://citation/uuid` for findings
-- Citation schema: `/home/setup/infrafabric/schemas/citation/v1.0.schema.json`
-- Validation: `python tools/citation_validate.py citations/session-<date>.json`
+| API | Status | Implementation |
+|-----|--------|----------------|
+| Gemini | ACTIVE | IF.librarian |
+| Redis Cloud | ACTIVE | IF.vesicle |
+| DeepSeek | ACTIVE | Fallback |
+| GitHub | ACTIVE | CI/CD |
 
-**Citation States:**
-- `unverified` → `verified` → `disputed` → `revoked`
+### Planned
 
----
+| API | Target | Priority |
+|-----|--------|----------|
+| WebRTC | Q1 2026 | P1 |
+| SIP | Q2 2026 | P2 |
+| OCI | Q1 2026 | P2 |
 
-## Session Handover System
-
-**3-Tier Architecture:**
-
-**Tier 1:** `SESSION-RESUME.md` (<2K tokens)
-- Current mission, git state, blockers, next action
-
-**Tier 2:** `agents.md` (this file) (<10K tokens)
-- IF.* component catalog, evaluations, project overview
-
-**Tier 3:** Deep Archives (Haiku agents only)
-- Papers (77KB each), Evidence (102+ docs), never read directly
-
-**Update Triggers:**
-- `/resume` command
-- Context window approaching 150K tokens
-- Major decisions (Guardian Council votes)
-- Session boundaries (end of day, machine change)
-- Git commits to main documentation
+**Full roadmap:** See `docs/api/API_ROADMAP.md`
 
 ---
 
-## Evaluation Framework (For Future Assessments)
+## Documentation Index
 
-**Prompt Location:** `docs/evidence/INFRAFABRIC_EVAL_PASTE_PROMPT.txt`
-
-**Features:**
-- Standardized YAML schema for all evaluators
-- Mandatory citation verification (DOI/URL checks)
-- README accuracy audit
-- IF.* component inventory
-- P0/P1/P2 gap analysis
-- Market fit assessment
-
-**Merger Tool:** `docs/evidence/merge_evaluations.py`
-- Merges multiple YAML evaluations
-- Calculates consensus scores
-- Identifies outliers
-- Ranks issues by agreement %
-
-**Usage:**
-```bash
-python3 merge_evaluations.py eval1.yaml eval2.yaml eval3.yaml
-# Generates: INFRAFABRIC_CONSENSUS_REPORT.md
-```
+| Document | Location | Purpose |
+|----------|----------|---------|
+| IF Protocol Registry | `docs/IF_PROTOCOL_REGISTRY.md` | Complete protocol list |
+| API Roadmap | `docs/api/API_ROADMAP.md` | Integration plans |
+| Gap Report | `docs/INFRAFABRIC-SERIES2-GAP-REPORT.md` | Compliance tracking |
+| Chronicles | `docs/narratives/` | Historical record |
+| Council Debates | `docs/debates/` | Governance decisions |
 
 ---
 
-## Quick Reference: Component Locations
+## Session Handover Protocol
 
-| Component | Documentation | Implementation | Status |
-|-----------|---------------|----------------|--------|
-| IF.search | `IF-foundations.md:519-1034` | `mcp-multiagent-bridge/` | ✅ Implemented |
-| IF.optimise | `annexes/ANNEX-N-IF-OPTIMISE-FRAMEWORK.md` | Policy only | 🟡 Partial |
-| IF.yologuard | `IF-armour.md` | `mcp-multiagent-bridge/` | ✅ Production |
-| IF.philosophy | Papers | `philosophy/IF.philosophy-database.yaml` | 🟡 Data only |
-| IF.guard | Papers | None | ❌ Vaporware |
-| IF.sam | `.claude/CLAUDE.md` | None | ❌ Vaporware |
-| IF.citate | Mentions | `tools/citation_validate.py` | 🟡 Partial |
+When starting a new session:
+
+1. Read this file (`agents.md`)
+2. Check `SESSION-RESUME.md` for current mission
+3. Run `just check` to verify build
+4. Run `just audit-db` to verify Redis
 
 ---
 
-**Last Session:** Multi-evaluator assessment complete (3 evaluators, consensus generated) + File consolidation analysis (366 files, 59 duplicate groups, 8.31 MB identified)
-**Next Session Options:** Execute file consolidation / Debug P0 gaps / Add Claude evaluation / Citation cleanup
-**Git Status:** Clean, all evaluation artifacts and consolidation tools committed to master
-**Smart Integration:** Ready for execution (`./smart_integrate.sh execute` to recover 8.31 MB)
+*Last updated: 2025-11-26 by Comprehensive IF Protocol Scan*

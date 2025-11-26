@@ -1,0 +1,189 @@
+{
+  "scan_date": "2025-11-15",
+  "base_path": "/home/setup/infrafabric-core",
+  "total_files": 26,
+  "files": [
+    {
+      "path": ".gitignore",
+      "full_path": "/home/setup/infrafabric-core/.gitignore",
+      "size_bytes": 127,
+      "modified": "2025-11-15 06:19:04",
+      "extension": "(no extension)"
+    },
+    {
+      "path": "IF-armour.md",
+      "full_path": "/home/setup/infrafabric-core/IF-armour.md",
+      "size_bytes": 48481,
+      "modified": "2025-11-15 06:19:04",
+      "extension": ".md"
+    },
+    {
+      "path": "IF-foundations.md",
+      "full_path": "/home/setup/infrafabric-core/IF-foundations.md",
+      "size_bytes": 77405,
+      "modified": "2025-11-15 06:19:04",
+      "extension": ".md"
+    },
+    {
+      "path": "IF-vision.md",
+      "full_path": "/home/setup/infrafabric-core/IF-vision.md",
+      "size_bytes": 34354,
+      "modified": "2025-11-15 06:19:04",
+      "extension": ".md"
+    },
+    {
+      "path": "IF-witness.md",
+      "full_path": "/home/setup/infrafabric-core/IF-witness.md",
+      "size_bytes": 41205,
+      "modified": "2025-11-15 06:19:04",
+      "extension": ".md"
+    },
+    {
+      "path": "INFRAFABRIC-COMPLETE-DOSSIER-v11.md",
+      "full_path": "/home/setup/infrafabric-core/INFRAFABRIC-COMPLETE-DOSSIER-v11.md",
+      "size_bytes": 73243,
+      "modified": "2025-11-15 06:19:04",
+      "extension": ".md"
+    },
+    {
+      "path": "README.md",
+      "full_path": "/home/setup/infrafabric-core/README.md",
+      "size_bytes": 23374,
+      "modified": "2025-11-15 06:19:04",
+      "extension": ".md"
+    },
+    {
+      "path": "annexes/ANNEX-N-IF-OPTIMISE-FRAMEWORK.md",
+      "full_path": "/home/setup/infrafabric-core/annexes/ANNEX-N-IF-OPTIMISE-FRAMEWORK.md",
+      "size_bytes": 17765,
+      "modified": "2025-11-07 22:57:03",
+      "extension": ".md"
+    },
+    {
+      "path": "annexes/ANNEX-O-PRECURSOR-CONVERSATION.md",
+      "full_path": "/home/setup/infrafabric-core/annexes/ANNEX-O-PRECURSOR-CONVERSATION.md",
+      "size_bytes": 17043,
+      "modified": "2025-11-15 06:19:04",
+      "extension": ".md"
+    },
+    {
+      "path": "annexes/ANNEX-P-GPT5-REFLEXION-CYCLE.md",
+      "full_path": "/home/setup/infrafabric-core/annexes/ANNEX-P-GPT5-REFLEXION-CYCLE.md",
+      "size_bytes": 16893,
+      "modified": "2025-11-15 06:19:04",
+      "extension": ".md"
+    },
+    {
+      "path": "annexes/COMPLETE-SOURCE-INDEX.md",
+      "full_path": "/home/setup/infrafabric-core/annexes/COMPLETE-SOURCE-INDEX.md",
+      "size_bytes": 27315,
+      "modified": "2025-11-07 22:57:03",
+      "extension": ".md"
+    },
+    {
+      "path": "annexes/ENGINEERING-BACKLOG-GPT5-IMPROVEMENTS.md",
+      "full_path": "/home/setup/infrafabric-core/annexes/ENGINEERING-BACKLOG-GPT5-IMPROVEMENTS.md",
+      "size_bytes": 28498,
+      "modified": "2025-11-07 22:57:03",
+      "extension": ".md"
+    },
+    {
+      "path": "annexes/infrafabric-IF-annexes.md",
+      "full_path": "/home/setup/infrafabric-core/annexes/infrafabric-IF-annexes.md",
+      "size_bytes": 170759,
+      "modified": "2025-11-15 06:19:04",
+      "extension": ".md"
+    },
+    {
+      "path": "papers/ARXIV-SUBMISSION-README.md",
+      "full_path": "/home/setup/infrafabric-core/papers/ARXIV-SUBMISSION-README.md",
+      "size_bytes": 29916,
+      "modified": "2025-11-15 06:19:04",
+      "extension": ".md"
+    },
+    {
+      "path": "papers/IF-armour-arxiv-submission.tar.gz",
+      "full_path": "/home/setup/infrafabric-core/papers/IF-armour-arxiv-submission.tar.gz",
+      "size_bytes": 21675,
+      "modified": "2025-11-15 06:19:04",
+      "extension": ".gz"
+    },
+    {
+      "path": "papers/IF-armour.tex",
+      "full_path": "/home/setup/infrafabric-core/papers/IF-armour.tex",
+      "size_bytes": 69486,
+      "modified": "2025-11-15 06:19:04",
+      "extension": ".tex"
+    },
+    {
+      "path": "papers/IF-foundations-arxiv-submission.tar.gz",
+      "full_path": "/home/setup/infrafabric-core/papers/IF-foundations-arxiv-submission.tar.gz",
+      "size_bytes": 43476,
+      "modified": "2025-11-15 06:19:04",
+      "extension": ".gz"
+    },
+    {
+      "path": "papers/IF-foundations.tex",
+      "full_path": "/home/setup/infrafabric-core/papers/IF-foundations.tex",
+      "size_bytes": 127725,
+      "modified": "2025-11-15 06:19:04",
+      "extension": ".tex"
+    },
+    {
+      "path": "papers/IF-vision-arxiv-submission.tar.gz",
+      "full_path": "/home/setup/infrafabric-core/papers/IF-vision-arxiv-submission.tar.gz",
+      "size_bytes": 15958,
+      "modified": "2025-11-15 06:19:04",
+      "extension": ".gz"
+    },
+    {
+      "path": "papers/IF-vision.tex",
+      "full_path": "/home/setup/infrafabric-core/papers/IF-vision.tex",
+      "size_bytes": 46792,
+      "modified": "2025-11-15 06:19:04",
+      "extension": ".tex"
+    },
+    {
+      "path": "papers/IF-witness-arxiv-submission.tar.gz",
+      "full_path": "/home/setup/infrafabric-core/papers/IF-witness-arxiv-submission.tar.gz",
+      "size_bytes": 17677,
+      "modified": "2025-11-15 06:19:04",
+      "extension": ".gz"
+    },
+    {
+      "path": "papers/IF-witness.tex",
+      "full_path": "/home/setup/infrafabric-core/papers/IF-witness.tex",
+      "size_bytes": 53848,
+      "modified": "2025-11-15 06:19:04",
+      "extension": ".tex"
+    },
+    {
+      "path": "philosophy/IF.philosophy-database.md",
+      "full_path": "/home/setup/infrafabric-core/philosophy/IF.philosophy-database.md",
+      "size_bytes": 38333,
+      "modified": "2025-11-15 06:19:04",
+      "extension": ".md"
+    },
+    {
+      "path": "philosophy/IF.philosophy-database.yaml",
+      "full_path": "/home/setup/infrafabric-core/philosophy/IF.philosophy-database.yaml",
+      "size_bytes": 44478,
+      "modified": "2025-11-15 06:19:04",
+      "extension": ".yaml"
+    },
+    {
+      "path": "philosophy/IF.philosophy-queries.md",
+      "full_path": "/home/setup/infrafabric-core/philosophy/IF.philosophy-queries.md",
+      "size_bytes": 43809,
+      "modified": "2025-11-15 06:19:04",
+      "extension": ".md"
+    },
+    {
+      "path": "philosophy/IF.philosophy-table.md",
+      "full_path": "/home/setup/infrafabric-core/philosophy/IF.philosophy-table.md",
+      "size_bytes": 33005,
+      "modified": "2025-11-15 06:19:04",
+      "extension": ".md"
+    }
+  ]
+}
