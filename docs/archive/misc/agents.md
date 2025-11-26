@@ -2,7 +2,7 @@
 
 **Version:** 1.0
 **Last Updated:** 2025-11-15
-**Purpose:** Central reference for all InfraFabric components, evaluations, and project state
+**Purpose:** Central reference for InfraFabric components, evaluations, and project state
 
 ---
 
@@ -91,10 +91,10 @@ Contains:
 - Code Quality: Low (implementation gaps)
 
 **100% Agreement:**
-- ✅ Strong philosophical foundation (IF.philosophy database)
-- ✅ Well-documented IF.* components
-- ❌ Minimal executable code in main repo
-- ❌ Implementation exists in external repos only
+- Strong philosophical foundation (IF.philosophy database)
+- Well-documented IF.* components
+- Minimal executable code in main repo
+- Implementation exists in external repos only
 
 **Report:** `docs/evidence/INFRAFABRIC_CONSENSUS_REPORT.md`
 
@@ -104,23 +104,21 @@ Contains:
 
 **Source:** `docs/evidence/IF_COMPONENT_INVENTORY.yaml` (from Codex evaluation)
 
-### ✅ Implemented (with working code)
+### Implemented (with working code)
 
 1. **IF.yologuard** - AI-generated code detector
-   - Location: `mcp-multiagent-bridge` repo
+   - Location: `src/infrafabric/core/security/yologuard.py`
    - Status: Production-ready, 100× false-positive reduction
    - Evidence: Evaluation artifacts in `code/yologuard/`
 
 2. **IF.search** - 8-pass investigative methodology
-   - Location: `mcp-multiagent-bridge/IF.search.py`
    - Documentation: `IF-foundations.md:519-1034`
    - Status: Implemented, 87% confidence across 847 data points
 
-### 🟡 Partial (design exists, limited implementation)
+### Partial (design exists, limited implementation)
 
 3. **IF.optimise** - Token efficiency framework
    - Design: `annexes/ANNEX-N-IF-OPTIMISE-FRAMEWORK.md:1-135`
-   - Policy: `.claude/CLAUDE.md:1-180`
    - Status: Well-defined, needs orchestration pipeline
 
 4. **IF.citate** - Citation validation
@@ -131,14 +129,14 @@ Contains:
    - Data: `philosophy/IF.philosophy-database.yaml`
    - Status: Complete database, query tools needed
 
-### ❌ Vaporware (mentioned but no spec/code)
+### Vaporware (mentioned but no spec/code)
 
 6. **IF.guard** - Guardian council framework
    - Mentions: Throughout papers and annexes
    - Status: Conceptual only, no implementation
 
-7. **IF.sam** - 16-facet Sam Altman council
-   - Mentions: `.claude/CLAUDE.md`
+7. **IF.sam** - 16-facet council
+   - Mentions: Documentation
    - Status: Idea only, no spec
 
 8. **IF.swarm** - Multi-agent coordination
@@ -236,95 +234,6 @@ Contains:
 
 ---
 
-## Related Projects
-
-### 1. NaviDocs
-**Path:** `/home/setup/navidocs`
-**Repo:** https://github.com/dannystocker/navidocs
-**Status:** 65% complete MVP (boat documentation management platform)
-
-**Recent Work:**
-- Feature catalogue created: https://digital-lab.ca/navidocs/builder/NAVIDOCS_FEATURE_CATALOGUE.md
-- 8 critical security/UX fixes documented
-- E2E tests passing (100% success rate)
-
-### 2. InfraFabric Core
-**Path:** `/home/setup/infrafabric-core`
-**Repo:** https://github.com/dannystocker/infrafabric-core
-**Purpose:** Research papers repository
-
-### 3. MCP Multiagent Bridge
-**External Repo** (not on local machine)
-**Contains:** IF.yologuard + IF.search implementations
-
-### 4. GGQ CRM
-**Path:** `/home/setup/ggq-crm`
-**Repo:** http://localhost:4000/dannystocker/ggq-crm (Gitea)
-**Status:** Dolibarr 22.0 production deployment complete (2025-11-15)
-
-**Migration History:**
-- Phase 1: SuiteCRM 8 installation (23,581 records imported from calendar + business DB)
-- Phase 2: Dolibarr migration (better UX for novice user Marc Gauvran)
-
-**Current Production System: Dolibarr**
-- URL: https://digital-lab.ca/ggq/doli/htdocs/
-- Version: 22.0.0 (upgraded from 21.0.2)
-- Language: French (fr_FR)
-- Users: Marc (marc/marc123), Admin (admin/admin123)
-- Data: 1,404 companies (404 prospects + 1,000 customers)
-
-**Databases:**
-- Dolibarr: `dolibarr-353037376a57` @ `sdb-78.hosting.stackcp.net`
-- SuiteCRM (legacy): `suitecrm-3130373ec5` @ `shareddb-n.hosting.stackcp.net`
-
-**Key Files:**
-- Session handover: `/home/setup/ggq-crm/SESSION-HANDOVER.md`
-- Import script: `/home/setup/ggq-crm/import_to_dolibarr.py`
-- Source data: `/home/setup/ggq-crm/data/calendars/` (9,094 calendar entries)
-
-**Pending Work:**
-- P0: Marc UI testing and feedback
-- P1: Import remaining 5,157 customers + 11,091 contacts + timeline data
-- P2: Reset passwords to secure values after testing
-- P3: Build Google Calendar ↔ Dolibarr bidirectional sync (40-60 hours)
-
----
-
-## Key Contacts & Credentials
-
-### Git Repositories
-
-**GitHub:**
-- User: dannystocker
-- Repos: infrafabric, infrafabric-core, navidocs
-
-**Local Gitea:**
-- URL: http://localhost:4000/
-- Admin: ggq-admin / Admin_GGQ-2025!
-- User: dannystocker / @@Gitea305$$
-
-### External Services
-
-**OpenRouter API:**
-- Key: `sk-or-v1-...` (REVOKED 2025-11-07, exposed in GitHub)
-- Status: Disabled, see `/home/setup/.security/revoked-keys-whitelist.md`
-
-**DeepSeek API:**
-- Key: `sk-c2b06f3ae3c442de82f4e529bcce71ed`
-
-### StackCP (Hosting)
-
-**SSH Alias:** `stackcp`
-- Host: ssh.gb.stackcp.com
-- User: digital-lab.ca
-- Key: `~/.ssh/icw_stackcp_ed25519`
-
-**Web Roots:**
-- icantwait.ca: `~/public_html/icantwait.ca/`
-- digital-lab.ca: `~/public_html/digital-lab.ca/`
-
----
-
 ## IF.TTT Traceability Framework
 
 **Status:** MANDATORY for all agent operations
@@ -332,7 +241,7 @@ Contains:
 **Principles:**
 - Every claim must link to observable source (file:line, git commit, citation)
 - Generate `if://citation/uuid` for findings
-- Citation schema: `/home/setup/infrafabric/schemas/citation/v1.0.schema.json`
+- Citation schema: `schemas/citation/v1.0.schema.json`
 - Validation: `python tools/citation_validate.py citations/session-<date>.json`
 
 **Citation States:**
@@ -392,20 +301,13 @@ python3 merge_evaluations.py eval1.yaml eval2.yaml eval3.yaml
 
 | Component | Documentation | Implementation | Status |
 |-----------|---------------|----------------|--------|
-| IF.search | `IF-foundations.md:519-1034` | `mcp-multiagent-bridge/` | ✅ Implemented |
-| IF.optimise | `annexes/ANNEX-N-IF-OPTIMISE-FRAMEWORK.md` | Policy only | 🟡 Partial |
-| IF.yologuard | `IF-armour.md` | `mcp-multiagent-bridge/` | ✅ Production |
-| IF.philosophy | Papers | `philosophy/IF.philosophy-database.yaml` | 🟡 Data only |
-| IF.guard | Papers | None | ❌ Vaporware |
-| IF.sam | `.claude/CLAUDE.md` | None | ❌ Vaporware |
-| IF.citate | Mentions | `tools/citation_validate.py` | 🟡 Partial |
-
----
-
-**Last Session:** Multi-evaluator assessment complete (3 evaluators, consensus generated) + File consolidation analysis (366 files, 59 duplicate groups, 8.31 MB identified)
-**Next Session Options:** Execute file consolidation / Debug P0 gaps / Add Claude evaluation / Citation cleanup
-**Git Status:** Clean, all evaluation artifacts and consolidation tools committed to master
-**Smart Integration:** Ready for execution (`./smart_integrate.sh execute` to recover 8.31 MB)
+| IF.search | `IF-foundations.md:519-1034` | External | Implemented |
+| IF.optimise | `annexes/ANNEX-N-IF-OPTIMISE-FRAMEWORK.md` | Policy only | Partial |
+| IF.yologuard | `IF-armour.md` | `core/security/yologuard.py` | Production |
+| IF.philosophy | Papers | `philosophy/IF.philosophy-database.yaml` | Data only |
+| IF.guard | Papers | None | Vaporware |
+| IF.sam | Documentation | None | Vaporware |
+| IF.citate | Mentions | `tools/citation_validate.py` | Partial |
 
 ---
 
@@ -420,7 +322,7 @@ python3 merge_evaluations.py eval1.yaml eval2.yaml eval3.yaml
 6. **Redis Deduplicated**: 716 unique keys, 18.3MB footprint (optimized from 723 keys)
 
 ### Key Files Created:
-- `/home/setup/infrafabric/universe/` - Complete 4D dimensional structure
+- `universe/` - Complete 4D dimensional structure
 - `universe/time/long_term/origin_story/00_The_Jack_Clark_Inquiry.md` - Page Zero foundational document
 - `universe/feature/ethics/seat_01_kant.md` - Kant Guardian council seat
 - `universe/feature/ethics/seat_12_confucius.md` - Confucius Guardian council seat
@@ -432,10 +334,9 @@ python3 merge_evaluations.py eval1.yaml eval2.yaml eval3.yaml
 - **5 PLANNED (29%)**: IF.guard, IF.ceo, IF.swarm, IF.arbitrate, IF.vesicle
 - **3 VAPORWARE (18%)**: IF.quantum, IF.core, IF.witness
 
-### Downloads Generated:
-- `INFRAFABRIC-UNIVERSE-4D.db` (900 KB) - SQLite database for Gemini AI review
-- `INFRAFABRIC-UNIVERSE-4D-FINAL.zip` (5.5 MB) - Complete archive with all 4D structure
-- `REDIS-DEDUPLICATED-EXPORT-2025-11-25.json` (16 MB) - Cache optimization report
+---
 
-### Operation Summary:
-This session consolidated 15 months of research into a structured 4D universe model, enabling dimensional analysis of InfraFabric's governance, ethics, and operational components. The SQLite export provides Gemini with a queryable interface to 1000+ architectural decisions encoded as if:// URIs.
+**Last Session:** Multi-evaluator assessment complete (3 evaluators, consensus generated) + File consolidation analysis (366 files, 59 duplicate groups, 8.31 MB identified)
+**Next Session Options:** Execute file consolidation / Debug P0 gaps / Add Claude evaluation / Citation cleanup
+**Git Status:** Clean, all evaluation artifacts and consolidation tools committed to master
+**Smart Integration:** Ready for execution (`./smart_integrate.sh execute` to recover 8.31 MB)
