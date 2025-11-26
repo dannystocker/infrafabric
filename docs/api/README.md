@@ -15,7 +15,7 @@ This directory contains documentation for all API integrations.
 | API | Status | Implementation |
 |-----|--------|----------------|
 | Gemini | ACTIVE | `core/services/librarian.py` |
-| Redis Cloud | ACTIVE | `core/transport/vesicle.py` |
+| Redis Cloud | ACTIVE | `core/logistics/parcel.py` |
 | DeepSeek | ACTIVE | Fallback in librarian |
 | GitHub | ACTIVE | CI/CD workflows |
 

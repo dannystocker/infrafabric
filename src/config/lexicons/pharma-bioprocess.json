@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0",
+  "industry_id": "pharma-bioprocess",
+  "industry_name": "Pharma/Bioprocess (cGMP)",
+  "cluster": "Healthcare/Bio",
+  "killer_app": {
+    "title": "Run-to-Run Control",
+    "description": "Bioreactor control with batch deviations auto-contained."
+  },
+  "protocols": [
+    {
+      "name": "OPC UA",
+      "layer": "application"
+    }
+  ],
+  "lexicon": [
+    {
+      "term": "Hold batch",
+      "context": "Pause S88 step",
+      "primitive": "IF.process.kill",
+      "severity": "critical",
+      "requires": [
+        "human_approval"
+      ]
+    },
+    {
+      "term": "Feed pulse",
+      "context": "Add substrate",
+      "primitive": "IF.logistics.spawn",
+      "severity": "info",
+      "requires": []
+    },
+    {
+      "term": "CIP/SIP",
+      "context": "Cleaning/sterilize",
+      "primitive": "IF.logistics.spawn",
+      "severity": "warn",
+      "requires": []
+    },
+    {
+      "term": "PAT alert",
+      "context": "Analytics out-of-spec",
+      "primitive": "IF.context.update",
+      "severity": "warn",
+      "requires": []
+    },
+    {
+      "term": "Harvest",
+      "context": "Transfer product",
+      "primitive": "IF.matrix.route",
+      "severity": "info",
+      "requires": []
+    }
+  ],
+  "risks": {
+    "failure_modes": [
+      "Batch loss",
+      "Regulatory breach"
+    ],
+    "mitigations": [
+      "Electronic signatures",
+      "Golden-batch bounds",
+      "Valve interlocks"
+    ]
+  }
+}

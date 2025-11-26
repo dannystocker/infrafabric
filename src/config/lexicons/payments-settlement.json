@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "industry_id": "payments-settlement",
+  "industry_name": "Payments & Settlement",
+  "cluster": "Finance/Logistics",
+  "killer_app": {
+    "title": "Instant Fraud-aware Routing",
+    "description": "Cross-rail routing with sub-second holds and confirmations."
+  },
+  "protocols": [
+    {
+      "name": "ISO 20022",
+      "layer": "application"
+    }
+  ],
+  "lexicon": [
+    {
+      "term": "Sanctions hit",
+      "context": "OFAC block",
+      "primitive": "IF.process.kill",
+      "severity": "critical",
+      "requires": [
+        "two_person_rule"
+      ]
+    },
+    {
+      "term": "Recall",
+      "context": "Pull back funds",
+      "primitive": "IF.logistics.spawn",
+      "severity": "warn",
+      "requires": [
+        "human_approval"
+      ]
+    },
+    {
+      "term": "MT/MX",
+      "context": "SWIFT message",
+      "primitive": "IF.signal.ingest",
+      "severity": "info",
+      "requires": []
+    },
+    {
+      "term": "RTP push",
+      "context": "Real-time credit",
+      "primitive": "IF.matrix.route",
+      "severity": "info",
+      "requires": []
+    },
+    {
+      "term": "Limit breach",
+      "context": "Risk control",
+      "primitive": "IF.context.update",
+      "severity": "critical",
+      "requires": []
+    },
+    {
+      "term": "Cutoff",
+      "context": "End-of-day",
+      "primitive": "IF.context.update",
+      "severity": "info",
+      "requires": []
+    }
+  ],
+  "risks": {
+    "failure_modes": [
+      "Fraud",
+      "AML breach"
+    ],
+    "mitigations": [
+      "AML model consensus",
+      "Dual authorization",
+      "Velocity caps"
+    ]
+  }
+}

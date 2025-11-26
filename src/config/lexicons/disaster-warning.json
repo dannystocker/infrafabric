@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "industry_id": "disaster-warning",
+  "industry_name": "Disaster Warning & Public Alerts",
+  "cluster": "Security/Defense",
+  "killer_app": {
+    "title": "One-tap Multi-channel Alerting",
+    "description": "Geo-fence targeting with device-level failover."
+  },
+  "protocols": [
+    {
+      "name": "CAP",
+      "layer": "application"
+    }
+  ],
+  "lexicon": [
+    {
+      "term": "WEA push",
+      "context": "Cell broadcast",
+      "primitive": "IF.logistics.spawn",
+      "severity": "critical",
+      "requires": [
+        "two_person_rule"
+      ]
+    },
+    {
+      "term": "Geo-target",
+      "context": "Polygon area",
+      "primitive": "IF.matrix.route",
+      "severity": "warn",
+      "requires": []
+    },
+    {
+      "term": "All clear",
+      "context": "End event",
+      "primitive": "IF.context.update",
+      "severity": "info",
+      "requires": []
+    },
+    {
+      "term": "Siren test",
+      "context": "Outdoor warning",
+      "primitive": "IF.logistics.spawn",
+      "severity": "warn",
+      "requires": []
+    },
+    {
+      "term": "Cancel alert",
+      "context": "Retract",
+      "primitive": "IF.process.kill",
+      "severity": "critical",
+      "requires": [
+        "human_approval"
+      ]
+    },
+    {
+      "term": "Sensor feed",
+      "context": "Weather/seismic",
+      "primitive": "IF.signal.ingest",
+      "severity": "info",
+      "requires": []
+    }
+  ],
+  "risks": {
+    "failure_modes": [
+      "False alarm",
+      "Panic"
+    ],
+    "mitigations": [
+      "Dual approval",
+      "Staged regions",
+      "Revocation workflow"
+    ]
+  }
+}

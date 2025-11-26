@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0",
+  "industry_id": "rail-signaling",
+  "industry_name": "Rail Signaling & PTC/ETCS",
+  "cluster": "Infrastructure",
+  "killer_app": {
+    "title": "Conflict-free Movement Authority",
+    "description": "Auto re-routing during outages with timing matched to braking curves."
+  },
+  "protocols": [
+    {
+      "name": "PTC",
+      "layer": "application"
+    },
+    {
+      "name": "ETCS",
+      "layer": "application"
+    }
+  ],
+  "lexicon": [
+    {
+      "term": "Movement authority",
+      "context": "Permit to proceed",
+      "primitive": "IF.context.update",
+      "severity": "critical",
+      "requires": [
+        "human_approval"
+      ]
+    },
+    {
+      "term": "Interlocking",
+      "context": "Safe route through points",
+      "primitive": "IF.matrix.route",
+      "severity": "critical",
+      "requires": [
+        "two_person_rule"
+      ]
+    },
+    {
+      "term": "Stop signal",
+      "context": "Red aspect enforcement",
+      "primitive": "IF.process.kill",
+      "severity": "critical",
+      "requires": [
+        "two_person_rule"
+      ]
+    },
+    {
+      "term": "Track out of service",
+      "context": "Block segment",
+      "primitive": "IF.context.update",
+      "severity": "warn",
+      "requires": []
+    },
+    {
+      "term": "Points throw",
+      "context": "Switch turnout",
+      "primitive": "IF.matrix.route",
+      "severity": "warn",
+      "requires": []
+    }
+  ],
+  "risks": {
+    "failure_modes": [
+      "Route conflict",
+      "Signal passed at danger"
+    ],
+    "mitigations": [
+      "Mutual exclusion on segments",
+      "Dispatcher signoff",
+      "Default to stop on ambiguity"
+    ]
+  }
+}

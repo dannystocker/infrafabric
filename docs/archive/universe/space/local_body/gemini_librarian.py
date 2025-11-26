@@ -33,7 +33,7 @@ import redis
 import uuid
 import argparse
 from datetime import datetime
-from typing import Dict, List, Optional
+from typing import Dict, List
 from dataclasses import dataclass, asdict
 
 try:
@@ -326,7 +326,7 @@ Sources: [finding_id1, finding_id2, ...]
 
         except KeyboardInterrupt:
             print("\n\n👋 Gemini Librarian shutting down...")
-            print(f"   Processed queries during this session")
+            print("   Processed queries during this session")
             print("   Context retained: {len(self.current_context)} findings")
 
 

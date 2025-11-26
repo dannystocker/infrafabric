@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0",
+  "industry_id": "cybersecurity-soc",
+  "industry_name": "Cybersecurity SOC",
+  "cluster": "Security/Defense",
+  "killer_app": {
+    "title": "OpenC2-driven Containment",
+    "description": "Isolate endpoint, block domain, rotate creds based on multi-source correlation."
+  },
+  "protocols": [
+    {
+      "name": "OpenC2",
+      "layer": "application"
+    }
+  ],
+  "lexicon": [
+    {
+      "term": "Quarantine host",
+      "context": "Network isolate",
+      "primitive": "IF.process.kill",
+      "severity": "critical",
+      "requires": [
+        "two_person_rule"
+      ]
+    },
+    {
+      "term": "Block IOC",
+      "context": "Firewall update",
+      "primitive": "IF.matrix.route",
+      "severity": "warn",
+      "requires": []
+    },
+    {
+      "term": "Playbook",
+      "context": "SOAR runbook",
+      "primitive": "IF.logistics.spawn",
+      "severity": "info",
+      "requires": []
+    },
+    {
+      "term": "Incident sev",
+      "context": "Priority level",
+      "primitive": "IF.context.update",
+      "severity": "warn",
+      "requires": []
+    },
+    {
+      "term": "Sensor ingest",
+      "context": "Logs/alerts",
+      "primitive": "IF.signal.ingest",
+      "severity": "info",
+      "requires": []
+    },
+    {
+      "term": "Key rotate",
+      "context": "Credential hygiene",
+      "primitive": "IF.logistics.spawn",
+      "severity": "warn",
+      "requires": []
+    }
+  ],
+  "risks": {
+    "failure_modes": [
+      "Over-blocking",
+      "Business disruption"
+    ],
+    "mitigations": [
+      "Blast-radius limits",
+      "Auto-expire controls",
+      "Rollback tokens"
+    ]
+  }
+}

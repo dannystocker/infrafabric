@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0",
+  "industry_id": "fleet-telematics",
+  "industry_name": "Fleet & Telematics",
+  "cluster": "Finance/Logistics",
+  "killer_app": {
+    "title": "Autonomous Dispatch & Reroute",
+    "description": "Just-in-time arrivals with health-based reprioritization."
+  },
+  "protocols": [
+    {
+      "name": "MQTT Sparkplug B",
+      "layer": "application"
+    }
+  ],
+  "lexicon": [
+    {
+      "term": "Geofence",
+      "context": "Virtual boundary",
+      "primitive": "IF.context.update",
+      "severity": "warn",
+      "requires": []
+    },
+    {
+      "term": "Dispatch load",
+      "context": "Assign job",
+      "primitive": "IF.matrix.route",
+      "severity": "info",
+      "requires": []
+    },
+    {
+      "term": "Engine derate",
+      "context": "Health fault",
+      "primitive": "IF.process.kill",
+      "severity": "critical",
+      "requires": []
+    },
+    {
+      "term": "HOS reset",
+      "context": "Compliance timer",
+      "primitive": "IF.context.update",
+      "severity": "info",
+      "requires": []
+    },
+    {
+      "term": "ETA update",
+      "context": "Arrival prediction",
+      "primitive": "IF.signal.ingest",
+      "severity": "info",
+      "requires": []
+    },
+    {
+      "term": "Yard move",
+      "context": "Short-haul shift",
+      "primitive": "IF.logistics.spawn",
+      "severity": "info",
+      "requires": []
+    }
+  ],
+  "risks": {
+    "failure_modes": [
+      "Unsafe routing",
+      "Compliance breach"
+    ],
+    "mitigations": [
+      "HOS rule engine",
+      "Weather-aware routes",
+      "Driver acknowledgment"
+    ]
+  }
+}

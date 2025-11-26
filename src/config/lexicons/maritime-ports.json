@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0",
+  "industry_id": "maritime-ports",
+  "industry_name": "Maritime Ports & Terminal Ops",
+  "cluster": "Finance/Logistics",
+  "killer_app": {
+    "title": "Berth\u2013Yard\u2013Gate Optimization",
+    "description": "Crane/job assignment adapting to late arrivals and congestion."
+  },
+  "protocols": [
+    {
+      "name": "UN/EDIFACT",
+      "layer": "application"
+    },
+    {
+      "name": "OPC UA",
+      "layer": "application"
+    }
+  ],
+  "lexicon": [
+    {
+      "term": "Berth plan",
+      "context": "Ship schedule",
+      "primitive": "IF.logistics.spawn",
+      "severity": "info",
+      "requires": []
+    },
+    {
+      "term": "Yard shuffle",
+      "context": "Re-stack containers",
+      "primitive": "IF.matrix.route",
+      "severity": "warn",
+      "requires": []
+    },
+    {
+      "term": "Crane lockout",
+      "context": "Safety stop",
+      "primitive": "IF.process.kill",
+      "severity": "critical",
+      "requires": [
+        "two_person_rule"
+      ]
+    },
+    {
+      "term": "Gate appointment",
+      "context": "Truck slot",
+      "primitive": "IF.matrix.route",
+      "severity": "info",
+      "requires": []
+    },
+    {
+      "term": "VGM",
+      "context": "Verified weight stream",
+      "primitive": "IF.signal.ingest",
+      "severity": "info",
+      "requires": []
+    },
+    {
+      "term": "Reefer alert",
+      "context": "Power issue",
+      "primitive": "IF.context.update",
+      "severity": "warn",
+      "requires": []
+    }
+  ],
+  "risks": {
+    "failure_modes": [
+      "Crane incident",
+      "Yard gridlock"
+    ],
+    "mitigations": [
+      "Interlock exclusion zones",
+      "Human confirmation for reassignments",
+      "Congestion thresholds"
+    ]
+  }
+}

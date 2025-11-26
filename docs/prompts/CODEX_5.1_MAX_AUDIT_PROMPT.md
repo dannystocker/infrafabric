@@ -173,7 +173,7 @@ git push origin --delete <branch-name>
 |-----------|------|-------|--------|
 | IF.arbitrate | `src/infrafabric/core/governance/arbitrate.py` | 945 | ACTIVE |
 | IF.yologuard | `src/infrafabric/core/security/yologuard.py` | 680 | ACTIVE |
-| IF.vesicle | `src/infrafabric/core/transport/vesicle.py` | 672 | ACTIVE |
+| IF.logistics | `src/infrafabric/core/logistics/parcel.py` | 672 | ACTIVE |
 | IF.librarian | `src/infrafabric/core/services/librarian.py` | 410 | ACTIVE |
 | IF.ocr | `src/infrafabric/core/workers/ocr_worker.py` | 63 | STUB |
 
@@ -187,7 +187,7 @@ git push origin --delete <branch-name>
 | IF.sam | 2,176 | ACTIVE | 16 facets (8 light + 8 dark) |
 | IF.TTT | 2,071 | ACTIVE | Traceable, Transparent, Trustworthy |
 | IF.council | 1,933 | ACTIVE | Guardian Council governance |
-| IF.vesicle | 1,811 | ACTIVE | Transport layer |
+| IF.logistics | 1,811 | ACTIVE | Transport layer |
 | IF.memory | 1,200 | ACTIVE | Distributed memory |
 | IF.synthesis | 1,083 | **GHOST** | Never fully implemented |
 

@@ -1,0 +1,9 @@
+No adapter sources were present in the cleaned backup for:
+- sip_h323_gateway.py
+- vmix_adapter.py
+- ndi_sip_bridge.py
+Manifests in the archive referenced these files under branches:
+- claude/sip-escalate-integration-011CV2nwLukS7EtnB5iZUUe7
+- claude/if-bus-sip-adapters-011CV2yyTqo7mStA7KhuUszV
+- claude/cloud-providers-011CV2nnsyHT4by1am1ZrkkA
+But the cleaned tarball did not include their contents. Placeholders are created under src/integrations/broadcast/ with TODOs.

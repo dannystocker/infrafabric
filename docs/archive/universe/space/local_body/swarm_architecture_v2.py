@@ -22,7 +22,7 @@ import json
 import time
 import uuid
 from datetime import datetime
-from typing import Optional, Dict, List, Any
+from typing import Optional, Dict, List
 import logging
 
 logging.basicConfig(level=logging.INFO)
@@ -418,7 +418,7 @@ if __name__ == "__main__":
             pass_name="Pass 1: Signal Capture"
         )
 
-    print(f"Spawned 5 tasks for Pass 1")
+    print("Spawned 5 tasks for Pass 1")
 
     # 4. Ephemeral worker lifecycle (simulated)
     worker = EphemeralWorker()

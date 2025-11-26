@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0",
+  "industry_id": "acute-care-hospital",
+  "industry_name": "Acute-Care Hospital Ops",
+  "cluster": "Healthcare/Bio",
+  "killer_app": {
+    "title": "Code Blue Orchestration",
+    "description": "Paging, bed control, elevator priority, device prep under 1s."
+  },
+  "protocols": [
+    {
+      "name": "HL7 FHIR",
+      "layer": "application"
+    }
+  ],
+  "lexicon": [
+    {
+      "term": "Code Blue",
+      "context": "Cardiopulmonary arrest",
+      "primitive": "IF.context.update",
+      "severity": "critical",
+      "requires": [
+        "two_person_rule"
+      ]
+    },
+    {
+      "term": "Rapid response",
+      "context": "Pre-arrest team",
+      "primitive": "IF.logistics.spawn",
+      "severity": "critical",
+      "requires": [
+        "human_approval"
+      ]
+    },
+    {
+      "term": "Stat med order",
+      "context": "Immediate medication",
+      "primitive": "IF.matrix.route",
+      "severity": "critical",
+      "requires": [
+        "two_person_rule"
+      ]
+    },
+    {
+      "term": "Bed control",
+      "context": "Allocate ICU bed",
+      "primitive": "IF.matrix.route",
+      "severity": "warn",
+      "requires": []
+    },
+    {
+      "term": "Elevator priority",
+      "context": "Secured route",
+      "primitive": "IF.context.update",
+      "severity": "warn",
+      "requires": []
+    }
+  ],
+  "risks": {
+    "failure_modes": [
+      "Delayed response",
+      "Medication error"
+    ],
+    "mitigations": [
+      "Physician signoff",
+      "Closed-loop dispense",
+      "Audit trails"
+    ]
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0",
+  "industry_id": "electronic-trading",
+  "industry_name": "Electronic Trading",
+  "cluster": "Finance/Logistics",
+  "killer_app": {
+    "title": "Cross-venue Smart Order Routing",
+    "description": "Micro-latency routing with auto-kill on fat-finger or toxicity."
+  },
+  "protocols": [
+    {
+      "name": "FIX",
+      "layer": "application"
+    }
+  ],
+  "lexicon": [
+    {
+      "term": "IOC/FOK",
+      "context": "Time-in-force",
+      "primitive": "IF.context.update",
+      "severity": "warn",
+      "requires": []
+    },
+    {
+      "term": "Cancel/replace",
+      "context": "Order amend",
+      "primitive": "IF.matrix.route",
+      "severity": "warn",
+      "requires": []
+    },
+    {
+      "term": "Kill switch",
+      "context": "Global cancel",
+      "primitive": "IF.process.kill",
+      "severity": "critical",
+      "requires": [
+        "two_person_rule"
+      ]
+    },
+    {
+      "term": "Dark sweep",
+      "context": "Venue list",
+      "primitive": "IF.logistics.spawn",
+      "severity": "info",
+      "requires": []
+    },
+    {
+      "term": "Drop copy",
+      "context": "Post-trade feed",
+      "primitive": "IF.signal.ingest",
+      "severity": "info",
+      "requires": []
+    },
+    {
+      "term": "Fat-finger",
+      "context": "Size/price breach",
+      "primitive": "IF.context.update",
+      "severity": "critical",
+      "requires": []
+    }
+  ],
+  "risks": {
+    "failure_modes": [
+      "Runaway algo",
+      "Market abuse"
+    ],
+    "mitigations": [
+      "Pre-trade risk limits",
+      "Throttles",
+      "Circuit breaker on P&L"
+    ]
+  }
+}

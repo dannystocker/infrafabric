@@ -34,7 +34,9 @@ PATTERNS = [
     r'\bcouncil\b',
     r'\byologuard\b',
     r'\blibrarian\b',
-    r'\bvesicle\b',
+    r'\bvesicle\b',  # Legacy term
+    r'\bparcel\b',    # Current civic term
+    r'\blogistics\b', # Current department name
     r'\barbitrate\b',
     r'\bttt\b',
     r'\bguard\b',
@@ -265,7 +267,7 @@ class RedisProtocolScanner:
                     categories['Security/Crypto'].append(protocol[0])
                 elif any(x in name for x in ['SESSION', 'INSTANCE', 'CONTEXT']):
                     categories['Session Management'].append(protocol[0])
-                elif any(x in name for x in ['FINDING', 'DATA', 'VESICLE']):
+                elif any(x in name for x in ['FINDING', 'DATA', 'VESICLE', 'PARCEL', 'LOGISTICS']):
                     categories['Data/Context'].append(protocol[0])
                 elif any(x in name for x in ['IF:', 'URI', 'DID']):
                     categories['URI Scheme'].append(protocol[0])
@@ -280,7 +282,7 @@ class RedisProtocolScanner:
                         f.write(f"- **{protocol}** ({count} occurrences)\n")
                     f.write("\n")
 
-        print(f"✓ Report generated successfully")
+        print("✓ Report generated successfully")
 
     def run(self, output_path):
         """Main execution"""
