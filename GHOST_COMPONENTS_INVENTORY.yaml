@@ -1,0 +1,380 @@
+# InfraFabric Ghost Components Inventory
+# Generated: 2025-11-26
+# Format: Structured component status across docs/, papers/, src/
+
+ghost_components_summary:
+  total_unique_components: 38
+  fully_implemented: 1
+  partially_implemented: 1
+  documented_only: 20
+  vaporware: 13
+  implementation_ratio: 
+    implemented: "5.3%"  # 2/38
+    missing: "94.7%"     # 36/38
+
+components:
+  # FULLY INTEGRATED (implemented + documented)
+  IF.yologuard:
+    status: "fully_integrated"
+    implementation: 
+      exists: true
+      location: "src/infrafabric/core/security/yologuard.py"
+      lines_of_code: 672
+      classes: ["SecretRedactorV3"]
+      version: "v3.0"
+    documentation:
+      philosophy_database: true
+      papers: ["IF-vision.tex", "IF-foundations.tex", "IF-witness.tex"]
+      design_docs: true
+    evaluation: "Production-ready, 98.96% recall claimed"
+    
+  # CODE-ONLY (implemented but not documented)
+  IF.librarian:
+    status: "code_only"
+    implementation:
+      exists: true
+      location: "src/infrafabric/core/services/librarian.py"
+      lines_of_code: 366
+      classes: ["GeminiLibrarian", "ArchiveQuery", "ArchiveFinding"]
+      features: ["Redis integration", "Gemini API", "Archive queries"]
+    documentation:
+      philosophy_database: false
+      papers: false
+      design_docs: false
+    evaluation: "Implemented but not catalogued in IF.philosophy database"
+    
+  # PARTIALLY IMPLEMENTED (stubs with blockers)
+  OCRWorker:
+    status: "stub_only"
+    implementation:
+      exists: true
+      location: "src/infrafabric/core/workers/ocr_worker.py"
+      lines_of_code: 50
+      classes: ["OCRProcessor"]
+      features: ["Stub with NotImplementedError"]
+    documentation:
+      design_docs: "session-2/document-versioning-spec.md"
+    evaluation: "STUB - awaiting implementation"
+    blockers: ["Full implementation pending", "Tesseract.js integration needed", "pdfjs-dist integration needed"]
+
+  # DOCUMENTED BUT NOT IMPLEMENTED
+  IF.ground:
+    status: "documented_only"
+    philosophy_base: 8  # philosophers ground this
+    documentation:
+      papers: "IF-foundations.tex (lines 14-96, 85-515)"
+      design_docs: true
+    evaluation: "8 anti-hallucination principles documented; zero guardrails code"
+    blockers:
+      - "Philosophy encoded as prose only"
+      - "No runnable guardrails exist in repo"
+      - "Referential production metrics in other repos"
+
+  IF.search:
+    status: "documented_only"
+    documentation:
+      papers: "IF-foundations.tex (lines 519-855)"
+      methodology: "Eight-pass investigative process"
+      case_studies: true
+    evaluation: "Zero automation checked in; case studies only"
+    blockers:
+      - "No orchestration scripts"
+      - "Tool integrations referenced but not versioned"
+
+  IF.persona:
+    status: "documented_only"
+    documentation:
+      papers: "IF-foundations.tex (lines 909-1034)"
+      bible: "Bloom pattern personas defined (markdown only)"
+    evaluation: "Character library implementation elsewhere"
+    blockers:
+      - "Persona bible stored only as markdown"
+      - "No linkage to runtime agent profiles"
+
+  IF.armour:
+    status: "documented_only"
+    documentation:
+      papers: "IF-armour.tex"
+      specification: "Four-tier defense specification"
+    evaluation: "Case studies without corresponding code"
+    blockers:
+      - "Detection heuristics described not delivered"
+      - "Production metrics reference unpublished repos"
+
+  IF.witness:
+    status: "documented_only"
+    documentation:
+      papers: "IF-witness.tex (lines 1251-1364)"
+      methodology: "Meta-validation as architecture"
+    evaluation: "Methodology described; MARL tooling not present"
+    blockers:
+      - "IF.forge stage automation absent"
+      - "Guardian council weights locked in text"
+
+  IF.optimise:
+    status: "documented_only"
+    philosophy_base: ["William James (Pragmatism)"]
+    documentation:
+      design_docs: "ANNEX-N-IF-OPTIMISE-FRAMEWORK.md (lines 1-135)"
+      proofs: ["Policy proofs", "Pricing proofs"]
+    evaluation: "Policy + pricing proofs exist; telemetry + scheduler missing"
+    blockers:
+      - "Token accounting service unspecified"
+      - "Model routing hooks absent"
+
+  IF.guard:
+    status: "evaluation_contradiction"
+    documentation:
+      guardian_council: "External annex archive"
+    evaluation_claim: "✅ Implemented (3/3 evaluators, 73% complete)"
+    evaluation_detail: "INFRAFABRIC_EVAL_PASTE_PROMPT.txt reports IF.guard ✅"
+    reality: "No Python implementation found in src/"
+    blockers:
+      - "No executable governance logic"
+      - "Guardian council weights locked in text"
+
+  IF.citate:
+    status: "evaluation_contradiction"
+    documentation:
+      evidence_docs: true
+    evaluation_claim: "✅ Implemented (3/3 evaluators, 58% complete)"
+    evaluation_detail: "EVALUATION_QUICKSTART.md reports ✅"
+    reality: "No Python implementation found in src/"
+    blockers:
+      - "Designed but not built"
+
+  # VAPORWARE (Mentioned only)
+  IF.router:
+    status: "vaporware"
+    mentions:
+      - "README.md:153-159"
+      - "IF-vision.tex: Fabric-aware routing (NVLink 900 GB/s)"
+    specification: false
+    implementation: false
+
+  IF.memory:
+    status: "vaporware"
+    mentions:
+      - "README.md:153-159"
+    specification: false
+    implementation: false
+
+  IF.trace:
+    status: "vaporware"
+    mentions:
+      - "README.md:153-159"
+      - "IF-vision.tex"
+    philosophy_base: ["Epictetus (Stoicism)"]
+    specification: false
+    implementation: false
+    design_claim: "Immutable audit logging"
+
+  IF.pulse:
+    status: "vaporware"
+    mentions:
+      - "README.md:153-159"
+    specification: false
+    implementation: false
+    design_claim: "Health monitoring"
+
+  IF.ceo:
+    status: "vaporware"
+    mentions:
+      - "README.md:149-151"
+    specification: false
+    blockers:
+      - "Annex reference exists but file absent from repo"
+      - "Governance facets undefined"
+
+  IF.vesicle:
+    status: "vaporware"
+    mentions:
+      - "README.md:149-150"
+      - "IF-vision.tex: Neurogenesis metaphor (89.1% approval)"
+    specification: false
+    implementation: false
+
+  IF.kernel:
+    status: "vaporware"
+    mentions:
+      - "README.md:151"
+    specification: false
+    blockers:
+      - "KERNEL integration promised; annex file missing"
+
+  IF.swarm:
+    status: "vaporware"
+    mentions:
+      - "README.md"
+      - "papers/coordination.md"
+    specification: false
+    evaluation: "2/3 evaluators agree - mentioned but no spec"
+
+  IF.sam:
+    status: "vaporware_with_design"
+    mentions:
+      - "docs/evidence/EVALUATION_QUICKSTART.md"
+      - "INFRAFABRIC_EVAL_PASTE_PROMPT.txt"
+    specification: "IF-sam-specification.md (referenced)"
+    implementation: false
+    evaluation: "🟡 Partial (3/3 agree - has design, no code)"
+    priority: "P1"
+    estimated_effort: "1-2 weeks"
+    blockers:
+      - "Requires OpenAI API integration"
+      - "No test framework defined"
+
+  IF.chase:
+    status: "vaporware"
+    philosophy_base: ["Police chases (97.3% approval)"]
+    design_claim: "Bounded acceleration with restraint"
+    specification: false
+    implementation: false
+
+  IF.reflect:
+    status: "vaporware"
+    philosophy_base: ["Blameless learning"]
+    specification: false
+    implementation: false
+
+  IF.garp:
+    status: "vaporware"
+    philosophy_base: ["Singapore Traffic Police"]
+    design_claim: "Good Actor Recognition Protocol"
+    specification: false
+    implementation: false
+
+  IF.quiet:
+    status: "vaporware"
+    philosophy_base: ["Stoicism (Epictetus)", "Buddhism"]
+    mentions: ["IF-vision.tex", "IF-foundations.tex"]
+    specification: false
+    implementation: false
+
+  IF.constitution:
+    status: "vaporware"
+    mentions: ["IF-vision.tex"]
+    design_claim: "Governance mechanism with point expungement"
+    specification: false
+    implementation: false
+
+  IF.federate:
+    status: "vaporware"
+    mentions: ["IF-vision.tex"]
+    design_claim: "Voluntary coordination unity"
+    specification: false
+    implementation: false
+
+  IF.arbitrate:
+    status: "vaporware"
+    mentions: ["IF-vision.tex"]
+    design_claim: "Resource allocation during expansion"
+    specification: false
+    implementation: false
+
+  IF.resource:
+    status: "vaporware"
+    mentions: ["IF-vision.tex"]
+    design_claim: "Carrying capacity monitors"
+    specification: false
+    implementation: false
+
+  IF.simplify:
+    status: "vaporware"
+    mentions: ["IF-vision.tex"]
+    philosophy_base: ["Tainter's Law"]
+    specification: false
+    implementation: false
+
+  IF.collapse:
+    status: "vaporware"
+    mentions: ["IF-vision.tex"]
+    design_claim: "Civilizational collapse patterns"
+    specification: false
+    implementation: false
+
+  IF.forge:
+    status: "vaporware"
+    mentions: ["IF-witness.tex"]
+    design_claim: "Stage automation for meta-validation"
+    specification: false
+    implementation: false
+    criticality: "BLOCKER for IF.witness"
+
+  IF.marl:
+    status: "vaporware"
+    mentions: ["IF-witness.tex", "papers/ARXIV-SUBMISSION-README.md"]
+    design_claim: "Multi-Agent Reinforcement Learning framework"
+    specification: false
+    implementation: false
+
+  IF.mcp:
+    status: "vaporware"
+    mentions: ["docs/evidence/INFRAFABRIC_EVAL_GPT-5.1-CODEX-CLI"]
+    design_claim: "MCP integration"
+    specification: false
+    implementation: false
+
+  IF.core:
+    status: "vaporware"
+    mentions: ["docs/evidence"]
+    specification: false
+    implementation: false
+
+  IF.amplify:
+    status: "vaporware"
+    mentions: ["docs/evidence/INFRAFABRIC_EVAL_GPT-5.1-CODEX-CLI"]
+    specification: false
+    implementation: false
+
+  IF.council:
+    status: "vaporware"
+    mentions: ["Guardian Council references"]
+    specification: false
+    implementation: false
+    design_claim: "Guardian council governance"
+
+  IF.methodology:
+    status: "vaporware"
+    mentions: ["General reference"]
+    specification: false
+    implementation: false
+
+  IF.pursuit:
+    status: "vaporware"
+    mentions: ["IF-vision.tex (once)"]
+    specification: false
+    implementation: false
+
+critical_gaps:
+  - component: "IF.guard"
+    issue: "evaluation_false_positive"
+    details: "Claimed as 73% implemented but no src/ code exists"
+    
+  - component: "IF.citate"
+    issue: "evaluation_false_positive"
+    details: "Claimed as 58% implemented but no src/ code exists"
+    
+  - component: "IF.witness"
+    issue: "unsatisfiable_dependency"
+    details: "Depends on IF.forge which does not exist"
+    
+  - component: "IF.optimise"
+    issue: "undefined_dependency"
+    details: "Requires 'token accounting service' with no specification"
+    
+  - component: "IF.librarian"
+    issue: "documentation_gap"
+    details: "Fully implemented but not in philosophy database"
+    
+  - component: "IF.search"
+    issue: "no_executable_spec"
+    details: "8-pass methodology described in prose, not orchestration"
+
+external_references:
+  mcp_multiagent_bridge:
+    description: "External repository containing IF.yologuard implementations"
+    files:
+      - "IF.yologuard_v1.py (31.2% recall baseline)"
+      - "IF.yologuard_v3.py (98.96% recall with Wu Lun)"
+    status: "Not included in infrafabric repo"
