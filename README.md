@@ -1,6 +1,8 @@
 # InfraFabric (Series 2)
 
 [![CI Status](https://github.com/dannystocker/infrafabric/actions/workflows/ci.yml/badge.svg)](https://github.com/dannystocker/infrafabric/actions)
+[![IF.TTT Compliance](https://img.shields.io/badge/IF.TTT-95%25-green)](docs/IF_PROTOCOL_REGISTRY.md)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Build System](https://img.shields.io/badge/build-uv-purple)](https://github.com/astral-sh/uv)
 [![State Law](https://img.shields.io/badge/redis-schema%20enforced-red)](src/infrafabric/state/schema.py)
 [![Council](https://img.shields.io/badge/governance-autonomous-gold)](docs/debates/001_genesis_structure.md)
