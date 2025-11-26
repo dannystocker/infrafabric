@@ -1,0 +1,62 @@
+{
+  "analysis_date": "2025-11-15",
+  "analysis_scope": {
+    "total_files": 111,
+    "searchable_files": 89,
+    "binary_files": 8
+  },
+  "results": {
+    "total_orphaned": 5,
+    "files_with_references": 106,
+    "summary": "5 orphaned files found out of 111 total files (4.5%)"
+  },
+  "orphaned_files": [
+    {
+      "path": "FILE_REFERENCES_yaml_json.json",
+      "repo": "infrafabric",
+      "size_bytes": 228986,
+      "size_kb": 223.62,
+      "modified": "2025-11-15T17:26:02.127445",
+      "category": "Meta/Index File",
+      "description": "File catalog or reference index",
+      "recommendation": "Review before archiving"
+    },
+    {
+      "path": "FILE_REFERENCES_markdown.json",
+      "repo": "infrafabric",
+      "size_bytes": 136061,
+      "size_kb": 132.87,
+      "modified": "2025-11-15T17:26:02.729202",
+      "category": "Meta/Index File",
+      "description": "File catalog or reference index",
+      "recommendation": "Review before archiving"
+    },
+    {
+      "path": "FILE_REFERENCES_latex.json",
+      "repo": "infrafabric",
+      "size_bytes": 8778,
+      "size_kb": 8.57,
+      "modified": "2025-11-15T17:27:19.992238",
+      "category": "Meta/Index File",
+      "description": "File catalog or reference index",
+      "recommendation": "Safe to archive or delete"
+    },
+    {
+      "path": "FILE_INVENTORY_infrafabric-core.json",
+      "repo": "infrafabric",
+      "size_bytes": 6245,
+      "size_kb": 6.1,
+      "modified": "2025-11-15T17:26:03.022059",
+      "category": "Meta/Index File",
+      "description": "File catalog or reference index",
+      "recommendation": "Safe to archive or delete"
+    }
+  ],
+  "analysis_notes": [
+    "Analysis searches all .md, .yaml, .json, and .tex files for file references",
+    "Searches for both direct basenames (e.g., 'script.py') and relative paths",
+    "Binary files (.tar.gz) are included in counts but not searched for references",
+    "The FILE_ANALYSIS_orphaned.json file itself is excluded as it's an analysis output",
+    "All documentation is well-referenced; orphaned files are primarily transient outputs"
+  ]
+}

@@ -1,0 +1,1 @@
+{"case_ref":"ICW-PANEL-2025-001","date":"2025-09-27","subject":"ICW Prompt Redevelopment Panel","participants":["Dr. Lila Moreau (Prompt Architect)","Prof. Matteo Ruiz (Context Specialist)","Dr. Hana Villeneuve (Validation Strategist)"],"outcome":"CONSENSUS","file":"council-archive/2025/Q4/ICW-PROMPT-REDEVELOPMENT-PANEL-2025-09-27.md"}

@@ -1,0 +1,77 @@
+{
+  "case_ref": "case-da0b1cc4ee4d",
+  "subject": "Should we consolidate duplicate documents in the archive?",
+  "proposer": "IF.guardian-core-01",
+  "status": "RESOLVED",
+  "votes": [
+    {
+      "vote_id": "vote-0ef5f2dc761c",
+      "case_ref": "case-da0b1cc4ee4d",
+      "agent_id": "IF.guardian-core-01",
+      "position": "YES",
+      "weight": 1.5,
+      "rationale": "Documents are duplicative and waste storage",
+      "timestamp": "2025-11-26T03:55:29.866494"
+    },
+    {
+      "vote_id": "vote-8b422d8020bd",
+      "case_ref": "case-da0b1cc4ee4d",
+      "agent_id": "IF.guardian-core-02",
+      "position": "YES",
+      "weight": 1.5,
+      "rationale": "Empirical analysis confirms 92% overlap",
+      "timestamp": "2025-11-26T03:55:29.866672"
+    },
+    {
+      "vote_id": "vote-0022bf3d93e7",
+      "case_ref": "case-da0b1cc4ee4d",
+      "agent_id": "IF.guardian-core-03",
+      "position": "NO",
+      "weight": 1.5,
+      "rationale": "Losing perspective on ethical implications",
+      "timestamp": "2025-11-26T03:55:29.870138"
+    },
+    {
+      "vote_id": "vote-322d4eb5ee24",
+      "case_ref": "case-da0b1cc4ee4d",
+      "agent_id": "IF.guardian-core-04",
+      "position": "YES",
+      "weight": 1.5,
+      "rationale": "System efficiency gains are significant",
+      "timestamp": "2025-11-26T03:55:29.875514"
+    },
+    {
+      "vote_id": "vote-d2ac034c692f",
+      "case_ref": "case-da0b1cc4ee4d",
+      "agent_id": "IF.philosopher-western-01",
+      "position": "YES",
+      "weight": 1.0,
+      "rationale": "Essence remains in consolidated form",
+      "timestamp": "2025-11-26T03:55:29.875931"
+    },
+    {
+      "vote_id": "vote-83eedffcc32f",
+      "case_ref": "case-da0b1cc4ee4d",
+      "agent_id": "IF.philosopher-eastern-01",
+      "position": "ABSTAIN",
+      "weight": 1.0,
+      "rationale": "Seeking harmony before decision",
+      "timestamp": "2025-11-26T03:55:29.876217"
+    },
+    {
+      "vote_id": "vote-400658e1dcae",
+      "case_ref": "case-da0b1cc4ee4d",
+      "agent_id": "IF.sam-pragmatic-01",
+      "position": "YES",
+      "weight": 0.8,
+      "rationale": "Cost-benefit analysis supports consolidation",
+      "timestamp": "2025-11-26T03:55:29.876486"
+    }
+  ],
+  "veto_record": null,
+  "final_decision": "APPROVED",
+  "decision_rationale": "Approved with 80.8% consensus (exceeds 80% threshold)",
+  "created_at": "2025-11-26T03:55:29.866237",
+  "resolved_at": "2025-11-26T03:55:29.877127",
+  "notes": "Documents dossier-01.md and dossier-07.md are 92% similar"
+}

@@ -1,0 +1,246 @@
+{
+  "scan_metadata": {
+    "timestamp": "2025-11-15T00:00:00Z",
+    "scan_location": "/mnt/c/users/setup/downloads",
+    "target_directory": "/mnt/c/users/setup/pictures/screencaptures/",
+    "directory_status": "NOT_FOUND",
+    "status_description": "The target directory /mnt/c/users/setup/pictures/screencaptures/ does not exist on this system. Scan performed on available Windows user directory (/mnt/c/users/setup/downloads) instead."
+  },
+  "scan_results": {
+    "total_screenshots_found": 0,
+    "target_directory_exists": false,
+    "screenshots_in_pictures_folder": "N/A - Directory does not exist",
+    "total_image_files_in_downloads": 2276,
+    "recent_images_last_30_days": 104,
+    "infrafabric_related_files": 202
+  },
+  "infrafabric_content_found": {
+    "infrafabric_document_files": [
+      {
+        "filename": "# IF.CORE Comprehensive Report v2.2.txt",
+        "path": "/mnt/c/users/setup/downloads/",
+        "type": "text",
+        "relevance": "CORE_DOCUMENTATION",
+        "date_modified": "2025-11-06"
+      },
+      {
+        "filename": "# InfraFabric Onboarding & Quickstart v2.txt",
+        "path": "/mnt/c/users/setup/downloads/",
+        "type": "text",
+        "relevance": "ONBOARDING",
+        "date_modified": "2025-11-13"
+      },
+      {
+        "filename": "# Welcome to InfraFabric! Agent onboarding.txt",
+        "path": "/mnt/c/users/setup/downloads/",
+        "type": "text",
+        "relevance": "ONBOARDING",
+        "date_modified": "2025-11-12"
+      },
+      {
+        "filename": "claude-701-infrafabric-evaluation.md",
+        "path": "/mnt/c/users/setup/downloads/",
+        "type": "markdown",
+        "relevance": "EVALUATION",
+        "date_modified": "recent"
+      },
+      {
+        "filename": "Annex N IF.persona.txt",
+        "path": "/mnt/c/users/setup/downloads/",
+        "type": "text",
+        "relevance": "PERSONA_DATA",
+        "date_modified": "2025-11-05"
+      }
+    ],
+    "if_framework_files": [
+      {
+        "filename": "ChatGPT5_IF.yologuard_v3_reproducibility_run_artifacts.zip",
+        "path": "/mnt/c/users/setup/downloads/",
+        "type": "archive",
+        "relevance": "YOLOGUARD_ARTIFACTS",
+        "size_bytes": 200882,
+        "date_modified": "2025-11-07"
+      },
+      {
+        "filename": "IF.yologuard-bridge.md",
+        "path": "/mnt/c/users/setup/downloads/drive-download-20251107T144530Z-1-001/",
+        "type": "markdown",
+        "relevance": "YOLOGUARD_DOCUMENTATION"
+      },
+      {
+        "filename": "IF.yologuard-bridge-UPDATED.md",
+        "path": "/mnt/c/users/setup/downloads/drive-download-20251107T144530Z-1-001/",
+        "type": "markdown",
+        "relevance": "YOLOGUARD_DOCUMENTATION"
+      },
+      {
+        "filename": "IF.philosophy-database.yaml.txt",
+        "path": "/mnt/c/users/setup/downloads/drive-download-20251107T144530Z-1-001/",
+        "type": "data",
+        "relevance": "PHILOSOPHY_DATABASE"
+      }
+    ],
+    "comprehensive_documentation": [
+      {
+        "filename": "infrafabric-annexes-v7.01 (multiple versions 1-10)",
+        "path": "/mnt/c/users/setup/downloads/drive-download-20251107T144530Z-1-001/",
+        "type": "markdown",
+        "relevance": "ANNEXES",
+        "versions_found": 10
+      },
+      {
+        "filename": "InfraFabric Documentation Evolution (directory)",
+        "path": "/mnt/c/users/setup/downloads/drive-download-20251107T144530Z-1-001/",
+        "type": "directory",
+        "relevance": "DOCUMENTATION_ARCHIVE"
+      }
+    ],
+    "json_exports": [
+      {
+        "filename": "InfraFabric overview_69016630.json",
+        "path": "/mnt/c/users/setup/downloads/conversations_2025-11-07_1762527935456/",
+        "type": "json",
+        "relevance": "CONVERSATION_EXPORT"
+      },
+      {
+        "filename": "InfraFabric prospect outreach letter_436f9d86.json",
+        "path": "/mnt/c/users/setup/downloads/conversations_2025-11-07_1762527935456/",
+        "type": "json",
+        "relevance": "PROSPECT_OUTREACH"
+      }
+    ]
+  },
+  "recent_images_analysis": {
+    "recent_image_count_30_days": 104,
+    "infrafabric_related_images_found": [
+      {
+        "filename": "mcp-multiagent-bridge.png",
+        "path": "/mnt/c/users/setup/downloads/drive-download-20251107T144530Z-1-001/.exclude/",
+        "format": "PNG",
+        "relevance": "ARCHITECTURE_DIAGRAM",
+        "versions": 4
+      },
+      {
+        "filename": "mcp-multiagent-bridge.jpg",
+        "path": "/mnt/c/users/setup/downloads/drive-download-20251107T144530Z-1-001/.exclude/",
+        "format": "JPG",
+        "relevance": "ARCHITECTURE_DIAGRAM"
+      },
+      {
+        "filename": "liN-header.png",
+        "path": "/mnt/c/users/setup/downloads/drive-download-20251107T144530Z-1-001/.exclude/",
+        "format": "PNG",
+        "relevance": "HEADER_IMAGE"
+      },
+      {
+        "filename": "Generated Image October 27, 2025 - 2_21AM.png",
+        "path": "/mnt/c/users/setup/downloads/drive-download-20251107T144530Z-1-001/.exclude/",
+        "format": "PNG",
+        "versions": 3,
+        "relevance": "GENERATED_CONTENT"
+      },
+      {
+        "filename": "image.png (and variants 1-4)",
+        "path": "/mnt/c/users/setup/downloads/drive-download-20251107T144530Z-1-001/.exclude/",
+        "format": "PNG",
+        "versions": 5,
+        "relevance": "GENERIC_IMAGES"
+      },
+      {
+        "filename": "photorealistic-cinematic-scene.jpeg (variants)",
+        "path": "/mnt/c/users/setup/downloads/drive-download-20251107T144530Z-1-001/.exclude/",
+        "format": "JPEG",
+        "versions": 2,
+        "relevance": "AI_GENERATED_SCENE"
+      }
+    ],
+    "other_recent_images": [
+      {
+        "filename": "codex-setup.jpg",
+        "path": "/mnt/c/users/setup/downloads/",
+        "format": "JPG",
+        "relevance": "SETUP_DOCUMENTATION",
+        "date": "recent"
+      },
+      {
+        "filename": "ai-budget-aprouval.jpeg",
+        "path": "/mnt/c/users/setup/downloads/",
+        "format": "JPEG",
+        "relevance": "BUDGET_DOCUMENTATION"
+      },
+      {
+        "filename": "a-clean-modern-logo-design.jpeg",
+        "path": "/mnt/c/users/setup/downloads/",
+        "format": "JPEG",
+        "relevance": "LOGO_DESIGN"
+      }
+    ]
+  },
+  "archival_recommendations": {
+    "priority_high": [
+      {
+        "file": "ChatGPT5_IF.yologuard_v3_reproducibility_run_artifacts.zip",
+        "reason": "Critical reproducibility artifacts dated 2025-11-07",
+        "action": "Archive to /home/setup/infrafabric/archives/",
+        "size_mb": 0.2
+      },
+      {
+        "file": "infrafabric-annexes-v7.01 (all 10 versions)",
+        "reason": "Core documentation with version tracking",
+        "action": "Archive versioned set to /home/setup/infrafabric/annexes/archive/",
+        "versions": 10
+      },
+      {
+        "file": "IF.CORE Comprehensive Report v2.2.txt",
+        "reason": "Current core documentation dated 2025-11-06",
+        "action": "Link or copy to /home/setup/infrafabric/docs/",
+        "size_mb": 0.09
+      }
+    ],
+    "priority_medium": [
+      {
+        "file": "mcp-multiagent-bridge diagrams (PNG + JPG variants)",
+        "reason": "Architecture documentation with multiple formats",
+        "action": "Archive to /home/setup/infrafabric/diagrams/architecture/",
+        "count": 5
+      },
+      {
+        "file": "InfraFabric JSON exports (conversations)",
+        "reason": "Conversation artifacts from 2025-11-07",
+        "action": "Archive to /home/setup/infrafabric/exports/conversations/",
+        "count": 2
+      }
+    ],
+    "priority_low": [
+      {
+        "file": "Generated images and AI-created content",
+        "reason": "Reference materials with limited ongoing utility",
+        "action": "Optional archive to /home/setup/infrafabric/assets/generated/",
+        "count": 10
+      }
+    ]
+  },
+  "summary": {
+    "total_infrafabric_files": 202,
+    "documentation_files": 15,
+    "image_files_related": 18,
+    "archive_files": 1,
+    "recent_activity_date": "2025-11-07",
+    "status": "SUCCESS_WITH_CAVEATS",
+    "notes": [
+      "Target directory /mnt/c/users/setup/pictures/screencaptures/ does not exist",
+      "InfraFabric content found in /mnt/c/users/setup/downloads/ instead",
+      "202 InfraFabric-related files identified",
+      "104 recent image files found (last 30 days)",
+      "Primary InfraFabric documentation dated 2025-11-06 to 2025-11-13",
+      "Latest activity in drive-download-20251107T144530Z-1-001/ folder suggests recent sync"
+    ],
+    "recommendations": [
+      "Create screencaptures directory if needed: mkdir -p /mnt/c/users/setup/pictures/screencaptures/",
+      "Archive high-priority files to /home/setup/infrafabric/archives/",
+      "Consolidate InfraFabric documentation into version-controlled structure",
+      "Consider organizing by: docs/, diagrams/, exports/, assets/, annexes/",
+      "Update file references in COMPONENT-INDEX.md to include downloaded files"
+    ]
+  }
+}

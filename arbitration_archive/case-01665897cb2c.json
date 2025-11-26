@@ -1,0 +1,23 @@
+{
+  "case_ref": "case-01665897cb2c",
+  "subject": "Test proposal",
+  "proposer": "IF.guardian-core-01",
+  "status": "RESOLVED",
+  "votes": [
+    {
+      "vote_id": "vote-ce6821a50ddf",
+      "case_ref": "case-01665897cb2c",
+      "agent_id": "IF.guardian-core-01",
+      "position": "YES",
+      "weight": 1.5,
+      "rationale": "Test vote",
+      "timestamp": "2025-11-26T03:56:49.574191"
+    }
+  ],
+  "veto_record": null,
+  "final_decision": "APPROVED",
+  "decision_rationale": "Approved with 100.0% consensus (exceeds 80% threshold)",
+  "created_at": "2025-11-26T03:56:49.573928",
+  "resolved_at": "2025-11-26T03:56:49.574371",
+  "notes": ""
+}

@@ -7,7 +7,6 @@ Ratifies the Series 2 Core Structure following the forensic
 archaeology that recovered Librarian and YoloGuard v3.
 """
 
-import sys
 from datetime import datetime
 
 MOTION = """

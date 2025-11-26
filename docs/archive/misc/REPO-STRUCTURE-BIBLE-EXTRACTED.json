@@ -1,0 +1,750 @@
+{
+  "source": "repo-structure-bible-manifesto-reminder.txt",
+  "title": "THE INFRAFABRIC CODEX: Rigorous Research. Joyfully Implemented.",
+  "date_created": "2025-01-01",
+  "version": "0.1.0",
+
+  "core_principles": [
+    {
+      "principle": "Reproducibility over Speed",
+      "description": "Research software values the ability to reproduce results over optimizing for execution speed"
+    },
+    {
+      "principle": "Readability over Cleverness",
+      "description": "Code should be clear and understandable rather than overly complex or clever"
+    },
+    {
+      "principle": "Configuration over Hard-coding",
+      "description": "All parameters that change outcomes must live in configuration schemas, not hardcoded in code"
+    }
+  ],
+
+  "architectural_laws": [
+    {
+      "name": "Law of Configuration",
+      "motto": "No Magic Numbers",
+      "rule": "If a value changes the outcome of the simulation, it belongs in a Config Schema",
+      "enforcer": "Pydantic models with Hydra configuration management",
+      "bad_example": "def run_sim(nodes):\n    threshold = 0.5  # <--- SIN!!",
+      "good_example": "class SimConfig(BaseModel):\n    threshold: float = Field(..., gt=0, le=1)\ndef run_sim(cfg: SimConfig, nodes): ..."
+    },
+    {
+      "name": "Functional Core",
+      "motto": "Logic flows; State is carried",
+      "rule": "Separate Logic (pure functions) from State (explicitly passed arguments)",
+      "design_pattern": "JAX-inspired stateless architecture",
+      "benefits": [
+        "Deterministic and testable functions",
+        "Trivial parallelization",
+        "Backend agnostic (Numpy -> JAX -> Torch)"
+      ]
+    },
+    {
+      "name": "Literate Documentation",
+      "motto": "The Notebook is the Paper",
+      "rule": "Documentation must be executed code, not static text",
+      "tool": "Quarto notebooks",
+      "test": "Can a new researcher understand your feature and see it running by reading a single file?"
+    },
+    {
+      "name": "Hermetic Seal",
+      "motto": "It runs on my machine is not a valid defense",
+      "rule": "Environment must be reproducible via locked dependencies",
+      "tools": [
+        "pyproject.toml (locked dependencies)",
+        "justfile (single-command operations)",
+        "uv (modern Python package manager)"
+      ],
+      "goal": "A researcher in 2028 should get identical results running `just run-experiment`"
+    },
+    {
+      "name": "AI-First Context",
+      "motto": "Code for the Machine",
+      "rule": "Write code that helps AI agents understand and collaborate effectively",
+      "requirements": [
+        "Type Everything: Python Type Hints are mandatory",
+        "Docstrings: Every public function must have input/output documentation",
+        "Context: Keep .context.md updated for architectural changes"
+      ]
+    }
+  ],
+
+  "commit_checklist_triad": [
+    {
+      "name": "Typed",
+      "tool": "mypy or pyright",
+      "requirement": "Return 0 errors",
+      "purpose": "AI agents can read and reason about the code"
+    },
+    {
+      "name": "Configured",
+      "requirement": "No new magic numbers outside of .config/",
+      "validator": "Manual review of hardcoded values"
+    },
+    {
+      "name": "Reproducible",
+      "requirement": "Add test case or notebook entry proving it works",
+      "validator": "Executable tests or documentation"
+    }
+  ],
+
+  "components": [
+    {
+      "component": "IF.Codex",
+      "type": "Framework",
+      "description": "The philosophical and architectural foundation for InfraFabric research software",
+      "status": "Defined",
+      "location": "MANIFESTO.md or CONTRIBUTING.md"
+    },
+    {
+      "component": "RouterConfig",
+      "type": "Pydantic Model",
+      "description": "Configuration schema for network routers",
+      "fields": [
+        {
+          "name": "buffer_size",
+          "type": "int",
+          "description": "Maximum buffer capacity"
+        },
+        {
+          "name": "drop_probability",
+          "type": "float",
+          "description": "Probability of packet drop"
+        }
+      ],
+      "status": "Template Example"
+    },
+    {
+      "component": "FatTreeConfig",
+      "type": "Pydantic Model",
+      "description": "Configuration for k-ary Fat-Tree network topology",
+      "fields": [
+        {
+          "name": "k",
+          "type": "int",
+          "validation": "ge=2, must be even",
+          "description": "Radix of the switch"
+        }
+      ],
+      "computed_fields": [
+        {
+          "name": "num_core_switches",
+          "formula": "(k // 2) ** 2"
+        },
+        {
+          "name": "num_agg_switches",
+          "formula": "(k ** 2) // 2"
+        },
+        {
+          "name": "num_edge_switches",
+          "formula": "(k ** 2) // 2"
+        },
+        {
+          "name": "num_hosts",
+          "formula": "(k ** 3) // 4"
+        },
+        {
+          "name": "total_nodes",
+          "formula": "sum of all node types"
+        }
+      ],
+      "location": "src/infrafabric/core/topology.py",
+      "status": "Reference Implementation"
+    },
+    {
+      "component": "AdjacencyMatrix",
+      "type": "JAX Type Annotation",
+      "description": "Graph representation as typed array",
+      "shape": "[N, N]",
+      "dtype": "float32",
+      "semantics": "1.0 if connected, 0.0 otherwise",
+      "location": "src/infrafabric/core/topology.py"
+    },
+    {
+      "component": "build_fat_tree",
+      "type": "Pure Function",
+      "description": "Constructs adjacency matrix for k-ary Fat Tree topology",
+      "inputs": [
+        {
+          "name": "cfg",
+          "type": "FatTreeConfig",
+          "description": "Validated topology configuration"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "adjacency_matrix",
+          "type": "AdjacencyMatrix",
+          "description": "JAX DeviceArray of graph structure"
+        }
+      ],
+      "properties": [
+        "Pure function with no side effects",
+        "Deterministic output",
+        "Compatible with JAX transformations",
+        "Constructs on CPU for efficiency, converts to JAX"
+      ],
+      "location": "src/infrafabric/core/topology.py",
+      "status": "Reference Implementation"
+    },
+    {
+      "component": "SimState",
+      "type": "NamedTuple (Immutable State)",
+      "description": "Complete snapshot of network at time t",
+      "fields": [
+        {
+          "name": "step",
+          "type": "int",
+          "description": "Current simulation step"
+        },
+        {
+          "name": "buffers",
+          "type": "jnp.ndarray",
+          "shape": "[Num_Nodes, Buffer_Size]",
+          "description": "Node buffer states"
+        },
+        {
+          "name": "packets_processed",
+          "type": "jnp.ndarray",
+          "shape": "[Num_Nodes]",
+          "description": "Total packets processed per node"
+        }
+      ],
+      "location": "src/infrafabric/sim/engine.py",
+      "status": "Reference Implementation"
+    },
+    {
+      "component": "step_fn",
+      "type": "JAX-JIT Pure Function",
+      "description": "Executes one discrete time step of network simulation",
+      "inputs": [
+        {
+          "name": "key",
+          "type": "jax.random.PRNGKey",
+          "description": "For stochastic packet generation"
+        },
+        {
+          "name": "state",
+          "type": "SimState",
+          "description": "Current simulation state"
+        },
+        {
+          "name": "adj_matrix",
+          "type": "jnp.ndarray",
+          "description": "Static topology [N, N]"
+        },
+        {
+          "name": "traffic_load",
+          "type": "float",
+          "range": "[0, 1]",
+          "description": "Packet generation probability"
+        },
+        {
+          "name": "buffer_capacity",
+          "type": "int",
+          "description": "Maximum buffer size"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "new_state",
+          "type": "SimState",
+          "description": "Updated simulation state"
+        }
+      ],
+      "properties": [
+        "Decorated with @jax.jit for compilation",
+        "Pure function with no side effects",
+        "Implements packet generation, routing, processing"
+      ],
+      "location": "src/infrafabric/sim/engine.py",
+      "status": "Reference Implementation"
+    }
+  ],
+
+  "architectural_decisions": [
+    {
+      "decision": "Use Pydantic for Configuration",
+      "rationale": "Provides runtime validation, type hints, and computed fields for derived values",
+      "tradeoff": "Replaces older .proto or YAML-only schemas with Python-native models",
+      "files_affected": [
+        "src/infrafabric/core/topology.py",
+        "All config instantiation code"
+      ]
+    },
+    {
+      "decision": "Stateless Pure Functions with JAX",
+      "rationale": "Enables parallelization, JIT compilation, and backend swapping",
+      "tradeoff": "Explicit state passing instead of OOP encapsulation",
+      "files_affected": [
+        "src/infrafabric/sim/engine.py",
+        "Core business logic modules"
+      ]
+    },
+    {
+      "decision": "Hydra for Experiment Configuration",
+      "rationale": "Composable configs, command-line overrides, automatic output directory structure",
+      "integration_points": [
+        "conf/base.yaml (defaults)",
+        "conf/topology/fat_tree.yaml (topology variants)",
+        "conf/sim/default.yaml (simulator settings)",
+        "experiments/train.py (Hydra decorator)"
+      ]
+    },
+    {
+      "decision": "Use `just` Instead of Make/Bazel",
+      "rationale": "Modern, readable syntax; better for documenting development workflow",
+      "commands": [
+        "just setup (install deps)",
+        "just check (run TRIAD)",
+        "just train (run experiments with Hydra)",
+        "just docs-preview (live notebook preview)"
+      ],
+      "file": "justfile"
+    },
+    {
+      "decision": "Quarto for Literate Documentation",
+      "rationale": "Notebooks are executable documentation, not static prose",
+      "benefits": [
+        "Code, output, and narrative in single file",
+        "Compiles to HTML/PDF automatically",
+        "Reproducibility by construction"
+      ]
+    },
+    {
+      "decision": "Use `uv` for Dependency Management",
+      "rationale": "Modern Python package manager, faster than pip, hermetic builds",
+      "replaces": "pip, poetry",
+      "integration": "pyproject.toml defines all dependencies and tools"
+    },
+    {
+      "decision": "Strict Type Checking with mypy",
+      "rationale": "Prevents entire categories of runtime errors; aids AI code generation",
+      "setting": "strict = true (no untyped defs allowed)",
+      "tool": "mypy via pyproject.toml"
+    },
+    {
+      "decision": "All-in-One Linter with Ruff",
+      "rationale": "Replaces Flake8 + Black + isort with single, fast tool",
+      "configuration": "pyproject.toml [tool.ruff]"
+    },
+    {
+      "decision": "Numpy for Graph Construction, JAX for Computation",
+      "rationale": "CPU-based construction is cheaper; JAX enables JIT and GPU scaling",
+      "pattern": "Build adjacency matrix with Numpy, convert to JAX arrays"
+    },
+    {
+      "decision": "Google Research Patterns in Python",
+      "rationale": "Adopts Google's monorepo discipline (hermetic builds, strict types, reproducibility)",
+      "difference": "Achieves same rigor without Bazel's complexity"
+    }
+  ],
+
+  "rules_and_constraints": [
+    {
+      "rule": "Configuration Rule",
+      "enforcement": "All entry points must accept a typed Config object",
+      "violation_cost": "Blocks reproducibility and makes code unmaintainable"
+    },
+    {
+      "rule": "Pure Function Rule",
+      "enforcement": "Core logic must be deterministic functions, no hidden state in self",
+      "enforcement_tool": "Code review + type hints"
+    },
+    {
+      "rule": "Documentation is Executable",
+      "enforcement": "Every feature must have a Quarto notebook demonstrating it",
+      "validator": "Can a new researcher understand and run the feature from one file?"
+    },
+    {
+      "rule": "Hermetic Dependencies",
+      "enforcement": "Lock all dependencies in pyproject.toml; use `uv sync --frozen`",
+      "consequence": "Guarantees reproducibility across machines and time"
+    },
+    {
+      "rule": "Type Everything",
+      "enforcement": "mypy with strict=true; no untyped function signatures",
+      "benefit": "AI agents can reason about code; fewer runtime errors"
+    },
+    {
+      "rule": "No Magic Numbers Outside Config",
+      "enforcement": "Code review; linting rules in Ruff",
+      "violation_example": "threshold = 0.5 # BAD if not in config"
+    },
+    {
+      "rule": "TRIAD Checkpoint",
+      "enforcement": "Before merge: mypy returns 0 errors, config is clean, tests pass",
+      "automated_via": "justfile `just check` command + CI/CD"
+    },
+    {
+      "rule": "Immutable State in Simulation",
+      "enforcement": "Use NamedTuple for SimState, JAX arrays for buffers",
+      "benefit": "Enables parallelization and functional programming patterns"
+    }
+  ],
+
+  "project_structure": {
+    "root_files": [
+      {
+        "name": "MANIFESTO.md or CONTRIBUTING.md",
+        "purpose": "Codex philosophy and development practices",
+        "status": "Recommended"
+      },
+      {
+        "name": "justfile",
+        "purpose": "Automation layer; executable development workflow",
+        "status": "Required",
+        "key_commands": [
+          "setup",
+          "check",
+          "format",
+          "lint",
+          "type",
+          "test",
+          "train",
+          "docs-preview",
+          "docs-build"
+        ]
+      },
+      {
+        "name": "pyproject.toml",
+        "purpose": "Single source of truth for dependencies, tools, metadata",
+        "status": "Required",
+        "sections": [
+          "build-system",
+          "project metadata",
+          "dependencies",
+          "optional-dependencies (vis, dev)",
+          "tool.uv (package manager)",
+          "tool.ruff (formatter/linter)",
+          "tool.mypy (type checker)",
+          "tool.pytest (test framework)",
+          "tool.hydra (experiment config)"
+        ]
+      },
+      {
+        "name": ".context.md",
+        "purpose": "High-level architectural decisions for AI agents",
+        "status": "Recommended if using AI collaboration"
+      }
+    ],
+    "src_structure": {
+      "root": "src/infrafabric/",
+      "subdirectories": [
+        {
+          "name": "core/",
+          "purpose": "Pure logic and data structures",
+          "key_files": [
+            "topology.py (graph builders)",
+            "routing.py (routing algorithms)"
+          ]
+        },
+        {
+          "name": "sim/",
+          "purpose": "Simulation engine",
+          "key_files": [
+            "engine.py (step_fn, state management)"
+          ]
+        },
+        {
+          "name": "vis/",
+          "purpose": "Visualization utilities",
+          "key_files": [
+            "plot_topology.py",
+            "plot_metrics.py"
+          ]
+        }
+      ]
+    },
+    "tests_structure": {
+      "root": "tests/",
+      "naming": "test_*.py or *_test.py (Google pattern)",
+      "example_tests": [
+        {
+          "file": "test_topology.py",
+          "tests": [
+            "test_config_validation()",
+            "test_connectivity_properties()",
+            "test_jax_jit_compatibility()"
+          ]
+        }
+      ]
+    },
+    "config_structure": {
+      "root": "conf/",
+      "files": [
+        {
+          "name": "base.yaml",
+          "purpose": "Default experiment configuration",
+          "includes": [
+            "topology: fat_tree",
+            "sim: default"
+          ]
+        },
+        {
+          "name": "topology/fat_tree.yaml",
+          "purpose": "Fat-Tree topology config variant",
+          "fields": [
+            "k: 4"
+          ]
+        },
+        {
+          "name": "sim/default.yaml",
+          "purpose": "Simulator settings",
+          "fields": [
+            "steps",
+            "traffic_load",
+            "buffer_size"
+          ]
+        }
+      ]
+    },
+    "experiments_structure": {
+      "root": "experiments/",
+      "key_files": [
+        {
+          "name": "train.py",
+          "purpose": "Main experiment loop with Hydra integration",
+          "responsibilities": [
+            "Load and validate config via Pydantic",
+            "Build graph via JAX",
+            "Initialize simulation state",
+            "Run simulation loop with JIT",
+            "Report results"
+          ]
+        }
+      ]
+    },
+    "notebooks_structure": {
+      "root": "notebooks/",
+      "key_files": [
+        {
+          "name": "00_template.ipynb",
+          "purpose": "Pre-wired laboratory notebook template",
+          "cells": [
+            "Quarto metadata header",
+            "Hermetic setup (project root detection)",
+            "Imports and Hydra config loading",
+            "Core logic and instantiation",
+            "Visualization",
+            "Conclusion and next steps"
+          ]
+        }
+      ]
+    }
+  },
+
+  "file_definitions": [
+    {
+      "path": "MANIFESTO.md",
+      "purpose": "Project philosophy document",
+      "replaces": "CONTRIBUTING.md",
+      "sections": [
+        "The Law of Configuration",
+        "The Functional Core",
+        "Literate Documentation",
+        "The Hermetic Seal",
+        "AI-First Context",
+        "The Commit Checklist"
+      ],
+      "status": "To be created"
+    },
+    {
+      "path": "justfile",
+      "purpose": "Modern Makefile replacement",
+      "syntax": "Just (Rust-based task runner)",
+      "commands": 9,
+      "status": "Complete template provided"
+    },
+    {
+      "path": "pyproject.toml",
+      "purpose": "Build system, dependencies, tool configuration",
+      "structure": "TOML",
+      "tool_configs": [
+        "ruff (formatter/linter)",
+        "mypy (type checker)",
+        "pytest (testing)",
+        "hydra (config management)"
+      ],
+      "status": "Complete template provided"
+    },
+    {
+      "path": "src/infrafabric/core/topology.py",
+      "purpose": "Network topology builders using Pydantic + JAX",
+      "exports": [
+        "FatTreeConfig (Pydantic model)",
+        "build_fat_tree (pure function)"
+      ],
+      "status": "Complete implementation provided",
+      "lines_of_code": 130
+    },
+    {
+      "path": "tests/test_topology.py",
+      "purpose": "Test suite for topology module",
+      "tests": [
+        "test_config_validation",
+        "test_connectivity_properties",
+        "test_jax_jit_compatibility"
+      ],
+      "status": "Complete template provided",
+      "lines_of_code": 50
+    },
+    {
+      "path": "conf/base.yaml",
+      "purpose": "Default Hydra experiment configuration",
+      "includes": [
+        "defaults (topology, sim)",
+        "seed (42)",
+        "experiment_name",
+        "hydra output directory structure"
+      ],
+      "status": "Complete template provided"
+    },
+    {
+      "path": "conf/topology/fat_tree.yaml",
+      "purpose": "Fat-Tree topology variant",
+      "target": "FatTreeConfig model",
+      "parameters": [
+        "name: fat_tree_k4",
+        "k: 4"
+      ],
+      "status": "Complete template provided"
+    },
+    {
+      "path": "conf/sim/default.yaml",
+      "purpose": "Simulator engine configuration",
+      "parameters": [
+        "steps: 1000",
+        "traffic_load: 0.8",
+        "buffer_size: 1024"
+      ],
+      "status": "Complete template provided"
+    },
+    {
+      "path": "src/infrafabric/sim/engine.py",
+      "purpose": "Core simulation engine with JAX",
+      "exports": [
+        "SimState (NamedTuple)",
+        "step_fn (JAX-JIT pure function)"
+      ],
+      "status": "Complete implementation provided",
+      "lines_of_code": 80
+    },
+    {
+      "path": "experiments/train.py",
+      "purpose": "Main experiment loop with Hydra integration",
+      "features": [
+        "Hydra config loading",
+        "Pydantic validation",
+        "Graph construction",
+        "Simulation state initialization",
+        "JIT-compiled loop execution",
+        "Results reporting"
+      ],
+      "status": "Complete implementation provided",
+      "lines_of_code": 75
+    },
+    {
+      "path": "notebooks/00_template.ipynb",
+      "purpose": "Gold standard notebook template",
+      "cells": 6,
+      "features": [
+        "Quarto rendering metadata",
+        "Project root auto-detection",
+        "Hydra compose API integration",
+        "JAX computation examples",
+        "Matplotlib/Seaborn visualization",
+        "Quarto markdown conclusion"
+      ],
+      "status": "Template provided (raw structure)",
+      "exports": "HTML, PDF via Quarto"
+    }
+  ],
+
+  "code_snippets": {
+    "perfect_module_pattern": {
+      "description": "The ideal InfraFabric module structure",
+      "components": [
+        {
+          "part": "1. Configuration",
+          "example": "class RouterConfig(BaseModel): ...",
+          "purpose": "The Interface"
+        },
+        {
+          "part": "2. State",
+          "example": "RouterState = Annotated[jnp.ndarray, 'Buffer usage per port']",
+          "purpose": "The Data"
+        },
+        {
+          "part": "3. Logic",
+          "example": "def step(cfg: RouterConfig, state: RouterState, packet_load: float) -> RouterState: ...",
+          "purpose": "The Pure Function"
+        }
+      ]
+    }
+  },
+
+  "amendments_and_updates": [
+    {
+      "change": "Migration from Bazel to Just",
+      "from": "BUILD files with Bazel",
+      "to": "justfile with Just task runner",
+      "benefit": "Readability without sacrificing hermetic builds",
+      "status": "Complete"
+    },
+    {
+      "change": "Single Linter Tool",
+      "from": "Black + Flake8 + isort + Pylint",
+      "to": "Ruff (all-in-one)",
+      "benefit": "Unified configuration, 10x faster",
+      "status": "Complete"
+    },
+    {
+      "change": "Dependency Management",
+      "from": "pip + poetry/pipenv",
+      "to": "uv (modern package manager)",
+      "benefit": "Faster installs, better lock files, hermetic builds",
+      "status": "Complete"
+    },
+    {
+      "change": "Graph Construction Strategy",
+      "from": "Pure JAX array creation",
+      "to": "Numpy construction, then convert to JAX",
+      "reason": "CPU construction is cheaper than GPU memory allocation for sparse graphs",
+      "status": "Complete"
+    },
+    {
+      "change": "Config Validation",
+      "from": ".proto files + protobuf",
+      "to": "Pydantic models with computed fields",
+      "benefit": "Runtime validation, type hints, Python-native",
+      "status": "Complete"
+    }
+  ],
+
+  "version_and_metadata": {
+    "version": "0.1.0",
+    "status": "Reference Implementation Complete",
+    "release_date": "2025-01-01",
+    "target_python": ">=3.10",
+    "key_dependencies": [
+      "jax>=0.4.20",
+      "pydantic>=2.5",
+      "hydra-core>=1.3",
+      "typer>=0.9",
+      "ruff>=0.1.6",
+      "mypy>=1.7",
+      "pytest>=7.4",
+      "quarto>=0.1"
+    ],
+    "next_steps": [
+      "Generate GitHub Actions CI/CD workflow (.github/workflows/ci.yaml)",
+      "Implement routing algorithms in src/infrafabric/core/routing.py",
+      "Build visualization module src/infrafabric/vis/",
+      "Create detailed Quarto notebooks documenting experiments",
+      "Add distributed training via jax.lax.scan"
+    ],
+    "philosophy_summary": "InfraFabric is a research software framework that merges Google's monorepo rigor with open-source agility. It prioritizes reproducibility through hermetic builds, clarity through type safety, and collaboration through AI-first code patterns.",
+    "design_goal": "By 2028, a researcher should be able to run `just run-experiment` and get identical results to 2025, automatically."
+  }
+}

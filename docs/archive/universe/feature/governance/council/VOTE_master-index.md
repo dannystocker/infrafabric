@@ -1,0 +1,1 @@
+{"total_debates":15,"last_updated":"2025-11-25","categories":{"infrafabric":10,"icw":2,"navidocs":1,"zen_yachting":1,"multi_ai":1},"historic_100_percent":"IF-COUNCIL-2025-007 Civilizational Collapse","highest_tactical":"IF-COUNCIL-2025-004 Police Chase 97.3%","files_location":"council-archive/2025/Q4/"}
