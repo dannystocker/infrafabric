@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0",
+  "industry_id": "warehousing-robotics",
+  "industry_name": "Warehousing & Mobile Robotics",
+  "cluster": "Finance/Logistics",
+  "killer_app": {
+    "title": "Cross-vendor AMR/AGV Control",
+    "description": "Traffic control and picking flows with dynamic zone booking."
+  },
+  "protocols": [
+    {
+      "name": "VDA 5050",
+      "layer": "application"
+    }
+  ],
+  "lexicon": [
+    {
+      "term": "Mission",
+      "context": "Robot task",
+      "primitive": "IF.logistics.spawn",
+      "severity": "info",
+      "requires": []
+    },
+    {
+      "term": "Zone lock",
+      "context": "Reserve aisle",
+      "primitive": "IF.context.update",
+      "severity": "warn",
+      "requires": []
+    },
+    {
+      "term": "E-stop",
+      "context": "Emergency stop",
+      "primitive": "IF.process.kill",
+      "severity": "critical",
+      "requires": [
+        "two_person_rule"
+      ]
+    },
+    {
+      "term": "Handoff",
+      "context": "Bin transfer",
+      "primitive": "IF.matrix.route",
+      "severity": "info",
+      "requires": []
+    },
+    {
+      "term": "Battery swap",
+      "context": "Charging ops",
+      "primitive": "IF.logistics.spawn",
+      "severity": "info",
+      "requires": []
+    },
+    {
+      "term": "Scan fail",
+      "context": "ID mismatch",
+      "primitive": "IF.context.update",
+      "severity": "warn",
+      "requires": []
+    }
+  ],
+  "risks": {
+    "failure_modes": [
+      "Collision",
+      "Inventory loss"
+    ],
+    "mitigations": [
+      "Right-of-way rules",
+      "Aisle headways",
+      "Light curtain inputs"
+    ]
+  }
+}

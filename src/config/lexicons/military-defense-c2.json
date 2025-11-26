@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0",
+  "industry_id": "military-defense-c2",
+  "industry_name": "Military/Defense C2",
+  "cluster": "Security/Defense",
+  "killer_app": {
+    "title": "Blue Force Tracking & Deconfliction",
+    "description": "Mixed assets with instant hold/cease propagation."
+  },
+  "protocols": [
+    {
+      "name": "Cursor-on-Target",
+      "layer": "application"
+    }
+  ],
+  "lexicon": [
+    {
+      "term": "FRAGO",
+      "context": "Fragmentary order",
+      "primitive": "IF.logistics.spawn",
+      "severity": "warn",
+      "requires": [
+        "human_approval"
+      ]
+    },
+    {
+      "term": "Hold fire",
+      "context": "Cease engagement",
+      "primitive": "IF.process.kill",
+      "severity": "critical",
+      "requires": [
+        "two_person_rule"
+      ]
+    },
+    {
+      "term": "Airspace ROZ",
+      "context": "Restricted zone",
+      "primitive": "IF.context.update",
+      "severity": "critical",
+      "requires": [
+        "two_person_rule"
+      ]
+    },
+    {
+      "term": "Tasking",
+      "context": "Assign unit",
+      "primitive": "IF.matrix.route",
+      "severity": "warn",
+      "requires": []
+    },
+    {
+      "term": "SPOT report",
+      "context": "Contact report",
+      "primitive": "IF.signal.ingest",
+      "severity": "info",
+      "requires": []
+    },
+    {
+      "term": "Deconflict",
+      "context": "Resolve conflicts",
+      "primitive": "IF.logistics.spawn",
+      "severity": "warn",
+      "requires": []
+    }
+  ],
+  "risks": {
+    "failure_modes": [
+      "Fratricide",
+      "Mission failure"
+    ],
+    "mitigations": [
+      "Role-based ROE",
+      "Multi-party authorization",
+      "Immutable audit chain"
+    ]
+  }
+}

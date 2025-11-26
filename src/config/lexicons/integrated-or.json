@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0",
+  "industry_id": "integrated-or",
+  "industry_name": "Integrated OR & Anesthesia",
+  "cluster": "Healthcare/Bio",
+  "killer_app": {
+    "title": "OR Scene Switcher",
+    "description": "Route imaging, device presets, and sterile workflow alignment in <1s."
+  },
+  "protocols": [
+    {
+      "name": "IEEE 11073 SDC",
+      "layer": "application"
+    }
+  ],
+  "lexicon": [
+    {
+      "term": "Induction start",
+      "context": "Anesthesia phase",
+      "primitive": "IF.context.update",
+      "severity": "warn",
+      "requires": []
+    },
+    {
+      "term": "Scope to wall",
+      "context": "Video routing",
+      "primitive": "IF.matrix.route",
+      "severity": "info",
+      "requires": []
+    },
+    {
+      "term": "Cautery standby",
+      "context": "Disable energy",
+      "primitive": "IF.process.kill",
+      "severity": "critical",
+      "requires": [
+        "two_person_rule"
+      ]
+    },
+    {
+      "term": "Imaging capture",
+      "context": "Store to PACS",
+      "primitive": "IF.logistics.spawn",
+      "severity": "info",
+      "requires": []
+    },
+    {
+      "term": "Timeout",
+      "context": "Surgical pause",
+      "primitive": "IF.context.update",
+      "severity": "warn",
+      "requires": [
+        "human_approval"
+      ]
+    }
+  ],
+  "risks": {
+    "failure_modes": [
+      "Wrong device mode",
+      "Burn/bleed risk"
+    ],
+    "mitigations": [
+      "Hard interlocks",
+      "Sterile field confirmation",
+      "Two-tap irreversible actions"
+    ]
+  }
+}

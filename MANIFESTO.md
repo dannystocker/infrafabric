@@ -15,13 +15,20 @@ We do not use `pip` manually. We do not use `conda`. We use `uv` for lightning-f
 - Setup: `just setup`
 - Run: `just train`
 
-## III. THE LAW OF STATE (REDIS)
+## III. THE LOGISTICS CHARTER
+**"No Schema, No Dispatch."**  
+The Transport metaphor is gone. We run a civic dispatch office:
+- **Parcels, not Vesicles:** Tracking IDs, packaging, and chain-of-custody headers.
+- **LogisticsDispatcher:** Validates schema and Redis type before any write.
+- **Fluent Requests:** `IF.Logistics.dispatch(parcel).to("council:inbox")`.
+
+## IV. THE LAW OF STATE (REDIS)
 **"No Schema, No Write."**  
 The database is not a scratchpad.
 - **The Sin:** Writing raw strings or error messages ("WRONGTYPE") into keys.
 - **The Law:** All Redis writes must be validated via `src/infrafabric/state/schema.py`.
 
-## IV. THE FUNCTIONAL CORE
+## V. THE FUNCTIONAL CORE
 **"Logic flows; State is carried."**
 - **Logic:** Pure JAX functions.
 - **Config:** Pydantic models. No magic numbers.

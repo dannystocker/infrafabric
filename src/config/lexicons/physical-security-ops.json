@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0",
+  "industry_id": "physical-security-ops",
+  "industry_name": "Physical Security Operations",
+  "cluster": "Security/Defense",
+  "killer_app": {
+    "title": "Perimeter-to-Door Chain of Custody",
+    "description": "Cross-VMS eventing and instant lockdown by zone."
+  },
+  "protocols": [
+    {
+      "name": "ONVIF",
+      "layer": "application"
+    }
+  ],
+  "lexicon": [
+    {
+      "term": "Lockdown",
+      "context": "Secure zone",
+      "primitive": "IF.context.update",
+      "severity": "critical",
+      "requires": [
+        "two_person_rule"
+      ]
+    },
+    {
+      "term": "Forced door",
+      "context": "Alarm",
+      "primitive": "IF.signal.ingest",
+      "severity": "warn",
+      "requires": []
+    },
+    {
+      "term": "PTZ preset",
+      "context": "Camera move",
+      "primitive": "IF.matrix.route",
+      "severity": "info",
+      "requires": []
+    },
+    {
+      "term": "Alarm acknowledge",
+      "context": "Operator action",
+      "primitive": "IF.logistics.spawn",
+      "severity": "info",
+      "requires": []
+    },
+    {
+      "term": "Unlock schedule",
+      "context": "Time profile",
+      "primitive": "IF.context.update",
+      "severity": "warn",
+      "requires": []
+    },
+    {
+      "term": "Tripwire",
+      "context": "Video analytic",
+      "primitive": "IF.signal.ingest",
+      "severity": "info",
+      "requires": []
+    }
+  ],
+  "risks": {
+    "failure_modes": [
+      "Unauthorized access",
+      "False lockdown"
+    ],
+    "mitigations": [
+      "Two-operator confirmation",
+      "Badge+biometric match",
+      "Failsafe unlock per fire code"
+    ]
+  }
+}

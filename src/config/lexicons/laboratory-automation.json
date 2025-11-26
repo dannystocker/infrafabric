@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0",
+  "industry_id": "laboratory-automation",
+  "industry_name": "Laboratory Automation & LIMS",
+  "cluster": "Healthcare/Bio",
+  "killer_app": {
+    "title": "Cross-vendor Instrument Orchestration",
+    "description": "Robotics + LC/MS + incubators with zero-wait routing."
+  },
+  "protocols": [
+    {
+      "name": "SiLA 2",
+      "layer": "application"
+    }
+  ],
+  "lexicon": [
+    {
+      "term": "Worklist",
+      "context": "Sample jobs",
+      "primitive": "IF.logistics.spawn",
+      "severity": "info",
+      "requires": []
+    },
+    {
+      "term": "Plate map",
+      "context": "Well routing",
+      "primitive": "IF.matrix.route",
+      "severity": "info",
+      "requires": []
+    },
+    {
+      "term": "Incubate hold",
+      "context": "Pause growth",
+      "primitive": "IF.process.kill",
+      "severity": "warn",
+      "requires": []
+    },
+    {
+      "term": "QC flag",
+      "context": "Out-of-spec",
+      "primitive": "IF.context.update",
+      "severity": "warn",
+      "requires": []
+    },
+    {
+      "term": "Data ingest",
+      "context": "Results import",
+      "primitive": "IF.signal.ingest",
+      "severity": "info",
+      "requires": []
+    },
+    {
+      "term": "Waste purge",
+      "context": "Dispose reagents",
+      "primitive": "IF.logistics.spawn",
+      "severity": "info",
+      "requires": []
+    }
+  ],
+  "risks": {
+    "failure_modes": [
+      "Cross-contamination",
+      "Data integrity issues"
+    ],
+    "mitigations": [
+      "Barcode double-scan",
+      "Dwell timers",
+      "Chain-of-custody logs"
+    ]
+  }
+}

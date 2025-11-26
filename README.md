@@ -7,7 +7,7 @@
 [![State Law](https://img.shields.io/badge/redis-schema%20enforced-red)](src/infrafabric/state/schema.py)
 [![Council](https://img.shields.io/badge/governance-autonomous-gold)](docs/debates/001_genesis_structure.md)
 
-**InfraFabric** is an autonomous infrastructure system that evolved from a memory prosthetic into a self-governing operating system. It combines a **Functional Core** (JAX logic), **Strict State** (Pydantic/Redis), and **Immune Defense** (YoloGuard).
+**InfraFabric** is an autonomous infrastructure system that evolved from a memory prosthetic into a self-governing operating system. It now runs with a **Civic Logistics Department** (Parcels + Dispatch), a **Functional Core** (JAX logic), **Strict State** (Pydantic/Redis), and **Immune Defense** (YoloGuard).
 
 > **"The system didn't become autonomous despite the constraints. It became autonomous *because* of them."**
 > — *[Chronicle of the Spark](docs/narratives/INFRAFABRIC_CHRONOLOGY_SUMMARY.md)*
@@ -36,9 +36,24 @@ just audit-db
 | Component | Role | Source of Truth |
 | :--- | :--- | :--- |
 | **The Core** | Logic & Reasoning | `src/infrafabric/core` |
+| **Logistics** | Parcel dispatch & custody | `src/infrafabric/core/logistics` |
 | **The Librarian** | Semantic Memory ($43k/yr savings) | `src/infrafabric/core/services/librarian.py` |
 | **YoloGuard** | Immune System (98.9% Recall) | `src/infrafabric/core/security/yologuard.py` |
 | **The Law** | State Validation | `src/infrafabric/state/schema.py` |
+
+## 📦 Logistics Dispatch (Civic Metaphor)
+
+The Transport layer has been retired in favor of a city dispatch yard. Data travels as **Parcels** with tracking IDs, packaging, and IF.TTT chain-of-custody headers.
+
+```python
+from infrafabric import IF, Parcel
+
+parcel = Parcel(origin="council-secretariat", contents={"memo": "dispatch"})
+IF.Logistics.use(IF.Logistics.connect(redis_db=0))
+IF.Logistics.dispatch(parcel).to("council:inbox")
+```
+
+**No Schema, No Dispatch:** every Parcel is validated and type-checked before Redis ever sees it.
 
 ---
 

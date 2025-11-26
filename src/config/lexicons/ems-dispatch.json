@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0",
+  "industry_id": "ems-dispatch",
+  "industry_name": "EMS Dispatch & Telemedicine",
+  "cluster": "Healthcare/Bio",
+  "killer_app": {
+    "title": "Auto Triage & Route",
+    "description": "NG9-1-1 + vitals to dispatch, dynamic routing, ED pre-alert with ETA."
+  },
+  "protocols": [
+    {
+      "name": "NENA i3",
+      "layer": "application"
+    }
+  ],
+  "lexicon": [
+    {
+      "term": "Dispatch",
+      "context": "Send ambulance",
+      "primitive": "IF.matrix.route",
+      "severity": "critical",
+      "requires": []
+    },
+    {
+      "term": "Diversion",
+      "context": "ED on bypass",
+      "primitive": "IF.context.update",
+      "severity": "warn",
+      "requires": []
+    },
+    {
+      "term": "Pre-alert",
+      "context": "Notify ED team",
+      "primitive": "IF.logistics.spawn",
+      "severity": "warn",
+      "requires": []
+    },
+    {
+      "term": "Triage code",
+      "context": "Priority level",
+      "primitive": "IF.context.update",
+      "severity": "info",
+      "requires": []
+    },
+    {
+      "term": "Scene secure",
+      "context": "Safety gate",
+      "primitive": "IF.context.update",
+      "severity": "warn",
+      "requires": []
+    },
+    {
+      "term": "Terminate resus",
+      "context": "Stop efforts",
+      "primitive": "IF.process.kill",
+      "severity": "critical",
+      "requires": [
+        "two_person_rule"
+      ]
+    }
+  ],
+  "risks": {
+    "failure_modes": [
+      "Wrong priority",
+      "Misroute"
+    ],
+    "mitigations": [
+      "Clinician override",
+      "Geofence-safe routing",
+      "Advisory-only if data missing"
+    ]
+  }
+}

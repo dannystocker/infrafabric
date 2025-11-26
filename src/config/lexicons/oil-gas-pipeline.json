@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "industry_id": "oil-gas-pipeline",
+  "industry_name": "Oil & Gas Pipeline SCADA",
+  "cluster": "Infrastructure",
+  "killer_app": {
+    "title": "Sub-second Leak Isolation",
+    "description": "Pressure/flow imbalance triggers automatic valve sequencing and flow rerouting."
+  },
+  "protocols": [
+    {
+      "name": "OPC UA",
+      "layer": "application"
+    },
+    {
+      "name": "Modbus",
+      "layer": "application"
+    }
+  ],
+  "lexicon": [
+    {
+      "term": "Block valve close",
+      "context": "Isolate segment",
+      "primitive": "IF.process.kill",
+      "severity": "critical",
+      "requires": [
+        "two_person_rule"
+      ]
+    },
+    {
+      "term": "Pig launch",
+      "context": "Start inspection pig",
+      "primitive": "IF.logistics.spawn",
+      "severity": "info",
+      "requires": []
+    },
+    {
+      "term": "SCADA poll",
+      "context": "Data acquisition cycle",
+      "primitive": "IF.signal.ingest",
+      "severity": "info",
+      "requires": []
+    },
+    {
+      "term": "Bypass",
+      "context": "Temporary reroute",
+      "primitive": "IF.matrix.route",
+      "severity": "warn",
+      "requires": []
+    },
+    {
+      "term": "MOP exceedance",
+      "context": "Over-pressure alarm",
+      "primitive": "IF.context.update",
+      "severity": "critical",
+      "requires": [
+        "human_approval"
+      ]
+    }
+  ],
+  "risks": {
+    "failure_modes": [
+      "False isolation",
+      "Overpressure"
+    ],
+    "mitigations": [
+      "Dual-sensor corroboration",
+      "Staged close",
+      "Dispatcher confirmation"
+    ]
+  }
+}

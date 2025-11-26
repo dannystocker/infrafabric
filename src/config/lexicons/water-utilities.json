@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0",
+  "industry_id": "water-utilities",
+  "industry_name": "Water & Wastewater Utilities",
+  "cluster": "Infrastructure",
+  "killer_app": {
+    "title": "Real-time Pump Optimization",
+    "description": "Emergency bypass during storm surges to prevent overflows."
+  },
+  "protocols": [
+    {
+      "name": "DNP3",
+      "layer": "application"
+    }
+  ],
+  "lexicon": [
+    {
+      "term": "Pump trip",
+      "context": "Stop pump",
+      "primitive": "IF.process.kill",
+      "severity": "critical",
+      "requires": []
+    },
+    {
+      "term": "Wet well high",
+      "context": "Level alarm",
+      "primitive": "IF.context.update",
+      "severity": "warn",
+      "requires": []
+    },
+    {
+      "term": "Valve stroke",
+      "context": "Open/close position",
+      "primitive": "IF.matrix.route",
+      "severity": "info",
+      "requires": []
+    },
+    {
+      "term": "Reroute flow",
+      "context": "Bypass trunk",
+      "primitive": "IF.matrix.route",
+      "severity": "warn",
+      "requires": []
+    },
+    {
+      "term": "Chlorination boost",
+      "context": "Dose adjust",
+      "primitive": "IF.logistics.spawn",
+      "severity": "info",
+      "requires": []
+    }
+  ],
+  "risks": {
+    "failure_modes": [
+      "Overflow",
+      "Contamination"
+    ],
+    "mitigations": [
+      "Level-rate sanity checks",
+      "Stroke limits",
+      "Sensor voting"
+    ]
+  }
+}

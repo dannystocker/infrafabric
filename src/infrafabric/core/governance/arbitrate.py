@@ -46,7 +46,7 @@ Usage:
   result = arbitrator.resolve_case(case.case_ref)
 """
 
-from dataclasses import dataclass, field, asdict
+from dataclasses import dataclass, field
 from datetime import datetime, timedelta
 from typing import Dict, List, Optional, Tuple
 from enum import Enum
@@ -816,7 +816,7 @@ if __name__ == "__main__":
 
     print(f"Total votes cast: {vote_count}")
     print(f"Consensus percentage: {consensus:.1%}")
-    print(f"Weighted vote breakdown:")
+    print("Weighted vote breakdown:")
 
     yes_weight = sum(v.weight for v in case.votes if v.position == VotePosition.YES)
     no_weight = sum(v.weight for v in case.votes if v.position == VotePosition.NO)

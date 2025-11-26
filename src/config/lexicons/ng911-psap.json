@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0",
+  "industry_id": "ng911-psap",
+  "industry_name": "NG9-1-1 PSAP & CAD",
+  "cluster": "Security/Defense",
+  "killer_app": {
+    "title": "Call-to-Dispatch Autopilot",
+    "description": "i3 event interpretation, unit recommendation, multi-agency coordination in real time."
+  },
+  "protocols": [
+    {
+      "name": "NENA i3",
+      "layer": "application"
+    }
+  ],
+  "lexicon": [
+    {
+      "term": "ANI/ALI",
+      "context": "Caller/Location",
+      "primitive": "IF.signal.ingest",
+      "severity": "info",
+      "requires": []
+    },
+    {
+      "term": "Send unit",
+      "context": "Dispatch",
+      "primitive": "IF.matrix.route",
+      "severity": "critical",
+      "requires": []
+    },
+    {
+      "term": "BOLO",
+      "context": "Be-on-lookout",
+      "primitive": "IF.logistics.spawn",
+      "severity": "warn",
+      "requires": []
+    },
+    {
+      "term": "Scene secure",
+      "context": "Safety state",
+      "primitive": "IF.context.update",
+      "severity": "warn",
+      "requires": []
+    },
+    {
+      "term": "Roll mutual aid",
+      "context": "Neighboring units",
+      "primitive": "IF.logistics.spawn",
+      "severity": "warn",
+      "requires": []
+    },
+    {
+      "term": "Cancel call",
+      "context": "False alarm",
+      "primitive": "IF.process.kill",
+      "severity": "warn",
+      "requires": []
+    }
+  ],
+  "risks": {
+    "failure_modes": [
+      "Misdispatch",
+      "Delayed response"
+    ],
+    "mitigations": [
+      "Dispatcher approval",
+      "Multi-source geolocation",
+      "Audit playback"
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "industry_id": "aviation-ground-ops",
+  "industry_name": "Aviation Ground Operations",
+  "cluster": "Infrastructure",
+  "killer_app": {
+    "title": "Pushback\u2013Taxi\u2013Stand Choreography",
+    "description": "Auto-deconflict stands, GSE, and taxi routing when TOBT/TSAT shifts."
+  },
+  "protocols": [
+    {
+      "name": "IATA AIDX",
+      "layer": "application"
+    },
+    {
+      "name": "A-CDM",
+      "layer": "application"
+    }
+  ],
+  "lexicon": [
+    {
+      "term": "TOBT/TSAT update",
+      "context": "Turn timing change",
+      "primitive": "IF.context.update",
+      "severity": "info",
+      "requires": []
+    },
+    {
+      "term": "Stand swap",
+      "context": "Gate reassignment",
+      "primitive": "IF.matrix.route",
+      "severity": "warn",
+      "requires": [
+        "human_approval"
+      ]
+    },
+    {
+      "term": "Pushback clearance",
+      "context": "Start push",
+      "primitive": "IF.logistics.spawn",
+      "severity": "warn",
+      "requires": []
+    },
+    {
+      "term": "Stop bar on",
+      "context": "Halt ground traffic",
+      "primitive": "IF.process.kill",
+      "severity": "critical",
+      "requires": [
+        "two_person_rule"
+      ]
+    },
+    {
+      "term": "Follow-me dispatch",
+      "context": "Guide vehicle",
+      "primitive": "IF.matrix.route",
+      "severity": "info",
+      "requires": []
+    }
+  ],
+  "risks": {
+    "failure_modes": [
+      "Taxi conflict",
+      "Stand incursion"
+    ],
+    "mitigations": [
+      "Geometry checks",
+      "ATC human-in-loop",
+      "Geofenced stops"
+    ]
+  }
+}

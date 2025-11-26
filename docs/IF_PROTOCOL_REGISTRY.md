@@ -23,7 +23,7 @@ This registry documents ALL IF (InfraFabric) protocols discovered through compre
 | IF.sam | 2,176 | 182 | ACTIVE | 16 facets (8 light + 8 dark) |
 | IF.TTT | 2,071 | 125 | ACTIVE | Traceable, Transparent, Trustworthy |
 | IF.council | 1,933 | 167 | ACTIVE | Guardian Council governance |
-| IF.vesicle | 1,811 | 37 | ACTIVE | `core/transport/vesicle.py` (672 lines) |
+| IF.logistics | 1,811 | 37 | ACTIVE | `core/logistics/parcel.py` (672 lines) |
 | IF.memory | 1,200 | 69 | ACTIVE | Distributed memory system |
 | IF.search | 1,196 | 78 | ACTIVE | 8-pass investigative methodology |
 | IF.synthesis | 1,083 | 135 | GHOST | Never fully implemented |
@@ -103,7 +103,7 @@ This registry documents ALL IF (InfraFabric) protocols discovered through compre
 | Protocol | File | Lines | Last Updated |
 |----------|------|-------|--------------|
 | IF.yologuard | `src/infrafabric/core/security/yologuard.py` | 680 | 2025-11-26 |
-| IF.vesicle | `src/infrafabric/core/transport/vesicle.py` | 672 | 2025-11-26 |
+| IF.logistics | `src/infrafabric/core/logistics/parcel.py` | 672 | 2025-11-26 |
 | IF.arbitrate | `src/infrafabric/core/governance/arbitrate.py` | 945 | 2025-11-26 |
 | IF.librarian | `src/infrafabric/core/services/librarian.py` | 410 | 2025-11-26 |
 | IF.ocr | `src/infrafabric/core/workers/ocr_worker.py` | 63 | STUB |

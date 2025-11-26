@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0",
+  "industry_id": "energy-grid",
+  "industry_name": "Energy Grid Management",
+  "cluster": "Infrastructure",
+  "killer_app": {
+    "title": "Autonomous Load Shedding & Reconfiguration",
+    "description": "Substation-level shedding and feeder reroute within milliseconds during frequency/voltage instability."
+  },
+  "protocols": [
+    {
+      "name": "IEC 61850",
+      "layer": "application"
+    },
+    {
+      "name": "DNP3",
+      "layer": "application"
+    }
+  ],
+  "lexicon": [
+    {
+      "term": "Trip",
+      "context": "Open breaker to isolate fault",
+      "primitive": "IF.process.kill",
+      "severity": "critical",
+      "requires": [
+        "two_person_rule"
+      ]
+    },
+    {
+      "term": "Load shed",
+      "context": "Drop prioritized feeders",
+      "primitive": "IF.logistics.spawn",
+      "severity": "critical",
+      "requires": [
+        "human_approval"
+      ]
+    },
+    {
+      "term": "Reclose",
+      "context": "Attempt breaker re-close",
+      "primitive": "IF.matrix.route",
+      "severity": "warn",
+      "requires": []
+    },
+    {
+      "term": "Islanding",
+      "context": "Separate microgrid segment",
+      "primitive": "IF.context.update",
+      "severity": "warn",
+      "requires": []
+    }
+  ],
+  "risks": {
+    "failure_modes": [
+      "Wrong feeder trip",
+      "Oscillation after reclose"
+    ],
+    "mitigations": [
+      "State estimator consensus",
+      "Staged reclose windows",
+      "Operator confirmation"
+    ]
+  }
+}
