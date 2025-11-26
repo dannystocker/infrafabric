@@ -1,9 +1,0 @@
-{
-  "root": "/home/setup/infrafabric",
-  "files_scanned": 483,
-  "bytes_scanned": 14470560,
-  "detections": 691,
-  "duration_sec": 4.19,
-  "files_per_sec": 115.26,
-  "mb_per_sec": 3.45
-}

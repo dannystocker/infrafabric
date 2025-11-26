@@ -29,8 +29,8 @@ packages = ["src/infrafabric"]
 
 [tool.ruff]
 line-length = 88
-extend-exclude = ["docs/archive", "tools"]
+extend-exclude = ["docs/archive/legacy_root"]
 
 [tool.mypy]
 ignore_missing_imports = true
-exclude = ["docs/archive", "tools"]
+exclude = ["docs/archive/legacy_root"]
