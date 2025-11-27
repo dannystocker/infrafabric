@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0",
+  "industry_id": "mil-c4isr",
+  "industry_name": "Blue Force Tracking & C4ISR",
+  "cluster": "Defense/Support",
+  "killer_app": {
+    "title": "Map-Centric Situational Awareness",
+    "description": "Ingest spot reports, synchronize TAK/CoT tracks, and route units to safe rally points."
+  },
+  "protocols": [
+    {
+      "name": "CoT",
+      "layer": "application"
+    },
+    {
+      "name": "TAK",
+      "layer": "application"
+    }
+  ],
+  "lexicon": [
+    {
+      "term": "Spot Rep",
+      "context": "Ingest observation with location and timestamp",
+      "primitive": "IF.signal.ingest",
+      "severity": "warn",
+      "requires": []
+    },
+    {
+      "term": "Check Fire",
+      "context": "Hold fire / safety hold across a grid or unit",
+      "primitive": "IF.context.update",
+      "severity": "critical",
+      "requires": [
+        "two_person_rule"
+      ]
+    },
+    {
+      "term": "Rally Point",
+      "context": "Route elements to a designated safe location",
+      "primitive": "IF.matrix.route",
+      "severity": "warn",
+      "requires": [
+        "geofence_check"
+      ]
+    }
+  ],
+  "risks": {
+    "failure_modes": [
+      "Out-of-date track data",
+      "Misapplied check-fire",
+      "Routing into unsafe area"
+    ],
+    "mitigations": [
+      "Timestamp validation and stale-data rejection",
+      "Two-person rule for hold/clear directives",
+      "Geofence and deconfliction checks before routing"
+    ]
+  }
+}

@@ -4,11 +4,11 @@
 
 ## Overview
 
-IF.LOGISTICS standardizes how InfraFabric moves data through Redis: every Parcel gets a tracking ID, is validated against a schema, and carries IF.TTT chain-of-custody headers. The transport metaphor is replaced with a civic dispatch office that enforces rules before anything leaves the dock.
+IF.LOGISTICS standardizes how InfraFabric moves data through Redis: every Packet gets a tracking ID, is validated against a schema, and carries IF.TTT chain-of-custody headers. The transport metaphor is replaced with a civic dispatch office that enforces rules before anything leaves the dock.
 
 ## Core Components
 
-### Parcel (dataclass)
+### Packet (dataclass)
 - **Purpose**: Sealed container for data with automatic tracking ID and timestamp.
 - **Fields**:
   - `tracking_id`: UUID4 (unique, traceable)
@@ -87,10 +87,10 @@ Validation enforcement:
 
 Redis type mismatches are blocked before execution. Example:
 ```python
-dispatcher.dispatch_to_redis(key='docs', parcel=parcel, operation='set')
+dispatcher.dispatch_to_redis(key='docs', packet=packet, operation='set')
 
 with pytest.raises(TypeError):
-    dispatcher.dispatch_to_redis(key='docs', parcel=parcel, operation='rpush')
+    dispatcher.dispatch_to_redis(key='docs', packet=packet, operation='rpush')
 ```
 
 ## Serialization Options
@@ -107,12 +107,12 @@ with pytest.raises(TypeError):
 ## Batch Dispatch Pattern
 
 ```python
-from infrafabric.core.logistics import DispatchQueue, LogisticsDispatcher, Parcel
+from infrafabric.core.logistics import DispatchQueue, LogisticsDispatcher, Packet
 
 dispatcher = LogisticsDispatcher()
 queue = DispatchQueue(dispatcher)
 for i in range(50):
-    queue.add_parcel('logistics:batch', Parcel(origin='worker', contents={'i': i}), operation='lpush')
+    queue.add_parcel('logistics:batch', Packet(origin='worker', contents={'i': i}), operation='lpush')
 queue.flush()
 ```
 

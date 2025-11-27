@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "description": "Redis key schema for Blackmagic Videohub routing",
+  "keys": {
+    "config": {
+      "key": "bmd:videohub:config",
+      "type": "hash",
+      "fields": ["host", "port", "auth"]
+    },
+    "route": {
+      "key_pattern": "bmd:videohub:route:{input}",
+      "type": "string",
+      "value": "output_id"
+    },
+    "lock": {
+      "key_pattern": "bmd:videohub:lock:{output}",
+      "type": "string",
+      "value": "lock_state"
+    },
+    "status_inputs": {
+      "key": "bmd:videohub:status:inputs",
+      "type": "hash",
+      "fields": "{input_id: label, ...}"
+    },
+    "status_outputs": {
+      "key": "bmd:videohub:status:outputs",
+      "type": "hash",
+      "fields": "{output_id: label, ...}"
+    },
+    "status_routes": {
+      "key": "bmd:videohub:status:routes",
+      "type": "hash",
+      "fields": "{output_id: input_id, ...}"
+    },
+    "alerts": {
+      "key": "bmd:videohub:alerts",
+      "type": "list",
+      "notes": "push critical events (e.g., route failure)"
+    }
+  }
+}

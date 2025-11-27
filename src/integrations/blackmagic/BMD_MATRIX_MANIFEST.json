@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "vendor": "Blackmagic Design",
+  "devices": [
+    {
+      "family": "ATEM",
+      "models": [
+        "ATEM Mini", "ATEM Mini Pro", "ATEM Mini Extreme", "ATEM Television Studio", "ATEM Constellation"
+      ],
+      "protocol": "ATEM switcher protocol",
+      "notes": "Vision mixers with M/E, macros, SuperSource, multiview, DVE."
+    },
+    {
+      "family": "Videohub",
+      "models": [
+        "Smart Videohub 12x12", "Smart Videohub 20x20", "Smart Videohub 40x40", "Universal Videohub"
+      ],
+      "protocol": "Videohub TCP (port 9990)",
+      "notes": "SDI/HDMI routers with crosspoint control."
+    },
+    {
+      "family": "HyperDeck",
+      "models": [
+        "HyperDeck Studio HD Mini", "HyperDeck Studio HD Plus", "HyperDeck Studio 4K Pro"
+      ],
+      "protocol": "HyperDeck TCP (port 9993)",
+      "notes": "Record/Playback decks with clip transport, timecode."
+    }
+  ]
+}

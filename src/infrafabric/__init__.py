@@ -2,11 +2,11 @@
 InfraFabric package marker with fluent Logistics interface.
 
 Example:
-    from infrafabric import IF, Parcel
+    from infrafabric import IF, Packet
 
-    parcel = Parcel(origin="council", contents={"memo": "dispatch"})
+    packet = Packet(origin="council", contents={"memo": "dispatch"})
     IF.Logistics.use(IF.Logistics.connect())  # optional shared dispatcher
-    IF.Logistics.dispatch(parcel).to("council:inbox")
+    IF.Logistics.dispatch(packet).to("council:inbox")
 """
 
 from typing import Optional
@@ -14,7 +14,7 @@ from typing import Optional
 from infrafabric.core.logistics import (
     DispatchQueue,
     LogisticsDispatcher,
-    Parcel,
+    Packet,
     ParcelSchemaVersion,
 )
 
@@ -22,8 +22,8 @@ from infrafabric.core.logistics import (
 class _DispatchBuilder:
     """Fluent helper to complete a dispatch route."""
 
-    def __init__(self, parcel: Parcel, logistics: "_FluentLogistics") -> None:
-        self.parcel = parcel
+    def __init__(self, packet: Packet, logistics: "_FluentLogistics") -> None:
+        self.packet = packet
         self._logistics = logistics
         self._dispatcher: Optional[LogisticsDispatcher] = None
 
@@ -34,7 +34,7 @@ class _DispatchBuilder:
         return self
 
     def to(self, destination: str, operation: str = "set", use_msgpack: bool = False) -> bool:
-        """Finalize the route and dispatch the Parcel."""
+        """Finalize the route and dispatch the Packet."""
 
         dispatcher = self._dispatcher or self._logistics.default_dispatcher
         if dispatcher is None:
@@ -44,7 +44,7 @@ class _DispatchBuilder:
             )
         return dispatcher.dispatch_to_redis(
             key=destination,
-            parcel=self.parcel,
+            packet=self.packet,
             operation=operation,
             use_msgpack=use_msgpack,
         )
@@ -69,10 +69,10 @@ class _FluentLogistics:
         self.default_dispatcher = dispatcher
         return self
 
-    def dispatch(self, parcel: Parcel) -> _DispatchBuilder:
+    def dispatch(self, packet: Packet) -> _DispatchBuilder:
         """Begin a fluent dispatch chain."""
 
-        return _DispatchBuilder(parcel, self)
+        return _DispatchBuilder(packet, self)
 
 
 class _IFNamespace:
@@ -88,6 +88,6 @@ __all__ = [
     "DispatchQueue",
     "IF",
     "LogisticsDispatcher",
-    "Parcel",
+    "Packet",
     "ParcelSchemaVersion",
 ]

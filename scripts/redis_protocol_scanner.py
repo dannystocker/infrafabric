@@ -267,7 +267,7 @@ class RedisProtocolScanner:
                     categories['Security/Crypto'].append(protocol[0])
                 elif any(x in name for x in ['SESSION', 'INSTANCE', 'CONTEXT']):
                     categories['Session Management'].append(protocol[0])
-                elif any(x in name for x in ['FINDING', 'DATA', 'VESICLE', 'PARCEL', 'LOGISTICS']):
+                elif any(x in name for x in ['FINDING', 'DATA', 'VESICLE', 'PACKET', 'LOGISTICS']):
                     categories['Data/Context'].append(protocol[0])
                 elif any(x in name for x in ['IF:', 'URI', 'DID']):
                     categories['URI Scheme'].append(protocol[0])

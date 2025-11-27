@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0",
+  "industry_id": "mil-logistics",
+  "industry_name": "Tactical Logistics (Convoys & Resupply)",
+  "cluster": "Defense/Support",
+  "killer_app": {
+    "title": "Autonomous Convoy Launch & Resupply Routing",
+    "description": "Spawn, route, and safely halt autonomous resupply convoys with governance guardrails."
+  },
+  "protocols": [
+    {
+      "name": "JAUS",
+      "layer": "application"
+    },
+    {
+      "name": "IOP",
+      "layer": "application"
+    }
+  ],
+  "lexicon": [
+    {
+      "term": "Convoy Start",
+      "context": "Launch an autonomous convoy for resupply",
+      "primitive": "IF.logistics.spawn",
+      "severity": "critical",
+      "requires": [
+        "two_person_rule"
+      ]
+    },
+    {
+      "term": "Route Clearance",
+      "context": "Assign or adjust path for convoy through cleared lanes",
+      "primitive": "IF.matrix.route",
+      "severity": "warn",
+      "requires": [
+        "geofence_check"
+      ]
+    },
+    {
+      "term": "Halt",
+      "context": "Immediate stop of convoy motion",
+      "primitive": "IF.process.kill",
+      "severity": "critical",
+      "requires": [
+        "two_person_rule",
+        "safety_ack"
+      ]
+    }
+  ],
+  "risks": {
+    "failure_modes": [
+      "Misrouted convoy",
+      "Unsafe halt in kill zone",
+      "Loss of comms to convoy lead"
+    ],
+    "mitigations": [
+      "Human override with two-person rule for halts",
+      "Geofenced routing with pre-cleared corridors",
+      "Heartbeat monitoring and safe-stop fallback"
+    ]
+  }
+}

@@ -44,3 +44,4 @@ __pycache__/
 Thumbs.db
 
 # Keep only what's essential for arXiv
+.security/

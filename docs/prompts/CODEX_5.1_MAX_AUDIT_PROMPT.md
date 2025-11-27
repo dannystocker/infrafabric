@@ -173,7 +173,7 @@ git push origin --delete <branch-name>
 |-----------|------|-------|--------|
 | IF.arbitrate | `src/infrafabric/core/governance/arbitrate.py` | 945 | ACTIVE |
 | IF.yologuard | `src/infrafabric/core/security/yologuard.py` | 680 | ACTIVE |
-| IF.logistics | `src/infrafabric/core/logistics/parcel.py` | 672 | ACTIVE |
+| IF.logistics | `src/infrafabric/core/logistics/packet.py` | 672 | ACTIVE |
 | IF.librarian | `src/infrafabric/core/services/librarian.py` | 410 | ACTIVE |
 | IF.ocr | `src/infrafabric/core/workers/ocr_worker.py` | 63 | STUB |
 

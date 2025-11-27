@@ -1,4 +1,4 @@
-# IF.LOGISTICS - Parcel Dispatch for Redis
+# IF.LOGISTICS - Packet Dispatch for Redis
 
 A civic logistics layer that seals data into Parcels, validates every manifest, and dispatches to Redis with chain-of-custody metadata.
 
@@ -8,12 +8,12 @@ InfraFabric treats Redis like a city-wide dispatch yard. The Logistics Departmen
 
 ## Core Concepts
 
-### Parcel
+### Packet
 A sealed container with a tracking ID and custody headers.
 ```python
-from infrafabric.core.logistics import Parcel
+from infrafabric.core.logistics import Packet
 
-parcel = Parcel(
+packet = Packet(
     origin="council-secretariat",
     contents={"query": "find architecture patterns"},
     schema_version="1.0",
@@ -23,7 +23,7 @@ parcel = Parcel(
 Fields:
 - `tracking_id`: UUID4 for traceability
 - `dispatched_at`: ISO8601 timestamp
-- `origin`: Who prepared the Parcel
+- `origin`: Who prepared the Packet
 - `contents`: The document or data being moved
 - `chain_of_custody`: IF.TTT metadata (v1.1+)
 
@@ -33,7 +33,7 @@ The central dispatch office that validates schemas, checks Redis key types, and 
 from infrafabric.core.logistics import LogisticsDispatcher
 
 dispatcher = LogisticsDispatcher(redis_host="localhost", redis_port=6379)
-dispatcher.dispatch_to_redis("logistics:queue", parcel)
+dispatcher.dispatch_to_redis("logistics:queue", packet)
 fetched = dispatcher.collect_from_redis("logistics:queue")
 ```
 
@@ -43,7 +43,7 @@ Batch dispatcher that reduces round-trips when you have many Parcels to move.
 from infrafabric.core.logistics import DispatchQueue
 
 queue = DispatchQueue(dispatcher)
-queue.add_parcel("logistics:batch", parcel, operation="lpush")
+queue.add_parcel("logistics:batch", packet, operation="lpush")
 queue.flush()
 ```
 
@@ -53,13 +53,13 @@ Enum for type-aware safety rails (`STRING`, `LIST`, `HASH`, `SET`, `ZSET`, `STRE
 ## Quick Start
 
 ```python
-from infrafabric.core.logistics import LogisticsDispatcher, Parcel
+from infrafabric.core.logistics import LogisticsDispatcher, Packet
 
 dispatcher = LogisticsDispatcher()
-parcel = Parcel(origin="librarian", contents={"question": "What is Series 2?"})
+packet = Packet(origin="librarian", contents={"question": "What is Series 2?"})
 
 # Dispatch with schema + type checks
-dispatcher.dispatch_to_redis(key="requests:latest", parcel=parcel, operation="set")
+dispatcher.dispatch_to_redis(key="requests:latest", packet=packet, operation="set")
 
 # Collect and deserialize
 restored = dispatcher.collect_from_redis(key="requests:latest", operation="get")
@@ -76,7 +76,7 @@ Every dispatch calls `_validate_schema` before writing to Redis and rejects mism
 
 ## Operations
 
-- `dispatch_to_redis(key, parcel, operation="set", use_msgpack=False)`
+- `dispatch_to_redis(key, packet, operation="set", use_msgpack=False)`
 - `collect_from_redis(key, operation="get", list_index=None, hash_field=None, use_msgpack=False)`
 - `key_exists`, `get_key_type`, `delete_key`, `clear_all`, `get_stats`
 

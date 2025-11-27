@@ -1,0 +1,219 @@
+# Repository Audit - InfraFabric S2
+
+## Root Listing (immediate)
+```
+CHANGELOG.md
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+MANIFESTO.md
+README.md
+SECURITY.md
+agents.md
+conf
+debug_analysis.md
+docs
+examples
+just
+justfile
+papers
+pyproject.toml
+refactor_swarm.log
+scripts
+src
+tests
+tools
+uv.lock
+```
+
+## Tree Snapshot (max depth 4, hidden/build artifacts excluded)
+```
+(find . -maxdepth 4 -not -path '*/.*')
+
+.                                  
+./debug_analysis.md
+./CODE_OF_CONDUCT.md
+./docs
+./docs/VERIFICATION_REPORT_2025-11-26.json
+./docs/IF_PROTOCOL_REGISTRY.md
+./docs/prompts
+./docs/prompts/SERIES2_EXEMPLARY_REPO_AUDIT_PROMPT.md
+./docs/prompts/CODEX_5.1_MAX_AUDIT_PROMPT.md
+./docs/VERIFICATION_SUMMARY.md
+./docs/verticals
+./docs/verticals/AIR_VERTICAL_GUIDE.md
+./docs/case_studies
+./docs/case_studies/ROI_ANALYSIS.md
+./docs/evidence
+./docs/evidence/infrafabric_url_manifest.csv
+./docs/evidence/INFRAFABRIC_CONSENSUS_REPORT.md
+./docs/evidence/infrafabric_eval_Gemini_20251115_103000.yaml
+./docs/evidence/merge_evaluations.py
+./docs/evidence/EVALUATION_QUICKSTART.md
+./docs/evidence/infrafabric_file_inventory.csv
+./docs/evidence/INFRAFABRIC_EVAL_REPORT.md
+./docs/evidence/INFRAFABRIC_SINGLE_EVAL.yaml
+./docs/evidence/infrafabric_metrics.json
+./docs/evidence/EVALUATION_FILES_SUMMARY.md
+./docs/evidence/INFRAFABRIC_EVAL_GPT-5.1-CODEX-CLI_20251115T133400Z.yaml
+./docs/evidence/INFRAFABRIC_EVALUATION_REPORT.html
+./docs/evidence/DEBUG_SESSION_PROMPT_GPT-5.1-CODEX-CLI_20251115T145456Z.md
+./docs/evidence/IF_COMPONENT_INVENTORY.yaml
+./docs/evidence/INFRAFABRIC_EVAL_PASTE_PROMPT.txt
+./docs/evidence/INFRAFABRIC_COMPREHENSIVE_EVALUATION_PROMPT.md
+./docs/evidence/EVALUATION_WORKFLOW_README.md
+./docs/evidence/INFRAFABRIC_EVAL_GPT-5.1-CODEX-CLI_20251115T145456Z.yaml
+./docs/debates
+./docs/debates/001_genesis_structure.md
+./docs/governance
+./docs/governance/GUARDIAN_COUNCIL_ORIGINS.md
+./docs/IF_PROTOCOL_SUMMARY.md
+./docs/narratives
+./docs/narratives/CHRONICLES_EP19_THE_GREAT_CONSOLIDATION.md
+./docs/narratives/INFRAFABRIC_DECISION_TIMELINE.json
+./docs/narratives/CHRONICLES_TWIST_THE_AWAKENING.md
+./docs/narratives/INFRAFABRIC_CHRONOLOGY_SUMMARY.md
+./docs/narratives/timeline_readme.md
+./docs/archive
+./docs/archive/legacy_root
+./docs/archive/legacy_root/docs_summaries
+./docs/archive/legacy_root/v3.2
+./docs/archive/legacy_root/VESICLE_COMPLETION_REPORT.md
+./docs/archive/legacy_root/annexes
+./docs/archive/legacy_root/philosophy
+./docs/archive/legacy_root/evolution
+./docs/archive/legacy_root/arbitration_archive
+./docs/archive/legacy_root/council-archive
+./docs/archive/legacy_root/verticals
+./docs/archive/legacy_root/agents.md
+./docs/archive/legacy_root/schema
+./docs/archive/legacy_root/tools
+./docs/archive/legacy_root/intelligence-tests
+./docs/archive/legacy_root/metrics
+./docs/archive/legacy_root/examples
+./docs/archive/legacy_root/papers
+./docs/archive/legacy_root/SESSION-RESUME.md
+./docs/archive/legacy_root/data
+./docs/archive/universe
+./docs/archive/universe/FILE_TREE.txt
+./docs/archive/universe/PHASE_2_MANIFEST.txt
+./docs/archive/universe/PHASE_4_COMPLETE_REPORT.md
+./docs/archive/universe/space
+./docs/archive/universe/PHASE_1_COMPLETION_REPORT.txt
+./docs/archive/universe/README.md
+./docs/archive/universe/future
+./docs/archive/universe/feature
+./docs/archive/universe/OPERATION_UNIVERSE_ROADMAP.md
+./docs/archive/universe/time
+./docs/archive/misc
+... (numerous archived reports and scans) ...
+./docs/api
+./docs/api/API_ROADMAP.md
+./docs/api/sip
+./docs/api/vmix
+./docs/api/README.md
+./docs/api/integrations
+./docs/api/webrtc
+./docs/recovery
+./docs/recovery/MISSING_ASSETS_REPORT.md
+./docs/recovery/LOST_KNOWLEDGE_ARTIFACTS.md
+./docs/architecture
+./docs/architecture/IF_FOUNDATIONS.md
+./MANIFESTO.md
+./tests
+./tests/test_yologuard.py
+./tests/test_smoke.py
+./tests/security/test_yologuard.py
+./tests/test_s2_end_to_end.py
+./tests/test_librarian_integration.py
+./pyproject.toml
+./agents.md
+./scripts
+./scripts/simulate_debate.py
+./scripts/redis_protocol_scanner.py
+./scripts/audit_redis.py
+./scripts/migrate_context.py
+./scripts/haiku_swarm.sh
+./README.md
+./just
+./tools
+./tools/redis_migration_config.env.example
+./tools/migrate_memory.py
+./tools/sqlite_to_redis_migration.py
+./tools/refactor_swarm.py
+./tools/REDIS_MIGRATION_README.md
+./tools/redis_migration_simulation.py
+./tools/seed_verticals.py
+./examples
+./examples/drone_flight_demo.py
+./papers
+./papers/IF-SWARM-S2-COMMS.md
+./uv.lock
+./SECURITY.md
+./CHANGELOG.md
+./conf
+./conf/base.yaml
+./conf/hydra
+./src
+./src/core
+./src/core/state/air_schema.py
+./src/core/governance/README.md
+./src/core/governance/guardian.py
+./src/core/logistics/packet.py
+./src/core/logistics/workers/haiku_poller.py
+./src/core/logistics/workers/sonnet_poller.py
+./src/core/logistics/redis_swarm_coordinator.py
+./src/core/integrations_stub_notice.txt
+./src/config/lexicons/*.json (20+ industry lexicons, including drones/mil-*)
+./src/infrafabric/core/... (governance, logistics, security, services)
+./src/integrations/physical/drone_fleet_adapter.py
+./src/integrations/physical/ros2_bridge.py
+./src/integrations/physical/opentrons_adapter.py
+./src/integrations/physical/qiskit_adapter.py
+./src/integrations/broadcast/sip_h323_gateway.py
+./src/integrations/broadcast/vmix_adapter.py
+./src/integrations/broadcast/ndi_sip_bridge.py
+./src/integrations/blackmagic/BMD_MATRIX_MANIFEST.json
+./src/integrations/blackmagic/redis_schema/VIDEOHUB_REDIS_SCHEMA.json
+```
+
+**Specific checks:**
+- `restored_s2/`: removed.
+- `infrafabric-all-branches/` extraction folder: not present.
+- Loose root Python files: none observed; code lives under `src/`.
+
+## Branch Map (`git branch -a`)
+```
+* master
+  yologuard/v3-publish
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/claude/cli-witness-optimise-011CV2nzozFeHipmhetrw5nk
+  remotes/origin/claude/cloud-providers-011CV2nnsyHT4by1am1ZrkkA
+  remotes/origin/claude/coordination-011CV2nnsyHT4by1am1ZrkkA
+  remotes/origin/claude/debug-session-freezing-011CV2mM1FVCwsC8GoBR2aQy
+  remotes/origin/claude/gedimat-cloud-infrastructure-01D9cjQKY1Bu6sccAvi5Unn9
+  remotes/origin/claude/gedimat-logistics-optimization-018FV2Sa5LnT4vDUTq5ipvaX
+  remotes/origin/claude/gedimat-v3-3-deployment-01Pr63R6o2UqQGmxA2VtF12B
+  remotes/origin/claude/h323-guardian-council-011CV2ntGfBNNQYpqiJxaS8B
+  remotes/origin/claude/if-bus-sip-adapters-011CV2yyTqo7mStA7KhuUszV
+  remotes/origin/claude/incomplete-request-011CV24ywdDeCx4vv5gH6e5R
+  remotes/origin/claude/infrafabric-air-vertical-018buWp3PxZHku9davFFAcRe
+  remotes/origin/claude/ndi-witness-streaming-011CV2niqJBK5CYADJMRLNGs
+  remotes/origin/claude/payment-billing-011CV2nnsyHT4by1am1ZrkkA
+  remotes/origin/claude/realtime-parallel-sessions-011CV2o8kLhZZEHUtjFZPazM
+  remotes/origin/claude/review-cloud-handover-docs-011CUyURbbbYv3twL6dH4r3v
+  remotes/origin/claude/sip-communication-011CV2nnsyHT4by1am1ZrkkA
+  remotes/origin/claude/sip-escalate-integration-011CV2nwLukS7EtnB5iZUUe7
+  remotes/origin/claude/webrtc-agent-mesh-011CV2nnsyHT4by1am1ZrkkA
+  remotes/origin/claude/webrtc-final-push-011CV2nnsyHT4by1am1ZrkkA
+  remotes/origin/claude/webrtc-phase2-3-011CV2nnsyHT4by1am1ZrkkA
+  remotes/origin/evaluation-system
+  remotes/origin/gedimat-evidence-final
+  remotes/origin/gedimat-v3-deploy
+  remotes/origin/master
+  remotes/origin/swarm/w2-a6-checklist
+  remotes/origin/swarm/w2-a6-ci-workflow
+  remotes/origin/swarm/w2-citation-schemas
+  remotes/origin/swarm/w2-philosophy-map
+  remotes/origin/test-ci-validation
+  remotes/origin/yologuard/v3-publish
+```
