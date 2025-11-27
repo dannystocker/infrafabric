@@ -1,0 +1,71 @@
+# InfraFabric Air Vertical - Drone Fleet Integration Dependencies
+# OPERATION SKYNET Requirements
+
+# ============================================================================
+# CORE DEPENDENCIES
+# ============================================================================
+
+# MAVLink/MAVSDK - PX4 and ArduPilot Autopilot Control
+mavsdk>=2.10.0              # Async/await Python bindings for MAVLink
+
+# MQTT Client - DJI Enterprise Drone Communication
+paho-mqtt>=2.1.0            # MQTT client library (supports v1.x and v2.x)
+
+# HTTP Client - Cursor-on-Target REST API
+requests>=2.31.0            # HTTP library for FreeTAKServer REST API
+
+# ============================================================================
+# INFRAFABRIC S2 DEPENDENCIES (from parent project)
+# ============================================================================
+
+# Data Validation & Schemas
+pydantic>=2.5.0             # "No Schema, No Write" - required for air_schema.py
+
+# Redis Client (for Vesicle transport)
+redis>=5.0.0                # Redis client for state management
+
+# Async Support
+asyncio                     # Built-in, but required for async drone operations
+
+# ============================================================================
+# OPTIONAL ENHANCEMENTS
+# ============================================================================
+
+# Geospatial Libraries (for mission planning)
+geopy>=2.4.0                # Geographic calculations (optional)
+pyproj>=3.6.0               # Coordinate transformations (optional)
+
+# XML Parsing (for CoT)
+lxml>=5.0.0                 # Faster XML parsing than built-in minidom (optional)
+
+# Testing
+pytest>=7.4.0               # Unit testing framework
+pytest-asyncio>=0.21.0      # Async test support
+
+# Type Checking
+mypy>=1.7.0                 # Static type checker
+
+# Logging
+loguru>=0.7.0               # Enhanced logging (optional alternative to stdlib logging)
+
+# ============================================================================
+# HARDWARE-SPECIFIC DEPENDENCIES (install only if needed)
+# ============================================================================
+
+# For Raspberry Pi (ARMv6/ARMv7) - install system package instead
+# sudo apt-get install python3-grpcio
+
+# For GPU-accelerated AI (obstacle detection, visual odometry)
+# opencv-python>=4.8.0      # Computer vision library
+# torch>=2.0.0              # PyTorch for AI models
+
+# ============================================================================
+# DEVELOPMENT TOOLS
+# ============================================================================
+
+# Code Formatting
+black>=23.11.0              # Code formatter
+ruff>=0.1.6                 # Fast Python linter
+
+# Pre-commit Hooks
+pre-commit>=3.5.0           # Git hooks for quality checks
