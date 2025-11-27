@@ -111,7 +111,7 @@ Scan `docs/IF_PROTOCOL_REGISTRY.md` and cross-reference with actual code.
 | Protocol | Mentions | Code Location | Lines | Status |
 |----------|----------|---------------|-------|--------|
 | IF.guard | 9,176 | ??? | ??? | ??? |
-| IF.logistics | 1,811 | src/infrafabric/core/logistics/parcel.py | 672 | ACTIVE |
+| IF.logistics | 1,811 | src/infrafabric/core/logistics/packet.py | 672 | ACTIVE |
 ```
 
 **TASK 2.2:** Identify GHOST protocols (referenced but not implemented):
@@ -184,7 +184,7 @@ Check `finding:*` keys for IF.TTT compliance:
 Files to assess:
 - `src/infrafabric/core/governance/arbitrate.py` (945 lines)
 - `src/infrafabric/core/security/yologuard.py` (680 lines)
-- `src/infrafabric/core/logistics/parcel.py` (672 lines)
+- `src/infrafabric/core/logistics/packet.py` (672 lines)
 - `src/infrafabric/core/services/librarian.py` (410 lines)
 
 Check for:

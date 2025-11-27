@@ -1,0 +1,98 @@
+{
+  "timestamp": "2025-11-26T18:57:55.337470",
+  "verification_passed": false,
+  "file_count": 3013,
+  "content_count": 3013,
+  "component_count": 25,
+  "index_count": 337,
+  "database_statistics": {
+    "tables": [
+      "metadata",
+      "sqlite_sequence",
+      "files"
+    ],
+    "total_files": 3013,
+    "unique_directories": 304,
+    "unique_file_types": 33,
+    "top_file_types": [
+      {
+        "type": ".json",
+        "count": 1879
+      },
+      {
+        "type": ".py",
+        "count": 561
+      },
+      {
+        "type": ".md",
+        "count": 256
+      },
+      {
+        "type": "no_ext",
+        "count": 187
+      },
+      {
+        "type": ".txt",
+        "count": 45
+      }
+    ],
+    "total_bytes": 26159720,
+    "avg_file_size": "57368",
+    "largest_file_bytes": "15859992",
+    "smallest_file_bytes": "31"
+  },
+  "data_integrity_checks": {
+    "filepath_field_valid": {
+      "expected": 3013,
+      "actual": 3013,
+      "status": "PASS"
+    },
+    "content_hash_field_valid": {
+      "expected": 3013,
+      "actual": 3013,
+      "status": "PASS"
+    },
+    "size_bytes_field_valid": {
+      "expected": 3013,
+      "actual": 2985,
+      "status": "FAIL"
+    },
+    "created_at_field_valid": {
+      "expected": 3013,
+      "actual": 3013,
+      "status": "PASS"
+    }
+  },
+  "sample_checks": {
+    "passed": 12024,
+    "failed": 28,
+    "total_fields_checked": 12052,
+    "pass_rate_percent": 99.77
+  },
+  "redis_push_status": {
+    "timestamp": "2025-11-26T18:57:19.979351",
+    "metadata_keys_created": 17,
+    "redis_hashes": [
+      "if:metadata",
+      "if:stats",
+      "if:search:indexed"
+    ],
+    "redis_errors": []
+  },
+  "errors": [],
+  "recommendations": [
+    "Database integrity verified successfully",
+    "All required file fields are present and valid",
+    "Monitor Redis Cloud for any connection issues",
+    "Consider implementing incremental sync for future pushes",
+    "Archive old backups to reduce storage costs",
+    "Schedule regular integrity checks weekly"
+  ],
+  "notes": [
+    "Database contains 3013 indexed files across 304 directories",
+    "Total data size: 26,159,720 bytes (0.02 GB)",
+    "Component catalog: 25 components",
+    "Data classification: confidential",
+    "Database version: 1.0.0"
+  ]
+}

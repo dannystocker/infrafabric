@@ -2,13 +2,13 @@
 IF.LOGISTICS Dispatch Layer
 
 Provides standardized Redis operations with schema validation,
-type checking, and IF.TTT traceability for the Parcel metaphor.
+type checking, and IF.TTT traceability for the Packet metaphor.
 """
 
-from .parcel import (
+from .packet import (
     DispatchQueue,
     LogisticsDispatcher,
-    Parcel,
+    Packet,
     ParcelSchemaVersion,
     RedisKeyType,
 )
@@ -16,7 +16,7 @@ from .parcel import (
 __all__ = [
     "DispatchQueue",
     "LogisticsDispatcher",
-    "Parcel",
+    "Packet",
     "ParcelSchemaVersion",
     "RedisKeyType",
 ]

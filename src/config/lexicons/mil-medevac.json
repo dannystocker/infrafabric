@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "industry_id": "mil-medevac",
+  "industry_name": "Combat Medicine & MedEvac",
+  "cluster": "Defense/Support",
+  "killer_app": {
+    "title": "9-Line MedEvac with Dynamic Triage Routing",
+    "description": "Launch dustoff, surge medical posture, and route patients to best-fit facilities based on triage."
+  },
+  "protocols": [
+    {
+      "name": "NATO 9-Line",
+      "layer": "application"
+    }
+  ],
+  "lexicon": [
+    {
+      "term": "Launch Dustoff",
+      "context": "Dispatch medevac helicopter to grid",
+      "primitive": "IF.logistics.spawn",
+      "severity": "critical",
+      "requires": [
+        "two_person_rule"
+      ]
+    },
+    {
+      "term": "Mass Cal",
+      "context": "Activate surge mode for mass casualty",
+      "primitive": "IF.context.update",
+      "severity": "critical",
+      "requires": []
+    },
+    {
+      "term": "Triage Category",
+      "context": "Route patient to appropriate facility based on category",
+      "primitive": "IF.matrix.route",
+      "severity": "warn",
+      "requires": [
+        "medical_director_review"
+      ]
+    }
+  ],
+  "risks": {
+    "failure_modes": [
+      "Mismatched triage category",
+      "Delayed launch of medevac",
+      "Routing to over-capacity facility"
+    ],
+    "mitigations": [
+      "Clinician override and review of triage",
+      "Two-person approval for launches",
+      "Capacity-aware routing with live status checks"
+    ]
+  }
+}

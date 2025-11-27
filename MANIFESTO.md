@@ -20,7 +20,7 @@ We do not use `pip` manually. We do not use `conda`. We use `uv` for lightning-f
 The Transport metaphor is gone. We run a civic dispatch office:
 - **Parcels, not Vesicles:** Tracking IDs, packaging, and chain-of-custody headers.
 - **LogisticsDispatcher:** Validates schema and Redis type before any write.
-- **Fluent Requests:** `IF.Logistics.dispatch(parcel).to("council:inbox")`.
+- **Fluent Requests:** `IF.Logistics.dispatch(packet).to("council:inbox")`.
 
 ## IV. THE LAW OF STATE (REDIS)
 **"No Schema, No Write."**  

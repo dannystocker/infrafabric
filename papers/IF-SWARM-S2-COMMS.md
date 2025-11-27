@@ -13,7 +13,7 @@ InfraFabric’s Series 2 swarms run like a fleet of motorbikes cutting through t
 
 ## Executive Summary
 - **Problem:** Independent agents duplicate work, miss conflicts, and hide uncertainties.  
-- **Pattern:** Redis Bus + Parcel envelopes + IF.search (8-pass) + SHARE/HOLD/ESCALATE.  
+- **Pattern:** Redis Bus + Packet envelopes + IF.search (8-pass) + SHARE/HOLD/ESCALATE.  
 - **Outcome:** Intra-agent comms improved IF.TTT from 4.2 → 5.0 (v1→v3) in Epic dossier runs; conflicts surfaced and human escalation worked.  
 - **Cost/Speed:** Instance #8 measured ~0.071 ms Redis latency (140× faster than JSONL dumps) enabling parallel Haiku swarms.  
 - **Risk:** Hygiene debt remains (WRONGTYPE keys seen on 2025-11-26 scan); cryptographic signatures are specified but not enforced in code.  
@@ -28,7 +28,7 @@ InfraFabric’s Series 2 swarms run like a fleet of motorbikes cutting through t
 ---
 
 ## Communication Semantics
-1) **Envelope:** Parcel (tracking_id, origin, dispatched_at, contents, chain_of_custody).  
+1) **Envelope:** Packet (tracking_id, origin, dispatched_at, contents, chain_of_custody).  
 2) **Speech Acts (FIPA-style):**  
    - `inform` (claim + confidence + citations)  
    - `request` (ask peer to verify / add source)  
@@ -50,7 +50,7 @@ InfraFabric’s Series 2 swarms run like a fleet of motorbikes cutting through t
 - `swarm:registry:{id}` (string): swarm roster (agents, roles, artifacts).  
 - `swarm:remediation:{date}` (string): hygiene scans (keys scanned, wrongtype found, actions).  
 - `bus:queue:{topic}` (list) [optional]: FIFO dispatch for workers in waiting mode.  
-- **Parcel fields in values:** embed `tracking_id`, `origin`, `dispatched_at`, `chain_of_custody` in serialized JSON/msgpack.
+- **Packet fields in values:** embed `tracking_id`, `origin`, `dispatched_at`, `chain_of_custody` in serialized JSON/msgpack.
 
 ---
 
@@ -70,7 +70,7 @@ Passes (IF-foundations.md) map to bus actions:
 ## S2 Swarm Behavior (expected)
 - **Task Claiming:** Workers poll `task:*` or `bus:queue:*`; set `assignee` and `status=in_progress`; release if blocked.  
 - **Idle Help:** Idle agents pull oldest unassigned task or assist on a task with `status=needs_assist`.  
-- **Unblocking:** Blocked agent posts `escalate` Parcel; peers or coordinator pick it up.  
+- **Unblocking:** Blocked agent posts `escalate` Packet; peers or coordinator pick it up.  
 - **Cross-Swarm Aid:** Registries (`swarm:registry:*`) list active swarms; helpers can read findings from another swarm if allowed.  
 - **Conflict Detection:** When two findings on same topic differ > threshold, raise `escalate` + attach both citations.  
 - **Hygiene:** Periodic scans (e.g., `swarm:remediation:redis_cleanup:*`) to clear WRONGTYPE/expired debris.  
@@ -95,7 +95,7 @@ Passes (IF-foundations.md) map to bus actions:
 ---
 
 ## Recommendations (to productionize)
-1. **Enforce Parcels:** wrap all bus writes in Parcel with custody headers.  
+1. **Enforce Parcels:** wrap all bus writes in Packet with custody headers.  
 2. **Signatures:** implement Ed25519 sign/verify on every message; reject unsigned.  
 3. **Schema guard:** add ruff/mypy + runtime validators for bus payloads; auto-HOLD malformed writes.  
 4. **Queues + leases:** use `bus:queue:*` with leases to avoid double-claim; requeue on timeout.  

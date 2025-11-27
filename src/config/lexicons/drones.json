@@ -1,0 +1,632 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "InfraFabric Air Vertical Lexicon",
+  "description": "Industry jargon mapping for drone operations to IF primitives",
+  "version": "2.0.0",
+  "updated": "2025-11-27",
+
+  "terminology_mappings": {
+    "RTL": {
+      "full_name": "Return To Launch",
+      "description": "Command drone to autonomously return to takeoff location",
+      "if_primitive": "IF.logistics.spawn",
+      "if_action": "rtl",
+      "aliases": ["return_to_home", "RTH", "go_home", "abort_and_return"],
+      "protocol_support": {
+        "MAVLINK": {
+          "supported": true,
+          "method": "await drone.action.return_to_launch()",
+          "notes": "PX4/ArduPilot native support"
+        },
+        "COT": {
+          "supported": false,
+          "method": null,
+          "notes": "Operator-controlled via ATAK - informational PLI only"
+        },
+        "DJI": {
+          "supported": true,
+          "method": "dock_return_aircraft",
+          "notes": "DJI Dock automatically returns to dock"
+        }
+      }
+    },
+
+    "Loiter": {
+      "full_name": "Loiter/Hold Position",
+      "description": "Hold current position and altitude, circling if necessary",
+      "if_primitive": "IF.context.update",
+      "if_action": "set_flight_mode",
+      "parameters": {
+        "mode": "LOITER"
+      },
+      "aliases": ["hold", "station_keep", "pause", "hover"],
+      "protocol_support": {
+        "MAVLINK": {
+          "supported": true,
+          "method": "set_flight_mode(FlightMode.HOLD)",
+          "notes": "Called HOLD in PX4, LOITER in ArduPilot"
+        },
+        "COT": {
+          "supported": false,
+          "method": null,
+          "notes": "Manual operator control only"
+        },
+        "DJI": {
+          "supported": true,
+          "method": "Mission pause via MQTT",
+          "notes": "Available during mission execution"
+        }
+      }
+    },
+
+    "Orbit": {
+      "full_name": "Orbit Point of Interest",
+      "description": "Fly circular pattern around specified GPS coordinate",
+      "if_primitive": "IF.matrix.route",
+      "if_action": "orbit",
+      "parameters": {
+        "latitude": "float",
+        "longitude": "float",
+        "radius_m": "float",
+        "velocity_m_s": "float",
+        "yaw_behavior": "face_center | hold_initial | free"
+      },
+      "aliases": ["circle", "poi_orbit", "circular_pattern"],
+      "protocol_support": {
+        "MAVLINK": {
+          "supported": true,
+          "method": "await drone.action.orbit(radius_m, velocity_m_s, yaw_behavior, lat, lon, altitude_m)",
+          "notes": "Native support in ArduPilot and PX4"
+        },
+        "COT": {
+          "supported": false,
+          "method": null,
+          "notes": "Can inject waypoint markers for manual operator setup"
+        },
+        "DJI": {
+          "supported": true,
+          "method": "Waypoint mission with circular pattern",
+          "notes": "Define as WPML mission with circular waypoints"
+        }
+      }
+    },
+
+    "Waypoints": {
+      "full_name": "Autonomous Waypoint Mission",
+      "description": "Execute pre-planned GPS waypoint sequence",
+      "if_primitive": "IF.logistics.spawn",
+      "if_action": "execute_mission",
+      "parameters": {
+        "mission_id": "string",
+        "waypoints": "array<{lat, lon, alt, speed, actions}>"
+      },
+      "aliases": ["auto_mission", "route", "flight_plan", "survey_pattern"],
+      "protocol_support": {
+        "MAVLINK": {
+          "supported": true,
+          "method": "await drone.mission.upload_mission(mission_items)",
+          "notes": "QGroundControl mission format (.plan files)"
+        },
+        "COT": {
+          "supported": true,
+          "method": "POST waypoint markers as CoT XML to FreeTAKServer",
+          "notes": "Waypoints appear on ATAK tactical map for operator execution"
+        },
+        "DJI": {
+          "supported": true,
+          "method": "flighttask_prepare + flighttask_execute via MQTT",
+          "notes": "WPML (Waypoint Markup Language) KMZ format"
+        }
+      }
+    },
+
+    "Engage": {
+      "full_name": "Engage Target (Military)",
+      "description": "Direct drone sensors/weapons toward specified target",
+      "if_primitive": "IF.matrix.route",
+      "if_action": "point_gimbal",
+      "parameters": {
+        "latitude": "float",
+        "longitude": "float",
+        "altitude_m": "float",
+        "sensor_mode": "track | observe | designate"
+      },
+      "aliases": ["target", "track", "designate", "laser_on"],
+      "security_classification": "RESTRICTED",
+      "protocol_support": {
+        "MAVLINK": {
+          "supported": true,
+          "method": "await drone.gimbal.set_roi_location(lat, lon, alt)",
+          "notes": "ROI = Region of Interest - point gimbal at target"
+        },
+        "COT": {
+          "supported": true,
+          "method": "POST target CoT with event_type 'a-h-G' (hostile ground)",
+          "notes": "Shared situational awareness on ATAK"
+        },
+        "DJI": {
+          "supported": true,
+          "method": "gimbal_set_angle + camera_set_mode via MQTT",
+          "notes": "Enterprise drones support gimbal pointing and tracking"
+        }
+      }
+    },
+
+    "BLOS": {
+      "full_name": "Beyond Line of Sight",
+      "description": "Operations beyond visual/radio line of sight (requires relay/satellite)",
+      "if_primitive": "IF.context.update",
+      "if_action": "enable_blos_mode",
+      "parameters": {
+        "relay_type": "satellite | cellular | mesh | repeater"
+      },
+      "aliases": ["extended_range", "satellite_link", "over_horizon"],
+      "protocol_support": {
+        "MAVLINK": {
+          "supported": true,
+          "method": "Connection via satellite modem or mesh network",
+          "notes": "Requires hardware relay (Iridium, Starlink, RFD900x)"
+        },
+        "COT": {
+          "supported": true,
+          "method": "FreeTAKServer cloud relay",
+          "notes": "TAK server acts as BLOS relay for CoT messages"
+        },
+        "DJI": {
+          "supported": true,
+          "method": "DJI FlightHub 2 cloud platform",
+          "notes": "Cellular/satellite connectivity via DJI Cloud API"
+        }
+      }
+    },
+
+    "VLOS": {
+      "full_name": "Visual Line of Sight",
+      "description": "Operations where operator maintains visual contact with drone",
+      "if_primitive": "IF.context.update",
+      "if_action": "enable_vlos_mode",
+      "parameters": {
+        "max_range_m": 500,
+        "max_altitude_m": 120
+      },
+      "aliases": ["visual_range", "close_range", "direct_sight"],
+      "regulatory_notes": "Required for most civilian operations under FAA Part 107"
+    },
+
+    "Geofence": {
+      "full_name": "Geographic Boundary Enforcement",
+      "description": "Virtual boundary that prevents drone from entering restricted airspace",
+      "if_primitive": "IF.context.update",
+      "if_action": "set_geofence",
+      "parameters": {
+        "vertices": "array<{lat, lon}>",
+        "max_altitude_m": "float",
+        "action_on_breach": "RTL | LAND | HOLD"
+      },
+      "aliases": ["no_fly_zone", "boundary", "inclusion_fence", "exclusion_fence"],
+      "protocol_support": {
+        "MAVLINK": {
+          "supported": true,
+          "method": "await drone.geofence.upload_geofence(polygon)",
+          "notes": "PX4 and ArduPilot support polygon geofences"
+        },
+        "COT": {
+          "supported": false,
+          "method": null,
+          "notes": "Geofences managed by GCS/ATAK, not via CoT"
+        },
+        "DJI": {
+          "supported": true,
+          "method": "DJI GEO system (built-in)",
+          "notes": "DJI enforces geofences via FlySafe database"
+        }
+      }
+    },
+
+    "ADS-B": {
+      "full_name": "Automatic Dependent Surveillance–Broadcast",
+      "description": "Transponder system for collision avoidance with manned aircraft",
+      "if_primitive": "IF.signal.ingest",
+      "if_action": "monitor_adsb",
+      "parameters": {
+        "alert_range_km": "float",
+        "auto_avoid": "boolean"
+      },
+      "aliases": ["transponder", "traffic_awareness", "collision_avoidance"],
+      "protocol_support": {
+        "MAVLINK": {
+          "supported": true,
+          "method": "await drone.transponder.set_rate(1)",
+          "notes": "Requires ADS-B hardware (uAvionix pingRX, etc.)"
+        },
+        "COT": {
+          "supported": true,
+          "method": "ADS-B data converted to CoT PLI messages",
+          "notes": "ATAK can display ADS-B traffic via TAK integrations"
+        },
+        "DJI": {
+          "supported": true,
+          "method": "AirSense system (Matrice 300/350)",
+          "notes": "Built-in ADS-B receiver on enterprise drones"
+        }
+      }
+    }
+  },
+
+  "failure_modes": {
+    "gps_spoofing": {
+      "description": "GPS signal manipulation causing incorrect position fix",
+      "severity": "critical",
+      "if_primitive": "IF.signal.ingest",
+      "detection_methods": [
+        "GPS velocity jump detection (>10 m/s instantaneous)",
+        "Multi-constellation cross-validation (GPS + GLONASS + Galileo)",
+        "Optical flow cross-check with barometer",
+        "Inertial navigation system (INS) consistency check"
+      ],
+      "mitigations": [
+        {
+          "name": "optical_flow_fallback",
+          "description": "Switch to visual odometry for position hold",
+          "if_action": "IF.context.update",
+          "parameters": {
+            "mode": "OPTICAL_FLOW",
+            "altitude_source": "barometer"
+          }
+        },
+        {
+          "name": "immediate_land",
+          "description": "Land immediately at current position",
+          "if_action": "IF.logistics.spawn",
+          "parameters": {
+            "action": "land"
+          }
+        },
+        {
+          "name": "hold_and_alert",
+          "description": "Hold position and alert operator",
+          "if_action": "IF.context.update",
+          "parameters": {
+            "mode": "HOLD",
+            "alert_operator": true
+          }
+        }
+      ],
+      "probability": "low",
+      "impact": "catastrophic"
+    },
+
+    "battery_critical": {
+      "description": "Battery level below safe threshold for continued flight",
+      "severity": "critical",
+      "if_primitive": "IF.signal.ingest",
+      "detection_methods": [
+        "Battery percentage < 20%",
+        "Voltage drop below 3.3V per cell (LiPo)",
+        "Estimated flight time remaining < 5 minutes",
+        "Battery temperature > 60°C (thermal runaway risk)"
+      ],
+      "mitigations": [
+        {
+          "name": "auto_rtl",
+          "description": "Automatically return to launch when battery < 25%",
+          "if_action": "IF.logistics.spawn",
+          "parameters": {
+            "action": "rtl",
+            "trigger_threshold": 0.25
+          }
+        },
+        {
+          "name": "emergency_land",
+          "description": "Land immediately when battery < 10%",
+          "if_action": "IF.logistics.spawn",
+          "parameters": {
+            "action": "land",
+            "trigger_threshold": 0.10
+          }
+        }
+      ],
+      "probability": "medium",
+      "impact": "high"
+    },
+
+    "signal_loss": {
+      "description": "Loss of communication link between GCS and drone",
+      "severity": "high",
+      "if_primitive": "IF.signal.ingest",
+      "detection_methods": [
+        "No heartbeat for > 3 seconds",
+        "RC link RSSI < -100 dBm",
+        "Telemetry timeout (no packets for > 5 seconds)"
+      ],
+      "mitigations": [
+        {
+          "name": "failsafe_rtl",
+          "description": "Return to launch on signal loss (default failsafe)",
+          "if_action": "IF.logistics.spawn",
+          "parameters": {
+            "action": "rtl",
+            "timeout_sec": 3
+          }
+        },
+        {
+          "name": "failsafe_land",
+          "description": "Land at current position (alternative failsafe)",
+          "if_action": "IF.logistics.spawn",
+          "parameters": {
+            "action": "land",
+            "timeout_sec": 3
+          }
+        },
+        {
+          "name": "failsafe_continue",
+          "description": "Continue mission autonomously (high-confidence missions only)",
+          "if_action": "IF.context.update",
+          "parameters": {
+            "mode": "AUTO",
+            "require_relink": false
+          }
+        }
+      ],
+      "probability": "medium",
+      "impact": "high"
+    },
+
+    "motor_failure": {
+      "description": "One or more motors stop functioning during flight",
+      "severity": "emergency",
+      "if_primitive": "IF.signal.ingest",
+      "detection_methods": [
+        "Motor current drop to zero during flight",
+        "Excessive attitude compensation (roll/pitch > 30° sustained)",
+        "Altitude loss despite throttle increase",
+        "Asymmetric vibration detected by IMU"
+      ],
+      "mitigations": [
+        {
+          "name": "emergency_land_degraded",
+          "description": "Attempt controlled landing with reduced control authority",
+          "if_action": "IF.logistics.spawn",
+          "parameters": {
+            "action": "land",
+            "mode": "degraded"
+          }
+        },
+        {
+          "name": "deploy_parachute",
+          "description": "Deploy ballistic parachute if installed",
+          "if_action": "IF.process.kill",
+          "parameters": {
+            "method": "parachute"
+          }
+        }
+      ],
+      "probability": "very_low",
+      "impact": "catastrophic",
+      "notes": "Multirotors with >4 motors may continue flight with reduced performance"
+    },
+
+    "sensor_malfunction": {
+      "description": "IMU, barometer, or other critical sensor failure",
+      "severity": "high",
+      "if_primitive": "IF.signal.ingest",
+      "detection_methods": [
+        "IMU health check failure",
+        "Barometer reports impossible altitude change (>50 m/s)",
+        "Compass deviation > 45° from GPS course",
+        "Sensor data out of physical bounds"
+      ],
+      "mitigations": [
+        {
+          "name": "sensor_redundancy_switch",
+          "description": "Switch to redundant sensor (if available)",
+          "if_action": "IF.context.update",
+          "parameters": {
+            "primary_sensor": "IMU2",
+            "fallback_sensor": "IMU3"
+          }
+        },
+        {
+          "name": "limited_operation_mode",
+          "description": "Reduce flight envelope and return to base",
+          "if_action": "IF.logistics.spawn",
+          "parameters": {
+            "action": "rtl",
+            "max_speed": 5,
+            "max_climb_rate": 2
+          }
+        }
+      ],
+      "probability": "low",
+      "impact": "high"
+    },
+
+    "collision_risk": {
+      "description": "Imminent collision with obstacle, terrain, or other aircraft",
+      "severity": "critical",
+      "if_primitive": "IF.matrix.route",
+      "detection_methods": [
+        "Proximity sensor < 5m range",
+        "ADS-B traffic within 500m horizontal, 150m vertical",
+        "Terrain database shows ground elevation > current altitude",
+        "Visual AI obstacle detection (camera-based)"
+      ],
+      "mitigations": [
+        {
+          "name": "auto_climb",
+          "description": "Climb immediately to clear obstacle",
+          "if_action": "IF.matrix.route",
+          "parameters": {
+            "action": "climb",
+            "rate_m_s": 5,
+            "target_alt_offset": 50
+          }
+        },
+        {
+          "name": "vector_away",
+          "description": "Change course away from collision vector",
+          "if_action": "IF.matrix.route",
+          "parameters": {
+            "action": "evade",
+            "heading_change": 90,
+            "speed": "max"
+          }
+        },
+        {
+          "name": "immediate_hold",
+          "description": "Stop all horizontal movement and hold position",
+          "if_action": "IF.context.update",
+          "parameters": {
+            "mode": "HOLD"
+          }
+        }
+      ],
+      "probability": "low",
+      "impact": "catastrophic"
+    },
+
+    "weather_abort": {
+      "description": "Weather conditions exceed safe operating limits",
+      "severity": "high",
+      "if_primitive": "IF.signal.ingest",
+      "detection_methods": [
+        "Wind speed > 15 m/s (33 mph)",
+        "Precipitation detected (rain sensor or camera)",
+        "Temperature < -10°C or > 50°C",
+        "Visibility < 3 statute miles (VLOS requirement)",
+        "Cloud ceiling < 500 ft AGL"
+      ],
+      "mitigations": [
+        {
+          "name": "abort_and_rtl",
+          "description": "Abort mission and return to launch",
+          "if_action": "IF.logistics.spawn",
+          "parameters": {
+            "action": "rtl",
+            "reason": "weather"
+          }
+        },
+        {
+          "name": "land_nearest_safe_zone",
+          "description": "Land at nearest pre-identified safe landing zone",
+          "if_action": "IF.logistics.spawn",
+          "parameters": {
+            "action": "land",
+            "location": "nearest_safe_zone"
+          }
+        }
+      ],
+      "probability": "medium",
+      "impact": "medium"
+    },
+
+    "geofence_breach": {
+      "description": "Drone approaching or crossing geofence boundary",
+      "severity": "high",
+      "if_primitive": "IF.matrix.route",
+      "detection_methods": [
+        "GPS position within 50m of geofence boundary",
+        "Current heading will cross boundary within 10 seconds",
+        "Altitude exceeds maximum allowed ceiling"
+      ],
+      "mitigations": [
+        {
+          "name": "auto_reverse",
+          "description": "Reverse course to stay within geofence",
+          "if_action": "IF.matrix.route",
+          "parameters": {
+            "action": "return_to_boundary",
+            "offset_m": 100
+          }
+        },
+        {
+          "name": "fence_rtl",
+          "description": "Return to launch immediately",
+          "if_action": "IF.logistics.spawn",
+          "parameters": {
+            "action": "rtl"
+          }
+        },
+        {
+          "name": "fence_land",
+          "description": "Land immediately before crossing boundary",
+          "if_action": "IF.logistics.spawn",
+          "parameters": {
+            "action": "land"
+          }
+        }
+      ],
+      "probability": "low",
+      "impact": "high",
+      "regulatory_notes": "Geofence breach may violate FAA regulations or controlled airspace"
+    }
+  },
+
+  "operational_contexts": {
+    "civilian_commercial": {
+      "description": "Commercial drone operations (Part 107 in US)",
+      "regulatory_framework": "FAA Part 107",
+      "typical_protocols": ["MAVLINK", "DJI"],
+      "required_equipment": [
+        "Remote pilot certificate",
+        "ADS-B receiver (recommended)",
+        "Visual observer (BLOS operations)",
+        "Waiver for night/over people operations"
+      ],
+      "max_altitude_ft": 400,
+      "max_speed_kts": 100,
+      "vlos_required": true
+    },
+
+    "military_tactical": {
+      "description": "Military/defense drone operations",
+      "regulatory_framework": "Military airspace coordination",
+      "typical_protocols": ["MAVLINK", "COT"],
+      "required_equipment": [
+        "Encrypted communications",
+        "IFF transponder",
+        "Secure CoT messaging",
+        "Datalink encryption"
+      ],
+      "max_altitude_ft": "classified",
+      "vlos_required": false,
+      "security_clearance": "required"
+    },
+
+    "public_safety": {
+      "description": "First responder operations (fire, police, SAR)",
+      "regulatory_framework": "FAA Part 107 + COA",
+      "typical_protocols": ["MAVLINK", "COT", "DJI"],
+      "required_equipment": [
+        "COA (Certificate of Waiver)",
+        "ATAK integration for coordination",
+        "Thermal camera (SAR)",
+        "Real-time video streaming"
+      ],
+      "max_altitude_ft": 400,
+      "vlos_required": false,
+      "special_provisions": "Can operate over people and at night with COA"
+    }
+  },
+
+  "integration_notes": {
+    "redis_key_patterns": {
+      "drone_state": "fleet:state:{drone_id}",
+      "mission": "fleet:mission:{mission_id}",
+      "formation": "fleet:formation:{formation_id}",
+      "failure_incident": "fleet:failure:{incident_id}",
+      "telemetry_stream": "fleet:telemetry:{drone_id}"
+    },
+    "vesicle_transport": {
+      "ttl_seconds": 300,
+      "schema_validation": "required",
+      "source_agent_prefix": "air-"
+    },
+    "governance_thresholds": {
+      "formation_change": "requires_pilot_approval",
+      "emergency_procedures": "auto_execute_with_notification",
+      "mission_abort": "requires_consensus",
+      "geofence_modification": "requires_safety_officer_approval"
+    }
+  }
+}
