@@ -41,18 +41,37 @@ PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..
 if PROJECT_ROOT not in sys.path:
     sys.path.append(PROJECT_ROOT)
 
+# Optional integrations - gracefully handle missing modules/classes
+CommunicationCascade = None
+DroneFleetAdapter = None
+ROS2Bridge = None
+QiskitAdapter = None
+OpentronsAdapter = None
+
 try:
-    from src.integrations.broadcast.sip_h323_gateway import CommunicationCascade
+    from src.integrations.broadcast.sip_h323_gateway import SIPH323Gateway as CommunicationCascade
+except (ModuleNotFoundError, ImportError):
+    pass
+
+try:
     from src.integrations.physical.drone_fleet_adapter import DroneFleetAdapter
+except (ModuleNotFoundError, ImportError):
+    pass
+
+try:
     from src.integrations.physical.ros2_bridge import ROS2Bridge
+except (ModuleNotFoundError, ImportError):
+    pass
+
+try:
     from src.integrations.physical.qiskit_adapter import QiskitAdapter
+except (ModuleNotFoundError, ImportError):
+    pass
+
+try:
     from src.integrations.physical.opentrons_adapter import OpentronsAdapter
-except ModuleNotFoundError:
-    CommunicationCascade = None  # type: ignore
-    DroneFleetAdapter = None  # type: ignore
-    ROS2Bridge = None  # type: ignore
-    QiskitAdapter = None  # type: ignore
-    OpentronsAdapter = None  # type: ignore
+except (ModuleNotFoundError, ImportError):
+    pass
 
 try:
     from restored_s2.src.core.governance.guardian import ActionContext, GuardianCouncil, GuardianDecision
@@ -102,12 +121,37 @@ class RedisSwarmCoordinator:
         self.parent_id = None
         self.guardian = guardian or GuardianCouncil()
 
-        # Integrations (limbs)
-        self.communication_cascade = CommunicationCascade(vmix_client, sip_client, pstn_client) if CommunicationCascade else None
-        self.ros2_bridge = ROS2Bridge(ros_client) if ROS2Bridge and ros_client else None
-        self.qiskit_adapter = QiskitAdapter(qiskit_backend) if QiskitAdapter and qiskit_backend else None
-        self.opentrons_adapter = OpentronsAdapter(pipette) if OpentronsAdapter and pipette else None
+        # Integrations (limbs) - optional, gracefully handle init failures
+        self.communication_cascade = None
+        self.ros2_bridge = None
+        self.qiskit_adapter = None
+        self.opentrons_adapter = None
         self.carcel_key = "carcel:dead_letters"
+
+        # Try to initialize optional integrations
+        if CommunicationCascade and any([vmix_client, sip_client, pstn_client]):
+            try:
+                self.communication_cascade = CommunicationCascade()
+            except Exception:
+                pass
+
+        if ROS2Bridge and ros_client:
+            try:
+                self.ros2_bridge = ROS2Bridge(ros_client)
+            except Exception:
+                pass
+
+        if QiskitAdapter and qiskit_backend:
+            try:
+                self.qiskit_adapter = QiskitAdapter(qiskit_backend)
+            except Exception:
+                pass
+
+        if OpentronsAdapter and pipette:
+            try:
+                self.opentrons_adapter = OpentronsAdapter(pipette)
+            except Exception:
+                pass
 
         # Test connection
         try:
