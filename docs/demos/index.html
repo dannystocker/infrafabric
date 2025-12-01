@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IF.deliberate - Natural Typing Demo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+      background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+      color: #e0e0e0;
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      color: #00d9ff;
+      margin-bottom: 10px;
+      font-size: 2.5em;
+      text-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
+    }
+
+    .subtitle {
+      color: #888;
+      margin-bottom: 40px;
+      font-size: 0.9em;
+    }
+
+    .demo-box {
+      background: #0a0a0a;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 30px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .demo-title {
+      color: #00d9ff;
+      margin-bottom: 20px;
+      font-size: 1.2em;
+      border-bottom: 1px solid #333;
+      padding-bottom: 10px;
+    }
+
+    #chat-message {
+      font-size: 18px;
+      line-height: 1.6;
+      min-height: 100px;
+      color: #e0e0e0;
+    }
+
+    .typing-text {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    .typing-cursor {
+      display: inline-block;
+      width: 10px;
+      height: 1.2em;
+      background: #00d9ff;
+      margin-left: 2px;
+      vertical-align: text-bottom;
+      animation: pulse 1.06s infinite;
+      box-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .controls {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      background: #00d9ff;
+      color: #0a0a0a;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.2s;
+      box-shadow: 0 4px 12px rgba(0, 217, 255, 0.3);
+    }
+
+    button:hover {
+      background: #00f0ff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 217, 255, 0.4);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    button:disabled {
+      background: #333;
+      color: #666;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    .feature-list {
+      margin-top: 20px;
+      color: #888;
+      font-size: 0.9em;
+    }
+
+    .feature-list li {
+      margin-bottom: 8px;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .feature-list li:before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: #00d9ff;
+    }
+
+    .highlight {
+      color: #00d9ff;
+      font-weight: bold;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .stat-box {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 6px;
+      padding: 15px;
+    }
+
+    .stat-label {
+      color: #666;
+      font-size: 0.8em;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    .stat-value {
+      color: #00d9ff;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .speed-control {
+      margin-top: 20px;
+      padding: 20px;
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 6px;
+    }
+
+    .speed-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .speed-value {
+      color: #00d9ff;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      height: 6px;
+      background: #222;
+      outline: none;
+      border-radius: 3px;
+      -webkit-appearance: none;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      background: #00d9ff;
+      cursor: pointer;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+    }
+
+    input[type="range"]::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      background: #00d9ff;
+      cursor: pointer;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+      border: none;
+    }
+
+    .speed-presets {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .speed-preset {
+      background: #222;
+      color: #888;
+      border: 1px solid #333;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85em;
+      transition: all 0.2s;
+    }
+
+    .speed-preset:hover {
+      background: #2a2a2a;
+      color: #00d9ff;
+      border-color: #00d9ff;
+    }
+
+    .speed-preset.active {
+      background: #00d9ff;
+      color: #0a0a0a;
+      border-color: #00d9ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>IF.deliberate</h1>
+    <div class="subtitle">The AI that shows you how it thinks</div>
+
+    <div class="demo-box">
+      <div class="demo-title">Live Demo: Natural Typing with Deliberate Word Replacement</div>
+
+      <div id="chat-message"></div>
+
+      <div class="controls">
+        <button id="demo1">Demo 1: Simple Replacement</button>
+        <button id="demo2">Demo 2: Multiple Replacements</button>
+        <button id="demo3">Demo 3: Empathy Enhancement</button>
+        <button id="demo4">Demo 4: Technical Precision</button>
+        <button id="reset">Reset</button>
+      </div>
+
+      <div class="speed-control">
+        <div class="speed-label">
+          <span style="color: #888;">Typing Speed</span>
+          <span class="speed-value" id="speed-display">6.0x</span>
+        </div>
+        <input type="range" id="speed-slider" min="0.3" max="6" step="0.1" value="6.0">
+        <div class="speed-presets">
+          <button class="speed-preset" data-speed="0.5">Slow (0.5x)</button>
+          <button class="speed-preset" data-speed="1.0">Normal (1.0x)</button>
+          <button class="speed-preset" data-speed="2.5">Fast (2.5x)</button>
+          <button class="speed-preset" data-speed="4.0">Very Fast (4.0x)</button>
+          <button class="speed-preset active" data-speed="6.0">Empathy (6.0x)</button>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat-box">
+          <div class="stat-label">Typos Corrected</div>
+          <div class="stat-value" id="typo-count">0</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Words Replaced</div>
+          <div class="stat-value" id="replace-count">0</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Thinking Pauses</div>
+          <div class="stat-value" id="pause-count">0</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-box">
+      <div class="demo-title">Key Features</div>
+      <ul class="feature-list">
+        <li><span class="highlight">QWERTY keyboard distance-based typing speed</span> - farther keys take longer</li>
+        <li><span class="highlight">Frequent letter corrections</span> - realistic typos with immediate backspace</li>
+        <li><span class="highlight">Deliberate word replacements</span> - shows AI reconsidering word choice</li>
+        <li><span class="highlight">Blinking console cursor</span> - familiar terminal-like experience</li>
+        <li><span class="highlight">Natural thinking pauses</span> - between chunks of thought (300-1200ms)</li>
+        <li><span class="highlight">Chunked streaming</span> - thoughts come in bursts, not continuous flow</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="natural-typing-stream.js"></script>
+  <script>
+    const container = document.getElementById('chat-message');
+    let currentSpeed = 6.0;
+
+    const stream = new NaturalTypingStream(container, {
+      baseTypingSpeed: 80 / 6.0,  // Start at 6x speed (empathy default)
+      typoFrequency: 0.08, // Increased for demo visibility
+      replacementFrequency: 0.05,
+      thinkingPauseMin: 300 / 6.0,
+      thinkingPauseMax: 1200 / 6.0
+    });
+
+    let typoCount = 0;
+    let replaceCount = 0;
+    let pauseCount = 0;
+
+    // Speed control
+    const speedSlider = document.getElementById('speed-slider');
+    const speedDisplay = document.getElementById('speed-display');
+    const speedPresets = document.querySelectorAll('.speed-preset');
+
+    function updateSpeed(speed) {
+      currentSpeed = parseFloat(speed);
+      speedDisplay.textContent = currentSpeed.toFixed(1) + 'x';
+      speedSlider.value = currentSpeed;
+
+      // Update active preset
+      speedPresets.forEach(preset => {
+        const presetSpeed = parseFloat(preset.dataset.speed);
+        if (Math.abs(presetSpeed - currentSpeed) < 0.05) {
+          preset.classList.add('active');
+        } else {
+          preset.classList.remove('active');
+        }
+      });
+
+      // Update stream speed (by modifying base typing speed)
+      const baseSpeed = 80 / currentSpeed;
+      stream.options.baseTypingSpeed = baseSpeed;
+      stream.options.thinkingPauseMin = 300 / currentSpeed;
+      stream.options.thinkingPauseMax = 1200 / currentSpeed;
+    }
+
+    speedSlider.addEventListener('input', (e) => {
+      updateSpeed(e.target.value);
+    });
+
+    speedPresets.forEach(preset => {
+      preset.addEventListener('click', () => {
+        updateSpeed(preset.dataset.speed);
+      });
+    });
+
+    // Demo 1: Simple replacement
+    document.getElementById('demo1').addEventListener('click', async () => {
+      disableButtons();
+      resetStats();
+
+      const messageChunks = [
+        "Your approach is ",
+        "practical",
+        " and well thought out."
+      ];
+
+      const replacementMap = {
+        1: [
+          { index: 0, replacement: "brilliant" }
+        ]
+      };
+
+      replaceCount = 1;
+      pauseCount = 2;
+      updateStats();
+
+      await stream.streamMessage(messageChunks, replacementMap);
+      enableButtons();
+    });
+
+    // Demo 2: Multiple replacements
+    document.getElementById('demo2').addEventListener('click', async () => {
+      disableButtons();
+      resetStats();
+
+      const messageChunks = [
+        "I especially ",
+        "appreciate how you've ",
+        "considered the edge cases."
+      ];
+
+      const replacementMap = {
+        0: [
+          { index: 1, replacement: "deeply" }
+        ],
+        2: [
+          { index: 0, replacement: "anticipated" }
+        ]
+      };
+
+      replaceCount = 2;
+      pauseCount = 2;
+      updateStats();
+
+      await stream.streamMessage(messageChunks, replacementMap);
+      enableButtons();
+    });
+
+    // Demo 3: Empathy enhancement
+    document.getElementById('demo3').addEventListener('click', async () => {
+      disableButtons();
+      resetStats();
+
+      const messageChunks = [
+        "You're ",
+        "struggling ",
+        "with this challenge, ",
+        "and that's completely understandable."
+      ];
+
+      const replacementMap = {
+        1: [
+          { index: 0, replacement: "navigating" }
+        ]
+      };
+
+      replaceCount = 1;
+      pauseCount = 3;
+      updateStats();
+
+      await stream.streamMessage(messageChunks, replacementMap);
+      enableButtons();
+    });
+
+    // Demo 4: Technical precision
+    document.getElementById('demo4').addEventListener('click', async () => {
+      disableButtons();
+      resetStats();
+
+      const messageChunks = [
+        "This isn't just an ",
+        "issue",
+        ", it's an ",
+        "architectural flaw ",
+        "that needs systematic resolution."
+      ];
+
+      const replacementMap = {
+        1: [
+          { index: 0, replacement: "bug" }
+        ],
+        3: [
+          { index: 0, replacement: "fundamental design" }
+        ]
+      };
+
+      replaceCount = 2;
+      pauseCount = 4;
+      updateStats();
+
+      await stream.streamMessage(messageChunks, replacementMap);
+      enableButtons();
+    });
+
+    // Reset
+    document.getElementById('reset').addEventListener('click', () => {
+      stream.reset();
+      resetStats();
+    });
+
+    function disableButtons() {
+      document.querySelectorAll('button').forEach(btn => {
+        if (btn.id !== 'reset') btn.disabled = true;
+      });
+    }
+
+    function enableButtons() {
+      document.querySelectorAll('button').forEach(btn => btn.disabled = false);
+    }
+
+    function resetStats() {
+      typoCount = 0;
+      replaceCount = 0;
+      pauseCount = 0;
+      updateStats();
+    }
+
+    function updateStats() {
+      document.getElementById('typo-count').textContent = typoCount;
+      document.getElementById('replace-count').textContent = replaceCount;
+      document.getElementById('pause-count').textContent = pauseCount;
+    }
+  </script>
+</body>
+</html>
