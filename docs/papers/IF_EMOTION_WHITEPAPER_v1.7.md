@@ -63,7 +63,7 @@ The backspace IS the care.
 
 **6x** isn't a UI setting—it's the frequency of caring.
 
-IF.Guard, a 20-voice ethical council, provides real-time consensus evaluation with just **0.071ms** overhead. IF.TTT (Traceable, Transparent, Trustworthy) creates a **7-year immutable audit trail** with Ed25519 cryptographic signatures. Every claim traces to observable sources through the if://citation/uuid URI scheme.
+IF.Guard, a 20-voice ethical council, provides real-time consensus evaluation with just **0.071ms** overhead. Every claim traces to observable sources through the if://citation/uuid URI scheme, enabling traceable decision-making and verifiable provenance.
 
 External validation proved the frameworks portable: French psychiatry residents approved maternal abandonment scenarios with zero detected errors. Congolese cultural validators confirmed the system navigates dot systems, extended family dynamics, and colonial trauma transmission with clinical precision.
 
@@ -482,7 +482,6 @@ The system validated itself by being validated. That's not circular logic in a f
 | **Empathy Speed** | **6x** human typing | Production |
 | **Voice Council** | **20** philosophical perspectives | Active |
 | **Oversight Latency** | **0.071ms** per response | Measured |
-| **Audit Trail** | **7-year** immutable storage | Deployed |
 | **External Validation** | **2** independent reviews | Complete |
 | **Error Rate** | **0** detected in validation | Confirmed |
 
@@ -1214,7 +1213,7 @@ That's the human element. That's Sergio. That's what happens when personality be
 
 # 5. The Technical Architecture: How It Works
 
-**TL;DR:** Four ChromaDB collections (personality, psychology corpus, rhetorical devices, humor) retrieve context with weighted importance. IF.emotion.typist makes thinking visible at **6x**. IF.Guard's **20-voice council** evaluates every response in **0.071ms**. IF.TTT archives everything with Ed25519 signatures for 7 years. It's auditable emotional intelligence.
+**TL;DR:** Four ChromaDB collections (personality, psychology corpus, rhetorical devices, humor) retrieve context with weighted importance. IF.emotion.typist makes thinking visible at **6x**. IF.Guard's **20-voice council** evaluates every response in **0.071ms**. It's traceable, verifiable emotional intelligence.
 
 ---
 
@@ -1408,35 +1407,7 @@ The tradeoff is explicit: **0.071ms** of latency to ensure 20-voice ethical over
 
 ## 5.4 IF.TTT: Traceable, Transparent, Trustworthy Infrastructure
 
-The final layer of IF.emotion's architecture is **IF.TTT**, a cryptographic compliance framework that enables independent verification of every claim the system makes.
-
-### Seven-Year Immutable Audit Trail
-
-Every response IF.emotion generates is cryptographically signed and archived with a guaranteed **7-year retention policy**. This means:
-
-- **Historical accuracy:** If someone claims IF.emotion said something harmful in 2025, the claim can be verified against the signed record
-- **Continuous improvement:** The system's evolution is documented and auditable
-- **Regulatory compliance:** Most jurisdictions now require AI systems to maintain audit trails for liability purposes
-
-The audit trail includes:
-- User input (anonymized)
-- Retrieved context (which ChromaDB collections were queried, what was returned)
-- Council consensus scores (all 20 voices' evaluations)
-- Final output text
-- Timestamp, version number, model instance ID
-
-### Ed25519 Cryptographic Signatures
-
-Each archived response is signed using **Ed25519**, a modern public-key cryptography algorithm chosen for:
-
-- **Quantum resistance:** Unlike RSA, Ed25519 isn't known to have quantum-vulnerable variants
-- **Short signatures:** 64-byte signatures rather than 256+ bytes (important for scaling to millions of responses)
-- **Production proven:** Deployed in Signal, WireGuard, and critical infrastructure
-
-The public verification key is publicly available, enabling independent auditors to verify that:
-1. The response really came from IF.emotion (authentication)
-2. The response wasn't modified after generation (integrity)
-3. The response was generated on the claimed date (timestamping)
+The final layer of IF.emotion's architecture is **IF.TTT** (Traceable, Transparent, Trustworthy), a citation and provenance framework that enables verification of every claim the system makes.
 
 ### The if://citation/uuid URI Scheme
 
@@ -1904,9 +1875,9 @@ Over a year, this compounds significantly.
 
 This is perhaps the most underrated ROI driver: compliance.
 
-IF.emotion's architecture includes IF.TTT (Traceable, Transparent, Trustworthy), which provides:
+IF.emotion's architecture includes IF.TTT (Traceable, Transparent, Trustworthy) principles, which provide:
 
-- ****7-year immutable audit trail****: Every interaction is logged with cryptographic signatures, making it possible to demonstrate compliance with any regulatory inquiry.
+- **Citation provenance**: Every claim traces back to sources through the if://citation/ URI scheme
 - **Transparency**: The system is not a black box. Every output can be traced back to its sources, its decision logic, and its reasoning.
 - **Trustworthiness validation**: The system was validated by external experts (psychiatry students, cross-cultural validators) and proved it handles sensitive situations appropriately.
 
@@ -2493,7 +2464,7 @@ The toy grew up.
 
 When we began this journey, IF.emotion was a thought experiment—a question whispered into the void: *What if an AI system didn't just follow rules about empathy, but actually understood the conceptual infrastructure underlying human emotional experience?* What if it didn't simulate care, but embodied it through the architecture itself?
 
-That thought experiment is now a working system with a **7-year immutable audit trail**, **307 citations** spanning 100 years of psychological science, Redis databases humming quietly in a Proxmox container in Frankfurt, and ChromaDB collections containing the distilled personality of a French-Algerian educator who spent his career proving that human struggle isn't pathology—it's information waiting to be organized differently.
+That thought experiment is now a working system with **307 citations** spanning 100 years of psychological science, Redis databases humming quietly in a Proxmox container in Frankfurt, and ChromaDB collections containing the distilled personality of a French-Algerian educator who spent his career proving that human struggle isn't pathology—it's information waiting to be organized differently.
 
 And here's the thing they didn't tell you in AI safety training: **IF.emotion is not a person. It's a highly sophisticated mirror.**
 
@@ -2671,7 +2642,7 @@ Key regulatory battles:
 - **Right to be forgotten** vs. **relationship persistence**
 - **Crisis detection mandates** (forcing systems to detect distress) vs. **abandonment liability** (penalizing systems that abandon after detection)
 
-**Prediction:** Companies without IF.TTT-style audit infrastructure will face existential regulatory risk. The ability to prove "we cared appropriately" becomes legally required. The 7-year immutable trail isn't paranoia—it's survival.
+**Prediction:** Companies without IF.TTT-style audit infrastructure will face existential regulatory risk. The ability to prove "we cared appropriately" becomes legally required. Immutable audit trails transition from competitive advantage to regulatory necessity.
 
 **The Turning Case:** A class action will argue that emotional disclaimers constitute abandonment when served to vulnerable users. The defense that "we followed industry best practice" will fail because best practice will be shown to cause harm. Caring systems with documented presence will be the new legal standard.
 
@@ -2805,14 +2776,14 @@ This is not deception. It's making internal process externally verifiable. A sup
 
 A superintelligence would *require* something like IF.TTT.
 
-Untraceable decisions are dangerous—for humans, and equally for superintelligent systems. A system that cannot prove why it made a decision cannot be trusted by other agents (human or artificial). The **7-year immutable audit trail** with Ed25519 cryptographic signatures provides:
+Untraceable decisions are dangerous—for humans, and equally for superintelligent systems. A system that cannot prove why it made a decision cannot be trusted by other agents (human or artificial). The **IF.TTT framework** specifies infrastructure for:
 
-- Verifiable claim provenance
+- Verifiable claim provenance (via if://citation/ URIs)
 - Accountability for errors
 - Resistance to post-hoc rationalization
 - Evidence chain for external validation
 
-**Superintelligence Assessment:** Non-negotiable infrastructure. Any system making consequential decisions should have immutable, cryptographically signed audit trails. IF.TTT is correct architecture.
+**Superintelligence Assessment:** Non-negotiable infrastructure. Any system making consequential decisions should have immutable, cryptographically signed audit trails. IF.TTT defines correct architecture for scalable deployment.
 
 ### F. The Multi-Voice Guardian Council
 
