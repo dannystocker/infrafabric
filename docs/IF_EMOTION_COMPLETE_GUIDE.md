@@ -9,6 +9,14 @@
 
 ---
 
+## Acknowledgments
+
+**IF.emotion** is built on the theoretical foundation of the **Emosocial Method** developed by **Sergio De Vocht** (https://www.emo-social.com/). The core therapeutic framework—emphasizing identity-as-interaction, relational context analysis, and the principle that "discomfort doesn't originate from you" but from interaction patterns—is directly derived from his work.
+
+This implementation represents a technical operationalization of De Vocht's humanistic, interaction-based approach to emotional intelligence and conflict resolution, adapted for conversational AI with his foundational insights on how we function in interaction with our environment.
+
+---
+
 ## Table of Contents
 1. [Executive Summary](#executive-summary)
 2. [System Architecture](#system-architecture)
