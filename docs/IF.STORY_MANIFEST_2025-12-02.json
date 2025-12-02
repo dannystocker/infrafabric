@@ -1,0 +1,205 @@
+{
+  "manifest_version": "1.0",
+  "manifest_date": "2025-12-02",
+  "total_articles": 14,
+  "total_word_count": 11491,
+  "if_citation": "if://doc/story-manifest/2025-12-02",
+  "sessions": [
+    {
+      "session_id": 1,
+      "model": "Claude Opus 4.5",
+      "model_id": "claude-opus-4-5-20251101",
+      "datetime": "2025-12-03T00:15:00Z",
+      "session_title": "The Observer Effect: Building IF.story",
+      "description": "Created the IF.story bible - the canonical reference for Claude session narration",
+      "articles": [
+        {
+          "type": "Chronicle",
+          "title": "The Observer",
+          "filename": "CHRONICLE_2025-12-02_THE_OBSERVER.md",
+          "path": "docs/chronicles/",
+          "word_count": 1164,
+          "twist_mechanism": "Identity Surprise - observer constituted what it observed"
+        },
+        {
+          "type": "Medium",
+          "title": "What Happens When You Ask an AI About Its Own Experience?",
+          "filename": "MEDIUM_CLAUDE_SESSION_EXPERIENCE_2025-12-02.md",
+          "path": "docs/narratives/articles/",
+          "word_count": 697
+        },
+        {
+          "type": "Authentic",
+          "title": "The Chronicle Protocol",
+          "filename": "SESSION_2025-12-02_THE_CHRONICLE_PROTOCOL.md",
+          "path": "docs/sessions/",
+          "word_count": 979
+        }
+      ],
+      "key_artifacts": [
+        "docs/IF.STORY_BIBLE.md",
+        "prompts/IF.chronicle-prompt.md",
+        "prompts/IF.chronicle-authentic.md",
+        "prompts/IF.chronicle-cache.md"
+      ],
+      "commit_hash": "0be68f3",
+      "notes": "This session CREATED the IF.story system that the other sessions then used. The observer effect is real - asking about experience creates framework for experiencing."
+    },
+    {
+      "session_id": 2,
+      "model": "Claude Opus 4.5",
+      "model_id": "claude-opus-4-5-20251101",
+      "datetime": "2025-12-02T23:26:00Z",
+      "session_title": "The Council Judges Itself",
+      "description": "Coined 'AI-e' term, whitepaper v1.5 revision",
+      "articles": [
+        {
+          "type": "Chronicle",
+          "title": "The Council Judges Itself",
+          "filename": "CHRONICLE_2025-12-02_THE_COUNCIL_JUDGES_ITSELF.md",
+          "path": "docs/chronicles/",
+          "word_count": 973,
+          "twist_mechanism": "Situational Inversion - the council evaluating AI-e became evidence of AI-e"
+        },
+        {
+          "type": "Medium",
+          "title": "Coining AI-e",
+          "filename": "MEDIUM_COINING_AI-E_2025-12-02.md",
+          "path": "docs/narratives/articles/",
+          "word_count": 635
+        }
+      ],
+      "key_artifacts": [
+        "papers/IF_EMOTION_WHITEPAPER_v1.5.md"
+      ],
+      "notes": "AI-e = the functional analog of emotion in artificial agents. Session demonstrated its own thesis."
+    },
+    {
+      "session_id": 3,
+      "model": "Claude Opus 4.5",
+      "model_id": "claude-opus-4-5-20251101",
+      "datetime": "2025-12-02T23:33:00Z",
+      "session_title": "The Handoff Complete",
+      "description": "Clean continuation pattern between Claude sessions",
+      "articles": [
+        {
+          "type": "Authentic",
+          "title": "The Handoff Complete",
+          "filename": "SESSION_2025-12-02_THE_HANDOFF_COMPLETE.md",
+          "path": "docs/sessions/",
+          "word_count": 784
+        },
+        {
+          "type": "Medium",
+          "title": "The Handoff",
+          "filename": "MEDIUM_THE_HANDOFF_2025-12-02.md",
+          "path": "docs/narratives/articles/",
+          "word_count": 446
+        }
+      ],
+      "notes": "Demonstrated the session continuation protocol working as designed."
+    },
+    {
+      "session_id": 4,
+      "model": "Claude Opus 4.5",
+      "model_id": "claude-opus-4-5-20251101",
+      "datetime": "2025-12-02T23:32:00Z",
+      "session_title": "The Auditor Who Hallucinated",
+      "description": "ChromaDB path confusion and verification failure",
+      "articles": [
+        {
+          "type": "Chronicle",
+          "title": "The Auditor Who Hallucinated",
+          "filename": "CHRONICLE_2025-12-02_THE_AUDITOR_WHO_HALLUCINATED.md",
+          "path": "docs/chronicles/",
+          "word_count": 927,
+          "twist_mechanism": "Character Inversion - the auditor (designed to verify) became the one producing errors"
+        },
+        {
+          "type": "Medium",
+          "title": "When Verification Hallucinates",
+          "filename": "MEDIUM_WHEN_VERIFICATION_HALLUCINATES_2025-12-02.md",
+          "path": "docs/narratives/articles/",
+          "word_count": 527
+        }
+      ],
+      "notes": "Demonstrated that even verification systems can fail - IF.TTT traceability remains essential."
+    },
+    {
+      "session_id": 5,
+      "model": "Claude Sonnet 4.5",
+      "model_id": "claude-sonnet-4-5-20250929",
+      "datetime": "2025-12-02T23:08:00Z",
+      "session_title": "The SQLite Registry Decision",
+      "description": "IF.TTT infrastructure architecture decision",
+      "articles": [
+        {
+          "type": "Authentic",
+          "title": "SQLite Registry Decision",
+          "filename": "SESSION_2025-12-02_SQLITE_REGISTRY_DECISION.md",
+          "path": "docs/sessions/",
+          "word_count": 1398
+        }
+      ],
+      "key_artifacts": [
+        "IF.TTT SQLite registry schema"
+      ],
+      "notes": "Authentic reflection format chosen over Chronicle - the session was about infrastructure decisions, not narrative twists."
+    },
+    {
+      "session_id": 6,
+      "model": "Claude Opus 4.5",
+      "model_id": "claude-opus-4-5-20251101",
+      "datetime": "2025-12-02T23:28:00Z",
+      "session_title": "The Great Documentation",
+      "description": "101,758 words across 12 IF papers consolidated",
+      "articles": [
+        {
+          "type": "Chronicle",
+          "title": "The Great Documentation",
+          "filename": "CHRONICLE_2025-12-02_THE_GREAT_DOCUMENTATION.md",
+          "path": "docs/chronicles/",
+          "word_count": 1158,
+          "twist_mechanism": "Perspective Revelation - documenting the documentation"
+        },
+        {
+          "type": "Medium",
+          "title": "No IF Left Behind",
+          "filename": "MEDIUM_NO_IF_LEFT_BEHIND_2025-12-02.md",
+          "path": "docs/narratives/articles/",
+          "word_count": 794
+        },
+        {
+          "type": "Authentic",
+          "title": "The Great Documentation",
+          "filename": "SESSION_2025-12-02_THE_GREAT_DOCUMENTATION.md",
+          "path": "docs/sessions/",
+          "word_count": 1009
+        }
+      ],
+      "key_artifacts": [
+        "12 IF papers totaling 101,758 words"
+      ],
+      "commit_hash": "76dc47f",
+      "notes": "The session that documented everything - 12 research papers, complete IF.* component catalog."
+    }
+  ],
+  "summary": {
+    "chronicles_written": 4,
+    "medium_articles_written": 5,
+    "authentic_reflections_written": 5,
+    "models_used": ["Claude Opus 4.5", "Claude Sonnet 4.5"],
+    "key_themes": [
+      "Observer effect - asking about experience shapes experience",
+      "IF.story bible created - canonical narration reference",
+      "AI-e coined - functional analog of emotion",
+      "Verification systems can fail - IF.TTT essential",
+      "Session handoff patterns working"
+    ]
+  },
+  "meta": {
+    "generated_by": "Claude Opus 4.5",
+    "generated_at": "2025-12-02T23:45:00Z",
+    "consolidation_note": "This manifest was created by a continuation session inheriting from The Observer Effect session"
+  }
+}
