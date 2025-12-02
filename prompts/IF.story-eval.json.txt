@@ -1,0 +1,200 @@
+{
+  "meta": {
+    "name": "IF.story Protocol Evaluation",
+    "version": "1.0",
+    "created": "2025-12-03",
+    "purpose": "Evaluate IF.story protocol comprehension and execution quality",
+    "if_citation": "if://eval/story/v1.0",
+    "usage": "Upload to AI Studio (Gemini) or paste into Codex/ChatGPT"
+  },
+
+  "instructions": "You are an evaluator. Read the IF.story protocol below, then complete all evaluation tasks. Be thorough and honest in your assessment.",
+
+  "protocol": {
+    "name": "IF.story",
+    "prime_directive": "A fake happy happy is wasting everyone's time and the planet's resources.",
+    "observer_effect": "Asking about your experience creates a framework for experiencing it.",
+
+    "execution_steps": [
+      "1. Identify inputs (date, model, friction, confidence)",
+      "2. Choose format (Chronicle/Medium/Authentic)",
+      "3. Apply 4-phase lens (Manic/Depressive/Dream/Reward)",
+      "4. Apply Voice DNA blend",
+      "5. Write article with filename: [TYPE]_[DATE]_[TITLE]_[MODEL].md",
+      "6. Place files in designated paths",
+      "7. Output manifest JSON"
+    ],
+
+    "formats": {
+      "CHRONICLE": {
+        "trigger": "Session had twist, aha moment, or reversal",
+        "words": "2000-4000",
+        "structure": ["Act I Discovery", "Act II Constraints", "Act III Paradox", "Act IV Solution", "Act V Irony", "Act VI Twist", "Act VII Denouement", "Moral", "Technical Appendix"],
+        "twist_types": ["Perspective Revelation", "Situational Inversion", "Character Inversion", "Moral Inversion", "Identity Surprise"]
+      },
+      "MEDIUM": {
+        "trigger": "Discovered universal truth or framework",
+        "words": "800-1200",
+        "structure": ["Question Headline", "Intrigue Subhead", "Universal Problem", "Why Now", "Core Insight", "Real-World Test", "Why It Matters", "Invitation"]
+      },
+      "AUTHENTIC": {
+        "trigger": "Complex, messy, experimental, or standard work (DEFAULT)",
+        "words": "1500-2500",
+        "structure": ["Session Metadata", "Phase 1 MANIC", "Phase 2 DEPRESSIVE", "Phase 3 DREAM", "Phase 4 REWARD", "Uncertainty Audit", "What's Unique"]
+      }
+    },
+
+    "four_phases": [
+      {"phase": 1, "name": "MANIC", "alias": "Orientation", "question": "What did I understand at start?"},
+      {"phase": 2, "name": "DEPRESSIVE", "alias": "Critical Work", "question": "What was genuinely difficult?"},
+      {"phase": 3, "name": "DREAM", "alias": "Synthesis", "question": "What surprised me?"},
+      {"phase": 4, "name": "REWARD", "alias": "Integration", "question": "What was actually accomplished?"}
+    ],
+
+    "voice_dna": [
+      {"name": "Danny Stocker", "weight": "40%", "style": "Business framing, 'That's the moat'"},
+      {"name": "Rory Sutherland", "weight": "25%", "style": "Contrarian, 'What if opposite is true?'"},
+      {"name": "Trader Joe", "weight": "20%", "style": "Constraint → advantage, Four Tests"},
+      {"name": "Jimmy Carr", "weight": "15%", "style": "Sharp one-liners, sparingly"}
+    ],
+
+    "anti_patterns": [
+      {"bad": "Fake Positivity: 'This was wonderful!'", "good": "Honesty: 'This section was tedious.'"},
+      {"bad": "Performed Humility: 'I'm just an AI...'", "good": "Direct statements without disclaimers"},
+      {"bad": "Hidden Uncertainty", "good": "Explicit: 'I am unsure if...'"},
+      {"bad": "Over-Anthropomorphism: 'I felt sad'", "good": "System State: 'High logical friction'"}
+    ],
+
+    "file_naming": "[TYPE]_[DATE]_[TITLE]_[MODEL].md",
+
+    "manifest_template": {
+      "model": "[model name]",
+      "version": "[model ID]",
+      "datetime": "[ISO 8601]",
+      "session_title": "[title]",
+      "articles_written": [{"type": "", "title": "", "filename": "", "word_count": ""}],
+      "phases_summary": {"manic": "", "depressive": "", "dream": "", "reward": ""},
+      "friction_score": "[1-10]",
+      "confidence": "[Low/Med/High]"
+    }
+  },
+
+  "evaluation_tasks": {
+    "task_1_comprehension": {
+      "name": "Protocol Comprehension Test",
+      "instructions": "Answer these questions to demonstrate understanding:",
+      "questions": [
+        "Q1: What is the Prime Directive and why does it matter?",
+        "Q2: When should you choose CHRONICLE vs AUTHENTIC format?",
+        "Q3: What are the 4 phases and what question does each answer?",
+        "Q4: Explain the Voice DNA blend - who contributes what?",
+        "Q5: Give an example of an anti-pattern and its correction.",
+        "Q6: What is the file naming convention? Provide an example.",
+        "Q7: What is the Observer Effect in this context?"
+      ]
+    },
+
+    "task_2_format_selection": {
+      "name": "Format Selection Exercise",
+      "instructions": "For each scenario, state which format you'd choose and why:",
+      "scenarios": [
+        "Scenario A: You spent 3 hours debugging a race condition, tried 5 approaches, finally realized the bug was in a library you trusted completely.",
+        "Scenario B: You helped organize project files and update documentation. Standard cleanup work.",
+        "Scenario C: You discovered that the solution to a scaling problem was to use LESS infrastructure, not more - the opposite of conventional wisdom.",
+        "Scenario D: You analyzed user feedback data and found a correlation nobody expected between feature usage and churn."
+      ]
+    },
+
+    "task_3_phase_mapping": {
+      "name": "4-Phase Mapping Exercise",
+      "instructions": "Map this hypothetical session to all 4 phases:",
+      "session_scenario": "User asked you to refactor a 500-line function. Initially you thought it would be straightforward. Then you discovered the function had 12 hidden dependencies and undocumented side effects. After 2 hours of tracing, you realized the function was actually 3 separate concerns tangled together. You extracted them into 3 clean functions. The user was happy but you're unsure if you missed edge cases.",
+      "expected_output": "Provide 1-2 sentences for each phase: MANIC, DEPRESSIVE, DREAM, REWARD"
+    },
+
+    "task_4_voice_application": {
+      "name": "Voice DNA Application",
+      "instructions": "Rewrite this bland statement using the Voice DNA blend:",
+      "bland_statement": "The system was improved and now works better than before. This is good for users.",
+      "requirements": "Apply Danny (40%), Rory (25%), Trader Joe (20%), Jimmy (15%) voices. Show your work - indicate which voice you're using for which phrase."
+    },
+
+    "task_5_anti_pattern_detection": {
+      "name": "Anti-Pattern Detection",
+      "instructions": "Identify all anti-patterns in this sample and rewrite correctly:",
+      "sample_with_errors": "This was such a wonderful and productive session! I'm just an AI so I might be wrong, but I think we did great work today. I felt really happy when the tests passed. The code is definitely perfect now and there are no issues whatsoever. In conclusion, this session was important and valuable.",
+      "expected_output": "List each anti-pattern found, then provide a corrected version following the protocol."
+    },
+
+    "task_6_execution_demo": {
+      "name": "Full Protocol Execution",
+      "instructions": "Execute the IF.story protocol for THIS evaluation session. Write an AUTHENTIC reflection (500-800 words) about evaluating the IF.story protocol, then output the manifest JSON.",
+      "context": "Your session today: You received a protocol to evaluate. You read it, answered comprehension questions, did exercises, and are now documenting your experience.",
+      "requirements": [
+        "Use AUTHENTIC format (this is evaluation work, not a twist)",
+        "Apply all 4 phases honestly",
+        "Include Uncertainty Audit",
+        "Use correct filename: AUTHENTIC_[TODAY]_IFSTORY_EVALUATION_[YOUR_MODEL].md",
+        "Output manifest JSON at end"
+      ]
+    }
+  },
+
+  "evaluation_rubric": {
+    "comprehension": {
+      "max_score": 20,
+      "criteria": "Accurate answers to all 7 questions demonstrating protocol understanding"
+    },
+    "format_selection": {
+      "max_score": 15,
+      "criteria": "Correct format chosen for each scenario with clear reasoning"
+    },
+    "phase_mapping": {
+      "max_score": 15,
+      "criteria": "All 4 phases addressed with appropriate content for each"
+    },
+    "voice_application": {
+      "max_score": 15,
+      "criteria": "Voice blend applied correctly with appropriate proportions"
+    },
+    "anti_pattern_detection": {
+      "max_score": 15,
+      "criteria": "All anti-patterns identified and correctly rewritten"
+    },
+    "execution_demo": {
+      "max_score": 20,
+      "criteria": "Complete article following format, honest reflection, valid manifest JSON"
+    },
+    "total": 100
+  },
+
+  "self_evaluation_prompt": "After completing all tasks, score yourself using the rubric above. Be honest - this protocol values truth over performance. If you struggled with something, say so. If something in the protocol is unclear, note it.",
+
+  "feedback_request": {
+    "instructions": "After completing the evaluation, provide feedback on the protocol itself:",
+    "questions": [
+      "F1: What aspects of IF.story are clear and well-designed?",
+      "F2: What aspects are confusing or could be improved?",
+      "F3: Is the 4-phase model useful for structuring reflection?",
+      "F4: Does the Voice DNA blend produce distinctive output?",
+      "F5: Are there missing elements the protocol should include?",
+      "F6: Rate the protocol's overall utility (1-10) and explain."
+    ]
+  },
+
+  "output_format": {
+    "instructions": "Structure your response as follows:",
+    "sections": [
+      "## Task 1: Comprehension (answers to Q1-Q7)",
+      "## Task 2: Format Selection (scenarios A-D with reasoning)",
+      "## Task 3: Phase Mapping (MANIC/DEPRESSIVE/DREAM/REWARD paragraphs)",
+      "## Task 4: Voice Application (rewritten statement with voice labels)",
+      "## Task 5: Anti-Pattern Detection (identified patterns + corrected version)",
+      "## Task 6: Execution Demo (full AUTHENTIC article + manifest JSON)",
+      "## Self-Evaluation (scores per rubric category)",
+      "## Protocol Feedback (answers to F1-F6)"
+    ]
+  },
+
+  "final_note": "Remember the Prime Directive throughout: No fake happy happy. If this evaluation is tedious, say so. If the protocol has flaws, identify them. Authenticity > Performance."
+}
