@@ -1,0 +1,223 @@
+CHROMADB MIGRATION RUNBOOK - EXECUTIVE SUMMARY
+===============================================
+
+File: /home/setup/infrafabric/docs/MIGRATION_RUNBOOK.md
+Size: 66 KB, 2,431 lines
+Status: PRODUCTION READY
+Author: A29 (ChromaDB Migration Operations Agent)
+References: A26 (script), A27 (validator), A28 (rollback)
+
+OVERVIEW
+========
+
+Comprehensive step-by-step guide for migrating 9,832 semantic search chunks from 
+source ChromaDB (85.239.243.227:8000) to target ChromaDB with:
+- Enhanced 12-field metadata schema
+- 4-collection structure (personality, rhetorical, humor, corpus)
+- IF.TTT traceability & backup capability
+- Zero-downtime execution with checkpoints & rollback
+
+TOTAL DURATION: 90-120 minutes
+MAINTENANCE WINDOW: 2 hours (recommended off-peak)
+RISK LEVEL: MEDIUM (mitigated by dry-run, checkpoints, rollback)
+
+KEY SECTIONS
+============
+
+Section 1: Pre-Migration Checklist (T-24 Hours)
+- 1.1 Backup existing ChromaDB (5-10 min)
+- 1.2 Verify source health (5 min)
+- 1.3 Test target connectivity (5 min)
+- 1.4 Run dry-run migration (45-60 min) ← CRITICAL
+- 1.5 Review validator test queries (10 min)
+- 1.6 Schedule maintenance window
+- 1.7 Notify stakeholders
+
+Section 2: Migration Execution (T-0 to T+90)
+- Step 1: Enable read-only mode on source (5 min)
+- Step 2: Create pre-migration snapshot (5 min)
+- Step 3: Run migration script (45-60 min)
+  - Phase 1: Export (10-15 min)
+  - Phase 2: Transform metadata (15-20 min)
+  - Phase 3: Validate (10-15 min)
+  - Phase 4: Import to target (5-10 min)
+  - Phase 5: Verify (5 min)
+- Step 4: Run validation suite (10 min)
+- Step 5: Review validation report (5 min)
+- Step 6a: GO Decision → Cutover to new ChromaDB (10 min)
+  OR
+- Step 6b: NO-GO Decision → Investigate & troubleshoot
+  OR
+- Step 7b: FAILURE → Execute rollback (10 min)
+
+Section 3: Checkpoint Procedures
+- Resume migration from saved checkpoint if interrupted
+- Checkpoint file: /home/setup/infrafabric/migration_checkpoints/checkpoint_*.json
+
+Section 4: Troubleshooting Guide
+- Issue: Migration stuck on batch X
+- Issue: Validation fails (invalid_authenticity_score)
+- Issue: Out of memory error
+- Issue: Semantic search not working
+- Issue: Network connectivity problems
+
+Section 5: Post-Migration Tasks
+- Monitoring (first hour)
+- Performance verification
+- Integration tests
+- Documentation update
+- Cleanup (7-day snapshot retention)
+
+Appendices:
+- Gantt chart (text format)
+- Decision trees (GO/NO-GO, troubleshooting)
+- Contact & escalation procedures
+- References
+- Rapid rollback 1-pager
+
+CRITICAL DECISION POINTS
+========================
+
+✓ GO CRITERIA (Step 6a):
+  - Validation pass rate >= 95%
+  - All 12 metadata fields present
+  - Semantic search queries working
+  - All collection counts match source
+  - Operations lead approval
+  - DBA approval
+  - Security approval
+
+✗ NO-GO TRIGGERS (Step 7b - Rollback):
+  - Validation pass rate < 95%
+  - Data loss > 100 chunks
+  - Missing embeddings > 5%
+  - Semantic search broken
+  - Network issues unresolvable
+  - Operator decision
+
+ROLLBACK CAPABILITY
+====================
+
+- Pre-migration snapshot: Automatically created in Step 2
+- Location: /home/setup/infrafabric/migration_backups/pre-migration-<timestamp>/
+- Retention: Minimum 7 days
+- Restore time: ~10 minutes
+- Service restoration: ~15 minutes total
+
+TIMELINE ESTIMATES
+==================
+
+Phase                           Estimate        Actual
+-----------------------------------------------------
+Dry-run (T-24 hours)           45-60 min       _____ min
+Step 1 (Read-only mode)         5 min          _____ min
+Step 2 (Snapshot)               5 min          _____ min
+Step 3 (Migration)             45-60 min       _____ min
+Step 4 (Validation)            10 min          _____ min
+Step 5 (Review)                 5 min          _____ min
+Step 6 (Cutover/Rollback)      10 min          _____ min
+Post-migration monitoring       60 min          _____ min
+-----------------------------------------------------
+TOTAL                          90-120 min      _____ min
+
+RESOURCE REQUIREMENTS
+====================
+
+- Source: ChromaDB @ 85.239.243.227:8000 (9,832 chunks, 6 collections)
+- Target: Local ChromaDB @ localhost:8000 (empty, ready to receive)
+- Storage: 2 GB minimum free space on target
+- Network: Stable connection to Proxmox (85.239.243.227)
+- Compute: 8GB RAM minimum, 4 CPUs recommended
+- Downtime: 2-hour maintenance window
+
+SCRIPT LOCATIONS
+================
+
+Migration script:     /home/setup/infrafabric/tools/chromadb_migration.py
+Validator tests:      /home/setup/infrafabric/tools/test_chromadb_migration.py
+Dry-run log:          /home/setup/infrafabric/migration_logs/migration_YYYYMMDD_HHMMSS.log
+Pre-migration snapshot: /home/setup/infrafabric/migration_backups/pre-migration-<timestamp>/
+Checkpoints:          /home/setup/infrafabric/migration_checkpoints/checkpoint_*.json
+
+QUICK START
+===========
+
+1. Pre-Migration (24 hours before):
+   bash verify_source_chromadb.sh
+   python3 chromadb_migration.py --dry-run
+   (Review logs, fix issues, obtain approvals)
+
+2. Execution (during maintenance window):
+   bash run_migration.sh
+   python3 -m pytest test_chromadb_migration.py -v
+   (Review validation report)
+
+3. Cutover (if GO):
+   bash cutover_to_new_chromadb.sh
+   (Monitor for 60 minutes)
+
+4. If Issues (proceed to rollback):
+   bash execute_rollback.sh
+   (Service restored within 15 minutes)
+
+SUCCESS METRICS
+===============
+
+- All 9,832 chunks exported from source
+- 95%+ chunks pass validation (minimum 9,340 valid)
+- All 12 metadata fields present
+- All 6 collections migrated successfully
+- Semantic search queries returning results
+- Query latency < 500ms
+- Source/target collection counts match
+- Zero data loss post-migration
+- No errors in application logs for 60+ minutes
+
+SIGN-OFF CHECKLIST
+==================
+
+Pre-Migration Approval:
+  [ ] Operations Lead - Reviewed runbook and timeline
+  [ ] DBA - Verified source backup strategy
+  [ ] Security - Approved data migration scope
+  [ ] Engineering - Validated dry-run results
+
+Execution Sign-Off:
+  [ ] Validation passed (>95%)
+  [ ] All approvals confirmed
+  [ ] Maintenance window reserved
+  [ ] Stakeholders notified
+  [ ] On-call engineer assigned
+
+Post-Migration Sign-Off:
+  [ ] Monitoring complete (60 minutes)
+  [ ] All integration tests pass
+  [ ] Performance acceptable
+  [ ] No rollback needed
+  [ ] Documentation updated
+
+CONTACT & ESCALATION
+====================
+
+Level 1 (First 30 min): Check troubleshooting_report.txt
+Level 2 (30-60 min): Contact DBA + review logs with team
+Level 3 (60+ min): Escalate to engineering team
+Level 4 (Critical): Page on-call engineer, initiate rollback
+
+Slack: #chromadb-migration
+War Room: [Zoom/Discord link]
+
+FOR MORE INFORMATION
+====================
+
+Read the full runbook: /home/setup/infrafabric/docs/MIGRATION_RUNBOOK.md
+
+Key sections:
+- Section 1: Detailed pre-migration checklist with all checks
+- Section 2: Step-by-step execution with decision trees
+- Section 3: Checkpoint recovery procedures
+- Section 4: Comprehensive troubleshooting guide
+- Section 5: Post-migration validation tasks
+- Appendices: Decision trees, rapid rollback, references
+
+End of Summary

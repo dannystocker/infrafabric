@@ -1,0 +1,1358 @@
+openapi: 3.0.3
+info:
+  title: InfraFabric API
+  version: 1.0.0
+  description: |
+    Comprehensive REST API for InfraFabric swarm coordination, authentication,
+    and intelligent task distribution. Supports OAuth device flow for headless
+    CLI environments, task management, finding aggregation, and cross-swarm communication.
+
+  contact:
+    name: InfraFabric Support
+    url: https://github.com/dannystocker/infrafabric
+
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+  x-internal-notes:
+    - "if://citation/api-specification/2025-11-30"
+    - All endpoints use IF.TTT traceability framework
+    - Rate limiting applies per IP address
+    - SSL/TLS 1.3 required for production
+
+servers:
+  - url: https://api.infrafabric.io/v1
+    description: Production environment
+    variables:
+      basePath:
+        default: v1
+
+  - url: http://localhost:8000/v1
+    description: Local development environment
+
+  - url: https://relay.infrafabric.io
+    description: OAuth relay server (device flow)
+
+tags:
+  - name: oauth-device-flow
+    description: OAuth 2.0 device authorization grant (RFC 8628) for headless CLI
+
+  - name: health
+    description: Service health and status endpoints
+
+  - name: task-management
+    description: Swarm task distribution and claiming
+
+  - name: findings
+    description: Research finding aggregation and conflict detection
+
+  - name: context-sharing
+    description: Cross-swarm context and data sharing
+
+  - name: session-management
+    description: Chat session and state persistence
+
+  - name: models
+    description: Available language model inventory
+
+  - name: audit-trail
+    description: IF.TTT traceability and audit logging
+
+paths:
+  /health:
+    get:
+      summary: Health check endpoint
+      description: |
+        Returns service health status including Redis and ChromaDB connectivity.
+        Use for monitoring and load balancer health checks.
+      tags:
+        - health
+      operationId: healthCheck
+      responses:
+        '200':
+          description: Service is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    enum: [healthy, degraded]
+                    example: "healthy"
+                  timestamp:
+                    type: string
+                    format: date-time
+                    example: "2025-11-30T14:30:00Z"
+                  components:
+                    type: object
+                    properties:
+                      redis:
+                        type: string
+                        enum: [online, offline, degraded]
+                      chromadb:
+                        type: string
+                        enum: [online, offline, degraded]
+
+        '503':
+          description: Service unavailable (critical dependency offline)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /metrics:
+    get:
+      summary: Prometheus metrics endpoint
+      description: Returns system metrics for monitoring (pending authorization, active tasks, etc)
+      tags:
+        - health
+      operationId: getMetrics
+      responses:
+        '200':
+          description: Metrics data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  pending_authorizations:
+                    type: integer
+                    description: Number of pending device code authorizations
+                    example: 3
+                  timestamp:
+                    type: string
+                    format: date-time
+
+  # ============================================================================
+  # OAUTH DEVICE FLOW ENDPOINTS (RFC 8628)
+  # ============================================================================
+
+  /device/code:
+    post:
+      summary: Request device code for headless OAuth
+      description: |
+        Initiates OAuth device flow by generating a device code and user code.
+        The user code is displayed to the end-user to enter in a browser.
+        The device code is used by the CLI to poll for token completion.
+
+        **Flow:**
+        1. CLI calls this endpoint → gets device_code + user_code
+        2. CLI displays: "Visit https://relay.infrafabric.io/activate and enter: ABCD-1234"
+        3. User opens URL, enters code
+        4. User authorizes through OAuth provider
+        5. Relay server exchanges auth code for token
+        6. CLI polls /device/token endpoint for token
+
+      tags:
+        - oauth-device-flow
+      operationId: requestDeviceCode
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeviceCodeRequest'
+
+      responses:
+        '200':
+          description: Device code successfully generated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeviceCodeResponse'
+
+        '400':
+          description: Invalid request (missing client_id or invalid format)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+        '429':
+          description: Rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /activate:
+    get:
+      summary: Render activation form (HTML UI)
+      description: |
+        Browser-accessible HTML form for users to enter activation code.
+        Optionally pre-fills code if provided via query parameter.
+
+      tags:
+        - oauth-device-flow
+      operationId: getActivationForm
+      parameters:
+        - name: code
+          in: query
+          required: false
+          schema:
+            type: string
+            pattern: "^[A-Z0-9]{4}-[A-Z0-9]{4}$"
+          description: Pre-fill activation code (optional)
+
+      responses:
+        '200':
+          description: HTML activation form
+          content:
+            text/html:
+              schema:
+                type: string
+                description: HTML form with CSS styling
+
+        '400':
+          description: Invalid or expired activation code
+          content:
+            text/html:
+              schema:
+                type: string
+
+    post:
+      summary: Process user activation and redirect to OAuth provider
+      description: |
+        Accepts user-submitted activation code, validates it, and redirects
+        to OAuth provider's authorization endpoint.
+
+        **Security:** State parameter prevents CSRF. Must match device registration.
+
+      tags:
+        - oauth-device-flow
+      operationId: processActivation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ActivationRequest'
+
+      responses:
+        '302':
+          description: Redirect to OAuth provider authorization endpoint
+          headers:
+            Location:
+              schema:
+                type: string
+                format: uri
+              description: OAuth provider authorization URL
+
+        '404':
+          description: Invalid or expired activation code
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+        '410':
+          description: Device code expired (>10 minutes)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /callback:
+    get:
+      summary: OAuth provider callback endpoint
+      description: |
+        Receives authorization code from OAuth provider. Internal only.
+        Matches state to device registration and exchanges code for token.
+        Returns HTML success/error page.
+
+      tags:
+        - oauth-device-flow
+      operationId: handleOAuthCallback
+      parameters:
+        - name: code
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Authorization code from OAuth provider
+
+        - name: state
+          in: query
+          required: false
+          schema:
+            type: string
+          description: CSRF protection state parameter
+
+        - name: error
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Error code if authorization denied
+
+        - name: error_description
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Human-readable error description
+
+      responses:
+        '200':
+          description: Authorization successful (HTML success page)
+          content:
+            text/html:
+              schema:
+                type: string
+
+        '400':
+          description: Authorization failed (HTML error page)
+          content:
+            text/html:
+              schema:
+                type: string
+
+  /device/token:
+    get:
+      summary: Poll for OAuth access token
+      description: |
+        CLI polls this endpoint to check if user has authorized.
+        Returns 202 Accepted while authorization pending.
+        Returns 200 OK with token when ready.
+        Returns 401 if user denied.
+
+        **Polling Strategy:**
+        - Initial interval: use `interval` from device code response (typically 5s)
+        - Maximum duration: `expires_in` (typically 600s / 10 minutes)
+        - Backoff: Recommend exponential backoff after 10 attempts
+
+      tags:
+        - oauth-device-flow
+      operationId: pollDeviceToken
+      parameters:
+        - name: device_code
+          in: query
+          required: true
+          schema:
+            type: string
+          description: Device code from /device/code response
+
+      responses:
+        '200':
+          description: Token ready (authorization successful)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenResponse'
+
+        '202':
+          description: Still waiting for user authorization
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PendingTokenResponse'
+
+        '400':
+          description: Invalid device code or missing parameter
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+        '401':
+          description: User denied authorization
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+        '410':
+          description: Device code expired
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+        '429':
+          description: Rate limit exceeded (polling too frequently)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  # ============================================================================
+  # TASK MANAGEMENT ENDPOINTS
+  # ============================================================================
+
+  /task:
+    post:
+      summary: Create new task
+      description: |
+        Creates a work unit for Haiku agents to claim and execute.
+        Returns immediately with task ID. Agents discover via polling.
+
+        **Task Lifecycle:**
+        1. Created (pending) → Haiku agent polls /task/unclaimed
+        2. Claimed (in_progress) → Agent works on task
+        3. Completed or Escalated → Released
+
+      tags:
+        - task-management
+      operationId: createTask
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskCreateRequest'
+
+      responses:
+        '201':
+          description: Task created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+
+        '400':
+          description: Invalid task request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /task/{taskId}:
+    get:
+      summary: Get task details
+      description: Retrieve full task information including status, assignee, and metadata
+
+      tags:
+        - task-management
+      operationId: getTask
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/TaskId'
+
+      responses:
+        '200':
+          description: Task details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+
+        '404':
+          description: Task not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+    patch:
+      summary: Update task status
+      description: Update task status (claimed, completed, escalated, etc)
+
+      tags:
+        - task-management
+      operationId: updateTask
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/TaskId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: string
+                  enum: [claimed, completed, escalated, failed]
+                  example: "completed"
+                assignee:
+                  type: string
+                  description: Agent ID claiming the task
+                  example: "haiku-agent-1"
+                result:
+                  type: object
+                  description: Task result (optional)
+
+      responses:
+        '200':
+          description: Task updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+
+  /task/unclaimed:
+    get:
+      summary: Get unclaimed tasks
+      description: |
+        Returns list of pending tasks available for claiming.
+        Used by Haiku agents to discover work.
+
+      tags:
+        - task-management
+      operationId: getUnclaimedTasks
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 10
+          description: Maximum number of tasks to return
+
+        - name: type
+          in: query
+          schema:
+            type: string
+          description: Filter by task type (optional)
+
+      responses:
+        '200':
+          description: List of unclaimed tasks
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  tasks:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Task'
+                  total:
+                    type: integer
+
+  # ============================================================================
+  # FINDINGS ENDPOINTS
+  # ============================================================================
+
+  /finding:
+    post:
+      summary: Post research finding
+      description: |
+        Submit a finding from Haiku agent research work.
+        Includes confidence score and citation references.
+        Triggers automatic conflict detection.
+
+      tags:
+        - findings
+      operationId: postFinding
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FindingRequest'
+
+      responses:
+        '201':
+          description: Finding recorded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Finding'
+
+        '409':
+          description: Conflict detected with existing finding
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictResponse'
+
+  /finding/{findingId}:
+    get:
+      summary: Get finding details
+
+      tags:
+        - findings
+      operationId: getFinding
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: findingId
+          in: path
+          required: true
+          schema:
+            type: string
+
+      responses:
+        '200':
+          description: Finding details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Finding'
+
+        '404':
+          description: Finding not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /finding/conflict/detect:
+    post:
+      summary: Detect conflicts between findings
+      description: |
+        Analyzes findings for contradictions based on confidence thresholds.
+        Returns conflict metadata if high-confidence contradiction detected.
+
+      tags:
+        - findings
+      operationId: detectFindingConflicts
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                finding_ids:
+                  type: array
+                  items:
+                    type: string
+                  description: IDs of findings to analyze
+                confidence_threshold:
+                  type: number
+                  minimum: 0
+                  maximum: 1
+                  default: 0.8
+                  description: Minimum confidence for conflict detection
+
+      responses:
+        '200':
+          description: Conflict analysis complete
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  conflicts:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ConflictDetail'
+
+  # ============================================================================
+  # CONTEXT SHARING ENDPOINTS
+  # ============================================================================
+
+  /context:
+    post:
+      summary: Share context across swarms
+      description: |
+        Store and broadcast context data for other swarms to access.
+        Used for cross-swarm coordination and data sharing.
+
+      tags:
+        - context-sharing
+      operationId: shareContext
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ContextShareRequest'
+
+      responses:
+        '201':
+          description: Context shared
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SharedContext'
+
+  /context/{scope}/{name}:
+    get:
+      summary: Retrieve shared context
+      description: |
+        Get context shared by other swarms.
+        Scope can be: cross_swarm, session, global
+
+      tags:
+        - context-sharing
+      operationId: getContext
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: scope
+          in: path
+          required: true
+          schema:
+            type: string
+            enum: [cross_swarm, session, global]
+
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+
+      responses:
+        '200':
+          description: Context data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SharedContext'
+
+        '404':
+          description: Context not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  # ============================================================================
+  # SESSION MANAGEMENT ENDPOINTS
+  # ============================================================================
+
+  /session:
+    post:
+      summary: Create new chat session
+      description: Initialize new conversation session with persistence
+
+      tags:
+        - session-management
+      operationId: createSession
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                label:
+                  type: string
+                  description: Optional session label
+
+      responses:
+        '201':
+          description: Session created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+
+  /session/{sessionId}:
+    get:
+      summary: Get session details and history
+      description: Retrieve chat history and session state
+
+      tags:
+        - session-management
+      operationId: getSession
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: sessionId
+          in: path
+          required: true
+          schema:
+            type: string
+
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 50
+          description: Maximum messages to return
+
+      responses:
+        '200':
+          description: Session with message history
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SessionWithHistory'
+
+        '404':
+          description: Session not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  # ============================================================================
+  # MODEL ENDPOINTS
+  # ============================================================================
+
+  /models:
+    get:
+      summary: List available language models
+      description: |
+        Returns inventory of available models.
+        Includes Claude Max, DeepSeek, local Ollama models.
+
+      tags:
+        - models
+      operationId: listModels
+      security:
+        - bearerAuth: []
+
+      responses:
+        '200':
+          description: Available models
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  models:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Model'
+
+  # ============================================================================
+  # AUDIT TRAIL ENDPOINTS
+  # ============================================================================
+
+  /audit/trail:
+    get:
+      summary: Query IF.TTT audit trail
+      description: |
+        Returns audit log entries matching filters.
+        Useful for compliance and debugging.
+
+      tags:
+        - audit-trail
+      operationId: queryAuditTrail
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: domain
+          in: query
+          schema:
+            type: string
+            enum: [security, decision, escalation, all]
+            default: all
+
+        - name: start_date
+          in: query
+          schema:
+            type: string
+            format: date
+
+        - name: end_date
+          in: query
+          schema:
+            type: string
+            format: date
+
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 100
+
+      responses:
+        '200':
+          description: Audit entries
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  entries:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/AuditEntry'
+                  total:
+                    type: integer
+
+  /citation/{citationId}:
+    get:
+      summary: Get citation details
+      description: Retrieve if://citation/uuid details
+
+      tags:
+        - audit-trail
+      operationId: getCitation
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: citationId
+          in: path
+          required: true
+          schema:
+            type: string
+
+      responses:
+        '200':
+          description: Citation details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Citation'
+
+        '404':
+          description: Citation not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+# ============================================================================
+# COMPONENTS (Schemas, Parameters, Security)
+# ============================================================================
+
+components:
+  parameters:
+    TaskId:
+      name: taskId
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Task identifier
+
+  schemas:
+    # OAuth Device Flow
+    DeviceCodeRequest:
+      type: object
+      required: [client_id]
+      properties:
+        client_id:
+          type: string
+          description: OAuth client identifier
+          example: "infrafabric-cli"
+        scope:
+          type: string
+          description: Space-separated OAuth scopes
+          example: "openid profile email"
+        redirect_uri:
+          type: string
+          format: uri
+          description: Custom redirect URI (optional)
+
+    DeviceCodeResponse:
+      type: object
+      properties:
+        device_code:
+          type: string
+          description: Code for CLI to poll with (keep secret)
+          example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+        user_code:
+          type: string
+          description: User-friendly code to display (XXXX-XXXX format)
+          example: "ABCD-1234"
+        verification_uri:
+          type: string
+          format: uri
+          description: URL user should visit to authorize
+          example: "https://relay.infrafabric.io/activate?code=ABCD-1234"
+        expires_in:
+          type: integer
+          description: Seconds until device code expires
+          example: 600
+        interval:
+          type: integer
+          description: Recommended polling interval in seconds
+          example: 5
+
+    ActivationRequest:
+      type: object
+      required: [user_code]
+      properties:
+        user_code:
+          type: string
+          pattern: "^[A-Z0-9]{4}-[A-Z0-9]{4}$"
+          description: User code from /device/code response
+          example: "ABCD-1234"
+
+    TokenResponse:
+      type: object
+      properties:
+        access_token:
+          type: string
+          description: OAuth access token (Bearer token)
+          example: "eyJ..."
+        token_type:
+          type: string
+          example: "Bearer"
+        expires_in:
+          type: integer
+          description: Token expiration in seconds
+          example: 3600
+        refresh_token:
+          type: string
+          description: Refresh token for renewing access
+        scope:
+          type: string
+          description: Granted scopes
+          example: "openid profile email"
+        status:
+          type: string
+          enum: [success, pending, denied, expired]
+          example: "success"
+
+    PendingTokenResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          enum: [pending]
+          example: "pending"
+        error:
+          type: string
+          description: Error code if authorization denied
+        error_description:
+          type: string
+          description: Human-readable error
+
+    # Task Management
+    TaskCreateRequest:
+      type: object
+      required: [description, type]
+      properties:
+        description:
+          type: string
+          description: Task description for agents
+          example: "Research optimal Redis sharding strategies for 100M+ keys"
+        type:
+          type: string
+          enum: [research, analysis, implementation, validation]
+          example: "research"
+        priority:
+          type: integer
+          minimum: 1
+          maximum: 5
+          default: 3
+        context:
+          type: object
+          description: Additional context for task
+
+    Task:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique task identifier
+        description:
+          type: string
+        type:
+          type: string
+        status:
+          type: string
+          enum: [pending, claimed, completed, escalated, failed]
+        assignee:
+          type: string
+          description: Agent ID (if claimed)
+        priority:
+          type: integer
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        result:
+          type: object
+          description: Task result (when completed)
+        citation:
+          type: string
+          description: if://citation/uuid reference
+
+    # Findings
+    FindingRequest:
+      type: object
+      required: [claim, confidence, citations]
+      properties:
+        claim:
+          type: string
+          description: The research finding/claim
+          example: "Redis Cluster is optimal for >50M keys with replication"
+        confidence:
+          type: number
+          minimum: 0
+          maximum: 1
+          description: Confidence score [0.0-1.0]
+          example: 0.92
+        citations:
+          type: array
+          items:
+            type: string
+          description: Source references (if://citation/uuid or file:line)
+          example: ["if://citation/uuid1", "if://doc/redis-guide/2025-11-30"]
+        task_id:
+          type: string
+          description: Associated task ID
+        worker_id:
+          type: string
+          description: Agent ID that created finding
+
+    Finding:
+      allOf:
+        - $ref: '#/components/schemas/FindingRequest'
+        - type: object
+          properties:
+            id:
+              type: string
+            created_at:
+              type: string
+              format: date-time
+            validation_status:
+              type: string
+              enum: [unverified, verified, disputed, revoked]
+
+    ConflictResponse:
+      type: object
+      properties:
+        conflict_detected:
+          type: boolean
+          example: true
+        conflict_id:
+          type: string
+        details:
+          $ref: '#/components/schemas/ConflictDetail'
+
+    ConflictDetail:
+      type: object
+      properties:
+        finding_a_id:
+          type: string
+        finding_b_id:
+          type: string
+        confidence_delta:
+          type: number
+          description: Absolute difference in confidence scores
+          example: 0.35
+        escalation_recommended:
+          type: boolean
+        resolution_notes:
+          type: string
+
+    # Context Sharing
+    ContextShareRequest:
+      type: object
+      required: [scope, name, data]
+      properties:
+        scope:
+          type: string
+          enum: [cross_swarm, session, global]
+          example: "cross_swarm"
+        name:
+          type: string
+          description: Unique context name
+          example: "finding-uuid-123"
+        data:
+          type: object
+          description: Context data to share
+        ttl_seconds:
+          type: integer
+          description: Time-to-live (optional)
+
+    SharedContext:
+      allOf:
+        - $ref: '#/components/schemas/ContextShareRequest'
+        - type: object
+          properties:
+            id:
+              type: string
+            created_by:
+              type: string
+            created_at:
+              type: string
+              format: date-time
+            chain_of_custody:
+              type: array
+              items:
+                type: object
+                properties:
+                  agent_id:
+                    type: string
+                  action:
+                    type: string
+                  timestamp:
+                    type: string
+                    format: date-time
+
+    # Session Management
+    Session:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Session identifier
+        created_at:
+          type: string
+          format: date-time
+        label:
+          type: string
+        message_count:
+          type: integer
+
+    SessionWithHistory:
+      allOf:
+        - $ref: '#/components/schemas/Session'
+        - type: object
+          properties:
+            messages:
+              type: array
+              items:
+                type: object
+                properties:
+                  role:
+                    type: string
+                    enum: [user, assistant]
+                  content:
+                    type: string
+                  timestamp:
+                    type: string
+                    format: date-time
+
+    # Models
+    Model:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "claude-3-opus-20250219"
+        name:
+          type: string
+          example: "Claude 3 Opus"
+        provider:
+          type: string
+          enum: [openai, anthropic, deepseek, ollama]
+        context_window:
+          type: integer
+          description: Maximum context size in tokens
+        cost_per_million_input:
+          type: number
+          description: Cost in USD
+        cost_per_million_output:
+          type: number
+
+    # Audit Trail
+    AuditEntry:
+      type: object
+      properties:
+        id:
+          type: string
+        event_type:
+          type: string
+          enum: [security_event, decision, escalation, task_completed, finding_posted]
+        domain:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+        component:
+          type: string
+        details:
+          type: object
+        citation:
+          type: string
+          description: if://citation/uuid reference
+        confidence:
+          type: number
+          description: Event confidence [0.0-1.0]
+
+    Citation:
+      type: object
+      properties:
+        id:
+          type: string
+          description: if://citation/uuid
+        type:
+          type: string
+          enum: [code, document, decision, finding, claim, test_run, improvement]
+        domain:
+          type: string
+          example: "api-reference"
+        created_at:
+          type: string
+          format: date-time
+        status:
+          type: string
+          enum: [unverified, verified, disputed, revoked]
+        sources:
+          type: array
+          items:
+            type: string
+          description: Source references (file:line, external URLs)
+        metadata:
+          type: object
+
+    # Error Response
+    Error:
+      type: object
+      required: [error, message]
+      properties:
+        error:
+          type: string
+          description: Error code
+          example: "INVALID_REQUEST"
+        message:
+          type: string
+          description: Human-readable error message
+        details:
+          type: object
+          description: Additional error details (optional)
+        trace_id:
+          type: string
+          description: Request trace ID for debugging
+
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: |
+        JWT token obtained via OAuth device flow or password grant.
+        Include in Authorization header: Authorization: Bearer <token>
+
+  responses:
+    BadRequest:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+    NotFound:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+    Conflict:
+      description: Resource conflict
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+    RateLimited:
+      description: Too many requests
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+    InternalError:
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
