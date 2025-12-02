@@ -254,8 +254,8 @@
 </head>
 <body>
   <div class="container">
-    <h1>IF.deliberate</h1>
-    <div class="subtitle">The AI that shows you how it thinks</div>
+    <h1>IF.emotion</h1>
+    <div class="subtitle">Computational care made visible - Watch empathy typing at 6x speed</div>
 
     <div class="demo-box">
       <div class="demo-title">Live Demo: Natural Typing with Deliberate Word Replacement</div>
@@ -275,13 +275,13 @@
           <span style="color: #888;">Typing Speed</span>
           <span class="speed-value" id="speed-display">6.0x</span>
         </div>
-        <input type="range" id="speed-slider" min="0.3" max="6" step="0.1" value="6.0">
+        <input type="range" id="speed-slider" min="0.3" max="50" step="0.1" value="6.0">
         <div class="speed-presets">
-          <button class="speed-preset" data-speed="0.5">Slow (0.5x)</button>
-          <button class="speed-preset" data-speed="1.0">Normal (1.0x)</button>
-          <button class="speed-preset" data-speed="2.5">Fast (2.5x)</button>
-          <button class="speed-preset" data-speed="4.0">Very Fast (4.0x)</button>
-          <button class="speed-preset active" data-speed="6.0">Empathy (6.0x)</button>
+          <button class="speed-preset" data-speed="1.0">Human (1x)</button>
+          <button class="speed-preset active" data-speed="6.0">Empathy (6x)</button>
+          <button class="speed-preset" data-speed="12.0">Fast (12x)</button>
+          <button class="speed-preset" data-speed="25.0">Urgent (25x)</button>
+          <button class="speed-preset" data-speed="50.0">Lightning (50x)</button>
         </div>
       </div>
 
@@ -421,10 +421,12 @@
       enableButtons();
     });
 
-    // Demo 3: Empathy enhancement
-    document.getElementById('demo3').addEventListener('click', async () => {
-      disableButtons();
-      resetStats();
+    // Demo 3: Empathy enhancement (with loop support)
+    async function runEmpathyDemo(isLoop = false) {
+      if (!isLoop) {
+        disableButtons();
+        resetStats();
+      }
 
       const messageChunks = [
         "You're ",
@@ -444,8 +446,17 @@
       updateStats();
 
       await stream.streamMessage(messageChunks, replacementMap);
-      enableButtons();
-    });
+
+      // Loop: wait 2 seconds, reset, and run again
+      setTimeout(() => {
+        stream.reset();
+        runEmpathyDemo(true);
+      }, 2000);
+
+      if (!isLoop) enableButtons();
+    }
+
+    document.getElementById('demo3').addEventListener('click', () => runEmpathyDemo());
 
     // Demo 4: Technical precision
     document.getElementById('demo4').addEventListener('click', async () => {
@@ -505,6 +516,11 @@
       document.getElementById('replace-count').textContent = replaceCount;
       document.getElementById('pause-count').textContent = pauseCount;
     }
+
+    // Auto-start empathy demo on page load
+    window.addEventListener('load', () => {
+      setTimeout(() => runEmpathyDemo(true), 500);
+    });
   </script>
 </body>
 </html>
