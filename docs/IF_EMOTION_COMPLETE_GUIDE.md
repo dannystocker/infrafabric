@@ -5,6 +5,7 @@
 **Last Updated:** 2025-12-01
 **Status:** Production + Design Phase (Claude Max CLI Integration Pending)
 **Maintainers:** InfraFabric / IF.guard Council
+**Contributors:** Dr Sergio V..
 
 ---
 
