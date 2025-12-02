@@ -195,6 +195,13 @@ Every IF.emotion output includes:
 
 ## Integration with Existing IF.* Components
 
+IF.emotion is not an optional embellishment; it is the emotional intelligence layer that all IF.* components are expected to lean on. In business terms, it applies the Trader Joe's principle to InfraFabric: systems that genuinely care about people outperform systems that merely comply with policy.
+
+At runtime this means:
+- Guard rails, decision engines, and UX layers call IF.emotion for vocabulary, framing, and validation before shipping answers.
+- New IF.* modules should describe how they depend on IF.emotion in their own component proposals.
+- Swarm missions treat IF.emotion as the shared “heart” that keeps technical work psychologically grounded and cross‑culturally sane.
+
 ### IF.guard (Emotional Safety)
 
 **Relationship:** IF.emotion sits below IF.guard in validation hierarchy
@@ -236,6 +243,17 @@ Every IF.emotion output includes:
 - Personality DNA pre-embedding and caching: 85% savings on repeated queries
 - Haiku agents for parallel processing: 70% savings vs. sequential Sonnet
 - **Project total:** $2.50 vs. $12 Sonnet-only (80% savings)
+
+### IF.emotion.typist (Natural Typing Layer)
+
+**Integration:** IF.emotion.typist (evolved from the IF.deliberate natural typing demo) exposes IF.emotion’s judgment through a visible typing experience.
+
+- 6× empathy speed: fast enough to feel responsive, slow enough that edits remain visible.
+- QWERTY-distance typos and backspaces to show “thinking in public.”
+- Strategic word replacement (e.g., “enduring” → “navigating”) to soften confrontational language while preserving the underlying concept.
+- Primary UX goal: make it harder for users to accidentally abandon or attack each other in writing, and easier to negotiate like Trader Joe’s staff—firm, kind, and human.
+
+This layer is the preferred front door for any IF.* feature that rewrites user text or drafts outbound communication.
 
 ---
 

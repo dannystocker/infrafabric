@@ -1,0 +1,258 @@
+version: '3.8'
+
+# Docker Compose for InfraFabric Logging Stack
+# Purpose: Deploy Loki aggregation + Fluent Bit + Grafana for centralized logging
+# Reference: if://config/docker-logging/2025-11-30
+#
+# Usage:
+#   docker-compose -f docker-compose-logging.yml up -d
+#   Access Grafana: http://localhost:3000 (admin/admin)
+#   Access Loki API: http://localhost:3100
+
+services:
+  # =========================================================================
+  # LOKI - Log Aggregation & Indexing
+  # =========================================================================
+  loki:
+    image: grafana/loki:2.9.3
+    container_name: infrafabric-loki
+    hostname: loki
+    ports:
+      - "3100:3100"
+    environment:
+      # Configuration via environment (override loki-config.yml)
+      - LOKI_LOG_LEVEL=info
+    volumes:
+      # Use local loki-config.yml
+      - ./loki-config.yml:/etc/loki/local-config.yaml
+      # Persistent storage for chunks
+      - loki-chunks:/loki/chunks
+      # Persistent storage for indexes
+      - loki-boltdb:/loki/boltdb-shipper-active
+      # Index cache
+      - loki-cache:/loki/boltdb-shipper-cache
+    command: -config.file=/etc/loki/local-config.yaml
+    networks:
+      - infrafabric-logging
+    labels:
+      - "description=Grafana Loki log aggregation"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3100/ready"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # =========================================================================
+  # FLUENT-BIT - Log Collector & Shipper
+  # =========================================================================
+  fluent-bit:
+    image: fluent/fluent-bit:2.1.8
+    container_name: infrafabric-fluent-bit
+    hostname: fluent-bit
+    ports:
+      - "2020:2020"  # HTTP metrics endpoint
+    environment:
+      # Configuration
+      - FLUENT_BIT_CONFIG=/fluent-bit/etc/fluent-bit.conf
+      - LOKI_HOST=loki
+      - LOKI_PORT=3100
+      - LOKI_USER=user
+      - LOKI_PASS=password
+      - ENVIRONMENT=development
+      - HOSTNAME=infrafabric-logging-node
+    volumes:
+      # Configuration files
+      - ./fluent-bit.conf:/fluent-bit/etc/fluent-bit.conf
+      - ./parsers.conf:/fluent-bit/etc/parsers.conf
+      # Log sources (mount from host)
+      - /var/log/infrafabric:/var/log/infrafabric:ro
+      - /var/log/redis:/var/log/redis:ro
+      - /var/log/chromadb:/var/log/chromadb:ro
+      # Optional: mount Docker socket for journald
+      # - /run/systemd/journal:/run/systemd/journal:ro
+      # Persistent buffers (in case Loki is down)
+      - fluent-bit-buffers:/fluent-bit/state
+      # Metadata DB for offset tracking
+      - fluent-bit-db:/fluent-bit/db
+    networks:
+      - infrafabric-logging
+    depends_on:
+      loki:
+        condition: service_healthy
+    labels:
+      - "description=Fluent Bit log collector"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:2020/api/v1/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # =========================================================================
+  # GRAFANA - Visualization & Dashboards
+  # =========================================================================
+  grafana:
+    image: grafana/grafana:10.2.0
+    container_name: infrafabric-grafana
+    hostname: grafana
+    ports:
+      - "3000:3000"
+    environment:
+      # Admin credentials
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      # Enable plugins
+      - GF_INSTALL_PLUGINS=grafana-piechart-panel
+      # Disable telemetry
+      - GF_ANALYTICS_REPORTING_ENABLED=false
+      - GF_ANALYTICS_CHECK_FOR_UPDATES=false
+    volumes:
+      # Grafana data (dashboards, datasources)
+      - grafana-storage:/var/lib/grafana
+      # Provisioning configurations
+      - ./grafana-provisioning:/etc/grafana/provisioning
+    networks:
+      - infrafabric-logging
+    depends_on:
+      - loki
+    labels:
+      - "description=Grafana visualization dashboard"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # =========================================================================
+  # PROMETHEUS - Metrics Collection (Optional)
+  # =========================================================================
+  prometheus:
+    image: prom/prometheus:v2.47.0
+    container_name: infrafabric-prometheus
+    hostname: prometheus
+    ports:
+      - "9090:9090"
+    environment:
+      - TZ=UTC
+    volumes:
+      # Prometheus configuration
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      # Persistent storage
+      - prometheus-data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+      - '--web.console.templates=/usr/share/prometheus/consoles'
+    networks:
+      - infrafabric-logging
+    labels:
+      - "description=Prometheus metrics aggregation"
+    restart: unless-stopped
+
+  # =========================================================================
+  # ELASTICSEARCH - Optional Rich Search Backend
+  # =========================================================================
+  # Uncomment if you want to use Elasticsearch for advanced analytics
+  # elasticsearch:
+  #   image: docker.elastic.co/elasticsearch/elasticsearch:8.10.0
+  #   container_name: infrafabric-elasticsearch
+  #   environment:
+  #     - discovery.type=single-node
+  #     - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+  #     - xpack.security.enabled=false
+  #   ports:
+  #     - "9200:9200"
+  #   volumes:
+  #     - elastic-data:/usr/share/elasticsearch/data
+  #   networks:
+  #     - infrafabric-logging
+  #   restart: unless-stopped
+
+  # =========================================================================
+  # KIBANA - Optional UI for Elasticsearch
+  # =========================================================================
+  # Uncomment if using Elasticsearch
+  # kibana:
+  #   image: docker.elastic.co/kibana/kibana:8.10.0
+  #   container_name: infrafabric-kibana
+  #   environment:
+  #     - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+  #   ports:
+  #     - "5601:5601"
+  #   networks:
+  #     - infrafabric-logging
+  #   depends_on:
+  #     - elasticsearch
+  #   restart: unless-stopped
+
+volumes:
+  # Loki storage
+  loki-chunks:
+    driver: local
+  loki-boltdb:
+    driver: local
+  loki-cache:
+    driver: local
+
+  # Fluent Bit state
+  fluent-bit-buffers:
+    driver: local
+  fluent-bit-db:
+    driver: local
+
+  # Grafana dashboards & datasources
+  grafana-storage:
+    driver: local
+
+  # Prometheus metrics
+  prometheus-data:
+    driver: local
+
+  # Elasticsearch (optional)
+  # elastic-data:
+  #   driver: local
+
+networks:
+  infrafabric-logging:
+    driver: bridge
+    name: infrafabric-logging
+
+# =========================================================================
+# DEPLOYMENT NOTES
+# =========================================================================
+#
+# 1. Modify fluent-bit.conf to point to your log sources
+#
+# 2. Update log paths if different:
+#    - /var/log/infrafabric/agents/*.log
+#    - /var/log/redis/redis.log
+#    - /var/log/chromadb/*.log
+#
+# 3. Increase resource limits for production:
+#    services:
+#      loki:
+#        deploy:
+#          resources:
+#            limits:
+#              cpus: '2'
+#              memory: 2G
+#            reservations:
+#              cpus: '1'
+#              memory: 1G
+#
+# 4. Access endpoints:
+#    - Grafana: http://localhost:3000 (admin/admin)
+#    - Loki API: http://localhost:3100
+#    - Prometheus: http://localhost:9090
+#    - Fluent Bit metrics: http://localhost:2020/api/v1/metrics
+#
+# 5. Configure persistent storage for production:
+#    Replace 'local' driver with external volumes or cloud storage
+#
+# 6. Add authentication & TLS for production:
+#    - Grafana: Change admin password
+#    - Loki: Add reverse proxy with auth
+#    - Fluent Bit: Use TLS for remote output

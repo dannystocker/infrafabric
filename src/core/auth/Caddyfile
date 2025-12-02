@@ -1,0 +1,77 @@
+# if://code/oauth-relay-caddyfile/2025-11-30
+# Caddy web server configuration for OAuth Relay Server
+# Provides automatic HTTPS, reverse proxy, and security headers
+
+{$DOMAIN:relay.infrafabric.io} {
+    # Enable automatic HTTPS with Let's Encrypt
+    encode gzip
+
+    # Reverse proxy to FastAPI server
+    reverse_proxy {$RELAY_UPSTREAM:relay:8443} {
+        # Header passthrough
+        header_up X-Forwarded-For {http.request.remote.host}
+        header_up X-Forwarded-Proto {http.request.proto}
+        header_up X-Forwarded-Host {http.request.host}
+
+        # Timeout settings
+        timeout 30s
+
+        # TLS skip cert verification (relay uses self-signed internally)
+        transport http {
+            tls_insecure_skip_verify
+        }
+    }
+
+    # Security headers
+    header {
+        # Strict Transport Security
+        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+        # Prevent MIME type sniffing
+        X-Content-Type-Options "nosniff"
+
+        # Disable framing
+        X-Frame-Options "DENY"
+
+        # Content Security Policy
+        Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'"
+
+        # Prevent XSS
+        X-XSS-Protection "1; mode=block"
+
+        # Referrer policy
+        Referrer-Policy "strict-origin-when-cross-origin"
+    }
+
+    # Health check endpoint
+    handle /health {
+        respond 200
+    }
+
+    # Metrics endpoint (no auth required for monitoring)
+    handle /metrics {
+        reverse_proxy {$RELAY_UPSTREAM:relay:8443}
+    }
+
+    # Rate limiting
+    rate_limit {
+        zone oauth_relay {
+            key {http.request.remote.host}
+            rate 100r/m
+        }
+    }
+
+    # Logging
+    log {
+        output stdout
+        format json
+        level info
+    }
+}
+
+# Health check endpoint on all interfaces
+:8080 {
+    respond /health 200 {
+        body "OK"
+    }
+}

@@ -1,0 +1,169 @@
+# Prometheus Configuration for InfraFabric Monitoring
+# Purpose: Scrape metrics from Loki, Fluent Bit, and agents
+# Reference: if://config/prometheus/2025-11-30
+
+global:
+  scrape_interval: 15s         # Default: scrape every 15 seconds
+  evaluation_interval: 15s     # How often to evaluate alert rules
+  external_labels:
+    cluster: 'infrafabric-prod'
+    environment: 'production'
+
+# Alertmanager configuration
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: []
+          # - alertmanager:9093
+
+# Load rules once and periodically evaluate them
+rule_files:
+  # - "alert.rules.yml"
+
+# =========================================================================
+# SCRAPE CONFIGURATIONS
+# =========================================================================
+
+scrape_configs:
+  # =========================================================================
+  # Prometheus Self-Monitoring
+  # =========================================================================
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+    metrics_path: /metrics
+    scrape_interval: 30s
+
+  # =========================================================================
+  # LOKI - Metrics Endpoint
+  # =========================================================================
+  - job_name: 'loki'
+    static_configs:
+      - targets: ['loki:3100']
+    metrics_path: /metrics
+    scrape_interval: 30s
+    scrape_timeout: 10s
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: instance
+        replacement: 'loki'
+      - source_labels: [__scheme__]
+        target_label: scheme
+        replacement: 'http'
+
+  # =========================================================================
+  # FLUENT-BIT - Metrics Endpoint
+  # =========================================================================
+  - job_name: 'fluent-bit'
+    static_configs:
+      - targets: ['fluent-bit:2020']
+    metrics_path: /api/v1/metrics
+    scrape_interval: 30s
+    scrape_timeout: 10s
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: instance
+        replacement: 'fluent-bit'
+
+  # =========================================================================
+  # AGENT METRICS - If agents expose Prometheus metrics
+  # =========================================================================
+  # Uncomment if agents have metrics endpoints
+  # - job_name: 'infrafabric-agents'
+  #   static_configs:
+  #     - targets:
+  #         - 'agent-node-1:8000'
+  #         - 'agent-node-2:8000'
+  #         - 'agent-node-3:8000'
+  #   metrics_path: /metrics
+  #   scrape_interval: 15s
+  #   scrape_timeout: 5s
+  #   relabel_configs:
+  #     - source_labels: [__address__]
+  #       target_label: agent_id
+  #       regex: '([^:]+).*'
+  #       replacement: '${1}'
+
+  # =========================================================================
+  # REDIS - If Redis Exporter deployed
+  # =========================================================================
+  # - job_name: 'redis'
+  #   static_configs:
+  #     - targets: ['redis-exporter:9121']
+  #   metrics_path: /metrics
+  #   scrape_interval: 30s
+
+  # =========================================================================
+  # NODE - Node Exporter for Host Metrics
+  # =========================================================================
+  # - job_name: 'node'
+  #   static_configs:
+  #     - targets:
+  #         - 'node-1:9100'
+  #         - 'node-2:9100'
+  #   metrics_path: /metrics
+  #   scrape_interval: 30s
+
+  # =========================================================================
+  # ELASTICSEARCH - If Elasticsearch deployed
+  # =========================================================================
+  # - job_name: 'elasticsearch'
+  #   static_configs:
+  #     - targets: ['elasticsearch-exporter:9114']
+  #   metrics_path: /metrics
+  #   scrape_interval: 30s
+
+# =========================================================================
+# SERVICE DISCOVERY (Optional - for Kubernetes)
+# =========================================================================
+# Replace static configs with dynamic service discovery:
+#
+# scrape_configs:
+#   - job_name: 'kubernetes-pods'
+#     kubernetes_sd_configs:
+#       - role: pod
+#     relabel_configs:
+#       - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_scrape]
+#         action: keep
+#         regex: true
+#       - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_path]
+#         action: replace
+#         target_label: __metrics_path__
+#         regex: (.+)
+#       - source_labels: [__address__, __meta_kubernetes_pod_annotation_prometheus_io_port]
+#         action: replace
+#         regex: ([^:]+)(?::\d+)?;(\d+)
+#         replacement: $1:$2
+#         target_label: __address__
+#       - action: labelmap
+#         regex: __meta_kubernetes_pod_label_(.+)
+
+# =========================================================================
+# EXAMPLE ALERT RULES (Reference)
+# =========================================================================
+#
+# Create file: alert.rules.yml
+#
+# groups:
+#   - name: infrafabric-alerts
+#     interval: 1m
+#     rules:
+#       - alert: HighErrorRate
+#         expr: rate(loki_logql_requests_errors_total[5m]) > 10
+#         for: 5m
+#         annotations:
+#           summary: "High error rate in Loki"
+#           description: "{{ $value }} errors/sec"
+#
+#       - alert: LogProcessingLag
+#         expr: loki_distributor_bytes_received_total - ignoring(job) group_left sum(loki_ingester_chunks_stored_total) > 1e8
+#         for: 10m
+#         annotations:
+#           summary: "Loki processing lag detected"
+#
+#       - alert: FluentBitDown
+#         expr: up{job="fluent-bit"} == 0
+#         for: 2m
+#         annotations:
+#           summary: "Fluent Bit is down"
+#           description: "{{ $labels.instance }} is not responding"

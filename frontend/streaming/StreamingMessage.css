@@ -1,0 +1,314 @@
+/**
+ * StreamingMessage CSS
+ *
+ * Provides smooth token reveal animation, cursor animation,
+ * and accessibility-compliant styling.
+ *
+ * Features:
+ * - 60fps smooth animations using CSS transitions
+ * - Hardware acceleration (will-change, transform)
+ * - Blinking cursor animation
+ * - Responsive layout with no layout shift
+ * - High contrast mode support
+ * - Reduced motion respect
+ */
+
+.streaming-message {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: inherit;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+/* Content Area */
+.streaming-content {
+  position: relative;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  padding: 0.75rem 0;
+  min-height: 1.5em;
+}
+
+/* Individual Tokens */
+.streaming-message .token {
+  display: inline;
+  animation: tokenFadeIn 0.15s ease-out forwards;
+  will-change: opacity;
+  opacity: 0;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Token Fade-In Animation */
+@keyframes tokenFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Streaming Cursor */
+.streaming-cursor {
+  display: inline-block;
+  width: 0.15em;
+  height: 1em;
+  background-color: currentColor;
+  margin-left: 0.05em;
+  vertical-align: middle;
+  animation: cursorBlink 0.6s step-end infinite;
+  will-change: opacity;
+}
+
+/* Cursor Blink Animation */
+@keyframes cursorBlink {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
+/* Respect Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .streaming-message .token {
+    animation: none;
+    opacity: 1;
+  }
+
+  .streaming-cursor {
+    animation: none;
+    opacity: 1;
+  }
+
+  .streaming-message {
+    transition: none;
+  }
+}
+
+/* Control Buttons */
+.streaming-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  min-height: 2rem;
+}
+
+.streaming-cancel-button,
+.error-retry-button {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid currentColor;
+  border-radius: 0.375rem;
+  background-color: transparent;
+  color: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  will-change: background-color, border-color;
+}
+
+.streaming-cancel-button:hover,
+.error-retry-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-color: currentColor;
+}
+
+.streaming-cancel-button:active,
+.error-retry-button:active {
+  transform: scale(0.98);
+}
+
+.streaming-cancel-button:focus,
+.error-retry-button:focus {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Completion Indicator */
+.streaming-completion-indicator {
+  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 0.6);
+  font-style: italic;
+}
+
+@media (prefers-color-scheme: dark) {
+  .streaming-completion-indicator {
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+/* Error State */
+.streaming-message.streaming-error {
+  border: 1px solid #dc2626;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background-color: rgba(220, 38, 38, 0.05);
+}
+
+@media (prefers-color-scheme: dark) {
+  .streaming-message.streaming-error {
+    background-color: rgba(220, 38, 38, 0.1);
+  }
+}
+
+.streaming-error-container {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.error-icon {
+  flex-shrink: 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #dc2626;
+}
+
+.error-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.error-message {
+  color: #dc2626;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.error-retry-button {
+  align-self: flex-start;
+  color: #dc2626;
+  border-color: #dc2626;
+}
+
+.error-retry-button:hover {
+  background-color: rgba(220, 38, 38, 0.1);
+  border-color: #b91c1c;
+  color: #b91c1c;
+}
+
+/* Empty State */
+.empty-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+  font-style: italic;
+  user-select: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .empty-placeholder {
+    color: rgba(255, 255, 255, 0.4);
+  }
+}
+
+/* State-based Styling */
+.streaming-message.streaming-active {
+  position: relative;
+}
+
+.streaming-message.streaming-active .streaming-content {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.02) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+}
+
+@media (prefers-color-scheme: dark) {
+  .streaming-message.streaming-active .streaming-content {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.05) 50%,
+      transparent 100%
+    );
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .streaming-message.streaming-active .streaming-content {
+    animation: none;
+    background: none;
+  }
+}
+
+.streaming-message.streaming-complete {
+  /* Subtle completion state */
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: more) {
+  .streaming-message.streaming-error {
+    border-width: 2px;
+  }
+
+  .streaming-cancel-button,
+  .error-retry-button {
+    border-width: 2px;
+  }
+
+  .streaming-cursor {
+    width: 0.2em;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .streaming-message {
+    gap: 0.5rem;
+  }
+
+  .streaming-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .streaming-cancel-button,
+  .error-retry-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .streaming-message {
+    background: none;
+    border: none;
+  }
+
+  .streaming-cursor {
+    display: none;
+  }
+
+  .streaming-controls {
+    display: none;
+  }
+
+  .empty-placeholder {
+    display: none;
+  }
+}

@@ -1,0 +1,105 @@
+groups:
+  - name: infrafabric_p1_high
+    interval: 60s
+    rules:
+      # P1-001: Latency Spike (P95 >2s)
+      - alert: LatencySpike
+        expr: histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m])) > 2.0
+        for: 5m
+        labels:
+          severity: high
+          component: api_performance
+          slo: "5min"
+        annotations:
+          summary: "API latency spike detected - P95 >2s"
+          description: "95th percentile latency exceeded 2 seconds for 5 minutes. Users experiencing slow responses."
+          impact: "HIGH: Poor user experience. Target SLA violation (should be <500ms perceived)."
+          runbook_url: "{{ .ExternalURL }}/docs/runbooks/latency_investigation.md"
+          action: "1. Check active request count\n2. Profile slow endpoints: grep 'duration>2' in logs\n3. Check agent processing time\n4. Review database query latency\n5. Consider scaling up compute"
+          team: "Platform, SRE"
+          priority: "ALERT_CHANNEL"
+
+      # P1-002: High Error Rate (>5%)
+      - alert: HighErrorRate
+        expr: rate(http_requests_total{status=~"5.."}[5m]) / rate(http_requests_total[5m]) > 0.05
+        for: 3m
+        labels:
+          severity: high
+          component: api_reliability
+          slo: "3min"
+        annotations:
+          summary: "HTTP 5xx error rate >5%"
+          description: "More than 5% of requests are returning 5xx errors for 3 minutes."
+          impact: "HIGH: Service reliability degraded. User requests failing."
+          runbook_url: "{{ .ExternalURL }}/docs/runbooks/error_rate_investigation.md"
+          action: "1. Check application logs for exceptions\n2. Review recent deployments\n3. Check database connectivity\n4. Verify external service dependencies\n5. Consider service restart"
+          team: "Platform, DevOps"
+          priority: "ALERT_CHANNEL"
+
+      # P1-003: Task Queue Depth
+      - alert: TaskQueueBacklog
+        expr: task_queue_depth > 1000
+        for: 10m
+        labels:
+          severity: high
+          component: task_processing
+          slo: "10min"
+        annotations:
+          summary: "Task queue depth exceeded 1000 tasks"
+          description: "More than 1000 tasks are queued for processing. Queue is backing up."
+          impact: "HIGH: Task processing backlog growing. User requests queued longer."
+          runbook_url: "{{ .ExternalURL }}/docs/runbooks/queue_management.md"
+          action: "1. Check agent processing rate: monitor task_processed_total\n2. Identify slow tasks in queue\n3. Check for deadlocked agents\n4. Scale up worker agents if needed\n5. Consider priority reordering"
+          team: "Platform, SRE"
+          priority: "ALERT_CHANNEL"
+
+      # P1-004: High Conflict Rate (>10/min)
+      - alert: HighConflictRate
+        expr: rate(state_conflict_total[1m]) > 10
+        for: 10m
+        labels:
+          severity: high
+          component: consensus
+          slo: "10min"
+        annotations:
+          summary: "State conflict rate >10/min"
+          description: "More than 10 conflicting state updates per minute detected for 10 minutes."
+          impact: "HIGH: Consensus overhead increasing. Decision latency rising."
+          runbook_url: "{{ .ExternalURL }}/docs/runbooks/conflict_resolution.md"
+          action: "1. Review conflict log entries\n2. Identify conflicting agent pairs\n3. Check for race conditions in agent code\n4. Review memory_bus access patterns\n5. Consider timeout adjustments"
+          team: "Platform, Architecture"
+          priority: "ALERT_CHANNEL"
+
+      # P1-005: Cache Hit Ratio Degradation (<50%)
+      - alert: CacheDegradation
+        expr: rate(redis_cache_hits_total[15m]) / (rate(redis_cache_hits_total[15m]) + rate(redis_cache_misses_total[15m])) < 0.5
+        for: 15m
+        labels:
+          severity: high
+          component: redis_cache
+          slo: "15min"
+        annotations:
+          summary: "Redis cache hit ratio dropped below 50%"
+          description: "Cache efficiency has degraded significantly. More than 50% cache misses for 15 minutes."
+          impact: "HIGH: Increased backend load. Slower response times."
+          runbook_url: "{{ .ExternalURL }}/docs/runbooks/cache_optimization.md"
+          action: "1. Check Redis eviction policy: CONFIG GET maxmemory-policy\n2. Monitor Redis memory usage\n3. Review cache TTL settings\n4. Check for large key churn\n5. Consider increasing Redis memory allocation"
+          team: "Platform, Database"
+          priority: "ALERT_CHANNEL"
+
+      # P1-006: Disk Usage Critical (>80%)
+      - alert: DiskUsageCritical
+        expr: chromadb_disk_usage_bytes / chromadb_disk_total_bytes > 0.8
+        for: 30m
+        labels:
+          severity: high
+          component: storage
+          slo: "30min"
+        annotations:
+          summary: "ChromaDB disk usage >80%"
+          description: "Disk space usage has exceeded 80% threshold for 30 minutes. Running out of space."
+          impact: "HIGH: ChromaDB writes may fail soon. Evidence storage at risk."
+          runbook_url: "{{ .ExternalURL }}/docs/runbooks/disk_expansion.md"
+          action: "1. Check disk usage: df -h /chromadb_path\n2. Identify large files/collections\n3. Archive old evidence if needed\n4. Expand disk volume\n5. Monitor disk cleanup processes"
+          team: "DevOps, Storage"
+          priority: "ALERT_CHANNEL"

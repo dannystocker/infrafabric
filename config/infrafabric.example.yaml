@@ -1,0 +1,353 @@
+# InfraFabric Production Configuration Example
+# Version: 1.0.0
+# Purpose: Best-practices production deployment with security hardening
+# IF.TTT Compliance: if://doc/config-schema/2025-11-30
+#
+# SECURITY BEST PRACTICES:
+# - All secrets use environment variable references (${VAR_NAME})
+# - HTTPS enforced for all external communication
+# - L1/L2 Redis tiering provides resilience without single points of failure
+# - ChromaDB persistence enables recovery from node failures
+# - Rate limiting protects against abuse
+# - Audit logging enables compliance and incident investigation
+# - IF.TTT ensures full traceability of all decisions
+#
+# PERFORMANCE TUNING:
+# - S2 Redis protocol (140× faster than JSONL)
+# - L1 in-memory cache for <100ms response times
+# - Batch embedding operations reduce ChromaDB latency
+# - Circuit breakers prevent cascading failures
+# - Graceful degradation continues operations during partial outages
+#
+# TOKEN EFFICIENCY:
+# - Default model: Sonnet 4.5 (optimal cost/performance ratio)
+# - Haiku 4.5 automatically used for mechanical tasks (IF.optimise)
+# - Weekly budget prevents overspending
+# - Cost alerts trigger at 80% utilization
+
+version: "1.0.0"
+
+# Core framework: production-grade settings
+infrafabric_core:
+  project_id: "if://project/infrafabric-production"
+  environment: "production"
+  log_level: "warning"  # Less verbose in production
+  token_efficiency_mode: true  # Use Haiku for mechanical work
+  if_ttt_enabled: true  # Mandatory for compliance
+  session_id: ""  # Auto-generated per deployment
+
+# Interfaces: multi-paradigm with production settings
+interfaces:
+  # OpenWebUI power-user backend (Docker deployment)
+  openwebui:
+    enabled: true
+    api_url: "https://openwebui.production.local/api"  # HTTPS required
+    api_key: "${OPENWEBUI_API_KEY}"  # Secret in environment
+    models:
+      - "claude-opus-4-1-20250805"       # For complex reasoning tasks
+      - "claude-sonnet-4-5-20250929"     # Default balanced model
+      - "claude-haiku-4-5-20251001"      # Mechanical/delegation work
+      - "gpt-4-turbo"                    # Fallback for OpenAI
+      - "mistral-large"                  # Alternative open model
+    knowledge_base_path: "/var/lib/infrafabric/knowledge"  # Persistent storage
+    enable_rag_web_search: true
+    enable_rag_hybrid_search: true
+    timeout_seconds: 600  # 10 minutes for complex queries
+
+  # IF.emotion React frontend (consumer touchpoint)
+  if_emotion_react:
+    enabled: true
+    port: 443  # HTTPS port
+    backend_url: "https://api.production.local/v1"  # TLS required
+    personality_dna_path: "/etc/infrafabric/personalities"
+    emotion_color_scheme: "warm"  # User preference
+
+  # CLI for developers and automation
+  cli:
+    enabled: true
+    verbosity: "normal"
+    color_output: true
+    json_output: true  # Easier parsing in CI/CD
+
+  # REST API with strong authentication
+  api:
+    enabled: true
+    host: "0.0.0.0"  # Behind reverse proxy
+    port: 8000
+    auth_required: true
+    auth_type: "jwt"  # Token-based auth for scalability
+    cors_enabled: true
+    cors_origins:
+      - "https://app.production.local"
+      - "https://admin.production.local"
+    request_timeout_ms: 60000  # 60 seconds
+
+  # Voice escalation tiers
+  voice:
+    enabled: true
+
+    # Tier 1: WhatsApp for immediate customer support
+    whatsapp_tier1:
+      enabled: true
+      account_sid: "${TWILIO_ACCOUNT_SID}"
+      auth_token: "${TWILIO_AUTH_TOKEN}"
+      phone_number: "${WHATSAPP_BUSINESS_NUMBER}"
+
+    # Tier 2: SIP/voip.ms for escalated support
+    sip_tier2:
+      enabled: true
+      sip_uri: "voip.ms"
+      username: "${SIP_USERNAME}"
+      password: "${SIP_PASSWORD}"
+      extension: "${SIP_EXTENSION}"
+
+    # Text-to-Speech: Premium voice quality
+    text_to_speech:
+      provider: "elevenlabs"
+      api_key: "${ELEVENLABS_API_KEY}"
+      voice_id: "EXAVITQu4vr4xnSDxMaL"  # Professional voice
+      language: "en"
+
+    # Speech-to-Text: Whisper with fallback
+    speech_to_text:
+      provider: "openai_whisper"
+      api_key: "${OPENAI_API_KEY}"
+      language: "en"
+
+# Memory: production-grade L1/L2 tiering
+memory:
+  # Context Memory: Redis with HA replication
+  context_memory:
+    backend: "redis_cluster"  # For horizontal scalability
+    host: "redis-master.internal"
+    port: 6379
+    db: 0
+    password: "${REDIS_MASTER_PASSWORD}"
+    ttl_seconds: 7200  # 2 hour default
+    max_connections: 500  # Higher capacity
+
+    # L1 in-memory cache (this node)
+    enable_l1_cache: true
+    enable_l2_cache: true
+    l1_ttl_seconds: 300  # 5 min fast cache
+
+    # L2 persistent tier (Proxmox/secondary region)
+    l2_host: "redis-proxmox.internal"
+    l2_port: 6379
+
+  # Deep Storage: ChromaDB with distributed architecture
+  deep_storage:
+    backend: "chromadb_persistent"
+    host: "chromadb-cluster.internal"
+    port: 8000
+    persist_directory: "/var/lib/chromadb/collections"
+
+    # Collections optimized for production workloads
+    collections:
+      # Agent personality/behavior profiles
+      - name: "personality_dna_agents"
+        type: "personality_dna"
+        distance_metric: "cosine"
+
+      # Domain knowledge across verticals
+      - name: "knowledge_fintech"
+        type: "knowledge"
+        distance_metric: "cosine"
+
+      - name: "knowledge_healthcare"
+        type: "knowledge"
+        distance_metric: "cosine"
+
+      - name: "knowledge_enterprise"
+        type: "knowledge"
+        distance_metric: "cosine"
+
+      # Long-term conversation history
+      - name: "context_archive_2025"
+        type: "context_archive"
+        distance_metric: "cosine"
+
+      # Research findings from guardian council
+      - name: "findings_council"
+        type: "findings"
+        distance_metric: "cosine"
+
+      # Verifiable citations (IF.TTT)
+      - name: "citations_verified"
+        type: "citations"
+        distance_metric: "cosine"
+
+      # OpenWebUI knowledge integration
+      - name: "openwebui_functions"
+        type: "openwebui_functions"
+        distance_metric: "cosine"
+
+      - name: "openwebui_pain_points"
+        type: "openwebui_pain_points"
+        distance_metric: "cosine"
+
+    # Optimized embedding for 1M+ documents
+    embedding_model: "sentence-transformers/all-mpnet-base-v2"
+    batch_size: 500  # Larger batches for throughput
+
+    auth_token: "${CHROMADB_AUTH_TOKEN}"
+    enable_anonymized_telemetry: false
+
+# Agents: production model registry
+agents:
+  claude_models:
+    default_model: "claude-sonnet-4-5-20250929"  # Balanced cost/quality
+
+    models:
+      # Apex reasoning (use for council deliberations)
+      - id: "claude-opus-4-1-20250805"
+        tier: "apex"
+        cost_per_mtok_input: 15.0
+        cost_per_mtok_output: 75.0
+        context_window: 200000
+        use_case: "reasoning"
+        enabled: true
+
+      # Frontier general purpose (default)
+      - id: "claude-sonnet-4-5-20250929"
+        tier: "frontier"
+        cost_per_mtok_input: 3.0
+        cost_per_mtok_output: 15.0
+        context_window: 200000
+        use_case: "analysis"
+        enabled: true
+
+      # Economy (IF.optimise delegation)
+      - id: "claude-haiku-4-5-20251001"
+        tier: "economy"
+        cost_per_mtok_input: 0.8
+        cost_per_mtok_output: 4.0
+        context_window: 200000
+        use_case: "mechanical"
+        enabled: true
+
+    timeout_ms: 600000  # 10 minutes for large analysis
+
+    retry_config:
+      max_retries: 5  # More resilient to transient failures
+      backoff_factor: 2.0
+      initial_delay_ms: 2000
+
+    # Strict budget to prevent runaway costs
+    cost_budget_tokens: 2000000  # $25-30/week at typical rates
+
+  # IF.emotion personality framework
+  if_emotion:
+    enabled: true
+    sandbox_enabled: true  # Always sandbox in production
+    personality_dna_path: "/etc/infrafabric/personalities"
+    cross_cultural_lexicon_path: "/etc/infrafabric/emotion_lexicons"
+
+    safety_guidelines:
+      max_emotional_intensity: 0.7  # Conservative for business context
+      cultural_sensitivity_check: true
+      bias_detection: true
+
+  # S2 swarm communication (production-hardened)
+  swarm_communication:
+    enabled: true
+    protocol: "s2_redis"  # 140× faster than JSONL
+    heartbeat_interval_ms: 5000
+    packet_timeout_ms: 60000  # Extended for reliability
+    encryption: "ed25519"  # Cryptographic verification
+
+# Security: production hardening
+security:
+  sandboxing:
+    enabled: true
+    input_validation: true
+    input_size_limit_bytes: 10485760  # 10MB
+    output_filtering: true
+    allow_code_execution: false
+    sandbox_type: "strict"
+
+    blocked_patterns:
+      - "^(DELETE|DROP|TRUNCATE|ALTER)\\s"
+      - "(password|secret|key|token)\\s*="
+      - "(AWS_ACCESS_KEY|API_KEY|PRIVATE_KEY)"
+      - "(credit_card|ssn|social_security)"
+
+    # Only allow specific trusted domains
+    allowed_domains:
+      - "api.openai.com"
+      - "api.anthropic.com"
+      - "api.mistral.ai"
+
+  rate_limits:
+    enabled: true
+    user_per_hour: 500  # Conservative for production
+    ip_per_hour: 2000
+    burst_per_minute: 50  # Prevent spikes
+    cost_budget_tokens: 2000000  # Match agents config
+    cost_alert_threshold: 0.75  # Alert at 75%
+
+  authentication:
+    auth_method: "mfa"  # Multi-factor for compliance
+    jwt_secret: "${JWT_SECRET_PROD}"
+    token_expiry_hours: 8  # Shorter lived tokens
+    require_https: true  # Enforced
+
+# Audit: compliance and incident investigation
+audit:
+  enabled: true
+  log_level: "info"
+
+  # Extended retention for compliance
+  retention_days_hot: 90      # 3 months hot storage
+  retention_days_cold: 2555   # ~7 years cold storage (SOX/HIPAA)
+
+  storage_backend: "both"  # Redis for search, ChromaDB for archival
+
+  # Comprehensive audit events
+  audit_events:
+    - "agent_spawn"
+    - "agent_complete"
+    - "decision_made"
+    - "citation_created"
+    - "security_violation"
+    - "rate_limit_exceeded"
+    - "api_call"
+    - "data_access"
+    - "config_change"
+    - "error"
+
+  # IF.TTT traceability (mandatory)
+  if_ttt_traceability:
+    enabled: true
+    citation_schema_path: "/etc/infrafabric/schemas/citation-v1.json"
+    trace_all_decisions: true  # Every decision must be cited
+    verification_levels:
+      - "unverified"
+      - "verified"
+      - "disputed"
+      - "revoked"
+
+# Resilience: high availability
+resilience:
+  timeout_prevention:
+    enabled: true
+    default_timeout_ms: 600000  # 10 minutes
+    heartbeat_interval_ms: 10000  # Check every 10s
+    heartbeat_timeout_ms: 30000
+    checkpoint_interval_ms: 120000  # Save progress every 2 min
+    recovery_strategy: "restart_from_checkpoint"
+
+  graceful_degradation:
+    enabled: true
+    redis_fallback_mode: true        # Use in-process cache if Redis down
+    chromadb_fallback_mode: true     # Fall back to SQLite if ChromaDB down
+    openwebui_fallback_mode: true    # Continue without OpenWebUI
+    circuit_breaker_threshold: 3     # Stricter in production
+    circuit_breaker_reset_ms: 120000  # 2 minute recovery window
+
+  # Strict resource limits in containerized environment
+  resource_limits:
+    max_concurrent_agents: 40      # Fixed swarm size
+    max_memory_mb: 16384           # 16GB per container
+    max_cpu_percent: 75.0          # Leave headroom
+    swap_enabled: false            # Predictable performance

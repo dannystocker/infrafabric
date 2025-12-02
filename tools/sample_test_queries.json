@@ -1,0 +1,102 @@
+[
+  {
+    "text": "Sergio's core values and ethical framework",
+    "collection": "sergio_personality",
+    "category": "personality"
+  },
+  {
+    "text": "Big Five conscientiousness trait",
+    "collection": "sergio_personality",
+    "category": "personality"
+  },
+  {
+    "text": "Metaphor and rhetorical devices",
+    "collection": "sergio_rhetorical",
+    "category": "rhetorical"
+  },
+  {
+    "text": "Code-switching bilingual communication",
+    "collection": "sergio_rhetorical",
+    "category": "rhetorical"
+  },
+  {
+    "text": "Humor self-deprecating jokes",
+    "collection": "sergio_humor",
+    "category": "humor"
+  },
+  {
+    "text": "Emotional vulnerability and warmth",
+    "collection": "sergio_humor",
+    "category": "humor"
+  },
+  {
+    "text": "Couples therapy family systems",
+    "collection": "sergio_corpus",
+    "category": "corpus"
+  },
+  {
+    "text": "Aspergers neurodiversity identity",
+    "collection": "sergio_corpus",
+    "category": "corpus"
+  },
+  {
+    "text": "Relational therapy approach",
+    "collection": null,
+    "category": "cross-collection"
+  },
+  {
+    "text": "Systems thinking decision making",
+    "collection": null,
+    "category": "cross-collection"
+  },
+  {
+    "text": "Operationalization anti-abstract thinking",
+    "collection": null,
+    "category": "cross-collection"
+  },
+  {
+    "text": "Emotional social intelligence EMODIVERSITY",
+    "collection": null,
+    "category": "cross-collection"
+  },
+  {
+    "text": "Aspiradora Spanish language patterns",
+    "collection": null,
+    "category": "linguistic"
+  },
+  {
+    "text": "Conference transcript narrative",
+    "collection": null,
+    "category": "corpus"
+  },
+  {
+    "text": "Behavioral examples trait patterns",
+    "collection": null,
+    "category": "behavior"
+  },
+  {
+    "text": "Linguistic markers discourse analysis",
+    "collection": null,
+    "category": "linguistic"
+  },
+  {
+    "text": "Authenticity and vulnerability",
+    "collection": null,
+    "category": "emotional"
+  },
+  {
+    "text": "Framework classification Big Five MBTI",
+    "collection": null,
+    "category": "personality"
+  },
+  {
+    "text": "How does Sergio approach couples therapy",
+    "collection": null,
+    "category": "open-ended"
+  },
+  {
+    "text": "Integration of aspergers and emotional intelligence",
+    "collection": null,
+    "category": "integration"
+  }
+]

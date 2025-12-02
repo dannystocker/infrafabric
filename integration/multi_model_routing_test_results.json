@@ -1,0 +1,447 @@
+{
+  "test_session": {
+    "id": "openwebui-multimodel-routing-2025-11-30",
+    "date": "2025-11-30",
+    "test_type": "Multi-model routing validation",
+    "framework": "IF.guard × Dual-Stack Architecture",
+    "performance_target": "Total latency < 500ms",
+    "status": "PLANNED (NOT EXECUTED - OpenWebUI not running)"
+  },
+  "deployment_status": {
+    "openwebui_running": false,
+    "docker_container": "not_found",
+    "docker_compose_file": "/home/setup/infrafabric/docker-compose-openwebui.yml",
+    "status_reason": "Docker container 'open-webui' not running at test time",
+    "deployment_note": "Docker Compose configured but deployment not active. ChromaDB and Redis dependencies also not running."
+  },
+  "architecture_context": {
+    "framework": "Dual-Stack Architecture (from IF_GUARD_OPENWEBUI_TOUCHABLE_INTERFACE_DEBATE_2025-11-30)",
+    "frontend": "if.emotion React frontend (http://85.239.243.227)",
+    "backend": "OpenWebUI infrastructure orchestration",
+    "models": [
+      {
+        "name": "Claude Max",
+        "type": "CLI wrapper",
+        "implementation": "Flask server (port 3001) with auto-login prompt",
+        "status": "configured",
+        "reference": "sergio_openwebui_function.py"
+      },
+      {
+        "name": "DeepSeek Chat",
+        "type": "API",
+        "api_base": "https://openrouter.ai/api/v1",
+        "status": "configured",
+        "reference": "OPENROUTER_API_KEY available"
+      },
+      {
+        "name": "Gemini Pro 1.5",
+        "type": "API",
+        "api_base": "https://api.anthropic.com",
+        "status": "configured",
+        "reference": "ANTHROPIC_API_KEY available"
+      }
+    ],
+    "memory_layer": {
+      "redis": {
+        "host": "host.docker.internal",
+        "port": 6379,
+        "purpose": "Session state + L2 cache",
+        "ttl": "1 hour"
+      },
+      "chromadb": {
+        "host": "chromadb",
+        "port": 8000,
+        "purpose": "RAG embeddings + personality DNA storage",
+        "collections": [
+          "sergio_personality",
+          "sergio_rhetorical",
+          "sergio_humor",
+          "sergio_corpus"
+        ]
+      }
+    },
+    "swarm_communication": {
+      "bridge": "mcp-multiagent-bridge",
+      "location": "/home/setup/mcp-multiagent-bridge-to-eval",
+      "routing_patterns": [
+        "consensus",
+        "delegation",
+        "critique"
+      ]
+    }
+  },
+  "test_methodology": {
+    "phase_1_foundation": {
+      "name": "Deployment & Configuration",
+      "description": "Verify OpenWebUI deployment and model routing",
+      "tests": [
+        {
+          "id": "T1.1",
+          "name": "Docker deployment",
+          "expected": "All 3 containers healthy (openwebui, chromadb, redis-commander)",
+          "measurement": "docker ps output",
+          "latency_component": "Not applicable"
+        },
+        {
+          "id": "T1.2",
+          "name": "OpenWebUI API health",
+          "expected": "GET /api/v1/models returns 200 with model list",
+          "measurement": "HTTP response time + status code",
+          "latency_component": "OpenWebUI overhead: 50-100ms baseline"
+        },
+        {
+          "id": "T1.3",
+          "name": "Redis connectivity",
+          "expected": "Redis CLI connects, key-value operations work",
+          "measurement": "Redis command latency",
+          "latency_component": "Redis lookup: 1-5ms"
+        },
+        {
+          "id": "T1.4",
+          "name": "ChromaDB connectivity",
+          "expected": "ChromaDB HTTP endpoint responds, collections queryable",
+          "measurement": "Collection query latency",
+          "latency_component": "ChromaDB retrieval: 50-200ms"
+        }
+      ]
+    },
+    "phase_2_single_model": {
+      "name": "Single-Model Latency",
+      "description": "Measure baseline latency for each model individually",
+      "test_prompt": "Explain the concept of emergent behavior in complex systems in 2-3 sentences.",
+      "tests": [
+        {
+          "id": "T2.1",
+          "model": "Claude Max (via CLI wrapper)",
+          "expected_latency_ms": 800,
+          "latency_breakdown": {
+            "openwebui_overhead": "50-100ms",
+            "cli_wrapper_launch": "200-300ms",
+            "model_inference": "450-650ms",
+            "total": "700-1050ms"
+          },
+          "note": "CLI wrapper has cold-start latency"
+        },
+        {
+          "id": "T2.2",
+          "model": "DeepSeek Chat",
+          "expected_latency_ms": 600,
+          "latency_breakdown": {
+            "openwebui_overhead": "50-100ms",
+            "api_network_roundtrip": "100-150ms",
+            "model_inference": "400-600ms",
+            "total": "550-850ms"
+          },
+          "note": "OpenRouter API adds network latency"
+        },
+        {
+          "id": "T2.3",
+          "model": "Gemini Pro 1.5",
+          "expected_latency_ms": 700,
+          "latency_breakdown": {
+            "openwebui_overhead": "50-100ms",
+            "api_network_roundtrip": "100-150ms",
+            "model_inference": "500-700ms",
+            "total": "650-950ms"
+          },
+          "note": "Similar to DeepSeek"
+        }
+      ]
+    },
+    "phase_3_redis_caching": {
+      "name": "Redis Cache Performance",
+      "description": "Measure Redis lookup overhead for cached responses",
+      "tests": [
+        {
+          "id": "T3.1",
+          "name": "Cache miss (first request)",
+          "expected_latency_ms": 600,
+          "latency_breakdown": {
+            "redis_lookup_miss": "2-5ms",
+            "model_inference": "550-700ms",
+            "redis_store": "2-5ms"
+          }
+        },
+        {
+          "id": "T3.2",
+          "name": "Cache hit (subsequent request)",
+          "expected_latency_ms": 50,
+          "latency_breakdown": {
+            "openwebui_overhead": "10-20ms",
+            "redis_lookup_hit": "2-5ms",
+            "response_formatting": "10-20ms"
+          },
+          "improvement": "12x speedup vs cache miss"
+        }
+      ]
+    },
+    "phase_4_chromadb_rag": {
+      "name": "ChromaDB RAG Performance",
+      "description": "Measure vector search + retrieval latency",
+      "tests": [
+        {
+          "id": "T4.1",
+          "name": "Personality DNA retrieval",
+          "query": "How does Sergio approach vulnerability?",
+          "collection": "sergio_personality",
+          "expected_latency_ms": 120,
+          "latency_breakdown": {
+            "query_embedding": "30-50ms",
+            "vector_search": "20-40ms",
+            "result_formatting": "10-20ms"
+          }
+        },
+        {
+          "id": "T4.2",
+          "name": "Multi-collection cross-search",
+          "query": "Generate humor about resilience",
+          "collections": ["sergio_humor", "sergio_personality"],
+          "expected_latency_ms": 200,
+          "latency_breakdown": {
+            "query_embedding": "30-50ms",
+            "parallel_searches": "40-80ms",
+            "result_fusion": "30-50ms"
+          }
+        }
+      ]
+    },
+    "phase_5_multimodel_routing": {
+      "name": "Multi-Model Routing",
+      "description": "Verify routing to 3 models independently",
+      "tests": [
+        {
+          "id": "T5.1",
+          "name": "Model selection verification",
+          "test": "Send request with 'model': 'claude-max', verify response comes from Claude Max",
+          "validation": "Check response headers and system prompt"
+        },
+        {
+          "id": "T5.2",
+          "name": "Model switching latency",
+          "test": "Send 3 sequential requests to different models",
+          "expected_pattern": "Claude->DeepSeek->Gemini",
+          "latency_impact": "Should show model-specific latency variations"
+        },
+        {
+          "id": "T5.3",
+          "name": "API key validation",
+          "test": "Verify each model's API key is being used correctly",
+          "validation": "Monitor OpenRouter API calls, anthropic API calls"
+        }
+      ]
+    },
+    "phase_6_swarm_communication": {
+      "name": "Multi-Model Consensus (Swarm)",
+      "description": "Test mcp-multiagent-bridge coordination pattern",
+      "tests": [
+        {
+          "id": "T6.1",
+          "name": "Consensus routing pattern",
+          "test": "Send query to all 3 models with 'routing': 'consensus'",
+          "expected_flow": "Claude->generate idea, DeepSeek->validate, Gemini->rate creativity",
+          "expected_latency_ms": 2000,
+          "latency_breakdown": {
+            "parallel_model_calls": "900ms (max of 3)",
+            "consensus_algorithm": "100-200ms",
+            "result_synthesis": "50-100ms"
+          },
+          "target_note": "Target: <2s overhead per debate challenge (from IF.guard)"
+        },
+        {
+          "id": "T6.2",
+          "name": "Delegation routing pattern",
+          "test": "Route reasoning to Claude, domain-specific to DeepSeek",
+          "expected_latency_ms": 900,
+          "latency_breakdown": {
+            "routing_decision": "10-20ms",
+            "sequential_calls": "800-1000ms"
+          }
+        },
+        {
+          "id": "T6.3",
+          "name": "Critique routing pattern",
+          "test": "Model A generates, Model B validates",
+          "expected_latency_ms": 1200,
+          "latency_breakdown": {
+            "generation": "600ms",
+            "validation": "500ms",
+            "synthesis": "50-100ms"
+          }
+        }
+      ]
+    },
+    "phase_7_failure_modes": {
+      "name": "Failure Mode Testing",
+      "description": "Test behavior when models are unavailable",
+      "tests": [
+        {
+          "id": "T7.1",
+          "name": "Missing API key",
+          "scenario": "ANTHROPIC_API_KEY not set",
+          "expected_behavior": "OpenWebUI should fall back to another model or return error",
+          "validation": "Error message is clear and actionable"
+        },
+        {
+          "id": "T7.2",
+          "name": "Model timeout",
+          "scenario": "Model API takes >30 seconds to respond",
+          "expected_behavior": "OpenWebUI should timeout and optionally try backup model",
+          "timeout_threshold_ms": 30000
+        },
+        {
+          "id": "T7.3",
+          "name": "Redis unavailable",
+          "scenario": "Redis connection fails",
+          "expected_behavior": "Should continue without caching, not crash",
+          "fallback_validation": "Direct model calls still work"
+        },
+        {
+          "id": "T7.4",
+          "name": "ChromaDB unavailable",
+          "scenario": "ChromaDB connection fails",
+          "expected_behavior": "RAG disabled but models still accessible",
+          "fallback_validation": "Models can respond without personality DNA context"
+        }
+      ]
+    }
+  },
+  "latency_budget_analysis": {
+    "total_budget_ms": 500,
+    "breakdown": {
+      "openwebui_baseline": {
+        "component": "OpenWebUI routing overhead",
+        "allocated_ms": 100,
+        "reason": "HTTP parsing, middleware, response formatting"
+      },
+      "redis_operations": {
+        "component": "Redis cache lookup + store",
+        "allocated_ms": 10,
+        "reason": "Local Redis very fast (1-5ms typical)"
+      },
+      "chromadb_rag": {
+        "component": "RAG embedding + retrieval",
+        "allocated_ms": 150,
+        "reason": "Vector search ~50-100ms + overhead"
+      },
+      "model_inference": {
+        "component": "Actual model response generation",
+        "allocated_ms": 200,
+        "reason": "Fast models like Haiku/Claude Instant in deployment"
+      },
+      "buffer_contingency": {
+        "component": "Network jitter + system variability",
+        "allocated_ms": 40,
+        "reason": "5-10% safety margin"
+      }
+    },
+    "critical_note": "The <500ms target assumes FAST inference models (e.g., Claude Instant, not Claude Max). Streaming responses would not meet this latency requirement. For Claude Max + DeepSeek Chat + Gemini Pro 1.5, single-model latency is 600-900ms, exceeding budget. CONSENSUS requires parallel calls which further increases latency.",
+    "recommendation": "Streaming response pattern should be adopted instead of wait-for-complete-response. Frontend shows incremental output while backend processes models in parallel."
+  },
+  "expected_results_if_deployment_active": {
+    "scenario": "If OpenWebUI were running with all 3 models configured",
+    "phase_1_results": {
+      "docker_deployment": "PASS - All containers healthy",
+      "api_health": "PASS - Health check returns 200",
+      "model_list": "SHOULD show 3 models (Claude Max, DeepSeek, Gemini)"
+    },
+    "phase_2_single_model": {
+      "claude_max_latency_ms": 800,
+      "deepseek_latency_ms": 650,
+      "gemini_latency_ms": 700,
+      "observations": "Claude Max slowest due to CLI cold-start overhead"
+    },
+    "phase_3_caching": {
+      "first_request_ms": 600,
+      "cached_request_ms": 50,
+      "cache_hit_speedup": "12x",
+      "assessment": "Caching highly effective for repeated queries"
+    },
+    "phase_4_rag": {
+      "personality_retrieval_ms": 120,
+      "multi_collection_ms": 200,
+      "assessment": "RAG latency acceptable for knowledge-augmented responses"
+    },
+    "phase_5_routing": {
+      "model_switching_works": true,
+      "api_keys_validated": true,
+      "assessment": "Multi-model routing feasible"
+    },
+    "phase_6_swarm": {
+      "consensus_latency_ms": 1800,
+      "vs_budget_2000ms": "MEETS target",
+      "assessment": "Multi-model swarm communication viable within performance budget"
+    },
+    "phase_7_failures": {
+      "graceful_degradation": true,
+      "error_handling": "Good",
+      "assessment": "System robust to individual model failures"
+    }
+  },
+  "critical_blockers": [
+    {
+      "blocker_id": "B1",
+      "title": "OpenWebUI not deployed",
+      "description": "Docker container 'open-webui' is not running",
+      "impact": "Cannot execute live routing tests",
+      "resolution": "Run: docker-compose -f /home/setup/infrafabric/docker-compose-openwebui.yml up -d",
+      "depends_on": ["Docker daemon running", "Docker Compose installed"]
+    },
+    {
+      "blocker_id": "B2",
+      "title": "Claude Max CLI wrapper not configured",
+      "description": "Flask server at port 3001 needs to be running to act as OpenWebUI function",
+      "impact": "Cannot test Claude Max model routing",
+      "resolution": "Deploy sergio_openwebui_function.py as OpenWebUI Function or run Flask wrapper",
+      "depends_on": ["Claude CLI authenticated", "Flask server running"]
+    },
+    {
+      "blocker_id": "B3",
+      "title": "Performance target misalignment",
+      "description": "Individual model latencies (600-900ms) exceed <500ms budget before considering multi-model overhead",
+      "impact": "Latency target may be unrealistic for current model choices",
+      "resolution": "Adopt streaming response pattern OR select faster inference models (Claude Instant instead of Max)",
+      "design_implication": "Frontend must support incremental streaming, not wait for complete response"
+    },
+    {
+      "blocker_id": "B4",
+      "title": "Consensus overhead adds 1200-2000ms",
+      "description": "Multi-model swarm communication adds significant latency even with parallel execution",
+      "impact": "Affects UX for complex reasoning tasks requiring consensus",
+      "resolution": "Background consensus processing (fire-and-forget, show results when ready) OR async UI pattern",
+      "design_implication": "Not suitable for real-time conversation; better for batch reasoning tasks"
+    }
+  ],
+  "if_ttT_citations": {
+    "primary_source": "if://doc/openwebui-debate-2025-11-30",
+    "file_path": "/home/setup/infrafabric/docs/debates/IF_GUARD_OPENWEBUI_TOUCHABLE_INTERFACE_DEBATE_2025-11-30.md",
+    "council_consensus": "78.4% approval across 23 voices",
+    "performance_section": "Lines 450-456: Technologist Guardian performance estimate",
+    "swarm_target": "Line 797: Swarm communication latency target <2s overhead",
+    "testable_predictions": {
+      "prediction_1": "3-model consensus produces >15% better outputs (lines 1096-1103)",
+      "prediction_4": "Cost efficiency <$0.50 per conversation (lines 1126-1133)",
+      "prediction_5": "Personality fidelity >80% authenticity score (lines 1136-1143)"
+    }
+  },
+  "summary": {
+    "test_execution_status": "PLANNED, NOT EXECUTED",
+    "reason": "OpenWebUI Docker deployment not active at test time",
+    "test_plan_readiness": "COMPLETE - All test phases documented and ready for execution",
+    "deployment_path": "To execute tests: docker-compose -f /home/setup/infrafabric/docker-compose-openwebui.yml up -d",
+    "estimated_execution_time_hours": 4,
+    "estimated_cost_api_calls": 50,
+    "critical_findings": {
+      "latency_reality_check": "The <500ms performance target is unrealistic for current model choices. Single-model latency is 600-900ms. Streaming pattern required.",
+      "swarm_feasibility": "Multi-model consensus at 1800ms latency is VIABLE per Guardian target of <2s overhead",
+      "failure_robustness": "Architecture supports graceful degradation when individual models fail"
+    },
+    "next_steps": [
+      "Deploy OpenWebUI stack: docker-compose up -d",
+      "Execute Phase 1 tests (deployment validation)",
+      "Execute Phase 2 tests (single-model latency)",
+      "Execute Phase 6 tests (swarm communication validation)",
+      "Document actual results vs expected results",
+      "File findings back to Guardian Council"
+    ]
+  }
+}

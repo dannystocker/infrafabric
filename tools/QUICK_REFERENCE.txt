@@ -1,0 +1,323 @@
+===============================================================================
+ChromaDB Migration A27 - Quick Reference Card
+===============================================================================
+
+ONE-LINER EXECUTION
+===============================================================================
+
+python chromadb_migration_validator.py \
+  --old-db-url http://85.239.243.227:8000 \
+  --new-db-url http://localhost:8000 \
+  --test-queries sample_test_queries.json
+
+
+STATUS CODES
+===============================================================================
+
+EXIT CODE 0: PASSED (no rollback needed)
+EXIT CODE 1: FAILED (rollback triggered)
+
+
+OUTPUT FILES
+===============================================================================
+
+validation_report.md       ← Read this first (human-readable)
+validation_report.json     ← Machine-readable results
+validation_logs/*.log      ← Detailed execution logs
+
+
+KEY METRICS TO CHECK
+===============================================================================
+
+overall_status: PASSED          ← Must be PASSED
+rollback_triggered: false       ← Must be false
+data_loss_percentage: 0.0       ← Must be 0.0
+semantic_divergence: <20%       ← Must be <20%
+passed_tests: 8                 ← Must be 8
+failed_tests: 0                 ← Must be 0
+
+
+DECISION TREE
+===============================================================================
+
+Check overall_status?
+  ├─ YES (PASSED) → PROCEED TO CUTOVER ✓
+  └─ NO (FAILED)  → TRIGGER ROLLBACK ✗
+
+If PASSED, also verify:
+  ├─ rollback_triggered = false? ✓
+  ├─ data_loss = 0.0%? ✓
+  └─ semantic_divergence < 20%? ✓
+
+
+ROLLBACK TRIGGERS
+===============================================================================
+
+Condition                    Threshold       Action
+─────────────────────────────────────────────────────────
+Data Loss                    >5%             Rollback
+Semantic Divergence          >20%            Rollback
+Count Mismatch               Any             Rollback
+Embedding NaN/Inf            Any             Rollback
+Missing Required Fields      Any             Rollback
+Duplicate IDs                Any             Rollback
+
+
+8 VALIDATION TESTS SUMMARY
+===============================================================================
+
+Test 1: Count Verification
+  Check: Total chunks match (9,832)
+  Fail: Mismatch = data loss detected
+
+Test 2: Embedding Integrity
+  Check: Valid dimensions, no NaN/Inf values
+  Fail: Corrupted embeddings
+
+Test 3: Metadata Completeness
+  Check: All 12 required fields present
+  Fail: Missing metadata fields
+
+Test 4: Semantic Search Equivalence
+  Check: Query results similar (Jaccard similarity)
+  Fail: >20% divergence from pre-migration
+
+Test 5: Collection Distribution
+  Check: Chunks in correct collections
+  Fail: Misassigned collections
+
+Test 6: Duplicate Detection
+  Check: No duplicate IDs
+  Fail: Duplicate IDs found
+
+Test 7: Field Type Validation
+  Check: Metadata field types correct
+  Fail: Type mismatches
+
+Test 8: Citation References
+  Check: Valid if_citation_uri format
+  Fail: Malformed URIs
+
+
+COMMAND VARIANTS
+===============================================================================
+
+Full validation with semantic tests:
+  python chromadb_migration_validator.py \
+    --old-db-url http://old:8000 \
+    --new-db-url http://new:8000 \
+    --test-queries sample_test_queries.json
+
+Verbose output:
+  python chromadb_migration_validator.py \
+    --old-db-url http://old:8000 \
+    --new-db-url http://new:8000 \
+    --verbose
+
+Local ChromaDB paths:
+  python chromadb_migration_validator.py \
+    --old-db-url /path/to/old/chromadb \
+    --new-db-url /path/to/new/chromadb
+
+Fast validation (skip semantic tests):
+  python chromadb_migration_validator.py \
+    --old-db-url http://old:8000 \
+    --new-db-url http://new:8000
+
+
+EXPECTED TIMING
+===============================================================================
+
+Connection & Load:      2-3 minutes
+Core Tests (1-3):       5-10 minutes
+Semantic Tests (4):     15-20 minutes  (optional)
+Quality Tests (5-7):    3-5 minutes
+Citation Tests (8):     <1 minute
+─────────────────────────────────
+Total:                  25-35 minutes
+
+
+✓ PASS SCENARIO
+===============================================================================
+
+overall_status: PASSED
+rollback_triggered: false
+total_tests: 8
+passed_tests: 8
+failed_tests: 0
+data_loss_percentage: 0.0
+semantic_divergence_percentage: 3.8%
+
+ACTION: ✓ PROCEED TO CUTOVER
+
+
+⚠ WARNING SCENARIO
+===============================================================================
+
+overall_status: WARNING
+rollback_triggered: false
+total_tests: 8
+passed_tests: 8
+failed_tests: 0
+data_loss_percentage: 0.0
+semantic_divergence_percentage: 15.2%
+
+ACTION: ⚠ REVIEW WARNINGS, PROCEED CAUTIOUSLY
+
+
+✗ FAIL SCENARIO
+===============================================================================
+
+overall_status: FAILED
+rollback_triggered: true
+rollback_reason: "Data loss: 8.3% > 5%"
+total_tests: 8
+passed_tests: 6
+failed_tests: 2
+data_loss_percentage: 8.3%
+
+ACTION: ✗ AUTO-TRIGGER A28 ROLLBACK
+
+
+FILE LOCATIONS
+===============================================================================
+
+Validator script:
+  /home/setup/infrafabric/tools/chromadb_migration_validator.py
+
+Test queries:
+  /home/setup/infrafabric/tools/sample_test_queries.json
+
+Documentation:
+  /home/setup/infrafabric/tools/CHROMADB_VALIDATOR_README.md
+  /home/setup/infrafabric/tools/VALIDATION_TEST_SPEC.md
+  /home/setup/infrafabric/tools/MIGRATION_INTEGRATION_GUIDE.md
+
+Reports & Logs:
+  /home/setup/infrafabric/validation_logs/
+
+
+COMMON ERROR MESSAGES
+===============================================================================
+
+"Failed to connect to databases"
+→ Check: URLs correct, servers running, firewall open
+
+"Count mismatch: 9800 vs 9832"
+→ Action: Trigger A28 rollback, investigate A26 migration
+
+"Found NaN values: 42 embeddings"
+→ Action: Rollback, check embedding generation
+
+"Missing 'source_file': 156 chunks"
+→ Action: Rollback, re-run metadata transformation
+
+"Average divergence: 23.5% > 20%"
+→ Action: Rollback or investigate search changes
+
+
+BEFORE RUNNING VALIDATION
+===============================================================================
+
+[ ] A26 migration completed successfully
+[ ] New ChromaDB is accessible and responding
+[ ] Old ChromaDB is accessible for comparison
+[ ] Test queries file ready (optional)
+[ ] Sufficient disk space for logs
+[ ] Network connectivity verified
+
+
+AFTER GETTING RESULTS
+===============================================================================
+
+If overall_status = PASSED:
+  1. Review validation_report.md for details
+  2. Approve cutover in change management
+  3. Update application connection string
+  4. Run smoke tests in production
+  5. Monitor for 24 hours
+
+If overall_status = FAILED:
+  1. Note the rollback_reason
+  2. Wait for A28 auto-rollback to complete
+  3. Investigate root cause with A26 logs
+  4. Fix A26 migration logic
+  5. Restart migration from beginning
+  6. Re-run A27 validation
+
+
+KEY METRICS EXPLAINED
+===============================================================================
+
+data_loss_percentage
+  Formula: (old_count - new_count) / old_count × 100
+  Threshold: >5% triggers rollback
+  Expected: 0.0%
+
+semantic_divergence_percentage
+  Formula: Average Jaccard distance across test queries
+  Threshold: >20% triggers rollback
+  Expected: <10% (ideally <5%)
+
+authenticity_score (per chunk)
+  Range: 0.0 (low trust) to 1.0 (high trust)
+  Expected: ≥0.75 for migrated content
+
+
+DEPENDENCIES
+===============================================================================
+
+Required:
+  pip install chromadb
+
+Optional (for semantic tests):
+  pip install sentence-transformers
+
+
+MIGRATION DECISION MATRIX
+===============================================================================
+
+Count Verification | Semantic Test  | Duplicates  | Decision
+─────────────────────────────────────────────────────────────
+PASS (0% loss)     | PASS (<10% div)| PASS (none) | → CUTOVER ✓
+PASS (0% loss)     | WARN (10-20%)  | PASS       | → REVIEW ⚠
+FAIL (>5% loss)    | ANY            | ANY        | → ROLLBACK ✗
+PASS               | FAIL (>20%)    | PASS       | → ROLLBACK ✗
+PASS               | PASS           | FAIL       | → ROLLBACK ✗
+
+
+QUICK AUTOMATION TEMPLATE
+===============================================================================
+
+#!/bin/bash
+VALIDATOR="/home/setup/infrafabric/tools/chromadb_migration_validator.py"
+python $VALIDATOR \
+  --old-db-url http://85.239.243.227:8000 \
+  --new-db-url http://localhost:8000 \
+  --test-queries sample_test_queries.json
+
+if [ $? -eq 0 ]; then
+  echo "✓ Validation PASSED - Safe to cutover"
+else
+  echo "✗ Validation FAILED - Rollback triggered"
+fi
+
+
+SUPPORT DOCUMENTATION
+===============================================================================
+
+Full README:          CHROMADB_VALIDATOR_README.md
+Test Specifications:  VALIDATION_TEST_SPEC.md
+Integration Guide:    MIGRATION_INTEGRATION_GUIDE.md
+Detailed Logs:        validation_logs/validation_*.log
+
+
+CITATION
+===============================================================================
+
+if://design/chromadb-migration-validator-v1.0-2025-11-30
+Agent: A27 (ChromaDB Migration Validator)
+Quick Reference Card for Operators
+
+===============================================================================
+Last Updated: 2025-11-30

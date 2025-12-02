@@ -1,0 +1,74 @@
+# Grafana Datasource Provisioning Configuration
+# Purpose: Auto-configure Loki as datasource in Grafana
+# Reference: if://config/grafana-datasource/2025-11-30
+
+apiVersion: 1
+
+datasources:
+  # =========================================================================
+  # LOKI - Primary Log Aggregation
+  # =========================================================================
+  - name: Loki
+    type: loki
+    access: proxy
+    url: http://loki:3100
+    isDefault: true
+    jsonData:
+      # Log details settings
+      derivedFields:
+        - name: correlation_id
+          matcherRegex: '"correlation_id":"([^"]+)"'
+          url: 'http://grafana:3000/explore?left={"datasource":"Loki","queries":[{"expr":"{correlation_id=\"${value}\"}"}]}'
+          datasourceUid: '-100'
+
+        - name: trace_id
+          matcherRegex: '"trace_id":"([^"]+)"'
+          url: 'http://grafana:3000/explore?left={"datasource":"Tempo","queries":[{"query":"${value}"}]}'
+          datasourceUid: '${TEMPO_DATASOURCE_UID}'
+
+  # =========================================================================
+  # PROMETHEUS - Metrics Collection
+  # =========================================================================
+  - name: Prometheus
+    type: prometheus
+    access: proxy
+    url: http://prometheus:9090
+    isDefault: false
+    jsonData:
+      timeInterval: 15s
+      externalLabelNames: []
+      disableRegionMapping: false
+
+  # =========================================================================
+  # ELASTICSEARCH - Optional Rich Search (if deployed)
+  # =========================================================================
+  # - name: Elasticsearch
+  #   type: elasticsearch
+  #   access: proxy
+  #   url: http://elasticsearch:9200
+  #   database: infrafabric-*
+  #   jsonData:
+  #     esVersion: 8.0.0
+  #     logMessageField: message
+  #     logLevelField: level
+  #     timeField: timestamp
+
+  # =========================================================================
+  # TEMPO - Optional Distributed Tracing (if deployed)
+  # =========================================================================
+  # - name: Tempo
+  #   type: tempo
+  #   access: proxy
+  #   url: http://tempo:3200
+  #   isDefault: false
+  #   jsonData:
+  #     lokiSearch:
+  #       datasourceName: Loki
+  #     nodeGraph:
+  #       enabled: true
+  #     spanBar:
+  #       type: Tag
+  #       tag: http.method
+
+# Delete datasources no longer needed
+deleteDatasources: []

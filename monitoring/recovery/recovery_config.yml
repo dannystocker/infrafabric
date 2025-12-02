@@ -1,0 +1,241 @@
+# Recovery & Failover Configuration for InfraFabric
+#
+# Citation: if://agent/A35_recovery_configuration
+# Author: Agent A35
+# Date: 2025-11-30
+
+recovery:
+  max_attempts_per_hour: 3
+  cooldown_seconds: 300
+
+  # ========================================================================
+  # Redis Recovery Configuration
+  # ========================================================================
+  redis:
+    priority: critical
+    strategies:
+      # Reconnect Strategy: Recreate connection pool with exponential backoff
+      - name: reconnect
+        max_retries: 3
+        backoff_multiplier: 2
+        timeout_seconds: 5
+        auto_trigger: true
+        conditions:
+          - connection_timeout
+          - connection_error
+          - high_latency
+
+      # Flush Corrupted: Clear keys without TTL (potentially corrupted)
+      - name: flush_corrupted
+        auto_trigger: false
+        conditions:
+          - corruption_detected
+          - memory_pressure
+
+      # Restart Container: Restart Redis container (requires approval)
+      - name: restart_container
+        requires_approval: true
+        auto_trigger: false
+        conditions:
+          - all_else_failed
+
+  # ========================================================================
+  # ChromaDB Recovery Configuration
+  # ========================================================================
+  chromadb:
+    priority: critical
+    strategies:
+      # Query Retry: Retry failed queries with backoff
+      - name: query_retry
+        max_retries: 3
+        backoff_multiplier: 1.5
+        auto_trigger: true
+        conditions:
+          - connection_timeout
+          - temporary_failure
+
+      # Collection Reload: Reload collection from disk
+      - name: collection_reload
+        auto_trigger: true
+        conditions:
+          - collection_missing
+          - corrupted_metadata
+
+      # Snapshot Rollback: Restore from previous snapshot
+      - name: snapshot_rollback
+        requires_approval: false
+        auto_trigger: false
+        script: /home/setup/infrafabric/tools/chromadb_rollback.py
+        conditions:
+          - collection_missing
+          - index_corrupted
+          - data_corruption
+
+      # Index Rebuild: Rebuild corrupted index from documents
+      - name: index_rebuild
+        auto_trigger: true
+        conditions:
+          - index_corrupted
+
+  # ========================================================================
+  # OpenWebUI Recovery Configuration
+  # ========================================================================
+  openwebui:
+    priority: medium
+    strategies:
+      # Token Refresh: Refresh expired authentication token
+      - name: token_refresh
+        max_retries: 2
+        auto_trigger: true
+        conditions:
+          - auth_failure
+          - token_expired
+
+      # Model Failover: Switch to alternative model
+      - name: model_failover
+        auto_trigger: true
+        fallback_models:
+          - deepseek-chat
+          - gemini-pro
+          - gpt-4-turbo
+        conditions:
+          - model_unavailable
+          - model_error
+
+      # Graceful Degradation: Use direct API without OpenWebUI
+      - name: graceful_degradation
+        degraded_mode: true
+        auto_trigger: true
+        conditions:
+          - service_unavailable
+          - rate_limiting
+          - high_latency
+
+  # ========================================================================
+  # System Recovery Configuration
+  # ========================================================================
+  system:
+    priority: high
+    strategies:
+      # Disk Cleanup: Clean temporary files when disk is full
+      - name: disk_cleanup
+        auto_trigger: true
+        thresholds:
+          disk_usage_percent: 85
+        cleanup_paths:
+          - /tmp
+          - /var/tmp
+          - /root/.cache
+          - /root/openwebui-knowledge/chromadb/.logs
+        preserve_days: 1
+        conditions:
+          - disk_full
+          - disk_usage_high
+
+      # Memory Garbage Collection: Trigger Python GC
+      - name: memory_gc
+        auto_trigger: true
+        thresholds:
+          memory_usage_percent: 90
+        conditions:
+          - memory_leak
+          - memory_pressure
+
+      # File Handle Cleanup: Close unused handles, increase limits
+      - name: file_handle_cleanup
+        auto_trigger: false
+        conditions:
+          - file_handle_exhaustion
+          - open_file_limit_reached
+
+      # Process Restart: Restart worker processes
+      - name: process_restart
+        requires_approval: true
+        auto_trigger: false
+        conditions:
+          - worker_hung
+          - process_unresponsive
+
+# ========================================================================
+# Alerting Configuration
+# ========================================================================
+alerting:
+  enabled: true
+  channels:
+    - prometheus_alertmanager
+
+  # Severity mapping for Prometheus
+  severity_mapping:
+    critical: P0
+    high: P1
+    medium: P2
+    low: P3
+
+  # Alert settings
+  alert_on_recovery: true
+  alert_on_cooldown: true
+  alert_on_degraded_mode: true
+
+# ========================================================================
+# Degraded Mode Capabilities
+# ========================================================================
+degraded_modes:
+  chromadb_unavailable:
+    available_capabilities:
+      - basic_conversation
+      - redis_memory
+      - simple_qa
+      - direct_api_calls
+    unavailable_capabilities:
+      - semantic_search
+      - personality_injection
+      - long_term_memory
+
+  openwebui_unavailable:
+    available_capabilities:
+      - direct_api_calls
+      - single_model_inference
+      - basic_conversation
+    unavailable_capabilities:
+      - multi_model_consensus
+      - openwebui_ui
+      - model_switching
+
+  redis_unavailable:
+    available_capabilities:
+      - basic_conversation
+      - in_memory_cache
+      - single_session
+    unavailable_capabilities:
+      - semantic_search
+      - long_term_memory
+      - multi_session_state
+
+# ========================================================================
+# Recovery Audit Settings
+# ========================================================================
+audit:
+  enabled: true
+  audit_file: /home/setup/infrafabric/monitoring/recovery/recovery_audit.json
+  retention_days: 30
+  compression_enabled: true
+
+# ========================================================================
+# Integration Settings
+# ========================================================================
+integration:
+  # A34: Health Check System
+  health_check_integration: true
+  health_check_interval_seconds: 30
+
+  # A28: ChromaDB Snapshot Rollback
+  chromadb_rollback_enabled: true
+  snapshot_dir: /root/openwebui-knowledge/chromadb/snapshots
+
+  # A32: Prometheus Alerting
+  prometheus_alertmanager: http://localhost:9093
+  alert_on_recovery: true
+
+  # A30: Metrics Exporter
+  metrics_export_interval_seconds: 30
+  export_recovery_metrics: true

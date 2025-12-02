@@ -1,0 +1,92 @@
+version: '3.8'
+
+services:
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: open-webui
+    ports:
+      - "8080:8080"
+    volumes:
+      # Open WebUI data storage
+      - open-webui-data:/app/backend/data
+
+      # Shared knowledge base (read-only - prevent accidental changes)
+      - /home/setup/shared-media:/data/shared:ro
+
+      # Project-specific media libraries (read-write)
+      - /home/setup/infrafabric/media:/data/infrafabric:rw
+      - /home/setup/navidocs/media:/data/navidocs:rw
+      - /home/setup/icw-nextspread/media:/data/icw:rw
+
+      # Conversation archives (for backup scripts)
+      - /home/setup/conversation-archives:/data/archives:rw
+
+    environment:
+      # RAG and search features
+      - ENABLE_RAG_WEB_SEARCH=true
+      - ENABLE_RAG_HYBRID_SEARCH=true
+      - ENABLE_RAG_LOCAL_WEB_FETCH=true
+
+      # ChromaDB connection (for vector search)
+      - CHROMA_HTTP_HOST=chromadb
+      - CHROMA_HTTP_PORT=8000
+
+      # Security and auth
+      - WEBUI_AUTH=false
+      - ENABLE_COMMUNITY_SHARING=false
+
+      # Data persistence
+      - DATA_DIR=/app/backend/data
+
+      # API configurations
+      - ANTHROPIC_API_BASE_URL=https://api.anthropic.com
+      - OPENAI_API_BASE_URL=https://openrouter.ai/api/v1
+
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+    restart: always
+    depends_on:
+      - chromadb
+
+    networks:
+      - ai-workspace
+
+  chromadb:
+    image: chromadb/chroma:latest
+    container_name: chromadb
+    ports:
+      - "8000:8000"
+    volumes:
+      - chromadb-data:/chroma/chroma
+    environment:
+      - IS_PERSISTENT=TRUE
+      - ANONYMIZED_TELEMETRY=FALSE
+      - CHROMA_SERVER_AUTH_CREDENTIALS_PROVIDER=chromadb.auth.token_authn.TokenAuthenticationServerProvider
+      - CHROMA_SERVER_AUTH_PROVIDER=chromadb.auth.token_authn.TokenAuthenticationServerProvider
+    restart: always
+    networks:
+      - ai-workspace
+
+  redis-commander:
+    image: ghcr.io/joeferner/redis-commander:latest
+    container_name: redis-commander
+    ports:
+      - "8081:8081"
+    environment:
+      - REDIS_HOSTS=L2-Proxmox:host.docker.internal:6379:0:@@Redis_InfraFabric_L2_2025$$
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: always
+    networks:
+      - ai-workspace
+
+volumes:
+  open-webui-data:
+    driver: local
+  chromadb-data:
+    driver: local
+
+networks:
+  ai-workspace:
+    driver: bridge

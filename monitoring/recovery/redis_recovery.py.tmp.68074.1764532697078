@@ -1,0 +1,561 @@
+#!/usr/bin/env python3
+"""
+Redis Bus Recovery Script
+
+Handles Redis connection loss and corruption recovery for InfraFabric S2 swarm.
+Performs:
+- Auto-reconnection with exponential backoff
+- Scan for WRONGTYPE keys (from IF-SWARM-S2-COMMS.md)
+- Delete corrupted keys OR move to quarantine
+- Validate bus schema after recovery
+- Log recovery actions to structured logger
+
+Citation: if://agent/A35_redis_recovery
+Author: Agent A35 (Auto-Recovery Scripts)
+Date: 2025-11-30
+"""
+
+import os
+import sys
+import time
+import logging
+import json
+from typing import Dict, Any, Optional, List, Tuple
+from datetime import datetime
+from enum import Enum
+
+# Add project root to path
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
+
+try:
+    import redis
+    REDIS_AVAILABLE = True
+except ImportError:
+    REDIS_AVAILABLE = False
+
+try:
+    from tools.redis_cache_manager import get_redis
+    CACHE_MANAGER_AVAILABLE = True
+except ImportError:
+    CACHE_MANAGER_AVAILABLE = False
+
+try:
+    from monitoring.logging.logging_library import (
+        StructuredLogger,
+        Component,
+        CorrelationIDType,
+        set_correlation_id
+    )
+    LOGGING_AVAILABLE = True
+except ImportError:
+    LOGGING_AVAILABLE = False
+
+
+# Configure logging
+logger = logging.getLogger(__name__)
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s [%(levelname)s] %(name)s: %(message)s'
+)
+
+
+class RecoveryAction(str, Enum):
+    """Recovery action types."""
+    RECONNECT = "reconnect"
+    CLEANUP = "cleanup"
+    VALIDATE = "validate"
+    QUARANTINE = "quarantine"
+
+
+class RedisRecoveryManager:
+    """Manages Redis connection recovery and data cleanup."""
+
+    def __init__(self, host: str = 'localhost', port: int = 6379,
+                 db: int = 0, password: Optional[str] = None,
+                 max_retries: int = 3, initial_backoff: float = 0.1,
+                 max_backoff: float = 10.0, use_quarantine: bool = True,
+                 structured_logger: Optional[Any] = None):
+        """
+        Initialize Redis recovery manager.
+
+        Args:
+            host: Redis host
+            port: Redis port
+            db: Redis database number
+            password: Redis password (optional)
+            max_retries: Maximum reconnection attempts
+            initial_backoff: Initial backoff time in seconds (100ms)
+            max_backoff: Maximum backoff time in seconds (10s)
+            use_quarantine: Move corrupted keys to quarantine instead of deleting
+            structured_logger: StructuredLogger instance for audit trail
+        """
+        self.host = host
+        self.port = port
+        self.db = db
+        self.password = password
+        self.max_retries = max_retries
+        self.initial_backoff = initial_backoff
+        self.max_backoff = max_backoff
+        self.use_quarantine = use_quarantine
+        self.connection = None
+
+        # Initialize structured logger
+        if LOGGING_AVAILABLE and structured_logger is None:
+            self.logger = StructuredLogger(
+                agent_id="redis-recovery",
+                component=Component.SYSTEM.value,
+                environment=os.environ.get('INFRAFABRIC_ENV', 'production'),
+                log_level='INFO'
+            )
+        else:
+            self.logger = structured_logger
+
+        # Recovery statistics
+        self.stats = {
+            'reconnect_attempts': 0,
+            'reconnect_success': False,
+            'wrongtype_keys_found': 0,
+            'wrongtype_keys_deleted': 0,
+            'wrongtype_keys_quarantined': 0,
+            'validation_passed': False,
+            'recovery_duration_ms': 0,
+            'timestamp': None
+        }
+
+    def reconnect(self) -> bool:
+        """
+        Attempt to reconnect to Redis with exponential backoff.
+
+        Returns:
+            True if reconnection successful, False otherwise
+        """
+        correlation_id = set_correlation_id(None, CorrelationIDType.REQUEST)
+        self.stats['reconnect_attempts'] = 0
+        backoff = self.initial_backoff
+        start_time = time.time()
+
+        for attempt in range(1, self.max_retries + 1):
+            try:
+                self.stats['reconnect_attempts'] = attempt
+
+                logger.info(
+                    f"Redis reconnection attempt {attempt}/{self.max_retries} "
+                    f"({self.host}:{self.port}, db={self.db})"
+                )
+
+                self.connection = redis.Redis(
+                    host=self.host,
+                    port=self.port,
+                    db=self.db,
+                    password=self.password,
+                    decode_responses=True,
+                    socket_timeout=5.0,
+                    socket_connect_timeout=5.0
+                )
+
+                # Test connection
+                self.connection.ping()
+
+                self.stats['reconnect_success'] = True
+                duration_ms = (time.time() - start_time) * 1000
+
+                if LOGGING_AVAILABLE and self.logger:
+                    self.logger.info(
+                        "Redis reconnection successful",
+                        context={
+                            "attempt": attempt,
+                            "backoff_ms": int(backoff * 1000),
+                            "duration_ms": int(duration_ms),
+                            "correlation_id": correlation_id
+                        },
+                        if_citation="if://agent/A35_redis_reconnect_success"
+                    )
+
+                logger.info(
+                    f"Successfully reconnected to Redis after "
+                    f"{attempt} attempt(s) in {duration_ms:.0f}ms"
+                )
+
+                return True
+
+            except (redis.ConnectionError, redis.TimeoutError) as e:
+                logger.warning(
+                    f"Reconnection attempt {attempt} failed: {str(e)}"
+                )
+
+                if attempt < self.max_retries:
+                    # Exponential backoff
+                    wait_time = min(backoff * (2 ** (attempt - 1)), self.max_backoff)
+                    logger.info(f"Waiting {wait_time:.1f}s before retry...")
+                    time.sleep(wait_time)
+                else:
+                    if LOGGING_AVAILABLE and self.logger:
+                        self.logger.error(
+                            "Redis reconnection failed - max retries exceeded",
+                            context={
+                                "attempts": self.max_retries,
+                                "error": str(e),
+                                "correlation_id": correlation_id
+                            },
+                            exception=e,
+                            if_citation="if://agent/A35_redis_reconnect_failed"
+                        )
+
+        duration_ms = (time.time() - start_time) * 1000
+        self.stats['recovery_duration_ms'] = int(duration_ms)
+        return False
+
+    def scan_wrongtype_keys(self) -> List[str]:
+        """
+        Scan Redis for WRONGTYPE keys (corrupted data).
+
+        From IF-SWARM-S2-COMMS.md: ~100 WRONGTYPE/corrupted keys typical.
+
+        Returns:
+            List of corrupted key names
+        """
+        if self.connection is None:
+            logger.error("Cannot scan: Redis not connected")
+            return []
+
+        wrongtype_keys = []
+        correlation_id = set_correlation_id(None, CorrelationIDType.REQUEST)
+
+        try:
+            logger.info("Scanning Redis for WRONGTYPE keys...")
+
+            # Use SCAN cursor to iterate all keys without blocking
+            cursor = 0
+            scan_count = 0
+
+            while True:
+                cursor, keys = self.connection.scan(
+                    cursor=cursor,
+                    match='*',
+                    count=100
+                )
+                scan_count += 1
+
+                for key in keys:
+                    try:
+                        # Try to determine key type
+                        key_type = self.connection.type(key)
+
+                        # Check if we can access the key (WRONGTYPE error means corruption)
+                        if key_type == 'none':
+                            # Key exists but type is none (already deleted?)
+                            continue
+
+                        # Try a basic operation to detect WRONGTYPE
+                        try:
+                            if key_type == 'string':
+                                self.connection.get(key)
+                            elif key_type == 'list':
+                                self.connection.llen(key)
+                            elif key_type == 'set':
+                                self.connection.scard(key)
+                            elif key_type == 'hash':
+                                self.connection.hlen(key)
+                            elif key_type == 'zset':
+                                self.connection.zcard(key)
+                        except redis.ResponseError as e:
+                            if 'WRONGTYPE' in str(e):
+                                wrongtype_keys.append(key)
+                                logger.warning(f"Found WRONGTYPE key: {key}")
+
+                    except Exception as e:
+                        logger.debug(f"Error checking key {key}: {e}")
+
+                if cursor == 0:
+                    break
+
+            self.stats['wrongtype_keys_found'] = len(wrongtype_keys)
+
+            if LOGGING_AVAILABLE and self.logger:
+                self.logger.info(
+                    f"Found {len(wrongtype_keys)} WRONGTYPE keys in {scan_count} scans",
+                    context={
+                        "wrongtype_count": len(wrongtype_keys),
+                        "scan_iterations": scan_count,
+                        "correlation_id": correlation_id
+                    },
+                    if_citation="if://agent/A35_redis_wrongtype_scan"
+                )
+
+            logger.info(
+                f"Scan complete: found {len(wrongtype_keys)} WRONGTYPE keys "
+                f"in {scan_count} iterations"
+            )
+
+            return wrongtype_keys
+
+        except Exception as e:
+            logger.error(f"Error scanning for WRONGTYPE keys: {e}")
+            if LOGGING_AVAILABLE and self.logger:
+                self.logger.error(
+                    "Failed to scan for WRONGTYPE keys",
+                    context={"error": str(e), "correlation_id": correlation_id},
+                    exception=e,
+                    if_citation="if://agent/A35_redis_scan_failed"
+                )
+            return []
+
+    def cleanup_corrupted_keys(self, keys: List[str]) -> Tuple[int, int]:
+        """
+        Delete or quarantine corrupted keys.
+
+        Args:
+            keys: List of corrupted key names
+
+        Returns:
+            Tuple of (deleted_count, quarantined_count)
+        """
+        if self.connection is None:
+            logger.error("Cannot cleanup: Redis not connected")
+            return 0, 0
+
+        deleted_count = 0
+        quarantined_count = 0
+        correlation_id = set_correlation_id(None, CorrelationIDType.REQUEST)
+
+        for key in keys:
+            try:
+                if self.use_quarantine:
+                    # Move to quarantine
+                    quarantine_key = f"quarantine:{key}"
+                    timestamp = datetime.utcnow().isoformat() + "Z"
+
+                    try:
+                        # Try to get value before deleting
+                        try:
+                            value = self.connection.dump(key)
+                        except:
+                            value = None
+
+                        # Store quarantine entry
+                        quarantine_data = {
+                            "original_key": key,
+                            "timestamp": timestamp,
+                            "reason": "WRONGTYPE corruption detected",
+                            "value_dumped": value is not None
+                        }
+
+                        self.connection.setex(
+                            quarantine_key,
+                            14 * 24 * 3600,  # 14 day TTL for quarantine
+                            json.dumps(quarantine_data)
+                        )
+
+                        # Delete original
+                        self.connection.delete(key)
+                        quarantined_count += 1
+
+                        logger.info(
+                            f"Quarantined corrupted key: {key} -> {quarantine_key}"
+                        )
+
+                    except Exception as e:
+                        logger.warning(f"Failed to quarantine {key}: {e}")
+                        # Fall back to deletion
+                        self.connection.delete(key)
+                        deleted_count += 1
+
+                else:
+                    # Direct deletion (no quarantine)
+                    self.connection.delete(key)
+                    deleted_count += 1
+                    logger.info(f"Deleted corrupted key: {key}")
+
+            except Exception as e:
+                logger.error(f"Error cleaning up key {key}: {e}")
+
+        self.stats['wrongtype_keys_deleted'] = deleted_count
+        self.stats['wrongtype_keys_quarantined'] = quarantined_count
+
+        if LOGGING_AVAILABLE and self.logger:
+            self.logger.info(
+                f"Cleanup complete: {deleted_count} deleted, {quarantined_count} quarantined",
+                context={
+                    "deleted": deleted_count,
+                    "quarantined": quarantined_count,
+                    "correlation_id": correlation_id
+                },
+                if_citation="if://agent/A35_redis_cleanup_complete"
+            )
+
+        logger.info(
+            f"Cleanup complete: {deleted_count} deleted, {quarantined_count} quarantined"
+        )
+
+        return deleted_count, quarantined_count
+
+    def validate_bus_schema(self) -> bool:
+        """
+        Validate Redis bus schema after recovery.
+
+        From integration.redis_bus_schema.py - validates expected key patterns.
+
+        Returns:
+            True if schema validation passed
+        """
+        if self.connection is None:
+            logger.error("Cannot validate: Redis not connected")
+            return False
+
+        correlation_id = set_correlation_id(None, CorrelationIDType.REQUEST)
+
+        try:
+            # Check for expected key patterns in bus
+            expected_patterns = [
+                'agent:*',        # Agent heartbeat keys
+                'task:*',         # Task status keys
+                'message:*',      # Message queue keys
+                'consensus:*',    # Consensus voting keys
+                'speech_act:*'    # Speech act tracking
+            ]
+
+            found_patterns = {}
+            for pattern in expected_patterns:
+                count = self.connection.execute_command('SCAN', '0', 'MATCH', pattern, 'COUNT', '10')[1]
+                found_patterns[pattern] = len(count) if count else 0
+
+            # Validation passes if we found at least some expected keys
+            has_data = sum(found_patterns.values()) > 0
+
+            self.stats['validation_passed'] = has_data
+
+            if LOGGING_AVAILABLE and self.logger:
+                self.logger.info(
+                    "Redis bus schema validation" + (" passed" if has_data else " inconclusive"),
+                    context={
+                        "patterns_checked": expected_patterns,
+                        "pattern_counts": found_patterns,
+                        "has_data": has_data,
+                        "correlation_id": correlation_id
+                    },
+                    if_citation="if://agent/A35_redis_schema_validation"
+                )
+
+            logger.info(
+                f"Schema validation: found keys in {sum(1 for v in found_patterns.values() if v > 0)}"
+                f"/{len(expected_patterns)} expected patterns"
+            )
+
+            return has_data
+
+        except Exception as e:
+            logger.error(f"Schema validation error: {e}")
+            if LOGGING_AVAILABLE and self.logger:
+                self.logger.error(
+                    "Redis schema validation failed",
+                    context={"error": str(e), "correlation_id": correlation_id},
+                    exception=e,
+                    if_citation="if://agent/A35_redis_validation_failed"
+                )
+            return False
+
+    def recover(self) -> Dict[str, Any]:
+        """
+        Execute full recovery sequence.
+
+        Returns:
+            Recovery results dictionary with statistics
+        """
+        start_time = time.time()
+        self.stats['timestamp'] = datetime.utcnow().isoformat() + "Z"
+
+        logger.info("=" * 70)
+        logger.info("REDIS RECOVERY SEQUENCE STARTING")
+        logger.info("=" * 70)
+
+        # Step 1: Reconnect
+        if not self.reconnect():
+            logger.error("Failed to reconnect to Redis")
+            self.stats['recovery_duration_ms'] = int((time.time() - start_time) * 1000)
+            return self.stats
+
+        # Step 2: Scan for WRONGTYPE keys
+        wrongtype_keys = self.scan_wrongtype_keys()
+
+        # Step 3: Cleanup corrupted keys
+        if wrongtype_keys:
+            deleted, quarantined = self.cleanup_corrupted_keys(wrongtype_keys)
+        else:
+            deleted, quarantined = 0, 0
+
+        # Step 4: Validate schema
+        schema_valid = self.validate_bus_schema()
+
+        self.stats['recovery_duration_ms'] = int((time.time() - start_time) * 1000)
+
+        logger.info("=" * 70)
+        logger.info("REDIS RECOVERY SEQUENCE COMPLETE")
+        logger.info(f"Duration: {self.stats['recovery_duration_ms']}ms")
+        logger.info(f"Reconnected: {self.stats['reconnect_success']}")
+        logger.info(f"Wrongtype keys found: {self.stats['wrongtype_keys_found']}")
+        logger.info(f"Keys deleted: {deleted}")
+        logger.info(f"Keys quarantined: {quarantined}")
+        logger.info(f"Schema valid: {schema_valid}")
+        logger.info("=" * 70)
+
+        return self.stats
+
+    def close(self):
+        """Close Redis connection."""
+        if self.connection is not None:
+            try:
+                self.connection.close()
+                self.connection = None
+            except Exception as e:
+                logger.debug(f"Error closing connection: {e}")
+
+
+def main():
+    """Main entry point."""
+    import argparse
+
+    parser = argparse.ArgumentParser(
+        description='Redis Recovery for InfraFabric S2 Swarm'
+    )
+    parser.add_argument('--host', default='localhost', help='Redis host')
+    parser.add_argument('--port', type=int, default=6379, help='Redis port')
+    parser.add_argument('--db', type=int, default=0, help='Redis database')
+    parser.add_argument('--password', help='Redis password')
+    parser.add_argument('--max-retries', type=int, default=3, help='Max reconnect attempts')
+    parser.add_argument('--no-quarantine', action='store_true', help='Delete instead of quarantine')
+    parser.add_argument('--log-level', default='INFO', help='Log level')
+
+    args = parser.parse_args()
+
+    # Configure logging
+    logging.basicConfig(
+        level=getattr(logging, args.log_level),
+        format='%(asctime)s [%(levelname)s] %(name)s: %(message)s'
+    )
+
+    # Create recovery manager
+    manager = RedisRecoveryManager(
+        host=args.host,
+        port=args.port,
+        db=args.db,
+        password=args.password,
+        max_retries=args.max_retries,
+        use_quarantine=not args.no_quarantine
+    )
+
+    # Execute recovery
+    stats = manager.recover()
+
+    # Print results
+    print(json.dumps(stats, indent=2))
+
+    manager.close()
+
+    # Exit with status code based on success
+    sys.exit(0 if stats['reconnect_success'] else 1)
+
+
+if __name__ == '__main__':
+    main()

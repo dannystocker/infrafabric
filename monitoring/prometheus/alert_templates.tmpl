@@ -1,0 +1,123 @@
+{{ define "slack.default.title" -}}
+[{{ .Status | toUpper }}{{ if eq .Status "firing" }}:{{ .Alerts.Firing | len }}{{end}}] {{ .GroupLabels.alertname }}
+{{- end }}
+
+{{ define "slack.default.text" -}}
+{{ range .Alerts -}}
+*Alert:* {{ .Labels.alertname }} - `{{ .Labels.severity }}`
+*Description:* {{ .Annotations.description }}
+*Details:*
+{{ range .Labels.SortedPairs -}}
+• *{{ .Name }}*: `{{ .Value }}`
+{{ end }}
+{{ if .Annotations.runbook_url }}*<{{ .Annotations.runbook_url }}|Runbook>*{{ end }}
+{{ end }}
+{{- end }}
+
+{{ define "pagerduty.default.instances" -}}
+{{ range . -}}
+[{{ .Status | toUpper | first }}] {{ .Labels.alertname }}: {{ .Annotations.summary }}
+{{ end }}
+{{- end }}
+
+{{ define "email.default.subject" -}}
+[{{ .Status | toUpper }}{{ if eq .Status "firing" }}:{{ .Alerts.Firing | len }}{{end}}] {{ .GroupLabels.alertname }} for {{ .GroupLabels.component }}
+{{- end }}
+
+{{ define "email.default.html" -}}
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    .alert-header { background-color: #f8f9fa; padding: 10px; border-left: 4px solid #dc3545; }
+    .critical { border-color: #dc3545; }
+    .high { border-color: #fd7e14; }
+    .medium { border-color: #ffc107; }
+    .alert-body { padding: 10px; }
+    .label { font-weight: bold; }
+    .value { font-family: monospace; }
+    table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+    th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+    th { background-color: #f8f9fa; }
+    pre { background-color: #f5f5f5; padding: 10px; overflow-x: auto; }
+  </style>
+</head>
+<body>
+  <h2 class="alert-header {{ .GroupLabels.severity }}">
+    InfraFabric Alert: {{ .GroupLabels.alertname }}
+  </h2>
+
+  {{ if .Alerts.Firing }}
+  <div class="alert-body">
+    <h3>Firing Alerts ({{ .Alerts.Firing | len }})</h3>
+    <table>
+      <tr>
+        <th>Alert Name</th>
+        <th>Component</th>
+        <th>Severity</th>
+        <th>Started At</th>
+      </tr>
+      {{ range .Alerts.Firing }}
+      <tr>
+        <td>{{ .Labels.alertname }}</td>
+        <td>{{ .Labels.component }}</td>
+        <td>{{ .Labels.severity }}</td>
+        <td>{{ .StartsAt.Format "2006-01-02 15:04:05 MST" }}</td>
+      </tr>
+      {{ end }}
+    </table>
+
+    <h4>Details</h4>
+    {{ range .Alerts.Firing }}
+    <div style="margin-bottom: 20px; padding: 10px; background: #fafafa;">
+      <p><span class="label">Summary:</span> {{ .Annotations.summary }}</p>
+      <p><span class="label">Description:</span> {{ .Annotations.description }}</p>
+      <p><span class="label">Impact:</span> {{ .Annotations.impact }}</p>
+
+      {{ if .Annotations.action }}
+      <p><span class="label">Action Items:</span></p>
+      <pre>{{ .Annotations.action }}</pre>
+      {{ end }}
+
+      {{ if .Annotations.runbook_url }}
+      <p>
+        <a href="{{ .Annotations.runbook_url }}" style="padding: 8px 12px; background: #007bff; color: white; text-decoration: none; border-radius: 4px;">
+          View Runbook
+        </a>
+      </p>
+      {{ end }}
+
+      {{ if .Labels }}
+      <p><span class="label">Labels:</span></p>
+      <ul>
+        {{ range .Labels.SortedPairs }}
+        <li><code>{{ .Name }}{{ if .Value }}="{{ .Value }}"{{ end }}</code></li>
+        {{ end }}
+      </ul>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{ if .Alerts.Resolved }}
+  <div class="alert-body">
+    <h3>Resolved Alerts ({{ .Alerts.Resolved | len }})</h3>
+    <p>The following alerts have been resolved:</p>
+    <ul>
+      {{ range .Alerts.Resolved }}
+      <li>{{ .Labels.alertname }} (resolved at {{ .EndsAt.Format "2006-01-02 15:04:05 MST" }})</li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+
+  <hr>
+  <p>
+    <a href="{{ .ExternalURL }}">View in Prometheus</a> |
+    <a href="{{ .ExternalURL }}/alerts">Alerts Dashboard</a>
+  </p>
+</body>
+</html>
+{{- end }}

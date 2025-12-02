@@ -1,0 +1,1282 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "if://doc/config-schema/2025-11-30",
+  "title": "InfraFabric Unified Configuration Schema",
+  "description": "Comprehensive schema for all InfraFabric components (IF.* primitives, memory systems, security, audit, resilience). Covers OpenWebUI integration, IF.emotion sandboxing, Claude Max LLM registry, S2 swarm communication, and timeout prevention mechanisms. Schema version 1.0 - Draft 7 compliant.",
+  "type": "object",
+  "required": [
+    "version",
+    "infrafabric_core",
+    "interfaces",
+    "memory",
+    "agents",
+    "security",
+    "audit",
+    "resilience"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "description": "Semantic version of InfraFabric configuration (format: major.minor.patch)",
+      "default": "1.0.0"
+    },
+    "infrafabric_core": {
+      "type": "object",
+      "description": "Core InfraFabric framework settings",
+      "required": [
+        "project_id",
+        "environment",
+        "log_level"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "project_id": {
+          "type": "string",
+          "pattern": "^if://[a-z0-9-]+/[a-z0-9-]+$",
+          "description": "IF.* project identifier following if:// URI scheme",
+          "example": "if://project/infrafabric-core"
+        },
+        "environment": {
+          "type": "string",
+          "enum": [
+            "development",
+            "staging",
+            "production"
+          ],
+          "description": "Deployment environment",
+          "default": "development"
+        },
+        "log_level": {
+          "type": "string",
+          "enum": [
+            "debug",
+            "info",
+            "warning",
+            "error",
+            "critical"
+          ],
+          "description": "Global logging level",
+          "default": "info"
+        },
+        "token_efficiency_mode": {
+          "type": "boolean",
+          "description": "Enable IF.optimise token efficiency (Haiku delegation for mechanical tasks)",
+          "default": true
+        },
+        "if_ttt_enabled": {
+          "type": "boolean",
+          "description": "Enable IF.TTT (Traceable, Transparent, Trustworthy) compliance for all operations",
+          "default": true
+        },
+        "session_id": {
+          "type": "string",
+          "description": "Unique identifier for this session (auto-generated if not provided)",
+          "example": "session-2025-11-30-001"
+        }
+      }
+    },
+    "interfaces": {
+      "type": "object",
+      "description": "UI/API interface configurations (multi-paradigm support)",
+      "additionalProperties": false,
+      "properties": {
+        "openwebui": {
+          "type": "object",
+          "description": "OpenWebUI developer/power-user backend integration",
+          "additionalProperties": false,
+          "required": [
+            "enabled"
+          ],
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "description": "Enable OpenWebUI interface",
+              "default": false
+            },
+            "api_url": {
+              "type": "string",
+              "format": "uri",
+              "description": "OpenWebUI API endpoint URL",
+              "example": "http://localhost:8080/api"
+            },
+            "api_key": {
+              "type": "string",
+              "description": "OpenWebUI API authentication key (environment variable reference supported)",
+              "example": "$OPENWEBUI_API_KEY"
+            },
+            "models": {
+              "type": "array",
+              "description": "List of available models in OpenWebUI",
+              "items": {
+                "type": "string",
+                "example": "claude-3-5-sonnet-20241022"
+              }
+            },
+            "knowledge_base_path": {
+              "type": "string",
+              "description": "Path to knowledge base directory for RAG",
+              "example": "/home/setup/infrafabric/media"
+            },
+            "enable_rag_web_search": {
+              "type": "boolean",
+              "description": "Enable RAG web search capability",
+              "default": true
+            },
+            "enable_rag_hybrid_search": {
+              "type": "boolean",
+              "description": "Enable hybrid search (keyword + semantic)",
+              "default": true
+            },
+            "timeout_seconds": {
+              "type": "integer",
+              "description": "Request timeout in seconds",
+              "default": 300,
+              "minimum": 10
+            }
+          }
+        },
+        "if_emotion_react": {
+          "type": "object",
+          "description": "IF.emotion React frontend for consumer emotional UX",
+          "additionalProperties": false,
+          "required": [
+            "enabled"
+          ],
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "description": "Enable IF.emotion React interface",
+              "default": false
+            },
+            "port": {
+              "type": "integer",
+              "description": "Port for React development server",
+              "default": 3000,
+              "minimum": 1024,
+              "maximum": 65535
+            },
+            "backend_url": {
+              "type": "string",
+              "format": "uri",
+              "description": "Backend API URL for React frontend",
+              "example": "http://localhost:8000/api"
+            },
+            "personality_dna_path": {
+              "type": "string",
+              "description": "Path to personality DNA files for emotional rendering",
+              "example": "/home/setup/infrafabric/docs/personality"
+            },
+            "emotion_color_scheme": {
+              "type": "string",
+              "enum": [
+                "default",
+                "high_contrast",
+                "calm",
+                "energetic",
+                "warm",
+                "cool"
+              ],
+              "description": "Emotional color scheme preference",
+              "default": "default"
+            }
+          }
+        },
+        "cli": {
+          "type": "object",
+          "description": "Command-line interface configuration",
+          "additionalProperties": false,
+          "required": [
+            "enabled"
+          ],
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "description": "Enable CLI interface",
+              "default": true
+            },
+            "verbosity": {
+              "type": "string",
+              "enum": [
+                "quiet",
+                "normal",
+                "verbose",
+                "debug"
+              ],
+              "description": "CLI output verbosity level",
+              "default": "normal"
+            },
+            "color_output": {
+              "type": "boolean",
+              "description": "Enable colored terminal output",
+              "default": true
+            },
+            "json_output": {
+              "type": "boolean",
+              "description": "Prefer JSON output format for machine parsing",
+              "default": false
+            }
+          }
+        },
+        "api": {
+          "type": "object",
+          "description": "REST API server configuration",
+          "additionalProperties": false,
+          "required": [
+            "enabled"
+          ],
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "description": "Enable REST API server",
+              "default": true
+            },
+            "host": {
+              "type": "string",
+              "description": "API server bind address",
+              "default": "0.0.0.0",
+              "example": "127.0.0.1"
+            },
+            "port": {
+              "type": "integer",
+              "description": "API server port",
+              "default": 8000,
+              "minimum": 1024,
+              "maximum": 65535
+            },
+            "auth_required": {
+              "type": "boolean",
+              "description": "Require authentication for API access",
+              "default": true
+            },
+            "auth_type": {
+              "type": "string",
+              "enum": [
+                "bearer_token",
+                "api_key",
+                "oauth2",
+                "jwt"
+              ],
+              "description": "Authentication mechanism",
+              "default": "bearer_token"
+            },
+            "cors_enabled": {
+              "type": "boolean",
+              "description": "Enable CORS support",
+              "default": true
+            },
+            "cors_origins": {
+              "type": "array",
+              "description": "Allowed CORS origins",
+              "items": {
+                "type": "string",
+                "format": "uri"
+              },
+              "example": [
+                "http://localhost:3000",
+                "https://example.com"
+              ]
+            },
+            "request_timeout_ms": {
+              "type": "integer",
+              "description": "API request timeout in milliseconds",
+              "default": 30000,
+              "minimum": 1000
+            }
+          }
+        },
+        "voice": {
+          "type": "object",
+          "description": "Voice interface configuration (WhatsApp Tier 1, SIP Tier 2)",
+          "additionalProperties": false,
+          "required": [
+            "enabled"
+          ],
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "description": "Enable voice interface",
+              "default": false
+            },
+            "whatsapp_tier1": {
+              "type": "object",
+              "description": "WhatsApp voice escalation (Tier 1)",
+              "additionalProperties": false,
+              "properties": {
+                "enabled": {
+                  "type": "boolean",
+                  "default": false
+                },
+                "account_sid": {
+                  "type": "string",
+                  "description": "Twilio Account SID",
+                  "example": "$WHATSAPP_ACCOUNT_SID"
+                },
+                "auth_token": {
+                  "type": "string",
+                  "description": "Twilio Auth Token",
+                  "example": "$WHATSAPP_AUTH_TOKEN"
+                },
+                "phone_number": {
+                  "type": "string",
+                  "description": "WhatsApp Business phone number",
+                  "example": "+1234567890"
+                }
+              }
+            },
+            "sip_tier2": {
+              "type": "object",
+              "description": "SIP/voip.ms voice escalation (Tier 2)",
+              "additionalProperties": false,
+              "properties": {
+                "enabled": {
+                  "type": "boolean",
+                  "default": false
+                },
+                "sip_uri": {
+                  "type": "string",
+                  "description": "SIP server URI",
+                  "example": "sip.voip.ms"
+                },
+                "username": {
+                  "type": "string",
+                  "example": "$SIP_USERNAME"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "$SIP_PASSWORD"
+                },
+                "extension": {
+                  "type": "string",
+                  "description": "SIP extension number",
+                  "example": "1234567"
+                }
+              }
+            },
+            "text_to_speech": {
+              "type": "object",
+              "description": "TTS configuration (ElevenLabs)",
+              "additionalProperties": false,
+              "properties": {
+                "provider": {
+                  "type": "string",
+                  "enum": [
+                    "elevenlabs",
+                    "google",
+                    "aws_polly"
+                  ],
+                  "description": "TTS provider",
+                  "default": "elevenlabs"
+                },
+                "api_key": {
+                  "type": "string",
+                  "example": "$ELEVENLABS_API_KEY"
+                },
+                "voice_id": {
+                  "type": "string",
+                  "description": "Voice identifier in TTS provider",
+                  "example": "21m00Tcm4TlvDq8ikWAM"
+                },
+                "language": {
+                  "type": "string",
+                  "description": "Language code for TTS",
+                  "default": "en",
+                  "example": "en"
+                }
+              }
+            },
+            "speech_to_text": {
+              "type": "object",
+              "description": "STT configuration (Whisper)",
+              "additionalProperties": false,
+              "properties": {
+                "provider": {
+                  "type": "string",
+                  "enum": [
+                    "openai_whisper",
+                    "google_speech_to_text",
+                    "azure_speech"
+                  ],
+                  "description": "STT provider",
+                  "default": "openai_whisper"
+                },
+                "api_key": {
+                  "type": "string",
+                  "example": "$WHISPER_API_KEY"
+                },
+                "language": {
+                  "type": "string",
+                  "description": "Language code for STT",
+                  "default": "en"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "memory": {
+      "type": "object",
+      "description": "Memory architecture: Context Memory (Redis) for fast access + Deep Storage (ChromaDB) for persistence",
+      "required": [
+        "context_memory",
+        "deep_storage"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "context_memory": {
+          "type": "object",
+          "description": "Fast, short-term context memory (Redis L1/L2 tiering architecture)",
+          "required": [
+            "backend"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "backend": {
+              "type": "string",
+              "enum": [
+                "redis",
+                "redis_cluster"
+              ],
+              "description": "Context memory backend",
+              "default": "redis"
+            },
+            "host": {
+              "type": "string",
+              "description": "Redis host address",
+              "default": "localhost",
+              "example": "localhost"
+            },
+            "port": {
+              "type": "integer",
+              "description": "Redis port",
+              "default": 6379,
+              "minimum": 1,
+              "maximum": 65535
+            },
+            "db": {
+              "type": "integer",
+              "description": "Redis database number",
+              "default": 0,
+              "minimum": 0,
+              "maximum": 15
+            },
+            "password": {
+              "type": "string",
+              "description": "Redis password (use environment variable)",
+              "example": "$REDIS_PASSWORD"
+            },
+            "ttl_seconds": {
+              "type": "integer",
+              "description": "Default time-to-live for context memory entries",
+              "default": 3600,
+              "minimum": 60
+            },
+            "max_connections": {
+              "type": "integer",
+              "description": "Maximum connection pool size",
+              "default": 50,
+              "minimum": 1
+            },
+            "enable_l1_cache": {
+              "type": "boolean",
+              "description": "Enable L1 fast cache tier (in-memory)",
+              "default": true
+            },
+            "enable_l2_cache": {
+              "type": "boolean",
+              "description": "Enable L2 persistent tier (Proxmox Redis)",
+              "default": true
+            },
+            "l1_ttl_seconds": {
+              "type": "integer",
+              "description": "L1 cache time-to-live",
+              "default": 300,
+              "minimum": 10
+            },
+            "l2_host": {
+              "type": "string",
+              "description": "L2 Redis host (Proxmox location)",
+              "example": "proxmox-redis.local"
+            },
+            "l2_port": {
+              "type": "integer",
+              "description": "L2 Redis port",
+              "default": 6379,
+              "minimum": 1,
+              "maximum": 65535
+            }
+          }
+        },
+        "deep_storage": {
+          "type": "object",
+          "description": "Persistent deep storage with vector embeddings (ChromaDB)",
+          "required": [
+            "backend"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "backend": {
+              "type": "string",
+              "enum": [
+                "chromadb",
+                "chromadb_persistent"
+              ],
+              "description": "Deep storage backend",
+              "default": "chromadb"
+            },
+            "host": {
+              "type": "string",
+              "description": "ChromaDB server host",
+              "default": "localhost",
+              "example": "localhost"
+            },
+            "port": {
+              "type": "integer",
+              "description": "ChromaDB server port",
+              "default": 8000,
+              "minimum": 1,
+              "maximum": 65535
+            },
+            "persist_directory": {
+              "type": "string",
+              "description": "Local persistence directory for ChromaDB",
+              "example": "/home/setup/infrafabric/.memory_bus/deep_storage"
+            },
+            "collections": {
+              "type": "array",
+              "description": "ChromaDB collections to create/manage",
+              "items": {
+                "type": "object",
+                "required": [
+                  "name",
+                  "type"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Collection name",
+                    "pattern": "^[a-z0-9_]+$",
+                    "example": "personality_dna"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "personality_dna",
+                      "knowledge",
+                      "context_archive",
+                      "findings",
+                      "claims",
+                      "citations",
+                      "openwebui_core",
+                      "openwebui_docs",
+                      "openwebui_functions",
+                      "openwebui_pipelines",
+                      "openwebui_pain_points",
+                      "openwebui_careers",
+                      "custom"
+                    ],
+                    "description": "Collection type/purpose"
+                  },
+                  "metadata_filter": {
+                    "type": "object",
+                    "description": "Optional filter metadata for collection queries",
+                    "additionalProperties": {
+                      "type": "string"
+                    }
+                  },
+                  "distance_metric": {
+                    "type": "string",
+                    "enum": [
+                      "cosine",
+                      "l2",
+                      "ip"
+                    ],
+                    "description": "Vector distance metric",
+                    "default": "cosine"
+                  }
+                }
+              },
+              "minItems": 1,
+              "example": [
+                {
+                  "name": "personality_dna",
+                  "type": "personality_dna"
+                },
+                {
+                  "name": "knowledge_base",
+                  "type": "knowledge"
+                }
+              ]
+            },
+            "embedding_model": {
+              "type": "string",
+              "description": "Embedding model for vector generation",
+              "default": "sentence-transformers/all-MiniLM-L6-v2",
+              "example": "sentence-transformers/all-mpnet-base-v2"
+            },
+            "batch_size": {
+              "type": "integer",
+              "description": "Batch size for embedding operations",
+              "default": 100,
+              "minimum": 1
+            },
+            "auth_token": {
+              "type": "string",
+              "description": "ChromaDB authentication token if required",
+              "example": "$CHROMADB_AUTH_TOKEN"
+            },
+            "enable_anonymized_telemetry": {
+              "type": "boolean",
+              "description": "Allow ChromaDB anonymized telemetry",
+              "default": false
+            }
+          }
+        }
+      }
+    },
+    "agents": {
+      "type": "object",
+      "description": "Agent configuration: Claude models + IF.emotion personality framework",
+      "required": [
+        "claude_models"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "claude_models": {
+          "type": "object",
+          "description": "Claude LLM model registry and routing",
+          "required": [
+            "default_model"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "default_model": {
+              "type": "string",
+              "description": "Default model for agent spawning",
+              "enum": [
+                "claude-opus-4-1-20250805",
+                "claude-sonnet-4-5-20250929",
+                "claude-haiku-4-5-20251001"
+              ],
+              "default": "claude-sonnet-4-5-20250929"
+            },
+            "models": {
+              "type": "array",
+              "description": "Available Claude models for routing",
+              "items": {
+                "type": "object",
+                "required": [
+                  "id",
+                  "tier"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "Model identifier",
+                    "example": "claude-sonnet-4-5-20250929"
+                  },
+                  "tier": {
+                    "type": "string",
+                    "enum": [
+                      "apex",
+                      "frontier",
+                      "standard",
+                      "economy"
+                    ],
+                    "description": "Model capability tier"
+                  },
+                  "cost_per_mtok_input": {
+                    "type": "number",
+                    "description": "Cost per million input tokens (USD)",
+                    "example": 3.0,
+                    "minimum": 0
+                  },
+                  "cost_per_mtok_output": {
+                    "type": "number",
+                    "description": "Cost per million output tokens (USD)",
+                    "example": 15.0,
+                    "minimum": 0
+                  },
+                  "context_window": {
+                    "type": "integer",
+                    "description": "Context window size in tokens",
+                    "example": 200000,
+                    "minimum": 1000
+                  },
+                  "use_case": {
+                    "type": "string",
+                    "enum": [
+                      "reasoning",
+                      "coding",
+                      "analysis",
+                      "delegation",
+                      "mechanical",
+                      "general"
+                    ],
+                    "description": "Recommended use case"
+                  },
+                  "enabled": {
+                    "type": "boolean",
+                    "description": "Enable this model for spawning",
+                    "default": true
+                  }
+                }
+              },
+              "example": [
+                {
+                  "id": "claude-opus-4-1-20250805",
+                  "tier": "apex",
+                  "cost_per_mtok_input": 15.0,
+                  "cost_per_mtok_output": 75.0,
+                  "context_window": 200000,
+                  "use_case": "reasoning",
+                  "enabled": true
+                },
+                {
+                  "id": "claude-sonnet-4-5-20250929",
+                  "tier": "frontier",
+                  "cost_per_mtok_input": 3.0,
+                  "cost_per_mtok_output": 15.0,
+                  "context_window": 200000,
+                  "use_case": "analysis",
+                  "enabled": true
+                },
+                {
+                  "id": "claude-haiku-4-5-20251001",
+                  "tier": "economy",
+                  "cost_per_mtok_input": 0.8,
+                  "cost_per_mtok_output": 4.0,
+                  "context_window": 200000,
+                  "use_case": "mechanical",
+                  "enabled": true
+                }
+              ]
+            },
+            "timeout_ms": {
+              "type": "integer",
+              "description": "Default agent request timeout",
+              "default": 300000,
+              "minimum": 5000
+            },
+            "retry_config": {
+              "type": "object",
+              "description": "Retry policy for agent requests",
+              "additionalProperties": false,
+              "properties": {
+                "max_retries": {
+                  "type": "integer",
+                  "description": "Maximum retry attempts",
+                  "default": 3,
+                  "minimum": 0
+                },
+                "backoff_factor": {
+                  "type": "number",
+                  "description": "Exponential backoff multiplier",
+                  "default": 2.0,
+                  "minimum": 1.0
+                },
+                "initial_delay_ms": {
+                  "type": "integer",
+                  "description": "Initial retry delay in milliseconds",
+                  "default": 1000,
+                  "minimum": 100
+                }
+              }
+            },
+            "cost_budget_tokens": {
+              "type": "integer",
+              "description": "Weekly token budget for cost control",
+              "default": 1000000,
+              "minimum": 10000
+            }
+          }
+        },
+        "if_emotion": {
+          "type": "object",
+          "description": "IF.emotion personality framework configuration",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "description": "Enable IF.emotion personality injection",
+              "default": true
+            },
+            "sandbox_enabled": {
+              "type": "boolean",
+              "description": "Enable sandboxing for emotional outputs",
+              "default": true
+            },
+            "personality_dna_path": {
+              "type": "string",
+              "description": "Path to personality DNA files",
+              "example": "/home/setup/infrafabric/docs/personality"
+            },
+            "cross_cultural_lexicon_path": {
+              "type": "string",
+              "description": "Path to cross-cultural emotion lexicon",
+              "example": "/home/setup/infrafabric/docs/emotion_lexicon"
+            },
+            "safety_guidelines": {
+              "type": "object",
+              "description": "Safety constraints for emotional outputs",
+              "additionalProperties": false,
+              "properties": {
+                "max_emotional_intensity": {
+                  "type": "number",
+                  "description": "Maximum emotional intensity (0-1 scale)",
+                  "default": 0.8,
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "cultural_sensitivity_check": {
+                  "type": "boolean",
+                  "description": "Enable cultural sensitivity filtering",
+                  "default": true
+                },
+                "bias_detection": {
+                  "type": "boolean",
+                  "description": "Enable bias detection in emotional outputs",
+                  "default": true
+                }
+              }
+            }
+          }
+        },
+        "swarm_communication": {
+          "type": "object",
+          "description": "S2 Intra-Swarm Communication configuration",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "description": "Enable swarm communication layer",
+              "default": true
+            },
+            "protocol": {
+              "type": "string",
+              "enum": [
+                "s2_redis",
+                "s2_jsonl",
+                "dds"
+              ],
+              "description": "Swarm communication protocol",
+              "default": "s2_redis"
+            },
+            "heartbeat_interval_ms": {
+              "type": "integer",
+              "description": "Agent heartbeat interval",
+              "default": 5000,
+              "minimum": 100
+            },
+            "packet_timeout_ms": {
+              "type": "integer",
+              "description": "Packet delivery timeout",
+              "default": 30000,
+              "minimum": 1000
+            },
+            "encryption": {
+              "type": "string",
+              "enum": [
+                "none",
+                "ed25519",
+                "sha256"
+              ],
+              "description": "Packet encryption method",
+              "default": "ed25519"
+            }
+          }
+        }
+      }
+    },
+    "security": {
+      "type": "object",
+      "description": "Security configuration: sandboxing, rate limits, and input validation",
+      "additionalProperties": false,
+      "properties": {
+        "sandboxing": {
+          "type": "object",
+          "description": "IF.emotion output sandboxing and input validation",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "description": "Enable security sandboxing",
+              "default": true
+            },
+            "input_validation": {
+              "type": "boolean",
+              "description": "Validate all inputs before processing",
+              "default": true
+            },
+            "input_size_limit_bytes": {
+              "type": "integer",
+              "description": "Maximum input size in bytes",
+              "default": 10485760,
+              "minimum": 1000
+            },
+            "output_filtering": {
+              "type": "boolean",
+              "description": "Filter sensitive data from outputs",
+              "default": true
+            },
+            "allow_code_execution": {
+              "type": "boolean",
+              "description": "Allow arbitrary code execution (dangerous)",
+              "default": false
+            },
+            "sandbox_type": {
+              "type": "string",
+              "enum": [
+                "strict",
+                "moderate",
+                "permissive"
+              ],
+              "description": "Sandboxing strictness level",
+              "default": "strict"
+            },
+            "blocked_patterns": {
+              "type": "array",
+              "description": "Regex patterns for blocked inputs",
+              "items": {
+                "type": "string"
+              },
+              "example": [
+                "^(DELETE|DROP|TRUNCATE)\\s",
+                "(password|secret|key)\\s*=",
+                "(AWS_ACCESS_KEY|API_KEY)"
+              ]
+            },
+            "allowed_domains": {
+              "type": "array",
+              "description": "Whitelisted domains for external access",
+              "items": {
+                "type": "string",
+                "format": "hostname"
+              }
+            }
+          }
+        },
+        "rate_limits": {
+          "type": "object",
+          "description": "Rate limiting and quota management",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "description": "Enable rate limiting",
+              "default": true
+            },
+            "user_per_hour": {
+              "type": "integer",
+              "description": "Max requests per user per hour",
+              "default": 1000,
+              "minimum": 1
+            },
+            "ip_per_hour": {
+              "type": "integer",
+              "description": "Max requests per IP per hour",
+              "default": 5000,
+              "minimum": 1
+            },
+            "burst_per_minute": {
+              "type": "integer",
+              "description": "Max burst requests per minute",
+              "default": 100,
+              "minimum": 1
+            },
+            "cost_budget_tokens": {
+              "type": "integer",
+              "description": "Weekly token spending budget",
+              "default": 500000,
+              "minimum": 1000
+            },
+            "cost_alert_threshold": {
+              "type": "number",
+              "description": "Alert when spending exceeds this percentage of budget (0-1)",
+              "default": 0.8,
+              "minimum": 0,
+              "maximum": 1
+            }
+          }
+        },
+        "authentication": {
+          "type": "object",
+          "description": "Authentication and authorization settings",
+          "additionalProperties": false,
+          "properties": {
+            "auth_method": {
+              "type": "string",
+              "enum": [
+                "none",
+                "api_key",
+                "bearer_token",
+                "oauth2",
+                "jwt",
+                "mfa"
+              ],
+              "description": "Primary authentication method",
+              "default": "api_key"
+            },
+            "jwt_secret": {
+              "type": "string",
+              "description": "JWT signing secret (use environment variable)",
+              "example": "$JWT_SECRET"
+            },
+            "token_expiry_hours": {
+              "type": "integer",
+              "description": "Token expiry time in hours",
+              "default": 24,
+              "minimum": 1
+            },
+            "require_https": {
+              "type": "boolean",
+              "description": "Require HTTPS for all API calls",
+              "default": true
+            }
+          }
+        }
+      }
+    },
+    "audit": {
+      "type": "object",
+      "description": "Audit logging, traceability, and IF.TTT compliance",
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "Enable audit logging",
+          "default": true
+        },
+        "log_level": {
+          "type": "string",
+          "enum": [
+            "debug",
+            "info",
+            "warning",
+            "error",
+            "critical"
+          ],
+          "description": "Audit log level",
+          "default": "info"
+        },
+        "retention_days_hot": {
+          "type": "integer",
+          "description": "Hot storage retention (fast access)",
+          "default": 30,
+          "minimum": 1
+        },
+        "retention_days_cold": {
+          "type": "integer",
+          "description": "Cold storage retention (archival)",
+          "default": 365,
+          "minimum": 1
+        },
+        "storage_backend": {
+          "type": "string",
+          "enum": [
+            "redis",
+            "chromadb",
+            "both"
+          ],
+          "description": "Audit log storage backend",
+          "default": "both"
+        },
+        "audit_events": {
+          "type": "array",
+          "description": "Event types to audit",
+          "items": {
+            "type": "string",
+            "enum": [
+              "agent_spawn",
+              "agent_complete",
+              "decision_made",
+              "citation_created",
+              "security_violation",
+              "rate_limit_exceeded",
+              "api_call",
+              "data_access",
+              "config_change",
+              "error"
+            ]
+          },
+          "default": [
+            "agent_spawn",
+            "agent_complete",
+            "decision_made",
+            "citation_created",
+            "security_violation",
+            "error"
+          ]
+        },
+        "if_ttt_traceability": {
+          "type": "object",
+          "description": "IF.TTT compliance tracking",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "description": "Enable IF.TTT traceability",
+              "default": true
+            },
+            "citation_schema_path": {
+              "type": "string",
+              "description": "Path to citation schema",
+              "example": "/home/setup/infrafabric/schemas/citation/v1.0.schema.json"
+            },
+            "trace_all_decisions": {
+              "type": "boolean",
+              "description": "Require citation for all decisions",
+              "default": true
+            },
+            "verification_levels": {
+              "type": "array",
+              "description": "Supported verification status levels",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "unverified",
+                  "verified",
+                  "disputed",
+                  "revoked"
+                ]
+              },
+              "default": [
+                "unverified",
+                "verified",
+                "disputed",
+                "revoked"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "resilience": {
+      "type": "object",
+      "description": "Resilience mechanisms: timeout prevention, checkpointing, and graceful degradation",
+      "additionalProperties": false,
+      "properties": {
+        "timeout_prevention": {
+          "type": "object",
+          "description": "Timeout prevention and recovery",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "description": "Enable timeout prevention",
+              "default": true
+            },
+            "default_timeout_ms": {
+              "type": "integer",
+              "description": "Default operation timeout",
+              "default": 300000,
+              "minimum": 5000
+            },
+            "heartbeat_interval_ms": {
+              "type": "integer",
+              "description": "Health check heartbeat interval",
+              "default": 10000,
+              "minimum": 1000
+            },
+            "heartbeat_timeout_ms": {
+              "type": "integer",
+              "description": "Timeout waiting for heartbeat response",
+              "default": 30000,
+              "minimum": 5000
+            },
+            "checkpoint_interval_ms": {
+              "type": "integer",
+              "description": "Progress checkpoint interval",
+              "default": 60000,
+              "minimum": 5000
+            },
+            "recovery_strategy": {
+              "type": "string",
+              "enum": [
+                "restart_from_checkpoint",
+                "graceful_shutdown",
+                "failover_to_backup"
+              ],
+              "description": "Recovery strategy on timeout",
+              "default": "restart_from_checkpoint"
+            }
+          }
+        },
+        "graceful_degradation": {
+          "type": "object",
+          "description": "Graceful degradation when services fail",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "description": "Enable graceful degradation",
+              "default": true
+            },
+            "redis_fallback_mode": {
+              "type": "boolean",
+              "description": "Fall back to local memory if Redis unavailable",
+              "default": true
+            },
+            "chromadb_fallback_mode": {
+              "type": "boolean",
+              "description": "Fall back to JSON storage if ChromaDB unavailable",
+              "default": true
+            },
+            "openwebui_fallback_mode": {
+              "type": "boolean",
+              "description": "Continue without OpenWebUI if unavailable",
+              "default": true
+            },
+            "circuit_breaker_threshold": {
+              "type": "integer",
+              "description": "Failure threshold before circuit breaker opens",
+              "default": 5,
+              "minimum": 1
+            },
+            "circuit_breaker_reset_ms": {
+              "type": "integer",
+              "description": "Time before attempting circuit breaker reset",
+              "default": 60000,
+              "minimum": 1000
+            }
+          }
+        },
+        "resource_limits": {
+          "type": "object",
+          "description": "Resource consumption limits",
+          "additionalProperties": false,
+          "properties": {
+            "max_concurrent_agents": {
+              "type": "integer",
+              "description": "Maximum concurrent agent instances",
+              "default": 40,
+              "minimum": 1
+            },
+            "max_memory_mb": {
+              "type": "integer",
+              "description": "Maximum memory usage in MB",
+              "default": 8192,
+              "minimum": 256
+            },
+            "max_cpu_percent": {
+              "type": "number",
+              "description": "Maximum CPU usage percentage",
+              "default": 80.0,
+              "minimum": 1,
+              "maximum": 100
+            },
+            "swap_enabled": {
+              "type": "boolean",
+              "description": "Allow swap memory usage",
+              "default": false
+            }
+          }
+        }
+      }
+    }
+  }
+}

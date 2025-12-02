@@ -1,0 +1,49 @@
+[Unit]
+Description=InfraFabric Prometheus Metrics Exporter
+Documentation=https://github.com/dannystocker/infrafabric
+After=network.target redis.service
+Wants=redis.service
+
+[Service]
+Type=simple
+User=setup
+WorkingDirectory=/home/setup/infrafabric
+
+# Python environment
+Environment="PYTHONUNBUFFERED=1"
+Environment="PYTHONPATH=/home/setup/infrafabric"
+
+# Exporter configuration
+ExecStart=/home/setup/infrafabric/.venv/bin/python3 \
+    /home/setup/infrafabric/monitoring/prometheus/metrics_exporter.py \
+    --host 0.0.0.0 \
+    --port 9090 \
+    --redis-host localhost \
+    --redis-port 6379 \
+    --redis-db 0 \
+    --collection-interval 10
+
+# Restart policy
+Restart=on-failure
+RestartSec=10s
+StartLimitInterval=60s
+StartLimitBurst=3
+
+# Resource limits
+LimitNOFILE=65536
+LimitNPROC=65536
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=prometheus-exporter
+
+# Security hardening
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=/tmp /var/tmp /home/setup/.memory_bus
+
+[Install]
+WantedBy=multi-user.target

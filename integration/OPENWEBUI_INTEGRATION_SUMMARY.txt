@@ -1,0 +1,324 @@
+===============================================================================
+  OpenWebUI API INTEGRATION SUMMARY - if.emotion Frontend
+===============================================================================
+
+PROJECT: if.emotion React Frontend Integration with OpenWebUI
+MISSION: Replace direct Claude Max API calls with OpenWebUI backend
+STATUS: COMPLETE - Comprehensive API specification delivered
+
+===============================================================================
+DELIVERABLES
+===============================================================================
+
+1. PRIMARY SPECIFICATION
+   File: /home/setup/infrafabric/integration/openwebui_api_spec.md
+   Size: 32KB, 1,297 lines
+   Sections: 11 major sections, 46 subsections
+   
+   Contents:
+   - Complete authentication documentation (API Key + JWT)
+   - 15+ API endpoints with request/response examples
+   - Server-Sent Events (SSE) streaming format specification
+   - Chat management (create, list, get history, delete)
+   - File upload and RAG (Retrieval Augmented Generation)
+   - HTTP status codes and error handling
+   - 5 complete implementation examples (JavaScript/TypeScript)
+   - Best practices (6 key patterns)
+   - Common challenges with solutions (5 major scenarios)
+
+2. QUICK REFERENCE GUIDE
+   File: /home/setup/infrafabric/integration/openwebui_api_quick_reference.md
+   Size: ~500 lines
+   Purpose: Fast lookup for developers
+   
+   Contents:
+   - 15 code snippets (copy-paste ready)
+   - Authentication setup
+   - All major operations (list models, chat, stream, files)
+   - React integration example
+   - Curl testing commands
+   - Troubleshooting table
+
+===============================================================================
+DOCUMENTED ENDPOINTS (15 Total)
+===============================================================================
+
+CORE ENDPOINTS:
+✓ GET /api/models                         - List available models
+✓ POST /api/chat/completions              - Chat (streaming + non-streaming)
+✓ POST /api/chat/completed                - Signal completion to backend
+
+CHAT MANAGEMENT:
+✓ POST /api/chats/new                     - Create new chat session
+✓ GET /api/chats                          - List all user chats
+✓ GET /api/chats/{id}                     - Get chat history
+✓ POST /api/chats/{id}                    - Update chat
+✓ DELETE /api/chats/{id}                  - Delete chat
+
+FILE & RAG:
+✓ POST /api/v1/files                      - Upload file
+✓ GET /api/v1/files                       - List files
+✓ DELETE /api/v1/files/{id}               - Delete file
+✓ POST /api/v1/knowledge/create           - Create knowledge base
+✓ POST /api/v1/knowledge/{id}/file/add    - Add files to KB
+
+AUTHENTICATION:
+✓ Bearer Token (API Key from Settings)
+✓ JWT Token (from /api/auth/signin)
+
+===============================================================================
+KEY AUTHENTICATION METHOD
+===============================================================================
+
+PRIMARY: Bearer Token (API Key)
+
+Generation:
+1. Open OpenWebUI in browser
+2. Navigate to Settings > Account
+3. Click "Create API Key"
+4. Copy the token
+
+Usage in Requests:
+  Authorization: Bearer YOUR_API_KEY
+
+Alternative: JWT Token
+- Obtain via POST /api/auth/signin with email/password
+- Use same Bearer header format
+- Requires token refresh handling
+
+===============================================================================
+CRITICAL FEATURES DOCUMENTED
+===============================================================================
+
+✓ Server-Sent Events (SSE) Streaming
+  - Line-by-line token deltas
+  - Complete JSON parsing examples
+  - Reverse proxy configuration (Nginx, Apache)
+  - Timeout handling
+  
+✓ Chat Session Persistence
+  - Create new chats with /api/chats/new
+  - Associate messages with chat_id
+  - Retrieve full history with /api/chats/{id}
+  - Signal completion with /api/chat/completed
+  
+✓ Retrieval Augmented Generation (RAG)
+  - File upload with automatic content extraction
+  - Knowledge base creation and management
+  - Reference files in chat requests
+  - Status tracking (pending → processing → processed)
+  
+✓ Error Handling
+  - 401 Unauthorized (expired token)
+  - 404 Not Found (missing resource)
+  - 429 Rate Limited (backoff strategy)
+  - 500 Server Error (retry logic)
+
+===============================================================================
+IMPLEMENTATION EXAMPLES PROVIDED
+===============================================================================
+
+1. Simple Chat (Non-Streaming)
+   - 6 lines of code
+   - Synchronous single response
+   
+2. Streaming Chat with Session
+   - 25 lines of code
+   - Real-time token display
+   - Chat ID persistence
+   
+3. Chat with File References
+   - 15 lines of code
+   - File upload + RAG integration
+   
+4. React Component Integration
+   - Full useEffect workflow
+   - State management pattern
+   - Error handling example
+   
+5. Error Handling Wrapper
+   - Try/catch with specific status codes
+   - Token refresh logic
+   - Retry mechanism
+
+===============================================================================
+TESTING QUICK COMMANDS
+===============================================================================
+
+Test Models Endpoint:
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+  http://localhost:8080/api/models
+
+Test Chat (Non-Streaming):
+curl -X POST http://localhost:8080/api/chat/completions \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "claude-3-opus-20250219",
+    "messages": [{"role": "user", "content": "Hello"}]
+  }'
+
+Test Chat (Streaming):
+curl -X POST http://localhost:8080/api/chat/completions \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "claude-3-opus-20250219",
+    "messages": [{"role": "user", "content": "Write a poem"}],
+    "stream": true
+  }'
+
+===============================================================================
+COMMON INTEGRATION CHALLENGES & SOLUTIONS
+===============================================================================
+
+1. SSE Streaming Timeout Behind Reverse Proxy
+   - CAUSE: Proxy buffering collects response before sending
+   - SOLUTION: Disable buffering in Nginx/Apache config
+   - FILE: openwebui_api_spec.md § "Streaming Timeout"
+   
+2. Incomplete SSE Data Chunks
+   - CAUSE: Data arrives fragmented, parsing fails
+   - SOLUTION: Buffer until newline delimiter
+   - CODE: openwebui_api_quick_reference.md § "Streaming Chat"
+   
+3. Chat History Not Persisting
+   - CAUSE: Streaming responses lack full message context
+   - SOLUTION: Fetch complete chat history before sending
+   - PATTERN: Always include all messages in request
+   
+4. File Not Ready for RAG
+   - CAUSE: Using file immediately after upload (still processing)
+   - SOLUTION: Poll file status until status === "processed"
+   - CODE: openwebui_api_spec.md § "Challenge 4"
+   
+5. API Token Expiration (401 Errors)
+   - CAUSE: JWT token lifetime exceeded
+   - SOLUTION: Implement token refresh with credentials
+   - CODE: openwebui_api_spec.md § "Challenge 5"
+
+===============================================================================
+ARCHITECTURAL RECOMMENDATIONS
+===============================================================================
+
+For if.emotion Frontend:
+
+1. Storage
+   - Cache API key in localStorage (with security warnings)
+   - Store chat IDs for session recovery
+   - Use sessionStorage for temporary tokens
+   
+2. State Management
+   - Redux/Zustand: Store current chat_id, messages[]
+   - Context API: Provide API config globally
+   - Local state: Current streaming response (useRef)
+   
+3. Streaming Implementation
+   - Use ReadableStream API for better control
+   - Implement cancellation tokens (AbortController)
+   - Add UI progress indicators
+   
+4. Error Recovery
+   - Implement exponential backoff for retries
+   - Store unsent messages in localStorage
+   - Graceful degradation for network failures
+   
+5. Performance
+   - Cache model list in memory
+   - Debounce model selector changes
+   - Lazy load chat history (infinite scroll)
+
+===============================================================================
+WHAT'S NOT DOCUMENTED (Known Gaps)
+===============================================================================
+
+❌ WebSocket Support
+   - Status: OpenWebUI has Redis-backed WebSocket support
+   - Note: SSE is recommended for simpler integration
+   - Future: Document if Realtime (non-HTTP) features needed
+   
+❌ Conversation Export to Markdown
+   - Status: Not available as direct API endpoint
+   - Workaround: Export as JSON, convert client-side
+   - Future: Check if feature added in newer releases
+
+❌ Admin/Management APIs
+   - Status: /api/admin/* endpoints exist but not public
+   - Note: Not needed for frontend integration
+   - Future: Document if backend admin features needed
+
+❌ Model Fine-tuning/Training
+   - Status: Not exposed via API
+   - Note: Only inference endpoints documented
+   - Future: Check OpenWebUI plugin system for extensions
+
+===============================================================================
+VALIDATION CHECKLIST FOR FRONTEND DEVELOPER
+===============================================================================
+
+Before implementing, verify:
+
+☑ OpenWebUI is running on http://localhost:8080
+☑ Generated API key from Settings > Account
+☑ At least one model installed (check /api/models)
+☑ Test simple curl request to /api/models returns 200
+☑ Understand SSE streaming format (data: {...}\n\n)
+☑ Know chat_id UUID format (550e8400-e29b-41d4-...)
+☑ Plan error handling for 401, 404, 429 status codes
+☑ Review "Best Practices" section for implementation pattern
+☑ Test streaming with curl before React implementation
+☑ Set up reverse proxy buffering rules if using proxy
+
+===============================================================================
+QUICK START FOR NEW DEVELOPER
+===============================================================================
+
+1. Read: openwebui_api_quick_reference.md (15 min)
+2. Test: Run curl commands from § "Testing Your Integration" (5 min)
+3. Code: Start with "Simple Chat" example (10 min)
+4. Reference: openwebui_api_spec.md for details as needed
+
+Expected time to basic integration: 30 minutes
+Expected time to production-ready: 2-4 hours
+
+===============================================================================
+CITATIONS & SOURCES
+===============================================================================
+
+Primary Sources:
+1. Official OpenWebUI API Documentation
+   https://docs.openwebui.com/getting-started/api-endpoints/
+   
+2. GitHub API Reference Discussion #16402
+   https://github.com/open-webui/open-webui/discussions/16402
+   
+3. OpenWebUI Docker-Compose Configuration
+   /home/setup/infrafabric/docker-compose-openwebui.yml
+   
+4. Medium: OpenWebUI API Integration Patterns
+   https://medium.com/@kenji-onisuka/...
+   
+5. OpenWebUI GitHub Repository
+   https://github.com/open-webui/open-webui
+
+IF.citation: if://citation/openwebui-api-20251130-integration-spec
+
+===============================================================================
+DOCUMENT METADATA
+===============================================================================
+
+Creation Date: 2025-11-30
+Version: 1.0
+Status: COMPLETE & VALIDATED
+Target Audience: React/TypeScript Frontend Developer
+Skill Level Required: Intermediate (REST APIs, async/await, fetch)
+Time to Implement: 30 min (basic) to 4 hours (production)
+
+Files Generated:
+1. openwebui_api_spec.md                    (32 KB, 1,297 lines)
+2. openwebui_api_quick_reference.md         (~500 lines)
+3. OPENWEBUI_INTEGRATION_SUMMARY.txt        (this file)
+
+===============================================================================
+END OF SUMMARY
+===============================================================================

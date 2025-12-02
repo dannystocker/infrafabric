@@ -1,0 +1,88 @@
+groups:
+  - name: infrafabric_p2_medium
+    interval: 300s
+    rules:
+      # P2-001: High Load (>1000 req/sec)
+      - alert: HighLoadCondition
+        expr: rate(http_requests_total[5m]) > 1000
+        for: 30m
+        labels:
+          severity: medium
+          component: api_load
+          slo: "30min"
+        annotations:
+          summary: "Request rate >1000 req/sec sustained"
+          description: "API is handling very high load (>1000 requests/sec) for 30 minutes."
+          impact: "MEDIUM: System at high capacity. Scaling may be needed."
+          runbook_url: "{{ .ExternalURL }}/docs/runbooks/load_balancing.md"
+          action: "1. Monitor resource utilization: CPU, memory, network\n2. Check which endpoints are hot\n3. Consider horizontal scaling\n4. Review rate limiting policies\n5. Notify on-call lead of sustained load"
+          team: "Platform, SRE"
+          priority: "MONITOR_CHANNEL"
+
+      # P2-002: Slow Query Performance (>1s)
+      - alert: SlowQueryDetected
+        expr: histogram_quantile(0.95, rate(chromadb_query_duration_seconds_bucket[5m])) > 1.0
+        for: 10m
+        labels:
+          severity: medium
+          component: database_performance
+          slo: "10min"
+        annotations:
+          summary: "ChromaDB query latency >1s (P95)"
+          description: "95th percentile ChromaDB query latency exceeded 1 second for 10 minutes."
+          impact: "MEDIUM: Evidence retrieval slower. Agent reasoning latency increasing."
+          runbook_url: "{{ .ExternalURL }}/docs/runbooks/query_optimization.md"
+          action: "1. Profile slow queries\n2. Check collection sizes\n3. Review embedding model performance\n4. Consider indexing optimization\n5. Monitor ChromaDB CPU/memory"
+          team: "Platform, ML Ops"
+          priority: "MONITOR_CHANNEL"
+
+      # P2-003: Agent Churn (>5 restarts in 10 min)
+      - alert: AgentChurnHigh
+        expr: rate(agent_restart_total[10m]) > 0.5
+        for: 10m
+        labels:
+          severity: medium
+          component: agent_stability
+          slo: "10min"
+        annotations:
+          summary: "Agent restart rate >5 per 10 minutes"
+          description: "Agents are restarting frequently. May indicate instability."
+          impact: "MEDIUM: Agent availability fluctuating. Swarm reliability degraded."
+          runbook_url: "{{ .ExternalURL }}/docs/runbooks/agent_diagnostics.md"
+          action: "1. Check agent logs for crash reasons\n2. Review recent code changes\n3. Monitor agent memory/CPU\n4. Check for resource contention\n5. Consider reducing task complexity"
+          team: "DevOps, Platform"
+          priority: "MONITOR_CHANNEL"
+
+      # P2-004: ESCALATE Speech Acts High (>50/min)
+      - alert: EscalateSpikeSpeechAct
+        expr: rate(speech_act_escalate_total[1m]) > 50
+        for: 15m
+        labels:
+          severity: medium
+          component: consensus
+          slo: "15min"
+        annotations:
+          summary: "ESCALATE speech acts >50/min"
+          description: "High volume of ESCALATE speech acts detected. Consensus issues increasing."
+          impact: "MEDIUM: Agents escalating frequently. Decision latency increasing."
+          runbook_url: "{{ .ExternalURL }}/docs/runbooks/consensus_tuning.md"
+          action: "1. Review escalation logs\n2. Check which agents are escalating\n3. Analyze decision times\n4. Check for timeout-related escalations\n5. Consider increasing consensus timeout thresholds"
+          team: "Platform, Architecture"
+          priority: "MONITOR_CHANNEL"
+
+      # P2-005: Redis Key Expiration Warning
+      - alert: RedisKeyExpirationRate
+        expr: rate(redis_expired_keys_total[5m]) > rate(redis_set_total[5m])
+        for: 20m
+        labels:
+          severity: medium
+          component: redis_cache
+          slo: "20min"
+        annotations:
+          summary: "Redis keys expiring faster than being created"
+          description: "Key expiration rate exceeds creation rate. Cache effectiveness declining."
+          impact: "MEDIUM: Cache efficiency declining. May indicate memory pressure."
+          runbook_url: "{{ .ExternalURL }}/docs/runbooks/redis_tuning.md"
+          action: "1. Check Redis memory usage\n2. Review TTL settings for various keys\n3. Monitor eviction events\n4. Consider adjusting maxmemory-policy\n5. Increase Redis memory if needed"
+          team: "Platform, Database"
+          priority: "MONITOR_CHANNEL"

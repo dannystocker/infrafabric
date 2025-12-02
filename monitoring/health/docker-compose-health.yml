@@ -1,0 +1,216 @@
+version: '3.8'
+
+# Health Check Endpoints for InfraFabric Swarm
+# Integration with Docker Compose deployment
+# Citation: if://agent/A34_health_check_docker_compose
+
+services:
+  # ========================================================================
+  # Health Check API Service
+  # ========================================================================
+  infrafabric-health-check:
+    build:
+      context: ../../
+      dockerfile: Dockerfile.health
+    container_name: infrafabric-health-check
+    ports:
+      - "8000:8000"
+
+    environment:
+      # API Configuration
+      HEALTH_CHECK_HOST: "0.0.0.0"
+      HEALTH_CHECK_PORT: "8000"
+      INFRAFABRIC_ENV: "production"
+
+      # Redis Configuration
+      REDIS_HOST: "redis"
+      REDIS_PORT: "6379"
+      REDIS_PASSWORD: ${REDIS_PASSWORD:-}
+      REDIS_DB: "0"
+
+      # ChromaDB Configuration
+      CHROMADB_PATH: "/data/chromadb"
+
+      # Logging
+      LOG_LEVEL: "INFO"
+
+    depends_on:
+      redis:
+        condition: service_healthy
+      chromadb-data:
+        condition: service_healthy
+
+    # Health check for Docker (separate from Kubernetes probes)
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+    # Volumes
+    volumes:
+      # Mount ChromaDB data
+      - chromadb-data:/data/chromadb
+      # Mount logs
+      - ./logs/health-check:/var/log/infrafabric
+
+    # Resource limits
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+
+    # Networking
+    networks:
+      - infrafabric
+
+    # Restart policy
+    restart: unless-stopped
+
+    # Logging
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
+        max-file: "3"
+
+  # ========================================================================
+  # Redis Service (Dependency)
+  # ========================================================================
+  redis:
+    image: redis:7-alpine
+    container_name: infrafabric-redis
+    ports:
+      - "6379:6379"
+
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD:-}
+
+    # Health check
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
+
+    # Volumes
+    volumes:
+      - redis-data:/data
+
+    # Resource limits
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 512M
+        reservations:
+          cpus: '0.5'
+          memory: 256M
+
+    # Networking
+    networks:
+      - infrafabric
+
+    restart: unless-stopped
+
+  # ========================================================================
+  # ChromaDB Data Service (Volume Placeholder)
+  # ========================================================================
+  chromadb-data:
+    image: busybox
+    container_name: infrafabric-chromadb-data
+    volumes:
+      - chromadb-data:/data
+
+    # Health check - ensure volume is accessible
+    healthcheck:
+      test: ["CMD", "test", "-d", "/data/chromadb"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+
+    command: /bin/sh -c "mkdir -p /data/chromadb && chmod 777 /data/chromadb && tail -f /dev/null"
+
+    networks:
+      - infrafabric
+
+  # ========================================================================
+  # Prometheus (Optional - for metrics)
+  # ========================================================================
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: infrafabric-prometheus
+    ports:
+      - "9090:9090"
+
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+      - '--web.console.templates=/usr/share/prometheus/consoles'
+
+    volumes:
+      - ./monitoring/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./monitoring/prometheus/alerts:/etc/prometheus/alerts:ro
+      - prometheus-data:/prometheus
+
+    depends_on:
+      - infrafabric-health-check
+
+    # Health check
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:9090/-/healthy"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+    networks:
+      - infrafabric
+
+    restart: unless-stopped
+
+  # ========================================================================
+  # Grafana (Optional - for visualization)
+  # ========================================================================
+  grafana:
+    image: grafana/grafana:latest
+    container_name: infrafabric-grafana
+    ports:
+      - "3000:3000"
+
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD:-admin}
+      GF_USERS_ALLOW_SIGN_UP: "false"
+
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./monitoring/grafana/provisioning:/etc/grafana/provisioning:ro
+
+    depends_on:
+      - prometheus
+
+    networks:
+      - infrafabric
+
+    restart: unless-stopped
+
+volumes:
+  redis-data:
+    driver: local
+  chromadb-data:
+    driver: local
+  prometheus-data:
+    driver: local
+  grafana-data:
+    driver: local
+
+networks:
+  infrafabric:
+    driver: bridge

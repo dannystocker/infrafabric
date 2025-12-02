@@ -1,0 +1,414 @@
+#!/usr/bin/env yaml
+# InfraFabric Health Check Configuration
+#
+# Version: 1.0.0
+# Author: Agent A34
+# Date: 2025-11-30
+# Citation: if://agent/A34_health_check_config
+#
+# Comprehensive health check configuration for Redis Bus, ChromaDB,
+# OpenWebUI API, and system resources. Includes thresholds, timeouts,
+# and circuit breaker configuration.
+
+# ============================================================================
+# Global Health Check Configuration
+# ============================================================================
+global:
+  # Check interval in seconds (how often to run health checks)
+  check_interval_seconds: 5
+
+  # Overall timeout for a single health check cycle
+  check_timeout_seconds: 30
+
+  # Enable verbose logging of health check operations
+  verbose_logging: false
+
+  # Cache health check results to improve performance
+  enable_caching: true
+
+  # Cache TTL in seconds (how long to cache results)
+  cache_ttl_seconds: 5
+
+  # Location of this configuration file
+  config_path: /home/setup/infrafabric/monitoring/health/health_config.yml
+
+  # Correlation ID format (request, trace, span)
+  correlation_id_type: request
+
+# ============================================================================
+# Redis Bus Health Checks
+# ============================================================================
+redis:
+  # Is Redis a critical dependency? (failure blocks readiness)
+  critical: true
+
+  # Connection configuration
+  connection:
+    host: localhost
+    port: 6379
+    db: 0
+    password: null  # Set from REDIS_PASSWORD env var if needed
+    timeout_seconds: 5.0
+    socket_timeout: 5.0
+    socket_connect_timeout: 5.0
+
+  # Health checks to perform
+  checks:
+    - ping              # PING command latency
+    - info              # Server INFO metrics
+    - memory            # Memory usage
+    - connectivity      # Basic connectivity test
+
+  # Thresholds and limits
+  thresholds:
+    # PING latency (target: <10ms, warn: >5ms, critical: >50ms)
+    latency_p50_ms: 5
+    latency_p99_ms: 10
+    latency_critical_ms: 50
+
+    # Memory usage (warn at 80%, critical at 95%)
+    memory_usage_percent_warn: 80
+    memory_usage_percent_critical: 95
+
+    # Connected clients (warn if >1000)
+    connected_clients_warn: 1000
+
+    # Operations per second (informational only)
+    ops_per_sec_threshold: null
+
+# ============================================================================
+# ChromaDB Health Checks
+# ============================================================================
+chromadb:
+  # Is ChromaDB a critical dependency?
+  critical: true
+
+  # Connection configuration
+  connection:
+    # Path to ChromaDB persistent storage
+    path: /root/openwebui-knowledge/chromadb
+
+    # Operation timeout
+    timeout_seconds: 10.0
+
+    # Client type (persistent or in-memory)
+    client_type: persistent
+
+  # Expected collections
+  collections:
+    - name: sergio_personality
+      expected_docs: 500
+      critical: true
+
+    - name: sergio_rhetorical
+      expected_docs: 500
+      critical: true
+
+    - name: sergio_humor
+      expected_docs: 200
+      critical: true
+
+    - name: sergio_corpus
+      expected_docs: 8632
+      critical: true
+
+  # Total expected documents across all collections
+  total_expected_docs: 9832
+
+  # Health checks to perform
+  checks:
+    - collections      # Verify collections exist
+    - query_performance # Test query latency
+    - doc_count        # Verify document counts
+    - integrity        # Check collection integrity
+
+  # Thresholds and limits
+  thresholds:
+    # Query latency (target: <50ms, warn: >100ms, critical: >500ms)
+    query_latency_p50_ms: 50
+    query_latency_p99_ms: 100
+    query_latency_critical_ms: 500
+
+    # Collection completeness (warn if >10% docs missing)
+    doc_count_missing_percent_warn: 10
+    doc_count_missing_percent_critical: 25
+
+# ============================================================================
+# OpenWebUI API Health Checks
+# ============================================================================
+openwebui:
+  # Is OpenWebUI API required? (optional - system can degrade)
+  critical: false
+
+  # Connection configuration
+  connection:
+    # Base URL for OpenWebUI API
+    base_url: http://localhost:3000
+
+    # API timeout
+    timeout_seconds: 5.0
+
+    # API key (set from OPENWEBUI_API_KEY env var)
+    api_key: null
+
+    # Authentication type (bearer, basic, api_key)
+    auth_type: bearer
+
+  # Health checks to perform
+  checks:
+    - api_reachable     # Can we reach the API endpoint?
+    - auth_valid        # Is authentication token valid?
+    - models_available  # Are LLM models available?
+    - database_connected # Is database connected?
+
+  # Endpoints to check
+  endpoints:
+    - path: /api/v1/health
+      method: GET
+      timeout_seconds: 2
+      expected_status: 200
+
+    - path: /api/v1/models
+      method: GET
+      timeout_seconds: 3
+      expected_status: 200
+
+  # Thresholds
+  thresholds:
+    # API response time
+    api_latency_p50_ms: 100
+    api_latency_p99_ms: 500
+    api_latency_critical_ms: 2000
+
+# ============================================================================
+# System Resource Health Checks
+# ============================================================================
+system:
+  # Are system resources critical? (affects readiness)
+  critical: true
+
+  # Health checks to perform
+  checks:
+    - disk_space       # Free disk space
+    - memory           # Memory usage
+    - file_handles     # File descriptor count
+    - cpu_load         # CPU load average
+
+  # Disk space configuration
+  disk:
+    # Path to monitor
+    path: /
+
+    # Thresholds (as percentage of total)
+    free_percent_ok: 20         # OK if >20% free
+    free_percent_warning: 10    # Warning if 10-20% free
+    free_percent_critical: 5    # Critical if <5% free
+
+  # Memory configuration
+  memory:
+    # Thresholds (as percentage of total)
+    used_percent_ok: 75         # OK if <75% used
+    used_percent_warning: 80    # Warning if 75-80% used
+    used_percent_critical: 95   # Critical if >95% used
+
+  # File handles configuration
+  file_handles:
+    # Thresholds (percentage of system limit)
+    used_percent_ok: 50
+    used_percent_warning: 75
+    used_percent_critical: 90
+
+  # CPU load configuration
+  cpu_load:
+    # Warn if load average > (cpu_count * multiplier)
+    multiplier_warning: 2.0
+    multiplier_critical: 3.0
+
+# ============================================================================
+# Environment Validation
+# ============================================================================
+environment:
+  # Is environment validation critical?
+  critical: true
+
+  # Required environment variables
+  required_variables:
+    - REDIS_HOST
+    - CHROMADB_PATH
+    - INFRAFABRIC_ENV
+    - INFRAFABRIC_LOG_LEVEL
+
+  # Optional environment variables (warn if missing)
+  optional_variables:
+    - OPENWEBUI_API_KEY
+    - PROMETHEUS_PUSHGATEWAY_URL
+    - LOKI_URL
+
+# ============================================================================
+# Circuit Breaker Configuration
+# ============================================================================
+circuit_breaker:
+  # Enable circuit breaker pattern
+  enabled: true
+
+  # Failure threshold (number of failures before opening circuit)
+  failure_threshold: 3
+
+  # Success threshold (number of successes before closing circuit)
+  success_threshold: 2
+
+  # Timeout in seconds (how long circuit stays open)
+  timeout_seconds: 30
+
+  # Half-open retry interval
+  half_open_retry_seconds: 15
+
+  # Per-component circuit breaker configuration
+  components:
+    redis:
+      enabled: true
+      failure_threshold: 3
+      timeout_seconds: 30
+
+    chromadb:
+      enabled: true
+      failure_threshold: 2
+      timeout_seconds: 60
+
+    openwebui:
+      enabled: true
+      failure_threshold: 3
+      timeout_seconds: 30
+
+    system:
+      enabled: false  # System checks don't use circuit breaker
+
+# ============================================================================
+# Graceful Degradation Configuration
+# ============================================================================
+degradation:
+  # Components that can fail without blocking readiness
+  non_critical_components:
+    - openwebui
+
+  # Components whose failure makes system unready
+  critical_components:
+    - redis
+    - chromadb
+    - environment
+
+  # System resource failure response
+  resource_failure_action: warn  # warn, degrade, fail
+
+  # Retry configuration for transient failures
+  retry:
+    enabled: true
+    max_attempts: 3
+    backoff_seconds: 1
+    backoff_multiplier: 2.0
+    max_backoff_seconds: 10
+
+# ============================================================================
+# Monitoring & Alerting Configuration
+# ============================================================================
+monitoring:
+  # Prometheus metrics export
+  prometheus:
+    enabled: true
+    metrics_path: /metrics
+
+    # Metrics to export
+    metrics:
+      - infra_health_status
+      - infra_health_check_duration_seconds
+      - infra_health_check_failures_total
+      - infra_circuit_breaker_state
+
+  # Structured logging configuration
+  logging:
+    enabled: true
+    log_level: INFO
+    json_format: true
+    include_correlation_id: true
+    include_timestamps: true
+
+  # Alert triggers
+  alerts:
+    # Redis down alert
+    redis_down:
+      enabled: true
+      message: "Redis health check failed"
+      severity: critical
+
+    # ChromaDB down alert
+    chromadb_down:
+      enabled: true
+      message: "ChromaDB health check failed"
+      severity: critical
+
+    # High memory usage alert
+    high_memory:
+      enabled: true
+      threshold_percent: 85
+      message: "Memory usage critically high"
+      severity: warning
+
+    # Low disk space alert
+    low_disk_space:
+      enabled: true
+      threshold_percent: 10
+      message: "Disk space critically low"
+      severity: warning
+
+# ============================================================================
+# Performance Targets
+# ============================================================================
+performance:
+  # Target response times
+  health_check_duration_ms:
+    liveness: 10      # /health endpoint
+    readiness: 100    # /ready endpoint
+    detailed: 150     # /status endpoint
+
+  # Component-specific targets
+  component_targets_ms:
+    redis_ping: 10
+    chromadb_query: 50
+    system_check: 20
+    environment_check: 5
+
+# ============================================================================
+# Testing Configuration
+# ============================================================================
+testing:
+  # Run tests on startup
+  run_on_startup: false
+
+  # Test timeouts
+  test_timeout_seconds: 30
+
+  # Test retry on failure
+  test_retries: 3
+
+  # Enable integration tests
+  integration_tests: true
+
+# ============================================================================
+# Development/Debug Configuration
+# ============================================================================
+debug:
+  # Enable debug mode
+  enabled: false
+
+  # Log all health check operations
+  log_all_operations: false
+
+  # Print detailed timing information
+  show_timings: false
+
+  # Mock failing components (for testing)
+  mock_failures:
+    redis: false
+    chromadb: false
+    openwebui: false
+    system: false

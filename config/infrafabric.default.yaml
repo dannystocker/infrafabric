@@ -1,0 +1,341 @@
+# InfraFabric Default Configuration
+# Version: 1.0.0
+# Purpose: Production-ready default settings for all InfraFabric components
+# IF.TTT Compliance: if://doc/config-schema/2025-11-30
+#
+# DOCUMENTATION:
+# - All options have sensible defaults suitable for development
+# - Production deployments should review security settings
+# - Memory backend options support L1/L2 tiering for resilience
+# - Token efficiency mode enables automatic Haiku delegation
+# - IF.TTT ensures all decisions are traceable and verifiable
+
+version: "1.0.0"
+
+# Core InfraFabric framework settings
+infrafabric_core:
+  # Project identifier using IF.* URI scheme
+  project_id: "if://project/infrafabric-core"
+
+  # Deployment environment
+  environment: "development"
+
+  # Global logging level (debug|info|warning|error|critical)
+  log_level: "info"
+
+  # Enable token efficiency via IF.optimise (Haiku delegation)
+  token_efficiency_mode: true
+
+  # Enable IF.TTT traceability for all operations
+  if_ttt_enabled: true
+
+  # Session identifier (auto-generated if empty)
+  session_id: ""
+
+# UI/API interface configurations (multi-paradigm support)
+interfaces:
+  # OpenWebUI developer/power-user backend
+  openwebui:
+    enabled: false
+    api_url: "http://localhost:8080/api"
+    api_key: "${OPENWEBUI_API_KEY}"
+    models:
+      - "claude-opus-4-1-20250805"
+      - "claude-sonnet-4-5-20250929"
+      - "claude-haiku-4-5-20251001"
+    knowledge_base_path: "/home/setup/infrafabric/media"
+    enable_rag_web_search: true
+    enable_rag_hybrid_search: true
+    timeout_seconds: 300
+
+  # IF.emotion React frontend for consumers
+  if_emotion_react:
+    enabled: false
+    port: 3000
+    backend_url: "http://localhost:8000/api"
+    personality_dna_path: "/home/setup/infrafabric/docs/personality"
+    emotion_color_scheme: "default"
+
+  # Command-line interface
+  cli:
+    enabled: true
+    verbosity: "normal"  # quiet|normal|verbose|debug
+    color_output: true
+    json_output: false
+
+  # REST API server
+  api:
+    enabled: true
+    host: "0.0.0.0"
+    port: 8000
+    auth_required: true
+    auth_type: "bearer_token"  # bearer_token|api_key|oauth2|jwt
+    cors_enabled: true
+    cors_origins:
+      - "http://localhost:3000"
+      - "http://localhost:8080"
+    request_timeout_ms: 30000
+
+  # Voice interface (escalation tiers)
+  voice:
+    enabled: false
+
+    # Tier 1: WhatsApp escalation
+    whatsapp_tier1:
+      enabled: false
+      account_sid: "${WHATSAPP_ACCOUNT_SID}"
+      auth_token: "${WHATSAPP_AUTH_TOKEN}"
+      phone_number: "+1234567890"
+
+    # Tier 2: SIP/voip.ms escalation
+    sip_tier2:
+      enabled: false
+      sip_uri: "sip.voip.ms"
+      username: "${SIP_USERNAME}"
+      password: "${SIP_PASSWORD}"
+      extension: "1234567"
+
+    # Text-to-Speech (ElevenLabs)
+    text_to_speech:
+      provider: "elevenlabs"  # elevenlabs|google|aws_polly
+      api_key: "${ELEVENLABS_API_KEY}"
+      voice_id: "21m00Tcm4TlvDq8ikWAM"
+      language: "en"
+
+    # Speech-to-Text (Whisper)
+    speech_to_text:
+      provider: "openai_whisper"  # openai_whisper|google_speech_to_text|azure_speech
+      api_key: "${WHISPER_API_KEY}"
+      language: "en"
+
+# Memory architecture: fast context + persistent deep storage
+memory:
+  # Context Memory: Fast L1/L2 tiering via Redis
+  context_memory:
+    backend: "redis"  # redis|redis_cluster
+    host: "localhost"
+    port: 6379
+    db: 0
+    password: "${REDIS_PASSWORD}"
+
+    # Default TTL for context entries
+    ttl_seconds: 3600
+
+    # Connection pool configuration
+    max_connections: 50
+
+    # L1/L2 tiering architecture
+    enable_l1_cache: true      # Fast in-memory cache
+    enable_l2_cache: true      # Persistent Proxmox Redis
+    l1_ttl_seconds: 300        # L1 expiry after 5 minutes
+
+    # L2 persistent tier (Proxmox location)
+    l2_host: "proxmox-redis.local"
+    l2_port: 6379
+
+  # Deep Storage: Persistent vector embeddings via ChromaDB
+  deep_storage:
+    backend: "chromadb"  # chromadb|chromadb_persistent
+    host: "localhost"
+    port: 8000
+    persist_directory: "/home/setup/infrafabric/.memory_bus/deep_storage"
+
+    # Collections to create/manage
+    collections:
+      - name: "personality_dna"
+        type: "personality_dna"
+        distance_metric: "cosine"
+
+      - name: "knowledge_base"
+        type: "knowledge"
+        distance_metric: "cosine"
+
+      - name: "context_archive"
+        type: "context_archive"
+        distance_metric: "cosine"
+
+      - name: "findings"
+        type: "findings"
+        distance_metric: "cosine"
+
+      - name: "citations"
+        type: "citations"
+        distance_metric: "cosine"
+
+      - name: "openwebui_core"
+        type: "openwebui_core"
+        distance_metric: "cosine"
+
+    # Embedding model for vector generation
+    embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+    batch_size: 100
+
+    # Authentication if required
+    auth_token: "${CHROMADB_AUTH_TOKEN}"
+
+    # Privacy settings
+    enable_anonymized_telemetry: false
+
+# Agent configuration: Claude models + IF.emotion personality
+agents:
+  # Claude LLM model registry and routing
+  claude_models:
+    # Default model for agent spawning
+    default_model: "claude-sonnet-4-5-20250929"
+
+    # Available Claude models (tiered by capability/cost)
+    models:
+      # Apex reasoning model
+      - id: "claude-opus-4-1-20250805"
+        tier: "apex"
+        cost_per_mtok_input: 15.0
+        cost_per_mtok_output: 75.0
+        context_window: 200000
+        use_case: "reasoning"
+        enabled: true
+
+      # Frontier general-purpose model
+      - id: "claude-sonnet-4-5-20250929"
+        tier: "frontier"
+        cost_per_mtok_input: 3.0
+        cost_per_mtok_output: 15.0
+        context_window: 200000
+        use_case: "analysis"
+        enabled: true
+
+      # Economy model for mechanical tasks (IF.optimise)
+      - id: "claude-haiku-4-5-20251001"
+        tier: "economy"
+        cost_per_mtok_input: 0.8
+        cost_per_mtok_output: 4.0
+        context_window: 200000
+        use_case: "mechanical"
+        enabled: true
+
+    # Request timeout
+    timeout_ms: 300000
+
+    # Retry policy for failed requests
+    retry_config:
+      max_retries: 3
+      backoff_factor: 2.0
+      initial_delay_ms: 1000
+
+    # Weekly token budget for cost control
+    cost_budget_tokens: 1000000
+
+  # IF.emotion personality framework
+  if_emotion:
+    enabled: true
+    sandbox_enabled: true
+    personality_dna_path: "/home/setup/infrafabric/docs/personality"
+    cross_cultural_lexicon_path: "/home/setup/infrafabric/docs/emotion_lexicon"
+
+    # Safety constraints for emotional outputs
+    safety_guidelines:
+      max_emotional_intensity: 0.8      # Scale 0-1
+      cultural_sensitivity_check: true
+      bias_detection: true
+
+  # S2 Intra-Swarm Communication
+  swarm_communication:
+    enabled: true
+    protocol: "s2_redis"  # s2_redis|s2_jsonl|dds (140× faster with Redis)
+    heartbeat_interval_ms: 5000
+    packet_timeout_ms: 30000
+    encryption: "ed25519"  # none|ed25519|sha256
+
+# Security: sandboxing, rate limits, authentication
+security:
+  # IF.emotion output sandboxing
+  sandboxing:
+    enabled: true
+    input_validation: true
+    input_size_limit_bytes: 10485760  # 10MB
+    output_filtering: true
+    allow_code_execution: false
+    sandbox_type: "strict"  # strict|moderate|permissive
+
+    # Blocked input patterns
+    blocked_patterns:
+      - "^(DELETE|DROP|TRUNCATE)\\s"
+      - "(password|secret|key)\\s*="
+      - "(AWS_ACCESS_KEY|API_KEY)"
+
+    # Whitelisted domains for external access
+    allowed_domains: []
+
+  # Rate limiting and quota management
+  rate_limits:
+    enabled: true
+    user_per_hour: 1000
+    ip_per_hour: 5000
+    burst_per_minute: 100
+    cost_budget_tokens: 500000      # Weekly budget
+    cost_alert_threshold: 0.8       # Alert at 80% of budget
+
+  # Authentication and authorization
+  authentication:
+    auth_method: "api_key"  # none|api_key|bearer_token|oauth2|jwt|mfa
+    jwt_secret: "${JWT_SECRET}"
+    token_expiry_hours: 24
+    require_https: true
+
+# Audit logging and IF.TTT traceability
+audit:
+  enabled: true
+  log_level: "info"
+
+  # Hot vs cold storage retention
+  retention_days_hot: 30
+  retention_days_cold: 365
+
+  # Storage backend (Redis for speed, ChromaDB for search)
+  storage_backend: "both"  # redis|chromadb|both
+
+  # Events to audit
+  audit_events:
+    - "agent_spawn"
+    - "agent_complete"
+    - "decision_made"
+    - "citation_created"
+    - "security_violation"
+    - "error"
+
+  # IF.TTT traceability settings
+  if_ttt_traceability:
+    enabled: true
+    citation_schema_path: "/home/setup/infrafabric/schemas/citation/v1.0.schema.json"
+    trace_all_decisions: true
+    verification_levels:
+      - "unverified"
+      - "verified"
+      - "disputed"
+      - "revoked"
+
+# Resilience: timeout prevention, checkpoints, graceful degradation
+resilience:
+  # Timeout prevention and recovery
+  timeout_prevention:
+    enabled: true
+    default_timeout_ms: 300000
+    heartbeat_interval_ms: 10000
+    heartbeat_timeout_ms: 30000
+    checkpoint_interval_ms: 60000
+    recovery_strategy: "restart_from_checkpoint"  # restart_from_checkpoint|graceful_shutdown|failover_to_backup
+
+  # Graceful degradation when services fail
+  graceful_degradation:
+    enabled: true
+    redis_fallback_mode: true        # Use local memory if Redis down
+    chromadb_fallback_mode: true     # Use JSON storage if ChromaDB down
+    openwebui_fallback_mode: true    # Continue without OpenWebUI
+    circuit_breaker_threshold: 5
+    circuit_breaker_reset_ms: 60000
+
+  # Resource consumption limits
+  resource_limits:
+    max_concurrent_agents: 40
+    max_memory_mb: 8192              # 8GB
+    max_cpu_percent: 80.0
+    swap_enabled: false

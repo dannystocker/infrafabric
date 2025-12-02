@@ -1,0 +1,105 @@
+groups:
+  - name: infrafabric_p0_critical
+    interval: 30s
+    rules:
+      # P0-001: Agent Death
+      - alert: AgentDeathDetected
+        expr: agent_active_count == 0
+        for: 1m
+        labels:
+          severity: critical
+          component: agent_swarm
+          slo: "1min"
+        annotations:
+          summary: "All agents are dead - critical swarm failure"
+          description: "Agent active count dropped to 0. The entire swarm is unresponsive."
+          impact: "CRITICAL: Complete system outage. No agents available to process requests."
+          runbook_url: "{{ .ExternalURL }}/docs/runbooks/agent_restart.md"
+          action: "1. Check agent logs for crash reasons\n2. Restart agent supervisor process\n3. Verify Redis connectivity\n4. Monitor recovery metrics"
+          team: "DevOps, SRE"
+          priority: "PAGE_IMMEDIATELY"
+
+      # P0-002: Redis Down
+      - alert: RedisDown
+        expr: redis_up == 0
+        for: 30s
+        labels:
+          severity: critical
+          component: redis
+          slo: "30s"
+        annotations:
+          summary: "Redis server is down"
+          description: "Redis health check failed. Session and cache data is inaccessible."
+          impact: "CRITICAL: All agents cannot access memory bus. Consensus impossible."
+          runbook_url: "{{ .ExternalURL }}/docs/runbooks/redis_recovery.md"
+          action: "1. SSH to Redis server\n2. Check service status: systemctl status redis-server\n3. Review /var/log/redis/redis-server.log\n4. Restart if needed: systemctl restart redis-server\n5. Verify replication health"
+          team: "DevOps, Database"
+          priority: "PAGE_IMMEDIATELY"
+
+      # P0-003: ChromaDB Down
+      - alert: ChromaDBDown
+        expr: chromadb_up == 0
+        for: 30s
+        labels:
+          severity: critical
+          component: chromadb
+          slo: "30s"
+        annotations:
+          summary: "ChromaDB server is down"
+          description: "ChromaDB health check failed. Semantic search and evidence indexing unavailable."
+          impact: "CRITICAL: Cannot retrieve documents or validate claims. Agent reasoning broken."
+          runbook_url: "{{ .ExternalURL }}/docs/runbooks/chromadb_recovery.md"
+          action: "1. Check ChromaDB process: ps aux | grep chroma\n2. Review logs: tail -f /var/log/chromadb/chroma.log\n3. Verify disk space: df -h\n4. Restart if needed: systemctl restart chromadb\n5. Monitor recovery for 5 min"
+          team: "DevOps, ML Ops"
+          priority: "PAGE_IMMEDIATELY"
+
+      # P0-004: API Completely Unavailable
+      - alert: APIUnavailable
+        expr: http_requests_total == 0
+        for: 2m
+        labels:
+          severity: critical
+          component: api_gateway
+          slo: "2min"
+        annotations:
+          summary: "API is completely unavailable"
+          description: "No HTTP requests detected for 2 minutes. API gateway may be down or severely degraded."
+          impact: "CRITICAL: External clients cannot reach swarm. Complete user-facing outage."
+          runbook_url: "{{ .ExternalURL }}/docs/runbooks/api_recovery.md"
+          action: "1. Check API gateway process\n2. Verify port 443/8080 accessibility\n3. Check DNS resolution\n4. Review nginx/load balancer logs\n5. Restart gateway service if needed"
+          team: "DevOps, Platform"
+          priority: "PAGE_IMMEDIATELY"
+
+      # P0-005: Consensus Failure (>50% vote failures)
+      - alert: ConsensusFailure
+        expr: rate(consensus_vote_failure_total[5m]) / rate(consensus_vote_total[5m]) > 0.5
+        for: 5m
+        labels:
+          severity: critical
+          component: consensus
+          slo: "5min"
+        annotations:
+          summary: "Consensus vote failure rate >50% - decision-making broken"
+          description: "More than 50% of consensus votes are failing for 5 minutes. Guardian council cannot reach decisions."
+          impact: "CRITICAL: Swarm decision-making broken. New tasks cannot be executed."
+          runbook_url: "{{ .ExternalURL }}/docs/runbooks/consensus_recovery.md"
+          action: "1. Check agent quorum: verify all required agents are active\n2. Review Redis connectivity\n3. Check network latency between agents\n4. Review agent logs for consensus errors\n5. Trigger manual consensus trigger if needed"
+          team: "DevOps, SRE"
+          priority: "PAGE_IMMEDIATELY"
+
+      # P0-006: Memory Exhaustion (>95%)
+      - alert: MemoryExhaustion
+        expr: node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes < 0.05
+        for: 2m
+        labels:
+          severity: critical
+          component: infrastructure
+          slo: "2min"
+        annotations:
+          summary: "System memory usage >95%"
+          description: "Available memory is critically low. OOM kill may occur soon."
+          impact: "CRITICAL: Processes may be killed. System unstable."
+          runbook_url: "{{ .ExternalURL }}/docs/runbooks/memory_recovery.md"
+          action: "1. Identify memory hogs: top -o %MEM\n2. Check process memory usage: ps aux --sort=-%mem\n3. Kill non-essential processes\n4. Scale out agents if needed\n5. Review cache sizes in Redis"
+          team: "DevOps, SRE"
+          priority: "PAGE_IMMEDIATELY"

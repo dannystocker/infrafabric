@@ -1,0 +1,98 @@
+# if://code/oauth-relay-docker-compose/2025-11-30
+# Docker Compose for OAuth Relay Server Deployment
+# Includes: FastAPI relay server, Redis backend, Caddy reverse proxy with TLS
+
+version: '3.8'
+
+services:
+  # Redis backend for state storage
+  redis:
+    image: redis:7-alpine
+    container_name: oauth-relay-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - oauth-relay
+
+  # FastAPI OAuth Relay Server
+  relay:
+    build:
+      context: ../..
+      dockerfile: Dockerfile.relay
+    container_name: oauth-relay-server
+    depends_on:
+      redis:
+        condition: service_healthy
+    ports:
+      - "8443:8443"
+    environment:
+      # OAuth configuration
+      OAUTH_CLIENT_ID: ${OAUTH_CLIENT_ID:-your-client-id}
+      OAUTH_CLIENT_SECRET: ${OAUTH_CLIENT_SECRET:-your-client-secret}
+      OAUTH_AUTH_URL: ${OAUTH_AUTH_URL:-https://oauth.example.com/authorize}
+      OAUTH_TOKEN_URL: ${OAUTH_TOKEN_URL:-https://oauth.example.com/token}
+
+      # Relay configuration
+      RELAY_BASE_URL: ${RELAY_BASE_URL:-https://relay.infrafabric.io}
+
+      # Redis
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_DB: 0
+
+      # Server
+      SERVER_HOST: 0.0.0.0
+      SERVER_PORT: 8443
+
+      # TLS
+      SSL_CERT_PATH: /etc/relay/certs/cert.pem
+      SSL_KEY_PATH: /etc/relay/certs/key.pem
+
+      # Logging
+      LOG_LEVEL: info
+    volumes:
+      - ./certs:/etc/relay/certs:ro
+    networks:
+      - oauth-relay
+    healthcheck:
+      test: ["CMD", "curl", "-f", "-k", "https://localhost:8443/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Caddy reverse proxy with automatic HTTPS
+  caddy:
+    image: caddy:2-alpine
+    container_name: oauth-relay-caddy
+    depends_on:
+      relay:
+        condition: service_healthy
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      DOMAIN: ${RELAY_DOMAIN:-relay.infrafabric.io}
+      RELAY_UPSTREAM: relay:8443
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - oauth-relay
+
+volumes:
+  redis_data:
+  caddy_data:
+  caddy_config:
+
+networks:
+  oauth-relay:
+    driver: bridge
