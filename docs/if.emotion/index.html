@@ -263,11 +263,7 @@
       <div id="chat-message"></div>
 
       <div class="controls">
-        <button id="demo1">Demo 1: Simple Replacement</button>
-        <button id="demo2">Demo 2: Multiple Replacements</button>
-        <button id="demo3">Demo 3: Empathy Enhancement</button>
-        <button id="demo4">Demo 4: Technical Precision</button>
-        <button id="reset">Reset</button>
+        <button id="reset">Reset & Restart</button>
       </div>
 
       <div class="speed-control">
@@ -368,130 +364,114 @@
       });
     });
 
-    // Demo 1: Simple replacement
-    document.getElementById('demo1').addEventListener('click', async () => {
-      disableButtons();
-      resetStats();
-
-      const messageChunks = [
-        "Your approach is ",
-        "practical",
-        " and well thought out."
-      ];
-
-      const replacementMap = {
-        1: [
-          { index: 0, replacement: "brilliant" }
-        ]
-      };
-
-      replaceCount = 1;
-      pauseCount = 2;
-      updateStats();
-
-      await stream.streamMessage(messageChunks, replacementMap);
-      enableButtons();
-    });
-
-    // Demo 2: Multiple replacements
-    document.getElementById('demo2').addEventListener('click', async () => {
-      disableButtons();
-      resetStats();
-
-      const messageChunks = [
-        "I especially ",
-        "appreciate how you've ",
-        "considered the edge cases."
-      ];
-
-      const replacementMap = {
-        0: [
-          { index: 1, replacement: "deeply" }
+    // Multiple empathy phrase variations for the loop
+    const empathyPhrases = [
+      {
+        chunks: [
+          "You're ",
+          "struggling ",
+          "with this challenge, ",
+          "and that's completely understandable."
         ],
-        2: [
-          { index: 0, replacement: "anticipated" }
-        ]
-      };
+        replacements: {
+          1: [{ index: 0, replacement: "navigating" }]
+        },
+        replaceCount: 1,
+        pauseCount: 3
+      },
+      {
+        chunks: [
+          "I hear how ",
+          "difficult ",
+          "this feels right now. ",
+          "That makes sense."
+        ],
+        replacements: {
+          1: [{ index: 0, replacement: "painful" }]
+        },
+        replaceCount: 1,
+        pauseCount: 3
+      },
+      {
+        chunks: [
+          "What you're experiencing isn't ",
+          "wrong",
+          ", it's a ",
+          "completely human ",
+          "response to what happened."
+        ],
+        replacements: {
+          1: [{ index: 0, replacement: "pathological" }],
+          3: [{ index: 0, replacement: "natural" }]
+        },
+        replaceCount: 2,
+        pauseCount: 4
+      },
+      {
+        chunks: [
+          "You're not ",
+          "failing",
+          " at this. ",
+          "You're learning ",
+          "how you function in this context."
+        ],
+        replacements: {
+          1: [{ index: 0, replacement: "broken" }],
+          3: [{ index: 0, replacement: "discovering" }]
+        },
+        replaceCount: 2,
+        pauseCount: 4
+      },
+      {
+        chunks: [
+          "This isn't about fixing yourself. ",
+          "It's about understanding ",
+          "how your reactions make sense ",
+          "given everything you've experienced."
+        ],
+        replacements: {
+          1: [{ index: 0, replacement: "recognizing" }]
+        },
+        replaceCount: 1,
+        pauseCount: 3
+      }
+    ];
 
-      replaceCount = 2;
-      pauseCount = 2;
-      updateStats();
+    let currentPhraseIndex = 0;
 
-      await stream.streamMessage(messageChunks, replacementMap);
-      enableButtons();
-    });
-
-    // Demo 3: Empathy enhancement (with loop support)
+    // Run empathy demo with rotation (with loop support)
     async function runEmpathyDemo(isLoop = false) {
       if (!isLoop) {
         disableButtons();
         resetStats();
       }
 
-      const messageChunks = [
-        "You're ",
-        "struggling ",
-        "with this challenge, ",
-        "and that's completely understandable."
-      ];
+      const phrase = empathyPhrases[currentPhraseIndex];
 
-      const replacementMap = {
-        1: [
-          { index: 0, replacement: "navigating" }
-        ]
-      };
-
-      replaceCount = 1;
-      pauseCount = 3;
+      replaceCount = phrase.replaceCount;
+      pauseCount = phrase.pauseCount;
       updateStats();
 
-      await stream.streamMessage(messageChunks, replacementMap);
+      await stream.streamMessage(phrase.chunks, phrase.replacements);
 
-      // Loop: wait 2 seconds, reset, and run again
+      // Rotate to next phrase for next iteration
+      currentPhraseIndex = (currentPhraseIndex + 1) % empathyPhrases.length;
+
+      // Loop: wait 3 seconds, reset, and run again
       setTimeout(() => {
         stream.reset();
         runEmpathyDemo(true);
-      }, 2000);
+      }, 3000);
 
       if (!isLoop) enableButtons();
     }
 
-    document.getElementById('demo3').addEventListener('click', () => runEmpathyDemo());
-
-    // Demo 4: Technical precision
-    document.getElementById('demo4').addEventListener('click', async () => {
-      disableButtons();
-      resetStats();
-
-      const messageChunks = [
-        "This isn't just an ",
-        "issue",
-        ", it's an ",
-        "architectural flaw ",
-        "that needs systematic resolution."
-      ];
-
-      const replacementMap = {
-        1: [
-          { index: 0, replacement: "bug" }
-        ],
-        3: [
-          { index: 0, replacement: "fundamental design" }
-        ]
-      };
-
-      replaceCount = 2;
-      pauseCount = 4;
-      updateStats();
-
-      await stream.streamMessage(messageChunks, replacementMap);
-      enableButtons();
-    });
-
-    // Reset
+    // Reset & Restart
     document.getElementById('reset').addEventListener('click', () => {
       stream.reset();
       resetStats();
+      currentPhraseIndex = 0;
+      runEmpathyDemo(true);
     });
 
     function disableButtons() {
