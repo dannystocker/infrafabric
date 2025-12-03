@@ -1919,7 +1919,7 @@ src/core/security/
 └── __init__.py (45 lines)
 
 src/core/logistics/
-├── packet.py (900 lines) - IF.LOGISTICS protocol
+├── packet.py (900 lines) - IF.PACKET protocol
 ├── redis_swarm_coordinator.py (850 lines) - Multi-agent coordination
 └── workers/ (1,220 lines) - Sonnet coordinators
 

@@ -19,6 +19,9 @@
 4. ✅ Redis registry created (`if:registry:chromadb_documents`)
 5. ✅ Medium + Chronicles articles written and pushed to Proxmox
 6. ✅ agents.md updated with session findings
+7. ✅ Session articles committed to git (ee602e2)
+   - Chronicle: "The Auditor Who Hallucinated"
+   - Medium: "When Verification Hallucinates"
 
 ### Pending (For Next Session)
 

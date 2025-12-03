@@ -724,7 +724,7 @@ IF.TTT is implemented across the following modules in `/home/setup/infrafabric/s
 #### 3.3.3 Logistics & Communication (5 files, 2,689 lines)
 
 **File:** `src/core/logistics/packet.py` (900 lines)
-- IF.LOGISTICS packet schema (v1.0, v1.1)
+- IF.PACKET schema (v1.0, v1.1)
 - "No Schema, No Dispatch" philosophy
 - Chain-of-custody metadata
 - IF.TTT headers for auditability
