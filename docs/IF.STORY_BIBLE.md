@@ -1,9 +1,21 @@
 # IF.story: The Show Bible
 
-**Version:** 1.0
+**Version:** 1.1 STABLE
 **Status:** CANONICAL
 **Purpose:** The definitive reference for Claude session narration
-**IF.citation:** `if://doc/story-bible/v1.0`
+**IF.citation:** `if://doc/story-bible/v1.1`
+
+---
+
+## SCOPE DECLARATION
+
+> *This Bible governs STORY narration only. It does NOT apply to strategic reports.*
+
+**VOICE POOL:** Danny (character), Rory Sutherland, Trader Joe, Jimmy Carr
+
+**SCOPE:** Session chronicles, Medium articles, authentic reflections
+
+**NOT FOR:** Boardroom reports, strategic documents, client-facing materials (see IF.FORMAT BIBLE)
 
 ---
 
