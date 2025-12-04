@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>if.emotion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@tailwindcss/typography@0.5.10/dist/typography.min.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              sergio: {
+                50: '#FFF8DC',   // Cornsilk (lightest background)
+                100: '#FAF0E6',  // Linen (surface)
+                200: '#F5DEB3',  // Wheat (user messages)
+                300: '#FFE4B5',  // Moccasin (AI messages)
+                400: '#CD853F',  // Peru (accent)
+                500: '#D2691E',  // Chocolate (secondary)
+                600: '#8B4513',  // Saddle brown (primary)
+                700: '#654321',  // Dark brown
+                800: '#2F4F4F',  // Dark slate gray (text)
+                900: '#1C1C1C',  // Almost black (emphasis)
+              },
+              privacy: {
+                active: '#8B0000',   // Dark red (off-the-record indicator)
+                muted: '#A9A9A9',    // Gray (inactive state)
+              }
+            },
+            fontFamily: {
+              'spanish': ['Merriweather', 'serif'],  // Emotional warmth
+              'english': ['Inter', 'sans-serif'],    // Technical clarity
+              'mono': ['JetBrains Mono', 'monospace'],
+            },
+            spacing: {
+              'conversation': '1.5rem',
+              'message': '1rem 1.5rem',
+            },
+            borderRadius: {
+              'message': '1.25rem',
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-out forwards',
+              'slide-up': 'slideUp 0.3s ease-out forwards',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            }
+          }
+        },
+        plugins: [
+          function({ addBase, theme }) {
+            addBase({
+              'body': { 
+                backgroundColor: theme('colors.sergio.50'), 
+                color: theme('colors.sergio.800'),
+                fontFamily: theme('fontFamily.english'),
+              },
+            })
+          }
+        ]
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <script type="importmap">
+{
+  "imports": {
+    "react-dom/client": "https://aistudiocdn.com/react-dom@^18.3.1/client",
+    "react-dom": "https://aistudiocdn.com/react-dom@^18.3.1",
+    "react": "https://aistudiocdn.com/react@^18.3.1",
+    "react/jsx-runtime": "https://aistudiocdn.com/react@^18.3.1/jsx-runtime",
+    "react-markdown": "https://aistudiocdn.com/react-markdown@^9.0.1",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.344.0",
+    "jspdf": "https://aistudiocdn.com/jspdf@^2.5.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^18.3.1/",
+    "react/": "https://aistudiocdn.com/react@^18.3.1/"
+  }
+}
+</script>
+    <style>
+      /* Custom scrollbar for minimalist look */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #D2691E; /* sergio-500 */
+        border-radius: 4px;
+        opacity: 0.5;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #8B4513;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

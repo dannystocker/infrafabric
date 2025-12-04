@@ -1,0 +1,278 @@
+{
+  "download_date": "2025-11-28T04:45:06.540462",
+  "total_documents": 31,
+  "total_bytes": 34823113,
+  "total_mb": 33.21,
+  "categories": {
+    "property": {
+      "count": 8,
+      "bytes": 8573950,
+      "mb": 8.18
+    },
+    "tax": {
+      "count": 11,
+      "bytes": 20146150,
+      "mb": 19.21
+    },
+    "accounting": {
+      "count": 6,
+      "bytes": 2779830,
+      "mb": 2.65
+    },
+    "commercial": {
+      "count": 6,
+      "bytes": 3323183,
+      "mb": 3.17
+    }
+  },
+  "files": [
+    {
+      "name": "limited-liability-partnerships-act-2000",
+      "category": "accounting",
+      "size": 222377,
+      "sha256": "5799f477edaa6493de2c155e4d4a39e393309d8955add24d11862e9e70e1a092",
+      "path": "/home/setup/if-legal-corpus/raw/uk/accounting/limited-liability-partnerships-act-2000",
+      "size_mb": 0.21
+    },
+    {
+      "name": "limited-liability-partnerships-regulations-2001",
+      "category": "accounting",
+      "size": 511200,
+      "sha256": "3479e077af6462c84e893b27f5c55ab211bc012412a34a5d8fe2648ee279a532",
+      "path": "/home/setup/if-legal-corpus/raw/uk/accounting/limited-liability-partnerships-regulations-2001",
+      "size_mb": 0.49
+    },
+    {
+      "name": "partnership-act-1890",
+      "category": "accounting",
+      "size": 119624,
+      "sha256": "3ad213fdf9379e02ff2cc6cbe4cddf73ec24f5c7964053c74e0cdb0b843a07c0",
+      "path": "/home/setup/if-legal-corpus/raw/uk/accounting/partnership-act-1890",
+      "size_mb": 0.11
+    },
+    {
+      "name": "the-companies-act-2006-amendment-accounts-and-reports-regulations-2008",
+      "category": "accounting",
+      "size": 59063,
+      "sha256": "9ceaee33be183cff27fc70183fda41f1c118c5b2a08e342d8f9b4724504ab501",
+      "path": "/home/setup/if-legal-corpus/raw/uk/accounting/the-companies-act-2006-amendment-accounts-and-reports-regulations-2008",
+      "size_mb": 0.06
+    },
+    {
+      "name": "the-limited-liability-partnerships-application-of-companies-act-2006-regulations-2009",
+      "category": "accounting",
+      "size": 1614452,
+      "sha256": "e666dd2b625c6583d60dbddf5770b76c22cf23c2ad44cea1d3fc145f7abd7cfa",
+      "path": "/home/setup/if-legal-corpus/raw/uk/accounting/the-limited-liability-partnerships-application-of-companies-act-2006-regulations-2009",
+      "size_mb": 1.54
+    },
+    {
+      "name": "the-limited-liability-partnerships-application-of-company-law-regulations-2024",
+      "category": "accounting",
+      "size": 253114,
+      "sha256": "a150bedfbac7f1319ae12b5339e688325922fe406dde52093dab47eedb2758e4",
+      "path": "/home/setup/if-legal-corpus/raw/uk/accounting/the-limited-liability-partnerships-application-of-company-law-regulations-2024",
+      "size_mb": 0.24
+    },
+    {
+      "name": "consumer-rights-act-2015",
+      "category": "commercial",
+      "size": 2082649,
+      "sha256": "5cd43ad0c03f22b16aff29df194d0f46e17b6b9dbd9eb622f8f3e3babfecb68a",
+      "path": "/home/setup/if-legal-corpus/raw/uk/commercial/consumer-rights-act-2015",
+      "size_mb": 1.99
+    },
+    {
+      "name": "contracts-rights-of-third-parties-act-1999",
+      "category": "commercial",
+      "size": 82097,
+      "sha256": "fa551190c927f296db9a804dc6cd3228ca17bc4ea2ed628a8fc515cf53aad45b",
+      "path": "/home/setup/if-legal-corpus/raw/uk/commercial/contracts-rights-of-third-parties-act-1999",
+      "size_mb": 0.08
+    },
+    {
+      "name": "sale-and-supply-of-goods-act-1994",
+      "category": "commercial",
+      "size": 166080,
+      "sha256": "a912dddb4334b7665a485f87179b3ce63ac3826c99917bbd1d387599dcde2586",
+      "path": "/home/setup/if-legal-corpus/raw/uk/commercial/sale-and-supply-of-goods-act-1994",
+      "size_mb": 0.16
+    },
+    {
+      "name": "sale-of-goods-act-1979",
+      "category": "commercial",
+      "size": 392201,
+      "sha256": "f9d27ef53956b736995bcf598db3d9212fc672295ddd18658d2c0e5ee40c4672",
+      "path": "/home/setup/if-legal-corpus/raw/uk/commercial/sale-of-goods-act-1979",
+      "size_mb": 0.37
+    },
+    {
+      "name": "supply-of-goods-and-services-act-1982",
+      "category": "commercial",
+      "size": 310798,
+      "sha256": "52320751b974f18965d21ccfd59c034f7a551cf86ff7ec799aca8b7b562a782f",
+      "path": "/home/setup/if-legal-corpus/raw/uk/commercial/supply-of-goods-and-services-act-1982",
+      "size_mb": 0.3
+    },
+    {
+      "name": "unfair-contract-terms-act-1977",
+      "category": "commercial",
+      "size": 289358,
+      "sha256": "56a74622f57de01a2e63e10710652a3809c025440738b7ccceac048c52e46f79",
+      "path": "/home/setup/if-legal-corpus/raw/uk/commercial/unfair-contract-terms-act-1977",
+      "size_mb": 0.28
+    },
+    {
+      "name": "commonhold-and-leasehold-reform-act-2002",
+      "category": "property",
+      "size": 1482964,
+      "sha256": "8e5fcfffddc3697a24a391f364fe9531815749694a1b3c558a20c061f5e366c3",
+      "path": "/home/setup/if-legal-corpus/raw/uk/property/commonhold-and-leasehold-reform-act-2002",
+      "size_mb": 1.41
+    },
+    {
+      "name": "housing-act-1988",
+      "category": "property",
+      "size": 2784113,
+      "sha256": "5d1509a20ed66d0d48267c637545cd8875987390226237daef6ae33f2cafc2db",
+      "path": "/home/setup/if-legal-corpus/raw/uk/property/housing-act-1988",
+      "size_mb": 2.66
+    },
+    {
+      "name": "land-registration-act-2002",
+      "category": "property",
+      "size": 846840,
+      "sha256": "a507e30d3687d57290842ac3ea40e68ee8910bf163ece9098b57d7d5f34799bb",
+      "path": "/home/setup/if-legal-corpus/raw/uk/property/land-registration-act-2002",
+      "size_mb": 0.81
+    },
+    {
+      "name": "land-registration-rules-2003",
+      "category": "property",
+      "size": 1269792,
+      "sha256": "5802f2a7bef2d22a87f173b08ded95cc4c30208a5bf74f2cfd8dd3b9bf6417d6",
+      "path": "/home/setup/if-legal-corpus/raw/uk/property/land-registration-rules-2003",
+      "size_mb": 1.21
+    },
+    {
+      "name": "landlord-and-tenant-act-1954",
+      "category": "property",
+      "size": 821612,
+      "sha256": "dfa3195ec582d97f15dd3b538083eb6342a5ddf50776a7c0a10d236b2517f0cf",
+      "path": "/home/setup/if-legal-corpus/raw/uk/property/landlord-and-tenant-act-1954",
+      "size_mb": 0.78
+    },
+    {
+      "name": "law-of-property-act-1925",
+      "category": "property",
+      "size": 1244845,
+      "sha256": "72648a11de3a4e3c8b90a436e30f475b09d6d5243f54047bb0bbe40e3c61df71",
+      "path": "/home/setup/if-legal-corpus/raw/uk/property/law-of-property-act-1925",
+      "size_mb": 1.19
+    },
+    {
+      "name": "the-commonhold-land-registration-rules-2004",
+      "category": "property",
+      "size": 68575,
+      "sha256": "a4f2d3cb381e81d1a472b7bbd0f83ed16ff45e93a852277bf1657e9d6304bea7",
+      "path": "/home/setup/if-legal-corpus/raw/uk/property/the-commonhold-land-registration-rules-2004",
+      "size_mb": 0.07
+    },
+    {
+      "name": "the-right-to-manage-prescribed-particulars-and-forms-england-regulations-2010",
+      "category": "property",
+      "size": 55209,
+      "sha256": "6e8b85b13b6aeb785cf9d4185b99a20bc42eeadc83bf599f83569a0d78cd68dd",
+      "path": "/home/setup/if-legal-corpus/raw/uk/property/the-right-to-manage-prescribed-particulars-and-forms-england-regulations-2010",
+      "size_mb": 0.05
+    },
+    {
+      "name": "corporation-tax-act-2010",
+      "category": "tax",
+      "size": 10528465,
+      "sha256": "0d79514edd16f4aa5581f6bf76b208a97ad336b2fca61f25858eb147b943a4f5",
+      "path": "/home/setup/if-legal-corpus/raw/uk/tax/corporation-tax-act-2010",
+      "size_mb": 10.04
+    },
+    {
+      "name": "finance-act-2003-part-4-sdlt",
+      "category": "tax",
+      "size": 1171185,
+      "sha256": "18642703fe19f6988707e1f6c0a65b1e6313e2ca73ec685114f6744826671f1b",
+      "path": "/home/setup/if-legal-corpus/raw/uk/tax/finance-act-2003-part-4-sdlt",
+      "size_mb": 1.12
+    },
+    {
+      "name": "finance-act-2023",
+      "category": "tax",
+      "size": 27784,
+      "sha256": "e60d1586b838498af203a604b686c6fad901fa53f55de9f947ff6febb28b52e1",
+      "path": "/home/setup/if-legal-corpus/raw/uk/tax/finance-act-2023",
+      "size_mb": 0.03
+    },
+    {
+      "name": "finance-no-2-act-2023",
+      "category": "tax",
+      "size": 290146,
+      "sha256": "5a5bb4f957d05d5a972651a0e0deca780ab3bc58c89b606d0cd107bbaf0d88fc",
+      "path": "/home/setup/if-legal-corpus/raw/uk/tax/finance-no-2-act-2023",
+      "size_mb": 0.28
+    },
+    {
+      "name": "stamp-duty-land-tax-act-2015",
+      "category": "tax",
+      "size": 33330,
+      "sha256": "b4ac6419dba41196efd2524120a940fb6935865622f680330057f4e34700765c",
+      "path": "/home/setup/if-legal-corpus/raw/uk/tax/stamp-duty-land-tax-act-2015",
+      "size_mb": 0.03
+    },
+    {
+      "name": "stamp-duty-land-tax-temporary-relief-act-2020",
+      "category": "tax",
+      "size": 25603,
+      "sha256": "48b6c07eaaf50c96deae31e8e607c75a97959d8fbdcb72ba030d7671e085f4e4",
+      "path": "/home/setup/if-legal-corpus/raw/uk/tax/stamp-duty-land-tax-temporary-relief-act-2020",
+      "size_mb": 0.02
+    },
+    {
+      "name": "stamp-duty-land-tax-temporary-relief-act-2023",
+      "category": "tax",
+      "size": 44599,
+      "sha256": "246b4a4ca896521be2b1de5ca5d659d86ecb166bd1c5126e0df1c50adb5acd1b",
+      "path": "/home/setup/if-legal-corpus/raw/uk/tax/stamp-duty-land-tax-temporary-relief-act-2023",
+      "size_mb": 0.04
+    },
+    {
+      "name": "taxation-of-chargeable-gains-act-1992",
+      "category": "tax",
+      "size": 663791,
+      "sha256": "c48341d04afa7ba11d3f90a20ee13d7424efc1ccfd55e22043e13787310ea607",
+      "path": "/home/setup/if-legal-corpus/raw/uk/tax/taxation-of-chargeable-gains-act-1992",
+      "size_mb": 0.63
+    },
+    {
+      "name": "the-late-payment-of-commercial-debts-interest-act-1998",
+      "category": "tax",
+      "size": 182206,
+      "sha256": "4c306c9042d7bb8565da4e75df6ef4f56f7fb615cdac274290f7f6847ee72c5a",
+      "path": "/home/setup/if-legal-corpus/raw/uk/tax/the-late-payment-of-commercial-debts-interest-act-1998",
+      "size_mb": 0.17
+    },
+    {
+      "name": "the-late-payment-of-commercial-debts-regulations-2013",
+      "category": "tax",
+      "size": 43888,
+      "sha256": "5b9ab932e34f0468f7dd3ab2b0e18505ed4225a1ed405a63af6d8ca1440426f1",
+      "path": "/home/setup/if-legal-corpus/raw/uk/tax/the-late-payment-of-commercial-debts-regulations-2013",
+      "size_mb": 0.04
+    },
+    {
+      "name": "value-added-tax-act-1994",
+      "category": "tax",
+      "size": 7135153,
+      "sha256": "8403e68a6a028127b7a450f8d4921cf74bfe51034b4d3cbd8a5c39dbbad4986c",
+      "path": "/home/setup/if-legal-corpus/raw/uk/tax/value-added-tax-act-1994",
+      "size_mb": 6.8
+    }
+  ]
+}

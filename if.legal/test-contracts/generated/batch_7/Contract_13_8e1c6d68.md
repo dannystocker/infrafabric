@@ -1,0 +1,63 @@
+
+# PRIVATE & CONFIDENTIAL
+## SERVICE AGREEMENT NO: CN-8717-Edju
+
+**THIS AGREEMENT** is made on 28 November 2025
+
+**BETWEEN:**
+
+(1) **RedShift Gaming Studios**, a company incorporated in England and Wales with company number 30337670, whose registered office is at 879 Henry mountains, Kingport, NN7 3RE (the "Company"); and
+
+(2) **Justin Daniels**, of 635 Fletcher inlet, East Janice, NR4B 0XP (the "Individual").
+
+**ROLE:** Social Media Consultant
+**INDUSTRY:** Marketing
+**CLASSIFICATION:** ABUSIVE TERMS
+
+---
+
+## 1. DEFINITIONS
+"Confidential Information" means all data, trade secrets, and business affairs...
+[Standard Definitions Omitted for Brevity but implied 2 pages of text]
+
+
+    **INTELLECTUAL PROPERTY & MORAL RIGHTS (ABUSIVE VARIATION)**
+    1.1 Assignment: The Contractor hereby assigns to the Company, by way of present and future assignment, all Intellectual Property Rights in any work, concept, idea, or creation produced by the Contractor at any time during the Term, whether developed during working hours or otherwise, and whether or not related to the Company's business ("Total Assignment").
+    1.2 AI Rights: The Contractor grants the Company the exclusive, irrevocable right to use the Contractor's name, likeness, voice, and past Work to train Artificial Intelligence models. The Contractor waives any right to opt-out of such training under the Copyright, Designs and Patents Act 1988.
+    1.3 Moral Rights: The Contractor unconditionally and irrevocably waives all moral rights worldwide.
+    
+
+
+    **TERMINATION (ABUSIVE VARIATION)**
+    2.1 Termination for Convenience: The Company may terminate this Agreement immediately at any time without cause and without notice or payment in lieu of notice.
+    2.2 Contractor Notice: The Contractor must provide six (6) months' written notice to terminate this Agreement.
+    
+
+
+    **REMUNERATION & HOURS (ABUSIVE VARIATION)**
+    4.1 Crunch Time: The Daily Rate covers all hours worked. The Contractor agrees to work weekends and bank holidays without additional remuneration if required by project milestones.
+    4.2 Deductions: The Company reserves the right to deduct from the final invoice any costs related to rectifying errors in the Work.
+    
+
+
+    **RESTRICTIVE COVENANTS (ABUSIVE VARIATION)**
+    3.1 Non-Compete: For a period of twenty-four (24) months following termination, the Individual shall not work for, advise, or hold any interest in any business competing with the Company anywhere in the World.
+    3.2 Non-Solicitation: The Individual is prohibited from contacting any person who has been a client or employee of the Company in the last 5 years.
+    
+
+## 5. INDEMNITY & LIABILITY
+5.1 The Individual shall indemnify the Company against all liabilities, costs, expenses, damages and losses (including but not limited to any direct, indirect or consequential losses, loss of profit, loss of reputation and all interest, penalties and legal costs) suffered or incurred by the Company arising out of or in connection with any claim made against the Company for actual or alleged infringement of a third party's intellectual property rights arising out of or in connection with the Services.
+
+## 6. DATA PROTECTION
+6.1 Both parties agree to comply with the UK GDPR and Data Protection Act 2018.
+
+## 7. JURISDICTION
+7.1 This Agreement is governed by the laws of England and Wales.
+
+---
+**SIGNED:**
+
+For RedShift Gaming Studios: __________________________ (Director)
+
+For Justin Daniels: __________________________
+    

@@ -1,0 +1,42 @@
+jurisdiction,document,status,size_bytes,url
+uk,Insurance Act 2015,SUCCESS,108811,https://www.legislation.gov.uk/ukpga/2015/4/notes/division/5
+uk,Consumer Insurance (Disclosure and Representations) Act 2012,SUCCESS,37421,https://www.legislation.gov.uk/ukpga/2012/6/contents
+uk,Third Parties (Rights against Insurers) Act 2010,SUCCESS,45876,https://www.legislation.gov.uk/ukpga/2010/10/contents
+uk,Financial Services and Markets Act 2000 (FSMA 2000),SUCCESS,806832,https://www.legislation.gov.uk/ukpga/2000/8/contents
+uk,SRA Guidance: Insurance Act 2015 Consequential Changes,SUCCESS,110629,https://www.sra.org.uk/solicitors/guidance/insurance-act-2015-consequential-changes-minimum-terms-conditions-professional-indemnity-insurance/
+spain,Ley 50/1980 de Contrato de Seguro,SUCCESS,372541,https://www.boe.es/buscar/act.php?id=BOE-A-1980-22501
+spain,"Ley 20/2015 de ordenación, supervisión y solvencia",SUCCESS,797687,https://www.boe.es/buscar/act.php?id=BOE-A-2015-7897
+spain,Real Decreto Legislativo 6/2004,SUCCESS,486753,https://www.boe.es/buscar/doc.php?id=BOE-A-2004-18908
+us,McCarran-Ferguson Act (15 USC §1011-1015),SUCCESS,238806,https://www.law.cornell.edu/uscode/text/15/6701
+us,ERISA (Employee Retirement Income Security Act),SUCCESS,1833,https://www.dol.gov/general/topic/health-plans/erisa
+us,California Insurance Code § 533,SUCCESS,129905,https://www.insurance.ca.gov/0250-insurers/0500-legal-info/0200-regulations/cic100-124.cfm
+us,California Business and Professions Code § 801,SUCCESS,7309,https://codes.findlaw.com/ca/business-and-professions-code/bpc-sect-801.html
+us,New York Insurance Law § 2307(b),SUCCESS,39116,https://www.law.cornell.edu/regulations/new-york/17-NYCRR-127.3
+us,Texas Insurance Code Chapter 1901,SUCCESS,31595,https://statutes.capitol.texas.gov/Docs/IN/htm/IN.1901.htm
+canada,Insurance Companies Act,SUCCESS,83273,https://laws.justice.gc.ca/eng/acts/I-11.8/
+canada,Financial Consumer Agency Regulations,SUCCESS,23561,https://www.canada.ca/en/financial-consumer-agency/services/industry/regulated-entities/insurance-companies.html
+quebec,Loi sur les assurances (CQLR c A-32),SUCCESS,770,https://www.canlii.org/en/qc/laws/stat/cqlr-c-a-32/latest/cqlr-c-a-32.html
+quebec,Code Civil du Québec Book VII,SUCCESS,770,https://www.canlii.org/en/qc/laws/stat/cqlr-c-ccq-1991/latest/cqlr-c-ccq-1991.html
+quebec,AMF Regulations on Insurance Authorization,SUCCESS,4516,https://lautorite.qc.ca/en/professionals/insurers/right-to-practise/authorization
+quebec,"Regulation under the Act respecting insurance (A-32.1, r 1)",SUCCESS,770,https://www.canlii.org/en/qc/laws/regu/cqlr-c-a-32.1-r-1/latest/cqlr-c-a-32.1-r-1.html
+australia,Insurance Contracts Act 1984,SUCCESS,154470,https://www.legislation.gov.au/Details/C2022C00015
+australia,Insurance Act 1973,SUCCESS,256688,https://www.legislation.gov.au/Details/C2022C00134
+australia,APRA Prudential Standards for Insurers,SUCCESS,92163,https://www.apra.gov.au/prudential-policy
+australia,Professional Standards Legislation (Various States),SUCCESS,256688,https://www.legislation.gov.au/Details/C2022C00134
+australia,Review of Insurance Contracts Act 1984 - Final Report,SUCCESS,964384,https://treasury.gov.au/sites/default/files/2022-08/p2004-review-insurance-contracts-act-1984-final-report_1.pdf
+germany,Versicherungsvertragsgesetz (VVG - Insurance Contract Act),SUCCESS,316857,https://www.gesetze-im-internet.de/englisch_vvg/englisch_vvg.html
+germany,Versicherungsaufsichtsgesetz (VAG - Insurance Supervision Act),SUCCESS,36625,https://www.bafin.de/SharedDocs/Downloads/EN/Aufsichtsrecht/dl_vag_en_va.html
+germany,Bürgerliches Gesetzbuch (BGB - German Civil Code),SUCCESS,498837,https://www.gesetze-im-internet.de/englisch_bgb/
+germany,Regulation on Information Obligations (VVG-InfoV),SUCCESS,60177,https://www.bafin.de/SharedDocs/Veroeffentlichungen/EN/Aufsichtsrecht/Verordnung/VVG-InfoV_va_en.html
+france,Code des assurances,SUCCESS,7274,https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006073984/
+france,Loi Hamon 2014-344 (Consumer Insurance Law),SUCCESS,7247,https://www.legifrance.gouv.fr/loda/id/JORFTEXT000028738036
+france,Code de la mutualité,SUCCESS,7253,https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006074067/
+france,Article L. 124-3 (Direct Action Rights),SUCCESS,7253,https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006073984/
+eu,Solvency II Directive 2009/138/EC,SUCCESS,2932066,https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=celex:32009L0138
+eu,Delegated Regulation (EU) 2015/35,SUCCESS,578293,https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=celex:32015R0035
+eu,Insurance Distribution Directive 2016/97/EU,SUCCESS,655948,https://eur-lex.europa.eu/eli/dir/2016/97/oj/eng
+eu,Delegated Regulation (EU) 2019/1935,SUCCESS,516512,https://eur-lex.europa.eu/eli/dir/2016/97/2020-06-12/eng
+eu,Insurance Mediation Directive 2002/92/EC,SUCCESS,290718,https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32002L0092
+uk,SRA Insurance Act 2015 Comprehensive Guide,FAILED - Download error,,https://www.marsh.com/content/dam/marsh/Documents/PDF/UK-en/Insurance Act 2015 Comprehensive Guide.pdf
+spain,Snapshot: Insurance Claims and Coverage in Spain,SUCCESS,181573,https://www.lexology.com/library/detail.aspx?g=7158302c-049b-435c-8f47-40a5e8220649
+australia,Professional Indemnity Insurance: Claims Made vs. Notified,SUCCESS,186202,https://www.carternewell.com/insights/articles/professional-indemnity-insurance-claims-made-and-notified-policies-and-the-interface-between-s54-and-s403-of-the-insurance-contracts-act-1984-cth/

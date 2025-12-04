@@ -1,0 +1,46 @@
+{
+  "total_documents": 290,
+  "by_jurisdiction": {
+    "European Union": 11,
+    "Germany": 1,
+    "France": 1,
+    "australia": 7,
+    "canada": 10,
+    "eu": 12,
+    "france": 8,
+    "germany": 10,
+    "spain": 38,
+    "uk": 55,
+    "unknown": 2,
+    "us-federal": 125,
+    "us": 6,
+    "quebec": 4
+  },
+  "by_vertical": {
+    "tax": 47,
+    "property": 19,
+    "general": 90,
+    "ip": 11,
+    "employment": 17,
+    "insurance": 21,
+    "contracts": 12,
+    "housing": 65,
+    "privacy": 6,
+    "construction": 1,
+    "criminal": 1
+  },
+  "by_status": {
+    "success": 125,
+    "partial": 1,
+    "blocked_requires_manual": 1,
+    "error": 28,
+    "\u2713 Downloaded": 33,
+    "": 26,
+    "SUCCESS": 71,
+    "\u2713 Downloaded (Fallback)": 2,
+    "error: HTTPError": 2,
+    "FAILED - Download error": 1
+  },
+  "total_bytes": 110884749,
+  "download_success": 125
+}

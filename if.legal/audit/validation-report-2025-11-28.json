@@ -1,0 +1,2303 @@
+[
+  {
+    "citation_id": "if://citation/5293915b-46f8-4c2b-a29e-55837985aa4e",
+    "document_name": "29 CFR",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/5293915b-46f8-4c2b-a29e-55837985aa4e"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 4272 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 768f528a8f8b06de..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/69804b35-0eec-45ff-973c-87ff60589f97",
+    "document_name": "37 CFR",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/69804b35-0eec-45ff-973c-87ff60589f97"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 4272 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 5b1a7fc0eae3e435..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/7ca7d7eb-6a66-4c54-8ef3-17c727ee8df3",
+    "document_name": "16 CFR Part 310",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/7ca7d7eb-6a66-4c54-8ef3-17c727ee8df3"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 4272 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 01589d2cfde31458..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/586ac7fd-4173-47d8-9174-6ca0c02fb1d7",
+    "document_name": "16 CFR Part 314",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/586ac7fd-4173-47d8-9174-6ca0c02fb1d7"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 4272 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 47a1ff3fbd3275c6..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/850c7212-5523-4785-bd79-a118d052cd97",
+    "document_name": "Defend Trade Secrets Act",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/850c7212-5523-4785-bd79-a118d052cd97"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 262018 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 2c526decb25a6496..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/4a756255-ccdd-454c-8a10-58a37ef05ade",
+    "document_name": "Work-for-Hire Definition",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/4a756255-ccdd-454c-8a10-58a37ef05ade"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 35265 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 787cb0b8b81e3fea..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/c10db26f-a349-403d-bb13-81b98f084d40",
+    "document_name": "Copyright Ownership",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/c10db26f-a349-403d-bb13-81b98f084d40"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 35265 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 787cb0b8b81e3fea..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/10e82a2d-97b3-41be-9a91-205652a82d0a",
+    "document_name": "FTC Non-Compete Rule",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/10e82a2d-97b3-41be-9a91-205652a82d0a"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 4272 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 6c490dac33a4f606..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/794f1424-c47f-4ac9-9751-56e147435c7e",
+    "document_name": "ADA Title I",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/794f1424-c47f-4ac9-9751-56e147435c7e"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 118596 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: f24d430345a01f1f..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/8693bbad-98e1-4536-b367-b5cdf9a70e07",
+    "document_name": "GovInfo Bulk Data",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/8693bbad-98e1-4536-b367-b5cdf9a70e07"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 67383 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 4b6a6e5eb328fa68..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/3a6abc56-c917-4fcd-b9e2-d3a9d2d70df8",
+    "document_name": "eCFR API v1",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/3a6abc56-c917-4fcd-b9e2-d3a9d2d70df8"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 4272 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 00922d45d25f0a40..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/4c5ef878-becb-4dd6-98bb-02d02a510045",
+    "document_name": "Freelance Worker Protection Act",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/4c5ef878-becb-4dd6-98bb-02d02a510045"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 162782 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: a9436c1ccbb969d2..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/fa489722-c91b-47a3-9c29-a9e7dad5b131",
+    "document_name": "ABC Test (IC Classification)",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/fa489722-c91b-47a3-9c29-a9e7dad5b131"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 162782 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 1d290744ba925a4c..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/e14a3386-7344-4547-827b-d9781d21cd79",
+    "document_name": "SILENCED Act",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/e14a3386-7344-4547-827b-d9781d21cd79"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 164510 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: e3c22032a9db3e2d..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/6988610c-f134-452c-aae5-6edfff941013",
+    "document_name": "CCPA/CPRA",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/6988610c-f134-452c-aae5-6edfff941013"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 124204 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 02218b57d20f6ad5..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/38a9592a-4806-436d-9ded-248655ce4c19",
+    "document_name": "Freelance Isn't Free Act (State)",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/38a9592a-4806-436d-9ded-248655ce4c19"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 28498 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: ca0b66cefec7e251..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/679280a6-1eba-4bee-9252-12dd825835fe",
+    "document_name": "Freelance Isn't Free Act (NYC)",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/679280a6-1eba-4bee-9252-12dd825835fe"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 24521 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 71ae7beaf302def4..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/032d5649-6d48-4e12-b2f7-d6c2bd763f55",
+    "document_name": "Non-Compete Standards",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/032d5649-6d48-4e12-b2f7-d6c2bd763f55"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 39443 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: f042d1eb21de998e..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/a9adbc07-3965-4562-85cc-0f142c341657",
+    "document_name": "Healthcare Non-Compete",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/a9adbc07-3965-4562-85cc-0f142c341657"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 34033 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 441a2988bd046c27..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/6891915e-3e58-451b-9213-7ff809c0fc19",
+    "document_name": "Choice of Law",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/6891915e-3e58-451b-9213-7ff809c0fc19"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 21411 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: c7fb5f910f5ab2ce..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/0db5b935-40d1-45d1-995c-9d3febe09ef0",
+    "document_name": "Contract Law",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/0db5b935-40d1-45d1-995c-9d3febe09ef0"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 7660 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 096323f253d05aa4..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/c7368754-1f4d-4f36-ad80-a5bc7d2849bf",
+    "document_name": "\u00a7611 et seq. - Service Contract (Dienstvertrag)",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/c7368754-1f4d-4f36-ad80-a5bc7d2849bf"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 498837 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: c15aee9c1a2e98de..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/67a45701-0750-4e16-a965-268e869597b5",
+    "document_name": "\u00a7631 et seq. - Work Contract (Werkvertrag)",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/67a45701-0750-4e16-a965-268e869597b5"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 498837 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: c15aee9c1a2e98de..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/70ae774e-3a2b-47c7-9d63-42c66485e490",
+    "document_name": "\u00a7611a - Employee vs Self-Employed",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/70ae774e-3a2b-47c7-9d63-42c66485e490"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 498837 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: c15aee9c1a2e98de..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/55bb9b04-ead4-4dc2-95b2-fc04cffdaf66",
+    "document_name": "\u00a7705 et seq. - Partnership (GbR)",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/55bb9b04-ead4-4dc2-95b2-fc04cffdaf66"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 498837 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: c15aee9c1a2e98de..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/cc80d03c-a34e-458c-860a-77f7ed18975e",
+    "document_name": "\u00a714 - Entrepreneur Definition",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/cc80d03c-a34e-458c-860a-77f7ed18975e"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 498837 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: c15aee9c1a2e98de..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/2bb9ec93-a6c8-462a-b797-e4ba964e4ecd",
+    "document_name": "UWG (Unfair Competition) - Business practices",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/2bb9ec93-a6c8-462a-b797-e4ba964e4ecd"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 13442 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 00b1d8693206228c..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/62a7e61b-64bb-47f9-b389-7ba2ef82674f",
+    "document_name": "Copyright Act",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/62a7e61b-64bb-47f9-b389-7ba2ef82674f"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 38443 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 2af1030a0f868c3a..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/5cdf98fa-8b8e-44b0-935e-95241d877a01",
+    "document_name": "Competition Act",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/5cdf98fa-8b8e-44b0-935e-95241d877a01"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 27175 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 1efb1cbc3922655d..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/0ffcbacf-32d1-418e-88af-64d54df2c587",
+    "document_name": "Canada Labour Code",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/0ffcbacf-32d1-418e-88af-64d54df2c587"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 46628 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 9de51f891ba3c45d..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/52554ff3-977c-49bd-b801-ad2e47976ab3",
+    "document_name": "PIPEDA",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/52554ff3-977c-49bd-b801-ad2e47976ab3"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 25833 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: c99f09543c7857d4..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/a4949e7e-8601-47cf-824f-86ef0927b172",
+    "document_name": "Employment Insurance Act",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/a4949e7e-8601-47cf-824f-86ef0927b172"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 35024 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 6149a59803e400dc..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/ed6a5969-0b35-41a5-9e2f-c9a08c0e239e",
+    "document_name": "Employment Equity Act",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/ed6a5969-0b35-41a5-9e2f-c9a08c0e239e"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 20657 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 5fa36477d9154e65..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/aa073479-20a8-4fbf-b97f-0f1ed3e7283c",
+    "document_name": "Employment Standards Act",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/aa073479-20a8-4fbf-b97f-0f1ed3e7283c"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 53141 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 672384e19be37931..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/6af0444a-295c-472d-a806-f5bb7abd518a",
+    "document_name": "Labour Standards Act",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/6af0444a-295c-472d-a806-f5bb7abd518a"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 716341 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 74378c3e9cdd436c..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/ba58e9b7-e9af-4875-af31-41d0283304ed",
+    "document_name": "Fair Work Act 2009",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/ba58e9b7-e9af-4875-af31-41d0283304ed"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 165322 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 7f39c94be15396c0..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/1baf2edc-dea3-4c9f-a455-86c6d5ffa1b6",
+    "document_name": "Independent Contractors Act 2006",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/1baf2edc-dea3-4c9f-a455-86c6d5ffa1b6"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 154588 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 86c18976f7c39945..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/2cf637e4-7abf-4397-a4f6-0e0724dd842b",
+    "document_name": "Copyright Act 1968",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/2cf637e4-7abf-4397-a4f6-0e0724dd842b"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 160309 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 3e2692e356935714..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/d4dacda7-119f-4529-876e-0b54b600f16d",
+    "document_name": "Competition and Consumer Act 2010",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/d4dacda7-119f-4529-876e-0b54b600f16d"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 1333871 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 4c61581f971c33a6..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/5e360b7a-32ab-4921-b961-a159aea6d2d4",
+    "document_name": "Privacy Act 1988",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/5e360b7a-32ab-4921-b961-a159aea6d2d4"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 160983 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 2278aef569d3be13..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/afe31b71-542d-417c-841b-0c0f12c198ff",
+    "document_name": "Australian Consumer Law",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/afe31b71-542d-417c-841b-0c0f12c198ff"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 1333871 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: bdc461c9abb68249..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/e0947646-4d0d-4e84-b1de-965f0a9502d7",
+    "document_name": "Employment Rights Act 1996",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/e0947646-4d0d-4e84-b1de-965f0a9502d7"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 234794 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: f72b8ed35ee46f25..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/096a722c-40f0-4c47-9fce-54611108213d",
+    "document_name": "Copyright, Designs and Patents Act 1988",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/096a722c-40f0-4c47-9fce-54611108213d"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 4083690 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 55d91ce6f35fc835..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/ef8a86ef-1ec1-407f-ac05-592eeb94d565",
+    "document_name": "Patents Act 1977",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/ef8a86ef-1ec1-407f-ac05-592eeb94d565"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 1497139 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 19df13c0375d1620..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/d49c0951-fc74-4b7a-a5ce-e2339631bb7e",
+    "document_name": "Trade Secrets Regulations 2018",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/d49c0951-fc74-4b7a-a5ce-e2339631bb7e"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 79427 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: e00a06553147a784..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/720129fa-716f-474c-b133-b8ceb3a007cf",
+    "document_name": "Social Security (Intermediaries) Regs",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/720129fa-716f-474c-b133-b8ceb3a007cf"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 312018 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 0dbb4125336770be..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/e647fee9-116e-4379-b247-a43c3e92e7bc",
+    "document_name": "ITEPA 2003 Part 2 Ch.8",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/e647fee9-116e-4379-b247-a43c3e92e7bc"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 9786044 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 4bcaee53dc08d451..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/d00f87fc-e2b9-42a8-b569-1090698b4b60",
+    "document_name": "Database Rights Regs 1997",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/d00f87fc-e2b9-42a8-b569-1090698b4b60"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 221664 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 9a9273efa2e926e8..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/6cd47bb1-f34f-4091-b98c-6fa54a67f4ee",
+    "document_name": "CUAD",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/6cd47bb1-f34f-4091-b98c-6fa54a67f4ee"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 723333 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 3eb753aa9bb2e28b..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/28abea12-e9bf-473c-9f23-8f25960af789",
+    "document_name": "Steam Distribution Agreement - Steam Distribution Agreement",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/28abea12-e9bf-473c-9f23-8f25960af789"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 804459 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 0214d4069e54bcb0..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/8affec7a-14b2-46f0-9b9f-a2c37eb83dc7",
+    "document_name": "IGDA Contract Walk-Through - IGDA Contract Walk-Through",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/8affec7a-14b2-46f0-9b9f-a2c37eb83dc7"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 52706 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: c614250a37a5f4f1..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/e932150b-991e-4f32-95cd-353ba2164ae6",
+    "document_name": "IGDA Crediting Guidelines - IGDA Crediting Guidelines",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/e932150b-991e-4f32-95cd-353ba2164ae6"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 57195 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 5aff0e5f9e1619bd..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/0f10c54b-3727-4eab-b113-c45cd9fb6d39",
+    "document_name": "WGA Minimum Basic Agreement - WGA Minimum Basic Agreement",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/0f10c54b-3727-4eab-b113-c45cd9fb6d39"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 72989 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: c74762803d06aaaa..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/0186374b-8690-4f64-b187-9983af7a53c3",
+    "document_name": "GAG Handbook (17th Ed) - GAG Handbook (17th Ed)",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/0186374b-8690-4f64-b187-9983af7a53c3"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 549493 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 8255c97e711bd68d..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/c01877ee-0438-4836-937e-4351ab599673",
+    "document_name": "Photography Licensing Standards - Photography Licensing Standards",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/c01877ee-0438-4836-937e-4351ab599673"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 91495 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 094390fe2e31ba39..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/48f70090-ae7c-4818-8038-273c850bd1f4",
+    "document_name": "Open Source Licenses - Open Source Licenses",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/48f70090-ae7c-4818-8038-273c850bd1f4"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 207101 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: a6770e8deab553b3..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/5c4c60d7-51de-41eb-b7db-f6be271ca4ef",
+    "document_name": "MIT License - MIT License",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/5c4c60d7-51de-41eb-b7db-f6be271ca4ef"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 138252 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: e2407bc4cf4efbab..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/59df60e8-7ac5-4a3f-af9f-81b5a6b8647e",
+    "document_name": "Apache 2.0 - Apache 2.0",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/59df60e8-7ac5-4a3f-af9f-81b5a6b8647e"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 11358 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: cfc7749b96f63bd3..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  },
+  {
+    "citation_id": "if://citation/1ac0e60b-a300-484f-bad3-034ff2e94822",
+    "document_name": "GPL v3 - GPL v3",
+    "checks": {
+      "schema": {
+        "passed": true,
+        "message": "Schema valid"
+      },
+      "citation_id_format": {
+        "passed": true,
+        "message": "Citation ID format valid: if://citation/1ac0e60b-a300-484f-bad3-034ff2e94822"
+      },
+      "file_exists": {
+        "passed": true,
+        "message": "File exists"
+      },
+      "file_size": {
+        "passed": true,
+        "message": "Size matches: 50943 bytes"
+      },
+      "sha256_hash": {
+        "passed": true,
+        "message": "Hash matches: 4c4204f396473be5..."
+      },
+      "git_commit": {
+        "passed": true,
+        "message": "Git commit verified: 57ad645"
+      },
+      "provenance_chain": {
+        "passed": true,
+        "message": "Provenance chain complete: 3 steps"
+      },
+      "timestamps": {
+        "passed": true,
+        "message": "All timestamps valid"
+      }
+    },
+    "overall_status": true
+  }
+]

@@ -1,0 +1,76 @@
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Raw documents and data (too large for git)
+raw/
+
+# Test contracts - CUAD dataset (large, excluded)
+test-contracts/CUAD_v1/
+
+# But keep generated test contracts (small enough for git)
+!test-contracts/generated/
+
+# Chroma vector database
+indexes/chromadb/
+
+# Temporary and log files
+*.log
+logs/*.csv
+logs/*.json
+logs/*.md
+*.tmp
+*.cache
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Old reports and intermediate files
+*REPORT*.md
+*SUMMARY*.txt
+*DOWNLOAD*.txt
+*DOWNLOAD*.md
+HOUSING-LAW-*.txt
+HOUSING-LAW-*.md
+CONSTRUCTION-LAW-*.md
+CONSTRUCTION-LAW-*.txt
+INSURANCE-*.md
+INSURANCE-*.txt
+CRIMINAL_LAW-*.md
+DOWNLOAD-*.txt
+DOWNLOAD-*.md
+DELIVERY-*.md
+INTEGRATION_SUMMARY.md
+download-*.sh
+download-*.py
+INDEX_*.txt
+INDEX_*.md
+FILES_DOWNLOADED_*.txt
+FINAL_DOWNLOAD_REPORT_*.txt
+QUICK-START.md
+
+# Keep only these files
+!manifests/MASTER_MANIFEST_2025-11-28.csv
+!manifests/MASTER_MANIFEST_SUMMARY.json
+!citations/legal-corpus-citations-2025-11-28.json
+!scripts/consolidate_manifests.py
+!scripts/generate_citations.py
+!scripts/ingest_chromadb.py
+!README.md
+!ROADMAP.md
+!FINAL_CORPUS_REPORT_2025-11-28.md

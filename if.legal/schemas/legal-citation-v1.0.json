@@ -1,0 +1,174 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "if://schema/legal-citation/v1.0",
+  "title": "IF.TTT Legal Citation Schema",
+  "description": "Traceable, Transparent, Trustworthy citation schema for legal documents in ContractGuard corpus",
+  "type": "object",
+  "required": [
+    "citation_id",
+    "citation_type",
+    "document_name",
+    "jurisdiction",
+    "authoritative_source",
+    "local_verification",
+    "provenance_chain",
+    "citation_status",
+    "verification_date",
+    "verifier"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "citation_id": {
+      "type": "string",
+      "pattern": "^if://citation/[a-f0-9\\-]{36}$",
+      "description": "Unique citation identifier using if:// URI scheme with UUID v4"
+    },
+    "citation_type": {
+      "type": "string",
+      "enum": [
+        "legal_statute",
+        "legal_regulation",
+        "case_law",
+        "legal_dataset",
+        "industry_standard",
+        "legislative_guidance"
+      ],
+      "description": "Classification of legal document type"
+    },
+    "document_name": {
+      "type": "string",
+      "description": "Official or common name of the legal document"
+    },
+    "jurisdiction": {
+      "type": "string",
+      "enum": ["UK", "US", "EU", "CA", "AU", "DE", "FR", "INT"],
+      "description": "Jurisdiction where statute/regulation applies"
+    },
+    "authoritative_source": {
+      "type": "object",
+      "required": ["url", "accessed_date", "verification_method"],
+      "additionalProperties": true,
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Official government or authoritative source URL"
+        },
+        "accessed_date": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 timestamp when source was accessed"
+        },
+        "archive_url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Web Archive or alternative backup URL for source preservation"
+        },
+        "verification_method": {
+          "type": "string",
+          "enum": ["sha256_hash", "api_verified", "web_scrape", "manual_review", "official_dataset"],
+          "description": "How the authenticity of source was verified"
+        },
+        "source_type": {
+          "type": "string",
+          "enum": ["government_website", "official_gazette", "legislation_database", "api_endpoint", "pdf_download"],
+          "description": "Category of source location"
+        }
+      }
+    },
+    "local_verification": {
+      "type": "object",
+      "required": ["local_path", "sha256", "file_size_bytes", "ingested_date", "git_commit"],
+      "additionalProperties": true,
+      "properties": {
+        "local_path": {
+          "type": "string",
+          "description": "Relative path within corpus"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "SHA-256 hash of file for integrity verification"
+        },
+        "file_size_bytes": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Size of file in bytes for consistency checks"
+        },
+        "ingested_date": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 timestamp when document was added to corpus"
+        },
+        "git_commit": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{7,40}$",
+          "description": "Git commit hash where document was added to repository"
+        },
+        "file_format": {
+          "type": "string",
+          "enum": ["html", "pdf", "text", "markdown", "json", "xml"],
+          "description": "Format of the stored file"
+        }
+      }
+    },
+    "provenance_chain": {
+      "type": "array",
+      "minItems": 3,
+      "description": "Complete audit trail from source through ingestion",
+      "items": {
+        "type": "object",
+        "required": ["step", "timestamp"],
+        "additionalProperties": true,
+        "properties": {
+          "step": {
+            "type": "string",
+            "enum": ["download", "validation", "transformation", "ingestion", "review", "verification"],
+            "description": "Stage in the provenance chain"
+          },
+          "agent": {
+            "type": "string",
+            "description": "Name of agent, system, or human who performed this step"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "description": "ISO 8601 timestamp of when this step occurred"
+          },
+          "verification": {
+            "type": "string",
+            "description": "Details of how this step was verified or what was checked"
+          },
+          "result": {
+            "type": "string",
+            "enum": ["verified", "passed", "completed", "failed", "disputed"],
+            "description": "Outcome of this provenance step"
+          },
+          "notes": {
+            "type": "string",
+            "description": "Additional notes about this step"
+          }
+        }
+      }
+    },
+    "legal_metadata": {
+      "type": "object",
+      "description": "Legal-specific metadata",
+      "additionalProperties": true
+    },
+    "citation_status": {
+      "type": "string",
+      "enum": ["unverified", "verified", "disputed", "revoked", "superseded"],
+      "description": "Current status of citation accuracy and currency"
+    },
+    "verification_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when document was last verified for accuracy"
+    },
+    "verifier": {
+      "type": "string",
+      "description": "Name of person or system that verified this citation"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+name,url,path,size,sha256,status
+26 USC §2001 - Federal Estate Tax,https://www.law.cornell.edu/uscode/text/26/2001,raw/us_federal/tax/26-usc-2001-estate-tax.html,73269,04f1c1b0fd30f567441a5115dff29446a29566c4f207e13a89fe48d843bbafa5,success
+26 USC §2501 - Federal Gift Tax,https://www.law.cornell.edu/uscode/text/26/2501,raw/us_federal/tax/26-usc-2501-gift-tax.html,57394,7cfbd0be9e2779a58903a2a84e10815af78311ca44075110125e865b5c935839,success
+26 USC §267 - Related Party Transactions,https://www.law.cornell.edu/uscode/text/26/267,raw/us_federal/tax/26-usc-267-related-party.html,97586,1571221f6076b4c1e3b2e2b0612756e98e3d23d9fb2635953a9d80cb09f8b282,success
+UCC Article 9-301 - Priority,https://www.law.cornell.edu/ucc/9/9-301,raw/us_federal/commercial/ucc-9-301-priority.html,28490,10d7c15edb697595b63f457ccb15f5c6702fb0b4ca6261691bd722ab8209324c,success
+UCC Article 9-501 - Filing,https://www.law.cornell.edu/ucc/9/9-501,raw/us_federal/commercial/ucc-9-501-filing.html,28227,f4f8f1b336d8eaf7fd2bf7b40fc2dd66d6c713dd090788579647f066a25d8dd7,success
+UCC Article 9-601 - Default and Enforcement,https://www.law.cornell.edu/ucc/9/9-601,raw/us_federal/commercial/ucc-9-601-default.html,31406,8a6bd830078e90fe0cf7c149b9c10a867ada981348519a7dd3e9af07c5cbaf20,success
+Canadian Income Tax Act - Sections 1-50,https://laws-lois.justice.gc.ca/eng/acts/I-2.3/section-1.html,raw/canada/federal/ita-sections-1-50.html,0,,error: HTTPError
+Canadian Excise Tax Act (GST/HST),https://laws-lois.justice.gc.ca/eng/acts/E-15/section-1.html,raw/canada/federal/tax/excise-tax-act-gst-hst.html,50001,c56a6718007ead0cd64142716d378a934c3c21f658400969b4c56efe6a4e3e35,success
+ITAA 1997 - Division 7A (Private Company Distributions),https://www.legislation.gov.au/C1997A00915/latest,raw/australia/federal/tax/itaa-1997-division-7a.html,60416,81ee2e8e6622501e28449ed278cb8a0fb4e412f33cd3d7cdc3ad77f224621a3a,success
+Australian GST Act 1999,https://www.legislation.gov.au/C1999A00010/latest,raw/australia/federal/tax/gst-act-1999.html,60416,be216c3754fb1db46f2fefde6a37f41780bb6686f45ec1499bb084c217076beb,success
+Canadian Income Tax Act - Main Act,https://laws-lois.justice.gc.ca/eng/acts/I-2.3/,raw/canada/federal/income-tax-act-main.html,0,,error: HTTPError
+Canadian Personal Property Security Act (Ontario),https://www.ontario.ca/laws/statute/90p09,raw/canada/federal/ppsa-ontario.html,53141,672384e19be379317c46886265bf504e134989138b4b6fa3a1a303fd3e10fb93,success
+Canada Mortgage Housing Corporation Act,https://laws-lois.justice.gc.ca/eng/acts/C-7.3/,raw/canada/federal/cmhc-act.html,18286,20611a0cdd094367519d8e757144c47cf481c2acfc868ce85fd08ea57ec12183,success
+NSW Real Property Act 1900 - Division 4 (Torrens),https://www.legislation.nsw.gov.au/view/html/inforce/current/act-1900-025,raw/australia/state/nsw-real-property-act-1900.html,21185,b1df62b8e4be52a2f4b9dd37ca2a3e8c82666ec295136fff25739fd10d7c7432,success
+Victoria Property Law Act 1958,https://www.legislation.vic.gov.au/,raw/australia/state/vic-property-law-act-1958.html,83447,d326dbc58bad14b8c5d5879b6f7367c9a6c6501929809086c66198f7448ce3c3,success
+Australia Corporations Act 2001 - Part 2M (Financial Reporting),https://www.legislation.gov.au/C2001A00049/latest,raw/australia/federal/corporations-act-2001-financial.html,60416,c0a318b380497fa7d4f810dfa00f94c3ddad5b7d0c95d3e71bc90c9a18fa9fe3,success
+Australian Fringe Benefits Tax Act 1986,https://www.legislation.gov.au/C1986A00125/latest,raw/australia/federal/fringe-benefits-tax-act-1986.html,60416,682202b2589100ecf5122872a1acc664bb9dc38e63abf87f2edd2c72b87a44a9,success
+Australian Superannuation Industry Supervision Act 1993,https://www.legislation.gov.au/C1993A00043/latest,raw/australia/federal/superannuation-sis-act-1993.html,60416,db31296734b4c429bc5c5f96ab3988c607597f2beb430bfb6abbe68e1fca9667,success
+RESPA - Real Estate Settlement Procedures Act (12 USC §2601),https://www.law.cornell.edu/uscode/text/12/2601,raw/us_federal/property/respa-12-usc-2601.html,41346,d42976f1b243872a70f99ff71dd509851922ee334ef5de7500c8f4e01ca9c365,success
+UFTA - Uniform Fraudulent Transfer Act Model Text,https://www.uniformlaws.org/acts/ufta,raw/us_federal/property/ufta-model-text.html,66219,34afc9a29fc8d8a01f23af85fc7383f9f350effbb4646f114f87f2c73af9a6cb,success
+California Civil Code - Property Rights Section,https://leginfo.legislature.ca.gov/,raw/us_state/california/property/ca-civil-code-property.html,162566,3029702d9c6c953b6663ba4ad9791916fd93b28c1997e1f096f4eac8e563a99c,success
+New York Real Property Law,https://assembly.state.ny.us/leg/,raw/us_state/newyork/property/ny-real-property-law.html,10438,c01df2825bf17069886c410bf51229dea4ca075011be54a387409d6244240e0b,success
+Texas Property Code,https://statutes.capitol.texas.gov/,raw/us_state/texas/property/tx-property-code.html,21276,8cb0c801a3f5a6cf819b8ae18ea5d5ae7f77bf626baa656795eb0a1eb464b9ca,success
+Australian Capital Gains Tax (ITAA 1997 Part 3-1),https://www.legislation.gov.au/C1997A00915/latest,raw/australia/federal/tax/itaa-1997-cgt-part-3-1.html,60416,b0cc46ef6ffde754beac7c8b86bbf150574be4949e6afc878edee129ead232d4,success

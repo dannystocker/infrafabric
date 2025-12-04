@@ -1,0 +1,76 @@
+Jurisdiction,Document,Type,Statute/Section,URL,Priority,Crime Categories,ContractGuard Application
+UK,Fraud Act 2006,Act,c.35,https://www.legislation.gov.uk/ukpga/2006/35/contents,P0,Fraud (s.1-2) | Possession of articles (s.6),False representation in contract negotiations
+UK,Theft Act 1968,Act,c.60,https://www.legislation.gov.uk/ukpga/1968/60/contents,P0,Theft (s.1-7) | Embezzlement (s.15-20),Contract-related property theft
+UK,Theft Act 1978,Act,c.31,https://www.legislation.gov.uk/ukpga/1978/31/contents,P1,Obtaining services by deception (s.1) | Evasion of liability (s.2),Services fraud in contracts
+UK,Bribery Act 2010,Act,c.23,https://www.legislation.gov.uk/ukpga/2010/23/contents,P0,Bribery (s.1-5) | Failure to prevent bribery (s.7),Corrupt contract inducements
+UK,Proceeds of Crime Act 2002,Act,c.29,https://www.legislation.gov.uk/ukpga/2002/29/contents,P1,Money laundering (Part 7 | s.327-330),Proceeds of contract fraud
+UK,Computer Misuse Act 1990,Act,c.18,https://www.legislation.gov.uk/ukpga/1990/18/contents,P1,Unauthorized access (s.1) | Modification (s.3),Electronic contract tampering
+UK,Criminal Justice Act 1993,Act,c.36 | Part V,https://www.legislation.gov.uk/ukpga/1993/36/contents,P2,Insider trading (s.52-64),Securities fraud in contract valuations
+UK,Financial Services and Markets Act 2000,Act,c.8,https://www.legislation.gov.uk/ukpga/2000/8/contents,P1,Market abuse (s.118) | False statements (s.397),Financial contract fraud
+UK,Forgery and Counterfeiting Act 1981,Act,c.45,https://www.legislation.gov.uk/ukpga/1981/45/contents,P2,Forgery (s.1-5) | Use of forgery (s.5),Falsified contracts
+UK,Conspiracy to Defraud,Common Law,N/A,https://www.cps.org.uk/legal-guidance/conspiracy-defraud,P1,Common law conspiracy to defraud,Multi-party contract fraud schemes
+US Federal,18 USC Chapter 47,Statute,Chapter 47,https://www.law.cornell.edu/uscode/text/18/part-I/chapter-47,P0,Federal fraud statutes | False statements (s.1001),Foundation of federal fraud law
+US Federal,18 USC §1341,Statute,§1341,https://www.law.cornell.edu/uscode/text/18/1341,P0,Mail fraud | Conspiracy (s.1349),Contract fraud via postal service
+US Federal,18 USC §1343,Statute,§1343,https://www.law.cornell.edu/uscode/text/18/1343,P0,Wire fraud,Electronic contract fraud
+US Federal,18 USC §1348,Statute,§1348,https://www.law.cornell.edu/uscode/text/18/1348,P1,Securities fraud,Contract valuation fraud
+US Federal,18 USC §1956-1957,Statute,§1956-1957,https://www.law.cornell.edu/uscode/text/18/part-I/chapter-95,P1,Money laundering | Proceeds concealment,Criminal proceeds from contract fraud
+US Federal,18 USC §1831-1839,Statute,§1831-1839,https://www.law.cornell.edu/uscode/text/18/part-I/chapter-90,P1,Economic Espionage | Trade secret theft,Contract IP theft
+US Federal,18 USC §1401,Statute,§1401,https://www.law.cornell.edu/uscode/text/18/1401,P2,Identity fraud,Fraudulent party misrepresentation
+US Federal,18 USC §1510,Statute,§1510,https://www.law.cornell.edu/uscode/text/18/1510,P2,Obstruction of Criminal Investigation,Evidence destruction in fraud cases
+US Federal,Sarbanes-Oxley Act,Act,15 USC §7201 et seq.,https://www.law.cornell.edu/uscode/text/15/chapter-98,P1,Corporate fraud (s.906) | Audit violations,Public company contract disclosures
+US Federal,Foreign Corrupt Practices Act,Act,15 USC §78dd-1 et seq.,https://www.law.cornell.edu/uscode/text/15/part-I/chapter-2D,P0,Bribery of foreign officials,International contract corruption
+US Federal,Racketeer Influenced and Corrupt Organizations Act,Act,18 USC §1961 et seq.,https://www.law.cornell.edu/uscode/text/18/part-I/chapter-96,P1,RICO enterprise fraud,Organized contract fraud schemes
+US Federal,Bank Fraud Act,Statute,18 USC §1344,https://www.law.cornell.edu/uscode/text/18/1344,P1,Fraud affecting federally-insured banks,Contract finance fraud
+US Federal,Conspiracy to Commit Fraud,Statute,18 USC §371,https://www.law.cornell.edu/uscode/text/18/371,P1,General federal conspiracy,Multi-actor contract fraud
+Canada,Criminal Code - Fraud,Statute,Section 380,https://laws-lois.justice.gc.ca/eng/acts/C-46/page-135.html,P0,Fraud | Deceit | Dishonesty,Fundamental fraud provision
+Canada,Criminal Code - Theft,Statute,Section 322,https://laws-lois.justice.gc.ca/eng/acts/C-46/page-105.html,P0,Theft | Taking | Ownership,Contract-related property crimes
+Canada,Criminal Code - Breach of Trust,Statute,Section 336,https://laws-lois.justice.gc.ca/eng/acts/C-46/page-111.html,P0,Breach of trust by public officer,Commercial trust violations
+Canada,Criminal Code - Bribery of Judicial Officers,Statute,Section 122,https://laws-lois.justice.gc.ca/eng/acts/C-46/page-60.html,P1,Corruption | Bribery in contracts,Public-private contract bribery
+Canada,Criminal Code - Bribery of Peace Officers,Statute,Section 125,https://laws-lois.justice.gc.ca/eng/acts/C-46/page-61.html,P1,Official corruption,Contract enforcement obstruction
+Canada,Criminal Code - Forgery,Statute,Section 352,https://laws-lois.justice.gc.ca/eng/acts/C-46/page-115.html,P1,Forgery | False documents,Falsified contracts
+Canada,Criminal Code - Obtaining by False Pretence,Statute,Section 362,https://laws-lois.justice.gc.ca/eng/acts/C-46/page-118.html,P0,False pretence | Deception,Contract performance fraud
+Canada,Corruption of Foreign Public Officials Act,Act,S.C. 1998 | c. 34,https://laws-lois.justice.gc.ca/eng/acts/C-45.2/index.html,P0,Foreign official bribery,International contract corruption
+Canada,Proceeds of Crime (Money Laundering) and Terrorist Financing Act,Act,S.C. 2000 | c. 17,https://laws-lois.justice.gc.ca/eng/acts/P-24.501/index.html,P1,Money laundering | Proceeds concealment,Criminal proceeds from contract fraud
+Canada,Competition Act,Act,R.S.C. 1985 | c. C-34,https://laws-lois.justice.gc.ca/eng/acts/C-34/index.html,P1,Price fixing | Bid-rigging | Conspiracy,Anti-competitive contracting
+Quebec,Code criminel du Canada,Statute,Federal Code (French),https://laws-lois.justice.gc.ca/fra/acts/C-46/index.html,P0,Federal Criminal Code (French version),Applied in Quebec courts
+Quebec,Code de procédure pénale du Québec,Act,CCP,https://legisquebec.gouv.qc.ca/fr/ShowDoc/cs/C-25.1,P1,Criminal procedure (Quebec-specific),Trial and evidence rules
+Quebec,Loi sur la protection du consommateur,Act,Consumer Protection,https://legisquebec.gouv.qc.ca/fr/ShowDoc/cs/P-40.2,P1,Consumer fraud | Misleading practices,B2C contract fraud
+Australia,Criminal Code Act 1995 (Cth) - Chapter 7,Act,Chapter 7,https://www.legislation.gov.au/Series/C1995A00488,P0,Fraud (s.135.1-4) | Obtaining financial advantage (s.136.1),Federal fraud statutes
+Australia,Criminal Code Act 1995 (Cth) - Chapter 6,Act,Chapter 6,https://www.legislation.gov.au/Series/C1995A00488,P1,Money laundering | Proceeds handling,Criminal proceeds from contract fraud
+Australia,Corporations Act 2001 (Cth) - Chapter 7,Act,Chapter 7,https://www.legislation.gov.au/Series/C2001A00067,P1,Financial services fraud (s.912A) | Misleading/deceptive conduct (s.1043H),Securities and financial contracts
+Australia,Anti-Money Laundering and Counter-Terrorism Financing Act 2006,Act,AMLCFT,https://www.legislation.gov.au/Series/C2006A00169,P1,AML/CTF obligations | Reporting,Proceeds of contract crime
+Australia,Crimes Act 1900 (NSW) - Part 4A,Act,Part 4A,https://www.legislation.nsw.gov.au/view/html/inforce/current/act-1900-040,P1,Obtaining property by fraud (s.192E) | Financial advantage (s.192F),NSW-specific fraud crimes
+Australia,Crimes Act 1958 (VIC) - Division 1,Act,Division 1,https://www.legislation.vic.gov.au/in-force/acts/crimes-act-1958,P1,Fraud (s.16A) | Obtaining by deception (s.81),Victoria-specific provisions
+Australia,Crimes Act 1913 (WA),Act,WA Act,https://www.legislation.wa.gov.au/legislation/statutes/crimes-act-1913,P1,Obtaining by false pretence (s.403A),Western Australia-specific
+Australia,Corporations Act 2001 (Cth) - Market Manipulation,Act,Chapter 7 | Part 7.10,https://www.legislation.gov.au/Series/C2001A00067,P1,Market manipulation | Insider trading (s.1043K-1043L),Contract valuation fraud
+Germany,Strafgesetzbuch - §263-266b,Code,StGB,https://www.gesetze-im-internet.de/stgb/,P0,Betrug/Fraud (§263) | Computerbetrug (§263a) | Breach of Trust (§266),Primary German fraud provisions
+Germany,StGB - §269-275,Code,StGB,https://www.gesetze-im-internet.de/stgb/,P1,Falsification (§269) | Document fraud (§271),Contract falsification
+Germany,StGB - §261-262,Code,StGB,https://www.gesetze-im-internet.de/stgb/,P1,Money laundering,Criminal proceeds handling
+Germany,Geldwäschegesetz (GWG),Act,GWG 2021,https://www.gesetze-im-internet.de/gwg_2021/,P1,Anti-money laundering compliance,AML enforcement in contracts
+Germany,Gesetz gegen Wettbewerbsbeschränkungen (GWB),Act,GWB,https://www.gesetze-im-internet.de/gwb/,P1,Cartel law | Bid-rigging,Anti-competitive contracting
+Germany,StGB - §299-299a,Code,StGB,https://www.gesetze-im-internet.de/stgb/,P0,Bribery of public officials (§299) | Commercial bribery (§299a),Contract-related corruption
+Germany,Korruptionsbekämpfungsgesetz,Act,Anti-Corruption,https://www.gesetze-im-internet.de/corruppg/,P1,Corruption prevention in public procurement,Government contract fraud
+Germany,Insolvenzordnung (InsO) - §283-284,Code,InsO,https://www.gesetze-im-internet.de/inso/,P2,Bankruptcy fraud | Fraudulent transfer,Related to contract enforcement
+France,Code pénal - Livre III | Titre II,Code,Articles 313-405,https://www.legifrance.gouv.fr/codes/section_cc/CCIV_00000021/CCIV_000000C5/,P0,Fraud (article 313-1) | Abus de confiance (article 314-1),French fraud provisions
+France,Code pénal - Article 445-1,Code,Article 445-1,https://www.legifrance.gouv.fr/codes/article_cc/CCIV_000000A1,P1,Forgery of public documents,Falsified contracts
+France,Code pénal - Livre II | Titre VIII,Code,Corruption,https://www.legifrance.gouv.fr/codes/section_cc/CCIV_0000003J/,P1,Bribery (article 433-1) | Private corruption (article 445-1-1),Contract-related corruption
+France,Loi Sapin II,Act,2016-1691,https://www.legifrance.gouv.fr/loi/id/JORFDOLE000031744401/,P0,Corruption prevention | Whistleblower protections,Government and corporate contracts
+France,Code monétaire et financier - Livre VI,Code,Livre VI,https://www.legifrance.gouv.fr/codes/section_cc/CCMF_00000067/,P1,Money laundering | Proceeds concealment,Criminal proceeds from contract fraud
+France,Code pénal - Articles 421-1 et seq.,Code,Terrorism,https://www.legifrance.gouv.fr/codes/section_cc/CCIV_00000080/,P2,Financing of terrorism,Procurement fraud overlap
+France,Code du commerce - Articles L-152-1 et seq.,Code,Anti-Cartel,https://www.legifrance.gouv.fr/codes/section_cc/CCMRC_000000F9/,P1,Antitrust | Bid-rigging,Anti-competitive contracting
+France,Ordonnance 2016-131,Act,Duty of Vigilance,https://www.legifrance.gouv.fr/eli/ordonnance/2016/2/10/JUSC1503426R/jo/texte,P1,Corporate responsibility | Supply chain transparency,Contract-related due diligence
+Spain,Código Penal - Título XIII,Code,Ley Orgánica 10/1995,https://www.boe.es/buscar/act.php?id=BOE-A-1995-25444,P0,Fraud/Estafa (articles 248-249) | Breach of trust (articles 252-258),Spanish fraud provisions
+Spain,CP - Artículos 248-253,Code,CP,https://www.boe.es/buscar/act.php?id=BOE-A-1995-25444,P0,Estafa | Abuso de firma | Faltas,Classic fraud crimes
+Spain,CP - Artículos 390-398,Code,CP,https://www.boe.es/buscar/act.php?id=BOE-A-1995-25444,P1,Public document forgery,Falsified contracts
+Spain,CP - Artículos 404-410,Code,CP,https://www.boe.es/buscar/act.php?id=BOE-A-1995-25444,P1,Commercial document forgery,Contract-specific document crimes
+Spain,CP - Artículos 419-424,Code,CP,https://www.boe.es/buscar/act.php?id=BOE-A-1995-25444,P0,Public official corruption,Government contract corruption
+Spain,CP - Artículos 286-302,Code,CP,https://www.boe.es/buscar/act.php?id=BOE-A-1995-25444,P1,Money laundering | Proceeds concealment,Criminal proceeds from contract fraud
+Spain,CP - Artículos 230-242,Code,CP,https://www.boe.es/buscar/act.php?id=BOE-A-1995-25444,P1,Breach of confidentiality,Contract IP theft
+Spain,Ley Orgánica 3/2018 (RGPD Implementation),Act,Data Protection,https://www.boe.es/buscar/act.php?id=BOE-A-2018-16673,P1,Unauthorized data processing,Contract personal data fraud
+Spain,Ley de Competencia Desleal,Act,34/1988,https://www.boe.es/buscar/act.php?id=BOE-A-1988-26264,P1,Unfair competition | False advertising,Contract unfair practices
+EU,Directive 2017/1371/EU (PIF Directive),Directive,2017/1371/EU,https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32017L1371,P1,Fraud against EU financial interests | Embezzlement,Cross-border contract fraud
+EU,Regulation 2017/1939 (EPPO Regulation),Regulation,2017/1939,https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32017R1939,P1,Prosecution of EU fraud,Coordinated fraud prosecution
+EU,Directive 2015/849/EU (4th AML Directive),Directive,2015/849/EU,https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32015L0849,P1,Money laundering obligations | Due diligence,Proceeds of contract crimes
+EU,Directive (EU) 2018/1114 (5th AML Directive),Directive,2018/1114,https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L1114,P1,Enhanced AML/CTF | Beneficial ownership,Criminal proceeds handling
+EU,Directive (EU) 2023/1104 (6th AML Directive),Directive,2023/1104,https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1104,P1,Updated AML framework | Corporate transparency,Beneficial owner disclosure
+EU,Regulation (EU) No 596/2014 (MAR),Regulation,596/2014,https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014R0596,P1,Market manipulation | Insider trading | False information,Securities contracts and valuations

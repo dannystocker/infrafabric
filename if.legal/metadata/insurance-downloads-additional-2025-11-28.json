@@ -1,0 +1,26 @@
+[
+  {
+    "jurisdiction": "spain",
+    "name": "Snapshot: Insurance Claims and Coverage in Spain",
+    "filename": "snapshot-insurance-claims-coverage-spain.html",
+    "url": "https://www.lexology.com/library/detail.aspx?g=7158302c-049b-435c-8f47-40a5e8220649",
+    "priority": "P2",
+    "status": "downloaded",
+    "file_size": 181573,
+    "sha256": "fa4a60c119ffb2475abf1fe58181e2b4c1ca0b7ddcc8345829f0c03fbe4cb2f1",
+    "timestamp": "2025-11-28T05:07:29.253550",
+    "filepath": "/home/setup/if-legal-corpus/raw/spain/insurance/snapshot-insurance-claims-coverage-spain.html"
+  },
+  {
+    "jurisdiction": "australia",
+    "name": "Professional Indemnity Insurance: Claims Made vs. Notified",
+    "filename": "professional-indemnity-claims-made-notified.html",
+    "url": "https://www.carternewell.com/insights/articles/professional-indemnity-insurance-claims-made-and-notified-policies-and-the-interface-between-s54-and-s403-of-the-insurance-contracts-act-1984-cth/",
+    "priority": "P2",
+    "status": "downloaded",
+    "file_size": 186202,
+    "sha256": "ca48358b3dab2610a632bd074c612ca09e3c04be0e096a0dee3cb3bbb4d76b12",
+    "timestamp": "2025-11-28T05:07:29.679348",
+    "filepath": "/home/setup/if-legal-corpus/raw/australia/insurance/professional-indemnity-claims-made-notified.html"
+  }
+]

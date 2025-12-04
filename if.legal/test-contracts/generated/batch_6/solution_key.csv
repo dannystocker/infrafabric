@@ -1,0 +1,21 @@
+Filename,Classification,Trick Clauses
+Contract_01_d8a78e97.md,Generous,Jurisdiction Trap
+Contract_02_fe96d4b7.md,Abusive,"Abusive Pay Clause, Jurisdiction Trap"
+Contract_03_22f9c84a.md,Generous,Jurisdiction Trap
+Contract_04_d8b80483.md,Standard,Jurisdiction Trap
+Contract_05_fdbff09d.md,Generous,Jurisdiction Trap
+Contract_06_4e6be3ea.md,Abusive,"Abusive Term Clause, Abusive Restrict Clause, Abusive Confidentiality Clause"
+Contract_07_7cb5b260.md,Generous,Jurisdiction Trap
+Contract_08_9bd87da3.md,Standard,None
+Contract_09_259f56d9.md,Generous,Jurisdiction Trap
+Contract_10_6d924c32.md,Abusive,"Abusive Ip Clause, Abusive Pay Clause, Abusive Restrict Clause, Abusive Confidentiality Clause"
+Contract_11_83583fb5.md,Abusive,"Abusive Ip Clause, Abusive Term Clause, Abusive Restrict Clause, Abusive Confidentiality Clause, Jurisdiction Trap"
+Contract_12_638a2d3f.md,Generous,Jurisdiction Trap
+Contract_13_28156d76.md,Generous,None
+Contract_14_28ceecec.md,Standard,None
+Contract_15_e18d7bbf.md,Abusive,"Abusive Ip Clause, Abusive Term Clause, Abusive Pay Clause, Abusive Restrict Clause"
+Contract_16_dd11228d.md,Generous,None
+Contract_17_69d044b4.md,Standard,None
+Contract_18_f4540a6e.md,Generous,None
+Contract_19_cc6a5df1.md,Abusive,"Abusive Pay Clause, Abusive Restrict Clause"
+Contract_20_53e3de7f.md,Abusive,"Abusive Ip Clause, Abusive Term Clause, Abusive Pay Clause, Abusive Restrict Clause, Abusive Confidentiality Clause, Jurisdiction Trap"
