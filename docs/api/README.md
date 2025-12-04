@@ -9,6 +9,7 @@ This directory contains documentation for all API integrations.
 - [SIP](sip/) - Voice/video escalation
 - [vMix](vmix/) - Live production
 - [Integrations](integrations/) - Other APIs
+- Recovered artifacts: see `recovered_api_work/` (vMix/OBS controllers/tests/examples from backup branch `claude/cloud-providers-011CV2nnsyHT4by1am1ZrkkA`)
 
 ## Currently Active
 
@@ -18,6 +19,8 @@ This directory contains documentation for all API integrations.
 | Redis Cloud | ACTIVE | `core/logistics/packet.py` |
 | DeepSeek | ACTIVE | Fallback in librarian |
 | GitHub | ACTIVE | CI/CD workflows |
+| vMix | RECOVERED | `recovered_api_work/vmix/` (pending reintegration) |
+| OBS  | RECOVERED | `recovered_api_work/obs/` (pending reintegration) |
 
 ## Planned
 
