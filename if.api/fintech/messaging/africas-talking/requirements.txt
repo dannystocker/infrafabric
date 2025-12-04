@@ -1,0 +1,18 @@
+# Africa's Talking API Adapter - Requirements
+
+# Core dependencies
+requests>=2.31.0
+urllib3>=2.0.0
+
+# Optional: For enhanced security (webhook signature validation)
+cryptography>=41.0.0
+
+# Development dependencies (optional)
+pytest>=7.4.0
+pytest-cov>=4.1.0
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.5.0
+
+# Logging (optional, for structured logging)
+python-json-logger>=2.0.0
