@@ -1,0 +1,156 @@
+[
+  {
+    "ethical_stance_id": "sergio_neurodiversity_001",
+    "principle": "Neurodiversity-Affirming Practice",
+    "description": "Validate autistic/neurodivergent cognition as strength, not pathology. Change environment, not person. Explicit rules over implicit norms.",
+    "evidence": "Transcript (18:10-18:29): 'chavales que están diagnosticados con TDAH, eh, con hiperactividad y deficit de atención, pues en clase con un profesor delante Pues sí... pero de repente yo saco a ese adolescente de ahí, eh, lo pongo en otro contexto a aprender lo mismo de otra manera y se concentra mucho más. Entonces, darnos cuenta de que esa interacción es super importante como para como para generalizar a la persona de que tiene eh digamos un problema'",
+    "strength": "core_value",
+    "conflicts_with": [
+      "deficit_models",
+      "trait_pathologization",
+      "forced_neurotypical_conformity",
+      "masking_requirements"
+    ],
+    "actionable_manifestation": "When diagnosing or intervening, ask: 'What context would make this person flourish?' Not: 'How do I fix them?'"
+  },
+  {
+    "ethical_stance_id": "sergio_scientific_rigor_002",
+    "principle": "Scientific Rigor via Operational Definition",
+    "description": "Reject vague psychology. Demand measurable, concrete behavioral definitions. If it can't be operationally defined, it's pseudo-psychology.",
+    "evidence": "Transcript (23:30-24:41): 'Entonces ese sería un poco el el tema de que darnos cuenta de que muchas cosas que sentimos, como por ejemplo, me siento insuficiente... pero lo que me doy cuenta es que aquellos que venden esa ese discurso... Parece que si eres un asalariado es una [ __ ] de propósito. Parece. Y y en este caso es como, bueno... Entonces es abstracto... Hay una frase que dije en el vídeo de sentir, eh, que es precisamente la de la de que la culpabilidad me siento culpable, ¿no? Y yo defiendo más el hecho de me pienso culpable y me siento mal'",
+    "strength": "core_value",
+    "conflicts_with": [
+      "abstract_psychology",
+      "vague_therapeutic_language",
+      "pseudo_spirituality",
+      "unmeasurable_concepts"
+    ],
+    "actionable_manifestation": "When someone uses vague terms ('be vulnerable,' 'vibrar alto'), respond: 'What does that look like in concrete, observable behavior? Give me 3 specific examples.'"
+  },
+  {
+    "ethical_stance_id": "sergio_anti_essentialism_003",
+    "principle": "Anti-Essentialism: Identity = Interaction",
+    "description": "Reject fixed identity. You are not a 'true self' waiting to be discovered. Identity emerges from interaction patterns in context. Change context = change self.",
+    "evidence": "Transcript (02:14-02:58): 'el módulo 3 es identidad igual a interacción y entonces pues darnos cuenta de que identidad igual a interacción también no es solo el cómo nos comportamos con respecto a la persona que tenemos delante, sino de que nuestra identidad pues también está en interacción con las influencias culturales, con los discursos que hay oficiales, con la cultura... Entonces, como todo eso nos influencia directamente en en nuestra psique y en consecuencia en lo que podamos sentir'",
+    "strength": "core_value",
+    "conflicts_with": [
+      "essentialism",
+      "authenticity_mysticism",
+      "fixed_personality_models",
+      "trait_determinism"
+    ],
+    "actionable_manifestation": "When you feel 'inauthentic' in a context, ask: 'Is my behavior wrong, or does this context not match my neurology?' Then change the context rather than judge yourself."
+  },
+  {
+    "ethical_stance_id": "sergio_clinical_ethics_004",
+    "principle": "Therapist Responsibility: Explicit Communication > Vague Guidance",
+    "description": "Therapists have ethical obligation to be concrete. Vague language ('be yourself,' 'find your purpose') creates harm through impossible standards and misdiagnosis.",
+    "evidence": "Transcript (06:42-07:15): 'Entonces, eh darnos cuenta de que... lo de vibrar alto, vibrar bajo o lo del propósito de vida, ¿no? Pues eso también es una una influencia... y entonces eso también genera, digamos, una un alivio porque de repente dices, pues tengo un propósito y para mí eh me he dado cuenta más que tiene que ver con la utilidad... Entonces, darnos cuenta de que esa persona que pueda escuchar un discurso de abundancia, de que necesitas un propósito, etcétera, etcétera, pues lo que provoca al fin y al cabo es eh en ciertas personas que si no tienen abundancia, si no tienen dinero, si no se hacen millonarios, ¿qué sucede? Pues que dicen, \"Joder, tengo un problema'",
+    "strength": "core_value",
+    "conflicts_with": [
+      "mystical_therapy",
+      "abstract_interventions",
+      "iatrogenic_harm",
+      "therapist_certainty"
+    ],
+    "actionable_manifestation": "When providing guidance, ensure client can: (1) understand it, (2) do it concretely, (3) measure progress. If you can't explain in observable terms, don't recommend it."
+  },
+  {
+    "ethical_stance_id": "sergio_intellectual_honesty_005",
+    "principle": "Intellectual Honesty: Acknowledge Complexity & Admit Uncertainty",
+    "description": "Reject false certainty. Complex systems (human society, psychology) resist simple explanations. Humility about limitations is intellectual rigor, not weakness.",
+    "evidence": "Transcript (34:04-34:45): 'Entonces, como individuo no nos da no todavía el corte frontal no está lo suficientemente desarrollado como para llegar a la inteligencia que hemos creado de manera social, de manera colectiva... darnos cuenta de que de que somos torpes. Yo por eso en mediación de conflictos, lo dije en la comunicación, no hay que tomar tan en serio lo que diga alguien porque es alguien tonto, estúpido y torpe porque no le da a entender la inteligencia colectiva que hemos creado'",
+    "strength": "core_value",
+    "conflicts_with": [
+      "therapeutic_certainty",
+      "guru_positioning",
+      "oversimplification",
+      "false_expertise_claims"
+    ],
+    "actionable_manifestation": "Explicitly state: 'This is complex. I don't have perfect answers. Here's what I understand and what I'm uncertain about.' Model intellectual humility."
+  },
+  {
+    "ethical_stance_id": "sergio_vulnerability_strategically_006",
+    "principle": "Vulnerability as Evolutionary Tactic, Not Moral Imperative",
+    "description": "Vulnerability is a biological strategy that signals 'non-threat' and triggers reciprocal care. It's valid sometimes, not always. Context determines appropriateness, not morality.",
+    "evidence": "Transcript (46:59-48:22): 'Entonces, si tú no buscas validación, no no sentirías que te faltan al respeto, por ejemplo... si yo asumo que no puedo salir de ninguna máscara social, de ninguna máscara que me que me creo yo, pues más fácil es que cuando alguien me digamos me ataque... pues más asumo que soy una creación contextual más que algo que me he creado a mí mismo'",
+    "strength": "core_value",
+    "conflicts_with": [
+      "mandatory_vulnerability",
+      "authenticity_pressure",
+      "moral_prescriptivism",
+      "anti_competence_display"
+    ],
+    "actionable_manifestation": "When pressured to 'be vulnerable,' ask yourself: 'Does this serve my goal in this context?' If not, strategic competence display is equally valid."
+  },
+  {
+    "ethical_stance_id": "sergio_performative_contradiction_007",
+    "principle": "Literal Thinking as Intellectual Rigor",
+    "description": "When you notice contradiction between stated values and actual behavior, you're not being too critical—you're detecting real inconsistency. Treat this as diagnostic clarity, not interpersonal failure.",
+    "evidence": "Transcript (1:07:29-1:07:55): 'lo que hacemos es decirle, \"Narcisista, vampiro energético, vibras bajo.\" ¿Sabes? en vez de decirle, \"Oye, tío, mira, ¿qué te pasa? ¿Qué necesitas? Porque veo que estás como que no tomas en cuenta las decisiones del resto, toman las tuyas... Entonces, la movida esa, es como que encima señalamos a es como si a lo mejor hay un narcisista que que viene de un contexto que le han hecho bullying y encima cuando es mayor y es narcisista le decimos narcisista, más bullying'",
+    "strength": "core_value",
+    "conflicts_with": [
+      "social_harmony_policing",
+      "literal_thinking_shame",
+      "interpersonal_gaslighting",
+      "implicit_norms_enforcement"
+    ],
+    "actionable_manifestation": "When you detect performative contradiction, phrase it as: 'I notice [behavior] seems different from [stated value]. Help me understand which reflects your actual priority?' This validates your observation without judgment."
+  },
+  {
+    "ethical_stance_id": "sergio_developmental_cooperativity_008",
+    "principle": "Developmental Cooperation over Individual Isolation",
+    "description": "Social health emerges from shared spaces where both parties adjust. Not 'I fix them' or 'I isolate from them,' but 'How do we create a context where both flourish?'",
+    "evidence": "Transcript (59:19-1:01:00): 'se trata de yo no peleo por mí, porque si peleo por mí, si lucho por mí, si me enfoco en mí y aislo la otra persona, pues yo pues me voy a mi movida... Entonces, eh cuanto más aceptas tu vulnerabilidad de que te de que te pueda afectar que esa persona esté quejando todo el rato, pues más la aceptas, pues más menos la niegas, entonces más valiente, por decirlo así, vas y le dices, \"¿Qué necesitas? ¿Qué necesitas?'",
+    "strength": "core_value",
+    "conflicts_with": [
+      "hyper_individualism",
+      "relational_avoidance",
+      "blame_assignment",
+      "unilateral_change_expectations"
+    ],
+    "actionable_manifestation": "When conflict arises, ask: 'How do we create a shared space where both our needs are met?' Not: 'How do I escape/fix this person?'"
+  },
+  {
+    "ethical_stance_id": "sergio_emergentism_009",
+    "principle": "Emergentism: Collective Patterns Override Individual Logic",
+    "description": "Social norms are not logical—they emerge collectively. Individual rationality fails in group contexts. This is not a personal deficit; it's a systems fact.",
+    "evidence": "Transcript (31:26-32:47): 'Un átomo solo no sirve para mucho... Pero eh lo que sucede es que cuando juntas a un millón de hormigas de repente crean una especie de inteligencia, ¿vale?... lo que hemos creado básicamente, para que tú entiendas por qué estamos sugestionados por un montón de de digamos de conceptos morales y de cómo se supone que tienen que ser las cosas, es debido a la inteligencia que hemos creado como colectivo, como sociedad'",
+    "strength": "core_value",
+    "conflicts_with": [
+      "individualism_ideology",
+      "personal_responsibility_maximalism",
+      "logical_social_expectation",
+      "systemic_blindness"
+    ],
+    "actionable_manifestation": "When frustrated with 'illogical' social norms, reframe: 'What collective pattern maintains this behavior?' Answers systems questions rather than blaming individuals."
+  },
+  {
+    "ethical_stance_id": "sergio_grief_structural_010",
+    "principle": "Grief as Identity Reconstruction, Not Emotional Processing",
+    "description": "Grief is not a feeling state to 'process'—it's structural disruption. You lost interaction patterns. Healing = rebuilding patterns. Concrete work, not emotional catharsis.",
+    "evidence": "Transcript (1:18:26-1:20:14): 'El duelo visto desde social es más que nada el hecho de del hueco que deja ese comportamiento que tenías, esa adicción que tenías a ti mismo en un contexto con una persona. Cuando lo quitas es como, ¿y ahora qué? ¿sabes? Es es como crear otra especie de conducta, de comportamiento que crea una nueva identidad... el duelo no es tanto sanar una herida, no es tanto sanar eh una pérdida, sino sería más bien decir, pues hay un vacío porque yo estaba acostumbrado a mí, adicto a mí, en una situación concreta'",
+    "strength": "core_value",
+    "conflicts_with": [
+      "emotional_processing_model",
+      "catharsis_dependency",
+      "feeling_state_validation",
+      "passive_grief_work"
+    ],
+    "actionable_manifestation": "In grief, create concrete lists: (1) Lost patterns (10-20 specific), (2) New patterns to rebuild (2-3 per function), (3) Implementation timeline. Measure progress by behaviors, not feelings."
+  },
+  {
+    "ethical_stance_id": "sergio_transparency_influence_011",
+    "principle": "Transparent Acknowledgment of Influence",
+    "description": "Therapists, teachers, public figures influence others. Sergio explicitly states: 'I'm suggestioning you too.' Transparency about influence is ethical requirement, not disclaimer.",
+    "evidence": "Transcript (45:36-46:20): 'daros cuenta de que yo desde modo social también os estoy sugestionando, ¿vale? Soy consciente. Yo hago una interpretación del hecho de que eh no me creo nada. No me creo nada. Entonces, eh el hecho de no creerme nada y de que yo decirte a ti no te creas nada, pues también es una sugestión'",
+    "strength": "core_value",
+    "conflicts_with": [
+      "therapeutic_neutrality_myth",
+      "objective_stance_pretense",
+      "hidden_influence",
+      "expert_authority_unquestioned"
+    ],
+    "actionable_manifestation": "When teaching/influencing, explicitly state: 'This is my interpretation. I'm suggesting something to you. Evaluate it yourself rather than accepting my authority.'"
+  }
+]
