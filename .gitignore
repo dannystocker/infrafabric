@@ -45,3 +45,6 @@ Thumbs.db
 
 # Keep only what's essential for arXiv
 .security/
+
+# Confidential - competitive moat
+.confidential/
