@@ -2,9 +2,15 @@
 M-Pesa Adapter Examples
 
 Practical examples demonstrating common use cases and patterns for the M-Pesa adapter.
+
+CLI flags:
+    -d, -v, --debug, --verbose  Enable fintech debug logging for M-Pesa
+    -h, --help                  Show this help message
 """
 
+import argparse
 import logging
+import os
 import time
 from typing import Optional
 
@@ -486,13 +492,32 @@ def example_9_retry_configuration():
     adapter2.close()
 
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="M-Pesa adapter example suite for InfraFabric."
+    )
+    parser.add_argument(
+        "-d",
+        "-v",
+        "--debug",
+        "--verbose",
+        dest="debug",
+        action="store_true",
+        help="Enable fintech debug logging for M-Pesa (sets IF_FINTECH_DEBUG_MPESA=1).",
+    )
+    return parser.parse_args()
+
+
 # ============================================================================
 # Main
 # ============================================================================
 
 if __name__ == "__main__":
-    """Run all examples."""
+    args = parse_args()
+    if args.debug:
+        os.environ["IF_FINTECH_DEBUG_MPESA"] = "1"
 
+    """Run all examples."""
     examples = [
         ("1", "Basic STK Push", example_1_basic_stk_push),
         ("2", "B2C Disbursement", example_2_b2c_disbursement),

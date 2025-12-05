@@ -36,6 +36,8 @@ from urllib.parse import urlencode
 import hashlib
 from abc import ABC, abstractmethod
 
+from fintech_debug_utils import ft_debug_log_request, ft_debug_log_response
+
 
 # ============================================================================
 # Configuration & Constants
@@ -1463,6 +1465,13 @@ class MifosAdapter:
                 f"(params={params}, body_len={len(json or {})})"
             )
 
+            ft_debug_log_request(
+                self.logger,
+                "mifos",
+                url,
+                {"method": method, "params": params or {}, "body": json or {}},
+            )
+
             response = self.session.request(
                 method,
                 url,
@@ -1473,6 +1482,13 @@ class MifosAdapter:
 
             self.logger.debug(
                 f"[{request_id}] Response: {response.status_code}"
+            )
+
+            ft_debug_log_response(
+                self.logger,
+                "mifos",
+                response.status_code,
+                response.text,
             )
 
             # Handle response

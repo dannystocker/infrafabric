@@ -21,6 +21,8 @@ import requests
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
 
+from fintech_debug_utils import ft_debug_log_request, ft_debug_log_response
+
 
 # Configure logging
 logger = logging.getLogger(__name__)
@@ -221,11 +223,26 @@ class MpesaAdapter:
 
             logger.debug(f"Requesting access token from {url}")
 
+            ft_debug_log_request(
+                logger,
+                "mpesa",
+                url,
+                {"method": "GET", "headers": headers},
+            )
+
             response = self.session.get(
                 url,
                 headers=headers,
                 timeout=self.timeout
             )
+
+            ft_debug_log_response(
+                logger,
+                "mpesa",
+                response.status_code,
+                response.text,
+            )
+
             response.raise_for_status()
 
             data = response.json()
@@ -343,12 +360,27 @@ class MpesaAdapter:
 
             logger.debug(f"Initiating STK Push for {phone_number}, Amount: {amount}")
 
+            ft_debug_log_request(
+                logger,
+                "mpesa",
+                url,
+                {"method": "POST", "headers": headers, "body": payload},
+            )
+
             response = self.session.post(
                 url,
                 json=payload,
                 headers=headers,
                 timeout=self.timeout
             )
+
+            ft_debug_log_response(
+                logger,
+                "mpesa",
+                response.status_code,
+                response.text,
+            )
+
             response.raise_for_status()
 
             result = response.json()
@@ -416,11 +448,25 @@ class MpesaAdapter:
 
             logger.debug(f"Querying STK Push status for {checkout_request_id}")
 
+            ft_debug_log_request(
+                logger,
+                "mpesa",
+                url,
+                {"method": "POST", "headers": headers, "body": payload},
+            )
+
             response = self.session.post(
                 url,
                 json=payload,
                 headers=headers,
                 timeout=self.timeout
+            )
+
+            ft_debug_log_response(
+                logger,
+                "mpesa",
+                response.status_code,
+                response.text,
             )
             response.raise_for_status()
 
@@ -493,11 +539,25 @@ class MpesaAdapter:
 
             logger.debug(f"Initiating B2C payment for {phone_number}, Amount: {amount}")
 
+            ft_debug_log_request(
+                logger,
+                "mpesa",
+                url,
+                {"method": "POST", "headers": headers, "body": payload},
+            )
+
             response = self.session.post(
                 url,
                 json=payload,
                 headers=headers,
                 timeout=self.timeout
+            )
+
+            ft_debug_log_response(
+                logger,
+                "mpesa",
+                response.status_code,
+                response.text,
             )
             response.raise_for_status()
 
@@ -565,11 +625,25 @@ class MpesaAdapter:
 
             logger.debug("Querying account balance")
 
+            ft_debug_log_request(
+                logger,
+                "mpesa",
+                url,
+                {"method": "POST", "headers": headers, "body": payload},
+            )
+
             response = self.session.post(
                 url,
                 json=payload,
                 headers=headers,
                 timeout=self.timeout
+            )
+
+            ft_debug_log_response(
+                logger,
+                "mpesa",
+                response.status_code,
+                response.text,
             )
             response.raise_for_status()
 
@@ -633,11 +707,25 @@ class MpesaAdapter:
 
             logger.debug(f"Querying transaction status for {transaction_id}")
 
+            ft_debug_log_request(
+                logger,
+                "mpesa",
+                url,
+                {"method": "POST", "headers": headers, "body": payload},
+            )
+
             response = self.session.post(
                 url,
                 json=payload,
                 headers=headers,
                 timeout=self.timeout
+            )
+
+            ft_debug_log_response(
+                logger,
+                "mpesa",
+                response.status_code,
+                response.text,
             )
             response.raise_for_status()
 

@@ -14,8 +14,8 @@
 | **Production Ready** | 18 |
 | **Planned/Roadmap** | 7+ |
 | **Categories** | 9 |
-| **Lines of Code** | 15,000+ |
-| **Test Coverage** | 35+ test suites |
+| **Lines of Code** | 50,000+ |
+| **Test Coverage** | ~30 test suites |
 
 ---
 
@@ -41,10 +41,19 @@ if.api/
 │   ├── webrtc/            # P2P mesh + signaling server
 │   └── h323/              # H.323 (PLANNED)
 │
-├── llm/                    # 3 integrations (COMPLETE)
+├── llm/                    # 7 integrations (Claude, Gemini, HTTP adapters)
 │   ├── claude/            # Anthropic Claude API
 │   ├── gemini/            # Google Gemini (1M+ context)
-│   └── deepseek/          # DeepSeek API
+│   ├── deepseek/          # DeepSeek API
+│   ├── openai/            # OpenAI Chat API adapter
+│   ├── mistral/           # Mistral Chat API adapter
+│   ├── openrouter/        # OpenRouter Chat API adapter
+│   └── openwebui/         # OpenWebUI bridge/CLI
+│
+├── fintech/                # African Fintech adapters (IMPLEMENTING)
+│   ├── mobile-money/      # M-Pesa, MTN MoMo, Airtel, Orange
+│   ├── cbs/               # Mifos/Fineract CBS adapter
+│   └── kyc/               # TransUnion CRB adapter
 │
 ├── data/                   # 2 integrations (COMPLETE)
 │   ├── redis/             # Redis Cloud L1/L2 tiered cache
@@ -95,11 +104,14 @@ if.api/
 
 ### LLM APIs
 
-| Provider | Model | Context | Status |
-|----------|-------|---------|--------|
-| Claude | Sonnet/Haiku/Opus | 200K | Production |
-| Gemini | 1.5 Pro | 1M+ | Production |
-| DeepSeek | v2 | 128K | Production |
+| Provider   | Model              | Context | Status       |
+|------------|--------------------|---------|--------------|
+| Claude     | Sonnet/Haiku/Opus  | 200K    | Production   |
+| Gemini     | 1.5 Pro            | 1M+     | Production   |
+| DeepSeek   | v2                 | 128K    | Production   |
+| OpenAI     | gpt-4.1-mini       | 128K    | Implementing |
+| Mistral    | mistral-small      | 32K+    | Implementing |
+| OpenRouter | multi-provider     | 128K+   | Implementing |
 
 ### Data Infrastructure
 
@@ -113,6 +125,20 @@ if.api/
 | Component | Version | Detection Rate | Status |
 |-----------|---------|----------------|--------|
 | Yologuard | v3.0 | 100x FP reduction | Production |
+
+### Fintech APIs (Implementing)
+
+| Category     | Adapter           | Provider                | Status       | Location                                        |
+|--------------|-------------------|-------------------------|--------------|-------------------------------------------------|
+| Mobile Money | M-Pesa            | Safaricom (Daraja)      | Implementing | `if.api/fintech/mobile-money/mpesa/`            |
+| Mobile Money | MTN MoMo          | MTN (11 countries)      | Implementing | `if.api/fintech/mobile-money/mtn-momo/`         |
+| Mobile Money | Airtel Money      | Airtel                  | Implementing | `if.api/fintech/mobile-money/airtel-money/`     |
+| Mobile Money | Orange Money      | Orange                  | Implementing | `if.api/fintech/mobile-money/orange-money/`     |
+| CBS          | Mifos/Fineract    | Apache/Mifos            | Implementing | `if.api/fintech/cbs/mifos/`                     |
+| CBS          | Musoni            | Musoni (Fineract-style) | Implementing | `if.api/fintech/cbs/musoni/`                    |
+| KYC          | TransUnion Africa | TransUnion              | Implementing | `if.api/fintech/kyc/transunion/`                |
+| KYC          | Smile Identity    | Smile Identity          | Implementing | `if.api/fintech/kyc/smile-identity/`            |
+| Messaging    | Africa's Talking  | Africa's Talking        | Implementing | `if.api/fintech/messaging/africas-talking/`     |
 
 ---
 
@@ -168,14 +194,15 @@ Philosophy-grounded 4-layer architecture for civil and military drone defense:
 
 ## File Statistics
 
-| Category | Files | Lines | Tests |
-|----------|-------|-------|-------|
-| Broadcast | 11 | 3,500+ | 4 suites |
-| Communication | 15+ | 5,000+ | 8 suites |
-| LLM | 5 | 1,500+ | 3 suites |
-| Data | 4 | 1,200+ | 2 suites |
-| Security | 1 | 744 | 1 suite |
-| Defense (docs) | 1 | 300+ | N/A |
+| Category | Files | Lines   | Tests    |
+|----------|-------|---------|----------|
+| Broadcast | 11   | 3,500+  | 4 suites |
+| Communication | 15+ | 5,000+  | 8 suites |
+| LLM | 7   | 1,600+  | 3 suites |
+| Fintech | 25+ | 18,000+ | 3 suites |
+| Data | 4   | 1,200+  | 2 suites |
+| Security | 1   | 744     | 1 suite  |
+| Defense (docs) | 1   | 300+    | N/A      |
 
 ---
 
@@ -222,6 +249,7 @@ pydantic>=2.0.0
 |----------|----------|---------|
 | Full Inventory | `/IF-API-INTEGRATIONS-INVENTORY.md` | Complete catalog |
 | API Reference | `/docs/api/API_REFERENCE.md` | Endpoint specs |
+| API Roadmap | `/docs/api/API_ROADMAP.md` | Integration roadmap |
 | OpenAPI Spec | `/docs/api/openapi.yaml` | Swagger/OpenAPI |
 | Examples | `/docs/api/EXAMPLES.md` | Code examples |
 | C-UAS Architecture | `/if.api/defense/cuas/README.md` | Drone defense |

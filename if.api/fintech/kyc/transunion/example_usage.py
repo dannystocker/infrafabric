@@ -14,11 +14,16 @@ This example covers:
 7. Event handling
 8. Health checks
 
+CLI flags:
+    -d, -v, --debug, --verbose  Enable fintech debug logging for TransUnion
+    -h, --help                  Show this help message
+
 Requirements:
 - TransUnion API credentials (update in code or use environment variables)
 - Python 3.7+
 """
 
+import argparse
 import os
 import logging
 import json
@@ -111,6 +116,22 @@ def on_error(event: dict) -> None:
 def on_connection_state_changed(event: dict) -> None:
     """Handle connection state changes."""
     logger.info(f"→ Connection state: {event['state']}")
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="TransUnion Africa credit bureau adapter examples."
+    )
+    parser.add_argument(
+        "-d",
+        "-v",
+        "--debug",
+        "--verbose",
+        dest="debug",
+        action="store_true",
+        help="Enable fintech debug logging for TransUnion (sets IF_FINTECH_DEBUG_TRANSUNION=1).",
+    )
+    return parser.parse_args()
 
 
 # ============================================================================
@@ -550,4 +571,8 @@ def main() -> None:
 
 
 if __name__ == "__main__":
+    args = parse_args()
+    if args.debug:
+        os.environ["IF_FINTECH_DEBUG_TRANSUNION"] = "1"
+
     main()

@@ -69,7 +69,10 @@ if.api/
 | Communication | Yate | 1 | Yes | `if.api/communication/sip/adapters/` |
 | LLM | Claude | 3 | Yes | `if.api/llm/claude/` |
 | LLM | Gemini | 1 | Yes | `if.api/llm/gemini/` |
-| LLM | DeepSeek | 1 | Yes | `if.api/llm/deepseek/` |
+| LLM | OpenAI | 1 | Implementing | `if.api/llm/openai/` |
+| LLM | Mistral | 1 | Implementing | `if.api/llm/mistral/` |
+| LLM | DeepSeek | 1 | Implementing | `if.api/llm/deepseek/` |
+| LLM | OpenRouter | 1 | Implementing | `if.api/llm/openrouter/` |
 | Data | Redis Cloud | 3 | Yes | `if.api/data/redis/` |
 | Data | File Cache | 1 | Yes | `if.api/data/file-cache/` |
 | Security | Yologuard v3 | 1 | Yes | `if.api/security/yologuard/` |

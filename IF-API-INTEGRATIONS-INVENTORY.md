@@ -216,14 +216,16 @@ JSON file-based storage when Redis unavailable.
 
 ## 5. SECURITY APIs
 
-### 5.1 IF.yologuard
-**Priority:** P1
-**Status:** COMPLETE (v3.0)
-**Location:** `code/yologuard/src/`
+### 5.1 IF.yologuard / if.armour.secrets.detect
+**Priority:** P1  
+**Status:** COMPLETE (v3.0)  
+**Location:** Core engine at `src/infrafabric/core/security/yologuard.py`  
+**Alias:** Architectural entrypoint `src/infrafabric/core/armour/secrets/detect.py`
 
-| File | Lines | Purpose |
-|------|-------|---------|
-| `IF.yologuard_v3.py` | 744 | Secret detection engine |
+| File | Lines | Purpose                |
+|------|-------|------------------------|
+| `yologuard.py` | 700+ | Secret detection engine (core) |
+| `detect.py`    | ~80  | `if.armour.secrets.detect` alias |
 
 **Detection Capabilities:**
 - Shannon entropy for encoded secrets

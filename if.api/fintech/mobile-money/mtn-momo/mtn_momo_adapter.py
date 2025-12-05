@@ -31,6 +31,8 @@ from dataclasses import dataclass, asdict
 import requests
 from requests.auth import HTTPBasicAuth
 
+from fintech_debug_utils import ft_debug_log_request, ft_debug_log_response
+
 
 # ============================================================================
 # Enums and Constants
@@ -277,12 +279,30 @@ class MTNMoMoAdapter:
         url = f"{self.base_url}/oauth/v1_0/accesstoken"
 
         try:
+            ft_debug_log_request(
+                self.logger,
+                "mtn_momo",
+                url,
+                {
+                    "method": "GET",
+                    "headers": {"Ocp-Apim-Subscription-Key": self.subscription_key},
+                },
+            )
+
             response = self.session.get(
                 url,
                 auth=HTTPBasicAuth(self.api_user, self.api_key),
                 headers={"Ocp-Apim-Subscription-Key": self.subscription_key},
                 timeout=self.timeout,
             )
+
+            ft_debug_log_response(
+                self.logger,
+                "mtn_momo",
+                response.status_code,
+                response.text,
+            )
+
             response.raise_for_status()
 
             data = response.json()
@@ -349,6 +369,17 @@ class MTNMoMoAdapter:
         }
 
         try:
+            ft_debug_log_request(
+                self.logger,
+                "mtn_momo",
+                url,
+                {
+                    "method": "POST",
+                    "headers": headers,
+                    "body": payload,
+                },
+            )
+
             response = self.session.post(
                 url,
                 json=payload,
@@ -356,6 +387,14 @@ class MTNMoMoAdapter:
                 auth=HTTPBasicAuth(provisioning_key, provisioning_key),
                 timeout=self.timeout,
             )
+
+            ft_debug_log_response(
+                self.logger,
+                "mtn_momo",
+                response.status_code,
+                response.text,
+            )
+
             response.raise_for_status()
 
             # Extract user ID from response (typically in location header or response)
@@ -455,11 +494,29 @@ class MTNMoMoAdapter:
         )
 
         try:
+            ft_debug_log_request(
+                self.logger,
+                "mtn_momo",
+                url,
+                {
+                    "method": "POST",
+                    "headers": headers,
+                    "body": payload,
+                },
+            )
+
             response = self.session.post(
                 url,
                 json=payload,
                 headers=headers,
                 timeout=self.timeout,
+            )
+
+            ft_debug_log_response(
+                self.logger,
+                "mtn_momo",
+                response.status_code,
+                response.text,
             )
             response.raise_for_status()
 
@@ -516,10 +573,24 @@ class MTNMoMoAdapter:
         headers = self._get_auth_headers()
 
         try:
+            ft_debug_log_request(
+                self.logger,
+                "mtn_momo",
+                url,
+                {"method": "GET", "headers": headers},
+            )
+
             response = self.session.get(
                 url,
                 headers=headers,
                 timeout=self.timeout,
+            )
+
+            ft_debug_log_response(
+                self.logger,
+                "mtn_momo",
+                response.status_code,
+                response.text,
             )
             response.raise_for_status()
 
@@ -620,11 +691,29 @@ class MTNMoMoAdapter:
         )
 
         try:
+            ft_debug_log_request(
+                self.logger,
+                "mtn_momo",
+                url,
+                {
+                    "method": "POST",
+                    "headers": headers,
+                    "body": payload,
+                },
+            )
+
             response = self.session.post(
                 url,
                 json=payload,
                 headers=headers,
                 timeout=self.timeout,
+            )
+
+            ft_debug_log_response(
+                self.logger,
+                "mtn_momo",
+                response.status_code,
+                response.text,
             )
             response.raise_for_status()
 
@@ -680,10 +769,24 @@ class MTNMoMoAdapter:
         headers = self._get_auth_headers()
 
         try:
+            ft_debug_log_request(
+                self.logger,
+                "mtn_momo",
+                url,
+                {"method": "GET", "headers": headers},
+            )
+
             response = self.session.get(
                 url,
                 headers=headers,
                 timeout=self.timeout,
+            )
+
+            ft_debug_log_response(
+                self.logger,
+                "mtn_momo",
+                response.status_code,
+                response.text,
             )
             response.raise_for_status()
 
@@ -789,11 +892,29 @@ class MTNMoMoAdapter:
         )
 
         try:
+            ft_debug_log_request(
+                self.logger,
+                "mtn_momo",
+                url,
+                {
+                    "method": "POST",
+                    "headers": headers,
+                    "body": payload,
+                },
+            )
+
             response = self.session.post(
                 url,
                 json=payload,
                 headers=headers,
                 timeout=self.timeout,
+            )
+
+            ft_debug_log_response(
+                self.logger,
+                "mtn_momo",
+                response.status_code,
+                response.text,
             )
             response.raise_for_status()
 

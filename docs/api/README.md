@@ -8,8 +8,10 @@ This directory contains documentation for all API integrations.
 - [WebRTC](webrtc/) - Real-time communication
 - [SIP](sip/) - Voice/video escalation
 - [vMix](vmix/) - Live production
+- [LLM](llm/) - LLM providers and debug tools
+- [Fintech](fintech/) - Fintech adapters and debug tools
 - [Integrations](integrations/) - Other APIs
-- Recovered artifacts: see `recovered_api_work/` (vMix/OBS controllers/tests/examples from backup branch `claude/cloud-providers-011CV2nnsyHT4by1am1ZrkkA`)
+- Broadcast controllers and IF.bus adapters live under `if.api/broadcast/` (vMix/OBS controllers, tests, and bus adapters).
 
 ## Currently Active
 
@@ -19,8 +21,8 @@ This directory contains documentation for all API integrations.
 | Redis Cloud | ACTIVE | `core/logistics/packet.py` |
 | DeepSeek | ACTIVE | Fallback in librarian |
 | GitHub | ACTIVE | CI/CD workflows |
-| vMix | RECOVERED | `recovered_api_work/vmix/` (pending reintegration) |
-| OBS  | RECOVERED | `recovered_api_work/obs/` (pending reintegration) |
+| vMix | ACTIVE | `if.api/broadcast/vmix/` |
+| OBS  | ACTIVE | `if.api/broadcast/obs/` |
 
 ## Planned
 
@@ -29,4 +31,3 @@ This directory contains documentation for all API integrations.
 | WebRTC | Q1 2026 | P1 |
 | SIP | Q2 2026 | P2 |
 | OCI | Q1 2026 | P2 |
-| vMix | Future | P3 |

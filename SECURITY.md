@@ -41,9 +41,10 @@ Include:
 
 ## Security Measures
 
-### IF.yologuard Integration
+### IF.yologuard / if.armour.secrets.detect Integration
 
-InfraFabric includes IF.yologuard (680 lines), our security immune system:
+InfraFabric includes IF.yologuard (680 lines), exposed to application
+code as `infrafabric.core.armour.secrets.detect`, our security immune system:
 
 - Input validation and sanitization
 - Rate limiting and abuse prevention
@@ -92,7 +93,9 @@ We use:
 
 | File | Purpose |
 |------|---------|
-| `src/infrafabric/core/security/yologuard.py` | Security immune system |
+| `src/infrafabric/core/security/yologuard.py` | IF.yologuard v3 engine (canonical implementation) |
+| `src/infrafabric/core/armour/secrets/detect.py` | `if.armour.secrets.detect` alias for IF.yologuard v3 |
+| `if.api/security/yologuard/IF.yologuard_v3.py` | Packaged IF.api entrypoint for secret detection |
 | `src/infrafabric/core/governance/arbitrate.py` | Access control arbitration |
 | `.env.example` | Template for secure configuration |
 

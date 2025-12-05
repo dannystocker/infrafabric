@@ -33,6 +33,8 @@ import requests
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
 
+from fintech_debug_utils import ft_debug_log_request, ft_debug_log_response
+
 
 # ============================================================================
 # Enums and Constants
@@ -396,11 +398,25 @@ class AirtelMoneyAdapter:
         try:
             self.logger.debug(f"Requesting OAuth2 token from {url}")
 
+            ft_debug_log_request(
+                self.logger,
+                "airtel_money",
+                url,
+                {"method": "POST", "headers": headers, "body": payload},
+            )
+
             response = self.session.post(
                 url,
                 json=payload,
                 headers=headers,
                 timeout=self.timeout,
+            )
+
+            ft_debug_log_response(
+                self.logger,
+                "airtel_money",
+                response.status_code,
+                response.text,
             )
             response.raise_for_status()
 
@@ -567,11 +583,25 @@ class AirtelMoneyAdapter:
         try:
             self.logger.debug(f"Initiating USSD Push for {msisdn}, Amount: {amount}")
 
+            ft_debug_log_request(
+                self.logger,
+                "airtel_money",
+                url,
+                {"method": "POST", "headers": headers, "body": payload},
+            )
+
             response = self.session.post(
                 url,
                 json=payload,
                 headers=headers,
                 timeout=self.timeout,
+            )
+
+            ft_debug_log_response(
+                self.logger,
+                "airtel_money",
+                response.status_code,
+                response.text,
             )
             response.raise_for_status()
 
@@ -659,10 +689,24 @@ class AirtelMoneyAdapter:
         try:
             self.logger.debug(f"Checking collection status for {transaction_id}")
 
+            ft_debug_log_request(
+                self.logger,
+                "airtel_money",
+                url,
+                {"method": "GET", "headers": headers},
+            )
+
             response = self.session.get(
                 url,
                 headers=headers,
                 timeout=self.timeout,
+            )
+
+            ft_debug_log_response(
+                self.logger,
+                "airtel_money",
+                response.status_code,
+                response.text,
             )
             response.raise_for_status()
 
@@ -805,11 +849,25 @@ class AirtelMoneyAdapter:
         try:
             self.logger.debug(f"Initiating disbursement to {msisdn}, Amount: {amount}")
 
+            ft_debug_log_request(
+                self.logger,
+                "airtel_money",
+                url,
+                {"method": "POST", "headers": headers, "body": payload},
+            )
+
             response = self.session.post(
                 url,
                 json=payload,
                 headers=headers,
                 timeout=self.timeout,
+            )
+
+            ft_debug_log_response(
+                self.logger,
+                "airtel_money",
+                response.status_code,
+                response.text,
             )
             response.raise_for_status()
 
@@ -898,10 +956,24 @@ class AirtelMoneyAdapter:
         try:
             self.logger.debug(f"Checking disbursement status for {transaction_id}")
 
+            ft_debug_log_request(
+                self.logger,
+                "airtel_money",
+                url,
+                {"method": "GET", "headers": headers},
+            )
+
             response = self.session.get(
                 url,
                 headers=headers,
                 timeout=self.timeout,
+            )
+
+            ft_debug_log_response(
+                self.logger,
+                "airtel_money",
+                response.status_code,
+                response.text,
             )
             response.raise_for_status()
 
@@ -972,10 +1044,24 @@ class AirtelMoneyAdapter:
         try:
             self.logger.debug("Checking account balance")
 
+            ft_debug_log_request(
+                self.logger,
+                "airtel_money",
+                url,
+                {"method": "GET", "headers": headers},
+            )
+
             response = self.session.get(
                 url,
                 headers=headers,
                 timeout=self.timeout,
+            )
+
+            ft_debug_log_response(
+                self.logger,
+                "airtel_money",
+                response.status_code,
+                response.text,
             )
             response.raise_for_status()
 
@@ -1035,10 +1121,24 @@ class AirtelMoneyAdapter:
         try:
             self.logger.debug(f"Performing KYC inquiry for {msisdn}")
 
+            ft_debug_log_request(
+                self.logger,
+                "airtel_money",
+                url,
+                {"method": "GET", "headers": headers},
+            )
+
             response = self.session.get(
                 url,
                 headers=headers,
                 timeout=self.timeout,
+            )
+
+            ft_debug_log_response(
+                self.logger,
+                "airtel_money",
+                response.status_code,
+                response.text,
             )
             response.raise_for_status()
 

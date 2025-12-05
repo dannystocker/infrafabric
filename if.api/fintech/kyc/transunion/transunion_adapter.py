@@ -46,6 +46,8 @@ import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
+from fintech_debug_utils import ft_debug_log_request, ft_debug_log_response
+
 
 # ============================================================================
 # Enums & Data Classes
@@ -1038,8 +1040,22 @@ class TransUnionAdapter:
         self.request_count += 1
 
         try:
+            ft_debug_log_request(
+                self.logger,
+                "transunion",
+                url,
+                {"method": method, "kwargs": kwargs},
+            )
+
             response = self.session.request(method, url, **kwargs)
             response.raise_for_status()
+
+            ft_debug_log_response(
+                self.logger,
+                "transunion",
+                response.status_code,
+                response.text,
+            )
             return response.json()
 
         except requests.exceptions.Timeout:

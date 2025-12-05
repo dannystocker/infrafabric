@@ -36,6 +36,8 @@ from requests.auth import HTTPBasicAuth
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
 
+from fintech_debug_utils import ft_debug_log_request, ft_debug_log_response
+
 
 # ============================================================================
 # Enums and Constants
@@ -389,12 +391,26 @@ class OrangeMoneyAdapter:
         }
 
         try:
+            ft_debug_log_request(
+                self.logger,
+                "orange_money",
+                url,
+                {"method": "POST", "headers": headers, "body": data},
+            )
+
             response = self.session.post(
                 url,
                 auth=auth,
                 headers=headers,
                 data=data,
                 timeout=self.timeout,
+            )
+
+            ft_debug_log_response(
+                self.logger,
+                "orange_money",
+                response.status_code,
+                response.text,
             )
             response.raise_for_status()
 
@@ -549,11 +565,25 @@ class OrangeMoneyAdapter:
         )
 
         try:
+            ft_debug_log_request(
+                self.logger,
+                "orange_money",
+                url,
+                {"method": "POST", "headers": headers, "body": payload},
+            )
+
             response = self.session.post(
                 url,
                 json=payload,
                 headers=headers,
                 timeout=self.timeout,
+            )
+
+            ft_debug_log_response(
+                self.logger,
+                "orange_money",
+                response.status_code,
+                response.text,
             )
             response.raise_for_status()
 
@@ -631,11 +661,25 @@ class OrangeMoneyAdapter:
             params["payment_token"] = payment_token
 
         try:
+            ft_debug_log_request(
+                self.logger,
+                "orange_money",
+                url,
+                {"method": "GET", "headers": headers, "params": params},
+            )
+
             response = self.session.get(
                 url,
                 headers=headers,
                 params=params,
                 timeout=self.timeout,
+            )
+
+            ft_debug_log_response(
+                self.logger,
+                "orange_money",
+                response.status_code,
+                response.text,
             )
             response.raise_for_status()
 
@@ -750,11 +794,25 @@ class OrangeMoneyAdapter:
         )
 
         try:
+            ft_debug_log_request(
+                self.logger,
+                "orange_money",
+                url,
+                {"method": "POST", "headers": headers, "body": payload},
+            )
+
             response = self.session.post(
                 url,
                 json=payload,
                 headers=headers,
                 timeout=self.timeout,
+            )
+
+            ft_debug_log_response(
+                self.logger,
+                "orange_money",
+                response.status_code,
+                response.text,
             )
             response.raise_for_status()
 

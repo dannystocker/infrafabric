@@ -8,11 +8,16 @@ Demonstrates common integration patterns for Airtel Money:
 - Balance management
 - IF.bus event integration
 
+CLI flags:
+    -d, -v, --debug, --verbose  Enable fintech debug logging for Airtel Money
+    -h, --help                  Show this help message
+
 Author: InfraFabric Finance Team
 Version: 1.0.0
 Date: 2025-12-04
 """
 
+import argparse
 import os
 import logging
 import time
@@ -579,7 +584,7 @@ def multi_country_example():
 # Main Entry Point
 # ============================================================================
 
-def main():
+def main() -> None:
     """Run all examples."""
     print("\n")
     print("*" * 80)
@@ -618,9 +623,29 @@ def main():
     print("\n")
     print("*" * 80)
     print("ALL EXAMPLES COMPLETED")
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Airtel Money adapter example suite for InfraFabric."
+    )
+    parser.add_argument(
+        "-d",
+        "-v",
+        "--debug",
+        "--verbose",
+        dest="debug",
+        action="store_true",
+        help="Enable fintech debug logging for Airtel Money (sets IF_FINTECH_DEBUG_AIRTEL_MONEY=1).",
+    )
+    return parser.parse_args()
     print("*" * 80)
     print("\n")
 
 
 if __name__ == "__main__":
+    args = parse_args()
+    if args.debug:
+        os.environ["IF_FINTECH_DEBUG_AIRTEL_MONEY"] = "1"
+
     main()

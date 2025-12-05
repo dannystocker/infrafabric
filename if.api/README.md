@@ -15,10 +15,10 @@ Consolidated API integrations from 38+ development branches. This directory cont
 ```
 if.api/
 ├── broadcast/              # Video/Audio Streaming APIs
-│   ├── vmix/              # vMix HTTP API (RTMP/SRT streaming)
-│   ├── obs/               # OBS WebSocket API
-│   ├── bus-adapters/      # IF.bus production adapters
-│   └── ndi/               # NDI (planned)
+│   ├── vmix/              # vMix HTTP API (RTMP/SRT streaming + tests)
+│   ├── obs/               # OBS WebSocket API (streaming + tests)
+│   ├── bus-adapters/      # IF.bus production adapters (vMix, OBS, HA)
+│   └── ndi/               # NDI (planned, docs only)
 │
 ├── communication/          # Real-time Communication APIs
 │   ├── sip/               # SIP/VoIP (7 servers supported)
@@ -29,7 +29,10 @@ if.api/
 ├── llm/                    # AI/LLM Provider APIs
 │   ├── claude/            # Anthropic Claude API
 │   ├── gemini/            # Google Gemini API
-│   └── deepseek/          # DeepSeek API
+│   ├── openai/            # OpenAI Chat API adapter
+│   ├── mistral/           # Mistral Chat API adapter
+│   ├── deepseek/          # DeepSeek Chat API adapter
+│   └── openrouter/        # OpenRouter Chat API adapter
 │
 ├── data/                   # Data Infrastructure APIs
 │   ├── redis/             # Redis Cloud + swarm coordination
@@ -64,6 +67,23 @@ controller.start_rtmp_stream(
     rtmp_url="rtmp://live.twitch.tv/app/",
     stream_key="your_stream_key"
 )
+```
+
+### Broadcast - OBS via IF.bus Adapter
+
+```python
+from if_api.broadcast.bus_adapters.obs_adapter import create_obs_adapter
+
+adapter = create_obs_adapter(
+    host="localhost",
+    port=4455,
+    password=None,
+)
+
+# Example: start streaming or query status through IF.bus-compatible adapter
+adapter.start_instances()
+status = adapter.get_health()
+print(status)
 ```
 
 ### Communication - SIP Adapter
@@ -117,11 +137,15 @@ findings = guard.scan_content(content)
 |----------|-------------|-------|-------|--------|
 | Broadcast | vMix | 3 | Yes | Production |
 | Broadcast | OBS | 4 | Yes | Production |
-| Broadcast | Bus Adapters | 4 | Yes | Production |
+| Broadcast | Bus Adapters (vMix, OBS, HA) | 4 | Yes | Production |
 | Communication | SIP (7 servers) | 8 | Yes | Production |
 | Communication | WebRTC | 5 | Yes | Production |
 | LLM | Claude | 3 | Yes | Production |
 | LLM | Gemini | 1 | Yes | Production |
+| LLM | OpenAI | 1 | No | Implementing |
+| LLM | Mistral | 1 | No | Implementing |
+| LLM | DeepSeek | 1 | No | Implementing |
+| LLM | OpenRouter | 1 | No | Implementing |
 | Data | Redis | 3 | Yes | Production |
 | Security | Yologuard | 1 | Yes | Production |
 
