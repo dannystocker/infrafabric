@@ -22,6 +22,38 @@
 
 > *Juakali n'est pas un Core Banking System. Juakali est un Loan Origination & Management System qui s'installe AU-DESSUS de n'importe quel CBS. Cette distinction change tout.*
 
+```mermaid
+flowchart TB
+    subgraph CLIENT["👤 Client Final"]
+        APP[Application Pret]
+    end
+
+    subgraph LOS["🧠 COUCHE LOS (Juakali)"]
+        direction LR
+        ONB[Onboarding]
+        SCR[Scoring]
+        DEC[Decision]
+        REC[Recouvrement]
+    end
+
+    subgraph CBS["🏦 COUCHE CBS (Mambu/Mifos/Musoni)"]
+        direction LR
+        CPT[Comptes]
+        LED[Grand Livre]
+        TRE[Tresorerie]
+        PRD[Produits]
+    end
+
+    APP --> LOS
+    LOS --> CBS
+    CBS --> DB[(Base Donnees)]
+
+    style LOS fill:#e8f5e9,stroke:#4caf50,stroke-width:3px
+    style CBS fill:#e3f2fd,stroke:#2196f3
+```
+
+**Analogie:** CBS = Routes et electricite | LOS = GPS et systeme de navigation
+
 **Ce que fait un CBS (Mambu, Mifos, Musoni, Oradian):**
 - Gestion des produits financiers
 - Comptes clients et grand livre comptable
@@ -92,6 +124,24 @@ Ce rapport identifie une fenetre d'opportunite strategique pour Juakali dans le 
 
 ### 2.1 Cartographie Positionnelle LOS
 
+```mermaid
+quadrantChart
+    title Positionnement LOS Afrique
+    x-axis Anglophone --> Francophone
+    y-axis Accessible --> Premium
+    quadrant-1 Territoire Vacant
+    quadrant-2 Specialistes Niche
+    quadrant-3 Generalistes Volume
+    quadrant-4 Leaders Etablis
+    Software Group: [0.25, 0.75]
+    Turnkey Lender: [0.20, 0.85]
+    Yapu: [0.55, 0.70]
+    Rubyx: [0.70, 0.30]
+    JUAKALI: [0.85, 0.45]
+```
+
+**Lecture:** Le quadrant superieur droit (Francophone + Prix accessible) est le territoire vacant. Juakali s'y positionne avec avantage multi-CBS.
+
 ```
                         PREMIUM
                            |
@@ -120,6 +170,37 @@ Ce rapport identifie une fenetre d'opportunite strategique pour Juakali dans le 
 ### 2.2 Vue Comparative LOS (Concurrents Directs)
 
 > *Les vrais rivaux de Juakali ne sont pas Mambu. Ce sont ceux-ci.*
+
+```mermaid
+mindmap
+  root((LOS<br/>Africain))
+    Generalistes
+      Software Group
+        70+ pays
+        Pas focus Afrique
+      Turnkey Lender
+        Enterprise pricing
+        Hors budget IMF
+    Specialistes
+      Yapu
+        Climate-ag only
+        Senegal CAURIE
+      LendXS
+        Smallholders
+        Seed stage
+    Francophones
+      Rubyx
+        Dakar base
+        €1.5M seulement
+      Cagecfi
+        Cote d'Ivoire
+        LOS faible
+    JUAKALI+IF
+      Multi-CBS ✓
+      Francophone ✓
+      AI-ready ✓
+      Prix accessible ✓
+```
 
 | LOS | Base | Financement | Focus | Francophone | Multi-CBS |
 |-----|------|-------------|-------|-------------|-----------|
@@ -247,6 +328,52 @@ InfraFabric = Connecteur universel
 
 ### 4.1 Architecture Super-Agregateur
 
+```mermaid
+flowchart TB
+    subgraph LOS["🏦 JUAKALI LOS"]
+        direction TB
+        ONB[Onboarding]
+        SCO[Scoring]
+        DEC[Decisioning]
+        COL[Collection]
+    end
+
+    subgraph BUS["⚡ IF.bus (Event Router)"]
+        EVT[Event Dispatcher]
+    end
+
+    subgraph CBS["📊 CBS Adapters"]
+        MAM[Mambu<br/>Roadmap Q1]
+        MIF[Mifos<br/>Production]
+        MUS[Musoni<br/>Roadmap Q2]
+    end
+
+    subgraph MM["📱 Mobile Money"]
+        MPE[M-Pesa ✓]
+        MTN[MTN MoMo ✓]
+        ORA[Orange Money ✓]
+        WAV[Wave<br/>In Dev]
+    end
+
+    subgraph CRB["🔍 Credit Bureau"]
+        TRU[TransUnion ✓]
+        AFR[Africa's Talking ✓]
+    end
+
+    LOS --> BUS
+    BUS --> CBS
+    BUS --> MM
+    BUS --> CRB
+
+    style LOS fill:#e1f5fe
+    style BUS fill:#fff3e0
+    style CBS fill:#e8f5e9
+    style MM fill:#fce4ec
+    style CRB fill:#f3e5f5
+```
+
+**Flux:** Juakali orchestre le workflow de pret → IF.bus route les evenements → Les adapters connectent CBS, Mobile Money, et Credit Bureau.
+
 ```
                     ┌──────────────────┐
                     │    JUAKALI LOS   │
@@ -340,6 +467,43 @@ InfraFabric = Connecteur universel
 
 ### 5.3 Flux Type — Pret via Juakali+IF
 
+```mermaid
+sequenceDiagram
+    autonumber
+    participant AG as 👤 Agent Terrain
+    participant JK as 🏦 Juakali LOS
+    participant IF as ⚡ IF.bus
+    participant TU as 🔍 TransUnion
+    participant CBS as 📊 Mifos CBS
+    participant MP as 📱 M-Pesa
+
+    AG->>JK: Demande pret (500K FCFA)
+    JK->>IF: Credit check request
+    IF->>TU: KYC + historique
+    TU-->>IF: Score: 720
+    IF-->>JK: Client approuve
+
+    JK->>JK: Decision automatique
+    Note over JK: Regles: Score>650 = Auto-approve
+
+    JK->>IF: Sync compte client
+    IF->>CBS: Creer/update client
+    CBS-->>IF: Client ID: MF-2847
+
+    JK->>IF: Decaissement 500K FCFA
+    IF->>MP: STK Push
+    MP-->>AG: ✅ Argent recu!
+
+    IF->>IF: IF.TTT Audit Trail
+    Note over IF: Total: < 2 min<br/>vs 24-48h manuel
+```
+
+**Points cles:**
+- Credit check automatise via TransUnion [IF3]
+- Synchronisation CBS sans intervention manuelle
+- Decaissement M-Pesa en temps reel
+- Audit trail IF.TTT pour compliance BCEAO
+
 ```
 1. Agent terrain → App Juakali → Demande pret
 2. Juakali → IF.bus → TransUnion adapter → Credit check
@@ -420,6 +584,26 @@ InfraFabric = Connecteur universel
 
 ### 7.3 Marches Prioritaires
 
+```mermaid
+pie showData
+    title IMF par Marche Prioritaire
+    "Tanzanie" : 1352
+    "Cameroun" : 390
+    "Senegal" : 208
+    "Cote d'Ivoire" : 74
+```
+
+```mermaid
+xychart-beta
+    title "Opportunite vs Competition LOS"
+    x-axis [Tanzanie, "Cote Ivoire", Cameroun, Senegal]
+    y-axis "Score Opportunite" 0 --> 100
+    bar [95, 85, 80, 60]
+    line [10, 20, 15, 55]
+```
+
+**Lecture:** Barre = Score opportunite (IMF × vide LOS) | Ligne = Niveau competition LOS existante
+
 | Marche | IMF | LOS Competition | Priorite |
 |--------|-----|-----------------|----------|
 | **Tanzanie** | 1 352 [A32] | Tres faible | 1 |
@@ -485,6 +669,47 @@ Tout mobile money, tout credit bureau
 
 ### 8.4 Le Moat Composite
 
+```mermaid
+block-beta
+    columns 1
+    block:MOAT["🏰 MOAT JUAKALI + INFRAFABRIC"]:1
+        columns 1
+        LOS["🏦 SUPER-COUCHE LOS<br/>Multi-CBS sans lock-in"]
+        AI["🧠 MISTRAL LLM<br/>Seul francais natif + contexte OHADA/BCEAO"]
+        MM["📱 MOBILE MONEY<br/>4 providers natifs, Wave en dev"]
+        COMP["📋 COMPLIANCE<br/>IF.TTT = audit trail BCEAO/COBAC-ready"]
+    end
+
+    style LOS fill:#e3f2fd
+    style AI fill:#fce4ec
+    style MM fill:#e8f5e9
+    style COMP fill:#fff3e0
+```
+
+```mermaid
+gantt
+    title Temps de Replication par Concurrent
+    dateFormat YYYY-MM
+    axisFormat %m mois
+
+    section Rubyx
+    Replication complète : 2025-01, 18M
+
+    section Software Group
+    Replication (si prioritaire) : 2025-01, 12M
+
+    section Yapu
+    Focus different - N/A : 2025-01, 1M
+```
+
+**Analyse defensive:**
+
+| Concurrent | Temps replication | Obstacle principal |
+|------------|-------------------|-------------------|
+| Rubyx | 12-18 mois | €1.5M = pas de bande passante |
+| Software Group | 6-12 mois | Afrique francophone pas prioritaire |
+| Yapu | N/A | Focus climate ≠ LOS generaliste |
+
 ```
 MOAT JUAKALI + IF
 
@@ -512,6 +737,26 @@ Temps pour Yapu: N/A (focus different)
 # 9. FEUILLE DE ROUTE
 
 > *La strategie sans execution est hallucination. Voici les etapes concretes.*
+
+```mermaid
+timeline
+    title Feuille de Route Juakali + InfraFabric
+    section Phase 1 (M1-3)
+        Foundation : IF.bus deploy
+                   : Mifos integration
+                   : Mobile money pack
+                   : Pilote CI 2 IMF
+    section Phase 2 (M4-8)
+        Expansion : Mambu adapter
+                  : Wave integration
+                  : 10 IMF actives
+                  : Mistral AI beta
+    section Phase 3 (M9-18)
+        Scale : Dossier Proparco
+              : 20+ IMF Tanzanie
+              : Certification BCEAO
+              : Series A €2-5M
+```
 
 ### 9.1 Phase 1 — Foundation LOS+IF (Mois 1-3)
 
@@ -568,6 +813,36 @@ Ce que les LOS occidentaux ne comprennent pas: quand Marie au Senegal prend un p
 ## 10.2 Programme de Fidelite Communautaire
 
 **Proposition: "Juakali Jamaa" (Famille Juakali en Swahili)**
+
+```mermaid
+flowchart LR
+    subgraph BRONZE["🥉 BRONZE"]
+        B1[1 pret rembourse]
+        B2[-0.5% taux]
+    end
+
+    subgraph SILVER["🥈 SILVER"]
+        S1[3 prets + 1 parrain]
+        S2[-1% + priorite]
+    end
+
+    subgraph GOLD["🥇 GOLD"]
+        G1[5 prets + 3 parrains]
+        G2[-1.5% + pre-approuve]
+    end
+
+    subgraph PLATINUM["💎 PLATINUM"]
+        P1[10 prets + groupe 10]
+        P2[-2% + Mama/Baba Leader]
+    end
+
+    BRONZE --> SILVER --> GOLD --> PLATINUM
+
+    style BRONZE fill:#cd7f32
+    style SILVER fill:#c0c0c0
+    style GOLD fill:#ffd700
+    style PLATINUM fill:#e5e4e2
+```
 
 | Niveau | Declencheur | Avantage | Effet Reseau |
 |--------|-------------|----------|--------------|
