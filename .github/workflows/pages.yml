@@ -23,6 +23,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Clean docs (remove broken symlinks and vendored venv)
+        run: |
+          # Remove broken symlinks that break upload-pages-artifact
+          find docs -xtype l -delete
+          # Drop any embedded virtualenvs to keep the artifact clean
+          find docs -path "*/.venv" -prune -exec rm -rf {} +
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
