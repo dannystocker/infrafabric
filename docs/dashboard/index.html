@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Ledger Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Task Ledger Dashboard</h1>
+    <p>Live view of mini task decisions, health, and open work. Data sourced from on-disk artifacts (ledger + worklist).</p>
+    <p><a href="../PROTOCOL_v1.1.md">View protocol: IF.TTT.LEDGERFLOW.DELTASYNC</a></p>
+  </header>
+
+  <main>
+    <section class="kpis" id="kpis">
+      <div class="card">
+        <div class="label">Total Decisions</div>
+        <div class="value" id="kpi-total">—</div>
+      </div>
+      <div class="card">
+        <div class="label">Escalation Rate</div>
+        <div class="value" id="kpi-escalation">—</div>
+      </div>
+      <div class="card">
+        <div class="label">Block Rate</div>
+        <div class="value" id="kpi-block">—</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Status Timeline</h2>
+      <canvas id="timelineChart" height="80"></canvas>
+    </section>
+
+    <section>
+      <h2>Open Mini Tasks</h2>
+      <table id="tasks-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Kind</th>
+            <th>Target</th>
+            <th>Summary</th>
+            <th>Codegen?</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Recent Decisions (latest 20)</h2>
+      <table id="decisions-table">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Status</th>
+            <th>Source</th>
+            <th>Confidence</th>
+            <th>Timestamp</th>
+            <th>Claim</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>Data refreshed from <code>docs/dashboard/data</code>. Publish via GitHub Pages for a zero-backend view.</p>
+  </footer>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

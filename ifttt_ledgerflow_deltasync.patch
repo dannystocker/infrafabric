@@ -1,0 +1,9 @@
+diff --git a/.gitignore b/.gitignore
+index b1e0e0e..32ef1d6 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -48,3 +48,4 @@ Thumbs.db
+ 
+ # Confidential - competitive moat
+ .confidential/
++denylist.json
