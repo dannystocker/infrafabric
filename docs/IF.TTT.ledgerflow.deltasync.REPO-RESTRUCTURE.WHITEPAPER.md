@@ -196,6 +196,8 @@ This lives in `dependency_map.yaml` and is **the oracle** for classification:
 | Protocols `[IF.TTT, if.armour.secrets]` | Implements ledger + secret patterns |
 | Dependents include finance/legal verticals | Moving this file is a structural change, not local cleanup |
 
+To avoid a permanent “purgatory” of `candidate` entries, each candidate MUST carry a `review_by_date` and an owner. If still unresolved by that date, it moves automatically into `/archive/limbo` with a note in the manifest explaining why it was not promoted to core or vertical.
+
 ```mermaid
 graph LR
     Y[src/core/armour/secrets/detect.py]
@@ -271,6 +273,12 @@ Finally, we need to ask: did the restructure actually improve anything?
 - **Evaluation artifacts:**
   - `ledgerflow_eval.v1.json` entries, emitted by external reviewers (human or AI) against the formal eval schema.
 
+To keep load‑bearing moves safe, each major migration batch SHOULD be preceded by a **Dry‑Run Dependency Diff**:
+
+- Freeze the current `dependency_map.yaml`.
+- Simulate planned moves and generate a “before/after” graph for core modules and their dependents.
+- Require human/editor sign‑off before applying the batch.
+
 ```mermaid
 graph LR
     L[worker_task_decisions.jsonl] --> M[Metrics Extractor]
@@ -290,4 +298,3 @@ graph LR
 ## Psychological close
 
 *Teams don’t fear messy trees as much as they fear being blamed for touching them. When every move is accessioned, every file has a story, and every decision is both hashed and humanly explainable, the repository stops feeling like a minefield and starts feeling like a lab notebook you’re proud to put your name on.*
-
