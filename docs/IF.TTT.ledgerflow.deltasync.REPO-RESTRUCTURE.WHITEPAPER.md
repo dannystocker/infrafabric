@@ -81,6 +81,22 @@ graph TD
 
 *Architects don’t just fear bugs; they fear the moment a junior engineer can’t tell which directory is safe to depend on.*
 
+### Phased execution plan
+
+The migration should move through three clearly gated phases:
+
+- **Phase 1 – Core accessioning**  
+  - Scope: `src/core`, `src/lib`, root meta, `docs/canon`.  
+  - Success criteria: All Core protocols mapped and migrated; zero unresolved core entries in `dependency_map.yaml`; all core files accessioned in `migration_manifest.yaml`.
+
+- **Phase 2 – Verticals**  
+  - Scope: `src/verticals`, cross‑vertical shared bits in `src/lib`.  
+  - Success criteria: Each vertical references only Core/Lib (no back‑imports into core); all vertical files classified (no lingering `candidate` without owner/review date).
+
+- **Phase 3 – Archive & missions**  
+  - Scope: `archive/missions`, legacy scripts/notebooks, experimental data.  
+  - Success criteria: Every legacy artifact placed in archive or evidence; zero “floating” files at repo root; `archive/limbo` only contains time‑bounded candidates.
+
 ---
 
 ## 3. Provenance: from “moving files” to accessioning
@@ -189,6 +205,7 @@ This lives in `dependency_map.yaml` and is **the oracle** for classification:
 - `protocols`: `[IF.TTT, IF.PACKET, if.armour.secrets]`
 - `status`: `mapped | candidate | unresolved | deprecated | duplicate`
 - `confidence`: `0.0–1.0` with rationale.
+The expected structure is formalised in `/schemas/dependency_map.v1.json` and should be enforced in CI to prevent drift.
 
 | Example entry | Meaning |
 |---------------|---------|
@@ -289,6 +306,13 @@ graph LR
 
 **Why now:** This refactor isn’t a one‑time event; it’s the **first version** of a research OS. Without evaluation hooks, version 1.3 will be driven by taste, not evidence.
 
+As a starting point, reasonable SLOs for the migration are:
+
+- Escalation rate on worker tasks < **5%** after the first phase stabilises.
+- Invalid envelopes (**schema violations**) at **0%** (fail closed, fix immediately).
+- Sensitive leaks to the ledger at **0** (all redactions caught by if.armour.secrets.detect before append).
+- Fewer than **100** unresolved or `candidate` entries in `dependency_map.yaml` by the end of Phase 2.
+
 *Et si the long‑term risk isn’t “this refactor had bugs”, but “this refactor set a precedent we never measured against anything better”?*
 
 *People don’t commit to a new structure because it’s perfect; they commit because it comes with a way to admit and fix its imperfections across versions.*
@@ -298,3 +322,44 @@ graph LR
 ## Psychological close
 
 *Teams don’t fear messy trees as much as they fear being blamed for touching them. When every move is accessioned, every file has a story, and every decision is both hashed and humanly explainable, the repository stops feeling like a minefield and starts feeling like a lab notebook you’re proud to put your name on.*
+
+---
+
+## Appendix A – Target directory skeleton (illustrative)
+
+```text
+if.infrafabric/
+  CITATION.cff
+  glossary.yaml
+  migration_manifest.yaml
+  dependency_map.yaml
+  ROADMAP.md
+  STATE_S0.md
+  src/
+    core/
+      if_ttt/
+      armour/
+        secrets/
+      routing/
+      logging/
+    verticals/
+      finance/
+      legal/
+      swarms/
+      missions/
+    lib/
+      logging/
+      config/
+  data/
+    evidence/
+      redis/
+      chroma/
+      eval_logs/
+  docs/
+    canon/
+    protocols/
+    whitepapers/
+  archive/
+    missions/
+    limbo/
+```

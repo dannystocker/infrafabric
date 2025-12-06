@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://if.ttt/schemas/dependency_map.v1.json",
+  "title": "dependency_map.yaml entry",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["old_path", "new_path", "tier", "protocols", "status", "confidence"],
+    "additionalProperties": true,
+    "properties": {
+      "old_path": { "type": "string" },
+      "new_path": { "type": "string" },
+      "tier": { "type": "string", "enum": ["core", "vertical", "lib", "evidence", "archive"] },
+      "protocols": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "dependencies": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "dependents": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "status": {
+        "type": "string",
+        "enum": ["mapped", "candidate", "unresolved", "deprecated", "duplicate"]
+      },
+      "confidence": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+      },
+      "rationale": { "type": "string" },
+      "review_by_date": { "type": "string", "format": "date" },
+      "owner": { "type": "string" }
+    }
+  }
+}
+
